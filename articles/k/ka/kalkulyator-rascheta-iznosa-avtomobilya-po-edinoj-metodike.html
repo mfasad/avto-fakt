@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Калькулятор износа автомобиля: расчет по единой методике — Авто Факт</title>
+    <meta name="description" content="Как рассчитать износ авто по единой методике? Формулы, коэффициенты и калькулятор для ОСАГО и суда. Точный расчет амортизации ТС.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ka/kalkulyator-rascheta-iznosa-avtomobilya-po-edinoj-metodike.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Калькулятор износа автомобиля: расчет по единой методике">
+    <meta property="og:description" content="Как рассчитать износ авто по единой методике? Формулы, коэффициенты и калькулятор для ОСАГО и суда. Точный расчет амортизации ТС.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-nav-active">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/zakony-i-pdd/">Законы и ПДД</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Калькулятор износа автомобиля: расчет по единой методике</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#нормативная-база-и-единая-методика">Нормативная база и единая методика</a></li><li><a href="#факторы-влияющие-на-степень-износа">Факторы, влияющие на степень износа</a></li><li><a href="#как-работает-калькулятор-износа">Как работает калькулятор износа</a></li><li><a href="#формула-расчета-и-коэффициенты">Формула расчета и коэффициенты</a></li><li><a href="#ограничения-и-предельные-значения">Ограничения и предельные значения</a></li><li><a href="#практическое-применение-результатов-расчета">Практическое применение результатов расчета</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/k/ka/kak-prosmotret-elektronnyj-pts.html">Как посмотреть ЭПТС: пошаговая инструкция проверки</a></li><li><a href="/articles/p/po/poluchenie-gos-nomera-na-mashinu-v-gibdd.html">Получение гос номера на машину в ГИБДД: пошаговая инструкция</a></li><li><a href="/articles/c/ch/chto-nuzhno-chtoby-rastamozhit-avtomobil.html">Как растаможить авто: пошаговая инструкция, расчет и пошлины</a></li><li><a href="/articles/m/mo/mozhno-li-zavershit-obgon-cherez-sploshnuyu-esli-nachal-po-preryvistoj.html">Завершение обгона через сплошную: разбор ПДД и штрафы</a></li><li><a href="/articles/p/po/podacha-zayavleniya-na-registratsiyu-avtomobilya-cherez-gosuslugi.html">Регистрация авто через Госуслуги 2026: пошаговая инструкция</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Калькулятор расчета износа автомобиля по единой методике</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#нормативная-база-и-единая-методика">Нормативная база и единая методика</a></li><li><a href="#факторы-влияющие-на-степень-износа">Факторы, влияющие на степень износа</a></li><li><a href="#как-работает-калькулятор-износа">Как работает калькулятор износа</a></li><li><a href="#формула-расчета-и-коэффициенты">Формула расчета и коэффициенты</a></li><li><a href="#ограничения-и-предельные-значения">Ограничения и предельные значения</a></li><li><a href="#практическое-применение-результатов-расчета">Практическое применение результатов расчета</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Расчет амортизации транспортного средства — это критически важный этап при возмещении ущерба после дорожно-транспортного происшествия. Именно от степени физического износа зависит итоговая сумма страховой выплаты, которую получит владелец поврежденного автомобиля. Многие автовладельцы недооценивают влияние пробега и возраста машины на конечную компенсацию, хотя <strong>единая методика расчета</strong> четко регламентирует, как именно годы эксплуатации снижают стоимость деталей.</p>
+
+<p>Понимание принципов начисления амортизации позволяет самостоятельно проверить корректность расчетов страховой компании или независимого эксперта. Ошибки в применении коэффициентов или неправильное определение возраста транспортного средства могут стоить десятков тысяч рублей. В данной статье мы разберем, как работает <em>калькулятор износа</em>, какие нормативные акты регулируют этот процесс и как правильно интерпретировать полученные результаты для защиты своих интересов.</p>
+
+<p>Использование специализированных программных комплексов или онлайн-калькуляторов значительно упрощает вычисления, исключая человеческий фактор при арифметических операциях. Однако <strong>Точность расчета</strong> напрямую зависит от правильности введенных параметров, таких как дата выпуска, дата ДТП и категория транспортного средства.</p>
+
+<h2 id="нормативная-база-и-единая-методика">Нормативная база и единая методика</h2>
+
+<p>Основой для всех расчетов в сфере обязательного страхования гражданской ответственности владельцев транспортных средств является Федеральный закон № 40-ФЗ"Об ОСАГО". Именно этот документ закрепляет обязанность страховых компаний возмещать ущерб с учетом износа заменяемых деталей и узлов. Однако сам закон лишь задает рамки, а детальный алгоритм прописан в Положении Банка России, которое и содержит <strong>единую методику</strong> определения размера расходов на восстановительный ремонт.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Методика расчета периодически обновляется. При проведении независимой экспертизы или судебном разбирательстве необходимо использовать версию документа, действовавшую на дату проведения оценки илиную дату, в зависимости от требований суда.</p>
+</blockquote>
+
+<p>Документ четко определяет, что износ не может превышать 50% от стоимости новых запасных частей. Это ограничение является <mark>максимально допустимым порогом</mark> амортизации для легковых автомобилей категории"B" в рамках ОСАГО. Для других категорий транспорта, таких как грузовики или автобусы, предельные значения могут отличаться, что требует особой внимательности при выборе типа ТС в калькуляторе.</p>
+
+<p>Важно отметить, что единая методика применяется не только страховщиками, но и судами при рассмотрении споров о возмещении вреда. Если вы планируете подавать иск к виновнику ДТП или страховой компании, ваш расчет должен базироваться на тех же нормативах. Использование иных методов, например, рыночной оценки без учета регламентированного износа, может привести к отказу в удовлетворении требований в части, превышающей лимиты закона.</p>
+
+<div class="pb-poll" id="poll-9960f573"><div class="pb-poll-question">📊 Какая у вас была ситуация с расчетом износа?</div><div class="pb-poll-option" data-poll="9960f573" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Страховая насчитала мало</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="9960f573" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Считал сам для себя</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="9960f573" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Судился со страховой</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="9960f573" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Не сталкивался с этим</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="факторы-влияющие-на-степень-износа">Факторы, влияющие на степень износа</h2>
+
+<p>Главными параметрами, определяющими скорость старения автомобиля в глазах закона, являются его возраст и пробег. <strong>Формула расчета</strong> построена таким образом, что каждый год эксплуатации и каждая тысяча километров пути уменьшают остаточную стоимость деталей. Для легковых автомобилей физический износ рассчитывается по сложной математической зависимости, учитывающей оба эти фактора одновременно.</p>
+
+<p>Возраст транспортного средства исчисляется с даты выпуска, указанной в паспорте транспортного средства (ПТС), а не с момента покупки предыдущим владельцем. Это распространенное заблуждение, которое часто приводит к ошибкам при самостоятельных подсчетах. Если в ПТС указана только дата выдачи документа, а не дата производства, то для расчета может потребоваться запрос к заводу-изготовителю или использование месяца начала года выпуска по умолчанию.</p>
+
+<p>Пробег автомобиля берется на дату ДТП. Если точный пробег на момент аварии неизвестен и не зафиксирован в документах (например, в европротоколе или справке о ДТП), эксперты могут использовать среднегодовые нормы пробега. Для легковых автомобилей категории"B" в России среднестатистический пробег часто принимается равным 10-15 тысяч километров в год, но это значение может варьироваться в зависимости от региона и типа использования.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Всегда сверяйте дату выпуска в ПТС с датой вVIN-декодере. Иногда в документах указан год регистрации, а не производства, что может изменить расчетный возраст на целый год.</p></aside>
+
+<p>Кроме того, на итоговую цифру влияет тип детали. Кузовные элементы, агрегаты и электроника имеют разные коэффициенты в формуле. Например, <em>аккумуляторные батареи</em> и шины часто имеют свои, более высокие rates амортизации, так как являются расходными материалами. В рамках единой методики для большинства металлических и пластиковых деталей кузова и ходовой части применяются единые базовые коэффициенты.</p>
+
+<h2 id="как-работает-калькулятор-износа">Как работает калькулятор износа</h2>
+
+<p>Современный <strong>калькулятор износа</strong> представляет собой программный алгоритм, который автоматизирует сложные вычисления, прописанные в приложении к Положению ЦБ РФ. Пользователю не нужно вручную перемножать экспоненты и логарифмы, достаточно ввести корректные исходные данные. Программа сама определит необходимый коэффициент и применит соответствующую формулу для конкретной категории транспортного средства.</p>
+
+<p>Процесс расчета начинается с ввода даты производства автомобиля и даты наступления страхового случая. Система автоматически вычисляет возраст машины в годах. Затем вносится информация о пробеге. На основе этих двух переменных калькулятор обращается к таблицам коэффициентов. Для легковых авто используется одна формула, для грузовиков — другая, а для мотоциклов — третья.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка данных для калькулятора</h4><label class="check-item"><input type="checkbox"><span>Дата выпуска из ПТС</span></label><label class="check-item"><input type="checkbox"><span>Дата ДТП из справки</span></label><label class="check-item"><input type="checkbox"><span>Точный пробег на момент ДТП</span></label><label class="check-item"><input type="checkbox"><span>Категория транспортного средства (A, B, C)</span></label><label class="check-item"><input type="checkbox"><span>Тип деталей (кузов, агрегаты)</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>Результатом работы программы является процентное значение износа. Оно показывает, какую часть стоимости новой детали не выплатит страховая компания. Например, при износе 30% выплата за запчасть составит только 70% от её актуальной рыночной цены. Калькулятор также может показать абсолютную сумму потери стоимости, если ввести цену новой детали.</p>
+
+<p>Важно понимать, что онлайн-инструменты дают справочную информацию. Для официальных целей, таких как суд или досудебная претензия, требуется заключение сертифицированного эксперта-техника, который заверяет расчет печатью и подписью. Тем не менее, самостоятельный расчет позволяет понять, стоит ли затевать спор со страховой или предложенная сумма соответствует закону.</p>
+
+<h2 id="формула-расчета-и-коэффициенты">Формула расчета и коэффициенты</h2>
+
+<p>Для тех, кто хочет разобраться в глубине процесса, полезно знать, как выглядит <strong>математическая модель</strong> расчета. Для легковых автомобилей категории"B" формула имеет следующий вид: К = 1 - е^(-ω1·Т - ω2·L), где К — коэффициент износа, е — основание натурального логарифма, Т — возраст авто в годах, L — пробег в тысячах км. Параметры ω1 и ω2 — это весовые коэффициенты, зависящие от типа ТС.</p>
+
+<p>Для легковых автомобилей значения коэффициентов составляют: ω1 = 0,05 и ω2 = 0,0005. Это означает, что влияние возраста (0,05) значительно сильнее влияет на износ, чем пробег (0,0005). Однако при больших пробегах (более 100 тыс. км) вклад второго параметра становится существенным. Расчет производится с точностью до сотых долей процента, но итоговое значение округляется.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Обозначение</th>
+<th>Значение для легковых авто</th>
+<th>Единица измерения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Возраст ТС</td>
+<td>Т</td>
+<td>От 0 до 15+</td>
+<td>Полных лет</td>
+</tr>
+<tr>
+<td>Пробег ТС</td>
+<td>L</td>
+<td>От 0 до 500+</td>
+<td>Тысяч км</td>
+</tr>
+<tr>
+<td>Коэф. возраста</td>
+<td>ω1</td>
+<td>0,05</td>
+<td>Константа</td>
+</tr>
+<tr>
+<td>Коэф. пробега</td>
+<td>ω2</td>
+<td>0,0005</td>
+<td>Константа</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Существует предельное значение износа, которое ограничивает применение формулы. Как упоминалось ранее, для легковых автомобилей оно составляет 50%. Даже если по формуле получается, что старая машина изношена на 80%, страховая обязана выплатить стоимость деталей с учетом только 50% амортизации. Это защищает владельцев старых автомобилей от полного отказа в выплате на запчасти.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> При расчете возраста автомобиля год выпуска считается полным, если с момента выпуска прошло более 6 месяцев. Если менее 6 месяцев — возраст считается 0 лет, но расчет идет по месяцам или дням в зависимости от точности методики.</p>
+</blockquote>
+
+<h2 id="ограничения-и-предельные-значения">Ограничения и предельные значения</h2>
+
+<p>Законодательство устанавливает четкие границы для применения расчетов износа. Как уже отмечалось, <strong>максимальный износ</strong> для легковых автомобилей ограничен 50%. Это правило действует для всех категорий запчастей, кроме случаев, когда речь идет о восстановительном ремонте по КАСКО, где условия диктует договор, а не закон об ОСАГО. В рамках ОСАГО"потолок" в 50% является жестким ограничением.</p>
+
+<p>Также существуют ограничения по минимальному возрасту и пробегу. Новые автомобили, не имеющие пробега и возраста менее 1 года, имеют минимальный износ, который часто стремится к нулю, но технически рассчитывается по дням. Важно не путать гарантийные обязательства завода-изготовителя со страховым износом. Гарантия может покрывать дефекты, но при ДТП страховая все равно применит методику расчета амортизации.</p>
+
+<p>Отдельного внимания заслуживают случаи тотальной гибели автомобиля. При признании транспортного средства конструктивно уничтоженным (экономически нецелесообразно ремонтировать), износ также учитывается при расчете выплат. Однако в таких случаях часто возникают споры о рыночной стоимости аналогичного автомобиля до ДТП, и расчет износа становится частью общей оценки ущерба.</p>
+
+<details class="pb-accordion"><summary>Что делать, если износ насчитали больше 50%?</summary><div class="pb-accordion-body"><p>Если в калькуляции страховой компании износ превышает 50%, это является нарушением методики для легковых авто. Необходимо писать досудебную претензию с требованием пересчитать износ, ограничив его предельным значением.</p></div></details>
+
+<h2 id="практическое-применение-результатов-расчета">Практическое применение результатов расчета</h2>
+
+<p>Результаты расчета износа необходимы для формирования обоснованной суммы требования к страховой компании. Если вы получили выплату, которая кажется заниженной, самостоятельный <em>расчет по единой методике</em> станет первым шагом к доказательству вашей правоты. Сравните процент износа, примененный страховщиком, с вашим расчетом. Разница даже в несколько процентов на дорогих деталях (фара, бампер, капот) дает ощутимую сумму.</p>
+
+<p>При подаче досудебной претензии к расчету необходимо приложить копию калькуляции. Если вы пользуетесь онлайн-сервисом, сделайте скриншот или распечатайте результат. В тексте претензии сошлитесь на Положение Банка России и укажите, что расчет произведен в соответствии с действующей единой методикой. Это демонстрирует вашу компетентность и готовность идти до конца.</p>
+
+<p>В судебной практике расчеты истца часто принимаются во внимание, особенно если они не противоречат очевидным фактам. Суд может назначить судебную экспертизу, но если ваша позиция подкреплена грамотным предварительным расчетом, шансы на успех значительно возрастают. Эксперты суда также обязаны следовать единой методике, поэтому расхождений в принципах быть не должно.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Самостоятельный расчет износа — это не гарантия победы в суде, но мощный инструмент для проверки честности страховой компании и подготовки аргументированной претензии.</p></aside>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Можно ли не учитывать износ при ремонте по ОСАГО?</summary>
+<p>По закону"Об ОСАГО" выплата всегда производится с учетом износа, если вы выбираете денежную компенсацию. Однако, если страховая организация направляет вас на ремонт на станцию технического обслуживания (СТО), то износ не применяется — ремонт должен быть выполнен новыми деталями без доплат с вашей стороны (для авто моложе 5 лет).</p>
+</details>
+
+<details>
+<summary>Как считается возраст автомобиля, если ПТС утерян?</summary>
+<p>В случае отсутствия ПТС, возраст определяется по данным базы ГИБДД илиVIN-номеру через запрос производителю. Если точную дату установить невозможно, могут быть применены усредненные значения, что часто невыгодно владельцу, поэтому восстановление документов ПТС крайне важно перед оценкой.</p>
+</details>
+
+<details>
+<summary>Влияет ли марка автомобиля на коэффициент износа?</summary>
+<p>Нет, марка и модель автомобиля (например, <em>Toyota</em> или <em>Lada</em>) не влияют на математическую формулу расчета. Имеет значение только категория транспортного средства (легковое, грузовое, мотоцикл) и его технические характеристики, определяющие эту категорию. Формула едина для всех"легковушек".</p>
+</details>
+
+<details>
+<summary>Можно ли взыскать разницу по износу с виновника ДТП?</summary>
+<p>Да, это возможно. Страховая выплачивает сумму с учетом износа. Разницу между этой суммой и реальной стоимостью восстановительного ремонта (без учета износа) можно взыскать непосредственно с виновника аварии в гражданском порядке, подав иск в суд.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/k/ka/kak-prosmotret-elektronnyj-pts.html" class="pb-related-card">
+                <span class="pb-related-title">Как посмотреть ЭПТС: пошаговая инструкция проверки</span>
+                <span class="pb-related-desc">Узнайте, как проверить электронный ПТС онлайн. Полная инструкция по статусам, смене владельца и поку</span>
+            </a><a href="/articles/p/po/poluchenie-gos-nomera-na-mashinu-v-gibdd.html" class="pb-related-card">
+                <span class="pb-related-title">Получение гос номера на машину в ГИБДД: пошаговая инструкция</span>
+                <span class="pb-related-desc">Полный гид по получению государственных номеров. Стоимость, сроки, порядок действий, список документ</span>
+            </a><a href="/articles/c/ch/chto-nuzhno-chtoby-rastamozhit-avtomobil.html" class="pb-related-card">
+                <span class="pb-related-title">Как растаможить авто: пошаговая инструкция, расчет и пошлины</span>
+                <span class="pb-related-desc">Полный гид по растаможке автомобиля в 2026 году. Расчет таможенной пошлины, необходимые документы, э</span>
+            </a><a href="/articles/m/mo/mozhno-li-zavershit-obgon-cherez-sploshnuyu-esli-nachal-po-preryvistoj.html" class="pb-related-card">
+                <span class="pb-related-title">Завершение обгона через сплошную: разбор ПДД и штрафы</span>
+                <span class="pb-related-desc">Можно ли завершить обгон через сплошную линию разметки? Полный разбор ситуации, штрафы 2026 года и к</span>
+            </a><a href="/articles/p/po/podacha-zayavleniya-na-registratsiyu-avtomobilya-cherez-gosuslugi.html" class="pb-related-card">
+                <span class="pb-related-title">Регистрация авто через Госуслуги 2026: пошаговая инструкция</span>
+                <span class="pb-related-desc">Как подать заявление на регистрацию автомобиля через Госуслуги: требования, документы, сроки и пошаг</span>
+            </a><a href="/articles/s/so/so-skolki-let-mozhno-ispolzovat-buster-avtomobilnyj.html" class="pb-related-card">
+                <span class="pb-related-title">Со скольки лет можно использовать бустер в машине? Правила 2026</span>
+                <span class="pb-related-desc">С какого возраста и роста ребёнку можно ездить в бустере по ПДД 2026? Разбираем законы, штрафы, виды</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

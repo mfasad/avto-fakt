@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Зависает VirtualBox: 7 причин и решений для виртуальной машины — Авто Факт</title>
+    <meta name="description" content="Почему тормозит или зависает VirtualBox? Разбираем причины зависаний виртуальной машины и даём пошаговые инструкции по устранению проблемы на Windows, Linux и macOS.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/z/za/zavisaet-virtualnaya-mashina-virtualbox.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Зависает VirtualBox: 7 причин и решений для виртуальной машины">
+    <meta property="og:description" content="Почему тормозит или зависает VirtualBox? Разбираем причины зависаний виртуальной машины и даём пошаговые инструкции по устранению проблемы на Windows, Linux и macOS.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Зависает VirtualBox: 7 причин и решений для виртуальной машины</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#1-нехватка-ресурсов-хост-машины-как-проверить-и-исправить">1. Нехватка ресурсов хост-машины: как проверить и исправить</a></li><li><a href="#2-конфликт-с-hyper-v-и-другими-гипервизорами">2. Конфликт с Hyper-V и другими гипервизорами</a></li><li><a href="#3-проблемы-с-виртуальным-диском-фрагментация-и-формат-хранения">3. Проблемы с виртуальным диском: фрагментация и формат хранения</a></li><li><a href="#4-неправильные-настройки-ускорения-3d-paenx-вложенная-виртуализация">4. Неправильные настройки ускорения: 3D, PAE/NX, вложенная виртуализация</a></li><li><a href="#5-устаревшая-версия-virtualbox-или-гостевых-дополнений">5. Устаревшая версия VirtualBox или гостевых дополнений</a></li><li><a href="#6-сетевые-настройки-и-конфликты-с-брандмауэром">6. Сетевые настройки и конфликты с брандмауэром</a></li><li><a href="#7-антивирусы-и-программы-безопасности-скрытые-виновники-зависаний">7. Антивирусы и программы безопасности: скрытые виновники зависаний</a></li><li><a href="#8-аппаратные-проблемы-bios-vt-xamd-v-и-перегрев">8. Аппаратные проблемы: BIOS, VT-x/AMD-V и перегрев</a></li><li><a href="#faq-частые-вопросы-о-зависаниях-virtualbox">FAQ: Частые вопросы о зависаниях VirtualBox</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/r/ra/razgon-li9-do-100.html">Разгон Li9 до 100: как получить 100 Гбит/с на домашнем роутере</a></li><li><a href="/articles/c/ch/chat-bot-dlya-proverki-nomera-telefona-v-telegramme.html">Чат-бот для проверки номера телефона в Телеграм: поиск и безопасность</a></li><li><a href="/articles/i/io/ionizator-vozdukha-v-mashinu-kupit.html">Ионизатор воздуха в машину купить: какой выбрать и как установить</a></li><li><a href="/articles/s/sa/samyj-moshchnyj-avtomobilnyj-kompressor-na-12-volt.html">Самый мощный автомобильный компрессор на 12 вольт: рейтинг и выбор</a></li><li><a href="/articles/n/na/nakonechnik-na-kompressor-avtomobilnyj-dlya-nakachki.html">Наконечник на компрессор: виды, замена и выбор для авто</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Виртуальная машина VirtualBox зависает: причины и решения</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#1-нехватка-ресурсов-хост-машины-как-проверить-и-исправить">1. Нехватка ресурсов хост-машины: как проверить и исправить</a></li><li><a href="#2-конфликт-с-hyper-v-и-другими-гипервизорами">2. Конфликт с Hyper-V и другими гипервизорами</a></li><li><a href="#3-проблемы-с-виртуальным-диском-фрагментация-и-формат-хранения">3. Проблемы с виртуальным диском: фрагментация и формат хранения</a></li><li><a href="#4-неправильные-настройки-ускорения-3d-paenx-вложенная-виртуализация">4. Неправильные настройки ускорения: 3D, PAE/NX, вложенная виртуализация</a></li><li><a href="#5-устаревшая-версия-virtualbox-или-гостевых-дополнений">5. Устаревшая версия VirtualBox или гостевых дополнений</a></li><li><a href="#6-сетевые-настройки-и-конфликты-с-брандмауэром">6. Сетевые настройки и конфликты с брандмауэром</a></li><li><a href="#7-антивирусы-и-программы-безопасности-скрытые-виновники-зависаний">7. Антивирусы и программы безопасности: скрытые виновники зависаний</a></li><li><a href="#8-аппаратные-проблемы-bios-vt-xamd-v-и-перегрев">8. Аппаратные проблемы: BIOS, VT-x/AMD-V и перегрев</a></li><li><a href="#faq-частые-вопросы-о-зависаниях-virtualbox">FAQ: Частые вопросы о зависаниях VirtualBox</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body"><p>Виртуальная машина <em>Oracle VirtualBox</em> — один из самых популярных инструментов для запуска альтернативных операционных систем на одном компьютере. Однако даже такое надёжное ПО иногда начинает тормозить, подвисать или полностью «замирать» во время работы. Если ваша виртуальная машина <strong>зависает на этапе загрузки</strong>, внезапно перестаёт реагировать на команды или работает с невыносимыми лагами — эта статья поможет разобраться в причинах и устранить проблему.</p>
+
+<p>Мы проанализировали типичные сценарии зависаний <em>VirtualBox</em> на <strong>Windows 10/11</strong>, <strong>Linux</strong> (Ubuntu, Debian, Fedora) и <strong>macOS</strong>, а также собрали проверенные решения — от базовых настроек до глубокой оптимизации системы. Особое внимание уделим <mark>конфликтам с гипервизором Hyper-V</mark>, которые часто остаются незамеченными, но критично влияют на производительность.</p>
+
+<h2 id="1-нехватка-ресурсов-хост-машины-как-проверить-и-исправить">1. Нехватка ресурсов хост-машины: как проверить и исправить</h2>
+
+<p>Самая распространённая причина зависаний — <strong>недостаток оперативной памяти (RAM) или процессорных мощностей</strong>, выделенных виртуальной машине. Если хост-система сама работает на пределе, гостевая ОС будет «тормозить» или вовсе зависать при малейшей нагрузке.</p>
+
+<p>Чтобы диагностировать проблему:</p>
+<ul>
+  <li>🔍 Откройте <code>Диспетчер задач</code> (Windows) или <code>htop</code> (Linux/macOS) и проверьте загрузку CPU и RAM <strong>до запуска VirtualBox</strong>.</li>
+  <li>📊 Запустите виртуальную машину и отследите, как меняются показатели. Если свободной памяти остаётся менее <code>1-2 ГБ</code>, а CPU загружен на <code>80%+</code> — ресурсов явно не хватает.</li>
+  <li>⚙️ В настройках VirtualBox (<code>Правая кнопка по VM → Настроить → Система</code>) проверьте, сколько ядер CPU и оперативной памяти выделено гостевой ОС.</li>
+</ul>
+
+<p>Оптимальные настройки для большинства сценариев:</p>
+<div class="pb-table-wrap"><table>
+  <thead>
+    <tr><th>Ресурс</th><th>Минимальное значение</th><th>Рекомендуемое значение</th><th>Максимальное значение</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Оперативная память (RAM)</td><td>1 ГБ</td><td>4 ГБ (для Windows/Linux)</td><td>50% от физической RAM хоста</td></tr>
+    <tr><td>Процессорные ядра</td><td>1 ядро</td><td>2-4 ядра</td><td>75% от физических ядер хоста</td></tr>
+    <tr><td>Видеопамять</td><td>16 МБ</td><td>128 МБ</td><td>256 МБ (для 3D-ускорения)</td></tr>
+    <tr><td>Виртуальный диск</td><td>10 ГБ (динамический)</td><td>30-50 ГБ (фиксированный)</td><td>Зависит от гостевой ОС</td></tr>
+  </tbody>
+</table></div>
+
+<p><strong>Важно:</strong> Если у вас <code>4 ГБ RAM</code> на хост-машине, выделять виртуальной машине более <code>1.5-2 ГБ</code> нецелесообразно — система начнёт активно использовать swap-файл, что приведёт к ещё большим тормозам.</p>
+
+<div class="pb-poll" id="poll-1765b36d"><div class="pb-poll-question">📊 На какой ОС у вас установлен VirtualBox?</div><div class="pb-poll-option" data-poll="1765b36d" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Windows 10/11</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="1765b36d" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Linux (Ubuntu/Debian/Fedora)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="1765b36d" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">macOS</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="1765b36d" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Другая</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="2-конфликт-с-hyper-v-и-другими-гипервизорами">2. Конфликт с Hyper-V и другими гипервизорами</h2>
+
+<p>На <strong>Windows 10/11 Pro/Enterprise</strong> по умолчанию включён гипервизор <em>Hyper-V</em>, который конфликтует с <em>VirtualBox</em>. Даже если вы не используете Hyper-V напрямую, его фоновые службы могут блокировать работу виртуальных машин, вызывая зависания на этапе загрузки или случайные «подвисания».</p>
+
+<p>Как проверить и отключить Hyper-V:</p>
+<ol>
+  <li>Откройте <code>Панель управления → Программы и компоненты → Включение или отключение компонентов Windows</code>.</li>
+  <li>Снимите галочки с пунктов:
+    <ul>
+      <li>🖥️ <em>Hyper-V</em></li>
+      <li>🔄 <em>Платформа виртуальной машины</em></li>
+      <li>🛡️ <em>Защита на уровне ядра (Core Isolation)</em></li>
+    </ol>
+  </li>
+  <li>Перезагрузите компьютер.</li>
+  <li>Запустите командную строку от имени администратора и выполните:
+    <pre><code>bcdedit /set hypervisorlaunchtype off</code></pre>
+  </li>
+</ol>
+
+<p>Для <strong>Linux</strong> (если используется <em>KVM</em>) или <strong>macOS</strong> (с <em>Parallels/Desktop</em>) также возможны конфликты. В этом случае:</p>
+<ul>
+  <li>🐧 На Linux отключите службы <code>libvirtd</code>:
+    <pre><code>sudo systemctl stop libvirtd
+<p>sudo systemctl disable libvirtd</code></pre></p>
+  </li>
+  <li>🍎 На macOS проверьте настройки <em>Parallels Desktop</em> — он может блокировать ресурсы для других виртуальных машин.</li>
+</ul>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Если после отключения Hyper-V виртуальная машина всё равно тормозит, попробуйте включить в VirtualBox настройку <code>Паравиртуализация → KVM</code> (для Linux-гостей) или <code>Hyper-V Enlightments</code> (для Windows-гостей).</p></aside>
+
+<h2 id="3-проблемы-с-виртуальным-диском-фрагментация-и-формат-хранения">3. Проблемы с виртуальным диском: фрагментация и формат хранения</h2>
+
+<p>Файлы виртуальных дисков (<code>.vdi</code>, <code>.vmdk</code>, <code>.qcow2</code>) со временем фрагментируются, особенно если используете <strong>динамическое выделение места</strong>. Это приводит к резкому падению производительности и зависаниям при операциях чтения/записи.</p>
+
+<p>Как оптимизировать виртуальный диск:</p>
+<ul>
+  <li>🔄 <strong>Дефрагментация</strong> (только для Windows-хоста):
+    <ol>
+      <li>Закройте VirtualBox.</li>
+      <li>Найдите файл виртуального диска (обычно в <code>C:\Users\Ваше_имя\VirtualBox VMs\</code>).</li>
+      <li>Запустите стандартную утилиту дефрагментации Windows.</li>
+    </ul>
+  </li>
+  <li>🗃️ <strong>Сжатие диска</strong> (для динамических дисков):
+    <pre><code>VBoxManage modifymedium "путь_к_диску.vdi" --compact</code></pre>
+  </li>
+  <li>🔧 <strong>Конвертация в фиксированный формат</strong> (увеличивает скорость, но занимает больше места):
+    <pre><code>VBoxManage clonehd "исходный.vdi" "новый.vdi" --variant Fixed</code></pre>
+  </li>
+</ul>
+
+<p>Также проверьте <strong>режим контроллера диска</strong> в настройках VM:
+  <ul>
+    <li>🟢 <code>SATA (AHCI)</code> — оптимален для современных ОС.</li>
+    <li>🟡 <code>IDE (PIIX4)</code> — устарел, может тормозить.</li>
+    <li>🔴 <code>SCSI</code> — только для специфических задач.</li>
+  </ul>
+</p>
+
+<details class="pb-accordion"><summary>Что делать, если виртуальный диск повреждён?</summary><div class="pb-accordion-body"><p>
+<p>Если VirtualBox выдаёт ошибку <code>VERR_NEM_VM_CREATE_FAILED</code> или диск не монтируется, попробуйте восстановить его через команду:</p>
+<pre><code>VBoxManage internalcommands repairhd "путь_к_диску.vdi"</code></pre>
+<p>Если это не поможет, создайте новую виртуальную машину и подключите диск к ней как вторичный, чтобы скопировать данные.</p>
+<p></p></div></details></p>
+
+<h2 id="4-неправильные-настройки-ускорения-3d-paenx-вложенная-виртуализация">4. Неправильные настройки ускорения: 3D, PAE/NX, вложенная виртуализация</h2>
+
+<p>Некорректные параметры ускорения часто становятся причиной <strong>зависаний при запуске 3D-приложений</strong> (например, игр или CAD-программ) или <strong>случайных «фризов»</strong> интерфейса гостевой ОС. Рассмотрим ключевые настройки:</p>
+
+<p><strong>1. 3D-ускорение</strong>:</p>
+<ul>
+  <li>🎮 Включайте только если необходимо (например, для <em>AutoCAD</em> или <em>Blender</em>).</li>
+  <li>⚠️ На слабых видеокартах (например, <em>Intel HD Graphics</em>) может вызывать артефакты и зависания.</li>
+  <li>🔧 Оптимальные параметры:
+    <ul>
+      <li>Видеопамять: <code>128 МБ</code>.</li>
+      <li>Количество мониторов: <code>1</code> (многомониторный режим часто лагает).</li>
+      <li>Ускорение: <code>3D и 2D</code> (но тестируйте отдельно).</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>2. PAE/NX</strong>:</p>
+<ul>
+  <li>🔒 Включайте <code>PAE/NX</code> только для 32-битных гостевых ОС, если они поддерживают более <code>4 ГБ RAM</code>.</li>
+  <li>❌ Отключите, если гостевая ОС не запускается или зависает на логотипе.</li>
+</ul>
+
+<p><strong>3. Вложенная виртуализация</strong>:</p>
+<ul>
+  <li>🔄 Требуется для запуска <em>Docker</em> или <em>Android-x86</em> внутри VM.</li>
+  <li>⚠️ На <strong>Intel</strong> включается через:
+    <pre><code>VBoxManage modifyvm "имя_VM" --nested-hw-virt on</code></pre>
+  </li>
+  <li>⚠️ На <strong>AMD</strong> может не работать без обновления BIOS (ищите опцию <code>SVM Mode</code>).</li>
+</ul>
+
+
+<p>Включено ли 3D-ускорение без необходимости?|Проверен ли режим контроллера диска (SATA/AHCI)?|Отключён ли PAE/NX для 64-битных гостевых ОС?|Обновлены ли гостевые дополнения (Guest Additions)?--></p>
+
+<h2 id="5-устаревшая-версия-virtualbox-или-гостевых-дополнений">5. Устаревшая версия VirtualBox или гостевых дополнений</h2>
+
+<p>Разработчики <em>Oracle</em> регулярно выпускают обновления, исправляющие критические баги, в том числе связанные с зависаниями. Если ваша версия <strong>VirtualBox старше 6 месяцев</strong>, велик шанс, что проблема уже решена в новых релизах.</p>
+
+<p>Как обновиться правильно:</p>
+<ol>
+  <li>Скачайте последнюю версию с <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">официального сайта</a> (не используйте сторонние источники!).</li>
+  <li>Удалите старую версию через <code>Панель управления → Программы</code> (Windows) или <code>sudo apt remove virtualbox</code> (Linux).</li>
+  <li>Установите новую версию, сохраняя настройки существующих VM.</li>
+  <li>Обновите <strong>Гостевые дополнения (Guest Additions)</strong>:
+    <ul>
+      <li>🖥️ В меню VM выберите <code>Устройства → Подключить образ Guest Additions</code>.</li>
+      <li>🔄 В гостевой ОС запустите установщик (для Windows — <code>VBoxWindowsAdditions.exe</code>, для Linux — <code>sudo ./VBoxLinuxAdditions.run</code>).</li>
+    </ol>
+  </li>
+</ol>
+
+<p><strong>Предупреждение:</strong> При обновлении с версии <code>6.x</code> на <code>7.x</code> некоторые VM могут потребовать <strong>перенастройки сетевых адаптеров</strong> (например, переход с <code>PCnet-FAST III</code> на <code>VirtIO</code>).</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Обновление Guest Additions критично для стабильной работы! Без них могут не работать общие папки, корректное разрешение экрана и синхронизация времени.</p></aside>
+
+<h2 id="6-сетевые-настройки-и-конфликты-с-брандмауэром">6. Сетевые настройки и конфликты с брандмауэром</h2>
+
+<p>Если виртуальная машина <strong>зависает при подключении к сети</strong> или после запуска сетевых приложений (например, браузера), проблема может крыться в некорректных настройках адаптера или блокировке трафика брандмауэром.</p>
+
+<p>Проверьте следующие параметры:</p>
+<ul>
+  <li>🌐 <strong>Тип сетевого адаптера</strong>:
+    <ul>
+      <li>🟢 <code>NAT</code> — простой вариант для доступа в интернет.</li>
+      <li>🟡 <code>Сетевой мост (Bridged)</code> — если нужна видимость VM в локальной сети.</li>
+      <li>🔴 <code>Внутренняя сеть (Internal)</code> — только для связи между VM.</li>
+    </ul>
+  </li>
+  <li>🛡️ <strong>Брандмауэр хост-машины</strong>:
+    <ul>
+      <li>Добавьте исключения для <code>VirtualBoxVM.exe</code> (Windows) или <code>VBoxNetAdpCtl</code> (Linux/macOS).</li>
+      <li>Временно отключите брандмауэр для теста (например, <code>sudo ufw disable</code> на Linux).</li>
+    </ul>
+  </li>
+  <li>🔌 <strong>DHCP и IP-конфликты</strong>:
+    <ul>
+      <li>Если используете <code>Bridged</code>, убедитесь, что IP гостевой ОС не конфликтует с другими устройствами в сети.</li>
+      <li>Для <code>NAT</code> проверьте, что в гостевой ОС включено автоматическое получение IP.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Если VM зависает при <strong>большой сетевой нагрузке</strong> (например, при скачивании файлов), попробуйте:</p>
+<ol>
+  <li>Ограничить скорость в настройках адаптера (<code>Дополнительно → Ограничение полосы пропускания</code>).</li>
+  <li>Переключиться с <code>PCnet-FAST III</code> на <code>VirtIO</code> (требует установки драйверов в гостевой ОС).</li>
+</ol>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Для устранения сетевых лагов в Windows-гостевой ОС отключите <code>TCP Offloading</code> в свойствах сетевого адаптера (в гостевой системе!).</p></aside>
+
+<h2 id="7-антивирусы-и-программы-безопасности-скрытые-виновники-зависаний">7. Антивирусы и программы безопасности: скрытые виновники зависаний</h2>
+
+<p>Многие антивирусы (<em>Kaspersky</em>, <em>ESET NOD32</em>, <em>Avast</em>) агрессивно сканируют файлы виртуальных машин, что приводит к <strong>замедлению работы или полной остановке VM</strong>. Особенно критично это для динамических дисков (<code>.vdi</code>), которые постоянно изменяются.</p>
+
+<p>Как уменьшить влияние антивируса:</p>
+<ul>
+  <li>🛡️ Добавьте в исключения:
+    <ul>
+      <li>Папку с виртуальными машинами (например, <code>C:\Users\Ваше_имя\VirtualBox VMs\</code>).</li>
+      <li>Процессы <code>VirtualBoxVM.exe</code>, <code>VBoxSVC.exe</code>, <code>VBoxHeadless.exe</code>.</li>
+    </ul>
+  </li>
+  <li>⚙️ Отключите <strong>поведенческий анализ</strong> и <strong>сканирование в реальном времени</strong> для файлов VM.</li>
+  <li>🔄 В <em>Kaspersky</em> добавьте <code>VirtualBox</code> в список доверенных приложений (<code>Настройки → Дополнительно → Угрозы и исключения</code>).</li>
+</ul>
+
+<p>Также проверьте <strong>другие программы</strong>, которые могут конфликтовать:</p>
+<ul>
+  <li>🔍 <em>Process Explorer</em> или <em>Process Hacker</em> — могут блокировать процессы VM.</li>
+  <li>🖥️ <em>SandBoxie</em> — несовместим с VirtualBox.</li>
+  <li>🛡️ <em>Windows Defender</em> — иногда требует ручного добавления исключений для <code>VBoxDrv</code>.</li>
+</ul>
+
+<blockquote>⚠️ <strong>Внимание:</strong> Отключение антивируса полностью не рекомендуется. Вместо этого настройте исключения только для файлов и процессов VirtualBox, чтобы сохранить защиту хост-системы.</blockquote>
+
+<h2 id="8-аппаратные-проблемы-bios-vt-xamd-v-и-перегрев">8. Аппаратные проблемы: BIOS, VT-x/AMD-V и перегрев</h2>
+
+<p>Если все программные решения не помогли, причина зависаний может крыться в <strong>аппаратных ограничениях</strong> или некорректных настройках BIOS/UEFI.</p>
+
+<p><strong>1. Проверка поддержки виртуализации (VT-x/AMD-V):</strong></p>
+<ul>
+  <li>🔧 Зайдите в BIOS/UEFI (обычно клавиша <code>Del</code>, <code>F2</code> или <code>F12</code> при загрузке).</li>
+  <li>Найдите опции:
+    <ul>
+      <li>Для <strong>Intel</strong>: <code>Intel Virtualization Technology (VT-x)</code>.</li>
+      <li>Для <strong>AMD</strong>: <code>AMD-V</code> или <code>SVM Mode</code>.</li>
+    </ul>
+  </li>
+  <li>🔄 Включите их и сохраните настройки (<code>Save & Exit</code>).</li>
+</ul>
+
+<p><strong>2. Перегрев процессора:</strong></p>
+<ul>
+  <li>🌡️ Виртуальные машины сильно нагружают CPU. Проверьте температуру с помощью <em>HWMonitor</em> (Windows) или <code>sensors</code> (Linux).</li>
+  <li>❄️ Если температура превышает <code>80°C</code>, очистите систему охлаждения или замените термопасту.</li>
+</ul>
+
+<p><strong>3. Несовместимость с новым «железом»:</strong></p>
+<ul>
+  <li>🖥️ На ноутбуках с гибридной графикой (<em>NVIDIA Optimus</em>/<em>AMD Hybrid</em>) VirtualBox может конфликтовать с драйверами.</li>
+  <li>🔧 Решение: обновите драйверы видеокарты или отключите дискретную графику в BIOS.</li>
+</ul>
+
+<p>Если после всех манипуляций VM всё равно зависает, попробуйте:</p>
+<ul>
+  <li>🔄 Сбросить настройки VirtualBox к заводским (<code>Файл → Настройки → Восстановить настройки по умолчанию</code>).</li>
+  <li>🗑️ Удалить и заново создать виртуальную машину с теми же параметрами.</li>
+</ul>
+
+<blockquote>⚠️ <strong>Внимание:</strong> На некоторых материнских платах (особенно <em>ASUS</em> и <em>MSI</em> последних поколений) опция виртуализации может скрываться в разделе <code>Advanced → CPU Configuration</code>. Если её нет — обновите BIOS.</blockquote>
+
+<h2 id="faq-частые-вопросы-о-зависаниях-virtualbox">FAQ: Частые вопросы о зависаниях VirtualBox</h2>
+
+<details>
+  <summary>❓ Почему VirtualBox зависает на чёрном экране при запуске VM?</summary>
+  <p>Это типично для <strong>конфликта с Hyper-V</strong> (Windows) или <strong>неправильных настроек EFI</strong>. Попробуйте:</p>
+  <ol>
+    <li>Отключить Hyper-V (см. раздел 2).</li>
+    <li>В настройках VM (<code>Система → Материнская плата</code>) сменить <code>Тип ОС</code> на правильный (например, <code>Linux 2.6/3.x/4.x (64-bit)</code> вместо <code>Other</code>).</li>
+    <li>Отключить <code>Включить EFI</code>, если гостевая ОС не поддерживает UEFI.</li>
+  </ol>
+</details>
+
+<details>
+  <summary>❓ VM зависает при установке гостевой ОС. Что делать?</summary>
+  <p>Проблема чаще всего связана с:</p>
+  <ul>
+    <li><strong>Нехваткой RAM</strong> — выделите хотя бы <code>2 ГБ</code> для установщика.</li>
+    <li><strong>Некорректным образом ISO</strong> — скачайте дистрибутив заново с официального сайта.</li>
+    <li><strong>Отсутствием PAE/NX</strong> — включите эту опцию для 32-битных систем.</li>
+  </ul>
+  <p>Также попробуйте <strong>сменить контроллер диска</strong> на <code>IDE</code> (временно) для установки.</p>
+</details>
+
+<details>
+  <summary>❓ Можно ли запустить VirtualBox на виртуальной машине (вложенная виртуализация)?</summary>
+  <p>Технически да, но:</p>
+  <ul>
+    <li>🔄 На <strong>Windows-хосте</strong> требуется включить <code>Вложенную виртуализацию</code> в Hyper-V (даже если он отключён!).</li>
+    <li>🐧 На <strong>Linux</strong> нужна поддержка <code>nested KVM</code> (проверяется командой <code>cat /sys/module/kvm_intel/parameters/nested</code> — должно быть <code>Y</code>).</li>
+    <li>⚠️ Производительность будет крайне низкой — ожидайте зависаний.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>❓ Почему VirtualBox тормозит после обновления Windows?</summary>
+  <p>Виновники:</p>
+  <ul>
+    <li><strong>Автоматическое включение Hyper-V</strong> после обновлений (см. раздел 2).</li>
+    <li><strong>Обновлённые драйверы</strong>, конфликтующие с VirtualBox (откатитесь на предыдущую версию).</li>
+    <li><strong>Фоновая дефрагментация</strong> (отключите её для папки с VM).</li>
+  </ul>
+  <p>Проверьте <strong>Журнал событий Windows</strong> (<code>eventvwr.msc</code>) на ошибки, связанные с <code>VBoxDrv</code>.</p>
+</details>
+
+<details>
+  <summary>❓ Как перенести VM на другой компьютер без зависаний?</summary>
+  <p>Чтобы избежать проблем:</p>
+  <ol>
+    <li>Скопируйте <strong>всю папку</strong> с виртуальной машиной (включая файлы <code>.vdi</code>, <code>.vbox</code>).</li>
+    <li>На новом ПК установите <strong>ту же версию VirtualBox</strong>.</li>
+    <li>Импортируйте VM через <code>Файл → Импортировать аппарат</code>, а не просто открывайте <code>.vbox</code>.</li>
+    <li>Если VM не запускается, обновите <strong>Guest Additions</strong>.</li>
+  </ol>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/r/ra/razgon-li9-do-100.html" class="pb-related-card">
+                <span class="pb-related-title">Разгон Li9 до 100: как получить 100 Гбит/с на домашнем роутере</span>
+                <span class="pb-related-desc">Подробная инструкция: как активировать разгон Li9 до 100 Гбит/с. Настройка оборудования, выбор прова</span>
+            </a><a href="/articles/c/ch/chat-bot-dlya-proverki-nomera-telefona-v-telegramme.html" class="pb-related-card">
+                <span class="pb-related-title">Чат-бот для проверки номера телефона в Телеграм: поиск и безопасность</span>
+                <span class="pb-related-desc">Как использовать чат-бот для проверки номера телефона в Telegram? Обзор методов поиска ID, проверка </span>
+            </a><a href="/articles/i/io/ionizator-vozdukha-v-mashinu-kupit.html" class="pb-related-card">
+                <span class="pb-related-title">Ионизатор воздуха в машину купить: какой выбрать и как установить</span>
+                <span class="pb-related-desc">Хотите ионизатор воздуха в машину купить? Полный гид по выбору, установке и уходу. Сравнение моделей</span>
+            </a><a href="/articles/s/sa/samyj-moshchnyj-avtomobilnyj-kompressor-na-12-volt.html" class="pb-related-card">
+                <span class="pb-related-title">Самый мощный автомобильный компрессор на 12 вольт: рейтинг и выбор</span>
+                <span class="pb-related-desc">Обзор самых мощных компрессоров 12В. Как выбрать надежный насос с высокой производительностью, двухп</span>
+            </a><a href="/articles/n/na/nakonechnik-na-kompressor-avtomobilnyj-dlya-nakachki.html" class="pb-related-card">
+                <span class="pb-related-title">Наконечник на компрессор: виды, замена и выбор для авто</span>
+                <span class="pb-related-desc">Как подобрать наконечник на компрессор для авто? Обзор видов, советы по замене, устранение утечек и </span>
+            </a><a href="/articles/u/us/ustanovit-avto-ru-besplatno.html" class="pb-related-card">
+                <span class="pb-related-title">Установить Авто ру бесплатно: Инструкция для Android и iOS</span>
+                <span class="pb-related-desc">Как установить приложение Авто ру бесплатно на телефон. Официальные способы загрузки, решение пробле</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

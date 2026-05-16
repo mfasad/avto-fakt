@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Код Энигмы: что это, история шифра и как он работал — Авто Факт</title>
+    <meta name="description" content="Подробный разбор: код Энигмы — что это такое, принцип работы легендарной немецкой шифровальной машины и роль Алана Тьюринга в её взломе.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ko/kod-enigmy-chto-eto.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Код Энигмы: что это, история шифра и как он работал">
+    <meta property="og:description" content="Подробный разбор: код Энигмы — что это такое, принцип работы легендарной немецкой шифровальной машины и роль Алана Тьюринга в её взломе.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/istoriya-i-fakty/">История и Факты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Код Энигмы: что это, история шифра и как он работал</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#исторический-контекст-и-появление-шифровальной-машины">Исторический контекст и появление шифровальной машины</a></li><li><a href="#принцип-работы-роторы-рефлектор-и-коммутатор">Принцип работы: роторы, рефлектор и коммутатор</a></li><li><a href="#математическая-сложность-и-количество-комбинаций">Математическая сложность и количество комбинаций</a></li><li><a href="#процесс-шифрования-и-ежедневные-ключи">Процесс шифрования и ежедневные ключи</a></li><li><a href="#блетчли-парк-и-взлом-кода">Блетчли-парк и взлом кода</a></li><li><a href="#роль-человеческого-фтора-и-ошибки-операторов">Роль человеческого фтора и ошибки операторов</a></li><li><a href="#наследие-и-влияние-на-современный-мир">Наследие и влияние на современный мир</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/s/sk/skolko-km-zemnoj-shar-v-okruzhnosti.html">Сколько км земной шар в окружности: точные данные и факты</a></li><li><a href="/articles/k/ka/kakoe-kolichestvo-rossiyan-imeet-avtomobil.html">Сколько россиян имеют автомобиль в 2026? Статистика и тренды</a></li><li><a href="/articles/d/da/dante-bozhestvennaya-komediya-9-krugov-ada.html">Данте Божественная Комедия: 9 кругов Ада и их грешники</a></li><li><a href="/articles/m/ma/malenkaya-kvadratnaya-mashina-kak-nazyvaetsya.html">Маленькая квадратная машина: как называется и что это?</a></li><li><a href="/articles/s/se/seriya-igr-grand-turizmo.html">Grand Turismo: история, особенности и секреты легендарной серии</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Код Энигмы: что это и как работала легендарная машина шифрования</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#исторический-контекст-и-появление-шифровальной-машины">Исторический контекст и появление шифровальной машины</a></li><li><a href="#принцип-работы-роторы-рефлектор-и-коммутатор">Принцип работы: роторы, рефлектор и коммутатор</a></li><li><a href="#математическая-сложность-и-количество-комбинаций">Математическая сложность и количество комбинаций</a></li><li><a href="#процесс-шифрования-и-ежедневные-ключи">Процесс шифрования и ежедневные ключи</a></li><li><a href="#блетчли-парк-и-взлом-кода">Блетчли-парк и взлом кода</a></li><li><a href="#роль-человеческого-фтора-и-ошибки-операторов">Роль человеческого фтора и ошибки операторов</a></li><li><a href="#наследие-и-влияние-на-современный-мир">Наследие и влияние на современный мир</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Когда речь заходит о криптографии времен Второй мировой войны, на ум первым приходит именно <strong>код Энигмы</strong>. Это словосочетание окутано легендами, фильмами и множеством мифов, которые часто искажают реальную картину. На самом деле, <em>Enigma</em> — это не просто один зашифрованный текст, а целое семейство электромеханических роторных машин, использовавшихся для шифрования и дешифрования секретных сообщений.</p>
+
+<p>Суть устройства заключалась в многократной подстановке символов с постоянно меняющимся ключом. <strong>Немецкая шифровальная машина</strong> обеспечивала колоссальное количество комбинаций, что делало перехваченные радиосообщения бесполезными для противника без точной настройки идентичного аппарата. Именно сложность этой системы долгое время считалась непреодолимой преградой для союзников.</p>
+
+<p>В этой статье мы детально разберем, <mark>что представляет собой код Энигмы</mark>, как именно происходил процесс шифрования и почемуение этого кода стало поворотным моментом в истории криптоанализа. Вы поймете механику работы роторов и узнаете, какие ошибки допускали операторы, позволяя дешифровальщикам из Блетчли-парка творить чудеса.</p>
+
+<h2 id="исторический-контекст-и-появление-шифровальной-машины">Исторический контекст и появление шифровальной машины</h2>
+
+<p>История создания <em>Enigma</em> началась задолго до прихода к власти нацистов. Изначально устройство разрабатывалось немецким инженером Артуром Шербиусом в конце Первой мировой войны. <strong>Шифровальная машина</strong> предназначалась для коммерческого использования, чтобы банки и корпорации могли безопасно передавать телеграммы. Однако военное ведомство Германии быстро оценило потенциал новинки.</p>
+
+<p>К 1930-м годам вермахт модифицировал гражданскую версию, добавив коммутационную панель (штекерный коммутатор). Это изменение радикально усложнило <strong>криптографический алгоритм</strong>. Если гражданская версия обеспечивала защиту от любопытных конкурентов, то военная модификация стала стандартом безопасности для всей немецкой армии, люфтваффе и кригсмарине.</p>
+
+<p>Важно понимать, что «кодом» называли не статичный текст, а ежедневные настройки. <strong>Ключи шифрования</strong> менялись каждый день в полночь по берлинскому времени. Операторы получали специальные таблицы, где указывалось, какие роторы устанавливать, в каком порядке и как соединять кабели на передней панели. Без этих ежедневных данных перехваченное сообщение было просто набором бессмысленных букв.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Современные цифровые подписи используют принципы, математически восходящие к задачам, которые решали создатели Энигмы, но с использованием квантово-устойчивых алгоритмов.</p></aside>
+
+<h2 id="принцип-работы-роторы-рефлектор-и-коммутатор">Принцип работы: роторы, рефлектор и коммутатор</h2>
+
+<p>Механика работы <em>Enigma</em> базировалась на электромеханической схеме. Когда оператор нажимал клавишу, электрический сигнал проходил через цепочку компонентов, каждый из которых изменял сигнал. Основными элементами были <strong>роторы</strong> (колеса с контактами), рефлектор и штекерный коммутатор. Сигнал проходил через роторы слева направо, отражался рефлектором и возвращался обратно через роторы справа налево, загораясь лампочка с зашифрованной буквой.</p>
+
+<p>Уникальность системы заключалась в том, что после каждого нажатия клавиши правый ротор поворачивался на один шаг. Это меняло электрическую цепь. <strong>Позиция роторов</strong> определяла, какая буква будет зашифрована следующей. Таким образом, даже если в сообщении встречалась буква «А» десять раз, в шифротексте она могла быть закодирована десятью разными символами.</p>
+
+<p>Штекерный коммутатор (нем. <em>Steckerbrett</em>) добавлял еще один уровень сложности. Оператор мог соединить кабелями пары букв на передней панели машины. Если «А» была соединена с «B», то сигнал менялся еще до входа в роторы. Количество возможных соединений на коммутационной панели исчислялось триллионами вариантов, что делало полный перебор (brute-force) невозможным для человека того времени.</p>
+
+<details class="pb-accordion"><summary>Почему буква не могла быть закодирована сама в себя?</summary><div class="pb-accordion-body"><p>Из-за наличия рефлектора электрический сигнал всегда возвращался по другому пути. Это означало, что если вы нажали «А», на выходе никогда не загорится «А». Это была критическая уязвимость, которую позже использовали криптоаналитики.</p></div></details>
+
+<h2 id="математическая-сложность-и-количество-комбинаций">Математическая сложность и количество комбинаций</h2>
+
+<p>Чтобы осознать масштаб задачи, стоявшей перед союзниками, нужно взглянуть на цифры. <strong>Количество комбинаций</strong>, которое могла генерировать стандартная армейская <em>Enigma</em> с тремя роторами, было астрономическим. Оно зависело от выбора роторов из набора, их порядка, начального положения колец и настроек штекерного коммутатора.</p>
+
+<p>Математики подсчитали, что общее число возможных состояний машины превышало 158 квинтиллионов (158 × 10^18). Для сравнения: если бы один человек проверял одну комбинацию в секунду, ему потребовалось бы больше времени, чем существует наша Вселная, чтобы перебрать все варианты. Именно поэтому <strong>метод грубой силы</strong> был исключен, и требовался интеллектуальный подход.</p>
+
+<p>Ниже приведена таблица, демонстрирующая влияние различных параметров на сложность шифра:</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Параметр настройки</th>
+<th>Описание</th>
+<th>Влияние на сложность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Выбор роторов</td>
+<td>Использование 3 из 5 доступных роторов</td>
+<td>Увеличивает вариативность в 60 раз</td>
+</tr>
+<tr>
+<td>Позиция колец</td>
+<td>26 позиций для каждого из 3 роторов</td>
+<td>Добавляет 17 576 комбинаций</td>
+</tr>
+<tr>
+<td>Штекерный коммутатор</td>
+<td>Соединение 10 пар букв кабелями</td>
+<td>Увеличивает сложность в 150 триллионов раз</td>
+</tr>
+<tr>
+<td>Начальная позиция</td>
+<td>Установка роторов в конкретные буквы</td>
+<td>17 576 стартовых позиций</td>
+</tr>
+</tbody>
+</table></div>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Сложность Энигмы заключалась не в секретности устройства, а в ежедневной смене ключей и огромном количестве начальных конфигураций.</p></aside>
+
+<h2 id="процесс-шифрования-и-ежедневные-ключи">Процесс шифрования и ежедневные ключи</h2>
+
+<p>Каждый день в 00:00 вступали в силу новые <strong>ключи шифрования</strong>. Операторы связи получали листы с инструкциями, напечатанными водорастворимыми чернилами, чтобы в случае опасности их можно было мгновенно уничтожить. В этих листах указывалось, какие роторы (I, II, III, IV или V) нужно вставить в машину и в каком порядке (слева направо).</p>
+
+<p>Кроме порядка роторов, устанавливалась так называемая «кольцовка» (Ringstellung) — смещение алфавитного кольца относительно внутренней проводки ротора. Затем задавалась начальная позиция (Grundstellung), например, «A-R-T». Однако для обеспечения дополнительной безопасности использовалась процедура двойного шифрования индикатора. Оператор придумывал свою случайную группу из трех букв, шифровал её дважды подряд и передавал в начале сообщения.</p>
+
+<p>Эта процедура, призванная усилить безопасность, стала ахиллесовой пятой системы. Дублирование ключа позволяло криптоаналитикам находить зависимости между первой и четвертой, второй и пятой, третьей и шестой буквами индикатора. <strong>Криптографическая ошибка</strong> в протоколе передачи свела на нет всю мощь механической части машины.</p>
+
+<div class="pb-poll" id="poll-ad5636e4"><div class="pb-poll-question">📊 Что, на ваш взгляд, стало главной причиной победы союзников в криптографической войне?</div><div class="pb-poll-option" data-poll="ad5636e4" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Гениальность Алана Тьюринга</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="ad5636e4" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Ошибки немецких операторов</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="ad5636e4" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Кража машины поляками</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="ad5636e4" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Слабость немецкой математики</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="блетчли-парк-и-взлом-кода">Блетчли-парк и взлом кода</h2>
+
+<p>Центром усилий по дешифрованию стал Блетчли-парк в Великобритании. Именно здесь собрались лучшие умы эпохи: математики, лингвисты, шахматисты и специалисты по разгадыванию кроссвордов. Лидером группы стал <strong>Алан Тьюринг</strong>, который предложил революционную идею: атаковать не сам шифр, а процесс его использования.</p>
+
+<p>Тьюринг понял, что человеческий фактор и стандартные процедуры немцев предсказуемы. Немецкие радисты часто использовали стандартные фразы в начале или конце сообщений (например, прогнозы погоды или слово «Heil Hitler»), что позволяло применять метод «известного открытого текста». Зная, что определенный кусок шифра соответствует известному слову, можно было вычислить настройки машины.</p>
+
+<p>Для автоматизации поиска ключей была создана электромеханическая машина <em>Bombe</em>. Она не была компьютером в современном понимании, а представляла собой сложную систему вращающихся барабанов, имитирующих работу нескольких <em>Enigma</em> одновременно. <strong>Машина Бомба</strong> быстро перебирала варианты, отбрасывая те, которые приводили к логическим противоречиям (например, шифрование буквы в саму себя).</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Факторы успеха Блетчли-парка</h4><label class="check-item"><input type="checkbox"><span>Математический подход Тьюринга</span></label><label class="check-item"><input type="checkbox"><span>Польские наработки до войны</span></label><label class="check-item"><input type="checkbox"><span>Перехват оригинальных машин</span></label><label class="check-item"><input type="checkbox"><span>Ошибки дисциплины немцев</span></label><label class="check-item"><input type="checkbox"><span>Создание машины Bombe</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="роль-человеческого-фтора-и-ошибки-операторов">Роль человеческого фтора и ошибки операторов</h2>
+
+<p>Несмотря на совершенство механики, <strong>человеческий фактор</strong> оставался слабым звеном. Немецкие операторы, уставая от монотонной работы, часто нарушали инструкции. Они могли выбирать очевидные ключи, такие как «AAA», «ABC» или имена близких. Иногда они ленлись менять настройки штекерного коммутатора каждый день, оставляя их прежними, что сразу упрощало работу дешифровщикам.</p>
+
+<p>Существовала и проблема «ленивых» сообщений. Если оператор передавал длинный текст, он мог случайно продублировать часть фразы или использовать стандартные клише. Криптоаналитики составляли словари вероятных слов (<em>cribs</em>). Если в перехваченном тексте находилась последовательность, которая при определенной настройке давала слово «EINS» (один) или «ZWEI» (два), это становилось зацепкой.</p>
+
+<p>Также сыграла роль беспечность в некоторых подразделениях. В то время как submariners (подводники) использовали более сложные четырехроторные версии <em>Enigma</em> (M4), сухопутные войска часто довольствовались трехроторными. <strong>Криптостойкость</strong> разных версий отличалась, и там, где дисциплина была ниже, сообщения читались союзниками практически в реальном времени.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Не стоит недооценивать роль дисциплины в криптографии. Даже самая совершенная система шифрования становится бесполезной, если пользователи выбирают пароли вроде «123456» или записывают ключи на стикерах.</p>
+</blockquote>
+
+<h2 id="наследие-и-влияние-на-современный-мир">Наследие и влияние на современный мир</h2>
+
+<p>Взлом <em>Enigma</em> считается одним из ключевых факторов победы союзников во Второй мировой войне. По оценкам историков, это сократило войну на два года и спасло миллионы жизней. Однако влияние этих событий вышло далеко за пределы военных лет. Работы Алана Тьюринга заложили фундамент для создания первых <strong>электронно-вычислительных машин</strong>.</p>
+
+<p>Логика, примененная в <em>Bombe</em> и более поздней машине <em>Colossus</em>, стала предтечей современных компьютеров. Концепция универсальной вычислительной машины, способной выполнять любые алгоритмы, родилась именно в попыткахить немецкие коды. Сегодняшняя <strong>информационная безопасность</strong> базируется на принципах, отточенных в те годы.</p>
+
+<p>Современные стандарты шифрования, такие как AES или RSA, используют математические задачи, которые невозможно решить перебором за разумное время. Однако принцип остается тем же: защита информации зависит от длины ключа и отсутствия уязвимостей в реализации. История <em>Enigma</em> учит нас, что безопасность — это процесс, а не одноразовое действие.</p>
+
+<details class="pb-accordion"><summary>Где сейчас находятся оригинальные машины?</summary><div class="pb-accordion-body"><p>Оригинальные машины Энигма являются редкими музейными экспонатами. Они хранятся в музеях науки в Лондоне, Берлине, Варшаве и частных коллекциях. Цена на аукционах может достигать миллионов долларов.</p></div></details>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> В современных условиях использование самодельных или устаревших алгоритмов шифрования для защиты личных данных равносильно хранению ценностей в картонной коробке. Всегда используйте проверенные стандарты.</p>
+</blockquote>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Можно ли взломать код Энигмы сегодня на обычном компьютере?</summary>
+<p>Да, безусловно. Современные персональные компьютеры обладают вычислительной мощностью, на порядки превышающей возможности машин 1940-х годов. Программный перебор всех комбинаций <em>Enigma</em> займет доли секунды. Однако это актуально только для исторических симуляций, так как реальные ключи давно рассекречены.</p>
+</details>
+
+<details>
+<summary>Правда ли, что Алан Тьюринг создал первый компьютер?</summary>
+<p>Не совсем. Тьюринг разработал теоретическую модель универсальной машины (Машина Тьюринга) и создал электромеханическое устройство <em>Bombe</em> для взлома кодов. Первым полноценным программируемым электронным компьютером часто считают <em>Colossus</em> (разработанный Томми Флауэрсом в Блетчли-парке) или более поздние американские разработки. Но Тьюринг — отец теоретической информатики.</p>
+</details>
+
+<details>
+<summary>Использовали ли немцы Энигму до войны?</summary>
+<p>Да, коммерческие версии продавались с 1920-х годов, а военное ведомство Германии начало использовать модифицированные версии еще в 1934 году, задолго до вторжения в Польшу. Польские криптологи впервые успешно атаковали систему еще в 1932 году.</p>
+</details>
+
+<details>
+<summary>Существовал ли только один тип машины Энигма?</summary>
+<p>Нет, существовало множество модификаций. Были коммерческие модели, армейские (Wehrmacht), воздушные (Luftwaffe) и морские (Kriegsmarine). Морская версия с четырьмя роторами (M4) считалась самой стойкой и была взломана позже других благодаря захвату таблиц кодов с подводных лодок.</p>
+</details>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Изучение истории криптографии — это не просто дань памяти героям прошлого, но и урок для понимания уязвимостей современных цифровых систем.</p>
+</blockquote></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/s/sk/skolko-km-zemnoj-shar-v-okruzhnosti.html" class="pb-related-card">
+                <span class="pb-related-title">Сколько км земной шар в окружности: точные данные и факты</span>
+                <span class="pb-related-desc">Узнайте точную длину экватора и меридиана. Почему Земля не идеальный шар? Разбираем измерения, форму</span>
+            </a><a href="/articles/k/ka/kakoe-kolichestvo-rossiyan-imeet-avtomobil.html" class="pb-related-card">
+                <span class="pb-related-title">Сколько россиян имеют автомобиль в 2026? Статистика и тренды</span>
+                <span class="pb-related-desc">Актуальные данные о количестве автовладельцев в России: официальная статистика, региональные различи</span>
+            </a><a href="/articles/d/da/dante-bozhestvennaya-komediya-9-krugov-ada.html" class="pb-related-card">
+                <span class="pb-related-title">Данте Божественная Комедия: 9 кругов Ада и их грешники</span>
+                <span class="pb-related-desc">Подробный разбор 9 кругов Ада по Данте Алигьери. Описание грехов, наказаний и структуры преисподней </span>
+            </a><a href="/articles/m/ma/malenkaya-kvadratnaya-mashina-kak-nazyvaetsya.html" class="pb-related-card">
+                <span class="pb-related-title">Маленькая квадратная машина: как называется и что это?</span>
+                <span class="pb-related-desc">Ищете маленькую квадратную машину? Узнайте названия моделей (Suzuki, Smart), историю микрокаров и их</span>
+            </a><a href="/articles/s/se/seriya-igr-grand-turizmo.html" class="pb-related-card">
+                <span class="pb-related-title">Grand Turismo: история, особенности и секреты легендарной серии</span>
+                <span class="pb-related-desc">Все о серии игр Grand Turismo: от первого выпуска до GT7, технические нюансы, советы по прохождению </span>
+            </a><a href="/articles/p/pr/proizvedenie-pro-krugi-ada.html" class="pb-related-card">
+                <span class="pb-related-title">Произведение про круги ада: Анализ Данте и мифологии</span>
+                <span class="pb-related-desc">Изучаем произведения про круги ада: от Данте Алигьери до античных мифов. Разбор структуры грехов, си</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

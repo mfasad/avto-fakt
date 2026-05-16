@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как работает автопилот в машине: устройство, датчики и риски — Авто Факт</title>
+    <meta name="description" content="Полный разбор принципов работы автопилота. Лидары, радары, нейросети и уровни автономности. Почему нельзя полностью доверять электронике за рулем.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ka/kak-rabotaet-avtopilot-v-mashine.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как работает автопилот в машине: устройство, датчики и риски">
+    <meta property="og:description" content="Полный разбор принципов работы автопилота. Лидары, радары, нейросети и уровни автономности. Почему нельзя полностью доверять электронике за рулем.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как работает автопилот в машине: устройство, датчики и риски</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#архитектура-сенсоров-глаза-и-уши-автомобиля">Архитектура сенсоров: глаза и уши автомобиля</a></li><li><a href="#мозг-системы-обработка-данных-и-нейросети">Мозг системы: обработка данных и нейросети</a></li><li><a href="#уровни-автономности-от-помощи-водителю-до-полного-робота">Уровни автономности: от помощи водителю до полного робота</a></li><li><a href="#исполнительные-механизмы-как-машина-выполняет-команды">Исполнительные механизмы: как машина выполняет команды</a></li><li><a href="#слабые-места-и-ограничения-искусственного-интеллекта">Слабые места и ограничения искусственного интеллекта</a></li><li><a href="#будущее-автопилотов-и-взаимодействие-с-инфраструктурой">Будущее автопилотов и взаимодействие с инфраструктурой</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/k/ka/kak-vyjti-iz-mashiny-v-maj-sammer-kar.html">Как выйти из машины в My Summer Car: способы и команды</a></li><li><a href="/articles/n/na/nachalnaya-skorost-poleta-puli-akm.html">Начальная скорость пули АКМ: технические данные и факторы влияния</a></li><li><a href="/articles/g/gl/glonass-skolko-sputnikov-na-orbite-sejchas.html">Сколько спутников ГЛОНАСС на орбите: актуальный статус 2026</a></li><li><a href="/articles/k/ka/kak-podklyuchit-fm-transmitter-v-mashine.html">Как подключить FM-трансмиттер в машине: пошаговая инструкция 2026</a></li><li><a href="/articles/p/pr/promyvka-kofemashiny-filips-saeko.html">Промывка кофемашины Philips Saeco: полная инструкция</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как работает автопилот в машине: устройство и принципы</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#архитектура-сенсоров-глаза-и-уши-автомобиля">Архитектура сенсоров: глаза и уши автомобиля</a></li><li><a href="#мозг-системы-обработка-данных-и-нейросети">Мозг системы: обработка данных и нейросети</a></li><li><a href="#уровни-автономности-от-помощи-водителю-до-полного-робота">Уровни автономности: от помощи водителю до полного робота</a></li><li><a href="#исполнительные-механизмы-как-машина-выполняет-команды">Исполнительные механизмы: как машина выполняет команды</a></li><li><a href="#слабые-места-и-ограничения-искусственного-интеллекта">Слабые места и ограничения искусственного интеллекта</a></li><li><a href="#будущее-автопилотов-и-взаимодействие-с-инфраструктурой">Будущее автопилотов и взаимодействие с инфраструктурой</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Современный автомобиль перестал быть просто механическим средством передвижения, превратившись в сложный вычислительный комплекс, способный принимать решения на дороге. <strong>Автопилот</strong> — это не одна волшебная кнопка, а совокупность десятков сенсоров, камер и алгоритмов искусственного интеллекта, работающих в унисон. Водители часто воспринимают эти системы как данность, не задумываясь о том, что происходит"под капотом" программной оболочки, когда машина сама держит полосу или тормозит перед светофором.</p>
+
+<p>Понимание того, <em>как именно</em> автомобиль"видит" мир, критически важно для безопасности, ведь слепая вера в технологии может стоить жизни. Электроника не обладает человеческой интуицией и не видит контекст так, как это делает опытный шофер. В этой статье мы разберем анатомию автономного вождения, изучим слабые места сенсоров и поймем, почему даже самый продвинутый <strong>ADAS</strong> требует постоянного контроля со стороны человека.</p>
+
+<p>В основе любой системы автономного вождения лежит принцип сенсорного восприятия окружения. Машина должна непрерывно сканировать пространство вокруг себя, строя в реальном времени трехмерную карту местности. Для этого используются различные типы датчиков, каждый из которых имеет свои преимущества и ограничения. <strong>Компьютерное зрение</strong> анализирует видеопоток, распознавая разметку и знаки, пока радары измеряют скорость объектов.</p>
+
+<h2 id="архитектура-сенсоров-глаза-и-уши-автомобиля">Архитектура сенсоров: глаза и уши автомобиля</h2>
+
+<p>Фундаментом автономности является сенсорная система, которая часто называется"сенсорным набором" или <em>Sensor Suite</em>. Главным элементом здесь выступают камеры высокого разрешения. Они работают аналогично человеческому глазу, считывая визуальную информацию: цвет светофора, форму дорожных знаков, силуэты пешеходов. Однако камеры сильно зависят от условий освещения и погоды. Туман, сильный дождь или прямые солнечные лучи могут"ослепить" оптическую систему, сделав ее бесполезной.</p>
+
+<p>Для компенсации недостатков оптики используются радары. Эти устройства испускают радиоволны и анализируют отраженный сигнал, что позволяет точно определять расстояние до объекта и его относительную скорость. <strong>Радар</strong> отлично"видит" сквозь дождь и снег, но имеет низкое угловое разрешение — он может не различить, едет впереди грузовик или мотоцикл. Именно поэтому современные системы используют сенсорную фузию, объединяя данные.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Камеры могут быть загрязнены грязью или залеплены снегом, что полностью отключит функции Lane Assist. Всегда проверяйте чистоту лобового стекла и зоны вокруг логотипа на капоте перед поездкой.</p>
+</blockquote>
+
+<p>На вершине пищевой цепочки сенсоров часто находится <strong>Лидар</strong> (LIDAR). Этот прибор сканирует пространство лазерными импульсами, создавая точнейшую 3D-модель окружения. Лидар способен"увидеть" даже темного пешехода в черной одежде ночью, что недоступно камерам. Однако стоимость таких систем пока высока, и они чувствительны к сильным осадкам, которые создают"шум" для лазерных лучей.</p>
+
+<div class="pb-poll" id="poll-e94492ce"><div class="pb-poll-question">📊 Какой тип сенсора вы считаете наиболее важным для безопасности?</div><div class="pb-poll-option" data-poll="e94492ce" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Камеры высокого разрешения</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="e94492ce" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Радары миллиметрового диапазона</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="e94492ce" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Лидары (лазерное сканирование)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="e94492ce" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Ультразвуковые датчики парковки</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="мозг-системы-обработка-данных-и-нейросети">Мозг системы: обработка данных и нейросети</h2>
+
+<p>Собрать информацию — это только половина дела. Гораздо сложнее интерпретировать полученные данные и принять решение за доли секунды. За это отвечает центральный вычислительный блок, часто называемый"мозгом" автомобиля. Внутри него работают мощные процессоры и графические ускорители, на которых запущены сложные <strong>нейронные сети</strong>. Эти алгоритмы обучаются на миллионах километров пробега реальных автомобилей, чтобы распознавать паттерны поведения.</p>
+
+<p>Процесс обработки происходит в несколько этапов. Сначала система фильтрует шум и объединяет показания разных датчиков. Например, если камера видит красный объект, а радар подтверждает наличие твердого препятствия на этом расстоянии, система классифицирует объект как"автомобиль". Затем алгоритм прогнозирует траекторию движения всех участников движения. <em>Предиктивная аналитика</em> позволяет машине понять, что пешеход у края тротуара может шагнуть на дорогу, даже если он еще стоит.</p>
+
+<p>На основе прогнозов строится траектория движения собственного автомобиля. Компьютер рассчитывает тысячи вариантов маневра, выбирая самый безопасный и эффективный. Он учитывает правила дорожного движения, физическую динамику машины и поведение соседей по потоку. <strong>Планировщик пути</strong> отправляет команды исполнительным механизмам: рулевому управлению, дроссельной заслонке и тормозной системе.</p>
+
+<details class="pb-accordion"><summary>Почему нейросети иногда ошибаются?</summary><div class="pb-accordion-body"><p>Нейросети работают по принципу вероятностного соответствия. Если они встречают объект, которого не было в обучающей выборке (например, человек в костюме динозавра или нестандартная дорожная техника), система может классифицировать его неправильно или проигнорировать.</p></div></details>
+
+<h2 id="уровни-автономности-от-помощи-водителю-до-полного-робота">Уровни автономности: от помощи водителю до полного робота</h2>
+
+<p>Не все системы"автопилота" одинаковы. Инженерное сообщество SAE International разработало классификацию, разделяющую технологии на 6 уровней (от 0 до 5). Понимание этой градации необходимо каждому владельцу современного авто, чтобы не переоценивать возможности своего гаджета.</p>
+
+<p>Уровни с 0 по 2 относятся к системам, где водитель обязан контролировать ситуацию постоянно. Уровень 0 — это просто предупреждения (датчики слепых зон). Уровень 1 — адаптивный круиз-контроль или удержание в полосе по отдельности. Уровень 2, который сейчас массово внедряется, позволяет машине самому рулить и держать скорость, но <strong>водитель должен держать руки на руле</strong> и следить за дорогой.</p>
+
+<p>Уровни 3, 4 и 5 — это уже настоящая автоматизация. На 3-м уровне машина может сама ехать в пробке, но потребовать вмешательства человека при выходе на трассу. Уровень 4 предполагает полную автономность в определенных зонах (геозонах) без участия человека. Уровень 5 — это идеальный робот-такси, который поедет куда угодно в любых условиях.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Уровень</th>
+<th>Название</th>
+<th>Кто управляет?</th>
+<th>Нужен ли контроль?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Level 0</td>
+<td>Нет автоматизации</td>
+<td>Человек</td>
+<td>Да, постоянно</td>
+</tr>
+<tr>
+<td>Level 1</td>
+<td>Помощь водителю</td>
+<td>Человек + Ассистент</td>
+<td>Да, постоянно</td>
+</tr>
+<tr>
+<td>Level 2</td>
+<td>Частичная автоматизация</td>
+<td>Ассистент (руки на руле)</td>
+<td>Да, постоянно</td>
+</tr>
+<tr>
+<td>Level 3</td>
+<td>Условная автоматизация</td>
+<td>Ассистент (в определенных условиях)</td>
+<td>Нет, но нужно быть готовым</td>
+</tr>
+<tr>
+<td>Level 4-5</td>
+<td>Высокая/Полная автономность</td>
+<td>Система</td>
+<td>Нет (для L4 в зоне, для L5 везде)</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2 id="исполнительные-механизмы-как-машина-выполняет-команды">Исполнительные механизмы: как машина выполняет команды</h2>
+
+<p>После того как"мозг" принял решение, сигнал передается на"мышцы" автомобиля. В современных машинах с электронным управлением эти процессы происходят через цифровые шины данных. Для реализации функций автопилота используются электроусилитель руля (EPS), электронный дроссель и система стабилизации (ESP/ESC).</p>
+
+<p>Когда компьютер решает повернуть, он посылает электрический сигнал на моторчик <strong>EPS</strong>, который поворачивает колеса на нужный угол. Точность этого действия зависит от калибровки датчика угла поворота рулевого колеса. Для торможения система обращается к блоку ABS/ESP, создавая давление в тормозной магистрали без участия педали тормоза. Это позволяет реализовать функцию автоматического экстренного торможения (<strong>AEB</strong>).</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка готовности автопилота</h4><label class="check-item"><input type="checkbox"><span>Убедиться в чистоте датчиков</span></label><label class="check-item"><input type="checkbox"><span>Проверить исправность тормозной системы</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в наличии актуальных карт</span></label><label class="check-item"><input type="checkbox"><span>Проверить работу стеклоочистителей в плохую погоду</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Важно понимать, что исполнительные механизмы имеют физические ограничения. Машина не может затормозить мгновенно, если скорость слишком высока, а сцепление с дорогой потеряно. <em>Электроника</em> борется с физикой, но не может её победить. Поэтому в скользкую погоду или при изношенной резине эффективность автопилота резко падает, и он может отключиться с сообщением об ошибке.</p>
+
+<h2 id="слабые-места-и-ограничения-искусственного-интеллекта">Слабые места и ограничения искусственного интеллекта</h2>
+
+<p>Несмотря на прогресс, технологии автономного вождения имеют ряд критических уязвимостей. Одна из главных проблем — это"краевые случаи" (edge cases). Это нестандартные ситуации, которые редко встречаются в жизни, но могут привести к аварии. Например, полицейский, регулирующий движениеами, или строительные работы, где разметка резко обрывается и идет вбок.</p>
+
+<p>Еще одна проблема — зависимость от картографических данных. Многие системы уровня 2+ и 3 требуют карт (HD-maps). Если дорога изменилась (появился новый лежачий полицейский или изменилась схема движения), а карты в машине не обновились, автомобиль может повести себя неадекватно. <strong>Навигационные данные</strong> должны обновляться регулярно, что требует стабного интернет-соединения.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не пытайтесь обмануть систему контроля водителя (датчик рук на руле) грузиками или другими приспособлениями. Это создает смертельно опасную ситуацию, так как в критический момент автомобиль не сможет среагировать.</p>
+</blockquote>
+
+<p>Также стоит упомянуть проблему"слепых зон" сенсоров. Радар может не увидеть статичный объект (например, припаркованный грузовик на обочине), если алгоритм фильтрует его как мост или знак, считая безопасным. Камеры могут не распознать белый грузовик на фоне яркого неба. Именно поэтому <mark>человеческий контроль остается единственным гарантом безопасности</mark> на текущем этапе развития технологий.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>При движении по трассе с включенным автопилотом держите руки в положении"9 и 3" или"10 и 2". Это позволит вам мгновенно перехватить управление, если система внезапно отключится или допустит ошибку.</p></aside>
+
+<h2 id="будущее-автопилотов-и-взаимодействие-с-инфраструктурой">Будущее автопилотов и взаимодействие с инфраструктурой</h2>
+
+<p>Следующим шагом</div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/k/ka/kak-vyjti-iz-mashiny-v-maj-sammer-kar.html" class="pb-related-card">
+                <span class="pb-related-title">Как выйти из машины в My Summer Car: способы и команды</span>
+                <span class="pb-related-desc">Подробная инструкция: как выбраться из салона авто в My Summer Car. Управление, клавиши, работа с дв</span>
+            </a><a href="/articles/n/na/nachalnaya-skorost-poleta-puli-akm.html" class="pb-related-card">
+                <span class="pb-related-title">Начальная скорость пули АКМ: технические данные и факторы влияния</span>
+                <span class="pb-related-desc">Узнайте реальную начальную скорость пули АКМ (7,62×39 мм), как её измеряют, что влияет на разброс зн</span>
+            </a><a href="/articles/g/gl/glonass-skolko-sputnikov-na-orbite-sejchas.html" class="pb-related-card">
+                <span class="pb-related-title">Сколько спутников ГЛОНАСС на орбите: актуальный статус 2026</span>
+                <span class="pb-related-desc">Актуальное количество спутников ГЛОНАСС на орбите в 2026 году. Состав группировки, типы аппаратов, т</span>
+            </a><a href="/articles/k/ka/kak-podklyuchit-fm-transmitter-v-mashine.html" class="pb-related-card">
+                <span class="pb-related-title">Как подключить FM-трансмиттер в машине: пошаговая инструкция 2026</span>
+                <span class="pb-related-desc">Подробное руководство по подключению FM-трансмиттера к автомобилю: выбор устройства, настройка часто</span>
+            </a><a href="/articles/p/pr/promyvka-kofemashiny-filips-saeko.html" class="pb-related-card">
+                <span class="pb-related-title">Промывка кофемашины Philips Saeco: полная инструкция</span>
+                <span class="pb-related-desc">Как выполнить промывку кофемашины Philips Saeco своими руками. Таблицы ошибок, средства от накипи и </span>
+            </a><a href="/articles/i/in/invertor-avtomobilnyj-12-220v-avs-in-1000w.html" class="pb-related-card">
+                <span class="pb-related-title">Инвертор AVS IN 1000W 12→220V: обзор, подключение, выбор для авто</span>
+                <span class="pb-related-desc">Как работает инвертор AVS IN 1000W? Подробный обзор характеристик, схемы подключения к 12В, расчет м</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как STL преобразовать в твердое тело в SolidWorks — Авто Факт</title>
+    <meta name="description" content="Подробная инструкция, как перевести STL в твердотельное тело в SolidWorks. Настройка опций импорта, работа с Mesh и конвертация в параметрическую геометрию.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ka/kak-fajl-stl-preobrazovat-v-tverdoe-telo-v-solid-vorks.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как STL преобразовать в твердое тело в SolidWorks">
+    <meta property="og:description" content="Подробная инструкция, как перевести STL в твердотельное тело в SolidWorks. Настройка опций импорта, работа с Mesh и конвертация в параметрическую геометрию.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/drugoe/">Другое</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как STL преобразовать в твердое тело в SolidWorks</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#настройка-параметров-импорта-stl-файлов">Настройка параметров импорта STL файлов</a></li><li><a href="#анализ-сложности-геометрии-и-количества-граней">Анализ сложности геометрии и количества граней</a></li><li><a href="#прямая-конвертация-через-опции-импорта">Прямая конвертация через опции импорта</a></li><li><a href="#использование-утилиты-scanto3d">Использование утилиты ScanTo3D</a></li><li><a href="#ручное-построение-поверхностей-по-сетке">Ручное построение поверхностей по сетке</a></li><li><a href="#частые-ошибки-и-способы-их-устранения">Частые ошибки и способы их устранения</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/i/is/isparenie-antifriza-v-avtomobile-norma.html">Испарение антифриза в машине: норма или проблема?</a></li><li><a href="/articles/o/ot/otsenka-avtomobilya-r-auktsionnyj-list-chto-znachit.html">Аукционный лист R: что это и как влияет на оценку авто</a></li><li><a href="/articles/s/s-/s-kakoj-peredachi-zavodit-s-tolkacha-mashinu-benzin.html">С какой передачи заводить с толкача бензиновый автомобиль: инструкция 2026</a></li><li><a href="/articles/s/sk/skrutit-probeg-v-spb.html">Скрутить пробег в СПб: цены, способы, риски и последствия</a></li><li><a href="/articles/s/sa/samyj-komfortnyj-avtomobil-dlya-voditelya.html">Самый комфортный автомобиль: рейтинг и критерии выбора</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как преобразовать файл STL в твердое тело в SolidWorks</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#настройка-параметров-импорта-stl-файлов">Настройка параметров импорта STL файлов</a></li><li><a href="#анализ-сложности-геометрии-и-количества-граней">Анализ сложности геометрии и количества граней</a></li><li><a href="#прямая-конвертация-через-опции-импорта">Прямая конвертация через опции импорта</a></li><li><a href="#использование-утилиты-scanto3d">Использование утилиты ScanTo3D</a></li><li><a href="#ручное-построение-поверхностей-по-сетке">Ручное построение поверхностей по сетке</a></li><li><a href="#частые-ошибки-и-способы-их-устранения">Частые ошибки и способы их устранения</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Работа с <strong>полигональными моделями</strong>, полученными в результате 3D-сканирования или скачанными из открытых библиотек, часто становится необходимостью для инженера-конструктора. Формат <em>STL</em> является стандартом де-факто для 3D-печати, но он представляет объект как набор треугольников, а не как параметрическую геометрию. Это создает существенные трудности при попытке внести изменения в конструкцию или использовать детали для точных инженерных расчетов.</p>
+
+<p>Процесс <strong>конвертации</strong> сетки в твердотельное тело требует понимания настроек импорта и ограничений программного обеспечения. В <em>SolidWorks</em> существует несколько способов решения этой задачи, зависящих от сложности исходной формы и количества граней в модели. Правильная подготовка файла и выбор метода позволяют сэкономить часы работы по перестроению детали с нуля.</p>
+
+<p>Рассмотрим детально алгоритмы действий, которые позволяют трансформировать "мертвую" сетку в полноценное твердое тело с возможностью редактирования. Вы научитесь настраивать параметры системы, использовать инструменты работы с <strong>Mesh</strong> и применять специализированные команды для получения качественного результата. Это знание критически важно для реверс-инжиниринга.</p>
+
+<h2 id="настройка-параметров-импорта-stl-файлов">Настройка параметров импорта STL файлов</h2>
+
+<p>Прежде чем открывать файл, необходимо правильно настроить <strong>системные опции</strong> программы. По умолчанию <em>SolidWorks</em> может импортировать STL как графическое тело, что делает невозможным дальнейшее редактирование геометрии. Чтобы изменить это поведение, следует перейти в меню <code>Инструменты → Параметры → Система → Импорт</code>.</p>
+
+<p>В разделе "Формат файла" необходимо выбрать <strong>STL</strong>. Здесь ключевым моментом является настройка опции "Импортировать как". Если выбрать "Графическое тело", модель будет отображаться, но не станет частью конструктивного дерева. Для нашей цели требуется выбрать опцию "Твердое тело" или "Поверхностное тело".</p>
+
+<ul>
+<li>🔹 <strong>Твердое тело</strong> — создает замкнутый объем, пригодный для расчетов масс-центровых характеристик.</li>
+<li>🔹 <strong>Поверхностное тело</strong> — импортирует только оболочки, полезно для сложных незамкнутых сканов.</li>
+<li>🔹 <strong>Графическое тело</strong> — только визуализация, редактирование геометрии невозможно.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Если файл STL содержит слишком много треугольников (более 2000-3000 граней), опция импорта как "Твердое тело" может быть недоступна или вызвать зависание программы. В таких случаях система автоматически переключится на графический режим.</p>
+</blockquote>
+
+<p>Также стоит обратить внимание на единицы измерения. Часто <strong>импортируемые модели</strong> создаются в миллиметрах, но могут быть интерпретированы в дюймах, что приведет к катастрофическому искажению размеров. Убедитесь, что в настройках импорта выбран правильный тип единиц или включена опция автоматического определения.</p>
+
+<h2 id="анализ-сложности-геометрии-и-количества-граней">Анализ сложности геометрии и количества граней</h2>
+
+<p>Успех конвертации напрямую зависит от <strong>топологии</strong> исходной сетки. Простые геометрические фигуры, такие как кубы, цилиндры или детали с плоскими гранями, конвертируются легко. Однако органические формы, полученные при 3D-сканировании людей или рельефа местности, содержат сотни тысяч треугольников.</p>
+
+<p>Для оценки сложности модели можно использовать встроенные средства анализа или просто попытаться выделить грани. Если выделение отдельных плоскостей происходит с трудом, а дерево построения перегружено, значит, перед вами <strong>высокополигональная сетка</strong>. Работа с такими объектами требует особого подхода и часто невозможна без предварительной обработки в специализированном ПО.</p>
+
+<div class="pb-poll" id="poll-c7843fc5"><div class="pb-poll-question">📊 Какой тип STL файлов вы чаще всего используете?</div><div class="pb-poll-option" data-poll="c7843fc5" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Простые технические детали</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="c7843fc5" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Сложные органические формы</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="c7843fc5" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Сканы реальных объектов</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="c7843fc5" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Не работаю с STL</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<p>Существует негласный лимит на количество граней для успешной конвертации в параметрическое тело. Обычно это значение находится в диапазоне до 1000-1500 граней для стабильной работы. Превышение этого порога приводит к тому, что <em>SolidWorks</em> не сможет математически описать каждую грань как параметрическую поверхность.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Тип геометрии</th>
+<th>Примерное кол-во граней</th>
+<th>Метод конвертации</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Простая деталь</td>
+<td>до 500</td>
+<td>Прямой импорт</td>
+<td>Полное твердое тело</td>
+</tr>
+<tr>
+<td>Средняя сложность</td>
+<td>500 - 2000</td>
+<td>Импорт + Заживление</td>
+<td>Твердое/Поверхность</td>
+</tr>
+<tr>
+<td>Сложная форма</td>
+<td>2000 - 10000</td>
+<td>Surface Reconstruction</td>
+<td>Поверхности</td>
+</tr>
+<tr>
+<td>Органика/Скан</td>
+<td>10000+</td>
+<td>Не рекомендуется</td>
+<td>Графика/Mesh</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2 id="прямая-конвертация-через-опции-импорта">Прямая конвертация через опции импорта</h2>
+
+<p>Если анализ показал, что модель содержит приемлемое количество граней, можно proceed к прямой конвертации. Откройте файл через меню <code>Файл → Открыть</code>, выберите тип файла <strong>STL</strong> и нажмите на кнопку "Параметры" в диалоговом окне перед финальным подтверждением.</p>
+
+<p>В открывшемся окне убедитесь, что в разделе "Импортировать как" выбрана опция <strong>Твердое тело</strong>. Также рекомендуется снять галочку "Автоматически запускать импорт", если вы хотите проверить другие настройки, но для стандартной процедуры это не обязательно. Нажмите ОК и выберите файл.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Чек-лист прямой конвертации</h4><label class="check-item"><input type="checkbox"><span>Проверить количество граней в свойствах файла</span></label><label class="check-item"><input type="checkbox"><span>Выбрать опцию "Твердое тело" в параметрах импорта</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в правильности единиц измерения</span></label><label class="check-item"><input type="checkbox"><span>Проверить дерево построения на наличие тела</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>После импорта в дереве построения должно появиться тело без истории операций (помечено как "Импортированный"). Если операция прошла успешно, вы сможете использовать булевы операции, вырезы и другие инструменты твердотельного моделирования. Однако редактировать размеры исходных граней будет нельзя, так как <strong>параметрическая связь</strong> с исходным файлом STL отсутствует.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> При импорте как твердое тело программа попытается сшить все грани. Если в сетке есть дыры или наложения, процесс может завершиться ошибкой или созданием поверхностного тела вместо твердого.</p>
+</blockquote>
+
+<h2 id="использование-утилиты-scanto3d">Использование утилиты ScanTo3D</h2>
+
+<p>Для более сложных задач, где прямой импорт не дает желаемого результата, в <em>SolidWorks</em> существует модуль <strong>ScanTo3D</strong>. Это специализированный инструмент для работы с облаками точек и сетками. Чтобы активировать его, нужно перейти в <code>Инструменты → Надстройки</code> и поставить галочку напротив <em>ScanTo3D</em>.</p>
+
+<p>После активации появляется возможность создавать файлы типа "Mesh" или "Point Cloud". Открыв STL через этот модуль, вы получаете доступ к инструментам редактирования сетки. Можно удалять лишние треугольники, сглаживать поверхности и, самое главное, создавать <strong>поверхности по сетке</strong>.</p>
+
+<details class="pb-accordion"><summary>Почему ScanTo3D не всегда удобен?</summary><div class="pb-accordion-body"><p>Интерфейс ScanTo3D значительно отличается от стандартного интерфейса SolidWorks и имеет высокий порог входа. Кроме того, алгоритмы построения поверхностей часто требуют ручной настройки границ, что делает процесс трудоемким для новичков.</p></div></details>
+
+<p>Процесс работы заключается в создании "Surface Patch" (поверхностной заплатки) на выбранных гранях сетки. Выделяя области треугольников, вы заставляет программу строить по ним гладкую <strong>NURBS-поверхность</strong>. Собрав все необходимые поверхности, их можно сшить в единое тело.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Используйте функцию "Группировка граней" в ScanTo3D для автоматического выделения плоских или цилиндрических участков сетки — это ускорит процесс создания заплаток в разы.</p></aside>
+
+<h2 id="ручное-построение-поверхностей-по-сетке">Ручное построение поверхностей по сетке</h2>
+
+<p>Если автоматические средства не справились, приходится прибегать к <strong>ручному моделированию</strong>. Этот метод наиболее трудоемок, но дает максимальный контроль над результатом. Суть метода заключается в использовании импортированной сетки как визуального шаблона для построения эскизов и поверхностей.</p>
+
+<p>Создайте новый эскиз на одной из стандартных плоскостей. Используя инструменты <code>Сплайн</code> или <code>Линия</code>, обведите контуры видимой на сетке геометрии. Привязки к вершинам сетки могут быть ненадежными, поэтому лучше использовать геометрические соотношения и размерные ограничения, опираясь на визуальный контроль.</p>
+
+<p>После построения контуров используйте команду <strong>Поверхность по сечениям</strong> или <code>Поверхность по сетке кривых</code>. Эти инструменты позволяют создать гладкую поверхность, проходящую через заданные направляющие. Повторяя процедуру для всех частей детали, вы постепенно воссоздаете геометрию.</p>
+
+<ul>
+<li>🔸 Постройте базовые плоскости, совпадающие с осями симметрии сетки.</li>
+<li>🔸 Создавайте эскизы сечений на этих плоскостях, копируя форму сетки.</li>
+<li>🔸 Используйте команду "Сшить поверхности" для объединения фрагментов.</li>
+<li>🔸 Примените команду "Создать тело" для получения твердой модели.</li>
+</ul>
+
+<p>Главное преимущество этого метода — полная <strong>параметричность</strong> итоговой модели. Вы сможете в любой момент изменить радиус скругления или толщину стенки, что невозможно при работе с исходным STL. Это делает метод предпочтительным для инженерных задач.</p>
+
+<h2 id="частые-ошибки-и-способы-их-устранения">Частые ошибки и способы их устранения</h2>
+
+<p>В процессе конвертации пользователи часто сталкиваются с типичными проблемами. Одна из самых распространенных — <strong>разрывы геометрии</strong>. Сетка STL может иметь микроскопические зазоры между треугольниками, которые не дают программе создать замкнутое твердое тело.</p>
+
+<p>Для устранения разрывов можно использовать команду "Заживление" (Heal Edges) в режиме работы с поверхностями. Также помогает увеличение допуска сшивания в настройках. Если модель импортировалась как графическое тело, проверьте настройки <strong>опций импорта</strong> еще раз — возможно, лимит граней превышен.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Качество конвертации STL в твердое тело зависит не столько от версии SolidWorks, сколько от "чистоты" исходной сетки и количества полигонов.</p></aside>
+
+<p>Еще одна ошибка — игнорирование масштаба. Модель может быть импортирована в 1000 раз меньше или больше реального размера. Всегда проверяйте габариты детали командой <code>Измерить</code> сразу после импорта. Если размеры не соответствуют ожиданию, используйте команду <strong>Масштабировать</strong> в режиме работы с телами.</p>
+
+<details>
+<summary>Можно ли редактировать размеры граней после импорта STL?</summary>
+<p>Нет, напрямую редактировать размеры граней импортированного STL невозможно, так как это непараметрическая геометрия. Вы можете только удалять грани, перемещать вершины (в режиме Mesh) или строить новую параметрическую геометрию поверх сетки.</p>
+</details>
+
+<details>
+<summary>Какой максимальный размер файла STL поддерживает SolidWorks?</summary>
+<p>Ограничение связано не столько с размером файла в мегабайтах, сколько с количеством треугольников. Для стабильной работы рекомендуется не превышать 20 000 - 30 000 граней. Файлы большего размера лучше обрабатывать в специализированных редакторах сеток.</p>
+</details>
+
+<details>
+<summary>В чем разница между поверхностным и твердым телом при импорте?</summary>
+<p>Твердое тело имеет объем и массу, у него нет "дыр". Поверхностное тело — это тонкая оболочка без толщины. Конвертация поверхности в твердое тело возможна только если оболочка полностью замкнута.</p>
+</details>
+
+<details>
+<summary>Нужен ли отдельный модуль для работы со STL?</summary>
+<p>Базовый функционал импорта встроен в стандартную поставку SolidWorks. Модуль ScanTo3D является дополнительным инструментом для продвинутой работы со сканами и требует отдельной активации в меню "Надстройки".</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/i/is/isparenie-antifriza-v-avtomobile-norma.html" class="pb-related-card">
+                <span class="pb-related-title">Испарение антифриза в машине: норма или проблема?</span>
+                <span class="pb-related-desc">Узнайте, почему уходит антифриз без подтёков, какие нормы испарения для разных марок авто и когда по</span>
+            </a><a href="/articles/o/ot/otsenka-avtomobilya-r-auktsionnyj-list-chto-znachit.html" class="pb-related-card">
+                <span class="pb-related-title">Аукционный лист R: что это и как влияет на оценку авто</span>
+                <span class="pb-related-desc">Разбираемся, что значит аукционный лист R при оценке автомобиля, как он формируется и почему это важ</span>
+            </a><a href="/articles/s/s-/s-kakoj-peredachi-zavodit-s-tolkacha-mashinu-benzin.html" class="pb-related-card">
+                <span class="pb-related-title">С какой передачи заводить с толкача бензиновый автомобиль: инструкция 2026</span>
+                <span class="pb-related-desc">Разбираемся, на какой передаче правильно заводить бензиновую машину с толкача: 2-я или 3-я, нюансы д</span>
+            </a><a href="/articles/s/sk/skrutit-probeg-v-spb.html" class="pb-related-card">
+                <span class="pb-related-title">Скрутить пробег в СПб: цены, способы, риски и последствия</span>
+                <span class="pb-related-desc">Как скрутить пробег в Санкт-Петербурге: легальные методы, цена услуги, способы обнаружения отмотки и</span>
+            </a><a href="/articles/s/sa/samyj-komfortnyj-avtomobil-dlya-voditelya.html" class="pb-related-card">
+                <span class="pb-related-title">Самый комфортный автомобиль: рейтинг и критерии выбора</span>
+                <span class="pb-related-desc">Какой автомобиль самый комфортный для водителя? Обзор моделей с лучшей шумоизоляцией, сиденьями и по</span>
+            </a><a href="/articles/t/te/tekst-obyavleniya-o-prodazhe-avto.html" class="pb-related-card">
+                <span class="pb-related-title">Как написать текст объявления о продаже авто: 100% продажа за 3 дня</span>
+                <span class="pb-related-desc">Пошаговый гайд по созданию эффективного объявления о продаже автомобиля: от заголовка до фото. Приме</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

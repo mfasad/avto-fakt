@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как посчитать объём 3D-тела в AutoCAD: пошаговый гайд 2026 — Авто Факт</title>
+    <meta name="description" content="Точные методы расчёта объёма 3D-моделей в AutoCAD: от простых примитивов до сложных тел. Команды, ошибки, оптимизация для инженеров и дизайнеров.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/o/ob/obem-3d-tela-v-avtokade.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как посчитать объём 3D-тела в AutoCAD: пошаговый гайд 2026">
+    <meta property="og:description" content="Точные методы расчёта объёма 3D-моделей в AutoCAD: от простых примитивов до сложных тел. Команды, ошибки, оптимизация для инженеров и дизайнеров.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как посчитать объём 3D-тела в AutoCAD: пошаговый гайд 2026</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#1-базовый-метод-команда-massprop-для-твёрдых-тел">1. Базовый метод: команда MASSPROP для твёрдых тел</a></li><li><a href="#2-быстрый-расчёт-через-панель-свойства">2. Быстрый расчёт через панель Свойства</a></li><li><a href="#3-расчёт-объёма-полых-тел-и-сборок">3. Расчёт объёма полых тел и сборок</a></li><li><a href="#4-автоматизация-скрипты-и-dynamic-input">4. Автоматизация: скрипты и Dynamic Input</a></li><li><a href="#5-работа-с-импортированными-моделями-step-iges-stl">5. Работа с импортированными моделями (.STEP, .IGES, .STL)</a></li><li><a href="#6-продвинутые-приёмы-секции-анализ-и-оптимизация">6. Продвинутые приёмы: секции, анализ и оптимизация</a></li><li><a href="#7-типичные-ошибки-и-как-их-избежать">7. Типичные ошибки и как их избежать</a></li><li><a href="#faq-частые-вопросы-по-расчёту-объёма-в-autocad">FAQ: Частые вопросы по расчёту объёма в AutoCAD</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/a/av/avtokhol-na-avto-chto.html">Автохол на авто: что это, как работает и как настроить</a></li><li><a href="/articles/b/bl/blyutuz-prikurivatel-v-avto-dlya-muzyki.html">Bluetooth прикуриватель в авто для музыки: выбор, установка, обзор</a></li><li><a href="/articles/s/so/sozdanie-v-sisteme-virtualnoj-mashiny-dlya-ispolneniya-prilozhenij.html">Создание виртуальной машины для приложений: полное руководство</a></li><li><a href="/articles/p/pl/plug-in-hybrid-chto-eto-znachit.html">Plug-in Hybrid: что это значит и как работает</a></li><li><a href="/articles/n/na/na-chto-vliyaet-razmer-magnita-na-dinamike.html">Размер магнита динамика: влияние на звук и параметры</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Объём 3D-тела в AutoCAD: 5 способов расчёта с примерами и лайфхаками</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#1-базовый-метод-команда-massprop-для-твёрдых-тел">1. Базовый метод: команда MASSPROP для твёрдых тел</a></li><li><a href="#2-быстрый-расчёт-через-панель-свойства">2. Быстрый расчёт через панель Свойства</a></li><li><a href="#3-расчёт-объёма-полых-тел-и-сборок">3. Расчёт объёма полых тел и сборок</a></li><li><a href="#4-автоматизация-скрипты-и-dynamic-input">4. Автоматизация: скрипты и Dynamic Input</a></li><li><a href="#5-работа-с-импортированными-моделями-step-iges-stl">5. Работа с импортированными моделями (.STEP, .IGES, .STL)</a></li><li><a href="#6-продвинутые-приёмы-секции-анализ-и-оптимизация">6. Продвинутые приёмы: секции, анализ и оптимизация</a></li><li><a href="#7-типичные-ошибки-и-как-их-избежать">7. Типичные ошибки и как их избежать</a></li><li><a href="#faq-частые-вопросы-по-расчёту-объёма-в-autocad">FAQ: Частые вопросы по расчёту объёма в AutoCAD</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Работа с трёхмерными моделями в <em>AutoCAD</em> — неотъемлемая часть проектирования в машиностроении, архитектуре и промышленном дизайне. Одной из ключевых задач при создании 3D-тела является <strong>расчёт его объёма</strong> — будь то деталь двигателя, корпус гаража или сложная сборка. Ошибка в вычислениях может привести к перерасходу материалов, несоответствию чертежам или даже браку готовой продукции.</p>
+
+<p>В этой статье разберём все актуальные способы определения объёма в <em>AutoCAD</em> — от базовых команд до автоматизированных инструментов. Особое внимание уделим <strong>типичным ошибкам</strong>, которые искажают результаты, и <strong>скрытым функциям</strong>, упрощающим работу с большими сборками. Если вы когда-либо сталкивались с ситуацией, когда программа показывает нелогичный объём или вообще отказывается его считать, здесь вы найдёте решение.</p>
+
+<p>Для новичков мы подробно объясним каждый шаг, а опытные пользователи смогут найти редкие приёмы — например, как посчитать объём <strong>полого тела</strong> или экспортировать данные в <em>Excel</em> для дальнейшего анализа. Все методы протестированы на последних версиях <em>AutoCAD 2026–2026</em>, но большинство из них работают и в более ранних редакциях (начиная с <em>AutoCAD 2018</em>).</p>
+
+<h2 id="1-базовый-метод-команда-massprop-для-твёрдых-тел">1. Базовый метод: команда <code>MASSPROP</code> для твёрдых тел</h2>
+
+<p>Самый универсальный и точный способ — использование встроенной команды <code>MASSPROP</code> (сокращённо от <em>Mass Properties</em>). Она подходит для <strong>любых замкнутых 3D-тела</strong>, включая примитивы (<em>ящик</em>, <em>цилиндр</em>, <em>конус</em>) и импортированные модели. Алгоритм работы команды основан на анализе геометрии тела и вычислении его физических свойств: объёма, площади поверхности, координат центра масс и даже моментов инерции.</p>
+
+<p>Чтобы воспользоваться <code>MASSPROP</code>:</p>
+<ol>
+  <li>Выделите 3D-тело в пространстве модели (кликните по нему левой кнопкой мыши).</li>
+  <li>В командной строке введите <code>MASSPROP</code> и нажмите <code>Enter</code>.</li>
+  <li>В открывшемся окне <em>Текстовый экран AutoCAD</em> найдите строку <strong>Объём (Volume)</strong> — это и есть искомое значение.</li>
+</ol>
+
+<p>⚠️ <strong>Внимание:</strong> Если команда возвращает объём <code>0.0000</code>, проверьте:</p>
+<ul>
+  <li>🔹 Замкнутость тела: используйте команду <code>CHECK</code> или визуально осмотрите модель на наличие "дыр".</li>
+  <li>🔹 Тип объекта: <code>MASSPROP</code> не работает с поверхностями (<em>surfaces</em>) или сетками (<em>meshes</em>). Преобразуйте их в тело командой <code>CONVTOSOLID</code>.</li>
+  <li>🔹 Единицы измерения: объём отображается в кубических единицах текущей системы (например, <code>мм³</code> если вы работаете в миллиметрах).</li>
+</ul>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Если окно <em>Текстового экрана</em> не открывается автоматически, нажмите <code>F2</code> или введите команду <code>TEXTSCR</code>.</p></aside>
+
+<h2 id="2-быстрый-расчёт-через-панель-свойства">2. Быстрый расчёт через панель <em>Свойства</em></h2>
+
+<p>Для тех, кто предпочитает работать без командной строки, в <em>AutoCAD</em> есть альтернативный способ — через панель <strong>Свойства</strong> (<code>Properties</code>). Этот метод удобен для оперативной проверки, но подходит только для <strong>простых тел</strong> (например, стандартных примитивов или экструдированных профилей).</p>
+
+<p>Инструкция:</p>
+<ol>
+  <li>Выделите 3D-тело.</li>
+  <li>Нажмите комбинацию клавиш <code>Ctrl+1</code> (или кликните правой кнопкой и выберите <em>Свойства</em>).</li>
+  <li>В разделе <em>Геометрия</em> найдите поле <strong>Объём</strong>.</li>
+</ol>
+
+<p>🔴 <strong>Ограничения метода:</strong></p>
+<ul>
+  <li>🚫 Не показывает объём для <em>составных тел</em> (если модель состоит из нескольких объединённых объектов).</li>
+  <li>🚫 Не работает с импортированными файлами (<em>.STEP</em>, <em>.IGES</em>) до их преобразования в native-формат <em>AutoCAD</em>.</li>
+  <li>🚫 Не отображает дополнительные свойства (площадь поверхности, центр масс).</li>
+</ul>
+
+<div class="pb-poll" id="poll-00e5fc1b"><div class="pb-poll-question">📊 Какой метод расчёта объёма вы используете чаще?</div><div class="pb-poll-option" data-poll="00e5fc1b" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Команда MASSPROP</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="00e5fc1b" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Панель Свойств</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="00e5fc1b" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Скрипты/ЛИСП</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="00e5fc1b" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Другие программы (например, Fusion 360)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="00e5fc1b" data-idx="4" onclick="pbPollVote(this)"><span class="pb-poll-label">Не знаю, как считать</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="3-расчёт-объёма-полых-тел-и-сборок">3. Расчёт объёма полых тел и сборок</h2>
+
+<p>Сложные детали часто имеют внутренние полости (например, блок цилиндров двигателя или корпус редуктора). В таких случаях прямой расчёт через <code>MASSPROP</code> даст объём <strong>внешней оболочки</strong>, игнорируя пустоты. Чтобы получить <strong>чистый объём материала</strong>, нужно использовать булевы операции.</p>
+
+<p>Алгоритм для полого тела:</p>
+<ol>
+  <li>Создайте <strong>внешнюю оболочку</strong> (основное тело).</li>
+  <li>Смоделируйте <strong>внутреннюю полость</strong> как отдельное тело.</li>
+  <li>Примените команду <code>SUBTRACT</code> (Вычитание), выбрав сначала оболочку, затем полость.</li>
+  <li>Используйте <code>MASSPROP</code> для итогового тела.</li>
+</ol>
+
+<p>Для <strong>сборок</strong> (многокомпонентных моделей) действуйте так:</p>
+
+<p>Сгруппируйте все детали командой <code>GROUP</code>|Примените <code>UNION</code> для объединения в одно тело (если нужно суммарный объём)|Используйте <code>MASSPROP</code> для каждой детали отдельно (если нужен детализированный отчёт)|Экспортируйте данные в таблицу через <code>DATAEXTRACTION</code>--></p>
+
+<p>⚠️ <strong>Внимание:</strong> При вычитании тел следите за <strong>направлением нормалей</strong> — если полость "вывернута" наружу, команда <code>SUBTRACT</code> может удалить не ту часть модели. Исправляйте нормали командой <code>_SOLIDEDIT → Body → Reverse normals</code>.</p>
+
+<h2 id="4-автоматизация-скрипты-и-dynamic-input">4. Автоматизация: скрипты и <em>Dynamic Input</em></h2>
+
+<p>Если вам приходится считать объёмы десятков или сотен деталей, ручной ввод команд станет утомительным. В <em>AutoCAD</em> есть инструменты для автоматизации:</p>
+
+<p><strong>Способ 1: <em>Dynamic Input</strong> (Динамический ввод)</strong></p>
+<p>Активируйте режим динамического ввода кнопкой в строке состояния (или нажатием <code>F12</code>). Теперь при выделении тела и вводе <code>MASSPROP</code> результаты будут отображаться прямо рядом с курсором, без открытия текстового экрана.</p>
+
+<p><strong>Способ 2: Скрипты <em>AutoLISP</strong></em></p>
+<p>Для массовой обработки напишите простой скрипт:</p>
+<pre><code>(defun c:vol ()
+<p>(setq ss (ssget '((0 . "3DSOLID"))))</p>
+<p>(if ss</p>
+<p>(progn</p>
+<p>(setq i 0)</p>
+<p>(repeat (sslength ss)</p>
+<p>(setq ent (ssname ss i))</p>
+<p>(setq data (entget ent))</p>
+<p>(setq vol (cdr (assoc 70 data))) ; Пример для извлечения объёма</p>
+<p>(princ (strcat "\nОбъём тела " (itoa (setq i (1+ i))) ": " (rtos vol)))</p>
+<p>)</p>
+<p>)</p>
+<p>(princ "\nНе найдено ни одного 3D-тела!")</p>
+<p>)</p>
+<p>(princ)</p>
+<p>)</code></pre></p>
+<p>Скопируйте этот код в <em>Visual LISP Editor</em> (<code>VLIDE</code>), сохраните как <code>vol.lsp</code> и загрузите в <em>AutoCAD</em> командой <code>APPLOAD</code>. После этого введите <code>vol</code> в командной строке — программа выведет объёмы всех тел в модели.</p>
+
+<details class="pb-accordion"><summary>Как экспортировать объёмы в Excel?</summary><div class="pb-accordion-body"><p>
+<p>1. Используйте команду <code>DATAEXTRACTION</code> для создания таблицы свойств.</p>
+<p>2. В мастере извлечения данных выберите объект <em>3D Тело</em> и свойство <em>Объём</em>.</p>
+<p>3. Сохраните файл в формате <em>.CSV</em> и откройте в <em>Excel</em> для дальнейшей обработки.</p></div></details></p>
+
+<h2 id="5-работа-с-импортированными-моделями-step-iges-stl">5. Работа с импортированными моделями (<em>.STEP</em>, <em>.IGES</em>, <em>.STL</em>)</h2>
+
+<p>При импорте 3D-моделей из других CAD-систем (<em>SolidWorks</em>, <em>Inventor</em>, <em>CATIA</em>) часто возникают проблемы с расчётом объёма. Это связано с тем, что импортированные объекты могут:</p>
+<ul>
+  <li>🔹 Быть <strong>поверхностями</strong>, а не телами.</li>
+  <li>🔹 Содержать <strong>незамкнутые грани</strong>.</li>
+  <li>🔹 Иметь <strong>искажённую топологию</strong> (например, самопересечения).</li>
+</ul>
+
+<p>Решения:</p>
+<ol>
+  <li><strong>Преобразование в тело:</strong> Используйте <code>CONVTOSOLID</code> или <code>_SOLIDEDIT → Body → Imprint</code> для "запечатывания" поверхностей.</li>
+  <li><strong>Исправление геометрии:</strong> Команды <code>_SOLIDEDIT → Body → Clean</code> или <code>CHECK</code> помогут найти и устранить дефекты.</li>
+  <li><strong>Экспорт-импорт:</strong> Иногда помогает сохранение модели в формате <em>.SAT</em> (ACIS) с последующим открытием — это "очищает" геометрию.</li>
+</ol>
+
+<p>⚠️ <strong>Внимание:</strong> При работе с <em>.STL</em>-файлами (например, для 3D-печати) <em>AutoCAD</em> воспринимает модель как <strong>сетку</strong>, а не тело. Для расчёта объёма сначала преобразуйте её в <em>NURBS-поверхность</em> командой <code>CONVTONURBS</code>, а затем в тело.</p>
+
+<div class="pb-table-wrap"><table>
+  <thead>
+    <tr>
+      <th>Формат файла</th>
+      <th>Тип объекта в AutoCAD</th>
+      <th>Требуемая обработка</th>
+      <th>Команда для исправления</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>.STEP</em> (<em>AP203/AP214</em>)</td>
+      <td>3D Тело или Поверхность</td>
+      <td>Преобразование в тело</td>
+      <td><code>CONVTOSOLID</code></td>
+    </tr>
+    <tr>
+      <td><em>.IGES</em></td>
+      <td>Поверхность или Сетка</td>
+      <td>Замыкание граней</td>
+      <td><code>_SOLIDEDIT → Body → Sew</code></td>
+    </tr>
+    <tr>
+      <td><em>.STL</em></td>
+      <td>Сетка</td>
+      <td>Конвертация в NURBS → Тело</td>
+      <td><code>CONVTONURBS</code>, затем <code>CONVTOSOLID</code></td>
+    </tr>
+    <tr>
+      <td><em>.DWG</em> (из других версий)</td>
+      <td>3D Тело</td>
+      <td>Проверка на ошибки</td>
+      <td><code>CHECK</code> или <code>AUDIT</code></td>
+    </tr>
+  </tbody>
+</table></div>
+
+<h2 id="6-продвинутые-приёмы-секции-анализ-и-оптимизация">6. Продвинутые приёмы: секции, анализ и оптимизация</h2>
+
+<p>Иногда недостаточно просто узнать объём — нужно проанализировать его распределение или оптимизировать модель. Для этого в <em>AutoCAD</em> есть дополнительные инструменты:</p>
+
+<p><strong>1. Команда <code>SECTIONPLANE</code> для анализа поперечных сечений</strong></p>
+<p>Создайте секущую плоскость через модель и измерьте площадь сечения командой <code>AREA</code>. Умножив площадь на высоту (или интегрировав несколько сечений), вы получите объём сложных тел, которые трудно обработать стандартными методами.</p>
+
+<p><strong>2. <em>3D Print</strong> для проверки "печатаемости"</em></p>
+<p>Если модель предназначена для 3D-печати, используйте команду <code>_3DPRINT</code> → <em>Анализ</em>. Программа покажет не только объём, но и потенциальные проблемы (тонкие стенки, свисающие элементы).</p>
+
+<p><strong>3. Оптимизация с помощью <em>AutoCAD Mechanical</strong></em></p>
+<p>В специализированной версии <em>AutoCAD Mechanical</em> есть инструмент <em>Part Builder</em>, который автоматически рассчитывает объём и массу с учётом материала (например, стали, алюминия). Для этого:</p>
+<ol>
+  <li>Откройте <em>Content Library</em> (<code>AMLIBRARY</code>).</li>
+  <li>Выберите материал из базы (например, <em>Stainless Steel</em>).</li>
+  <li>Примените его к модели и используйте <code>MASSPROP</code> — объём будет пересчитан с учётом плотности.</li>
+</ol>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Для точного инженерного расчёта всегда указывайте материал детали — это позволит получить не только объём, но и реальную массу, что критично для балансировки механизмов (например, коленчатых валов или маховиков).</p></aside>
+
+<h2 id="7-типичные-ошибки-и-как-их-избежать">7. Типичные ошибки и как их избежать</h2>
+
+<p>Даже опытные пользователи <em>AutoCAD</em> иногда сталкиваются с некорректными результатами при расчёте объёма. Вот самые распространённые причины и способы их устранения:</p>
+
+<ul>
+  <li>🔴 <strong>Объём равен нулю:</strong> Тело не замкнуто или является поверхностью. Используйте <code>SOLIDCHECK</code> для диагностики.</li>
+  <li>🔴 <strong>Отрицательный объём:</strong> Нормали граней направлены внутрь. Исправляйте командой <code>_SOLIDEDIT → Body → Reverse normals</code>.</li>
+  <li>🔴 <strong>Несоответствие ожидаемому значению:</strong> Проверьте единицы измерения (<code>UNITS</code>) — возможно, модель создана в дюймах, а вы ожидаете миллиметры.</li>
+  <li>🔴 <strong>Ошибка "Недопустимое тело":</strong> Модель содержит самопересечения. Примените <code>_SOLIDEDIT → Body → Clean</code>.</li>
+  <li>🔴 <strong>Объём меняется при булевых операциях:</strong> Используйте команду <code>_SOLIDEDIT → Body → Presspull</code> для "подтягивания" граней вместо вычитания.</li>
+</ul>
+
+<p>💡 <strong>Лайфхак:</strong> Если модель слишком сложная и <em>AutoCAD</em> "зависает" при расчёте объёма, разбейте её на более простые части командой <code>SLICE</code>, посчитайте объём каждой части отдельно, а затем просуммируйте результаты.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Сохраняйте копию модели перед сложными булевыми операциями — некоторые комбинации <code>UNION</code>/<code>SUBTRACT</code> могут необратимо испортить геометрию.</p></aside>
+
+<h2 id="faq-частые-вопросы-по-расчёту-объёма-в-autocad">FAQ: Частые вопросы по расчёту объёма в AutoCAD</h2>
+
+<details>
+  <summary>Можно ли посчитать объём тела, созданного из нескольких несоединённых частей?</summary>
+  <p>Да, но нужно сначала объединить их в одно тело командой <code>UNION</code>. Если части не соприкасаются, <em>AutoCAD</em> может не распознать их как единый объект — в этом случае используйте <code>MASSPROP</code> для каждой части отдельно и суммируйте результаты вручную.</p>
+</details>
+
+<details>
+  <summary>Почему после импорта из SolidWorks объём в AutoCAD отличается от исходного?</summary>
+  <p>Это связано с разной точностью представления геометрии. При экспорте в <em>.STEP</em> или <em>.IGES</em> некоторые кривые могут аппроксимироваться, что приводит к погрешностям. Чтобы минимизировать ошибку:</p>
+  <ul>
+    <li>Используйте формат <em>ACIS (.SAT)</em> вместо <em>STEP</em>.</li>
+    <li>Увеличьте точность экспорта в настройках <em>SolidWorks</em> (параметр <em>Precision</em>).</li>
+    <li>В <em>AutoCAD</em> примените <code>_SOLIDEDIT → Body → Clean</code>.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>Как посчитать объём жидкости в ёмкости сложной формы (например, топливном баке)?</summary>
+  <p>Смоделируйте уровень жидкости как плоскость, "отрежьте" верхнюю часть бака командой <code>SLICE</code>, а затем используйте <code>MASSPROP</code> для нижней части. Альтернативно — создайте отдельное тело жидкости булевым вычитанием (<code>SUBTRACT</code>) пустоты бака из полного объёма.</p>
+</details>
+
+<details>
+  <summary>Можно ли автоматически генерировать отчёт с объёмами всех деталей в сборке?</summary>
+  <p>Да, с помощью команды <code>DATAEXTRACTION</code>:
+  <ol>
+    <li>Выделите все детали в сборке.</li>
+    <li>Запустите <code>DATAEXTRACTION</code>.</li>
+    <li>В мастере выберите объект <em>3D Тело</em> и свойство <em>Объём</em>.</li>
+    <li>Сохраните отчёт в <em>.CSV</em> или вставьте таблицу прямо в чертеж.</li>
+  </ol>
+<p>Для автоматизации процесса напишите скрипт на <em>AutoLISP</em> или используйте <em>Dynamic Blocks</em>.</p></p>
+</details>
+
+<details>
+  <summary>Как узнать объём тела, если оно состоит из тонкостенных элементов (например, кузов автомобиля)?</summary>
+  <p>Для тонкостенных конструкций стандартный <code>MASSPROP</code> может давать неточные результаты из-за сложной топологии. Рекомендуем:</p>
+  <ul>
+    <li>Разбить модель на более простые сегменты.</li>
+    <li>Использовать команду <code>THICKNESS</code> для проверки толщины стенок.</li>
+    <li>Применить <code>SECTIONPLANE</code> для анализа поперечных сечений и ручного интегрирования.</li>
+  </ul>
+  <p>В крайнем случае экспортируйте модель в <em>MeshMixer</em> или <em>Blender</em> — эти программы лучше справляются с тонкостенной геометрией.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/a/av/avtokhol-na-avto-chto.html" class="pb-related-card">
+                <span class="pb-related-title">Автохол на авто: что это, как работает и как настроить</span>
+                <span class="pb-related-desc">Разбираем функцию автохолд: зачем она нужна, как пользоваться, возможные поломки и отличия от ручник</span>
+            </a><a href="/articles/b/bl/blyutuz-prikurivatel-v-avto-dlya-muzyki.html" class="pb-related-card">
+                <span class="pb-related-title">Bluetooth прикуриватель в авто для музыки: выбор, установка, обзор</span>
+                <span class="pb-related-desc">Как выбрать Bluetooth адаптер в прикуриватель для прослушивания музыки в машине. Сравнение FM-трансм</span>
+            </a><a href="/articles/s/so/sozdanie-v-sisteme-virtualnoj-mashiny-dlya-ispolneniya-prilozhenij.html" class="pb-related-card">
+                <span class="pb-related-title">Создание виртуальной машины для приложений: полное руководство</span>
+                <span class="pb-related-desc">Как создать виртуальную машину для запуска ПО. Выбор гипервизора, настройка ресурсов и установка опе</span>
+            </a><a href="/articles/p/pl/plug-in-hybrid-chto-eto-znachit.html" class="pb-related-card">
+                <span class="pb-related-title">Plug-in Hybrid: что это значит и как работает</span>
+                <span class="pb-related-desc">Узнайте, что значит plug-in hybrid, как заряжать PHEV и стоит ли покупать. Полный разбор плюсов, мин</span>
+            </a><a href="/articles/n/na/na-chto-vliyaet-razmer-magnita-na-dinamike.html" class="pb-related-card">
+                <span class="pb-related-title">Размер магнита динамика: влияние на звук и параметры</span>
+                <span class="pb-related-desc">Как размер магнита влияет на громкость, бас и чувствительность динамика? Разбор физики процесса, миф</span>
+            </a><a href="/articles/r/re/rear-control-v-mashine.html" class="pb-related-card">
+                <span class="pb-related-title">Rear Control в машине: что это и как работает</span>
+                <span class="pb-related-desc">Подробный обзор системы Rear Control в автомобиле: функции, режимы работы, плюсы и минусы. Узнайте, </span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

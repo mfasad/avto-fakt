@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как установить приложение на виртуальную машину: пошаговая инструкция — Авто Факт</title>
+    <meta name="description" content="Узнайте, как правильно установить приложение на виртуальную машину. Подробный гайд по настройке среды, методам инсталляции и устранению ошибок для Windows и Linux.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ka/kak-ustanovit-prilozhenie-na-virtualnuyu-mashinu.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как установить приложение на виртуальную машину: пошаговая инструкция">
+    <meta property="og:description" content="Узнайте, как правильно установить приложение на виртуальную машину. Подробный гайд по настройке среды, методам инсталляции и устранению ошибок для Windows и Linux.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как установить приложение на виртуальную машину: пошаговая инструкция</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#подготовка-виртуального-окружения-к-работе">Подготовка виртуального окружения к работе</a></li><li><a href="#методы-передачи-установочных-файлов">Методы передачи установочных файлов</a></li><li><a href="#пошаговая-инструкция-по-установке-программ">Пошаговая инструкция по установке программ</a></li><li><a href="#настройка-сети-и-доступа-к-ресурсам">Настройка сети и доступа к ресурсам</a></li><li><a href="#оптимизация-производительности-при-установке">Оптимизация производительности при установке</a></li><li><a href="#решение-распространенных-проблем-и-ошибок">Решение распространенных проблем и ошибок</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/c/ch/chem-otlichayutsya-shirokopolosnye-dinamiki-ot-estradnykh.html">Широкополосные или эстрадные динамики: в чем разница?</a></li><li><a href="/articles/i/iz/izmeritel-skorosti-dvizheniya-transportnykh-sredstv.html">Измеритель скорости движения: виды, принцип работы, выбор и установка</a></li><li><a href="/articles/k/ka/kakie-tvitery-luchshe-vybrat-v-avto-bez-usilitelya.html">Твитеры в авто без усилителя: как выбрать лучшие (2026)</a></li><li><a href="/articles/r/ra/razvetvitel-dlya-prikurivatelya-avtomobilya-s-usb.html">Разветвитель прикуривателя с USB: выбор, установка и безопасность</a></li><li><a href="/articles/k/kr/krepleniya-dlya-plansheta-v-avtomobil-na-torpedu.html">Крепления для планшета в машину на торпеду: выбор и установка 2026</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как установить приложение на виртуальную машину</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#подготовка-виртуального-окружения-к-работе">Подготовка виртуального окружения к работе</a></li><li><a href="#методы-передачи-установочных-файлов">Методы передачи установочных файлов</a></li><li><a href="#пошаговая-инструкция-по-установке-программ">Пошаговая инструкция по установке программ</a></li><li><a href="#настройка-сети-и-доступа-к-ресурсам">Настройка сети и доступа к ресурсам</a></li><li><a href="#оптимизация-производительности-при-установке">Оптимизация производительности при установке</a></li><li><a href="#решение-распространенных-проблем-и-ошибок">Решение распространенных проблем и ошибок</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Современные IT-специалисты и продвинутые пользователи часто сталкиваются с необходимостью запускать софт в изолированном окружении. Это может быть связано с тестированием подозрительных файлов, разработкой кроссплатформенных решений или просто желанием запустить старую игру на современном компьютере. Виртуализация позволяет создать полноценную операционную систему внутри вашей основной, не затрагивая её стабильность.</p>
+
+<p>Процесс инсталляции программ в такую среду имеет свои нюансы, которые существенно отличаются от обычной установки на физический хост. <strong>Гостевая операционная система</strong> требует корректной настройки сетевого взаимодействия и доступа к файловой системе, чтобы процесс прошел успешно. Игнорирование базовых правил конфигурации может привести к тому, что установщик просто не увидит необходимые файлы или не сможет подключиться к интернету.</p>
+
+<p>В этой статье мы детально разберем все этапы подготовки и непосредственного внедрения софта в виртуальное окружение. Вы узнаете о различиях между разными методами передачи установочных файлов и поймете, как оптимизировать работу <em>гостевой ОС</em> для максимальной производительности.</p>
+
+<h2 id="подготовка-виртуального-окружения-к-работе">Подготовка виртуального окружения к работе</h2>
+
+<p>Прежде чем приступать к непосредственной установке любого программного обеспечения, необходимо убедиться, что сама виртуальная машина полностью готова к работе. Базовым требованием является наличие установленной операционной системы и запущенного экземпляра гипервизора, будь то <em>VirtualBox</em>, <em>VMware Workstation</em> или <em>Hyper-V</em>. Без функционирующей гостевой системы любые дальнейшие манипуляции не имеют смысла.</p>
+
+<p>Критически важным шагом является установка пакета дополнений, часто называемого Guest Additions или VMware Tools. Этот набор драйверов и системных служб обеспечивает правильную работу видеоадаптера, позволяет использовать общий буфер обмена и, что самое главное, настраивает корректный доступ к файлам хоста. <strong>Без этих драйверов</strong> система может работать в режиме низкой совместимости, что сделает установку тяжелых приложений невозможной или крайне медленной.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Готовность виртуальной машины</h4><label class="check-item"><input type="checkbox"><span>Установлена гостевая ОС</span></label><label class="check-item"><input type="checkbox"><span>Установлены Guest Tools/VMware Tools</span></label><label class="check-item"><input type="checkbox"><span>Настроено сетевое подключение</span></label><label class="check-item"><input type="checkbox"><span>Выделено достаточно оперативной памяти</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Также стоит проверить настройки сети. Для скачивания установщиков из интернета виртуальная машина должна иметь доступ к глобальной сети через NAT или мостовое соединение. Если вы планируете передавать файлы локально, убедитесь, что настроены общие папки или подключены виртуальные приводы.</p>
+
+<h2 id="методы-передачи-установочных-файлов">Методы передачи установочных файлов</h2>
+
+<p>Существует несколько проверенных способов доставить установочный файл внутрь изолированной среды. Выбор конкретного метода зависит от размера приложения, наличия интернет-соединения в гостевой системе и требований безопасности. Каждый вариант имеет свои преимущества и ограничения, которые необходимо учитывать.</p>
+
+<p>Наиболее универсальным способом считается использование образа диска ISO. Вы можете смонтировать ISO-файл с дистрибутивом программы в виртуальный привод гипервизора. Для гостевой операционной системы это будет выглядеть как подключение обычного DVD-диска или внешнего накопителя, что позволяет запустить <code>setup.exe</code> напрямую.</p>
+
+<p>Альтернативой служит использование общих папок (Shared Folders). Этот метод позволяет создать директорию на хосте, которая будет доступна внутри виртуальной машины как сетевой ресурс. Однако для работы этого механизма обязательно требуется установленный пакет дополнений, о котором говорилось ранее. В противном случае гостевая система просто не увидит расшаренный ресурс.</p>
+
+<ul>
+<li>📀 <strong>ISO-образы:</strong> Идеально подходят для больших дистрибутивов и офлайн-установки без необходимости копирования файлов.</li>
+<li>📂 <strong>Общие папки:</strong> Удобны для быстрой передачи небольших файлов и скриптов, требуют настройки прав доступа.</li>
+<li>☁️ <strong>Облачные хранилища:</strong> Позволяют скачать файл внутри гостевой ОС через браузер, если есть интернет.</li>
+<li>🔌 <strong>USB-проброс:</strong> Прямое подключение флешки к виртуальной машине, требует поддержки контроллера USB в гипервизоре.</li>
+</ul>
+
+<div class="pb-poll" id="poll-389996a5"><div class="pb-poll-question">📊 Какой метод передачи файлов вы используете чаще?</div><div class="pb-poll-option" data-poll="389996a5" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">ISO-образ</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="389996a5" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Общая папка</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="389996a5" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Облачное хранилище</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="389996a5" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Сетевое хранилище (NAS/SMB)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="пошаговая-инструкция-по-установке-программ">Пошаговая инструкция по установке программ</h2>
+
+<p>Процесс инсталляции в виртуальной среде технически повторяет действия на физическом компьютере, но требует внимания к путям доступа. После того как файл доставлен одним из описанных выше способов, необходимо открыть проводник гостевой системы и найти исполняемый файл. Часто установщики требуют запуска от имени администратора для внесения изменений в системный реестр.</p>
+
+<p>Запустите мастер установки и внимательно следите за предлагаемыми путями. По умолчанию программы могут пытаться установиться на диск <code>C:</code>, что в виртуальной среде является основным системным разделом с ограниченным объемом. Если виртуальный диск мал, имеет смысл выбрать <strong>выборочную установку</strong> и перенаправить файлы на второй виртуальный том, если он создан.</p>
+
+<blockquote>⚠️ Внимание: При установке драйверов или системных утилит убедитесь, что они совместимы с версией гостевой ОС, а не хоста. Попытка поставить драйверы от Windows 11 на виртуальную машину с Windows 7 приведет к ошибке.</blockquote>
+
+<p>В ходе установки могут появляться запросы на создание ярлыков или изменение системных переменных. В тестовых средах эти изменения безопасны, но если вы используете виртуальную машину для отката состояния (snapshots), помните, что любые изменения в реестре будут зафиксированы в текущем состоянии системы.</p>
+
+<details class="pb-accordion"><summary>Что делать, если установщик не запускается?</summary><div class="pb-accordion-body"><p>Если файл имеет расширение .exe, но не реагирует на двойной клик, попробуйте запустить его через командную строку. Введите полный путь к файлу в терминале, например: D:\Install\app.exe. Также проверьте, не блокирует ли антивирус гостевой системы запуск неизвестных исполняемых файлов.</p></div></details>
+
+<h2 id="настройка-сети-и-доступа-к-ресурсам">Настройка сети и доступа к ресурсам</h2>
+
+<p>Многие современные приложения требуют активного интернет-соединения для активации лицензии или загрузки дополнительных компонентов. Виртуальные машины обычно используют NAT-режим по умолчанию, что позволяет им выходить в сеть через IP-адрес хоста. Однако для корпоративного софта или специфических серверных приложений может потребоваться режим <em>Bridged Adapter</em> (Сетевой мост).</p>
+
+<p>В режиме моста виртуальная машина получает собственный IP-адрес в вашей локальной сети, становясь полноценным узлом. Это необходимо, если устанавливаемое приложение должно быть доступно другим компьютерам в сети или если оно привязывается к конкретному MAC-адресу. Настройка производится в меню сетевого адаптера гипервизора до или во время работы машины.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>NAT (Трансляция адресов)</th>
+<th>Bridged (Сетевой мост)</th>
+<th>Host-Only (Только хост)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Доступ в Интернет</td>
+<td>Есть (через хост)</td>
+<td>Есть (прямой)</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Видимость в локальной сети</td>
+<td>Скрыта</td>
+<td>Видна как отдельный ПК</td>
+<td>Видна только хосту</td>
+</tr>
+<tr>
+<td>Безопасность</td>
+<td>Высокая</td>
+<td>Средняя (зависит от сети)</td>
+<td>Максимальная</td>
+</tr>
+<tr>
+<td>Использование IP</td>
+<td>Внутренний пул виртуализатора</td>
+<td>IP от роутера/провайдера</td>
+<td>Виртуальный адаптер хоста</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Не забывайте проверять настройки брандмауэра внутри гостевой операционной системы. Даже при правильно настроенном сетевом адаптере встроенный файрвол может блокировать входящие соединения, необходимые для работы устанавливаемого приложения.</p>
+
+<h2 id="оптимизация-производительности-при-установке">Оптимизация производительности при установке</h2>
+
+<p>Установка тяжелых приложений, таких как графические редакторы или IDE, может существенно нагрузить виртуальные ресурсы. Если процесс идет медленно, в первую очередь стоит обратить внимание на выделенное количество оперативной памяти. <strong>Нехватка RAM</strong> приводит к активному использованию файла подкачки на виртуальном диске, что резко снижает скорость отклика.</p>
+
+<p>Также важным фактором является количество ядер процессора, выделенных виртуальной машине. По умолчанию гипервизоры могут выделять только одно ядро, что создает узкое место при распаковке архивов и записи файлов. Увеличение числа потоков до половины от_available_ ресурсов хоста обычно дает ощутимый прирост скорости.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Отключите лишние визуальные эффекты в гостевой ОС перед установкой. Это освободит ресурсы GPU и CPU для процесса инсталляции, особенно если видеопамять виртуальной машины ограничена.</p></aside>
+
+<p>Еще один нюанс касается дисковой подсистемы. Если виртуальный диск динамический (растет по мере заполнения), запись больших объемов данных может фрагментировать реальный диск хоста. Дефрагментация или использование фиксированного размера виртуального диска могут ускорить процесс.</p>
+
+<h2 id="решение-распространенных-проблем-и-ошибок">Решение распространенных проблем и ошибок</h2>
+
+<p>В процессе работы пользователи часто сталкиваются с ошибкой "Недостаточно места на диске", даже если на хосте свободно сотни гигабайт. Это связано с тем, что виртуальный диск имеет жесткий лимит, заданный при создании машины. Решением является расширение виртуального тома через меню гипервизора и последующее расширение раздела внутри гостевой ОС через <code>diskmgmt.msc</code> (для Windows) или <code>gparted</code> (для Linux).</p>
+
+<p>Другая частая проблема — невозможность скопировать файл перетаскиванием (Drag-and-Drop). Это почти всегда свидетельствует о том, что не установлены или не обновлены <em>гостевые дополнения</em>. Переустановка пакета инструментов виртуализации обычно решает проблему интеграции буфера обмена и файлового менеджера.</p>
+
+<blockquote>⚠️ Внимание: Если после установки приложения виртуальная машина начала работать нестабильно или перестала загружаться, используйте функцию "Снимки" (Snapshots). Откат к точке восстановления, сделанной перед установкой, вернет систему в рабочее состояние за секунды.</blockquote>
+
+<p>В редких случаях антивирусное ПО хоста может блокировать запись файлов в виртуальный диск, считая это подозрительной активностью. В таких ситуациях стоит добавить исключение для папки, где хранятся файлы виртуальной машины, в настройки антивируса основной системы.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Использование снимков состояния (Snapshots) перед установкой нового софта — это золотой стандарт безопасности, позволяющий мгновенно отменить любые нежелательные изменения в системе.</p></aside>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Можно ли установить приложение на виртуальную машину без интернета?</summary>
+<p>Да, это возможно. Для этого необходимо скачать установочный файл на основной компьютер (хост), а затем передать его в виртуальную машину через общую папку, USB-накопитель или смонтированный ISO-образ. Интернет внутри гостевой ОС для этого не требуется.</p>
+</details>
+
+<details>
+<summary>Повлияет ли установка программы на виртуальную машину на работу основного компьютера?</summary>
+<p>Нет, виртуальная машина полностью изолирована. Программы, вирусы или системные изменения внутри неё не затрагивают файлы и реестр основной операционной системы, если не настроены специальные общие ресурсы.</p>
+</details>
+
+<details>
+<summary>Почему установка идет очень медленно?</summary>
+<p>Скорость может быть ограничена нехваткой выделенных ресурсов (CPU, RAM), использованием медленного HDD вместо SSD на хосте или отсутствием установленных драйверов виртуализации (Guest Additions), которые оптимизируют дисковые операции.</p>
+</details>
+
+<details>
+<summary>Нужно ли активировать Windows внутри виртуальной машины?</summary>
+<p>Технически система будет работать и без активации, но с ограничениями (например, персонализация рабочего стола). Для полноценного тестирования софта активация не всегда обязательна, но желательна для избежания всплывающих уведомлений.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/c/ch/chem-otlichayutsya-shirokopolosnye-dinamiki-ot-estradnykh.html" class="pb-related-card">
+                <span class="pb-related-title">Широкополосные или эстрадные динамики: в чем разница?</span>
+                <span class="pb-related-desc">Подробное сравнение эстрадных и широкополосных динамиков. Узнайте, какие динамики лучше для автозвук</span>
+            </a><a href="/articles/i/iz/izmeritel-skorosti-dvizheniya-transportnykh-sredstv.html" class="pb-related-card">
+                <span class="pb-related-title">Измеритель скорости движения: виды, принцип работы, выбор и установка</span>
+                <span class="pb-related-desc">Как работают радары и измерители скорости для авто? Сравнение типов, советы по выбору и легальному и</span>
+            </a><a href="/articles/k/ka/kakie-tvitery-luchshe-vybrat-v-avto-bez-usilitelya.html" class="pb-related-card">
+                <span class="pb-related-title">Твитеры в авто без усилителя: как выбрать лучшие (2026)</span>
+                <span class="pb-related-desc">Экспертный гайд по выбору высокочастотных динамиков для авто без усилителя: ТОП-5 моделей, схемы под</span>
+            </a><a href="/articles/r/ra/razvetvitel-dlya-prikurivatelya-avtomobilya-s-usb.html" class="pb-related-card">
+                <span class="pb-related-title">Разветвитель прикуривателя с USB: выбор, установка и безопасность</span>
+                <span class="pb-related-desc">Полный гид по выбору автомобильного разветвителя прикуривателя с USB. Защита от перегрузок, схемы по</span>
+            </a><a href="/articles/k/kr/krepleniya-dlya-plansheta-v-avtomobil-na-torpedu.html" class="pb-related-card">
+                <span class="pb-related-title">Крепления для планшета в машину на торпеду: выбор и установка 2026</span>
+                <span class="pb-related-desc">Как выбрать надежное крепление для планшета на торпеду автомобиля: виды держателей, совместимость с </span>
+            </a><a href="/articles/k/ka/kak-proiskhodit-oplata-v-yandeks-dostavke-kurerom.html" class="pb-related-card">
+                <span class="pb-related-title">Как происходит оплата в Яндекс Доставке курьером: гид</span>
+                <span class="pb-related-desc">Полный разбор оплаты в Яндекс Доставке: наличные, карты, QR-коды и корпоративные счета. Лимиты, чеки</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

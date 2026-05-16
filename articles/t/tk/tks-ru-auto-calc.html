@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>TKS RU Auto Calc: точный расчет автозапчастей по VIN и коду — Авто Факт</title>
+    <meta name="description" content="Полный гид по работе с калькулятором TKS RU. Как правильно подобрать запчасти, избежать ошибок в каталогах и сэкономить на ремонте.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/t/tk/tks-ru-auto-calc.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="TKS RU Auto Calc: точный расчет автозапчастей по VIN и коду">
+    <meta property="og:description" content="Полный гид по работе с калькулятором TKS RU. Как правильно подобрать запчасти, избежать ошибок в каталогах и сэкономить на ремонте.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/drugoe/">Другое</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">TKS RU Auto Calc: точный расчет автозапчастей по VIN и коду</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#принципы-работы-каталожных-баз-tks">Принципы работы каталожных баз TKS</a></li><li><a href="#алгоритм-точного-подбора-по-vin-коду">Алгоритм точного подбора по VIN-коду</a></li><li><a href="#работа-с-кросс-номерами-и-аналогами">Работа с кросс-номерами и аналогами</a></li><li><a href="#анализ-цен-и-логистических-условий">Анализ цен и логистических условий</a></li><li><a href="#оформление-заказа-и-работа-с-корзиной">Оформление заказа и работа с корзиной</a></li><li><a href="#решение-спорных-ситуаций-и-возврат">Решение спорных ситуаций и возврат</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/c/ch/chto-znachit-strong-na-zhizhe.html">Что значит стронг на жиже: расшифровка сленга и виды жидкостей</a></li><li><a href="/articles/d/do/dokazatelstvo-smerti-smysl-filma.html">Доказательство смерти: смысл фильма и скрытые детали</a></li><li><a href="/articles/p/po/podshipnik-gde-nakhoditsya-v-avtomobile.html">Где находится подшипник в автомобиле: схема и поиск</a></li><li><a href="/articles/c/ch/chto-takoe-kaster-v-avtomobile-i-na-chto-vliyaet.html">Что такое кастер в автомобиле: влияние на управляемость</a></li><li><a href="/articles/s/so/sovremennye-avto-na-mekhanike.html">Современные авто на механике: плюсы, минусы и лучшие модели 2026</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>TKS RU Auto Calc: профессиональный расчет и подбор автозапчастей</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принципы-работы-каталожных-баз-tks">Принципы работы каталожных баз TKS</a></li><li><a href="#алгоритм-точного-подбора-по-vin-коду">Алгоритм точного подбора по VIN-коду</a></li><li><a href="#работа-с-кросс-номерами-и-аналогами">Работа с кросс-номерами и аналогами</a></li><li><a href="#анализ-цен-и-логистических-условий">Анализ цен и логистических условий</a></li><li><a href="#оформление-заказа-и-работа-с-корзиной">Оформление заказа и работа с корзиной</a></li><li><a href="#решение-спорных-ситуаций-и-возврат">Решение спорных ситуаций и возврат</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Поиск надежных и недорогих автозапчастей в современных условиях стал задачей, требующей не просто времени, но и определенного уровня технической грамотности. <strong>TKS RU</strong> зарекомендовал себя как один из наиболее стабильных агрегаторов, объединяющий предложения множества поставщиков в единую базу данных. Однако сам по себе доступ к каталогу не гарантирует успешной покупки, если пользователь не умеет правильно интерпретировать данные и пользоваться встроенными инструментами фильтрации.</p>
+
+<p>Ключевым инструментом для любого, кто занимается обслуживанием своего автомобиля, является встроенный <strong>Auto Calc</strong> или модуль подбора по параметрам. Именно он позволяет отсеять несовместимые детали на раннем этапе, экономя бюджет и нервы. В этой статье мы разберем, как максимально эффективно использовать функционал платформы, на какие скрытые нюансы обращать внимание при формировании заказа и почему слепое доверие к автоматическим расчетам может привести к ошибкам.</p>
+
+<p>Вам предстоит научиться читать каталожные номера, понимать разницу между оригиналом и качественным аналогом, а также правильно оценивать логистические риски. Мы не будем углубляться в базовые инструкции «куда нажать», а сосредоточимся на экспертных методах работы с системой, которые обычно известны только опытным закупщикам и сотрудникам сервисных центров.</p>
+
+<h2 id="принципы-работы-каталожных-баз-tks">Принципы работы каталожных баз TKS</h2>
+
+<p>Фундаментом любого поиска на портале <em>TKS RU</strong> является корректная идентификация транспортного средства. Система не работает по принципу «угдай цвет», она опирается на строгие <strong>VIN-коды</strong> и OEM-номерации. Ошибка даже в одном символе при вводе VIN может привести к тому, что калькулятор предложит детали от другой модификации двигателя или кузова. Поэтому первичная верификация данных — это критически важный этап, который нельзя игнорировать.</p>
+
+<p>База данных агрегирует информацию от множества поставщиков, и здесь кроется важный нюанс: наличие товара у разных вендоров может отличаться, но каталожная привязка остается единой. Когда вы вводите запрос, система обращается к <strong>кросс-референсам</em> — таблицам соответствия номеров. Это означает, что один и тот же фильтр или колодка могут иметь десятки разных артикулов от различных производителей, но физически быть идентичными.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Интерфейс и алгоритмы подбора на сайте могут обновляться поставщиком услуг. Всегда проверяйте актуальность полей ввода и доступных фильтров в личном кабинете перед оформлением крупных заказов.</p>
+</blockquote>
+
+<p>Стоит также учитывать, что некоторые узлы, особенно в современных автомобилях, требуют дополнительной проверки по <em>Production Date</em> (дате выпуска). Два автомобиля одной модели, выпущенные с разницей в полгода, могут комплектоваться разными версиями тормозных дисков или подвески. <strong>Auto Calc</strong> часто подсвечивает такие моменты, но финальное решение о соответствии всегда лежит на пользоват</p>
+
+<div class="pb-poll" id="poll-7cb95c4b"><div class="pb-poll-question">📊 Как вы обычно ищете запчасти?</div><div class="pb-poll-option" data-poll="7cb95c4b" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">По VIN-коду</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="7cb95c4b" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">По модели авто</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="7cb95c4b" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">По фото детали</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="7cb95c4b" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">По совету друга</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="алгоритм-точного-подбора-по-vin-коду">Алгоритм точного подбора по VIN-коду</h2>
+
+<p>Использование VIN-кода — это «золотой стандарт» в мире автозапчастей, и платформа <em>TKS RU</strong> не является исключением. Чтобы получить максимально точный результат, необходимо вводить код без лишних пробелов и символов, хотя система часто умеет очищать строку автоматически. Однако ручной контроль введенных данных обязателен, так как оптическое распознавание (OCR) при сканировании документов иногда допускает ошибки, путая буквы <code>B</code> и цифру <code>8</code> или <code>O</code> и <code>0</code>.</p>
+
+<p>После ввода кода система формирует «дерево» узлов автомобиля. Здесь важно не просто выбрать нужную категорию, например, «Тормозная система», но и внимательно изучить схематическое изображение узла. Часто одна и та же деталь на схеме имеет несколько вариантов исполнения в зависимости от комплектации. <strong>Код опции</strong>, указанный в описании, может быть решающим фактором для правильного выбора.</p>
+
+<ul>
+<li>🚗 Вводите VIN-код полностью, проверяя каждую цифру визуально.</li>
+<li>🔍 Сверяйте название модели и год выпуска, которые система определила автоматически.</li>
+<li>📄 Сохраняйте скриншот схемы узла с выделенным номером детали для архива.</li>
+</ul>
+
+<p>Особое внимание стоит уделить составным узлам. Если вы меняете, скажем, генератор, система может предложить его в сборе или отдельно <strong>щетки</strong> и <strong>регулятор напряжения</strong>. Калькулятор TKS позволяет увидеть все доступные варианты, но не всегда явно указывает, что для замены щеток требуется разборка корпуса, что может быть экономически нецелесообразно. Взвешивайте стоимость труда и детали.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Сохраняйте историю своих поисков в личном кабинете TKS — это позволит быстро находить нужные номера при повторной покупке или заказе у другого поставщика.</p></aside>
+
+<h2 id="работа-с-кросс-номерами-и-аналогами">Работа с кросс-номерами и аналогами</h2>
+
+<p>Одной из самых сильных сторон использования специализированных калькуляторов является возможность быстрого поиска <strong>аналогов</strong>. Оригинальные запчасти (OEM) часто имеют высокую наценку, в то время как производители aftermarket предлагают идентичные по качеству решения под своими брендами. В TKS RU реализована система перекрестных ссылок, которая позволяет по номеру оригинала найти все доступные замены.</p>
+
+<p>Однако не все аналоги одинаковы. При работе с таблицей заменителей важно обращать внимание на бренд-производитель и страну происхождения. Дешевый аналог может отличаться материалом изготовления или ресурсом. Например, в тормозной системе использование некачественных материалов может привести к быстрому износу или скрипу. <strong>Кросс-номер</em> — это лишь указание на геометрическую совместимость, но не всегда на идентичность характеристик.</p>
+
+<p>Для сложных узлов, таких как элементы управления двигателем или системы безопасности, замена на аналог требует особой осторожности. Здесь лучше придерживаться оригинальных номеров или проверенных брендов первого уровня поставки (<em>OES</em>). Калькулятор может показать десятку вариантов, но только опыт или консультация специалиста помогут выбрать тот, который не потребует «танцев с бубном» при установке.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Тип детали</th>
+<th>Оригинал (OEM)</th>
+<th>Качественный аналог</th>
+<th>Бюджетный вариант</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Масляный фильтр</td>
+<td>Высокая надежность, точная резьба</td>
+<td>Mann, Mahle, Filtron</td>
+<td>Китайские бренды без имени</td>
+</tr>
+<tr>
+<td>Тормозные колодки</td>
+<td>Идеальный ресурс и отсутствие скрипа</td>
+<td>Nisshinbo, Textar, TRW</td>
+<td>Неизвестные производители</td>
+</tr>
+<tr>
+<td>Свечи зажигания</td>
+<td>Стабильное искрообразование</td>
+<td>NGK, Denso, Bosch</td>
+<td>Реплики популярных марок</td>
+</tr>
+<tr>
+<td>Подшипник ступицы</td>
+<td>Ресурс более 100 тыс. км</td>
+<td>SKF, FAG, SNR</td>
+<td>Упаковщики без производства</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>При выборе аналога всегда проверяйте <strong>геометрические размеры</strong>, если есть возможность. Иногда, даже при совпадении номера, посадочные места могут отличаться на доли миллиметра, что критично для подшипников или сальников. Используйте техническую документацию, доступную по ссылкам в карточке товара, если она предоставлена поставщиком.</p>
+
+<h2 id="анализ-цен-и-логистических-условий">Анализ цен и логистических условий</h2>
+
+<p>Функционал <em>TKS RU</strong> позволяет сравнивать предложения разных поставщиков в режиме реального времени. Однако самая низкая цена на экране монитора не всегда означает итоговую экономию. Необходимо учитывать условия поставки, которые могут варьироваться от «на складе в Москве» до «под заказ 14 дней из Европы». <strong>Срок поставки</strong> — это переменная, которая напрямую влияет на планирование ремонта.</p>
+
+<p>Кроме того, существуют скрытые costs, такие как стоимость доставки до пункта выдачи или минимальная сумма заказа для бесплатной транспортировки. Калькулятор часто показывает цену за единицу товара, но при оптовой закупке или заказе комплекта условия могут меняться. Внимательно изучайте столбец «Склад» и «Срок» перед добавлением позиции в корзину.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Курс валют для товаров под заказ фиксируется поставщиком в момент подтверждения, а не в момент заказа. Уточняйте актуальность курса в условиях конкретного вендора, так как колебания рынка могут существенно изменить итоговую сумму.</p>
+</blockquote>
+
+<p>Также стоит обратить внимание на статус наличия. Маркировка «На складе» обычно означает, что товар физически находится в регионе присутствия. Статус «Подтверждение» требует времени на связь с поставщиком, а «Под заказ» подразумевает ожидание и невозможность быстрого возврата в случае изменения планов. Планируйте закупку заранее, особенно если речь идет о сезонных запчастях.</p>
+
+<details class="pb-accordion"><summary>Почему цена может измениться после заказа?</summary><div class="pb-accordion-body"><p>Цена может быть пересчитана поставщиком, если с момента формирования корзины до момента подтверждения заказа изменился курс валют или поставщик обновил прайс-лист. Это стандартная практика для товаров, не находящихся в наличии на локальном складе.</p></div></details>
+
+<h2 id="оформление-заказа-и-работа-с-корзиной">Оформление заказа и работа с корзиной</h2>
+
+<p>Процесс формирования заказа в <strong>TKS RU</strong> прост, но содержит ряд важных шагов для обеспечения безопасности сделки. После того как вы отобрали необходимые позиции, система предложит проверить их совместимость еще раз. Не игнорируйте этот этап: иногда при добавлении товаров из разных категорий (например, фильтры и свечи) может затеряться несовместимость по модификации двигателя.</p>
+
+<p>В корзине важно выбрать правильный способ получения. Пункты выдачи могут иметь разный график работы и условия хранения крупногабаритных грузов. Если вы заказываете <strong>кузовные детали</strong> или стекла, убедитесь, что выбранный пункт способен принять такой груз и у вас есть возможность его забрать. Некоторые пункты не хранят негабаритный товар бесплатно более 2-3 дней.</p>
+
+<ul>
+<li>📦 Проверьте итоговый вес и габариты заказа для выбора типа доставки.</li>
+<li>📞 Укажите актуальный номер телефона для связи с курьером или менеджером.</li>
+<li>💳 Выберите удобный способ оплаты, учитывая возможные комиссии платежных систем.</li>
+</ul>
+
+<p>Особое внимание уделите условиям возврата. Для товаров под заказ возврат часто невозможен по закону или условиям поставщика, если деталь исправна. Ошибка в выборе номера, совершенная покупателем, может привести к тому, что деталь останется у него на руках. <strong>Невозвратные товары</strong> обычно помечены специальным значком или текстом в описании.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка перед оплатой</h4><label class="check-item"><input type="checkbox"><span>Совпадают ли номера деталей с VIN</span></label><label class="check-item"><input type="checkbox"><span>Проверен ли срок поставки</span></label><label class="check-item"><input type="checkbox"><span>Указан верный пункт выдачи</span></label><label class="check-item"><input type="checkbox"><span>Изучены условия возврата</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="решение-спорных-ситуаций-и-возврат">Решение спорных ситуаций и возврат</h2>
+
+<p>Даже при самом тщательном подборе через <em>Auto Calc</strong> могут возникнуть ситуации, когда деталь не подошла или оказалась бракованной. В этом случае важно действовать согласно регламенту платформы. Первым шагом всегда должна быть фиксация проблемы: фотографии упаковки, самой детали, маркировок и несоответствий. Это станет доказательной базой при общении с поставщиком.</p>
+
+<p>Если деталь оказалась бракованной (заводской дефект), закон «О защите прав потребителей» и правила площадки стоят на стороне покупателя. Однако, если речь идет о «неподошедшей» детали, купленной по ошибке клиента, возврат возможен только если товарный вид полностью сохранен, а сама деталь не является невозвратной. <strong>Гарантийный случай</em> требует проведения экспертизы, результаты которой будут решающими.</p>
+
+<p>Коммуникация с поставщиком через систему тикетов или личные сообщения в рамках TKS RU предпочтительнее телефонных разговоров, так как сохраняет историю переписки. Четко формулируйте проблему, прикладывайте фото и ждите официального ответа. В большинстве случаев поставщики дорожат репутацией и идут навстречу, предлагая замену или возврат средств.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Всегда сохраняйте чеки, скриншоты заказа и переписку с поставщиком до момента окончательного завершения сделки и установки детали.</p></aside>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Можно ли доверять автоматическому подбору по VIN на TKS?</summary>
+<p>Автоматический подбор по VIN является наиболее точным методом, но он не дает 100% гарантии, особенно для автомобилей с богатой историей modifications. Всегда сверяйте визуальное изображение детали и ее параметры с тем, что установлено на вашем автомобиле. Ответственность за финальный выбор несет покупатель.</p>
+</details>
+
+<details>
+<summary>Что делать, если цена в корзине изменилась после оформления?</summary>
+<p>Если товар находится в статусе «Подтверждение» или «Под заказ», поставщик имеет право пересчитать стоимость в зависимости от текущего курса валют или изменения закупочной цены. Вы вправе согласиться с новой ценой или отменить заказ. Для товаров «На складе» цена обычно фиксируется в момент создания заказа.</p>
+</details>
+
+<details>
+<summary>Как понять, оригинальная ли запчасть предлагается в каталоге?</summary>
+<p>Обращайте внимание на бренд. Если указан производитель автомобиля (например, Toyota, BMW) — это оригинал. Если указан сторонний бренд (Bosch, KYB, Febi) — это аналог. В описании товара также часто присутствует пометка «OEM» или «Оригинал».</p>
+</details>
+
+<details>
+<summary>Возможен ли возврат запчасти, если она не понадобилась?</summary>
+<p>Возврат возможен, если сохранен товарный вид, упаковка не повреждена, и деталь не входит в перечень товаров, не подлежащих возврату (например, электротехника, детали двигателя с нарушенной упаковкой). Для товаров под заказ возврат, как правило, не предусмотрен.</p>
+</details>
+
+<details>
+<summary>Где найти историю моих заказов на TKS?</summary>
+<p>Вся история заказов, статусы оплат и трекинг доставки отображаются в личном кабинете пользователя в разделе «Мои заказы» или «История». Там же можно скачать закрывающие документы и чеки.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/c/ch/chto-znachit-strong-na-zhizhe.html" class="pb-related-card">
+                <span class="pb-related-title">Что значит стронг на жиже: расшифровка сленга и виды жидкостей</span>
+                <span class="pb-related-desc">Полная расшифровка термина стронг на жиже. Узнайте, что означает крепость, как читать этикетки и чем</span>
+            </a><a href="/articles/d/do/dokazatelstvo-smerti-smysl-filma.html" class="pb-related-card">
+                <span class="pb-related-title">Доказательство смерти: смысл фильма и скрытые детали</span>
+                <span class="pb-related-desc">Анализ фильма Доказательство смерти. Смысл концовки, разбор персонажей и скрытые детали триллера Тар</span>
+            </a><a href="/articles/p/po/podshipnik-gde-nakhoditsya-v-avtomobile.html" class="pb-related-card">
+                <span class="pb-related-title">Где находится подшипник в автомобиле: схема и поиск</span>
+                <span class="pb-related-desc">Узнайте, где находится подшипник в автомобиле. Подробный разбор мест установки: ступицы, генератор, </span>
+            </a><a href="/articles/c/ch/chto-takoe-kaster-v-avtomobile-i-na-chto-vliyaet.html" class="pb-related-card">
+                <span class="pb-related-title">Что такое кастер в автомобиле: влияние на управляемость</span>
+                <span class="pb-related-desc">Узнайте, что такое кастер в автомобиле и на что он влияет. Разбор влияния угла наклона на курсовую у</span>
+            </a><a href="/articles/s/so/sovremennye-avto-na-mekhanike.html" class="pb-related-card">
+                <span class="pb-related-title">Современные авто на механике: плюсы, минусы и лучшие модели 2026</span>
+                <span class="pb-related-desc">Какие современные машины с МКПП выпускают в 2026 году? Сравнение плюсов и минусов механики, обзор лу</span>
+            </a><a href="/articles/l/lu/luchshie-firmy-po-prigonu-avto.html" class="pb-related-card">
+                <span class="pb-related-title">Лучшие фирмы по пригону авто: рейтинг надежных компаний</span>
+                <span class="pb-related-desc">Как выбрать лучшие фирмы по пригону авто? Полный гид по рынку, скрытые комиссии, этапы доставки и ре</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

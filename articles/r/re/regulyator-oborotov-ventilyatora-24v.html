@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Регулятор оборотов вентилятора 24В: выбор и схемы подключения — Авто Факт</title>
+    <meta name="description" content="Полное руководство по выбору регулятора оборотов 24В. PWM и линейные контроллеры, схемы подключения, защита от перегрева и настройка кулеров.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/r/re/regulyator-oborotov-ventilyatora-24v.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Регулятор оборотов вентилятора 24В: выбор и схемы подключения">
+    <meta property="og:description" content="Полное руководство по выбору регулятора оборотов 24В. PWM и линейные контроллеры, схемы подключения, защита от перегрева и настройка кулеров.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/garazh-master/">Гараж Мастер</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Регулятор оборотов вентилятора 24В: выбор и схемы подключения</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#принцип-работы-и-типы-регуляторов">Принцип работы и типы регуляторов</a></li><li><a href="#критерии-выбора-контроллера-для-сети-24в">Критерии выбора контроллера для сети 24В</a></li><li><a href="#схемы-подключения-и-монтаж-оборудования">Схемы подключения и монтаж оборудования</a></li><li><a href="#автоматизация-подключение-термодатчиков">Автоматизация: подключение термодатчиков</a></li><li><a href="#диагностика-неисправностей-и-обслуживание">Диагностика неисправностей и обслуживание</a></li><li><a href="#вопросы-и-ответы-faq">Вопросы и ответы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/k/ka/kak-razbavlyat-krasku-s-razbavitelem.html">Как разбавлять краску с разбавителем: пропорции и таблица</a></li><li><a href="/articles/m/mo/mozhno-li-perevozit-morozilnyj-lar-lezha.html">Можно ли перевозить морозильный ларь лёжа? Правила и риски</a></li><li><a href="/articles/m/ma/malyj-biznes-v-garazhe-idei-rabotayushchie.html">15 прибыльных идей малого бизнеса в гараже с нуля в 2026 году</a></li><li><a href="/articles/p/pe/petrovskij-avtotsentr-rustaveli-31.html">Петровский Автоцентр на Руставели 31: услуги, цены, отзывы</a></li><li><a href="/articles/k/ka/kak-vybit-tsifry-na-metalle.html">Как выбить цифры на металле: полное руководство по маркировке</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Регулятор оборотов вентилятора 24В: выбор и схемы подключения</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-работы-и-типы-регуляторов">Принцип работы и типы регуляторов</a></li><li><a href="#критерии-выбора-контроллера-для-сети-24в">Критерии выбора контроллера для сети 24В</a></li><li><a href="#схемы-подключения-и-монтаж-оборудования">Схемы подключения и монтаж оборудования</a></li><li><a href="#автоматизация-подключение-термодатчиков">Автоматизация: подключение термодатчиков</a></li><li><a href="#диагностика-неисправностей-и-обслуживание">Диагностика неисправностей и обслуживание</a></li><li><a href="#вопросы-и-ответы-faq">Вопросы и ответы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>В системах охлаждения современного гаражного оборудования, самодельных инкубаторов или климатических установок для автомобилей часто возникает необходимость точного управления скоростью воздушного потока. Стандартные вентиляторы, работающие на полной мощности, создают избыточный шум и потребляют лишнюю энергию, что критично при питании от бортовой сети 24В. Именно здесь на помощь приходит <strong>регулятор оборотов</strong>, позволяющий гибко настраивать производительность системы вентиляции под текущие нужды.</p>
+
+<p>Использование контроллера скорости не просто снижает уровень акустического комфорта, но и продлевает ресурс самого двигателя вентилятора. Механический износ подшипников значительно снижается при работе на пониженных скоростях, а в системах с <em>PWM-управлением</em> достигается высокая энергоэффективность. В этой статье мы разберем принципы работы различных типов регуляторов и способы их интеграции в вашу систему.</p>
+
+<p>Для начала стоит определить, какой именно тип управления вам необходим. На рынке представлены решения, варьирующиеся от простых реостатных схем до сложных микропроцессорных контроллеров с обратной связью. Выбор зависит от типа двигателя (коллекторный или бесколлекторный) и требований к точности поддержания температуры.</p>
+
+<ul>
+<li>🔌 Линейные регуляторы — просты в сборке, но греются при больших токах.</li>
+<li>⚡ PWM-контроллеры — обеспечивают высокий КПД и широкий диапазон регулировки.</li>
+<li>🌡️ Терморегуляторы — автоматически меняют скорость в зависимости от датчика температуры.</li>
+</ul>
+
+<blockquote>⚠️ <strong>Внимание:</strong> При работе с бортовой сетью 24В (грузовики, спецтехника) обязательно учитывайте скачки напряжения при запуске двигателя. Резкие броски до 30-35В могут мгновенно вывести из строя дешевые контроллеры без встроенной защиты.</blockquote>
+
+<h2 id="принцип-работы-и-типы-регуляторов">Принцип работы и типы регуляторов</h2>
+
+<p>Основная задача любого регулятора — изменять среднее значение напряжения или тока, подаваемого на обмотки двигателя. В системах постоянного тока 24В наиболее распространены два метода: изменение амплитуды напряжения (линейный метод) и широтно-импульсная модуляция (<strong>PWM</strong>). Первый метод прост, но неэффективен, так как избыточная энергия рассеивается в виде тепла на регулирующем элементе.</p>
+
+<p>Метод <em>PWM (Pulse Width Modulation)</em> работает иначе. Контроллер подает полные 24В короткими импульсами, меняя их длительность (скважность). Если импульс открыт 50% времени, двигатель получает половину мощности, но без потерь на нагрев ключевых элементов. Это особенно важно для мощных промышленных вентиляторов, где токи могут достигать 10-20 Ампер.</p>
+
+<p>Существуют также специализированные контроллеры для бесколлекторных (BLDC) вентиляторов. Такие устройства часто имеют 3 или 4 провода управления и требуют подачи специального сигнального напряжения на управляющий вход, а не разрыва цепи питания. Попытка регулировать BLDC-вентилятор обычным реостатом приведет к его остановке или нестабильной работе.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Для мощных систем охлаждения (более 100 Вт) выбирайте регуляторы с частотой PWM не менее 20 кГц, чтобы избежать слышимого писка обмоток двигателя.</p></aside>
+
+<p>Выбор между линейным и импульсным регулятором часто диктуется бюджетом и требованиями к электромагнитной совместимости. Линейные схемы не создают радиопомех, что важно для бортовых радиостанций, тогда как PWM-контроллеры требуют качественной фильтрации входного сигнала.</p>
+
+<h2 id="критерии-выбора-контроллера-для-сети-24в">Критерии выбора контроллера для сети 24В</h2>
+
+<p>При подборе оборудования для гаража или мастерской первым делом обращайте внимание на максимальный ток коммутации. Если ваш вентилятор потребляет 5 Ампер, регулятор должен иметь запас минимум 30-50%, то есть быть рассчитанным на 7-8 Ампер. Работа на пределе возможностей приведет к перегреву <strong>силовых ключей</strong> и выходу устройства из строя.</p>
+
+<p>Второй важный параметр — диапазон входного напряжения. Бортовая сеть 24В номинально имеет именно такое напряжение, но при работе генератора оно может колебаться от 22В до 29В. Хороший регулятор должен стабильно работать в диапазоне от 18В до 35В. Также стоит обратить внимание на наличие встроенного предохранителя или возможности его установки.</p>
+
+<p>Материал корпуса и наличие радиатора играют критическую роль. Пластиковые корпуса без перфорации подходят только для маломощных моделей до 1-2 Ампер. Для серьезных нагрузок необходим <strong>алюминиевый радиатор</strong> или корпус с ребрами охлаждения. В условиях гаража, где может быть пыль и металлическая стружка, важна герметичность электронной платы.</p>
+
+<div class="pb-poll" id="poll-cca5b6e0"><div class="pb-poll-question">📊 Какой параметр для вас важнее при выборе регулятора?</div><div class="pb-poll-option" data-poll="cca5b6e0" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Максимальный ток</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="cca5b6e0" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Наличие радиатора</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="cca5b6e0" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Цена устройства</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="cca5b6e0" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Бренд производителя</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Тип регулятора</th>
+<th>КПД</th>
+<th>Нагрев</th>
+<th>Применение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Линейный (Реостатный)</td>
+<td>Низкий (40-60%)</td>
+<td>Сильный</td>
+<td>Малые токи до 2А</td>
+</tr>
+<tr>
+<td>PWM (Широтно-импульсный)</td>
+<td>Высокий (90-95%)</td>
+<td>Слабый</td>
+<td>Средние и большие токи</td>
+</tr>
+<tr>
+<td>Терморегулятор</td>
+<td>Зависит от схемы</td>
+<td>Средний</td>
+<td>Автоматические системы</td>
+</tr>
+<tr>
+<td>Программируемый контроллер</td>
+<td>Высокий</td>
+<td>Минимальный</td>
+<td>Сложные проекты</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2 id="схемы-подключения-и-монтаж-оборудования">Схемы подключения и монтаж оборудования</h2>
+
+<p>Процесс установки регулятора требует внимательности к полярности подключения. В отличие от переменного тока, в сети 24В DC перепутывание плюса и минуса мгновенно выведет электронику из строя. Стандартная схема подключения включает вход от источника питания (Input), выход на вентилятор (Output) и, при наличии, сигнальные провода.</p>
+
+<p>Для подключения используйте провода с сечением, соответствующим току нагрузки. Для токов до 10 Ампер рекомендуется медный провод сечением не менее 1.5 мм². Все соединения должны быть надежно изолированы, желательно с использованием термоусадочных трубок, так как в гаражных условиях вибрация может ослабить контакт в скрутке.</p>
+
+<p>Если вы используете <strong>PWM-регулятор</strong> с внешним потенциометром, длину проводов до ручки управления лучше не превышать 1 метра, чтобы избежать наводок. В некоторых случаях может потребоваться установка конденсатора на входе питания для сглаживания пульсаций, особенно если длина проводов до аккумулятора велика.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка перед запуском</h4><label class="check-item"><input type="checkbox"><span>Проверить полярность подключения</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в надежности контактов</span></label><label class="check-item"><input type="checkbox"><span>Проверить свободный ход лопастей</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в отсутствии короткого замыкания</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<blockquote>⚠️ <strong>Внимание:</strong> Никогда не производите подключение или отключение проводов под нагрузкой. Искрение контактов может повредить выходные клеммы регулятора или вызвать возгорание пыли, накопившейся в системе.</blockquote>
+
+<h2 id="автоматизация-подключение-термодатчиков">Автоматизация: подключение термодатчиков</h2>
+
+<p>Для создания полностью автономной системы охлаждения целесообразно использовать регуляторы с возможностью подключения термодатчика. Это позволяет системе самостоятельно повышать обороты при нагреве радиатора или двигателя и снижать их до минимума в режиме простоя. Чаще всего используются датчики типа <em>NTC</em> или <em>PTC</em>.</p>
+
+<p>Настройка пороговых значений срабатывания осуществляется либо потенциометрами на плате, либо через цифровое меню, если регулятор оснащен дисплеем. Важно правильно разместить датчик температуры: он должен плотно контактировать с охлаждаемой поверхностью, желательно через термопасту, для получения корректных показаний.</p>
+
+<p>Гистерезис — еще один важный параметр. Это разница температур между включением вентилятора на полную мощность и выключением. Если гистерезис слишком мал, вентилятор будет постоянно дергаться, включаясь и выключаясь при температуре, близкой к пороговой. Оптимальная разница составляет 3-5 градусов Цельсия.</p>
+
+<details class="pb-accordion"><summary>Как продлить жизнь термодатчику?</summary><div class="pb-accordion-body"><p>Термодатчики NTC чувствительны к механическим повреждениям. При монтаже в вибрационных условиях (автомобиль, станок) рекомендуется дополнительно фиксировать корпус датчика термостойким клеем или хомутом, избегая натяжения проводов.</p></div></details>
+
+<h2 id="диагностика-неисправностей-и-обслуживание">Диагностика неисправностей и обслуживание</h2>
+
+<p>В процессе эксплуатации регулятор может столкнуться с перегрузками или перегревом. Первым признаком проблем является появление постороннего запаха гари или изменение звука работы вентилятора (гул, прерывистое вращение). Регулярная визуальная inspection позволяет выявить окисление контактов или повреждение изоляции.</p>
+
+<p>Если вентилятор перестал реагировать на ручку регулировки, но продолжает работать на полной мощности, скорее всего, пробит силовой транзистор или MOSFET-ключ. В этом случае требуется замена компонента или всего модуля. Ремонт имеет смысл только при наличии навыков пайки и доступа к электронным компонентам.</p>
+
+<p>Очистка от пыли — обязательная процедура для систем с принудительным охлаждением. Забитые пылью радиаторы регулятора теряют эффективность теплоотвода, что приводит к тепловой защите и отключению устройства. Продувка сжатым воздухом раз в полгода значительно снизит риск перегрева.</p>
+
+<mark>Критически важным параметром для долговечности является температура окружающей среды: большинство регуляторов рассчитаны на работу до +50°C, превышение этого порога в замкнутом пространстве гаража летом может привести к отказу.</mark>
+
+<h2 id="вопросы-и-ответы-faq">Вопросы и ответы (FAQ)</h2>
+
+<details>
+<summary>Можно ли использовать регулятор 12В для вентилятора 24В?</summary>
+<p>Нет, это невозможно. Регулятор 12В не выдержит напряжения 24В и сгорит мгновенно. Более того, он не сможет обеспечить полное открытие ключа, и вентилятор не выйдет на полную мощность. Всегда подбирайте устройство с запасом по напряжению.</p>
+</details>
+
+<details>
+<summary>Почему вентилятор гудит на низких оборотах?</summary>
+<p>Гудение часто вызвано низкой частотой PWM-сигнала. Обмотки двигателя начинают вибрировать с частотой импульсов. Решение — использовать регулятор с более высокой частотой ШИМ (выше 20 кГц) или добавить сглаживающий дроссель в цепь.</p>
+</details>
+
+<details>
+<summary>Как рассчитать необходимую мощность регулятора?</summary>
+<p>Умножьте напряжение (24В) на ток потребления вентилятора (в Амперах). Например, для вентилятора 5А мощность составит 120 Вт. Регулятор должен иметь запас минимум 20%, то есть быть рассчитанным на 6А или 150 Вт.</p>
+</details>
+
+<details>
+<summary>Можно ли управлять одним регулятором несколькими вентиляторами?</summary>
+<p>Да, если суммарный ток всех вентиляторов не превышает максимальный ток регулятора. Подключать их следует параллельно. Важно следить, чтобы пусковой ток (который выше рабочего) также укладывался в пределы устройства.</p>
+</details>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Правильно подобранный регулятор оборотов 24В снижает энергопотребление системы до 40% и значительно уменьшает шум, делая работу в гараже или кабине спецтехники комфортнее.</p></aside></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/k/ka/kak-razbavlyat-krasku-s-razbavitelem.html" class="pb-related-card">
+                <span class="pb-related-title">Как разбавлять краску с разбавителем: пропорции и таблица</span>
+                <span class="pb-related-desc">Узнайте, как правильно разбавлять краску растворителем. Таблица пропорций, выбор растворителя, техни</span>
+            </a><a href="/articles/m/mo/mozhno-li-perevozit-morozilnyj-lar-lezha.html" class="pb-related-card">
+                <span class="pb-related-title">Можно ли перевозить морозильный ларь лёжа? Правила и риски</span>
+                <span class="pb-related-desc">Разбираемся, допускается ли горизонтальная перевозка морозильного ларя, какие последствия возможны д</span>
+            </a><a href="/articles/m/ma/malyj-biznes-v-garazhe-idei-rabotayushchie.html" class="pb-related-card">
+                <span class="pb-related-title">15 прибыльных идей малого бизнеса в гараже с нуля в 2026 году</span>
+                <span class="pb-related-desc">Проверенные идеи для бизнеса в гараже: от автосервиса до производства. Пошаговые инструкции, расчёты</span>
+            </a><a href="/articles/p/pe/petrovskij-avtotsentr-rustaveli-31.html" class="pb-related-card">
+                <span class="pb-related-title">Петровский Автоцентр на Руставели 31: услуги, цены, отзывы</span>
+                <span class="pb-related-desc">Полный обзор Петровского Автоцентра по адресу Руставели 31. Диагностика, кузовной ремонт, обслуживан</span>
+            </a><a href="/articles/k/ka/kak-vybit-tsifry-na-metalle.html" class="pb-related-card">
+                <span class="pb-related-title">Как выбить цифры на металле: полное руководство по маркировке</span>
+                <span class="pb-related-desc">Узнайте, как выбить цифры на металле своими руками. Обзор инструментов, технологий маркировки, совет</span>
+            </a><a href="/articles/d/di/disk-po-kafelyu-dlya-bolgarki-125.html" class="pb-related-card">
+                <span class="pb-related-title">Диск по кафелю для болгарки 125 мм: выбор, резка, безопасность</span>
+                <span class="pb-related-desc">Как выбрать алмазный диск 125 мм для резки кафеля болгаркой: виды, характеристики, техника безопасно</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как отключить парковку головок HDD: HDLoad, CrystalDiskInfo — Авто Факт</title>
+    <meta name="description" content="Полная инструкция по отключению парковки головок жесткого диска. Разбор утилит, рисков и настройки таймаута таймера для HDD Western Digital.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ka/kak-otklyuchit-parkovku-golovok-zhestkogo-diska.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как отключить парковку головок HDD: HDLoad, CrystalDiskInfo">
+    <meta property="og:description" content="Полная инструкция по отключению парковки головок жесткого диска. Разбор утилит, рисков и настройки таймаута таймера для HDD Western Digital.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как отключить парковку головок HDD: HDLoad, CrystalDiskInfo</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#механизм-работы-и-риски-частой-парковки">Механизм работы и риски частой парковки</a></li><li><a href="#программное-обеспечение-для-управления-apmapm">Программное обеспечение для управления APM/APM</a></li><li><a href="#использование-утилиты-wdidle3-для-western-digital">Использование утилиты WDIdle3 для Western Digital</a></li><li><a href="#настройка-таймеров-в-linux-hdparm-и-smartctl">Настройка таймеров в Linux (hdparm и smartctl)</a></li><li><a href="#сравнение-утилит-и-совместимость-дисков">Сравнение утилит и совместимость дисков</a></li><li><a href="#частые-вопросы-и-troubleshooting">Частые вопросы и troubleshooting</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/n/na/na-kakom-diapazone-radio-mayak.html">На каком диапазоне радио маяк: частоты, настройки и поиск</a></li><li><a href="/articles/m/mo/moshchnyj-magnitnyj-derzhatel-dlya-telefona-v-avtomobil.html">Мощный магнитный держатель в авто: выбор и установка</a></li><li><a href="/articles/q/q-/q-link-pro-otzyvy.html">Q Link Pro: реальные отзывы владельцев 2026 года — плюсы и минусы</a></li><li><a href="/articles/k/ka/kakoj-trimmer-dlya-borody-i-usov-luchshe-kupit-otzyvy.html">Какой триммер для бороды лучше купить: отзывы и рейтинг 2026</a></li><li><a href="/articles/k/ka/kakuyu-diagnostiku-kupit-dlya-avto-vsekh-marok-avtomobilej.html">Какую диагностику купить для авто: выбор сканера</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как отключить парковку головок жесткого диска: руководство</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#механизм-работы-и-риски-частой-парковки">Механизм работы и риски частой парковки</a></li><li><a href="#программное-обеспечение-для-управления-apmapm">Программное обеспечение для управления APM/APM</a></li><li><a href="#использование-утилиты-wdidle3-для-western-digital">Использование утилиты WDIdle3 для Western Digital</a></li><li><a href="#настройка-таймеров-в-linux-hdparm-и-smartctl">Настройка таймеров в Linux (hdparm и smartctl)</a></li><li><a href="#сравнение-утилит-и-совместимость-дисков">Сравнение утилит и совместимость дисков</a></li><li><a href="#частые-вопросы-и-troubleshooting">Частые вопросы и troubleshooting</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Проблема циклической парковки головок жесткого диска является одной из самых распространенных причин преждевременного выхода из строя накопителей, особенно в ноутбуках и внешних USB-боксах. Пользователи часто замечают характерный щелчок, повторяющийся каждые несколько минут, что свидетельствует о переходе механизма в режим энергосбережения. В долгосрочной перспективе такая активность изнашивает узел позиционирования быстрее, чем сама запись данных.</p>
+
+<p>Однако, прежде чем приступать к модификации служебной области, важно понимать, что <strong>парковка головок</strong> — это штатная функция защиты, заложенная производителем. Она предотвращает повреждение магнитных пластин при ударах или вибрации, когда устройство работает от батареи. Отключение этой функции переводит диск в режим постоянной работы, что увеличивает тепловыделение и энергопотребление.</p>
+
+<p>В данном руководстве мы разберем программные методы управления таймером парковки, используя специализированный софт. Мы затронем утилиты для <em>Western Digital</em>, универсальные инструменты вроде <em>CrystalDiskInfo</em> и командную строку <em>hdparm</em> для Linux. Ваша цель — найти баланс между ресурсом механизма и энергоэффективностью системы.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Внесение изменений в служебную зону жесткого диска (AAM/APM настройки) может привести к потере гарантии. Все действия вы выполняете на свой страх и риск.</p>
+</blockquote>
+
+<h2 id="механизм-работы-и-риски-частой-парковки">Механизм работы и риски частой парковки</h2>
+
+<p>Современные накопители используют технологию парковки головок для экономии энергии. Когда диск переходит в состояние простоя, головки отводятся в специальную зону на краю пластины или за её пределы. Ресурс одной парковки оценивается примерно в одну операцию записи/чтения. Если таймер установлен на 8 секунд (стандарт для многих ноутбуков), то за год работы диск может совершить до 600 000 циклов парковки.</p>
+
+<p>Производители обычно декларируют ресурс в 300 000 – 600 000 циклов. Это означает, что при агрессивных настройках энергосбережения механизм может выработать свой ресурс всего за год-два активной эксплуатации. Симптомами проблемы являются периодические задержки (лаги) системы на 1-2 секунды в момент, когда диск должен «проснуться» для записи данных.</p>
+
+<p>Для диагностики текущего состояния используйте <strong>S.M.A.R.T.</strong> атрибуты. Вас интересуют два основных показателя:</p>
+<ul>
+<li>📊 <strong>Load Cycle Count (ID 193)</strong> — счетчик циклов парковки/распарковки. Рост этого значения подтверждает активность механизма.</li>
+<li>⏱️ <strong>Power-On Hours (ID 9)</strong> — общее время работы. Сравнивая его со счетчиком циклов, можно оценить частоту парковок в час.</li>
+<li>📉 <strong>Reallocated Sectors Count (ID 5)</strong> — количество переназначенных секторов. Частые парковки могут косвенно влиять на стабильность позиционирования.</li>
+</ul>
+
+<p>Если вы видите, что количество циклов Load Cycle Count растет быстрее, чем 10-15 в час в простое, настройки таймера вашего диска слишком агрессивны. В настольных ПК, где питание стабильно, нет смысла экономить пару ватт ценой ресурса механики.</p>
+
+<div class="pb-poll" id="poll-b4e4d4d8"><div class="pb-poll-question">📊 Как часто вы слышите щелчки вашего HDD?</div><div class="pb-poll-option" data-poll="b4e4d4d8" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Ежесекундно</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="b4e4d4d8" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Раз в минуту</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="b4e4d4d8" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Раз в 5-10 минут</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="b4e4d4d8" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Я их не слышу</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="программное-обеспечение-для-управления-apmapm">Программное обеспечение для управления APM/APM</h2>
+
+<p>Для изменения настроек парковки используются утилиты, работающие с <strong>Advanced Power Management (APM)</strong>. Эти программы отправляют специальные команды на контроллер диска, изменяя значение таймера в его прошивке. Важно понимать, что настройка часто сбрасывается после полного отключения питания (выдергивания кабеля), поэтому программы должны запускаться автоматически при старте системы.</p>
+
+<p>Одной из самых популярных утилит является <em>Quiet HDD</em> или <em>APM Feature Level</em>. Они позволяют установить уровень APM от 0 (выключено) до 254 (максимальное энергосбережение). Значение 254 или 255 обычно означает отключение парковки по таймеру, оставляя только парковку при ударе (через акселерометр).</p>
+
+<p>Также стоит упомянуть утилиту <em>CrystalDiskInfo</em>. В меню «Функции» -> «AAM/APM Management» можно увидеть текущие настройки. Если поля серые, значит, ваш диск или контроллер не поддерживают программное изменение этих параметров. В таком случае поможет только <mark>изменение прошивки диска</mark>, что является крайне рискованной операцией.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Не все диски позволяют менять настройки через SATA-интерфейс. Некоторые модели <em>Seagate</em> и <em>Toshiba</em> блокируют эти команды на уровне firmware.</p>
+</blockquote>
+
+<details class="pb-accordion"><summary>Почему настройки сбрасываются?</summary><div class="pb-accordion-body"><p>Настройки APM/APM хранятся в энергозависимой памяти контроллера диска. При полном обесточивании (отключении кабеля питания) диск возвращается к заводским настройкам, заложенным в ROM. Поэтому софт должен быть в автозагрузке Windows.</p></div></details>
+
+<h2 id="использование-утилиты-wdidle3-для-western-digital">Использование утилиты WDIdle3 для Western Digital</h2>
+
+<p>Владельцы дисков <em>Western Digital</em> (особенно серий Green, Blue и некоторых Red) сталкиваются с проблемой чаще других. Заводская настройка таймера у них часто составляет 8 секунд. Для решения этой проблемы существует официальная (но давно не обновляемая) утилита <em>WDIdle3</em>.</p>
+
+<p>Программа работает через командную строку и требует прав администратора. Она позволяет прочитать текущий таймер и установить новый. Оптимальным значением считается 300 секунд (5 минут) или полное отключение (значение 255), если диск используется в стационарном ПК.</p>
+
+<p>Порядок действий выглядит следующим образом:</p>
+<ol>
+<li>Скачайте утилиту <em>WDIdle3</em> (версия 1.01).</li>
+<li>Запустите командную строку от имени администратора (<code>cmd</code>).</li>
+<li>Введите команду для проверки текущего статуса: <code>wdidle3 /r</code>.</li>
+<li>Если таймер 8 секунд, введите команду для установки 300 секунд: <code>wdidle3 /t 300</code>.</li>
+<li>Для полного отключения таймера (не рекомендуется для ноутбуков): <code>wdidle3 /d</code>.</li>
+</ol>
+
+<p>После выполнения команды необходимо перезагрузить компьютер. Обратите внимание, что утилита может не работать с дисками, подключенными через USB-карманы, или с новыми моделями, где протокол был изменен. В таких случаях диск должен быть подключен напрямую к SATA-порту материнской платы.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка перед изменением таймера</h4><label class="check-item"><input type="checkbox"><span>Убедиться, что диск подключен по SATA</span></label><label class="check-item"><input type="checkbox"><span>Сделать резервную копию важных данных</span></label><label class="check-item"><input type="checkbox"><span>Запустить cmd от имени администратора</span></label><label class="check-item"><input type="checkbox"><span>Проверить текущий таймер командой /r</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="настройка-таймеров-в-linux-hdparm-и-smartctl">Настройка таймеров в Linux (hdparm и smartctl)</h2>
+
+<p>В операционных системах на базе Linux управление парковкой головок осуществляется более гибко и часто не требует стороннего софта, запускаясь через скрипты init. Основной инструмент — утилита <em>hdparm</em>. Она позволяет управлять параметрами APM и таймером standby.</p>
+
+<p>Команда <code>hdparm -B 254 /dev/sda</code> устанавливает уровень управления питанием (APM) в режим «производительность», отключая агрессивную парковку. Значение 255 полностью отключает управление питанием, а 254 оставляет минимальное. Значения от 1 до 127 включают парковку головок, где 1 — самая агрессивная.</p>
+
+<p>Также полезен параметр <strong>-S</strong>, который задает время до перехода в спящий режим (standby). Значение 0 отключает таймер перехода в спящий режим навсегда. Для настройки таймера парковки (если поддерживается драйвером) используется параметр <code>--set-features</code>, но чаще всего достаточно команды <code>-B</code>.</p>
+
+<pre><code># Пример настройки для диска /dev/sda
+<p>sudo hdparm -B 254 /dev/sda</p>
+<p>sudo hdparm -S 0 /dev/sda</code></pre></p>
+
+<p>Чтобы настройки сохранились после перезагрузки, необходимо добавить эти команды в файл конфигурации. В дистрибутивах на базе Debian/Ubuntu это можно сделать, создав файл в <code>/etc/hdparm.conf</code> или добавив скрипт в <code>/etc/rc.local</code>. В systemd-системах лучше создать отдельный сервис.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Используйте udev-правила в Linux для автоматического применения настроек hdparm при подключении диска, это надежнее, чем rc.local.</p></aside>
+
+<h2 id="сравнение-утилит-и-совместимость-дисков">Сравнение утилит и совместимость дисков</h2>
+
+<p>Не существует универсальной «волшебной кнопки» для всех дисков. Разные производители используют разные наборы команд ATA. Ниже приведена таблица, помогающая определить, какой инструмент может подойти для вашего накопителя.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Производитель</th>
+<th>Рекомендуемая утилита</th>
+<th>Поддержка APM</th>
+<th>Особенности</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Western Digital</td>
+<td>WDIdle3</td>
+<td>Частичная</td>
+<td>Работает только через SATA, блокируется в USB</td>
+</tr>
+<tr>
+<td>Seagate</td>
+<td>SeaTools / hdparm</td>
+<td>Ограниченная</td>
+<td>Часто игнорируют команды APM, парковка аппаратная</td>
+</tr>
+<tr>
+<td>Hitachi / HGST</td>
+<td>HDD Feature Level</td>
+<td>Высокая</td>
+<td>Хорошо поддаются настройке через стандартные команды</td>
+</tr>
+<tr>
+<td>Toshiba</td>
+<td>Storage Utilities</td>
+<td>Низкая</td>
+<td>Настройки часто залочены в прошивке</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Стоит отметить, что современные диски (<em>Helium</em> серии, <em>SMR</em> модели) могут вообще не иметь настраиваемого таймера парковки в традиционном понимании. В них алгоритмы парковки завязаны на сложные эвристики контроллера, которые не предназначены для вмешательства пользователя.</p>
+
+<p>Если ни одна из утилит не видит ваш диск или поля настроек заблокированы, это означает, что производитель жестко зашил поведение механизма. В таком случае единственное решение — не оставлять диск в простое, а организовать фоновую запись логов или дефрагментацию, чтобы держать головки в рабочем положении.</p>
+
+<h2 id="частые-вопросы-и-troubleshooting">Частые вопросы и troubleshooting</h2>
+
+<p>Даже при использовании правильных инструментов пользователи могут столкнуться с трудностями. Часто проблема кроется не в софте, а в аппаратной совместимости контроллера материнской платы или режима работы SATA (AHCI vs IDE vs RAID).</p>
+
+<p>Если после применения настроек диск начинает издавать странные звуки или система работает нестабильно, немедленно верните настройки к заводским. Помните, что отключение парковки увеличивает нагрев диска, так как двигатель шпинделя и актуатор работают постоянно.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> На ноутбуках отключение парковки головок приведет к ускоренному разряду батареи. Используйте эту настройку только при работе от сети.</p>
+</blockquote>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Главная цель настройки — увеличить интервал между парковками до 5-10 минут, а не отключать их полностью, чтобы сохранить защиту от ударов.</p></aside>
+
+<details>
+<summary>Безопасно ли полностью отключать парковку головок?</summary>
+<p>Полное отключение (таймер 0 или уровень 255) безопасно для диска, находящегося в стационарном положении (ПК, сервер, NAS), где исключены вибрации и удары. Однако для ноутбуков и внешних HDD это опасно: любое неосторожное движение может привести к контакту головок с поверхностью пластины и физическому повреждению данных, так как механизм не успеет припарковаться при ударе.</p>
+</details>
+
+<details>
+<summary>Почему утилита WDIdle3 пишет "Drive does not support this feature"?</summary>
+<p>Это может происходить по трем причинам: модель диска действительно не поддерживает изменение таймера; диск подключен через USB-контроллер (необходим прямой SATA); или диск слишком новый, и команда заблокирована производителем. Также попробуйте запустить утилиту в режиме совместимости или от имени администратора.</p>
+</details>
+
+<details>
+<summary>Как часто нужно проверять Load Cycle Count?</summary>
+<p>Достаточно проводить проверку раз в месяц. Резкий скачок значения (например, +1000 за сутки при простое) укажет на то, что настройки не применились или фоновый процесс (антивирус, индексация) постоянно будит диск. Нормальным считается прирост в несколько десятков единиц в сутки при активной работе.</p>
+</details>
+
+<details>
+<summary>Влияет ли отключение парковки на скорость работы диска?</summary>
+<p>Да, положительно. Исчезают микро-задержки (лаги) при обращении к диску после периода простоя. Система становится более отзывчивой, исчезают «фризы» интерфейса, связанные с ожиданием раскрутки шпинделя и позиционирования головок.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/n/na/na-kakom-diapazone-radio-mayak.html" class="pb-related-card">
+                <span class="pb-related-title">На каком диапазоне радио маяк: частоты, настройки и поиск</span>
+                <span class="pb-related-desc">Узнайте, на какой частоте работает радио маяк. Полный гид по диапазонам 27 МГц, 433 МГц и 146 МГц дл</span>
+            </a><a href="/articles/m/mo/moshchnyj-magnitnyj-derzhatel-dlya-telefona-v-avtomobil.html" class="pb-related-card">
+                <span class="pb-related-title">Мощный магнитный держатель в авто: выбор и установка</span>
+                <span class="pb-related-desc">Обзор лучших моделей магнитных держателей для телефона в авто. Советы по выбору неодимовых магнитов,</span>
+            </a><a href="/articles/q/q-/q-link-pro-otzyvy.html" class="pb-related-card">
+                <span class="pb-related-title">Q Link Pro: реальные отзывы владельцев 2026 года — плюсы и минусы</span>
+                <span class="pb-related-desc">Честные отзывы о Q Link Pro: опыт использования, технические нюансы, сравнение с аналогами и советы </span>
+            </a><a href="/articles/k/ka/kakoj-trimmer-dlya-borody-i-usov-luchshe-kupit-otzyvy.html" class="pb-related-card">
+                <span class="pb-related-title">Какой триммер для бороды лучше купить: отзывы и рейтинг 2026</span>
+                <span class="pb-related-desc">Ищете лучший триммер для бороды и усов? Честные отзывы, сравнение моделей и советы экспертов помогут</span>
+            </a><a href="/articles/k/ka/kakuyu-diagnostiku-kupit-dlya-avto-vsekh-marok-avtomobilej.html" class="pb-related-card">
+                <span class="pb-related-title">Какую диагностику купить для авто: выбор сканера</span>
+                <span class="pb-related-desc">Какой автосканер выбрать для всех марок? Обзор профессиональных и любительских адаптеров, протоколов</span>
+            </a><a href="/articles/s/se/sem-verst-ne-kryuk-dzen-avtor.html" class="pb-related-card">
+                <span class="pb-related-title">Семь верст не крюк: Дзен-автор и секреты успеха</span>
+                <span class="pb-related-desc">Как стать популярным Дзен-автором? Фразеологизм семь верст не крюк в контексте пути к успеху. Гайд п</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

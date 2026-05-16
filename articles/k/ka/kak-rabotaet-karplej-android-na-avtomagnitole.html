@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как работает CarPlay на Android-магнитоле: полный разбор — Авто Факт</title>
+    <meta name="description" content="Узнайте, как запустить Apple CarPlay на Android-магнитоле. Разбор протоколов, способы подключения и устранение ошибок в нашем подробном руководстве.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ka/kak-rabotaet-karplej-android-na-avtomagnitole.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как работает CarPlay на Android-магнитоле: полный разбор">
+    <meta property="og:description" content="Узнайте, как запустить Apple CarPlay на Android-магнитоле. Разбор протоколов, способы подключения и устранение ошибок в нашем подробном руководстве.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как работает CarPlay на Android-магнитоле: полный разбор</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#технические-основы-протокола-carplay-на-платформе-android">Технические основы протокола CarPlay на платформе Android</a></li><li><a href="#программные-решения-и-приложения-эмуляторы">Программные решения и приложения-эмуляторы</a></li><li><a href="#аппаратные-требования-и-проверка-совместимости">Аппаратные требования и проверка совместимости</a></li><li><a href="#инструкция-как-настроить-carplay-на-android-магнитоле">Инструкция: как настроить CarPlay на Android-магнитоле</a></li><li><a href="#проблемы-с-подключением-и-методы-их-устранения">Проблемы с подключением и методы их устранения</a></li><li><a href="#беспроводной-carplay-особенности-и-настройка">Беспроводной CarPlay: особенности и настройка</a></li><li><a href="#сравнение-нативной-поддержки-и-сторонних-решений">Сравнение нативной поддержки и сторонних решений</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/a/al/alpikol-kholodilnik-v-mashinu-alpicool.html">Холодильник в машину Alpicool: выбор, установка, настройка</a></li><li><a href="/articles/y/ya/yandeks-stantsiya-dlya-avtomobilya.html">Яндекс Станция для автомобиля: подключение, функции и обзор</a></li><li><a href="/articles/s/sk/skachat-sbornik-raznoj-muzyki-v-mashinu.html">Скачать сборник разной музыки в машину: лучшие треки и форматы</a></li><li><a href="/articles/b/bo/boris-shashlykov-lost-alfa.html">Борис Шашлыков Lost Alpha: Мод, геймплей и отличия от оригинала</a></li><li><a href="/articles/e/el/elm327-mini-kak-podklyuchit.html">ELM327 Mini: как подключить и настроить за 5 минут</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как работает CarPlay на Android-магнитоле: полный разбор</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#технические-основы-протокола-carplay-на-платформе-android">Технические основы протокола CarPlay на платформе Android</a></li><li><a href="#программные-решения-и-приложения-эмуляторы">Программные решения и приложения-эмуляторы</a></li><li><a href="#аппаратные-требования-и-проверка-совместимости">Аппаратные требования и проверка совместимости</a></li><li><a href="#инструкция-как-настроить-carplay-на-android-магнитоле">Инструкция: как настроить CarPlay на Android-магнитоле</a></li><li><a href="#проблемы-с-подключением-и-методы-их-устранения">Проблемы с подключением и методы их устранения</a></li><li><a href="#беспроводной-carplay-особенности-и-настройка">Беспроводной CarPlay: особенности и настройка</a></li><li><a href="#сравнение-нативной-поддержки-и-сторонних-решений">Сравнение нативной поддержки и сторонних решений</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Многие владельцы автомобилей с головными устройствами на базе операционной системы Android сталкиваются с желанием интегрировать функционал Apple CarPlay в свой гаджет. Это кажется парадоксом, ведь CarPlay — это проприетарная разработка Apple, заточенная под iOS, в то время как магнитола работает на Android. Однако современные технологии позволяют реализовать этот сценарий, превращая обычную мультимедийную систему в полноценный центр управления iPhone.</p>
+
+<p>Принцип работы заключается в эмуляции или трансляции интерфейса. Фактически, магнитола не запускает iOS, а получает видеопоток или отрисовывает интерфейс, идентичный CarPlay, управляемый вашим телефоном. <strong>Процесс синхронизации</strong> требует точного соответствия версий программного обеспечения и правильного протокола передачи данных, будь то USB-кабель или Wi-Fi соединение.</p>
+
+<p>В этой статье мы детально разберем технические аспекты реализации <em>Apple CarPlay</em> на сторонних устройствах. Вы поймете, почему одни магнитолы поддерживают эту функцию "из коробки", а для других требуются сложные манипуляции. Мы рассмотрим программные и аппаратные требования, которые необходимо выполнить для стабильной работы системы навигации и мультимедиа.</p>
+
+<h2 id="технические-основы-протокола-carplay-на-платформе-android">Технические основы протокола CarPlay на платформе Android</h2>
+
+<p>Фундаментальным отличием CarPlay от Android Auto является закрытость экосистемы Apple. Если Google предоставляет открытый исходный код для разработчиков головных устройств, то Apple жестко контролирует доступ к протоколам CarPlay. На Android-магнитолах реализация происходит через специальные сервисные приложения-оболочки, которые имитируют поведение сертифицированного головного устройства Apple.</p>
+
+<p>Ключевую роль здесь играет <strong>протокол передачи данных</strong>. При подключении кабеля происходит рукопожатие (handshake), в ходе которого магнитола сообщает телефону, что она является совместимым аксессуаром. В ответ iPhone передает видеопоток и получает команды сенсорного управления. На Android этот процесс часто требует эмуляции определенных системных идентификаторов.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Не все процессоры, установленные в китайских Android-магнитолах, обладают достаточной вычислительной мощностью для декодирования видеопотока CarPlay без задержек. Слабые чипы могут вызывать "фризы" интерфейса.</p>
+</blockquote>
+
+<p>Существует два основных способа реализации: нативный (зашитый в прошивку) и программный (через сторонние приложения). В первом случае производитель магнитолы уже встроил необходимые лицензии и драйверы. Во втором случае пользователь должен самостоятельно установить APK-файлы, которые создают виртуальную среду для работы сервиса.</p>
+
+<details class="pb-accordion"><summary>Почему CarPlay иногда работает нестабильно?</summary><div class="pb-accordion-body"><p>Причина часто кроется в пропускной способности USB-порта. Если порт магнитолы выдает менее 1 Ампера или использует стандарт USB 1.1 вместо 2.0/3.0, передача данных может прерываться, вызывая разрывы соединения.</p></div></details>
+
+<h2 id="программные-решения-и-приложения-эмуляторы">Программные решения и приложения-эмуляторы</h2>
+
+<p>Если ваша магнитола не имеет встроенной поддержки, на помощь приходят специализированные приложения. Наиболее популярным решением является <em>AutoKit</em> (для магнитол на чипах T3, T5, T8 и других). Это приложение берет на роль посредника между операционной системой Android и iPhone.</p>
+
+<p>Принцип работы таких приложений базируется на перенаправлении системных прерываний USB. Когда вы подключаете кабель, AutoKit перехватывает запрос телефона и предоставляет необходимые ответы от имени совместимого устройства. После этого на экране магнитолы появляется знакомый интерфейс с иконками карт, музыки и звонков.</p>
+
+<p>Другим вариантом являются приложения-лаунчеры, которые полностью заменяют интерфейс магнитолы. Они создают отдельную среду, оптимизированную под горизонтальное использование в автомобиле. Важно отметить, что для работы таких решений часто требуется <strong>root-права</strong> или установка специальных драйверов в системный раздел.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Перед установкой стороннего APK-файла обязательно сделайте резервную копию текущей прошивки магнитолы. В случае конфликта системных библиотек устройство может перестать загружаться.</p></aside>
+
+<p>Стоит упомянуть и о веб-версиях или альтернативных клиентах, которые пытаются обойти ограничения, но они часто работают нестабильно. Основной упор делается на проверенные решения, которые регулярно обновляются разработчиками в соответствии с изменениями в iOS.</p>
+
+<h2 id="аппаратные-требования-и-проверка-совместимости">Аппаратные требования и проверка совместимости</h2>
+
+<p>Успешная интеграция зависит не только от софта, но и от "железа". Ваша Android-магнитола должна соответствовать ряду минимальных требований. В первую очередь это касается версии операционной системы: обычно требуется Android 8.0 и выше, хотя встречаются исключения для более старых версий с патчами.</p>
+
+<p>Критически важным параметром является наличие качественного Wi-Fi модуля и Bluetooth. Беспроводной CarPlay требует высокой скорости передачи данных, которую может обеспечить только стандарт 802.11n или 802.11ac. Старые модули могут не потянуть поток высокого разрешения.</p>
+
+<p>Также обратите внимание на количество оперативной памяти. Для комфортной работы CarPlay на фоне запущенной Android-системы магнитоле требуется минимум 2 ГБ RAM, а лучше 4 ГБ. При меньшем объеме возможны вылеты приложения или перезагрузки устройства.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Минимальное требование</th>
+<th>Рекомендуемое значение</th>
+<th>Влияние на работу</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Версия Android</td>
+<td>6.0</td>
+<td>10.0 и выше</td>
+<td>Совместимость драйверов</td>
+</tr>
+<tr>
+<td>Оперативная память</td>
+<td>1 ГБ</td>
+<td>4 ГБ</td>
+<td>Скорость отклика интерфейса</td>
+</tr>
+<tr>
+<td>Wi-Fi модуль</td>
+<td>802.11g</td>
+<td>802.11ac (5 ГГц)</td>
+<td>Стабильность беспроводного соединения</td>
+</tr>
+<tr>
+<td>USB порт</td>
+<td>USB 2.0</td>
+<td>USB 3.0 (синий)</td>
+<td>Скорость передачи данных и зарядки</td>
+</tr>
+</tbody>
+</table></div>
+
+<div class="pb-poll" id="poll-037c5639"><div class="pb-poll-question">📊 Какой тип подключения CarPlay вы предпочитаете?</div><div class="pb-poll-option" data-poll="037c5639" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Проводной (USB)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="037c5639" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Беспроводной (Wi-Fi)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="037c5639" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Не использую</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="037c5639" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Затрудняюсь ответить</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="инструкция-как-настроить-carplay-на-android-магнитоле">Инструкция: как настроить CarPlay на Android-магнитоле</h2>
+
+<p>Процесс настройки может варьироваться в зависимости от модели головного устройства, но общий алгоритм действий остается схожим. Сначала необходимо убедиться, что на магнитоле включена отладка по USB и разрешена установка приложений из неизвестных источников.</p>
+
+<p>Далее следует найти и скачать актуальную версию приложения-эмулятора (например, AutoKit). После установки приложения требуется подключить iPhone к USB-порту магнитолы, предназначенному для телефонов (часто он помечен значком телефона или надписью <code>Phone Link</code>).</p>
+
+<p>При первом подключении на экране iPhone появится запрос на доверие этому компьютеру. Необходимо нажать "Доверять" и ввести пароль разблокировки экрана. После этого приложение на магнитоле должно автоматически запустить интерфейс CarPlay.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Чек-лист успешного подключения</h4><label class="check-item"><input type="checkbox"><span>Включена отладка по USB</span></label><label class="check-item"><input type="checkbox"><span>Разрешены неизвестные источники</span></label><label class="check-item"><input type="checkbox"><span>Установлено приложение AutoKit</span></label><label class="check-item"><input type="checkbox"><span>Используется качественный кабель Lightning</span></label><label class="check-item"><input type="checkbox"><span>Нажато "Доверять" на iPhone</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>Если автоматический запуск не произошел, попробуйте вручную открыть приложение эмулятора. В некоторых случаях требуется выбрать тип подключения (USB или Wi-Fi) в настройках самого приложения перед подключением кабеля.</p>
+
+<h2 id="проблемы-с-подключением-и-методы-их-устранения">Проблемы с подключением и методы их устранения</h2>
+
+<p>Наиболее распространенной проблемой является отсутствие реакции устройства на подключение кабеля. Часто это связано с самим кабелем. Для работы CarPlay необходим кабель с поддержкой передачи данных, а не только зарядки. Дешевые кабели без чипа MFi (Made for iPhone) могут не работать.</p>
+
+<p>Другая частая ошибка — черный экран или постоянные разрывы соединения. Это может указывать на конфликт версий ПО. Убедитесь, что версия iOS на телефоне не слишком новая для вашей версии приложения-эмулятора. В таком случае нужно ждать обновления приложения.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Если после установки стороннего ПО магнитола начала работать медленнее, попробуйте очистить кэш приложения CarPlay или удалить недавно установленные тяжелые виджеты на рабочий стол Android.</p>
+</blockquote>
+
+<p>Также стоит проверить настройки энергосбережения. Android-система может принудительно закрывать фоновое приложение эмулятора для экономии энергии. Необходимо добавить приложение в список исключений или разрешить ему работу в фоновом режиме.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Качество USB-кабеля является причиной 80% проблем с подключением. Всегда используйте оригинальные кабели Apple или сертифицированные аналоги длиной не более 1.5 метра.</p></aside>
+
+<h2 id="беспроводной-carplay-особенности-и-настройка">Беспроводной CarPlay: особенности и настройка</h2>
+
+<p>Беспроводное подключение избавляет от лишних проводов в салоне, но требует более тщательной первоначальной настройки. Для начала нужно один раз подключить телефон по кабелю, чтобы сопречь устройства и передать ключи шифрования Wi-Fi.</p>
+
+<p>После первичной настройки магнитола и iPhone будут соединяться автоматически при запуске двигателя. Магнитола создает точку доступа Wi-Fi Direct, к которой подключается телефон. Важно, чтобы Bluetooth также был включен для управления звонками и голосовым помощником Siri.</p>
+
+<p>Стоит учитывать, что беспроводной режим потребляет больше энергии и может сильнее нагревать процессор магнитолы. Кроме того, при наличии помех в эфире (множество Wi-Fi сетей вокруг) возможна небольшая задержка звука или изображения.</p>
+
+<p>В некоторых магнитолах для активации беспроводного режима требуется ввести специальный код в инженерном меню или установить отдельный Wi-Fi dongle. Всегда проверяйте инструкцию к конкретному головному устройству.</p>
+
+<h2 id="сравнение-нативной-поддержки-и-сторонних-решений">Сравнение нативной поддержки и сторонних решений</h2>
+
+<p>Нативная поддержка, встроенная производителем магнитолы, всегда предпочтительнее. Она обеспечивает лучшую стабильность, интеграцию с кнопками на руле и систему управления звуком. Сторонние приложения часто лишены возможности регулировать громкость отдельно от медиа-системы автомобиля.</p>
+
+<p>Кроме того, нативные решения обычно поддерживают вывод звука навигации через штатные динамики без задержек. В сторонних приложениях звук может идти через Bluetooth-профиль HFP (как телефонный разговор), что ухудшает его качество и делает невозможным прослушивание музыки из других приложений одновременно.</p>
+
+<p>Однако, сторонние решения выигрывают в гибкости. Они позволяют использовать новые функции iOS, даже если производитель магнитолы перестал выпускать обновления прошивки. Это продлевает жизнь устройству и дает доступ к актуальным картам и сервисам.</p>
+
+<details>
+<summary>Можно ли использовать CarPlay без интернета на магнитоле?</summary>
+<p>Да, базовый функционал (карты, музыка, звонки) работает без интернета на самой магнитоле, так как используется трафик iPhone. Однако для первоначальной активации и работы онлайн-сервисов (пробки, онлайн-музыка) интернет на телефоне обязателен.</p>
+</details>
+
+<details>
+<summary>Работает ли Siri на Android-магнитоле через CarPlay?</summary>
+<p>Да, голосовой помощник Siri работает полноценно. Вы можете активировать его кнопкой на руле (если настроено) или длительным нажатием на экране магнитолы, и запрос уйдет на обработку в iPhone.</p>
+</details>
+
+<details>
+<summary>Почему не работает микрофон при звонках через CarPlay?</summary>
+<p>Скорее всего, в настройках приложения CarPlay на магнитоле выбран неверный источник звука. Нужно зайти в настройки звука и выбрать внешний USB-микрофон или встроенный микрофон магнитолы, вместо микрофона телефона.</p>
+</details>
+
+<details>
+<summary>Влияет ли CarPlay на гарантию магнитолы?</summary>
+<p>Использование сторонних APK-файлов теоретически может считаться нарушением условий гарантии, если производитель обнаружит изменение системных файлов. Нативная поддержка или использование предустановленных приложений гарантию не нарушает.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/a/al/alpikol-kholodilnik-v-mashinu-alpicool.html" class="pb-related-card">
+                <span class="pb-related-title">Холодильник в машину Alpicool: выбор, установка, настройка</span>
+                <span class="pb-related-desc">Полный гид по автохолодильникам Alpicool. Обзор моделей, подключение своими руками, устранение ошибо</span>
+            </a><a href="/articles/y/ya/yandeks-stantsiya-dlya-avtomobilya.html" class="pb-related-card">
+                <span class="pb-related-title">Яндекс Станция для автомобиля: подключение, функции и обзор</span>
+                <span class="pb-related-desc">Как использовать Яндекс Станцию в машине? Полное руководство по подключению через AUX/Bluetooth, нас</span>
+            </a><a href="/articles/s/sk/skachat-sbornik-raznoj-muzyki-v-mashinu.html" class="pb-related-card">
+                <span class="pb-related-title">Скачать сборник разной музыки в машину: лучшие треки и форматы</span>
+                <span class="pb-related-desc">Где скачать сборник разной музыки в машину без регистрации. Лучшие жанры, форматы FLAC и MP3, советы</span>
+            </a><a href="/articles/b/bo/boris-shashlykov-lost-alfa.html" class="pb-related-card">
+                <span class="pb-related-title">Борис Шашлыков Lost Alpha: Мод, геймплей и отличия от оригинала</span>
+                <span class="pb-related-desc">Полный обзор мода Lost Alpha для Сталкера от Бориса Шашлыкова. Сравнение с оригиналом, особенности п</span>
+            </a><a href="/articles/e/el/elm327-mini-kak-podklyuchit.html" class="pb-related-card">
+                <span class="pb-related-title">ELM327 Mini: как подключить и настроить за 5 минут</span>
+                <span class="pb-related-desc">Подробная инструкция: как подключить адаптер ELM327 Mini к телефону и компьютеру. Настройка Bluetoot</span>
+            </a><a href="/articles/f/fo/forza-horizon-4-gde-proiskhodyat-dejstviya.html" class="pb-related-card">
+                <span class="pb-related-title">Forza Horizon 4: Где происходят действия игры и карта</span>
+                <span class="pb-related-desc">Узнайте, где происходит действие Forza Horizon 4. Детальный разбор локации Британии, список городов,</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

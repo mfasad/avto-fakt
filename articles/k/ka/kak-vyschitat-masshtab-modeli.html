@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как высчитать масштаб модели: формулы и примеры расчетов — Авто Факт</title>
+    <meta name="description" content="Подробная инструкция, как рассчитать масштаб модели. Узнайте формулы перевода размеров, работу с чертежами и особенности масштабирования.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ka/kak-vyschitat-masshtab-modeli.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как высчитать масштаб модели: формулы и примеры расчетов">
+    <meta property="og:description" content="Подробная инструкция, как рассчитать масштаб модели. Узнайте формулы перевода размеров, работу с чертежами и особенности масштабирования.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/byt-i-khobbi/">Быт и Хобби</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как высчитать масштаб модели: формулы и примеры расчетов</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#что-такое-масштаб-и-как-он-обозначается">Что такое масштаб и как он обозначается</a></li><li><a href="#базовая-формула-расчета-масштаба">Базовая формула расчета масштаба</a></li><li><a href="#популярные-стандарты-в-моделизме">Популярные стандарты в моделизме</a></li><li><a href="#работа-с-чертежами-и-перевод-размеров">Работа с чертежами и перевод размеров</a></li><li><a href="#использование-онлайн-калькуляторов-и-приложений">Использование онлайн-калькуляторов и приложений</a></li><li><a href="#особенности-масштабирования-в-3d-моделировании">Особенности масштабирования в 3D-моделировании</a></li><li><a href="#частые-ошибки-при-расчетах">Частые ошибки при расчетах</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/k/ka/kak-smazat-zavarochnyj-blok-kofemashiny-delongi.html">Как смазать заварочный блок кофемашины DeLonghi: Инструкция</a></li><li><a href="/articles/p/po/podstavki-pod-sushilnuyu-mashinu-na-stiralnuyu-mashinu.html">Подставки под сушилку на стиральную машину: выбор и установка</a></li><li><a href="/articles/o/ob/oboznacheniya-na-stiralnoj-mashine-bosch-maxx-5.html">Обозначения на стиральной машине Bosch Maxx 5: расшифровка</a></li><li><a href="/articles/c/ch/chistka-molochnoj-sistemy-kofemashiny-polaris.html">Чистка молочной системы кофемашины Polaris: пошаговая инструкция</a></li><li><a href="/articles/r/ra/radio-ruki-vverkh-volna.html">Радио «Руки Вверх!» на волнах FM: как настроить и слушать в машине</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как точно высчитать масштаб модели: полное руководство</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#что-такое-масштаб-и-как-он-обозначается">Что такое масштаб и как он обозначается</a></li><li><a href="#базовая-формула-расчета-масштаба">Базовая формула расчета масштаба</a></li><li><a href="#популярные-стандарты-в-моделизме">Популярные стандарты в моделизме</a></li><li><a href="#работа-с-чертежами-и-перевод-размеров">Работа с чертежами и перевод размеров</a></li><li><a href="#использование-онлайн-калькуляторов-и-приложений">Использование онлайн-калькуляторов и приложений</a></li><li><a href="#особенности-масштабирования-в-3d-моделировании">Особенности масштабирования в 3D-моделировании</a></li><li><a href="#частые-ошибки-при-расчетах">Частые ошибки при расчетах</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Создание миниатюрных копий реальных объектов — это увлекательный процесс, который требует высокой точности и математического подхода. Независимо от того, занимаетесь ли вы моделизмом, архитектурным проектированием или просто хотите понять пропорции игрушечной копии танка, ключевым параметром всегда остается <strong>масштаб</strong>. Именно он связывает реальный мир с его уменьшенной версией.</p>
+
+<p>Многие новички сталкиваются с трудностями при переводе реальных размеров в размеры макета. Ошибка в расчетах может привести к тому, что детали не сойдутся, а итоговый вид изделия будет далек от ожидаемого. В этой статье мы разберем математические основы, инструменты для измерений и практические примеры, которые помогут вам избежать распространенных ошибок.</p>
+
+<p>Понимание принципов масштабирования открывает двери в мир точного моделизма. Вы научитесь не просто следовать инструкциям, но и самостоятельно проектировать объекты, зная их реальные габариты. Давайте начнем с фундаментальных определений.</p>
+
+<h2 id="что-такое-масштаб-и-как-он-обозначается">Что такое масштаб и как он обозначается</h2>
+
+<p>В основе любого масштабирования лежит простая математическая пропорция. <strong>Масштаб</strong> — это отношение размера изображения или модели к размеру изображаемого объекта в натуре. В моделизме, архитектуре и картографии это отношение обычно выражается дробью или числовым соотношением, где числитель равен единице.</p>
+
+<p>Наиболее распространенная запись выглядит как <code>1:N</code>, где <em>N</em> показывает, во сколько раз модель меньше оригинала. Например, в масштабе 1:72 один сантиметр на модели соответствует 72 сантиметрам в реальности. Важно не путать это с увеличительными масштабами, где единица стоит во втором числе, что характерно для микроэлектроники или энтомологии.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Не путайте масштаб длины с масштабом площади или объема. Если модель уменьшена в 10 раз по длине, её площадь уменьшится в 100 раз (10²), а объем — в 1000 раз (10³). Это критично при расчете веса или количества краски.</p>
+</blockquote>
+
+<p>Существует несколько стандартов обозначения, которые зависят от сферы применения. В железнодорожном моделизме популярны буквенные обозначения (HO, N, Z), которые привязаны к конкретным числовым коэффициентам. В инженерии часто используют кратные числа, такие как 1:10, 1:50 или 1:100, что упрощает перевод единиц измерения без использования калькулятора.</p>
+
+<details class="pb-accordion"><summary>Историческая справка о стандартизации масштабов</summary><div class="pb-accordion-body"><p>Первые стандарты масштабирования появились в эпоху Возрождения вместе с развитием перспективы в живописи и необходимости создания точных карт местности. Леонардо да Винчи использовал пропорции 1:10 и 1:100 для своих инженерных чертежей, что стало прообразом современных ГОСТов.</p></div></details>
+
+<h2 id="базовая-формула-расчета-масштаба">Базовая формула расчета масштаба</h2>
+
+<p>Для того чтобы <strong>высчитать масштаб</strong>, вам необходимо знать два параметра: реальный размер объекта и желаемый размер его копии. Формула выглядит предельно просто: нужно разделить реальный размер на размер модели. Результатом будет знаменатель искомой пропорции.</p>
+
+<p>Рассмотрим практический пример. Допустим, длина реального автомобиля составляет 4500 мм, а вы хотите сделать его модель длиной 250 мм. Делим 4500 на 250 и получаем 18. Следовательно, ваш масштаб будет 1:18. Это стандартный размер для коллекционных моделей автомобилей.</p>
+
+<ul>
+    <li>📏 Измерьте реальный объект в миллиметрах для максимальной точности.</li>
+    <li>✂️ Определите желаемую длину готовой модели.</li>
+    <li>🧮 Разделите реальное значение на модельное.</li>
+    <li>🔢 Округлите полученное число до стандартного значения (если нужно).</li>
+</ul>
+
+<p>Часто бывает ситуация, когда известен масштаб, но неизвестен размер модели. В этом случае формула работает в обратную сторону. Реальный размер делится на знаменатель масштаба. Например, чтобы узнать длину модели корабля длиной 150 метров в масштабе 1:500, нужно перевести метры в сантиметры (15000 см) и разделить на 500. Получаем 30 см.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Главное правило: всегда приводите все измерения к одной единице (лучше всего к миллиметрам) перед началом деления, чтобы избежать ошибок с запятыми и нулями.</p></aside>
+
+<h2 id="популярные-стандарты-в-моделизме">Популярные стандарты в моделизме</h2>
+
+<p>Мир моделизма не хаотичен, он строго структурирован общепринятыми стандартами. Это сделано для того, чтобы фигурки, техника и диорамы от разных производителей были совместимы друг с другом. Наиболее распространенным стандартом для военной техники и авиации является <strong>1:72</strong> и <strong>1:35</strong>.</p>
+
+<p>Масштаб 1:35 исторически сложился как основной для военной техники времен Второй мировой войны. Он удобен тем, что позволяет детализировать мелкие механизмы, сохраняя при этом компактные размеры готовой модели. Для авиации же чаще используют 1:72, так как самолеты в натуре значительно больше танков, и делать их в 35-м масштабе было бы неудобно для хранения.</p>
+
+<div class="pb-poll" id="poll-81729c74"><div class="pb-poll-question">📊 Какой масштаб вы предпочитаете для сборки?</div><div class="pb-poll-option" data-poll="81729c74" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">1:35 (Танки/Фигурки)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="81729c74" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">1:72 (Авиация/Техника)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="81729c74" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">1:24 (Автомобили)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="81729c74" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">1:12 (Крупная детализация)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="81729c74" data-idx="4" onclick="pbPollVote(this)"><span class="pb-poll-label">Другое</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<p>Автомобильный моделизм тяготеет к более крупным формам. Здесь доминируют масштабы 1:18, 1:24 и 1:43. Крупные масштабы, такие как 1:12 или даже 1:8, используются для создания музейных экспонатов или детальных копий для коллекционеров, готовых платить за высокую степень проработки интерьера и двигателя.</p>
+
+<p>Ниже приведена таблица, помогающая быстро сориентироваться в популярных форматах и их примерных размерах для объекта длиной 4 метра (стандартный легковой автомобиль):</p>
+
+<div class="pb-table-wrap"><table>
+    <thead>
+        <tr>
+            <th>Масштаб</th>
+            <th>Сфера применения</th>
+            <th>Длина модели (см)</th>
+            <th>Популярность</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1:18</td>
+            <td>Автомобили, мотоциклы</td>
+            <td>22.2</td>
+            <td>Высокая</td>
+        </tr>
+        <tr>
+            <td>1:35</td>
+            <td>Военная техника, фигурки</td>
+            <td>11.4</td>
+            <td>Очень высокая</td>
+        </tr>
+        <tr>
+            <td>1:64</td>
+            <td>Hot Wheels, Matchbox</td>
+            <td>6.25</td>
+            <td>Массовая</td>
+        </tr>
+        <tr>
+            <td>1:72</td>
+            <td>Авиация, корабли</td>
+            <td>5.5</td>
+            <td>Высокая</td>
+        </tr>
+        <tr>
+            <td>1:87</td>
+            <td>Железнодорожные модели (HO)</td>
+            <td>4.6</td>
+            <td>Специфичная</td>
+        </tr>
+    </tbody>
+</table></div>
+
+<h2 id="работа-с-чертежами-и-перевод-размеров">Работа с чертежами и перевод размеров</h2>
+
+<p>Когда вы берете в руки чертеж, первым делом необходимо найти указание масштаба. Обычно оно располагается в правом нижнем углу основного поля документа, в так называемом <em>угловом штампе</em>. Однако, если вы работаете с копией или сканом, масштаб может быть искажен при печати, поэтому полагаться только на надпись нельзя.</p>
+
+<p>Для проверки реального масштаба чертежа найдите размерную линию с известным значением, например, габаритную длину или диаметр колеса. Измерьте этот отрезок линейкой на бумаге. Разделите указанное числовое значение на измеренное. Полученный коэффициент покажет, во сколько раз чертеж уменьшен или увеличен относительно натуры.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> При работе с бумажными копиями чертежей всегда проверяйте масштаб измерением, так как при ксерокопировании масштаб мог измениться (например, с А4 на А3), даже если цифра в штампе осталась прежней.</p>
+</blockquote>
+
+<p>Существует специальный инструмент для таких задач — <strong>масштабная линейка</strong> (или инженерный треугольник). На её гранях нанесены деления, соответствующие разным масштабам (1:50, 1:100 и т.д.). Прикладывая такую линейку к чертежу, вы сразу видите реальные размеры без необходимости производить вычисления в уме.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Сохраняйте эталонный отрезок. Если вы часто работаете с копиями чертежей, напечатайте на отдельном листе линию длиной ровно 10 см в масштабе 1:1. Прикладывая её к новым распечаткам, вы instantly увидите, сохранился ли масштаб.</p></aside>
+
+<h2 id="использование-онлайн-калькуляторов-и-приложений">Использование онлайн-калькуляторов и приложений</h2>
+
+<p>В эпоху цифровых технологий нет необходимости каждый раз доставать калькулятор. Существует множество специализированных приложений для смартфонов и онлайн-сервисов, которые берут математическую часть работы на себя. Они особенно полезны, когда нужно перевести дюймовые размеры в метрическую систему с учетом масштаба.</p>
+
+<p>Типичный алгоритм работы такого калькулятора прост: вы вводите реальный размер (например, в сантиметрах) и желаемый масштаб. Программа мгновенно выдает размер детали для модели. Некоторые продвинутые приложения позволяют загружать чертежи и автоматически пересчитывать масштаб при изменении размеров окна просмотра.</p>
+
+<p>Однако стоит помнить, что слепая вера в технику может привести к ошибкам. Всегда перепроверяйте вводные данные. Если вы ввели размер в метрах, а калькулятор ждал миллиметры, результат будет отличаться в 1000 раз. Внимательно следите за единицами измерения, которые отображаются рядом с полями ввода.</p>
+
+<h2 id="особенности-масштабирования-в-3d-моделировании">Особенности масштабирования в 3D-моделировании</h2>
+
+<p>В цифровом пространстве понятие масштаба часто размывается, так как 3D-редакторы работают с абстрактными единицами. Однако при подготовке модели к 3D-печати или экспорте в игровой движок (Unity, Unreal Engine) соблюдение масштаба становится критически важным.</p>
+
+<p>При экспорте модели из <em>Blender</em> или <em>3ds Max</em> часто возникает проблема "гигантизма" или "карликовости". Модель человека может стать высотой 200 метров или 2 сантиметра. Чтобы избежать этого, используйте референсные объекты-кубы с известными размерами (например, куб высотой 1 метр) и масштабируйте сцену относительно него перед экспортом.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка 3D-модели перед печатью</h4><label class="check-item"><input type="checkbox"><span>Модель имеет замкнутую геометрию (watertight)</span></label><label class="check-item"><input type="checkbox"><span>Нормали полигонов смотрят наружу</span></label><label class="check-item"><input type="checkbox"><span>Масштаб соответствует реальным размерам (в мм)</span></label><label class="check-item"><input type="checkbox"><span>Модель расположена в центре координат</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Еще один важный аспект — текстуры. Если вы уменьшаете геометрическую модель в 10 раз, плотность текстуры (texels per unit) визуально увеличивается. Для сохранения качества текстур в итоговом рендере или печати может потребоваться их пересчет или использование процедурных материалов, которые не зависят от разрешения.</p>
+
+<h2 id="частые-ошибки-при-расчетах">Частые ошибки при расчетах</h2>
+
+<p>Самая распространенная ошибка — путаница между масштабом уменьшения и увеличения. Новички часто делят размер модели на реальный размер, получая дробное число, и не знают, что с ним делать. Помните: если модель меньше оригинала, результат деления (реальное / модель) всегда будет больше единицы.</p>
+
+<p>Вторая ошибка связана с округлением. В погоне за "круглыми" числами моделисты иногда подгоняют масштаб. Например, считают масштаб 1:34.5 как 1:35. Для любительской модели это допустимо, но если вы делаете диораму, где должны сочетаться техника и фигурки разных производителей, даже небольшая разница в масштабе бросится в глаза.</p>
+
+<p>Также часто забывают про толщину стенок. Если вы выпиливаете детали из фанеры или пластика, внутренний объем коробки в масштабе 1:10 будет меньше, чем рассчитанный математически, из-за толщины материала стенок. Это называется "масштабная толщина" и требует внесения поправок в чертеж.</p>
+
+<details>
+    <summary>Как перевести дюймовый масштаб в метрический?</summary>
+    <p>В авиамоделизме часто встречаются масштабы, основанные на дюймовой системе (например, 1/48). Чтобы понять, сколько это в сантиметрах, нужно знать, что 1 дюйм = 2.54 см. Однако сам коэффициент масштаба (48) остается неизменным независимо от системы мер. Просто умножьте реальный размер в дюймах на 2.54, чтобы получить миллиметры, а затем делите на знаменатель масштаба.</p>
+</details>
+
+<details>
+    <summary>Можно ли смешивать модели разных масштабов?</summary>
+    <p>Технически можно, но визуально это будет выглядеть странно. Фигурка человека в масштабе 1:72 рядом с танком 1:35 будет выглядеть как лилипут. Однако в диорамном искусстве иногда используют принудительную перспективу: дальний план делают в меньшем масштабе, чтобы создать иллюзию глубины на ограниченном пространстве.</p>
+</details>
+
+<details>
+    <summary>Что делать, если масштаб не целый (например, 1:37)?</summary>
+    <p>Нестандартные масштабы часто встречаются в пром-дизайне или архитектурных макетах. В таком случае просто используйте точное значение при расчетах. Для моделизма это может быть проблемой при покупке готовых деталей (колес, стекол), которые выпускаются только под стандартные форматы. Придется изготавливать их самостоятельно или подгонять имеющиеся.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/k/ka/kak-smazat-zavarochnyj-blok-kofemashiny-delongi.html" class="pb-related-card">
+                <span class="pb-related-title">Как смазать заварочный блок кофемашины DeLonghi: Инструкция</span>
+                <span class="pb-related-desc">Полное руководство по обслуживанию заварочного узла DeLonghi. Какую смазку выбрать, как разобрать и </span>
+            </a><a href="/articles/p/po/podstavki-pod-sushilnuyu-mashinu-na-stiralnuyu-mashinu.html" class="pb-related-card">
+                <span class="pb-related-title">Подставки под сушилку на стиральную машину: выбор и установка</span>
+                <span class="pb-related-desc">Как правильно выбрать и установить подставку под сушильную машину на стиральную: виды, материалы, ра</span>
+            </a><a href="/articles/o/ob/oboznacheniya-na-stiralnoj-mashine-bosch-maxx-5.html" class="pb-related-card">
+                <span class="pb-related-title">Обозначения на стиральной машине Bosch Maxx 5: расшифровка</span>
+                <span class="pb-related-desc">Полная расшифровка значков и индикаторов на стиральных машинах Bosch Maxx 5. Что означают коды ошибо</span>
+            </a><a href="/articles/c/ch/chistka-molochnoj-sistemy-kofemashiny-polaris.html" class="pb-related-card">
+                <span class="pb-related-title">Чистка молочной системы кофемашины Polaris: пошаговая инструкция</span>
+                <span class="pb-related-desc">Как почистить молочный тракт кофемашины Polaris от накипи и бактерий. Эффективные методы, средства и</span>
+            </a><a href="/articles/r/ra/radio-ruki-vverkh-volna.html" class="pb-related-card">
+                <span class="pb-related-title">Радио «Руки Вверх!» на волнах FM: как настроить и слушать в машине</span>
+                <span class="pb-related-desc">Подробная инструкция по настройке радиостанции «Руки Вверх!» в автомобиле: частоты FM, особенности п</span>
+            </a><a href="/articles/v/v-/v-stiralnoj-mashine-ne-krutitsya-baraban-pri-stirke-i-otzhime-prichina.html" class="pb-related-card">
+                <span class="pb-related-title">Не крутится барабан в стиральной машине: причины и ремонт</span>
+                <span class="pb-related-desc">Разбираем 10+ причин, почему барабан стиральной машины не вращается при стирке и отжиме. Пошаговые и</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Радиоуправляемая машина на Ардуино: пошаговая сборка и настройка — Авто Факт</title>
+    <meta name="description" content="Как собрать радиоуправляемую машину на Ардуино своими руками. Выбор платы, моторов, схемы подключения и программирование. Полный гайд для новичков.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/r/ra/radioupravlyaemaya-mashina-na-arduino.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Радиоуправляемая машина на Ардуино: пошаговая сборка и настройка">
+    <meta property="og:description" content="Как собрать радиоуправляемую машину на Ардуино своими руками. Выбор платы, моторов, схемы подключения и программирование. Полный гайд для новичков.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Радиоуправляемая машина на Ардуино: пошаговая сборка и настройка</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#необходимые-компоненты-для-сборки-шасси">Необходимые компоненты для сборки шасси</a></li><li><a href="#принцип-работы-драйвера-двигателей">Принцип работы драйвера двигателей</a></li><li><a href="#схема-подключения-и-монтаж-электроники">Схема подключения и монтаж электроники</a></li><li><a href="#программирование-приемника-и-передатчика">Программирование приемника и передатчика</a></li><li><a href="#настройка-питания-и-борьба-с-помехами">Настройка питания и борьба с помехами</a></li><li><a href="#модернизация-и-расширение-функционала">Модернизация и расширение функционала</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/1/12/120-mikron-v-mm.html">120 микрон в мм: точный перевод и таблица перевода</a></li><li><a href="/articles/c/ch/chto-takoe-blat-v-blek-rasha.html">Блат в Блэк Раша: что это, как получить и использовать</a></li><li><a href="/articles/k/ka/kalibr-chasov-chto-eto-takoe.html">Калибр часов: что это такое и как его определить в 2026 году</a></li><li><a href="/articles/f/fu/funktsiya-carplay-chto-eto.html">CarPlay: что это такое и как работает в машине (2026)</a></li><li><a href="/articles/b/be/berkut-avtomobilnyj-portativnyj-kompressor-r17.html">Berkut R17: обзор, характеристики и тест компрессора</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Собираем радиоуправляемую машину на Ардуино: от схемы до первого запуска</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#необходимые-компоненты-для-сборки-шасси">Необходимые компоненты для сборки шасси</a></li><li><a href="#принцип-работы-драйвера-двигателей">Принцип работы драйвера двигателей</a></li><li><a href="#схема-подключения-и-монтаж-электроники">Схема подключения и монтаж электроники</a></li><li><a href="#программирование-приемника-и-передатчика">Программирование приемника и передатчика</a></li><li><a href="#настройка-питания-и-борьба-с-помехами">Настройка питания и борьба с помехами</a></li><li><a href="#модернизация-и-расширение-функционала">Модернизация и расширение функционала</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Создание собственного <strong>роботизированного устройства</strong> — это увлекательный путь, который начинается с простых, но функциональных проектов. Радиоуправляемая машина на базе микроконтроллера <em>Arduino</em> является идеальной отправной точкой для погружения в мир электроники и программирования. Такой проект позволяет не только понять принципы работы беспроводной связи, но и освоить управление электродвигателями через драйверы.</p>
+
+<p>В отличие от готовых игрушек, самодельный RC-кар имеет уникальное преимущество: его можно модернизировать бесконечно. Вы можете добавить датчики столкновения, камеру для трансляции видео или даже систему автономного вождения. Однако, чтобы конструкция работала стабильно, необходимо правильно подобрать компоненты и грамотно спаять электрическую схему.</p>
+
+<p>В этой статье мы подробно разберем процесс создания <strong>управляемого автомобиля</strong>, уделив внимание выбору комплектующих, сборке шасси и написанию кода. Вам не потребуется глубоких знаний в электронике, так как мы рассмотрим базовые принципы, понятные даже новичкам. Главное — внимательность и последовательность действий при соединении контактов.</p>
+
+<h2 id="необходимые-компоненты-для-сборки-шасси">Необходимые компоненты для сборки шасси</h2>
+
+<p>Фундаментом любого проекта является правильный выбор «железа». Для создания полноценной машины вам потребуется не только управляющая плата, но и исполнительные механизмы. Центром системы станет плата <em>Arduino Uno</em> или ее компактный аналог <em>Nano</em>, которые отлично зарекомендовали себя в любительской робототехнике.</p>
+
+<p>Для передачи команд от оператора к машине необходим радиомодуль. Наиболее распространенным и доступным решением является связка передатчика и приемника на частоте 433 МГц. Эти модули дешевы, имеют достаточный радиус действия для комнатных заездов и просты в подключении. Альтернативой может служить <strong>Bluetooth-модуль</strong> HC-05, позволяющий управлять машиной со смартфона.</p>
+
+<p>Двигательная часть требует особого внимания. Обычные моторы постоянного тока (DC) не подключаются напрямую к портам микроконтроллера, так как потребляют слишком большой ток. Для их управления необходим драйвер, например, популярная плата <em>L298N</em> или более компактный модуль <em>L9110S</em>. Также потребуется источник питания, чаще всего это аккумуляторная батарея типа <strong>Li-Ion 18650</strong> или сборка из пальчиковых батареек.</p>
+
+<div class="pb-poll" id="poll-15a14fb8"><div class="pb-poll-question">📊 Какой тип управления вы предпочитаете?</div><div class="pb-poll-option" data-poll="15a14fb8" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Пульт с кнопками</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="15a14fb8" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Смартфон через Bluetooth</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="15a14fb8" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Голосовое управление</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="15a14fb8" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Автономный режим</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<ul>
+<li>🚗 <strong>Шасси:</strong> пластиковая платформа с двумя моторами и колесами (часто продается как набор «Smart Car Chassis»).</li>
+<li>🔋 <strong>Питание:</strong> отсек для батареек или Li-Po аккумулятор с защитой от переразряда.</li>
+<li>📡 <strong>Связь:</strong> модули RF 433 МГц (передатчик TX и приемник RX) или Bluetooth HC-05/HC-06.</li>
+<li>🧠 <strong>Контроллер:</strong> плата Arduino Uno/Nano и макетная плата (breadboard) для прототипирования.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> При выборе моторов обращайте внимание на напряжение. Если вы берете моторы на 3-6 вольт, а запитаете их от 12-вольтовой батареи, они сгорят мгновенно.</p>
+</blockquote>
+
+<h2 id="принцип-работы-драйвера-двигателей">Принцип работы драйвера двигателей</h2>
+
+<p>Ключевым элементом в электрической схеме является драйвер моторов. Микроконтроллер <em>Arduino</em> может выдавать на своих выводах лишь небольшой ток, недостаточный для вращения даже маленьких моторчиков. Драйвер выступает в роли посредника, принимая слабые сигналы логики и преобразуя их в мощные токи для двигателей.</p>
+
+<p>Самая распространенная микросхема в любительских драйверах — <strong>L298N</strong>. Она представляет собой двойной H-мост, что позволяет независимо управлять двумя двигателями: задавать им скорость и направление вращения. На плате обычно имеются клеммы для подключения питания двигателей и выводы для подключения к Arduino.</p>
+
+<p>Важно понимать разницу между логическим питанием и питанием моторов. Логическая часть (связанная с Arduino) работает от 5 вольт, в то время как на моторы можно подавать до 12-35 вольт (в зависимости от конкретной модели драйвера). Для стабильной работы часто требуется снять перемычку на плате драйвера, если внешнее питание превышает 12 вольт, чтобы не повредить внутреннюю схему.</p>
+
+<details class="pb-accordion"><summary>Что такое ШИМ (PWM)?</summary><div class="pb-accordion-body"><p>ШИМ (Широтно-Импульсная Модуляция) — это метод управления мощностью, подаваемой на нагрузку. В контексте моторов, изменяя скважность импульсов, мы меняем эффективное напряжение, что позволяет плавно регулировать скорость вращения вала двигателя, а не просто включать и выключать его.</p></div></details>
+
+<p>При сборке схемы необходимо строго соблюдать полярность. Перепутав плюс и минус на клеммах двигателя, вы заставите его вращаться в обратную сторону, что легко исправляется программно, но перепутанное питание драйвера может вывести из строя всю электронику. Поэтому <mark>первичный запуск всегда проводите без подключения моторов</mark>, проверяя лишь сигнальные светодиоды на плате.</p>
+
+<h2 id="схема-подключения-и-монтаж-электроники">Схема подключения и монтаж электроники</h2>
+
+<p>Сборка электрической цепи требует аккуратности. Все соединения должны быть надежными, так как вибрация при движении машины может привести к кратковременному пропаданию контакта и неконтролируемому поведению робота. Для начала соберите схему на макетной плате, используя соединительные провода.</p>
+
+<p>Подключение радиомодуля 433 МГц осуществляется через цифровые пины. Приемник (RX) имеет три или четыре контакта: VCC (питание 5В), GND (земля), Data (данные). Контакт Data соединяется с любым свободным цифровым портом Arduino, например, D2. Передатчик (TX) на пульте подключается аналогично, но к другой плате Arduino или специализированной схеме пульта.</p>
+
+<p>Драйвер моторов подключается следующим образом: входы IN1, IN2, IN3, IN4 соединяются с цифровыми пинами Arduino (например, D5, D6, D9, D10). Эти пины должны поддерживать <strong>ШИМ-сигнал</strong> (помечены символом ~ на плате), если вы планируете регулировать скорость. Выходы OUT1-OUT2 и OUT3-OUT4 идут непосредственно к клеммам моторов.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка перед пайкой</h4><label class="check-item"><input type="checkbox"><span>Проверка полярности питания</span></label><label class="check-item"><input type="checkbox"><span>Тест драйвера без моторов</span></label><label class="check-item"><input type="checkbox"><span>Проверка надежности проводов</span></label><label class="check-item"><input type="checkbox"><span>Фиксация платы на шасси</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Компонент</th>
+<th>Порт Arduino</th>
+<th>Назначение</th>
+<th>Тип сигнала</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Драйвер IN1</td>
+<td>D5</td>
+<td>Управление мотором A</td>
+<td>Цифровой/ШИМ</td>
+</tr>
+<tr>
+<td>Драйвер IN2</td>
+<td>D6</td>
+<td>Управление мотором A</td>
+<td>Цифровой/ШИМ</td>
+</tr>
+<tr>
+<td>Драйвер IN3</td>
+<td>D9</td>
+<td>Управление мотором B</td>
+<td>Цифровой/ШИМ</td>
+</tr>
+<tr>
+<td>Драйвер IN4</td>
+<td>D10</td>
+<td>Управление мотором B</td>
+<td>Цифровой/ШИМ</td>
+</tr>
+<tr>
+<td>Приемник 433</td>
+<td>D2</td>
+<td>Получение команд</td>
+<td>Цифровой вход</td>
+</tr>
+</tbody>
+</table></div>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Не подключайте питание моторов (батарею) до тех пор, пока не убедитесь, что все сигнальные провода соединены правильно. Сначала подается логика, потом силовая часть.</p>
+</blockquote>
+
+<h2 id="программирование-приемника-и-передатчика">Программирование приемника и передатчика</h2>
+
+<p>Программная часть делится на два независимых скетча: один для пульта управления (передатчик), второй для самой машины (приемник). Для работы с радиоканалом 433 МГц в среде <em>Arduino IDE</em> удобнее всего использовать библиотеку <code>RadioHead</code> или <code>VirtualWire</code> (ныне <code>RH_ASK</code>). Они значительно упрощают процесс кодирования, беря на себя модуляцию сигнала.</p>
+
+<p>В скетче передатчика (пульта) мы опрашиваем состояние кнопок. При нажатии кнопки «Вперед» формируется и отправляется пакет данных, например, символ <code>'F'</code>. Скетч приемника постоянно слушает эфир. Как только приходит пакет, он деколирует его и, в зависимости от полученного символа, вызывает соответствующую функцию движения.</p>
+
+<pre><code>#include &lt;RH_ASK.h&gt;
+<p>#include &lt;SPI.h&gt;</p>
+
+<p>RH_ASK driver;</p>
+
+<p>void setup() {</p>
+<p>if (!driver.init()) {</p>
+<p>// Ошибка инициализации драйвера</p>
+<p>}</p>
+<p>pinMode(5, OUTPUT); // Мотор A</p>
+<p>pinMode(6, OUTPUT);</p>
+<p>}</p>
+
+<p>void loop() {</p>
+<p>uint8_t buf[RH_ASK_MAX_MESSAGE_LEN];</p>
+<p>uint8_t len = sizeof(buf);</p>
+
+<p>if (driver.recv(buf, &amp;len)) {</p>
+<p>if (buf[0] == 'F') {</p>
+<p>// Логика движения вперед</p>
+<p>analogWrite(5, 200);</p>
+<p>analogWrite(6, 0);</p>
+<p>} else if (buf[0] == 'S') {</p>
+<p>// Логика остановки</p>
+<p>analogWrite(5, 0);</p>
+<p>analogWrite(6, 0);</p>
+<p>}</p>
+<p>}</p>
+<p>}</code></pre></p>
+
+<p>Для реализации плавного поворота используется дифференциальное управление. Чтобы машина повернула направо, левый мотор должен вращаться вперед, а правый — стоять или вращаться медленнее. Комбинируя состояния портов драйвера, можно реализовать полный набор маневров: вперед, назад, повороты влево/вправо и стоп.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Используйте функцию millis() вместо delay() в цикле loop, чтобы опрос кнопок и прием радиосигнала происходили без задержек, что сделает управление более отзывчивым.</p></aside>
+
+<h2 id="настройка-питания-и-борьба-с-помехами">Настройка питания и борьба с помехами</h2>
+
+<p>Одной из самых частых проблем при сборке RC-машин являются помехи. В момент запуска моторов потребление тока резко возрастает, что вызывает просадку напряжения в сети. Если эта просадка будет слишком глубокой, микроконтроллер <em>Arduino</em> уйдет в перезагрузку, и машина потеряет управление.</p>
+
+<p>Для стабилизации питания рекомендуется использовать отдельные источники для логики и моторов, или же мощный аккумулятор с низким внутренним сопротивлением. Обязательно установите конденсаторы большой емкости (например, 470 мкФ или 1000 мкФ) параллельно клеммам питания драйвера моторов. Они будут работать как буфер, сглаживая скачки напряжения.</p>
+
+<p>Также стоит обратить внимание на качество пайки и длину проводов. Длинные неэкранированные провода могут работать как антенны, ловя наводки от работающих моторов. Скручивайте провода, идущие к моторам, и старайтесь делать их как можно короче. Если машина ведет себя странно (дергается, самопроизвольно меняет направление), проблема почти всегда в питании или плохом контакте.</p>
+
+<ul>
+<li>🔌 Используйте провода достаточного сечения для силовых цепей.</li>
+<li>🔋 Проверьте напряжение батареи под нагрузкой с помощью мультиметра.</li>
+<li>🛡️ Установите ферритовые кольца на провода питания, если наблюдаются сильные помехи.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Li-Ion аккумуляторы нельзя разряжать ниже 3.0-3.2 В на элемент. Используйте модуль защиты (BMS) или индикатор напряжения, чтобы вовремя ставить батарею на зарядку.</p>
+</blockquote>
+
+<h2 id="модернизация-и-расширение-функционала">Модернизация и расширение функционала</h2>
+
+<p>Базовая радиоуправляемая машина — это только начало. Платформа <strong>Arduino</strong> позволяет легко добавлять новые модули. Одним из первых улучшений может стать установка ультразвукового датчика расстояния <em>HC-SR04</em> спереди. Он позволит реализовать функцию автоматического торможения перед препятствиями.</p>
+
+<p>Другой вариант — добавление сервопривода для поворота передней оси, что сделает управление более похожим на настоящий автомобиль, а не на гусеничный трактор. В этом случае кинематическая схема изменится: один мотор будет отвечать за газ/тормоз, а сервопривод — за угол поворота колес.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Главная мысль: modularность платформы Arduino позволяет превратить простую игрушку в сложного робота с искусственным интеллектом, просто добавляя новые датчики и меняя код.</p></aside>
+
+<p>Для продвинутых пользователей открыта возможность установки модуля <em>ESP8266</em> или <em>ESP32</em> вместо стандартной платы. Это даст возможность управлять машиной через Wi-Fi прямо с браузера или телефона, находясь в любой точке мира, где есть сеть. Также можно добавить камеру с передачей видеопотока, превратив проект в полноценный FPV-дрон на колесах.</p>
+
+<details>
+<summary>Как увеличить дальность действия радиоуправления?</summary>
+<p>Для увеличения дальности можно заменить стандартные спиральные антенны на четвертьволновые штыревые антенны, настроенные на частоту 433 МГц. Также помогает использование передатчика с более высокой мощностью (например, 100 мВт вместо стандартных 10 мВт), но следите за местными законами о радиочастотах. Увеличение напряжения питания передатчика также может дать небольшой прирост мощности сигнала.</p>
+</details>
+
+<details>
+<summary>Можно ли использовать моторы от старых DVD-приводов?</summary>
+<p>Технически можно, но не рекомендуется для первого проекта. Моторы от DVD очень слабые, имеют низкий крутящий момент и требуют высоких оборотов для развития скорости. Машина на их базе будет едва ползать по гладкому полу и застрянет на любой неровности. Лучше использовать специализированные моторы с редуктором (TT-motor), которые дают высокий крутящий момент на низких оборотах.</p>
+</details>
+
+<details>
+<summary>Что делать, если машина едет только в одну сторону?</summary>
+<p>Проверьте логику работы драйвера. Возможно, вы перепутали входы IN1 и IN2 в коде или физически перепутали провода на клеммах мотора. Попробуйте изменить значения HIGH/LOW на соответствующих пинах в скетче. Также убедитесь, что оба мотора подключены в одной фазе (плюс к плюсу клеммы, минус к минусу), иначе при подаче команды "вперед" один будет ехать вперед, а другой назад, разворачивая машину на месте.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/1/12/120-mikron-v-mm.html" class="pb-related-card">
+                <span class="pb-related-title">120 микрон в мм: точный перевод и таблица перевода</span>
+                <span class="pb-related-desc">Сколько будет 120 микрон в мм? Точный расчет, формула перевода мкм в миллиметры, таблица конвертации</span>
+            </a><a href="/articles/c/ch/chto-takoe-blat-v-blek-rasha.html" class="pb-related-card">
+                <span class="pb-related-title">Блат в Блэк Раша: что это, как получить и использовать</span>
+                <span class="pb-related-desc">Узнайте, что такое блат в Black Russia, зачем он нужен и как его заработать. Полное руководство по и</span>
+            </a><a href="/articles/k/ka/kalibr-chasov-chto-eto-takoe.html" class="pb-related-card">
+                <span class="pb-related-title">Калибр часов: что это такое и как его определить в 2026 году</span>
+                <span class="pb-related-desc">Разбираемся, что такое калибр часового механизма, как он влияет на точность и стоимость часов. Подро</span>
+            </a><a href="/articles/f/fu/funktsiya-carplay-chto-eto.html" class="pb-related-card">
+                <span class="pb-related-title">CarPlay: что это такое и как работает в машине (2026)</span>
+                <span class="pb-related-desc">Разбираем функцию CarPlay от Apple: как подключить, какие возможности даёт, совместимость с авто и с</span>
+            </a><a href="/articles/b/be/berkut-avtomobilnyj-portativnyj-kompressor-r17.html" class="pb-related-card">
+                <span class="pb-related-title">Berkut R17: обзор, характеристики и тест компрессора</span>
+                <span class="pb-related-desc">Полный обзор компрессора Berkut R17. Технические данные, тесты производительности, особенности конст</span>
+            </a><a href="/articles/1/12/12-7-55-mm-sts-130.html" class="pb-related-card">
+                <span class="pb-related-title">12 7 55 мм сц 130: Расшифровка и применение</span>
+                <span class="pb-related-desc">Полная расшифровка маркировки 12 7 55 мм сц 130. Характеристики, область применения, технические пар</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

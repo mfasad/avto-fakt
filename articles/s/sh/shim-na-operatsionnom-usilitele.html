@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>ШИМ на операционном усилителе: схемы, расчет и реализация — Авто Факт</title>
+    <meta name="description" content="Как собрать ШИМ на операционном усилителе. Схемы генераторов, расчет частоты, выбор компонентов и настройка скважности для управления нагрузкой.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/s/sh/shim-na-operatsionnom-usilitele.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ШИМ на операционном усилителе: схемы, расчет и реализация">
+    <meta property="og:description" content="Как собрать ШИМ на операционном усилителе. Схемы генераторов, расчет частоты, выбор компонентов и настройка скважности для управления нагрузкой.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/drugoe/">Другое</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">ШИМ на операционном усилителе: схемы, расчет и реализация</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#принцип-работы-генератора-на-компараторе">Принцип работы генератора на компараторе</a></li><li><a href="#формирование-пилообразного-напряжения">Формирование пилообразного напряжения</a></li><li><a href="#схема-включения-и-расчет-компонентов">Схема включения и расчет компонентов</a></li><li><a href="#регулировка-скважности-импульсов">Регулировка скважности импульсов</a></li><li><a href="#согласование-уровней-и-управление-нагрузкой">Согласование уровней и управление нагрузкой</a></li><li><a href="#типичные-ошибки-и-troubleshooting">Типичные ошибки и troubleshooting</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/g/gd/gde-mozhno-otdokhnut-na-novyj-god.html">Где отдохнуть на Новый год: лучшие направления</a></li><li><a href="/articles/v/vs/vsk-strakhovanie-ot-polomok.html">ВСК Страхование от поломок: условия, риски и отзывы</a></li><li><a href="/articles/p/pr/prichiny-zameny-vozdushnogo-filtra.html">Причины замены воздушного фильтра двигателя: признаки и сроки</a></li><li><a href="/articles/k/ka/kakuyu-mashinu-vzyat-do-700000.html">Какую машину купить до 700000 рублей в 2026: ТОП авто</a></li><li><a href="/articles/a/av/avtosport-ru-kupit-mashinu-novuyu-tseny.html">Новые авто для автоспорта: цены 2026, где купить в России</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>ШИМ на операционном усилителе: схемы, расчет и реализация</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-работы-генератора-на-компараторе">Принцип работы генератора на компараторе</a></li><li><a href="#формирование-пилообразного-напряжения">Формирование пилообразного напряжения</a></li><li><a href="#схема-включения-и-расчет-компонентов">Схема включения и расчет компонентов</a></li><li><a href="#регулировка-скважности-импульсов">Регулировка скважности импульсов</a></li><li><a href="#согласование-уровней-и-управление-нагрузкой">Согласование уровней и управление нагрузкой</a></li><li><a href="#типичные-ошибки-и-troubleshooting">Типичные ошибки и troubleshooting</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Создание широтно-импульсной модуляции (ШИМ) с использованием операционного усилителя (ОУ) — это классическая задача в аналоговой схемотехнике, которая позволяет управлять мощностью нагрузки без использования микроконтроллеров. В отличие от цифровых решений, аналоговый генератор работает непрерывно и не зависит от программного кода или тактовой частоты процессора. <strong>Операционный усилитель</strong> в данной конфигурации выполняет функции компаратора и интегратора, обеспечивая стабильную генерацию прямоугольных импульсов.</p>
+
+<p>Такой подход особенно актуален в условиях, когда требуется простота, надежность и отсутствие необходимости в сложной программируемой логике. <em>Аналоговый ШИМ</em> часто применяется в регуляторах яркости, контроллерах скорости двигателей постоянного тока и импульсных источниках питания. Понимание принципов работы этих схем необходимо каждому инженеру-электронщику.</p>
+
+<p>Основная идея заключается в сравнении пилообразного напряжения с уровнем постоянной составляющей. Изменяя уровень опорного напряжения, вы напрямую влияете на длительность выходного импульса. Это дает возможность плавно регулировать среднюю мощность, передаваемую на нагрузку.</p>
+
+<h2 id="принцип-работы-генератора-на-компараторе">Принцип работы генератора на компараторе</h2>
+
+<p>Фундаментальной основой любого ШИМ-генератора на ОУ является схема включения по типу <strong>компаратора с гистерезисом</strong>, также известная как триггер Шмитта. В этой конфигурации операционный усилитель работает в режиме насыщения, переключая выходное напряжение между положительным и отрицательным пределами питания. Скорость переключения зависит от slew-rate (скорости нарастания) конкретного экземпляра ОУ.</p>
+
+<p>Для формирования колебаний используется цепь положительной обратной связи, которая задает пороги переключения. Когда напряжение на входе достигает верхнего порога, выход резко падает, и наоборот. <em>Гистерезис</em> предотвращает ложные срабатывания от шумов и обеспечивает четкие фронты сигнала. Без гистерезиса система могла бы войти в режим высокочастотной генерации или вести себя нестабильно.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> При использовании ОУ с rail-to-rail выходом амплитуда сигнала будет близка к напряжению питания, но обычные ОУ (например, <em>LM358</em> или <em>TL072</em>) могут не доставать до шин питания на 1.5–2 вольта, что важно учитывать при расчете уровней логических сигналов.</p>
+</blockquote>
+
+<p>Частота генерации определяется параметрами RC-цепи, подключенной к входу. Чем меньше емкость или сопротивление, тем выше частота. Однако стоит помнить, что предельная частота работы схемы ограничена быстродействием самого операционного усилителя. На высоких частотах синусоида может превратиться в треугольник из-за ограничения скорости нарастания.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Характеристики операционных усилителей могут отличаться в зависимости от партии и производителя. Если вы разрабатываете устройство для промышленного применения, обязательно сверяйте параметры slew-rate и bandwidth в актуальной документации (datasheet) на конкретную микросхему.</p>
+</blockquote>
+
+<details class="pb-accordion"><summary>Почему ОУ лучше транзистора в этой схеме?</summary><div class="pb-accordion-body"><p>Использование ОУ обеспечивает более стабильные пороги переключения и высокую повторяемость параметров, так как внутренние характеристики микросхемы лучше контролируются при производстве, чем параметры дискретных транзисторов.</p></div></details>
+
+<h2 id="формирование-пилообразного-напряжения">Формирование пилообразного напряжения</h2>
+
+<p>Для корректной работы ШИМ необходим генератор опорного напряжения пилообразной или треугольной формы. В простейших схемах на одном ОУ этот сигнал снимается непосредственно с входа, где происходит заряд и разряд конденсатора. Однако для получения высококачественной <strong>линейной развертки</strong> часто требуется отдельный каскад.</p>
+
+<p>Линейность нарастания напряжения критически важна для равномерности регулировки скважности. Если заряд конденсатора происходит по экспоненте (что естественно для RC-цепи), то регулировка будет нелинейной в крайних положениях потенциометра. Использование источника постоянного тока для заряда конденсатора позволяет исправить эту ситуацию.</p>
+
+<ul>
+<li>📉 Использование интегратора на ОУ позволяет получить идеально линейный треугольный сигнал.</li>
+<li>⚡ Заряд конденсатора током постоянной величины исключает экспоненциальные искажения формы волны.</li>
+<li>🔄 Двухполярное питание упрощает создание симметричного треугольника вокруг нуля.</li>
+</ul>
+
+<p>Частота следования импульсов задается формулой, зависящей от номиналов резисторов и конденсатора в цепи обратной связи. Точность частоты в аналоговых схемах напрямую зависит от допусков используемых компонентов. Применение конденсаторов с низким ТКЕ (температурным коэффициентентом емкости) повышает стабильность работы устройства.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Для получения стабильной частоты используйте конденсаторы типа C0G (NP0) или полипропиленовые, так как они имеют минимальный температурный дрейф емкости по сравнению с керамикой X7R или электролитами.</p></aside>
+
+<h2 id="схема-включения-и-расчет-компонентов">Схема включения и расчет компонентов</h2>
+
+<p>Классическая схема генератора ШИМ на одном ОУ требует минимального количества внешних элементов. Обычно это один операционный усилитель, два резистора для установки гистерезиса, один резистор и один конденсатор для задания частоты, а также потенциометр для регулировки скважности. Расчет начинается с выбора желаемой частоты.</p>
+
+<p>Частота переключения $f$ приблизительно равна $1 / (R \cdot C \cdot \ln(\frac{1+\beta}{1-\beta}))$, где $\beta$ — коэффициент обратной связи. Для упрощения расчетов часто принимают частоту обратно пропорциональной произведению RC. Подбирая номиналы, необходимо избегать слишком малых сопротивлений, чтобы не перегружать выход ОУ, и слишком больших, чтобы не вносить шумы.</p>
+
+<p>Ниже приведена таблица примерных номиналов для различных диапазонов частот при использовании стандартных компонентов:</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Целевая частота</th>
+<th>Емкость (C)</th>
+<th>Сопротивление (R)</th>
+<th>Типичное применение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100 Гц</td>
+<td>100 нФ</td>
+<td>100 кОм</td>
+<td>Низкочастотные таймеры</td>
+</tr>
+<tr>
+<td>1 кГц</td>
+<td>10 нФ</td>
+<td>100 кОм</td>
+<td>Управление светодиодами</td>
+</tr>
+<tr>
+<td>20 кГц</td>
+<td>1 нФ</td>
+<td>50 кОм</td>
+<td>Звуковой диапазон (бесшумный)</td>
+</tr>
+<tr>
+<td>100 кГц</td>
+<td>100 пФ</td>
+<td>10 кОм</td>
+<td>Импульсные источники питания</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Важно отметить, что при высоких частотах паразитные емкости монтажа и входов ОУ могут существенно влиять на реальную частоту генерации. <strong>Монтажная емкость</strong> может добавить несколько пикофарад, что сдвинет частоту в меньшую сторону. Поэтому всегда оставляйте возможность подстройки номиналов.</p>
+
+<div class="pb-poll" id="poll-b2856c17"><div class="pb-poll-question">📊 Какую частоту ШИМ вы чаще всего используете в проектах?</div><div class="pb-poll-option" data-poll="b2856c17" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">До 1 кГц</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="b2856c17" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">1-10 кГц</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="b2856c17" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">10-50 кГц</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="b2856c17" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Выше 100 кГц</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="регулировка-скважности-импульсов">Регулировка скважности импульсов</h2>
+
+<p>Изменение скважности ( Duty Cycle) осуществляется путем варьирования уровня напряжения, с которым сравнивается пилообразный сигнал. Для этого используется потенциометр, включенный как делитель напряжения. Вращение ручки потенциометра меняет порог срабатывания компаратора.</p>
+
+<p>В схемах с одним ОУ регулировка часто происходит за счет изменения времени заряда и разряда конденсатора через разные плечи потенциометра. Это позволяет менять скважность от 0 до 100%, однако в крайних точках могут возникать "мертвые зоны", где генерация срывается. Использование <em>буферного усилителя</em> для задания опорного напряжения решает эту проблему.</p>
+
+<p>Для независимой регулировки частоты и скважности рекомендуется использовать схему с двумя операционными усилителями: один работает как генератор треугольных импульсов (интегратор), а второй — как компаратор с регулируемым порогом. Это обеспечивает полную независимость параметров.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Разделение генератора пилы и компаратора на два отдельных каскада позволяет независимо регулировать частоту и скважность, что невозможно в простейшей схеме на одном ОУ.</p></aside>
+
+<h2 id="согласование-уровней-и-управление-нагрузкой">Согласование уровней и управление нагрузкой</h2>
+
+<p>Выходное напряжение большинства операционных усилителей недостаточно для прямого управления мощными ключами, такими как MOSFET или IGBT. Кроме того, логические уровни могут не совпадать. Для решения этой проблемы выход ОУ подключают к драйверу или буферному каскаду.</p>
+
+<p>Наиболее распространенным решением является использование полевого транзистора в ключевом режиме или специализированного драйвера. Если нагрузка индуктивная (двигатель, реле), обязательно применение защитных диодов для гашения обратных выбросов напряжения. <strong>Защита ключа</strong> продлевает срок службы всей схемы.</p>
+
+<ul>
+<li>🛡️ Установка снабберной цепочки (RC) параллельно ключу снижает уровень электромагнитных помех.</li>
+<li>🔌 Драйверы верхнего плеча требуют отдельного источника питания или бутстрепной схемы.</li>
+<li>⚡ Мощные резисторы в затворе помогают подавить паразитные высокchastotnye колебания.</li>
+</ul>
+
+<p>При управлении инвертирующим входом фаза выходного сигнала меняется на противоположную. Это может быть критично в системах с обратной связью, где важна полярность сигнала ошибки. Всегда проверяйте осциллографом реальный сигнал на затворе силового ключа.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка перед включением питания</h4><label class="check-item"><input type="checkbox"><span>Проверить полярность подключения питания ОУ</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в отсутствии КЗ на выходе</span></label><label class="check-item"><input type="checkbox"><span>Проверить осциллографом форму сигнала</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в наличии нагрузки или Dummy Load</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="типичные-ошибки-и-troubleshooting">Типичные ошибки и troubleshooting</h2>
+
+<p>При сборке ШИМ на ОУ новички часто сталкиваются с рядом типовых проблем. Самая распространенная — отсутствие генерации или генерация на неверной частоте. Часто причина кроется в неправильном выборе типа ОУ: некоторые модели просто не могут работать на выбранных частотах или при данном напряжении питания.</p>
+
+<p>Еще одна частая ошибка — отсутствие развязывающих конденсаторов по питанию. ОУ чувствительны к пульсациям, и без конденсатора (обычно 100 нФ керамический + 10 мкФ электролитический) рядом с ножками питания схема может возбуждаться на высоких частотах или работать нестабильно. <em>Паразитная генерация</em> может маскироваться под шум.</p>
+
+<p>Если форма импульсов "плывет" при нагреве, проблема в температурной стабильности компонентов. Резисторы с допуском 5% и обычная керамика могут давать существенный разброс параметров. Замена их на прецизионные аналоги с допуском 1% и термостабильные конденсаторы решает проблему.</p>
+
+<details>
+<summary>Почему греется операционный усилитель?</summary>
+<p>Нагрев ОУ может быть вызван коротким замыканием на выходе, работой на слишком низкое сопротивление нагрузки или самовозбуждением схемы на ultrahigh частотах. Также проверьте, не подано ли на вход напряжение, выходящее за пределы питающих шин.</p>
+</details>
+
+<details>
+<summary>Можно ли использовать ОУ LM358 для частот выше 50 кГц?</summary>
+<p>Использовать можно, но качество сигнала будет низким. LM358 имеет низкую скорость нарастания (slew-rate), поэтому прямоугольные импульсы превратятся в пологие треугольники, а задержки переключения сделают скважность неуправляемой.</p>
+</details>
+
+<details>
+<summary>Как увеличить ток нагрузки без замены ОУ?</summary>
+<p>Добавьте на выход ОУ транзисторный буфер (эмиттерный повторитель) или используйте ОУ в связке с внешним драйвером. Сам ОУ оставляйте только для формирования сигнала управления.</p>
+</details>
+
+<details>
+<summary>Влияет ли температура на частоту ШИМ?</summary>
+<p>Да, влияет. Температурный дрейф резисторов и конденсаторов, а также изменение параметров самого ОУ приводят к изменению частоты. Для критичных применений используйте термокомпенсированные компоненты.</p>
+</details>
+
+<details>
+<summary>Нужен ли двухполярный источник питания?</summary>
+<p>Не обязателен, но желателен для симметричных сигналов. При однполярном питании необходимо создать искусственную среднюю точку (виртуальную землю) с помощью делителя и буфера, чтобы сигнал не обрезался.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/g/gd/gde-mozhno-otdokhnut-na-novyj-god.html" class="pb-related-card">
+                <span class="pb-related-title">Где отдохнуть на Новый год: лучшие направления</span>
+                <span class="pb-related-desc">Где можно отдохнуть на Новый год? Полный гид по курортам: горы, море, Европа и Азия. Цены, погода и </span>
+            </a><a href="/articles/v/vs/vsk-strakhovanie-ot-polomok.html" class="pb-related-card">
+                <span class="pb-related-title">ВСК Страхование от поломок: условия, риски и отзывы</span>
+                <span class="pb-related-desc">Полный анализ продукта ВСК «Страхование от поломок». Стоит ли переплачивать за защиту техники? Реаль</span>
+            </a><a href="/articles/p/pr/prichiny-zameny-vozdushnogo-filtra.html" class="pb-related-card">
+                <span class="pb-related-title">Причины замены воздушного фильтра двигателя: признаки и сроки</span>
+                <span class="pb-related-desc">Почему нужно менять воздушный фильтр? Влияние загрязнения на расход топлива, мощность и ресурс мотор</span>
+            </a><a href="/articles/k/ka/kakuyu-mashinu-vzyat-do-700000.html" class="pb-related-card">
+                <span class="pb-related-title">Какую машину купить до 700000 рублей в 2026: ТОП авто</span>
+                <span class="pb-related-desc">Полный гид по выбору авто до 700 тысяч рублей. Анализ рынка 2026 года: надежные иномарки, проверенна</span>
+            </a><a href="/articles/a/av/avtosport-ru-kupit-mashinu-novuyu-tseny.html" class="pb-related-card">
+                <span class="pb-related-title">Новые авто для автоспорта: цены 2026, где купить в России</span>
+                <span class="pb-related-desc">Актуальные цены на новые гоночные и спортивные машины для автоспорта в 2026 году. Где купить в Росси</span>
+            </a><a href="/articles/c/ch/chto-znachit-restajlingovaya-mashina.html" class="pb-related-card">
+                <span class="pb-related-title">Что значит рестайлинговая машина: отличия и признаки</span>
+                <span class="pb-related-desc">Рестайлинговая машина: что это такое, отличия от дорестайла, плюсы и минусы покупки. Как узнать год </span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

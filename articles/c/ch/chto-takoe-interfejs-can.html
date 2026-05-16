@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Интерфейс CAN: что это, принцип работы и диагностика — Авто Факт</title>
+    <meta name="description" content="Подробный разбор интерфейса CAN: архитектура, виды шин, диагностика ошибок и коды неисправностей. Разбираем CAN High, Low и Topology в авто.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/c/ch/chto-takoe-interfejs-can.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Интерфейс CAN: что это, принцип работы и диагностика">
+    <meta property="og:description" content="Подробный разбор интерфейса CAN: архитектура, виды шин, диагностика ошибок и коды неисправностей. Разбираем CAN High, Low и Topology в авто.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/elektrika-avto/">Электрика Авто</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Интерфейс CAN: что это, принцип работы и диагностика</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#архитектура-и-физический-уровень-сети">Архитектура и физический уровень сети</a></li><li><a href="#скоростные-режимы-и-топология">Скоростные режимы и топология</a></li><li><a href="#принцип-арбитража-и-передачи-данных">Принцип арбитража и передачи данных</a></li><li><a href="#диагностика-неисправностей-интерфейса">Диагностика неисправностей интерфейса</a></li><li><a href="#типичные-ошибки-и-коды-неисправностей">Типичные ошибки и коды неисправностей</a></li><li><a href="#методы-ремонта-и-восстановления-связи">Методы ремонта и восстановления связи</a></li><li><a href="#будущее-автомобильных-сетей">Будущее автомобильных сетей</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/s/sg/sgu-na-mashinu-rasshifrovka.html">СГУ на машину расшифровка: что это, устройство и установка</a></li><li><a href="/articles/e/el/elektroprivod-zerkal-chto-eto-takoe-v-mashine.html">Электропривод зеркал: что это, как работает и ремонт</a></li><li><a href="/articles/k/ka/kak-proverit-chto-katushka-zazhiganiya-neispravna.html">Как проверить катушку зажигания: 7 признаков неисправности</a></li><li><a href="/articles/p/po/pochemu-lomaetsya-generator-v-mashine-prichiny.html">Почему ломается генератор в машине: причины и диагностика</a></li><li><a href="/articles/k/ka/kak-ochistit-okislivshiesya-kontakty-v-razeme-avto.html">Как почистить окислившиеся контакты в разъеме авто: инструкция</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Интерфейс CAN: устройство, диагностика и коды ошибок</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#архитектура-и-физический-уровень-сети">Архитектура и физический уровень сети</a></li><li><a href="#скоростные-режимы-и-топология">Скоростные режимы и топология</a></li><li><a href="#принцип-арбитража-и-передачи-данных">Принцип арбитража и передачи данных</a></li><li><a href="#диагностика-неисправностей-интерфейса">Диагностика неисправностей интерфейса</a></li><li><a href="#типичные-ошибки-и-коды-неисправностей">Типичные ошибки и коды неисправностей</a></li><li><a href="#методы-ремонта-и-восстановления-связи">Методы ремонта и восстановления связи</a></li><li><a href="#будущее-автомобильных-сетей">Будущее автомобильных сетей</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+<p>Современный автомобиль давно перестал быть просто механическим устройством, превратившись в сложнейшую сеть электронных блоков управления, которые должны обмениваться огромными объемами информации. За этот обмен данными отвечает <strong>интерфейс CAN</strong>, или Controller Area Network — стандарт последовательной связи, разработанный компанией Bosch в 1983 году. Без этой технологии работа двигателя, ABS, подушек безопасности и даже простых стеклоподъемников была бы невозможна или требовала бы километров проводов.</p>
+
+<p>Основная идея, которую внедрили инженеры, заключалась в отказе от (point-to-point) соединений в пользу общей шины, где все устройства подключены параллельно. Это позволило радикально снизить вес проводки, упростить сборку и повысить надежность системы в целом. Понимание того, <em>что такое интерфейс CAN</em>, необходимо не только инженерам, но и современным автомеханикам, занимающимся диагностикой.</p>
+
+<p>В этой статье мы детально разберем физическую структуру сети, уровни скоростей передачи данных и методы поиска неисправностей. Вы узнаете, почему <mark>резисторы на 120 Ом</mark> являются критически важным элементом для стабильности всей системы и как их отсутствие превращает сеть в хаос сигналов.</p>
+
+<h2 id="архитектура-и-физический-уровень-сети">Архитектура и физический уровень сети</h2>
+<p>Физически интерфейс CAN представляет собой витую пару, по которой передаются дифференциальные сигналы. Это означает, что информация кодируется не абсолютным значением напряжения, а разницей потенциалов между двумя проводами, которые традиционно называют <strong>CAN High</strong> и <strong>CAN Low</strong>. Такая схема обеспечивает высокую помехозахоустойчивость, что критически важно в условиях автомобиля, где работают генераторы, катушки зажигания и электродвигатели.</p>
+
+<p>Для корректной работы сети необходимо согласование импеданса, которое обеспечивают два концевых резистора, расположенных на концах магистрали. Обычно они находятся в блоке управления двигателем (ECU) и блоке ABS или приборной панели. Если один из резисторов выйдет из строя, сигнал начнет отражаться от концов линии, вызывая искажения и ошибки связи.</p>
+
+<p>Напряжение в линии также имеет свои особенности: в состоянии покоя (реcessive) на обоих проводах поддерживается около 2.5 В. При передаче активного бита (dominant) напряжение на CAN High поднимается до 3.5 В, а на CAN Low опускается до 1.5 В. Разница в 2 Вольта четко считывается приемниками, игнорируя большинство внешних шумов.</p>
+
+<blockquote>⚠️ Внимание: При диагностике мультиметром не замыкайте провода CAN High и CAN Low между собой или на массу — это может вывести из строя интерфейсные чипы в подключенных блоках управления.</blockquote>
+
+<h2 id="скоростные-режимы-и-топология">Скоростные режимы и топология</h2>
+<p>В автомобильной промышленности интерфейс CAN разделили на несколько подвидов в зависимости от требуемой скорости передачи данных и критичности информации. Высокоскоростной <strong>High-Speed CAN</strong> (до 1 Мбит/с) используется для систем, где важна каждая миллисекунда: управление двигателем, трансмиссией и тормозной системой.</p>
+
+<p>Для менее критичных систем, таких как управление климатом, мультимедиа или стеклоподъемниками, применяется Low-Speed CAN (до 125 Кбит/с). Существует также отдельный стандарт <em>Single-Wire CAN</em>, который использует только один провод для передачи данных, что позволяет экономить на проводке в простых узлах, хотя иует скоростью и надежностью.</p>
+
+<ul>
+<li>🚗 <strong>Drive CAN</strong>: соединяет двигатель, коробку передач и ABS (максимальная скорость).</li>
+<li>📟 <strong>Comfort CAN</strong>: управляет дверями, окнами и климатом (средняя скорость).</li>
+<li>🔧 <strong>Diagnostic CAN</strong>: используется сканерами для подключения к автомобилю (OBD-II).</li>
+</ul>
+
+<p>Топология сети чаще всего линейная, но в современных премиальных автомобилях встречаются и более сложные структуры с шлюзами (Gateways), которые соединяют быстрые и медленные шины между собой, переводя данные из одного протокола в другой.</p>
+
+<div class="pb-poll" id="poll-4de93bda"><div class="pb-poll-question">📊 С какой проблемой CAN-шины вы сталкивались чаще?</div><div class="pb-poll-option" data-poll="4de93bda" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Обрыв провода</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="4de93bda" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Короткое замыкание</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="4de93bda" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Неисправность блока ECU</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="4de93bda" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Проблемы с концевиками</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="4de93bda" data-idx="4" onclick="pbPollVote(this)"><span class="pb-poll-label">Не сталкивался</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="принцип-арбитража-и-передачи-данных">Принцип арбитража и передачи данных</h2>
+<p>Одной из гениальных особенностей протокола является метод арбитража. В отличие от компьютерных сетей, где устройства ждут своей очереди или посылают данные и проверяют collisions (коллизии), в CAN-шине приоритет имеет сообщение с наименьшим идентификатором (ID). Если два блока начинают передачу одновременно, тот, кто передает доминантный бит (0),"перекрикивает" того, кто передает рецессивный (1).</p>
+
+<p>Блок с низким приоритетом (высоким ID) видит, что на шине уровень сигнала отличается от того, который он посылает, замолкает и переходит в режим прослушивания, ожидая освобождения шины. Это гарантирует, что критически важные данные, например, о срабатывании ABS, будут переданы мгновенно, без задержек.</p>
+
+<p>Каждое сообщение (фрейм) имеет строго определенную структуру: начало, арбитражное поле (ID), поле управления данными, сами данные (до 8 байт в классическом CAN 2.0) и поле контроля ошибок (CRC). Получатель проверяет контрольную сумму, и если она не совпадает, сообщение игнорируется, а отправитель получает уведомление об ошибке.</p>
+
+<details class="pb-accordion"><summary>Что такое CAN FD?</summary><div class="pb-accordion-body"><p>CAN FD (Flexible Data-rate) — это эволюция стандарта, позволяющая передавать до 64 байт данных в одном кадре и использовать более высокие скорости передачи (до 8 Мбит/с в части данных). Это необходимо для современных автомобилей с системами автономного вождения и огромным количеством датчиков.>
+
+<h2 id="диагностика-неисправностей-интерфейса">Диагностика неисправностей интерфейса</h2>
+<p>Поиск неисправностей в CAN-шине требует системного подхода и специнструментария. Чаще всего механики сталкиваются с обрывами проводов, короткими замыканиями или выходом из строя самих блоков управления, которые"штормят" шину. Первым шагом всегда должна быть визуальная проверка разъемов и целостности жгутов, особенно в местах сгибов и вибрации.</p>
+
+<p>Для глубокой диагностики необходим осциллограф или специализированный CAN-анализатор. Мультиметр может показать лишь наличие напряжения и примерное сопротивление, но не покажет форму сигнала, наличие помех или"провалов". На осциллограмме исправной шины вы увидите четкие прямоугольные импульсы с ровными фронтами.</p>
+
+<p>Если на осциллографе видна"каша" или сигнал имеет сильную синусоидальную форму, это указывает на отсутствие одного из концевых резисторов или сильную загрузку шины помехами. Также важно проверять напряжение относительно массы: в покое на CAN High должно быть около 2.6-2.7 В, а на CAN Low — около 2.3-2.4 В.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Диагностика CAN-шины</h4><label class="check-item"><input type="checkbox"><span>Измерить сопротивление между CAN H и CAN L (должно быть ~60 Ом)</span></label><label class="check-item"><input type="checkbox"><span>Проверить напряжение CAN H относительно массы (~2.6В)</span></label><label class="check-item"><input type="checkbox"><span>Проверить напряжение CAN L относительно массы (~2.4В)</span></label><label class="check-item"><input type="checkbox"><span>Осмотреть разъемы на окисление</span></label><label class="check-item"><input type="checkbox"><span>Отключать блоки по одному для поиска короткого замыкания</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="типичные-ошибки-и-коды-неисправностей">Типичные ошибки и коды неисправностей</h2>
+<p>При сканировании автомобиля диагностическим сканером можно встретить множество кодов ошибок, связанных с коммуникацией. Они часто начинаются с префикса <strong>U</strong> (Network Communication Codes). Например, код U0100 означает"Lost Communication With ECM/PCM", что указывает на потерю связи с блоком управления двигателем.</p>
+
+<p>Ошибки могут быть как постоянными, так и sporadic (периодическими). Периодические ошибки часто вызваны плохим контактом в разъеме или intermittent обрывом провода, который проявляется только при тряске. Постоянные ошибки обычно указывают на сгоревший блок или физический обрыв магистрали.</p>
+
+<p>Ниже приведена таблица с распространенными кодами ошибок, связанными с интерфейсом CAN:</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Код ошибки</th>
+<th>Описание</th>
+<th>Возможная причина</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>U0001</td>
+<td>High Speed CAN Communication Bus Performance</td>
+<td>Проблемы с пропускной способностью, помехи</td>
+</tr>
+<tr>
+<td>U0100</td>
+<td>Lost Communication With ECM/PCM</td>
+<td>Обрыв провода, нет питания на ECU, сгорел ECU</td>
+</tr>
+<tr>
+<td>U0121</td>
+<td>Lost Communication With Anti-Lock Brake Module</td>
+<td>Неисправность ABS модуля или проводки к нему</td>
+</tr>
+<tr>
+<td>U0155</td>
+<td>Lost Communication With Instrument Panel Cluster</td>
+<td>Проблема с"приборкой" или шлейфом CAN</td>
+</tr>
+</tbody>
+</table></div>
+
+<blockquote>⚠️ Внимание: Наличие ошибки"Lost Communication" не всегда означает смерть блока. Часто проблема кроется в сгоревшем предохранителе питания этого конкретного узла.</blockquote>
+
+<h2 id="методы-ремонта-и-восстановления-связи">Методы ремонта и восстановления связи</h2>
+<p>Ремонт проводки CAN-шины имеет свои особенности. Поскольку это витая пара, крайне важно сохранять скрутку проводов вплоть до места подключения. Раскручивание пары на длину более 5-10 см может привести к появлению помех и нестабильной работе сети, особенно на высоких скоростях.</p>
+
+<p>При замене проводов необходимо использовать медный провод аналогичного сечения. Алюминиевые вставки или провода меньшего диаметра увеличат сопротивление и могут вызвать падение напряжения, что приведет к ошибкам. Пайка соединений предпочтительнее скруток, но место пайки должно быть надежно изолировано термоусадкой.</p>
+
+<p>Если диагностика указывает на неисправность конкретного блока (он"сажает" шину в ноль или в короткое замыкание), его необходимо исключить из сети для проверки. Для этого разъем отключается, и измеряется сопротивление и форма сигнала на оставшейся части сети. Если после отключения"подозреваемого" шина оживает — блок требует замены или ремонта.</p>
+
+
+
+<h2 id="будущее-автомобильных-сетей">Будущее автомобильных сетей</h2>
+<p>Несмотря на возраст, интерфейс CAN остается стандартом де-факто в автопроме, однако его возможности постепенно исчерпываются. Растущее количество электроники, камеры высокого разрешения и радары требуют (пропускной способности), которую классический CAN обеспечить не может. На смену приходят технологии Ethernet (Automotive Ethernet), которые обеспечивают скорости до 100 Мбит/с и выше.</p>
+
+<p>Тем не менее, для управления исполнительными механизмами и простыми датчиками CAN-шина останется актуальной еще долгие годы благодаря своей дешевизне, надежности и отработанной десятилетиями архитектуре. Понимание принципов ее работы — фундамент для любого специалиста в области автомобильной электроники.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Диагностика CAN-шины невозможна без осциллографа: мультиметр показывает лишь статическое напряжение, но не может выявить искажения формы сигнала, которые являются главной причиной сбоев.</p></aside>
+
+<details>
+<summary>Можно ли ездить с ошибкой CAN-шины?</summary>
+<p>Ездить можно, но с осторожностью. Если ошибка касается комфорта (например, не работает радио или климат), то это безопасно. Однако если ошибка связана с Engine, ABS или Airbag, автомобиль может перейти в аварийный режим, ограничить мощность или отключить системы безопасности, что опасно.</p>
+</details>
+
+<details>
+<summary>Почему сопротивление CAN-шины должно быть 60 Ом?</summary>
+<p>Потому что в сети стоят два концевых резистора по 120 Ом, подключенных параллельно на разных концах магистрали. При измерении мультиметром мы видим их параллельное соединение: 120 / 2 = 60 Ом.</p>
+</details>
+
+<details>
+<summary>Что будет, если перепутать CAN High и CAN Low?</summary>
+<p>Сеть работать не будет. Протокол требует определенной полярности сигналов. Однако, в отличие от питания, это редко приводит к мгновенному сгоранию блоков, так как уровни напряжения симметричны относительно земли, но коммуникация полностью прекратится.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/s/sg/sgu-na-mashinu-rasshifrovka.html" class="pb-related-card">
+                <span class="pb-related-title">СГУ на машину расшифровка: что это, устройство и установка</span>
+                <span class="pb-related-desc">Полная расшифровка аббревиатуры СГУ. Разбор конструкции, функций и правил установки светозвуковых ус</span>
+            </a><a href="/articles/e/el/elektroprivod-zerkal-chto-eto-takoe-v-mashine.html" class="pb-related-card">
+                <span class="pb-related-title">Электропривод зеркал: что это, как работает и ремонт</span>
+                <span class="pb-related-desc">Полный гид по системе электропривода зеркал. Устройство, причины поломок, пошаговая инструкция по за</span>
+            </a><a href="/articles/k/ka/kak-proverit-chto-katushka-zazhiganiya-neispravna.html" class="pb-related-card">
+                <span class="pb-related-title">Как проверить катушку зажигания: 7 признаков неисправности</span>
+                <span class="pb-related-desc">Пошаговая инструкция, как самостоятельно диагностировать неисправность катушки зажигания: симптомы, </span>
+            </a><a href="/articles/p/po/pochemu-lomaetsya-generator-v-mashine-prichiny.html" class="pb-related-card">
+                <span class="pb-related-title">Почему ломается генератор в машине: причины и диагностика</span>
+                <span class="pb-related-desc">Разбираем основные причины, почему ломается генератор в машине. Симптомы неисправностей, диагностика</span>
+            </a><a href="/articles/k/ka/kak-ochistit-okislivshiesya-kontakty-v-razeme-avto.html" class="pb-related-card">
+                <span class="pb-related-title">Как почистить окислившиеся контакты в разъеме авто: инструкция</span>
+                <span class="pb-related-desc">Почему окисляются контакты в машине? Эффективные способы чистки, выбор спрея, меры предосторожности </span>
+            </a><a href="/articles/n/na/nakonechnik-dlya-provoda-pod-avtomat.html" class="pb-related-card">
+                <span class="pb-related-title">Наконечник для провода под автомат: выбор и монтаж</span>
+                <span class="pb-related-desc">Правильный наконечник для провода под автомат обеспечит безопасность. Выбор, опрессовка и таблица ра</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

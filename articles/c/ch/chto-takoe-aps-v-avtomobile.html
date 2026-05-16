@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>АПС в автомобиле: что это и как работает система парковки — Авто Факт</title>
+    <meta name="description" content="Подробный разбор АПС: парктроники, виды датчиков, причины ложных срабатываний и калибровка. Как работает акустическая парковочная система в авто.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/c/ch/chto-takoe-aps-v-avtomobile.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="АПС в автомобиле: что это и как работает система парковки">
+    <meta property="og:description" content="Подробный разбор АПС: парктроники, виды датчиков, причины ложных срабатываний и калибровка. Как работает акустическая парковочная система в авто.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/elektrika-avto/">Электрика Авто</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">АПС в автомобиле: что это и как работает система парковки</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#принцип-работы-и-устройство-парктроника">Принцип работы и устройство парктроника</a></li><li><a href="#основные-виды-систем-парковки">Основные виды систем парковки</a></li><li><a href="#зоны-действия-и-ограничения-датчиков">Зоны действия и ограничения датчиков</a></li><li><a href="#диагностика-неисправностей-и-ложные-срабатывания">Диагностика неисправностей и ложные срабатывания</a></li><li><a href="#установка-и-калибровка-новых-датчиков">Установка и калибровка новых датчиков</a></li><li><a href="#сравнение-апс-с-камерами-и-радарными-системами">Сравнение АПС с камерами и радарными системами</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/m/ma/mashina-betsya-tokom-pri-vykhode-iz-mashiny-prichiny.html">Машина бьется током при выходе: причины и устранение</a></li><li><a href="/articles/c/ch/chto-znachit-beskontaktnoe-zazhiganie.html">Бесконтактное зажигание: что это и как работает</a></li><li><a href="/articles/z/za/zamena-prikurivatelya-lanser-10.html">Замена прикуривателя Лансер 10: пошаговая инструкция и схема</a></li><li><a href="/articles/s/sp/sprej-dlya-zashchity-kontaktov-ot-vlagi.html">Спрей для защиты контактов от влаги: выбор и применение</a></li><li><a href="/articles/k/ku/kuda-ustanovit-datchik-temperatury-naruzhnogo-vozdukha-v-avtomobile.html">Куда установить датчик температуры наружного воздуха: выбор места</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Что такое АПС в автомобиле: устройство, виды и настройка парктроников</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-работы-и-устройство-парктроника">Принцип работы и устройство парктроника</a></li><li><a href="#основные-виды-систем-парковки">Основные виды систем парковки</a></li><li><a href="#зоны-действия-и-ограничения-датчиков">Зоны действия и ограничения датчиков</a></li><li><a href="#диагностика-неисправностей-и-ложные-срабатывания">Диагностика неисправностей и ложные срабатывания</a></li><li><a href="#установка-и-калибровка-новых-датчиков">Установка и калибровка новых датчиков</a></li><li><a href="#сравнение-апс-с-камерами-и-радарными-системами">Сравнение АПС с камерами и радарными системами</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Современный водитель редко представляет эксплуатацию машины без электронных помощников, которые берут на себя рутинные задачи. Одной из таких систем является <strong>АПС</strong>, или акустическая парковочная система. В обиходе её чаще называют парктроником, и она стала неотъемлемой частью комплектации большинства легковых автомобилей, начиная с бюджетного сегмента и заканчивая премиальными моделями.</p>
+
+<p>Основная задача этого оборудования — контроль свободного пространства вокруг кузова при движении задним ходом или маневрировании в ограниченном пространстве. <em>Датчики парковки</em> сканируют периметр и предупреждают водителя о препятствиях, которые могут быть не видны в зеркалах. Это существенно снижает риск ДТП и повреждения бамперов при парковке.</p>
+
+<p>Принцип действия базируется на эхолокации. Электронный блок управления посылает ультразвуковой сигнал, который отражается от объектов и возвращается обратно. <mark>Система автоматически рассчитывает расстояние до препятствия на основе времени задержки отраженного сигнала</mark>, переводя эти данные в звуковые сигналы или визуальное отображение на экране мультимедиа. Понимание того, как именно работает АПС, поможет вам правильно её использовать и вовремя заметить неисправности.</p>
+
+<h2 id="принцип-работы-и-устройство-парктроника">Принцип работы и устройство парктроника</h2>
+
+<p>Фундаментальной основой работы любой акустической парковочной системы является ультразвуковой датчик. Эти устройства, часто называемые сенсорами или сонарами, встраиваются в бамперы автомобиля. Они функционируют по принципу излучателя и приемника одновременно. Когда автомобиль начинает движение, блок управления подает напряжение на датчики, и те испускают короткие импульсы высокой частоты.</p>
+
+<p>Сигнал распространяется в воздухе со скоростью звука и, встречая на своем пути препятствие, отражается от него. Датчик улавливает эхо и передает данные в процессор. <strong>Блок управления</strong> мгновенно анализирует время прохождения сигнала туда и обратно. Чем меньше временной интервал, тем ближе находится объект. На основе этих вычислений система формирует реакцию для водителя.</p>
+
+<p>Важно понимать, что зона чувствительности ограничена конусообразным пространством перед датчиком. Если препятствие находится вне этого конуса, система может его не увидеть. Кроме того, на точность измерений влияют погодные условия и состояние поверхности сенсора. Грязь, лед или вода могут искажать сигнал, приводя к ошибкам в расчетах дистанции.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Не полагайтесь слепо на показания АПС при экстремально низких температурах. Замерзшая поверхность датчика или плотный слой льда на бампере могут полностью блокировать работу системы или вызывать постоянные ложные сигналы.</p>
+</blockquote>
+
+<p>Современные системы могут иметь разное количество датчиков, что напрямую влияет на точность и охват зоны. Обычно их устанавливают по 2 или 4 на каждый бампер. Чем больше сенсоров, тем меньше «слепых зон» и выше вероятность обнаружения тонких столбиков или низких бордюров.</p>
+
+<h2 id="основные-виды-систем-парковки">Основные виды систем парковки</h2>
+
+<p>Рынок автомобильной электроники предлагает различные модификации парковочных ассистентов. Они отличаются не только количеством датчиков, но и способом оповещения водителя, а также технологией сканирования пространства. Выбор подходящего варианта зависит от габаритов автомобиля и навыков водителя.</p>
+
+<p>Наиболее распространенной является <strong>звуковая система</strong>. Она издает прерывистые сигналы, частота которых увеличивается по мере приближения к препятствию. Когда расстояние становится критическим (обычно менее 30 см), сигнал становится непрерывным. Это простой и надежный вариант, не требующий визуального контроля дополнительных экранов.</p>
+
+<p>Более продвинутые версии оснащаются <strong>визуальным дисплеем</strong>. Это может быть отдельный небольшой экранчик, встроенный в торпеду, или интеграция изображения в штатный монитор мультимедийной системы. На экране отображается схематичное изображение автомобиля с цветовыми зонами опасности: зеленый цвет означает безопасность, желтый — внимание, красный — стоп.</p>
+
+<div class="pb-poll" id="poll-b763dbb6"><div class="pb-poll-question">📊 Какой тип парктроника установлен на вашем авто?</div><div class="pb-poll-option" data-poll="b763dbb6" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Только звуковой</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="b763dbb6" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">С дисплеем</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="b763dbb6" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Камера заднего вида</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="b763dbb6" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Вообще нет парктроника</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<p>Существуют также комбинированные системы, включающие камеру заднего вида. В этом случае АПС работает в связке с видеопотоком, накладывая на изображение цветовые полосы или динамическую разметку, которая меняется в зависимости от поворота руля. Это наиболее информативный вариант, позволяющий видеть не только расстояние, но и характер препятствия.</p>
+
+<ul>
+<li>🔹 <strong>Ультразвуковые</strong> — классический вариант, работающий на частоте около 40 кГц, эффективен на скоростях до 20 км/ч.</li>
+<li>🔹 <strong>Электромагнитные</strong> — создают магнитное поле вокруг бампера, не требуют сверления отверстий, но работают только при движении.</li>
+<li>🔹 <strong>Лазерные</strong> — реже встречаются в стоке, обладают высокой точностью, но боятся загрязнения и плохих погодных условий.</li>
+</ul>
+
+<h2 id="зоны-действия-и-ограничения-датчиков">Зоны действия и ограничения датчиков</h2>
+
+<p>Каждый датчик парктроника имеет определенную зону чувствительности, которая формируется в виде конуса. Ширина и длина этого конуса зависят от конструкции сенсора и его расположения на бампере. Понимание геометрии зоны действия критически важно для правильной оценки ситуации на парковке.</p>
+
+<p>Обычно датчики эффективно «видят» объекты на расстоянии от 2,5 до 0,3 метра. Ниже 30 сантиметров большинство систем переходят в режим постоянного писка, указывая на необходимость немедленной остановки. Однако существуют объекты, которые АПС может игнорировать или обнаруживать слишком поздно.</p>
+
+<p>К трудноуловимым объектам относятся тонкие предметы (тросы, цепи, тонкие столбики), а также объекты с мягкой поверхностью, поглощающей звук (сугробы снега, рыхлая земля). Кроме того, система может не среагировать на объекты, находящиеся выше или ниже уровня установки датчиков, например, высокие выступы или глубокие ямы.</p>
+
+<details class="pb-accordion"><summary>Почему парктроник не видит низкие бордюры?</summary><div class="pb-accordion-body"><p>Низкие бордюры часто находятся вне зоны конуса чувствительности верхних датчиков. Если датчик установлен высоко, луч проходит над бордюром. Решение — установка дополнительных датчиков ниже или использование камер с обзором вниз.</p></div></details>
+
+<p>Скорость движения также накладывает ограничения. АПС рассчитана на работу при маневрировании. При движении со скоростью выше 20 км/ч система может автоматически отключаться или выдавать некорректные данные, так как время реакции водителя и системы становится недостаточным для предотвращения столкновения.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Тип препятствия</th>
+<th>Вероятность обнаружения</th>
+<th>Рекомендуемое действие</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Стена, бетонный столб</td>
+<td>Высокая (100%)</td>
+<td>Ориентироваться по звуку</td>
+</tr>
+<tr>
+<td>Тонкий трос или цепь</td>
+<td>Низкая (< 30%)</td>
+<td>Визуальный контроль обязателен</td>
+</tr>
+<tr>
+<td>Сугроб снега</td>
+<td>Средняя (зависит от плотности)</td>
+<td>Не доверять показаниям слепо</td>
+</tr>
+<tr>
+<td>Припаркованный автомобиль</td>
+<td>Высокая</td>
+<td>Контролировать углы бампера</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2 id="диагностика-неисправностей-и-ложные-срабатывания">Диагностика неисправностей и ложные срабатывания</h2>
+
+<p>Как и любая электроника, парктроники подвержены сбоям. Наиболее частой проблемой является ложное срабатывание, когда система пищит при отсутствии препятствий. Это может быть вызвано загрязнением сенсоров, попаданием влаги внутрь корпуса датчика или окислением контактов в разъемах.</p>
+
+<p>Если АПС издает непрерывный сигнал сразу после включения задней передачи, это часто указывает на неисправность одного из датчиков или обрыв проводки. В современных автомобилях при поломке конкретного сенсора на дисплее загорается соответствующий индикатор, указывающий на его местоположение (например, «FL» — фронт левый, «RR» — рир правый).</p>
+
+<p>Проверку работоспособности можно провести самостоятельно. При включенной системе и поднятом ручном тормозе поднесите руку к каждому датчику на расстояние 10-15 см. Исправный сенсор должен откликнуться легким щелчком (если прислушаться) или изменением тональности сигнала на дисплее. Отсутствие реакции говорит о выходе элемента из строя.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Диагностика парктроника</h4><label class="check-item"><input type="checkbox"><span>Осмотреть датчики на грязь и лед</span></label><label class="check-item"><input type="checkbox"><span>Проверить разъемы под бампером</span></label><label class="check-item"><input type="checkbox"><span>Проверить целостность проводки</span></label><label class="check-item"><input type="checkbox"><span>Тест рукой каждый сенсор</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Частой причиной глюков становится попадание воды после мойки под высоким давлением. Вода может проникнуть через микротрещины в корпусе датчика и вызвать короткое замыкание или изменение резонансной частоты излучателя. В таких случаях часто помогает просушка, но иногда требуется замена элемента.</p>
+
+<h2 id="установка-и-калибровка-новых-датчиков">Установка и калибровка новых датчиков</h2>
+
+<p>Процесс установки дополнительных датчиков или замены вышедших из строя требует аккуратности и соблюдения технологии. Первым шагом всегда является разметка мест сверления на бампере. Важно соблюдать равномерный шаг между сенсорами и отступ от краев автомобиля для корректной работы зоны покрытия.</p>
+
+<p>Сверление отверстия необходимо производить специальным корончатым сверлом, идущим в комплекте, строго перпендикулярно поверхности. Перекос даже на несколько градусов может изменить вектор излучения, что приведет к «слепым зонам» или постоянным помехам от поверхности бампера.</p>
+
+<p>После физической установки и подключения проводки часто требуется <strong>калибровка</strong>. Некоторые системы обучаются автоматически в течение нескольких циклов включения-выключения зажигания. Другие требуют использования диагностического сканера или специальной процедуры через меню бортового компьютера.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>При покраске бампера обязательно заклеивайте рабочие поверхности датчиков малярным скотчем. Попадание краски изменяет толщину мембраны и искажает ультразвуковой сигнал.</p></aside>
+
+<p>Важно правильно подобрать цвет датчиков под цвет кузова. Если точного совпадения нет, их можно окрашивать, но только специальными красками, не содержащими металлических частиц, и очень тонким слоем. Толстый слой краски действует как глушитель звука.</p>
+
+<h2 id="сравнение-апс-с-камерами-и-радарными-системами">Сравнение АПС с камерами и радарными системами</h2>
+
+<p>Хотя парктроники остаются стандартом, современные автомобили все чаще оснащаются более сложными системами. Радарные датчики, работающие на радиоволнах, менее чувствительны к загрязнениям и погодным условиям, но их стоимость значительно выше. Они способны обнаруживать движущиеся объекты сбоку, что недоступно обычному ультразвуку.</p>
+
+<p>Камеры заднего вида дают визуальную картину, но лишены точного измерения расстояния без дополнения в виде парктроника. Идеальным решением считается симбиоз технологий: камера показывает изображение, а АПС дублирует информацию звуком и цветовой индикацией дистанции.</p>
+
+<p>Стоит отметить, что радарные системы часто используются в составе систем кругового обзора и автоматического торможения. Они могут не только предупредить, но и заглушить двигатель или активировать тормоза при резком приближении к препятствию. Ультразвуковые АПС такой функцией, как правило, не обладают и носят исключительно информационный характер.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Комбинация ультразвуковых датчиков и камеры заднего вида обеспечивает максимальную безопасность, компенсируя недостатки каждой технологии в отдельности.</p></aside>
+
+<p>Выбор между различными типами систем зависит от бюджета и требований владельца. Для городской эксплуатации в плотном потоке наличие хотя бы базовой АПС является необходимостью, тогда как для бездорожья или сложных условий предпочтительнее визуальный контроль через камеру.</p>
+
+<details>
+<summary>Почему парктроник пищит постоянно, даже когда сзади чисто?</summary>
+<p>Чаще всего это указывает на неисправность одного из датчиков (короткое замыкание), попадание влаги в разъем или сильное загрязнение поверхности сенсора. Также причиной может быть смещение датчика после легкого удара, из-за чего он «видит» сам бампер.</p>
+</details>
+
+<details>
+<summary>Можно ли мыть машину с парктроником на мойке высокого давления?</summary>
+<p>Можно, но не следует направлять струю воды под высоким давлением непосредственно в упор на датчики с близкого расстояния. Это может нарушить герметичность корпуса сенсора и привести к попаданию воды внутрь.</p>
+</details>
+
+<details>
+<summary>Влияет ли установка нештатного бампера на работу АПС?</summary>
+<p>Да, влияет. Если новый бампер имеет другую толщину пластика или геометрию в местах установки датчиков, показания системы будут некорректными. Требуется повторная калибровка или смещение датчиков.</p>
+</details>
+
+<details>
+<summary>Работает ли парктроник на ходу?</summary>
+<p>Фронтальные датчики часто активируются при скорости ниже 20 км/ч. Задние обычно работают только при включенной передаче заднего хода. На высокой скорости система отключается, чтобы не отвлекать водителя ложными сигналами от дорожного покрытия.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/m/ma/mashina-betsya-tokom-pri-vykhode-iz-mashiny-prichiny.html" class="pb-related-card">
+                <span class="pb-related-title">Машина бьется током при выходе: причины и устранение</span>
+                <span class="pb-related-desc">Почему машина бьется током при выходе? Разбираем причины статического электричества, проверяем генер</span>
+            </a><a href="/articles/c/ch/chto-znachit-beskontaktnoe-zazhiganie.html" class="pb-related-card">
+                <span class="pb-related-title">Бесконтактное зажигание: что это и как работает</span>
+                <span class="pb-related-desc">Подробный разбор системы бесконтактного зажигания (БСЗ). Устройство, принцип работы, отличие от конт</span>
+            </a><a href="/articles/z/za/zamena-prikurivatelya-lanser-10.html" class="pb-related-card">
+                <span class="pb-related-title">Замена прикуривателя Лансер 10: пошаговая инструкция и схема</span>
+                <span class="pb-related-desc">Как заменить прикуриватель на Mitsubishi Lancer 10 своими руками. Разборка панели, снятие пепельницы</span>
+            </a><a href="/articles/s/sp/sprej-dlya-zashchity-kontaktov-ot-vlagi.html" class="pb-related-card">
+                <span class="pb-related-title">Спрей для защиты контактов от влаги: выбор и применение</span>
+                <span class="pb-related-desc">Как выбрать спрей для защиты контактов от влаги? Обзор составов, инструкция по нанесению и защита ав</span>
+            </a><a href="/articles/k/ku/kuda-ustanovit-datchik-temperatury-naruzhnogo-vozdukha-v-avtomobile.html" class="pb-related-card">
+                <span class="pb-related-title">Куда установить датчик температуры наружного воздуха: выбор места</span>
+                <span class="pb-related-desc">Где правильно установить датчик уличной температуры в авто? Анализ мест монтажа, типичных ошибок и в</span>
+            </a><a href="/articles/m/mo/modul-tsm-chto-eto.html" class="pb-related-card">
+                <span class="pb-related-title">Модуль TCM в автомобиле: что это, как работает и как проверить</span>
+                <span class="pb-related-desc">Разбираемся, что такое модуль TCM (Traction Control Module) в машине, его функции, признаки неисправ</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

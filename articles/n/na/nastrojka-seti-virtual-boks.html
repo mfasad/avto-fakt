@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Настройка сети VirtualBox: мост, NAT и хост-только — Авто Факт</title>
+    <meta name="description" content="Полная инструкция по настройке сети в VirtualBox. Разбор режимов NAT, мост и внутренняя сеть для стабильного соединения гостевой ОС.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/n/na/nastrojka-seti-virtual-boks.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Настройка сети VirtualBox: мост, NAT и хост-только">
+    <meta property="og:description" content="Полная инструкция по настройке сети в VirtualBox. Разбор режимов NAT, мост и внутренняя сеть для стабильного соединения гостевой ОС.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Настройка сети VirtualBox: мост, NAT и хост-только</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#базовые-принципы-работы-виртуальных-адаптеров">Базовые принципы работы виртуальных адаптеров</a></li><li><a href="#режим-nat-доступ-в-интернет-без-лишних-настроек">Режим NAT: доступ в интернет без лишних настроек</a></li><li><a href="#сетевой-мост-bridged-adapter-полная-интеграция-в-lan">Сетевой мост (Bridged Adapter): полная интеграция в LAN</a></li><li><a href="#сеть-host-only-и-внутренняя-сеть">Сеть Host-Only и Внутренняя сеть</a></li><li><a href="#сравнительная-таблица-режимов-подключения">Сравнительная таблица режимов подключения</a></li><li><a href="#проброс-портов-и-сложные-конфигурации">Проброс портов и сложные конфигурации</a></li><li><a href="#диагностика-и-устранение-неполадок">Диагностика и устранение неполадок</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/k/ko/kofemolka-bosch-kak-razobrat-korpus.html">Кофемолка Bosch: как разобрать корпус для ремонта</a></li><li><a href="/articles/l/la/launch-x-diag-pro.html">Launch X Diag Pro: профессиональный автосканер для диагностики авто</a></li><li><a href="/articles/1/13/136-174-mgts-kakoj-diapazon.html">136-174 МГц: какой диапазон частот и где применяется в 2026 году</a></li><li><a href="/articles/a/am/ambertrak-vork-pikap-otzyvy.html">Ambertrack Work Pickup: честные отзывы владельцев и обзор</a></li><li><a href="/articles/k/ka/kakoj-avtomobilnyj-kholodilnik-luchshe-kupit.html">Какой автомобильный холодильник лучше купить: экспертный гид</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Настройка сети VirtualBox: полное руководство</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#базовые-принципы-работы-виртуальных-адаптеров">Базовые принципы работы виртуальных адаптеров</a></li><li><a href="#режим-nat-доступ-в-интернет-без-лишних-настроек">Режим NAT: доступ в интернет без лишних настроек</a></li><li><a href="#сетевой-мост-bridged-adapter-полная-интеграция-в-lan">Сетевой мост (Bridged Adapter): полная интеграция в LAN</a></li><li><a href="#сеть-host-only-и-внутренняя-сеть">Сеть Host-Only и Внутренняя сеть</a></li><li><a href="#сравнительная-таблица-режимов-подключения">Сравнительная таблица режимов подключения</a></li><li><a href="#проброс-портов-и-сложные-конфигурации">Проброс портов и сложные конфигурации</a></li><li><a href="#диагностика-и-устранение-неполадок">Диагностика и устранение неполадок</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+<p>Виртуализация давно перестала быть уделом избранных системных администраторов и стала повседневным инструментом для разработчиков, тестировщиков и энтузиастов. Однако после успешной установки гостевой операционной системы пользователи часто сталкиваются с проблемой отсутствия интернет-соединения внутри виртуальной машины. Это не баг, а особенность архитектуры, требующая правильного выбора сетевого адаптера для конкретных задач.</p>
+<p>Понимание принципов работы сетевых интерфейсов в <em>Oracle VM VirtualBox</em> позволяет не только получить доступ в интернет, но и наладить взаимодействие между хостом и гостем, а также создать изолированные лабораторные сегменты. Стандартные настройки по умолчанию не всегда подходят для сложных сценариев использования, поэтому ручная конфигурация становится необходимой.</p>
+<p>В этом материале мы подробно разберем все доступные типы подключений, от простого доступа к глобальной сети до организации сложных серверных кластеров. Вы научитесь диагностировать проблемы с драйверами и правильно выбирать режим работы адаптера, чтобы ваша виртуальная среда работала как часы.</p>
+
+<h2 id="базовые-принципы-работы-виртуальных-адаптеров">Базовые принципы работы виртуальных адаптеров</h2>
+<p>Прежде чем переходить к конкретным настройкам, необходимо понять, как <strong>гипервизор</strong> эмулирует сетевое оборудование. Виртуальная машина не имеет физического сетевой карты, она использует программный эмулятор, который транслирует запросы гостевой ОС в хостовую систему. Именно этот слой абстракции позволяет гибко управлять трафиком, перенаправляя его в зависимости от выбранного режима.</p>
+<p>Ключевым элементом здесь является <code>PCnet-FAST III</code> или <code>Intel PRO/1000 MT</code> — эмулируемые устройства, которые гостевая система видит как реальное железо. Выбор типа эмуляции важен для совместимости с драйверами внутри гостевой ОС, особенно если вы работаете со старыми системами вроде Windows 98 или специфичными дистрибутивами Linux.</p>
+<p>Существует также понятие <strong>MAC-адреса</strong>, который генерируется для каждого виртуального адаптера. В отличие от физического оборудования, где адрес"зашит" на заводе, здесь он программный. Это позволяет создавать десятки машин с уникальными идентификаторами в одной локальной сети, не вызывая конфликтов адресации.</p>
+<blockquote>
+<p>⚠️ Внимание: При клонировании виртуальных машин или копировании файлов конфигурации (.vbox) MAC-адреса могут дублироваться. Это приведет к сетевым конфликтам. Всегда генерируйте новый MAC-адрес для клонированных инстансов через настройки интерфейса.</p>
+</blockquote>
+
+<h2 id="режим-nat-доступ-в-интернет-без-лишних-настроек">Режим NAT: доступ в интернет без лишних настроек</h2>
+<p>Самым простым и безопасным способом обеспечить виртуальной машине доступ к глобальной сети является использование режима <strong>NAT</strong> (Network Address Translation). В этом сценарии виртуальная машина становится невидимой для внешнего мира, а весь её трафик проходит через сетевой стек хостовой системы. Для гостевой ОС это выглядит как подключение к домашнему роутеру, который раздает адреса.</p>
+<p>Главное преимущество NAT заключается в изоляции: внешние устройства не могут инициировать соединение с виртуальной машиной, что повышает безопасность при тестировании подозрительного ПО. Однако есть и ограничения, например, невозможность открыть порты для входящих подключений без сложной проброски (Port Forwarding).</p>
+<p>Для активации этого режима в настройках виртуальной машины перейдите в раздел <code>Сеть</code> и выберите тип подключения <strong>NAT</strong>. Система автоматически назначит IP-адрес из зарезервированного диапазона, обычно это <code>10.0.2.15</code>, и настроит шлюз. Никаких дополнительных действий от пользователя не требуется.</p>
+<blockquote>
+<p>⚠️ Внимание: В режиме NAT гостевая машина не видна другим компьютерам в локальной сети, даже если они находятся в той же физической подсети. Это важно учитывать при попытках расшарить файлы или настроить удаленный рабочий стол.</p>
+</blockquote>
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Если в режиме NAT нет интернета, попробуйте отключить и заново включить сетевой адаптер внутри гостевой операционной системы или сбросить настройки сети в меню VirtualBox.</p></aside>
+
+<h2 id="сетевой-мост-bridged-adapter-полная-интеграция-в-lan">Сетевой мост (Bridged Adapter): полная интеграция в LAN</h2>
+<p>Когда виртуальной машине необходимо стать полноценным участником локальной сети, используется режим <strong>Bridged Adapter</strong> или"Сетевой мост". В этом случае трафик виртуальной машины передается напрямую на физический сетевой интерфейс хоста, минуя NAT. Гостевая ОС получает IP-адрес от основного роутера так же, как если бы вы подключили к нему отдельный физический компьютер.</p>
+<p>Этот режим идеален для развертывания серверов, тестирования сетевых служб или работы в среде, где все устройства должны"видеть" друг друга. Однако стоит помнить, что безопасность в этом режиме ниже, так как машина становится уязвимой для атак из локальной сети.</p>
+<p>При выборе моста критически важно указать правильный физический интерфейс в поле"Имя". Если у вас ноутбук с Wi-Fi и Ethernet, выберите тот, через который осуществляется выход в интернет. Ошибка в выборе приведет к тому, что мост будет на неактивном интерфейсе, и соединения не будет.</p>
+<div class="pb-poll" id="poll-2842c28c"><div class="pb-poll-question">📊 Какой режим сети вы используете чаще всего?</div><div class="pb-poll-option" data-poll="2842c28c" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">NAT</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="2842c28c" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Мост (Bridged)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="2842c28c" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Внутренняя сеть</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="2842c28c" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Host-Only</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+<p>Настройка моста требует, чтобы на хосте был установлен специальный драйвер-фильтр <em>VirtualBox Bridged Networking Driver</em>. Если после включения режима моста сеть не работает, проверьте в сетевых подключениях хоста, активирован ли этот компонент для вашего физического адаптера.</p>
+
+<h2 id="сеть-host-only-и-внутренняя-сеть">Сеть Host-Only и Внутренняя сеть</h2>
+<p>Для создания изолированных лабораторий, где виртуальные машины должны общаться только друг с другом или только с хостом, существуют режимы <strong>Host-Only</strong> и"Внутренняя сеть". Разница между ними тонкая, но существенная: Host-Only создает виртуальный адаптер на хосте, позволяя ему общаться с гостями, а Внутренняя сеть полностью отрезает хост, оставляя связь только между виртуалками.</p>
+<p>Использование Host-Only часто применяется для настройки кластеров веб-серверов или баз данных, которые не должны иметь выхода в интернет по соображениям безопасности или тестирования поведения при обрыве связи. В этом режиме DHCP-сервер обычно предоставляется самим VirtualBox.</p>
+<p>Для организации внутренней сети необходимо создать виртуальный коммутатор через меню <code>Файл → Менеджер сетей</code>. После создания сети с уникальным именем (например, <code>intnet1</code>) вы сможете подключать к ней любые виртуальные машины, и они будут находиться в изолированном сегменте.</p>
+<details class="pb-accordion"><summary>Зачем нужна Внутренняя сеть, если есть Host-Only?</summary><div class="pb-accordion-body"><p>Внутренняя сеть полностью изолирует трафик от хостовой системы. Это полезно для тестирования вирусов, анализа вредоносного трафика или симуляции закрытых корпоративных сегментов, куда администратору (хосту) вход запрещен.</p></div></details>
+
+<h2 id="сравнительная-таблица-режимов-подключения">Сравнительная таблица режимов подключения</h2>
+<p>Чтобы окончательно определиться с выбором, стоит рассмотреть сводную таблицу характеристик. Она поможет быстро сориентироваться, какой режим подходит для вашей текущей задачи, будь то серфинг в интернете или построение сложной сетевой топологии.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Режим</th>
+<th>Доступ в Интернет</th>
+<th>Доступ из LAN</th>
+<th>Доступ с Хоста</th>
+<th>Безопасность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NAT</td>
+<td>Есть</td>
+<td>Нет</td>
+<td>Нет (без проброса)</td>
+<td>Высокая</td>
+</tr>
+<tr>
+<td>Мост (Bridged)</td>
+<td>Есть</td>
+<td>Есть</td>
+<td>Есть</td>
+<td>Средняя</td>
+</tr>
+<tr>
+<td>Host-Only</td>
+<td>Нет</td>
+<td>Нет</td>
+<td>Есть</td>
+<td>Высокая</td>
+</tr>
+<tr>
+<td>Внутренняя</td>
+<td>Нет</td>
+<td>Нет</td>
+<td>Нет</td>
+<td>Максимальная</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Выбор режима напрямую влияет на производительность и безопасность. Например, для обычного пользователя, запускающего Linux для обучения, идеален NAT. Для разработчика, тестирующего веб-приложение на разных браузерах, потребуется мост или Host-Only.</p>
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Правильный выбор сетевого режима экономит время на отладку и обеспечивает необходимый уровень изоляции для ваших экспериментов.</p></aside>
+
+<h2 id="проброс-портов-и-сложные-конфигурации">Проброс портов и сложные конфигурации</h2>
+<p>Иногда возникает ситуация, когда нужен баланс между безопасностью NAT и доступностью извне. Например, вам нужно запустить веб-сервер на виртуальной машине в режиме NAT, чтобы показать его коллеге. Для этого используется механизм <strong>проброса портов</strong> (Port Forwarding).</p>
+<p>Суть метода заключается в том, что вы говорите гипервизору:"Все подключения, приходящие на порт 8080 хоста, перенаправляй на порт 80 гостевой машины". Это позволяет сохранять изоляцию, оставляя большинство портов закрытыми, и открывать только необходимые сервисы.</p>
+<p>Настройка осуществляется через графический интерфейс в разделе <code>Дополнительно → Проброс портов</code>. Здесь нужно указать протокол (TCP/UDP), IP хоста, порт хоста, IP гостя и порт гостя. После применения настроек сервис станет доступен по адресу <code>localhost:порт_хоста</code>.</p>
+<ul>
+<li>🔹 Для SSH доступа часто используют маппинг порта 22 гостя на порт 2222 хоста.</li>
+<li>🔹 Веб-серверы можно выводить на стандартный 80 порт, если он свободен на хосте.</li>
+<li>🔹 Базы данных (MySQL, PostgreSQL) лучше не пробрасывать наружу без паролей и шифрования.</li>
+</ul>
+
+<h2 id="диагностика-и-устранение-неполадок">Диагностика и устранение неполадок</h2>
+<p>Даже при правильной настройке могут возникать проблемы с подключением. Часто причина кроется в отсутствии драйверов гостевых дополнений (<em>Guest Additions</em>). Этот пакет содержит оптимизированные сетевые драйверы, которые значительно улучшают скорость работы и стабильность соединения.</p>
+<p>Если сеть пропала внезапно, проверьте статус сетевого кабеля в интерфейсе VirtualBox. Иногда помогает переключение галочки"Подключить кабель сети". Также стоит убедиться, что антивирус или фаервол на хосте не блокирует виртуальные адаптеры.</p>
+<p>В сложных случаях, когда стандартные методы не помогают, можно попробовать сменить тип адаптера в настройках. Например, переход с <code>Intel PRO/1000</code> на <code>Paravirtualized Network (virtio-net)</code> может решить проблемы совместимости с определенными дистрибутивами Linux.</p>
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Чек-лист проверки сети</h4><label class="check-item"><input type="checkbox"><span>Проверен кабель в интерфейсе VirtualBox</span></label><label class="check-item"><input type="checkbox"><span>Установлены Guest Additions</span></label><label class="check-item"><input type="checkbox"><span>Выбран правильный физический интерфейс для моста</span></label><label class="check-item"><input type="checkbox"><span>Отсутствуют конфликты IP-адресов</span></label><label class="check-item"><input type="checkbox"><span>Фаервол не блокирует соединение</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+<details>
+<summary>Почему виртуальная машина не видит интернет в режиме NAT?</summary>
+<p>Чаще всего проблема в DNS. Попробуйте прописать в настройках гостевой ОС статические DNS серверы, например, <code>8.8.8.8</code>. Также убедитесь, что служба DHCP внутри VirtualBox не отключена в глобальных настройках программы.</p>
+</details>
+<details>
+<summary>Можно ли использовать Wi-Fi адаптер для режима моста?</summary>
+<p>Технически это возможно, но режим моста через Wi-Fi часто работает нестабильно из-за ограничений протокола беспроводной связи, который не всегда поддерживает проброс MAC-адресов. Если есть возможность, используйте проводное соединение для режима Bridged.</p>
+</details>
+<details>
+<summary>Как сбросить все сетевые настройки VirtualBox к заводским?</summary>
+<p>Для этого закройте все виртуальные машины, откройте командную строку с правами администратора и выполните команду сброса конфигурации сети, либо просто удалите файл конфигурации <code>NetworkInterfaces.xml</code> в папке настроек VirtualBox (предварительно сделав бэкап).</p>
+</details>
+<details>
+<summary>Влияет ли выбор сетевого режима на скорость интернета?</summary>
+<p>Режим моста (Bridged) обычно дает минимальные накладные расходы, так как трафик идет напрямую. NAT добавляет небольшую задержку из-за трансляции адресов, но на современных компьютерах эта разница практически незаметна при обычном использовании.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/k/ko/kofemolka-bosch-kak-razobrat-korpus.html" class="pb-related-card">
+                <span class="pb-related-title">Кофемолка Bosch: как разобрать корпус для ремонта</span>
+                <span class="pb-related-desc">Подробная инструкция по разборке корпуса кофемолки Bosch. Советы по снятию ножа, чистке и замене дви</span>
+            </a><a href="/articles/l/la/launch-x-diag-pro.html" class="pb-related-card">
+                <span class="pb-related-title">Launch X Diag Pro: профессиональный автосканер для диагностики авто</span>
+                <span class="pb-related-desc">Обзор функционала Launch X Diag Pro. Поддержка всех систем, кодирование, адаптации и онлайн-обновлен</span>
+            </a><a href="/articles/1/13/136-174-mgts-kakoj-diapazon.html" class="pb-related-card">
+                <span class="pb-related-title">136-174 МГц: какой диапазон частот и где применяется в 2026 году</span>
+                <span class="pb-related-desc">Разбираемся, что такое диапазон 136-174 МГц: гражданская связь, рации, легальные каналы и технически</span>
+            </a><a href="/articles/a/am/ambertrak-vork-pikap-otzyvy.html" class="pb-related-card">
+                <span class="pb-related-title">Ambertrack Work Pickup: честные отзывы владельцев и обзор</span>
+                <span class="pb-related-desc">Подробный разбор отзывов об Ambertrack Work Pickup. Реальный расход, проблемы с ПО, надежность треке</span>
+            </a><a href="/articles/k/ka/kakoj-avtomobilnyj-kholodilnik-luchshe-kupit.html" class="pb-related-card">
+                <span class="pb-related-title">Какой автомобильный холодильник лучше купить: экспертный гид</span>
+                <span class="pb-related-desc">Полный гид по выбору автохолодильника. Сравнение компрессорных, абсорбционных моделей и термобоксов.</span>
+            </a><a href="/articles/m/mo/monitory-dlya-zadnikh-passazhirov-na-android.html" class="pb-related-card">
+                <span class="pb-related-title">Мониторы для задних пассажиров на Андроид: выбор и установка</span>
+                <span class="pb-related-desc">Полный гид по выбору мультимедийных систем на Android для авто. Обзор экранов, способов установки, н</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

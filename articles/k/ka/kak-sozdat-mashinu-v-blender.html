@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как создать машину в Блендер: пошаговая инструкция моделирования — Авто Факт</title>
+    <meta name="description" content="Узнайте, как создать машину в Blender с нуля. Полный гайд по моделированию кузова, колес и деталей. Основы авто-моделирования для новичков и профи.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ka/kak-sozdat-mashinu-v-blender.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как создать машину в Блендер: пошаговая инструкция моделирования">
+    <meta property="og:description" content="Узнайте, как создать машину в Blender с нуля. Полный гайд по моделированию кузова, колес и деталей. Основы авто-моделирования для новичков и профи.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как создать машину в Блендер: пошаговая инструкция моделирования</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#подготовка-сцены-и-работа-с-референсами">Подготовка сцены и работа с референсами</a></li><li><a href="#блокинг-основных-форм-кузова">Блокинг основных форм кузова</a></li><li><a href="#моделирование-колесных-арок-и-деталей">Моделирование колесных арок и деталей</a></li><li><a href="#работа-с-модификаторами-для-сглаживания">Работа с модификаторами для сглаживания</a></li><li><a href="#создание-интерьера-и-салона">Создание интерьера и салона</a></li><li><a href="#настройка-материалов-и-рендеринг">Настройка материалов и рендеринг</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/p/pr/promokod-na-besplatnuyu-avtoteku.html">Промокод на бесплатную Автотеку: Актуальные коды 2026 года</a></li><li><a href="/articles/e/ec/eco-v-avtomobile-chto-eto.html">Режим ECO в автомобиле: что это, плюсы и экономия топлива</a></li><li><a href="/articles/k/ka/kak-nazyvayutsya-chasti-naruchnykh-chasov.html">Части наручных часов: полный справочник терминов</a></li><li><a href="/articles/m/ma/mashina-na-drovakh-printsip-raboty.html">Машина на дровах: принцип работы газогенератора</a></li><li><a href="/articles/k/ka/kak-uvelichit-yarkost-na-apple-watch.html">Как увеличить яркость на Apple Watch: 7 способов + FAQ</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как создать машину в Блендер: полное руководство по моделированию</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#подготовка-сцены-и-работа-с-референсами">Подготовка сцены и работа с референсами</a></li><li><a href="#блокинг-основных-форм-кузова">Блокинг основных форм кузова</a></li><li><a href="#моделирование-колесных-арок-и-деталей">Моделирование колесных арок и деталей</a></li><li><a href="#работа-с-модификаторами-для-сглаживания">Работа с модификаторами для сглаживания</a></li><li><a href="#создание-интерьера-и-салона">Создание интерьера и салона</a></li><li><a href="#настройка-материалов-и-рендеринг">Настройка материалов и рендеринг</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+<p>Создание реалистичного автомобиля в <em>Blender</em> — это задача, которая одновременно пугает своей сложностью и манит невероятными возможностями. Многие новички бросают идею после первого взгляда на сложный интерфейс программы, полагая, что для этого нужен опыт инженера-конструктора. Однако, если разбить процесс на логические этапы, становится понятно, что <strong>моделирование</strong> доступно каждому, кто готов потратить время на изучение инструментов.</p>
+
+<p>В современном <strong>3D-моделировании</strong> автомобильная тематика занимает одно из лидирующих мест, будь то для игр, визуализации рекламы или кинематографа. Чтобы понять, как создать машину в блендер, не обязательно быть профессиональным художником, но потребуется усидчивость. В этой статье мы разберем ключевые шаги, которые превратят пустую сцену в детализированный транспорт.</p>
+
+<p>Начало пути всегда связано с правильной настройкой рабочего пространства и выбором референсов. Без качественных чертежей или фотографий с разных ракурсов (вид спереди, сбоку, сзади и сверху) построить пропорциональный кузов практически невозможно. <strong>Точность</strong> на этом этапе сэкономит часы переделок в будущем.</p>
+
+<h2 id="подготовка-сцены-и-работа-с-референсами">Подготовка сцены и работа с референсами</h2>
+<p>Первым делом необходимо загрузить чертежи выбранной модели автомобиля в <em>Blender</em>. Лучше всего использовать ортогональные проекции, где линии кузова не искажены перспективой. Эти изображения размещаются в качестве фона в видовых окнах или на плоскостях-гайдах, что позволяет буквально обрисовывать контуры.</p>
+
+<p>Важно настроить масштаб сцены сразу. Автомобиль — объект крупногабаритный, и работа в реальных единицах измерения (метры или сантиметры) критически важна для корректного поведения физики и света. Если вы проигнорируете масштаб, то текстуры и освещение могут выглядеть неестественно.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Используйте аддон Image Background для удобного управления чертежами в видовых окнах, это значительно ускоряет процесс обрисовки контуров.</p></aside>
+
+<p>Особое внимание стоит уделить <strong>симметрии</strong>. Большинство машин симметричны, поэтомуить (создавать) достаточно только одну половину кузова. Для этого используется модификатор <code>Mirror</code>, который автоматически отражает все ваши действия на вторую сторону, гарантируя идеальную геометрию.</p>
+
+<h2 id="блокинг-основных-форм-кузова">Блокинг основных форм кузова</h2>
+<p>Процесс создания формы, или <strong>блокинг</strong>, начинается с простого куба или плоскости. Ваша задача — повторить общие силуэты автомобиля, не вдаваясь пока в мелкие детали вроде ручек дверей или фар. На этом этапе важна общая читаемость силуэта.</p>
+
+<p>Используя инструменты <code>Extrude</code> (выдавливание) и <code>Loop Cut</code> (добавление разрезов), вы формируете капот, крышу и багажник. Главное здесь — сохранять топологию чистой, стараясь использовать преимущественно четырехугольные полигоны (квады). Это обеспечит гладкое сглаживание поверхности.</p>
+
+<div class="pb-poll" id="poll-50397dab"><div class="pb-poll-question">📊 Какой стиль автомобилей вам интереснее моделировать?</div><div class="pb-poll-option" data-poll="50397dab" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Классические ретро авто</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="50397dab" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Современные спорткары</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="50397dab" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Футуристичные концепты</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="50397dab" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Внедорожники и грузовики</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<p>Когда основные объемы заданы, можно переходить к проработке арок колес. Здесь часто используется техника <strong>Bevel</strong> (фаска), которая позволяет скруглять острые грани, делая модель более реалистичной, так как в реальном мире идеально острых краев не существует.</p>
+
+<h2 id="моделирование-колесных-арок-и-деталей">Моделирование колесных арок и деталей</h2>
+<p>Колесные арки — это зона повышенного напряжения для полигонов. Неправильное распределение сетки здесь приведет к артефактам при сглаживании. Необходимо добавлять поддерживающие ребра, чтобы форма арки оставалась четкой, но плавно переходила в кузов.</p>
+
+<blockquote>⚠️ Внимание: Избегайте создания треугольников (tris) в зонах сильной деформации или изгибов, так как при включении модификатора <code>Subdivision Surface</code> поверхность может пойти"волнами".</blockquote>
+
+<p>Детализация включает в себя создание дверных проемов, бамперов и порогов. Для этого часто используется метод <strong>Boolean</strong> (булевы операции), когда вы"вырезаете" отверстия в основном объеме кузова с помощью вспомогательных объектов. Однако, после применения булевых операцийлогия часто ломается и требует ручной правки.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Чек-лист проверки геометрии кузова</h4><label class="check-item"><input type="checkbox"><span>Все полигоны являются квадами</span></label><label class="check-item"><input type="checkbox"><span>Отсутствуют лишние вершины</span></label><label class="check-item"><input type="checkbox"><span>Нормали направлены наружу</span></label><label class="check-item"><input type="checkbox"><span>Сетка равномерная без резких переходов</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Отдельного внимания заслуживают фары и решетка радиатора. Эти элементы придают автомобилю характер. Моделировать их лучше как отдельные объекты, чтобы иметь возможность использовать разные материалы, например, прозрачное стекло для оптики и хромированный металл для решетки.</p>
+
+<h2 id="работа-с-модификаторами-для-сглаживания">Работа с модификаторами для сглаживания</h2>
+<p>Основа гладкого кузова в <em>Blender</em> — это связка модификаторов. Главным инструментом здесь выступает <code>Subdivision Surface</code>, который делит каждый полигон на несколько меньших, создавая иллюзию гладкой поверхности. Без него модель выглядит угловатой, как объект из игр начала 2000-х.</p>
+
+<p>Второй важный модификатор — <code>Weighted Normal</code>. Он помогает сохранить четкость граней даже при сильном сглаживании, что критично для автомобильного дизайна, где важны четкие линии сгибов металла (хард-серфейс). Комбинация этих инструментов позволяет добиться эффекта"студийного рендера".</p>
+
+<p>Для управления жесткостью ребер используются"контрольные ребра" (support loops). Чем ближе они расположены друг к другу, тем острее будет грань после сглаживания. Это дает художнику полный <strong>контроль</strong> над формой без необходимости увеличивать общее количество полигонов до небес.</p>
+
+<h2 id="создание-интерьера-и-салона">Создание интерьера и салона</h2>
+<p>Хотя внешность машины важна, интерьер часто упускают из виду. Если камера будет заглядывать внутрь, необходимо смоделировать хотя бы базовые элементы: сиденья, руль, приборную панель и торпедо. Детализация здесь может быть ниже, чем снаружи, если это не крупный план.</p>
+
+<p>Сиденья моделируются по аналогии с кузовом: от простого куба к сложной форме с использованием сглаживания. Для руля удобно использовать профиль круга и инструмент <code>Screw</code> (Винт) или <code>Spin</code>, чтобы создать идеальную окружность с нужным сечением.</p>
+
+<details class="pb-accordion"><summary>Оптимизация интерьера</summary><div class="pb-accordion-body"><p>Если интерьер виден только издалека, не моделируйте обратную сторону приборной панели и скрытые механизмы, это сэкономит ресурсы рендера.</p></div></details>
+
+<p>Текстурирование салона требует внимания к материалам. Пластик, кожа, ткань и металл должны отличаться не только цветом, но и степенью шероховатости (<strong>Roughness</strong>). Использование карт нормалей (Normal maps) позволит добавить потертости и текстуру кожи без усложнения геометрии.</p>
+
+<h2 id="настройка-материалов-и-рендеринг">Настройка материалов и рендеринг</h2>
+<p>Финальный этап — создание материалов. Для реалистичной машины в <em>Cycles</em> или <em>Eevee</em> ключевым параметром является <strong>IOR</strong> (индекс преломления) и <code>Metallic</code>. Кузов обычно имеет слой краски (Base Color), слой металла (Metallic) и слой лака (Clearcoat).</p>
+
+<p>Использование процедурыных текстур или карт <strong>AO</strong> (Ambient Occlusion) добавит грязи в труднодоступные места, что сделает картинку"живой". Идеально чистая машина выглядит как пластиковая игрушка, поэтому легкая потертость на бампере или пыль на стеклах обязательны.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Параметр материала</th>
+<th>Значение для кузова</th>
+<th>Значение для шин</th>
+<th>Значение для стекол</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metallic</td>
+<td>1.0 (основа)</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Roughness</td>
+<td>0.1 - 0.3</td>
+<td>0.4 - 0.6</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>IOR</td>
+<td>1.5</td>
+<td>1.5</td>
+<td>1.45 - 1.55</td>
+</tr>
+<tr>
+<td>Clearcoat</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table></div>
+
+<blockquote>⚠️ Внимание: При рендеринге стекол не забудьте включить опцию"Screen Space Reflections -> Refraction" в настройках рендера, иначе стекло будет выглядеть как матовая серая масса.</blockquote>
+
+<p>Освещение в сцене играет решающую роль. Для автомобилей идеально подходят студийные схемы света или использование <strong>HDRI</strong> карт, которые дают реалистичные отражения на глянцевых поверхностях кузова. Без правильных бликов форма машины не читается.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Качество рендера автомобиля на 80% зависит от правильного освещения и настройки отражений, а не только от детализации модели.</p></aside>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Сколько полигонов нужно для реалистичной машины?</summary>
+<p>Количество полигонов зависит от цели. Для игры в реальном времени (Real-time) оптимально 15,000 - 50,000 треугольников. Для кинематографического рендера (Offline) количество может достигать миллионов, так как здесь важна детализация, а не скорость отрисовки в реальном времени.</p>
+</details>
+
+<details>
+<summary>Какой рендер лучше выбрать: Cycles или Eevee?</summary>
+<p>Для финального, фотореалистичного изображения лучше подходит <strong>Cycles</strong> благодаря трассировке лучей. <em>Eevee</em> хорош для превью, анимации в реальном времени или стилизованной графики, но требует больше настроек для достижения реализма.</p>
+</details>
+
+<details>
+<summary>Нужно ли моделировать двигатель?</summary>
+<p>Если вы не планируете открывать капот крупным планом, то нет. Достаточно создать упрощенную"заглушку" двигателя, которая будет видна сквозь решетку радиатора. Детализация скрытых узлов — пустая трата времени.</p>
+</details>
+
+<details>
+<summary>Как сделать реалистичные блики на кузове?</summary>
+<p>Блики зависят от карты окружения (HDRI) и параметра <code>Roughness</code>. Чем ниже шероховатость, тем четче блик. Также используйте <code>Clearcoat</code> в настройках материала Principled BSPR, чтобы симулировать слой лака поверх краски.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/p/pr/promokod-na-besplatnuyu-avtoteku.html" class="pb-related-card">
+                <span class="pb-related-title">Промокод на бесплатную Автотеку: Актуальные коды 2026 года</span>
+                <span class="pb-related-desc">Где найти работающий промокод на бесплатную Автотеку в 2026 году? Инструкция по активации подписки, </span>
+            </a><a href="/articles/e/ec/eco-v-avtomobile-chto-eto.html" class="pb-related-card">
+                <span class="pb-related-title">Режим ECO в автомобиле: что это, плюсы и экономия топлива</span>
+                <span class="pb-related-desc">Узнайте, как работает кнопка ECO в машине. Разбор принципов действия, реальной экономии топлива и вл</span>
+            </a><a href="/articles/k/ka/kak-nazyvayutsya-chasti-naruchnykh-chasov.html" class="pb-related-card">
+                <span class="pb-related-title">Части наручных часов: полный справочник терминов</span>
+                <span class="pb-related-desc">Как называются части наручных часов? Полный гид по корпусу, циферблату и механизму. Разбираем термин</span>
+            </a><a href="/articles/m/ma/mashina-na-drovakh-printsip-raboty.html" class="pb-related-card">
+                <span class="pb-related-title">Машина на дровах: принцип работы газогенератора</span>
+                <span class="pb-related-desc">Как работает машина на дровах? Подробный разбор принципа действия газогенератора, КПД, плюсы и минус</span>
+            </a><a href="/articles/k/ka/kak-uvelichit-yarkost-na-apple-watch.html" class="pb-related-card">
+                <span class="pb-related-title">Как увеличить яркость на Apple Watch: 7 способов + FAQ</span>
+                <span class="pb-related-desc">Пошаговая инструкция, как настроить яркость экрана на Apple Watch всех поколений. Способы для Series</span>
+            </a><a href="/articles/n/ne/ne-ukhodit-voda-v-posudomoechnoj-mashine-bosch-chto-delat.html" class="pb-related-card">
+                <span class="pb-related-title">Не уходит вода в посудомойке Bosch: причины и ремонт</span>
+                <span class="pb-related-desc">Почему не сливается вода в посудомоечной машине Bosch? Полный гид по диагностике, чистке фильтров, з</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

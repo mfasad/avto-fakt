@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Почему Excel не показывает скрытые строки: причины и решение — Авто Факт</title>
+    <meta name="description" content="Разбираем, почему Excel скрывает строки и не отображает их. Решения проблем с фильтрами, группировкой и настройками отображения.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/p/po/pochemu-eksel-ne-pokazyvaet-skrytye-stroki.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Почему Excel не показывает скрытые строки: причины и решение">
+    <meta property="og:description" content="Разбираем, почему Excel скрывает строки и не отображает их. Решения проблем с фильтрами, группировкой и настройками отображения.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Почему Excel не показывает скрытые строки: причины и решение</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#различия-между-фильтрацией-и-ручным-скрытием">Различия между фильтрацией и ручным скрытием</a></li><li><a href="#проблемы-с-группировкой-данных-и-структурой">Проблемы с группировкой данных и структурой</a></li><li><a href="#особенности-отображения-в-режиме-страниц-и-нормальном-виде">Особенности отображения в режиме страниц и нормальном виде</a></li><li><a href="#скрытые-листы-и-защита-структуры-книги">Скрытые листы и защита структуры книги</a></li><li><a href="#макросы-и-программное-скрытие-строк">Макросы и программное скрытие строк</a></li><li><a href="#глубокая-диагностика-и-сброс-настроек-отображения">Глубокая диагностика и сброс настроек отображения</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/e/es/est-li-gran-turizmo-7-na-pk.html">Есть ли Gran Turismo 7 на ПК: версия для Windows и эмуляторы</a></li><li><a href="/articles/k/ka/kak-pomenyat-gorod-v-yandeks-ede-kureru.html">Как поменять город в Яндекс Еде курьеру: инструкция</a></li><li><a href="/articles/m/ma/magikar-9-avtozapusk-s-brelka.html">Магикар 9: автозапуск с брелка — настройка и особенности</a></li><li><a href="/articles/c/ch/chto-takoe-ultimate-edition.html">Что такое Ultimate Edition: отличия от Standard и Deluxe</a></li><li><a href="/articles/p/pu/pusko-zaryadnoe-ustrojstvo-dlya-avtomobilnogo-akkumulyatora-kakoe-vybrat.html">Пуско-зарядное устройство для авто: как выбрать лучшее в 2026 году</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Почему Excel не показывает скрытые строки: полное руководство</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#различия-между-фильтрацией-и-ручным-скрытием">Различия между фильтрацией и ручным скрытием</a></li><li><a href="#проблемы-с-группировкой-данных-и-структурой">Проблемы с группировкой данных и структурой</a></li><li><a href="#особенности-отображения-в-режиме-страниц-и-нормальном-виде">Особенности отображения в режиме страниц и нормальном виде</a></li><li><a href="#скрытые-листы-и-защита-структуры-книги">Скрытые листы и защита структуры книги</a></li><li><a href="#макросы-и-программное-скрытие-строк">Макросы и программное скрытие строк</a></li><li><a href="#глубокая-диагностика-и-сброс-настроек-отображения">Глубокая диагностика и сброс настроек отображения</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Ситуация, когда пользователь Microsoft Excel сталкиается с исчезновением части данных, является одной из самых распространенных и раздражающих проблем при работе с электронными таблицами. Вы открываете файл, видите разрыв в нумерации строк, но стандартные методы восстановления видимости не работают. Это может происходить по множеству причин: от случайно примененного фильтра до сложной вложенной группировки или даже особенностей отображения интерфейса.</p>
+
+<p>Понимание механики <strong>скрытия данных</strong> в табличном процессоре критически важно для корректного анализа информации. Если строки не отображаются, формулы могут выдавать неверные результаты, а печать документа будет неполной. В этой статье мы детально разберем все возможные сценарии, почему <em>Excel</em> игнорирует ваши команды показать строки, и предоставим пошаговые инструкции по устранению каждой из этих проблем.</p>
+
+<p>Часто причина кроется не в ошибке программы, а в том, что пользователь путает различные режимы работы с данными. Например, строки могут быть не просто скрыты, а отфильтрованы, либо они находятся внутри свернутой группы, управление которой требует специфических действий. Давайте разберем основные причины по порядку.</p>
+
+<h2 id="различия-между-фильтрацией-и-ручным-скрытием">Различия между фильтрацией и ручным скрытием</h2>
+
+<p>Первое, что необходимо проверить, если пропали строки — это состояние фильтров. Многие пользователи ошибочно полагают, что снятие галочки «Скрыть» в контекстном меню вернет данные, но если активирован <strong>Автофильтр</strong>, эти действия бесполезны. Фильтр временно исключает строки из выборки на основе заданных критериев, визуально скрывая их, но технически оставляя в таблице.</p>
+
+<p>Чтобы определить, работает ли у вас фильтр, посмотрите на заголовки столбцов. Если рядом с названиями колонок появились значки воронок или стрелочек, значит, режим фильтрации активен. В этом случае стандартное выделение всего диапазона и команда «Отобразить» могут не сработать, так как <em>Excel</em> считает, что вы хотите видеть только отфильтрованные данные.</p>
+
+<p>Для принудительного снятия всех наложенных ограничений необходимо перейти на вкладку <code>Данные</code> и найти группу «Сортировка и фильтр». Там следует нажать кнопку <code>Очистить</code> или <code>Фильтр</code> для полного отключения режима. Только после этого скрытые фильтрацией строки станут видимыми снова.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Используйте сочетание клавиш Ctrl+Shift+L для быстрого включения или выключения режима фильтрации в Excel.</p></aside>
+
+<p>Важно различать визуальные индикаторы. При ручной скрытии строк номера строк слева «прыгают» (например, с 5 сразу на 10), но значков фильтра нет. При фильтрации номера также могут быть не последовательными, но наличие спецсимволов в шапке таблицы — ключевой маркер.</p>
+
+<h2 id="проблемы-с-группировкой-данных-и-структурой">Проблемы с группировкой данных и структурой</h2>
+
+<p>Второй распространенной причиной, по которой <strong>Excel</strong> не показывает строки, является использование функции «Группировка». Этот инструмент позволяет создавать иерархическую структуру данных, сворачивая и разворачивая блоки строк или столбцов. Если строки были сгруппированы, простое выделение диапазона и выбор команды «Отобразить» из контекстного меню часто не дает результата.</p>
+
+<p>Управление группировкой осуществляется через специальные символы <code>[+]</code> и <code>[-]</code>, которые появляются слева от номеров строк (или над буквами столбцов). Если вы видите цифры 1, 2, 3 в верхней левой части рабочего листа (над строкой 1), это означает, что включена структура. Нажатие на цифру 1 свернет все группы, а на цифру с максимальным номером — раскроет их полностью.</p>
+
+<p>Иногда пользователи случайно создают вложенные группы, нажимая <code>Shift+Alt+СтрелкаВправо</code>, и забывают об этом. В таких случаях строки могут быть скрыты внутри нескольких уровней вложенности. Чтобы удалить группировку полностью, нужно выделить весь лист (кликнув на треугольник в левом верхнем углу) и перейти в меню <code>Данные</code> → <code>Группировать</code> → <code>Разгруппировать</code>.</p>
+
+<div class="pb-poll" id="poll-9d0c70d2"><div class="pb-poll-question">📊 Как вы чаще всего скрываете данные в Excel?</div><div class="pb-poll-option" data-poll="9d0c70d2" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Через контекстное меню «Скрыть»</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="9d0c70d2" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">С помощью фильтров</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="9d0c70d2" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Использую группировку</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="9d0c70d2" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Не скрываю данные</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<p>Стоит отметить, что группировка может быть применена не ко всему листу, а только к выделенному диапазону. Если вы работаете с большой таблицей, проверьте наличие символов группировки по всему периметру листа, особенно если скрыты строки в разных частях документа.</p>
+
+<h2 id="особенности-отображения-в-режиме-страниц-и-нормальном-виде">Особенности отображения в режиме страниц и нормальном виде</h2>
+
+<p>Третий аспект, который часто упускают из виду — это режимы просмотра документа. <em>Microsoft Excel</strong> предлагает несколько способов отображения содержимого: «Обычный», «Разметка страницы» и «Страницы». В режиме «Разметка страницы» таблица разбита на листы формата А4, и между ними могут возникать визуальные разрывы, которые пользователь воспринимает как скрытые строки.</p>
+
+<p>Кроме того, в режиме разметки страницы могут автоматически скрываться строки, которые не помещаются на текущий печатный лист, если включена определенная настройка масштабирования. Переключиться в стандартный режим можно через вкладку <code>Вид</code> в левом верхнем углу ленты меню, выбрав пункт <code>Обычный</code>.</p>
+
+<p>Также стоит проверить настройки масштаба. Если масштаб установлен слишком маленьким (менее 10%), Excel может визуально «схлопывать» строки, делая их высотой в 1 пиксель, что создает иллюзию их отсутствия. Убедитесь, что ползунок масштаба в правом нижнем углу установлен на комфортное значение, обычно 100%.</p>
+
+<details class="pb-accordion"><summary>Почему при печати исчезают строки?</summary><div class="pb-accordion-body"><p>При печати могут скрываться строки, если в параметрах страницы установлен масштаб «вписать в N страниц». Excel автоматически уменьшает данные, и некоторые строки могут стать неразличимыми или быть обрезаны полями.</p></div></details>
+
+<p>Еще одна редкая, но возможная причина — включенная опция «Показывать нули» или специфические настройки условного форматирования, которые делают текст белым на белом фоне, создавая иллюзию пустой или скрытой строки. Проверьте цвет шрифта в проблемной области.</p>
+
+<h2 id="скрытые-листы-и-защита-структуры-книги">Скрытые листы и защита структуры книги</h2>
+
+<p>Часто пользователи путают скрытые строки внутри листа со скрытыми листами целиком. Если вы не видите данных, которые должны быть в файле, возможно, они находятся на отдельном листе, который был скрыт автором документа. В отличие от строк, скрытые листы нельзя отобразить через контекстное меню правой кнопки мыши на ярлыке листа.</p>
+
+<p>Для управления видимостью листов необходимо перейти на вкладку <code>Главная</code>, найти группу <code>Ячейки</code>, нажать <code>Формат</code>, выбрать пункт <code>Скрыть или отобразить</code> и затем <code>Скрытый лист</code>. Если в списке есть названия листов, их можно выбрать и нажать <code>ОК</code>, чтобы вернуть их на экран.</p>
+
+<p>Однако, если пункт «Скрытый лист» неактивен (серый цвет), это означает, что в книге нет скрытых листов, либо, что более вероятно, включена <strong>защита структуры книги</em>. В этом случае автор документа запретил любые изменения в структуре, включая отображение скрытых объектов. Снять такую защиту можно только зная пароль, если он был установлен.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Тип скрытия</th>
+<th>Метод обнаружения</th>
+<th>Способ решения</th>
+<th>Требуется пароль</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Фильтр</td>
+<td>Значки воронок в заголовках</td>
+<td>Вкладка Данные → Очистить</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Группировка</td>
+<td>Цифры 1, 2, 3 слева/сверху</td>
+<td>Разгруппировать или нажать +</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Ручное скрытие</td>
+<td>Пропуски в нумерации строк</td>
+<td>Выделить → Формат → Отобразить</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Защита книги</td>
+<td>Серые пункты меню структуры</td>
+<td>Снять защиту рецензирования</td>
+<td>Да (часто)</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2 id="макросы-и-программное-скрытие-строк">Макросы и программное скрытие строк</h2>
+
+<p>В сложных корпоративных отчетах и шаблонах часто используются макросы на языке <em>VBA</em>. Скрипт может программно устанавливать свойство <code>Rows.Hidden = True</code> для определенных строк. Особенность такого скрытия в том, что стандартные команды интерфейса Excel могут игнорировать эти строки, если макрос блокирует их отображение при каждом изменении ячейки или открытии файла.</p>
+
+<p>Если вы подозреваете наличие макросов (файлы с расширением <code>.xlsm</code> или <code>.xlsb</code>), попробуйте открыть файл в режиме безопасной работы. Для этого при запуске Excel зажмите клавишу <code>Ctrl</code> и подтвердите вход в безопасный режим. Если в этом режиме строки появились, значит, проблема точно в коде макроса или надстройке.</p>
+
+<p>Для продвинутых пользователей существует возможность принудительно отобразить все строки через редактор VBA. Нажав <code>Alt+F11</code>, можно в окне Immediate (Ctrl+G) ввести команду <code>ActiveSheet.Cells.EntireRow.Hidden = False</code>. Это действие принудительно снимет флаг скрытия со всех строк активного листа, игнорируя некоторые программные блокировки.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Диагностика проблемы со строками</h4><label class="check-item"><input type="checkbox"><span>Проверить наличие фильтров</span></label><label class="check-item"><input type="checkbox"><span>Посмотреть на группировку (цифры 1-2-3)</span></label><label class="check-item"><input type="checkbox"><span>Проверить режим просмотра (Обычный/Разметка)</span></label><label class="check-item"><input type="checkbox"><span>Посмотреть скрытые листы</span></label><label class="check-item"><input type="checkbox"><span>Проверить масштаб zoom</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>Будьте осторожны при работе с файлами из непроверенных источников, содержащими макросы. Программное скрытие строк иногда используется для маскировки формул расчета или конфиденциальных данных, которые автор не хочет показывать конечному пользователю.</p>
+
+<h2 id="глубокая-диагностика-и-сброс-настроек-отображения">Глубокая диагностика и сброс настроек отображения</h2>
+
+<p>Если ни один из вышеперечисленных методов не помог, возможно, вы столкнулись с редким багом отображения или повреждением файла. В таких случаях помогает полный сброс настроек форматирования для проблемного диапазона. Выделите всю таблицу, перейдите в меню <code>Главная</code> → <code>Редактирование</code> → <code>Очистить</code> → <code>Очистить форматы</code>. Это вернет строкам стандартную высоту.</p>
+
+<p>Также стоит проверить, не установлена ли для строк высота, равная нулю. Выделите весь лист, нажмите правой кнопкой мыши на номера строк и выберите <code>Высота строки</code>. Введите стандартное значение, например, <code>15</code>. Если строки были «сжаты» до нуля пикселей вручную, этот метод их вернет.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Очистка форматов удалит все цветовое оформление, границы и шрифты. Используйте этот метод только если сохранение внешнего вида таблицы не критично или у вас есть резервная копия.</p>
+</blockquote>
+
+<p>В крайнем случае, попробуйте скопировать содержимое видимых ячеек и вставить их в новый, чистый файл Excel. Иногда структура файла повреждается, и перенос данных на новую «подложку» решает проблему с отображением.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Самый быстрый способ вернуть все строки: Выделить весь лист (Ctrl+A), перейти на вкладку Главная -> Формат -> Скрыть или отобразить -> Отобразить строки.</p></aside>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Почему после отображения строк формулы SUM показывают неверный результат?</summary>
+<p>Функция <code>СУММ</code> (SUM) суммирует все ячейки в диапазоне, включая скрытые. Если вам нужно суммировать только видимые строки, используйте функцию <code>ПРОМЕЖУТОЧНЫЕ.ИТОГИ</code> (SUBTOTAL) с кодом операции 109. Она игнорирует скрытые строки и результаты других промежуточных итогов.</p>
+</details>
+
+<details>
+<summary>Можно ли защитить файл так, чтобы строки нельзя было отобразить?</summary>
+<p>Да, если использовать защиту листа с установленным флагом «Заблокировать форматирование строк/столбцов» или защитить структуру книги. Однако, опытный пользователь сможет обойти это ограничение, скопировав данные в другой файл или используя макросы.</p>
+</details>
+
+<details>
+<summary>Как сделать так, чтобы скрытые строки не печатались?</summary>
+<p>Скрытые строки по умолчанию не печатаются. Если у вас печатаются «пустые» места, проверьте, действительно ли строки скрыты (номера должны прыгать), а не просто не имеют данных. Также проверьте область печати на вкладке <code>Разметка страницы</code>.</p>
+</details>
+
+<details>
+<summary>Почему не работает кнопка «Отобразить» в контекстном меню?</summary>
+<p>Кнопка неактивна, если вы не выделили диапазон, содержащий скрытые строки (нужно выделять строки выше и ниже скрытых), или если активен фильтр. В случае фильтра используйте команду «Очистить» на вкладке Данные.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/e/es/est-li-gran-turizmo-7-na-pk.html" class="pb-related-card">
+                <span class="pb-related-title">Есть ли Gran Turismo 7 на ПК: версия для Windows и эмуляторы</span>
+                <span class="pb-related-desc">Выход Gran Turismo 7 на ПК невозможен. Разбираем причины эксклюзивности для PS4/PS5, работу эмулятор</span>
+            </a><a href="/articles/k/ka/kak-pomenyat-gorod-v-yandeks-ede-kureru.html" class="pb-related-card">
+                <span class="pb-related-title">Как поменять город в Яндекс Еде курьеру: инструкция</span>
+                <span class="pb-related-desc">Полная инструкция, как изменить регион доставки в приложении Яндекс Еды для курьера. Решение проблем</span>
+            </a><a href="/articles/m/ma/magikar-9-avtozapusk-s-brelka.html" class="pb-related-card">
+                <span class="pb-related-title">Магикар 9: автозапуск с брелка — настройка и особенности</span>
+                <span class="pb-related-desc">Как настроить автозапуск на сигнализации Магикар 9 с брелка: пошаговая инструкция, типичные ошибки и</span>
+            </a><a href="/articles/c/ch/chto-takoe-ultimate-edition.html" class="pb-related-card">
+                <span class="pb-related-title">Что такое Ultimate Edition: отличия от Standard и Deluxe</span>
+                <span class="pb-related-desc">Разбираем, что такое Ultimate Edition в играх. Стоит ли переплачивать за расширенную версию? Сравнен</span>
+            </a><a href="/articles/p/pu/pusko-zaryadnoe-ustrojstvo-dlya-avtomobilnogo-akkumulyatora-kakoe-vybrat.html" class="pb-related-card">
+                <span class="pb-related-title">Пуско-зарядное устройство для авто: как выбрать лучшее в 2026 году</span>
+                <span class="pb-related-desc">Экспертный гайд по выбору пуско-зарядного устройства для автомобиля: типы, параметры, рейтинг моделе</span>
+            </a><a href="/articles/a/av/avtokompressor-dlya-podkachki-shin-kakoj-luchshe-vybrat-otzyvy-vladeltsev.html" class="pb-related-card">
+                <span class="pb-related-title">Автокомпрессор для шин 2026: какой выбрать по отзывам владельцев</span>
+                <span class="pb-related-desc">Рейтинг лучших автокомпрессоров для подкачки шин по реальным отзывам: сравнение характеристик, плюсы</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Сечение нулевого проводника: правила выбора и нормы ПУЭ — Авто Факт</title>
+    <meta name="description" content="Как выбрать сечение нулевого проводника относительно фазного. Нормы ПУЭ, расчет токов гармоник, выбор PEN-проводника и защита от обрыва нуля.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/s/se/sechenie-nulevogo-provodnika-po-otnosheniyu-k-faznomu.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Сечение нулевого проводника: правила выбора и нормы ПУЭ">
+    <meta property="og:description" content="Как выбрать сечение нулевого проводника относительно фазного. Нормы ПУЭ, расчет токов гармоник, выбор PEN-проводника и защита от обрыва нуля.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/drugoe/">Другое</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Сечение нулевого проводника: правила выбора и нормы ПУЭ</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#физика-процесса-и-роль-нейтрального-проводника">Физика процесса и роль нейтрального проводника</a></li><li><a href="#нормативные-требования-пуэ-к-сечению-нуля">Нормативные требования ПУЭ к сечению нуля</a></li><li><a href="#особенности-выбора-для-однофазных-и-трехфазных-сетей">Особенности выбора для однофазных и трехфазных сетей</a></li><li><a href="#проблема-токов-гармоник-и-нелинейных-нагрузок">Проблема токов гармоник и нелинейных нагрузок</a></li><li><a href="#специфика-pen-проводников-в-системах-заземления">Специфика PEN-проводников в системах заземления</a></li><li><a href="#практические-рекомендации-по-монтажу-и-расчету">Практические рекомендации по монтажу и расчету</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/s/sv/svarka-argonom-trubok-konditsionera-avtomobilya.html">Сварка аргоном трубок кондиционера авто: пошаговое руководство 2026</a></li><li><a href="/articles/m/ma/magas-groznyj-rasstoyanie-na-mashine.html">Магас — Грозный: расстояние на машине, маршруты и время в пути</a></li><li><a href="/articles/p/pr/printsip-raboty-adsorbera-avtomobilya-benzin.html">Принцип работы адсорбера: устройство, неисправности и замена</a></li><li><a href="/articles/p/pr/promyvka-radiatora-limonnoj-kislotoj-proportsii-bez-snyatiya.html">Промывка радиатора лимонной кислотой: пропорции и инструкция без снятия</a></li><li><a href="/articles/t/to/top-avtomobilej-dlya-devushek.html">Топ автомобилей для девушек: лучшие авто 2026 года</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Сечение нулевого проводника по отношению к фазному: нормы и расчет</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#физика-процесса-и-роль-нейтрального-проводника">Физика процесса и роль нейтрального проводника</a></li><li><a href="#нормативные-требования-пуэ-к-сечению-нуля">Нормативные требования ПУЭ к сечению нуля</a></li><li><a href="#особенности-выбора-для-однофазных-и-трехфазных-сетей">Особенности выбора для однофазных и трехфазных сетей</a></li><li><a href="#проблема-токов-гармоник-и-нелинейных-нагрузок">Проблема токов гармоник и нелинейных нагрузок</a></li><li><a href="#специфика-pen-проводников-в-системах-заземления">Специфика PEN-проводников в системах заземления</a></li><li><a href="#практические-рекомендации-по-монтажу-и-расчету">Практические рекомендации по монтажу и расчету</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>При проектировании и монтаже электрических сетей грамотный выбор сечения нулевого проводника является критически важным этапом обеспечения безопасности. Многие ошибочно полагают, что нейтраль можно выполнять проводом минимальной толщины, так как в идеальных условиях ток в ней отсутствует или минимален. Однако реальная эксплуатация электроустановок, насыщенных нелинейными нагрузками, диктует совершенно иные требования к параметрам <strong>N-проводника</strong>.</p>
+
+<p>Неправильный расчет сечения может привести к перегреву изоляции, возгоранию и выходу из строя дорогостоящего оборудования из-за перекоса фаз. В этой статье мы подробно разберем, как соотносятся сечения фазных и нулевых жил в различных типах сетей, какие нормы диктует <em>ПУЭ</em> и почему современные реалии требуют пересмотра старых подходов к прокладке кабеля.</p>
+
+<p>Основная задача нуля — обеспечить возврат электрического тока к источнику питания ить потенциал близким к земле. В системах <strong>TN-C-S</strong> и <strong>TN-S</strong> требования могут существенно различаться в зависимости от материала жил и характера нагрузки. Понимание этих различий необходимо каждому электрику для создания надежной проводки.</p>
+
+<h2 id="физика-процесса-и-роль-нейтрального-проводника">Физика процесса и роль нейтрального проводника</h2>
+
+<p>В классической трехфазной сети с симметричной нагрузкой токи в фазах сдвинуты на 120 градусов, и их векторная сумма в нулевой точке равна нулю. Именно на этом принципе часто базируется заблуждение о том, что сечение нулевого проводника может быть значительно меньше фазного. Однако в реальных условиях, особенно в жилых зданиях и офисных центрах, нагрузка редко бывает строго симметричной.</p>
+
+<p>Ситуация кардинально меняется при наличии большого количества импульсных блоков питания, которые являются нелинейной нагрузкой. Компьютеры, LED-освещение,торные приводы генерируют гармоники кратные трем (3-я, 9-я, 15-я и т.д.). Эти гармонические составляющие не компенсируются, а суммируются в нейтральном проводнике, вызывая протекание тока, который может превышать фазный.</p>
+
+<blockquote>⚠️ Внимание: В сетях с высокой долей нелинейных нагрузок ток в нулевом проводнике может достигать 150-200% от тока фазы. Игнорирование этого факта при выборе сечения кабеля неизбежно приведет к его перегреву.</blockquote>
+
+<p>Для борьбы с этим явлением необходимо использовать кабели, где сечение нулевой жилы равно или даже больше сечения фазных жил. Стандартные кабели с уменьшенной нейтралью в таких случаях применять <strong>категорически запрещено</strong>. Инженерный расчет должен учитывать не только активную мощность, но и коэффициент гармоник.</p>
+
+<div class="pb-poll" id="poll-f21151ae"><div class="pb-poll-question">📊 Какой тип кабеля вы чаще всего используете в работе?</div><div class="pb-poll-option" data-poll="f21151ae" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">ВВГнг (стандартный 4х одинаковые жилы)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="f21151ae" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">ВВГнг (с уменьшенной нейтралью)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="f21151ae" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">NYM</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="f21151ae" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">АВВГ (алюминий)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="f21151ae" data-idx="4" onclick="pbPollVote(this)"><span class="pb-poll-label">Другой</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="нормативные-требования-пуэ-к-сечению-нуля">Нормативные требования ПУЭ к сечению нуля</h2>
+
+<p>Основным документом, регламентирующим устройство электроустановок, являются <em>Правила Устройства Электроустановок</em> (ПУЭ). В главе 1.7 и разделе 7.1 содержатся конкретные указания относительно выбора сечения нулевых рабочих и защитных проводников. Соблюдение этих норм является обязательным для принятия объекта в эксплуатацию.</p>
+
+<p>Согласно пункту 1.7.131, в многофазных цепях сечение нулевого рабочего проводника должно быть равно сечению фазных проводников при использовании медных проводников сечением до 16 мм² включительно, а также алюминиевых проводников сечением до 25 мм² включительно. Это базовое правило для большинства квартирных и небольших коммерческих сетей.</p>
+
+<p>Для проводников большего сечения допускается уменьшение сечения нулевого рабочего проводника до 50% от сечения фазных, но только при условии, что в нормальном режиме работы ток в нулевом проводнике не превышает допустимый длительный ток для данного сечения. Однако, как упоминалось ранее, наличие нелинейных нагрузок часто делает это исключение неприменимым.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>При заказе кабеля всегда уточняйте у производителя соотношение сечений жил. Маркировка «3х10+1х6» означает, что нейтраль уменьшена, что допустимо только для линейных нагрузок.</p></aside>
+
+<p>Отдельное внимание следует уделить PEN-проводникам, которые совмещают функции нулевого рабочего и нулевого защитного проводников. Их сечение должно быть не менее 10 мм² по меди и 16 мм² по алюминию независимо от сечения фазных проводников. Это требование продиктовано необходимостью обеспечения механической прочности и надежности заземления.</p>
+
+<h2 id="особенности-выбора-для-однофазных-и-трехфазных-сетей">Особенности выбора для однофазных и трехфазных сетей</h2>
+
+<p>В однофазных двухпроводных сетях вопрос выбора сечения решается однозначно: сечение нулевого проводника всегда должно быть равно сечению фазного. Здесь нет возможности для маневра, так как ток в фазе и нуле абсолютно идентичен в любой момент времени. Использование провода меньшего сечения создаст узкое место в цепи.</p>
+
+<p>В трехфазных сетях ситуация сложнее. Если нагрузка распределена равномерно и носит линейный характер (например, электродвигатели без частотных преобразователей, нагревательные элементы), то ток в нуле минимален. В таких промышленных условиях экономия цветного металла за счет уменьшения сечения нейтрали технически обоснована и безопасна.</p>
+
+<p>Однако в современных офисных зданиях и жилых комплексах преобладает однофазная нагрузка, распределенная по трехфазной сети. Здесь вероятность перекоса фаз и возникновения токов гармоник крайне высока. Поэтому для вводных кабелей в здание или этажный щит часто выбирают схему, где <strong>сечение нуля</strong> соответствует сечению фаз, даже если фазные жилы имеют сечение более 16 мм².</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка условий для уменьшения сечения нуля</h4><label class="check-item"><input type="checkbox"><span>Нагрузка линейного характера (двигатели, ТЭНЫ)</span></label><label class="check-item"><input type="checkbox"><span>Отсутствие импульсных блоков питания</span></label><label class="check-item"><input type="checkbox"><span>Сечение фазных проводников более 16 мм² (Cu) или 25 мм² (Al)</span></label><label class="check-item"><input type="checkbox"><span>Расчетный ток в нуле не превышает допустимый для уменьшенного сечения</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="проблема-токов-гармоник-и-нелинейных-нагрузок">Проблема токов гармоник и нелинейных нагрузок</h2>
+
+<p>Феномен суммирования токов третьей гармоники в нулевом проводнике является одной из главных проблем современной электроэнергетики. В отличие от основной частоты 50 Гц, третья гармоника (150 Гц) во всех трех фазах имеет одинаковую фазу. В результате вместо компенсации происходит сложение амплитуд.</p>
+
+<p>Это приводит к тому, что в нулевом проводнике течет ток, который может быть значительно больше фазного. Стандартные автоматические выключатели, установленные на фазы, не реагируют на перегрузку по току в нуле, так как они не контролируют нейтраль. Это создает скрытую угрозу перегрева и возгорания изоляции внутри кабельной трассы.</p>
+
+<blockquote>⚠️ Внимание: В дата-центрах и зданиях с большим количеством компьютерной техники сечение нулевого проводника рекомендуется выбирать в 1.5-2 раза больше сечения фазного, либо использовать специальные разделенные нейтрали.</blockquote>
+
+<p>Для защиты от таких перегрузок иногда применяют четырехполюсные автоматы с контролем тока в нуле или устанавливают отдельные датчики тока на нейтраль. Однако самым надежным способом остается правильный выбор сечения кабеля на этапе проектирования, учитывающий реальный спектральный состав нагрузки.</p>
+
+<details class="pb-accordion"><summary>Что происходит с изоляцией при перегрузке гармониками?</summary><div class="pb-accordion-body"><p>Высокочастотные токи вызывают скин-эффект, вытесняя ток к поверхности проводника, что увеличивает активное сопротивление и нагрев. Полимерная изоляция при длительном перегреве теряет эластичность, трескается и может воспламениться даже без короткого замыкания.</p></div></details>
+
+<h2 id="специфика-pen-проводников-в-системах-заземления">Специфика PEN-проводников в системах заземления</h2>
+
+<p>В системах заземления типа <em>TN-C</em>, где функции нулевого рабочего (N) и защитного (PE) проводников объединены в один PEN-проводник, требования к сечению наиболее жесткие. Разрыв такого проводника смертельно опасен, так как на корпусах электроприборов может появиться фазное напряжение.</p>
+
+<p>ПУЭ, что сечение PEN-проводника должно быть не менее 10 мм² для меди и 16 мм² для алюминия. Это ограничение введено не только из соображений электрической проводимости, но и для обеспечения достаточной механической прочности. Тонкий проводник легче повредить при монтаже или в процессе эксплуатации.</p>
+
+<p>Важно отметить, что в системе <em>TN-C-S</em> разделение PEN-проводника на PE и N должно выполняться с соблюдением тех же требований к сечению. После точки разделения объединять эти проводники вновь <strong>запрещено</strong>. Сечение проводника PE после разделения может быть меньше фазного, но оно должно соответствовать требованиям главы 1.7 ПУЭ к защитным проводникам.</p>
+
+<p>Ниже приведена таблица минимальных сечений защитных проводников, которые актуальны и для выбора сечения PEN до точки разделения:</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Сечение фазных проводников S (мм²)</th>
+<th>Минимальное сечение защитного проводника (мм²)</th>
+<th>Примечание</th>
+</tr>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S ≤ 16</td>
+<td>S</td>
+<td>Равно сечению фазных</td>
+</tr>
+<tr>
+<td>16 < S ≤ 35</td>
+<td>16</td>
+<td>Фиксированное значение</td>
+</tr>
+<tr>
+<td>S > 35</td>
+<td>S / 2</td>
+<td>Половина сечения фазных</td>
+</tr>
+<tr>
+<td>Для PEN (медь)</td>
+<td>10</td>
+<td>Независимо от S фазного</td>
+</tr>
+<tr>
+<td>Для PEN (алюминий)</td>
+<td>16</td>
+<td>Независимо от S фазного</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2 id="практические-рекомендации-по-монтажу-и-расчету">Практические рекомендации по монтажу и расчету</h2>
+
+<p>При выполнении электромонтажных работ в старых зданиях часто встречается ситуация, когда необходимо заменить вводной кабель. Если в проекте заложено сечение фаз 50 мм², а нагрузка преимущественно офисная (компьютеры, серверы), то выбор нулевого проводника 25 мм² будет ошибкой. В данном случае правильнее заложить кабель 4х50 мм² или даже использовать две параллельные линии.</p>
+
+<p>Также стоит учитывать температурные поправочные коэффициенты. Если кабель прокладывается в пучке или в условиях повышенной температуры окружающей среды, его пропускная способность падает. Увеличение сечения нулевого проводника в таких условиях служит дополнительным запасом надежности.</p>
+
+<blockquote>⚠️ Внимание: Нормативные документы и требования энергоснабжающих организаций могут меняться. Перед началом проектирования крупных объектов обязательно сверяйтесь с актуальной редакцией ПУЭ и местными техническими условиями (ТУ).</blockquote>
+
+<p>Для расчета сечения можно использовать формулу, учитывающую допустимую плотность тока, но проще воспользоваться готовыми таблицами из ПУЭ или справочников кабельной продукции. Главное — помнить, что экономия на сечении нуля — это ложная экономия, которая может стоить очень дорого.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Золотое правило современного монтажа: в сетях с нелинейной нагрузкой сечение нулевого проводника должно быть равно или больше сечения фазного, независимо от их величины.</p></aside>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Можно ли использовать кабель с уменьшенной нейтралью (3+1) для подключения варочной панели?</summary>
+<p>Да, можно. Варочная панель является линейной нагрузкой (резистивной или индуктивной), она не генерирует значительных гармоник. Ток в нуле будет минимальным, поэтому использование кабеля, например, 4х6 мм² вместо 3х6+1х4 мм² не имеет практического смысла, если это допускает проект.</p>
+</details>
+
+<details>
+<summary>Что будет, если отгорит ноль в трехфазной сети?</summary>
+<p>При обрыве нулевого проводника в трехфазной сети с неравномерной нагрузкой возникает перекос фаз. На одних фазах напряжение упадет (лампы тускло горят, техника не включается), а на других — резко возрастет до 380В, что приведет к мгновенному сгоранию подключенных приборов.</p>
+</details>
+
+<details>
+<summary>Нужно ли заземлять нулевой проводник в розетке?</summary>
+<p>Нет, заземлять рабочий ноль (N) в розетке категорически нельзя. Заземляющий контакт (PE) должен соединяться только с шиной заземления. Объединение N и PE в розетке приведет к тому, что ток потечет через заземление, что вызовет срабатывание УЗО и создаст опасность на корпусах приборов.</p>
+</details>
+
+<details>
+<summary>Какое сечение выбрать для нуля, если фаза 2.5 мм²?</summary>
+<p>Согласно ПУЭ, для медных проводников сечением до 16 мм² включительно сечение нулевого рабочего проводника должно быть равно сечению фазных. Следовательно, для фазы 2.5 мм² ноль также должен быть 2.5 мм².</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/s/sv/svarka-argonom-trubok-konditsionera-avtomobilya.html" class="pb-related-card">
+                <span class="pb-related-title">Сварка аргоном трубок кондиционера авто: пошаговое руководство 2026</span>
+                <span class="pb-related-desc">Как правильно варить аргоном алюминиевые трубки кондиционера автомобиля: оборудование, настройки, ош</span>
+            </a><a href="/articles/m/ma/magas-groznyj-rasstoyanie-na-mashine.html" class="pb-related-card">
+                <span class="pb-related-title">Магас — Грозный: расстояние на машине, маршруты и время в пути</span>
+                <span class="pb-related-desc">Точное расстояние от Магаса до Грозного на машине. Сравнение маршрутов через Назрань и Сунжу, расчет</span>
+            </a><a href="/articles/p/pr/printsip-raboty-adsorbera-avtomobilya-benzin.html" class="pb-related-card">
+                <span class="pb-related-title">Принцип работы адсорбера: устройство, неисправности и замена</span>
+                <span class="pb-related-desc">Подробно о том, как работает адсорбер бензин. Разбор схемы системы улавливания паров, признаки неисп</span>
+            </a><a href="/articles/p/pr/promyvka-radiatora-limonnoj-kislotoj-proportsii-bez-snyatiya.html" class="pb-related-card">
+                <span class="pb-related-title">Промывка радиатора лимонной кислотой: пропорции и инструкция без снятия</span>
+                <span class="pb-related-desc">Как правильно промыть радиатор лимонной кислотой без демонтажа: точные пропорции, пошаговая инструкц</span>
+            </a><a href="/articles/t/to/top-avtomobilej-dlya-devushek.html" class="pb-related-card">
+                <span class="pb-related-title">Топ автомобилей для девушек: лучшие авто 2026 года</span>
+                <span class="pb-related-desc">Обзор лучших автомобилей для девушек: компактные хэтчбеки, кроссоверы и электромобили. Рейтинг безоп</span>
+            </a><a href="/articles/i/iz/iz-za-chego-mashina-ne-zavoditsya-s-pervogo-raza.html" class="pb-related-card">
+                <span class="pb-related-title">Машина не заводится с первого раза: причины и решение</span>
+                <span class="pb-related-desc">Разбираем, почему авто не заводится с первой попытки. Топливная система, свечи, датчики и аккумулято</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

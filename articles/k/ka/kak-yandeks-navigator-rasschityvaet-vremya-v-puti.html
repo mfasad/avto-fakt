@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как Яндекс Навигатор рассчитывает время в пути: алгоритмы — Авто Факт</title>
+    <meta name="description" content="Подробный разбор алгоритмов Яндекса: как пробки, история скоростей и погода влияют на расчет времени прибытия. Технологии умного маршрута.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ka/kak-yandeks-navigator-rasschityvaet-vremya-v-puti.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как Яндекс Навигатор рассчитывает время в пути: алгоритмы">
+    <meta property="og:description" content="Подробный разбор алгоритмов Яндекса: как пробки, история скоростей и погода влияют на расчет времени прибытия. Технологии умного маршрута.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как Яндекс Навигатор рассчитывает время в пути: алгоритмы</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#основы-сбора-телеметрии-в-реальном-времени">Основы сбора телеметрии в реальном времени</a></li><li><a href="#роль-исторических-данных-и-машинного-обучения">Роль исторических данных и машинного обучения</a></li><li><a href="#учет-погодных-условий-и-дорожных-событий">Учет погодных условий и дорожных событий</a></li><li><a href="#математика-построения-оптимального-маршрута">Математика построения оптимального маршрута</a></li><li><a href="#персонализация-и-адаптация-под-стиль-вождения">Персонализация и адаптация под стиль вождения</a></li><li><a href="#человеческий-фактор-и-ошибки-алгоритмов">Человеческий фактор и ошибки алгоритмов</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/p/pa/parol-na-bessmertie-gta-5.html">Пароль на бессмертие в GTA 5: мифы, читы и секреты 2026</a></li><li><a href="/articles/a/an/animatsiya-marshruta-na-karte-dlya-video.html">Анимация маршрута на карте для видео: лучшие программы</a></li><li><a href="/articles/e/e0/e04-oshibka-posudomoechnoj-mashiny-bosch.html">Ошибка E04 в посудомоечной машине Bosch: причины и ремонт</a></li><li><a href="/articles/s/sk/skachat-albom-novykh-pesen-v-mashinu.html">Как скачать альбом новых песен в машину: 5 способов 2026</a></li><li><a href="/articles/k/ka/kak-oplatit-elektrichestvo-v-my-summer-car.html">Как оплатить электричество в My Summer Car: полное руководство</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как Яндекс Навигатор рассчитывает время в пути: алгоритмы</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#основы-сбора-телеметрии-в-реальном-времени">Основы сбора телеметрии в реальном времени</a></li><li><a href="#роль-исторических-данных-и-машинного-обучения">Роль исторических данных и машинного обучения</a></li><li><a href="#учет-погодных-условий-и-дорожных-событий">Учет погодных условий и дорожных событий</a></li><li><a href="#математика-построения-оптимального-маршрута">Математика построения оптимального маршрута</a></li><li><a href="#персонализация-и-адаптация-под-стиль-вождения">Персонализация и адаптация под стиль вождения</a></li><li><a href="#человеческий-фактор-и-ошибки-алгоритмов">Человеческий фактор и ошибки алгоритмов</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Каждый, кто садится за руль в крупном мегаполисе, хотя бы раз с тревогой смотрел на экран смартфона, ожидая, пока навигатор проложит маршрут. Цифры на экране меняются, время прибытия сдвигается, а зеленые участки дороги внезапно становятся красными. Возникает закономерный вопрос: как именно сложнейшая система понимает, сколько времени займет поездка?</p>
+
+<p>В основе работы <strong>Яндекс Навигатора</strong> лежит не просто статичная карта, а живой организм, состоящий из миллионов точек данных. Система анализирует скорость движения других автомобилей, историю передвижений по конкретным отрезкам и даже текущую погоду. Это позволяет формировать прогноз с высокой точностью, которую часто недооценивают водители.</p>
+
+<p>Понимание принципов работы алгоритмов помогает лучше планировать поездки. Если вы знаете, что система учитывает не только текущую ситуацию, но и вероятные изменения через 40 минут, вы сможете трезвее оценивать предлагаемые варианты объезда пробок. Давайте разберем, что происходит"под капотом" приложения.</p>
+
+<h2 id="основы-сбора-телеметрии-в-реальном-времени">Основы сбора телеметрии в реальном времени</h2>
+
+<p>Главным источником информации для навигатора являются сами пользователи. Миллионы смартфонов, на которых запущено приложение, работают как распределенная сеть датчиков. Каждое устройство периодически отправляет на сервер свои координаты и текущую скорость движения. Именно этот поток данных, называемый телеметрией, позволяет строить <mark>живую карту пробок</mark>.</p>
+
+<p>Когда вы видите на экране цветную линию маршрута, вы смотрите на визуализацию усредненной скорости потока. Если на участке длиной в один километр едут 50 машин со скоростью 10 км/ч, система помечает этот отрезок темно-красным цветом. Алгоритм мгновенно пересчитывает время прохождения этого участка для всех, кто планирует поездку.</p>
+
+<p>Однако сбор данных — это не просто фиксация скорости. Система фильтрует аномалии. Если один водитель проехал перекресток на красный свет или с превышением скорости, это не станет основой для расчета. <strong>Математическая модель</strong> отсекает выбросы, опираясь на поведение основной массы транспортных средств.</p>
+
+<ul>
+<li>🚗 Сбор анонимных данных о скорости движения от всех активных пользователей.</li>
+<li>📡 Передача телеметрии на сервер каждые несколько секунд через мобильный интернет.</li>
+<li>📊 Агрегация данных для определения средней скорости потока на каждом сегменте дороги.</li>
+<li>🚫 Фильтрация ошибочных показаний и аномально высоких скоростей.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Для корректной работы навигатора в режиме реального времени необходимо стабильное интернет-соединение. Без передачи телеметрии система перейдет на офлайн-режим, где расчет времени будет вестись только по предельно допустимым скоростям, без учета пробок.</p>
+</blockquote>
+
+<p>Точность прогноза напрямую зависит от плотности трафика. На загруженных магистралях, где едет много машин с включенным навигатором, данные обновляются практически мгновенно. На тихих дачных дорогах, где машин мало, система может использовать исторические данные или данные сотовых операторов для оценки ситуации.</p>
+
+<h2 id="роль-исторических-данных-и-машинного-обучения">Роль исторических данных и машинного обучения</h2>
+
+<p>Что делать навигатору, если вы строите маршрут на завтрашний утренний час пик, а прямо сейчас на дорогах пусто? В этом случае вступает в силу мощный пласт <strong>исторических данных</strong>. Яндекс накапливает информацию о скорости движения на каждом участке дороги годами, разделяя ее по дням недели и времени суток.</p>
+
+<p>Алгоритмы машинного обучения анализируют эти массивы, выявляя устойчивые паттерны. Система"знает", что на выезде из города в пятницу в 18:00 invariably образуется затор. Даже если прямо сейчас пробок нет, при построении маршрута на будущее время будет применен коэффициент, учитывающий историческую вероятность возникновения затора.</p>
+
+<div class="pb-poll" id="poll-d9752c3a"><div class="pb-poll-question">📊 Как часто вы сверяете время в навигаторе с реальностью?</div><div class="pb-poll-option" data-poll="d9752c3a" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Всегда совпадает почти идеально</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="d9752c3a" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Часто опаздываю из-за пробок</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="d9752c3a" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Обычно приезжаю раньше времени</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="d9752c3a" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Вообще не смотрю, еду как получится</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<p>Машинное обучение также помогает предсказывать время проезда перекрестков. Это одна из самых сложных задач. Время ожидания на светофоре зависит от фазы, количества поворачивающих машин и наличия пешеходов. <em>Нейросети</em> обучаются на миллионах пройденных перекрестков, чтобы дать максимально точную оценку задержки.</p>
+
+<ul>
+<li>📅 Анализ архивов скорости за последние несколько лет для каждого дня недели.</li>
+<li>🤖 Применение нейросетей для прогнозирования поведения трафика в будущем.</li>
+<li>🚦 Оценка средней длительности ожидания на сложных перекрестках и развязках.</li>
+<li>🔄 Учет сезонных изменений трафика (например, дачный сезон или учебный год).</li>
+</ul>
+
+<p>Важно понимать, что исторические данные постоянно обновляются. Если на участке дороги начались ремонтные работы и скорость упала, система через несколько дней или недель скорректирует свои прогнозы для этого времени суток, даже без явных сигналов о ремонте.</p>
+
+<h2 id="учет-погодных-условий-и-дорожных-событий">Учет погодных условий и дорожных событий</h2>
+
+<p>Погода — критический фактор, который часто упускают из виду, но который существенно влияет на <strong>время в пути</strong>. Дождь, снег, гололед или туман заставляют водителей снижать скорость. Яндекс Навигатор интегрирует данные метеослужб и корректирует расчетное время, добавляя коэффициенты замедления.</p>
+
+<p>Например, если идет сильный ливень, средняя скорость потока на трассе может упасть на 20-30%. Алгоритм учитывает это, увеличивая время прибытия. Это позволяет водителю не спешить и не нервничать, видя, что навигатор"заложил" лишние минуты на плохую погоду.</p>
+
+<details class="pb-accordion"><summary>Как именно снег влияет на алгоритмы?</summary><div class="pb-accordion-body"><p>В снежную погоду система не только снижает расчетную скорость, но и может изменить приоритет дорог. Второстепенные улицы, которые плохо чистят, могут быть исключены из маршрута в пользу основных магистралей, даже если они формально длиннее.</p></div></details>
+
+<p>Кроме того, пользователи и специальные службы могут сообщать о дорожных событиях: ДТП, ремонтные работы, перекрытия. Такие события обрабатываются модераторами или автоматически и накладываются на карту как искусственные препятствия с заданной пропускной способностью.</p>
+
+<ul>
+<li>🌧 Интеграция данных о precipitation (осадках) и температуре для коррекции скорости.</li>
+<li>🚧 Учет перекрытий и ремонтов дорог, сужающих поток.</li>
+<li>🚓 Реакция на сообщения об авариях и изменение маршрутизации в реальном времени.</li>
+<li>👁 Учет видимости и условий освещенности (ночь/день) в некоторых сценариях.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> В экстремальных погодных условиях (метель, ураган) алгоритм может работать менее точно из-за резкого изменения поведения водителей и отсутствия актуальных данных телеметрии. Всегда увеличивайте запас времени в пути.</p>
+</blockquote>
+
+<h2 id="математика-построения-оптимального-маршрута">Математика построения оптимального маршрута</h2>
+
+<p>Когда все данные собраны, вступает в работу графовый алгоритм поиска пути. Дорожная сеть представляется в виде графа, где перекрестки — это вершины, а участки дорог — ребра с определенным"весом". В случае с навигатором вес ребра — это <strong>время прохождения</strong>.</p>
+
+<p>Система использует модификации алгоритма Дейкстры или A* (A-star), которые позволяют находить кратчайший путь по времени, а не по расстоянию. Алгоритм просчитывает тысячи вариантов, отбрасывая заведомо проигрышные, и выдает несколько оптимальных вариантов: самый быстрый, самый простой или без платных дорог.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Параметр маршрута</th>
+<th>Влияние на расчет</th>
+<th>Приоритет алгоритма</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Длина участка</td>
+<td>Базовая метрика расстояния</td>
+<td>Высокий</td>
+</tr>
+<tr>
+<td>Средняя скорость потока</td>
+<td>Определяет время прохождения</td>
+<td>Критический</td>
+</tr>
+<tr>
+<td>Количество светофоров</td>
+<td>Добавляет время на остановки</td>
+<td>Средний</td>
+</tr>
+<tr>
+<td>Тип дорожного покрытия</td>
+<td>Влияет на допустимую скорость</td>
+<td>Низкий</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Интересно, что система может предложить маршрут, который формально длиннее по километражу, но быстрее по времени. Это часто сбивает с толку водителей, привыкших выбирать путь"по прямой". Однако в условиях мегаполиса прямая линия редко бывает fastest way.</p>
+
+<p>При расчете учитываются и повороты. Левый поворот на оживленном перекрестке может занять больше времени, чем два правых поворота и разворот. Алгоритм старается минимизировать количество сложных маневров, если они существенно увеличивают время в пути.</p>
+
+<h2 id="персонализация-и-адаптация-под-стиль-вождения">Персонализация и адаптация под стиль вождения</h2>
+
+<p>Современные навигационные системы начинают учитывать и персональные особенности. Хотя массово эта функция внедряется постепенно, уже сейчас алгоритмы способны анализировать ваш стиль вождения. Если вы всегда ездите быстрее потока на 10-15 км/ч, навигатор может это заметить.</p>
+
+<p>Однако в базовом расчете времени используется усредненный, безопасный стиль вождения в рамках ПДД. Это сделано для того, чтобы время прибытия было предсказуемым для большинства пользователей. Если система будет строить маршрут исходя из гоночного стиля, опоздания станут нормой.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка перед длинной поездкой</h4><label class="check-item"><input type="checkbox"><span>Обновить карты в приложении</span></label><label class="check-item"><input type="checkbox"><span>Проверить актуальность времени на устройстве</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в наличии интернета</span></label><label class="check-item"><input type="checkbox"><span>Выбрать режим"Учет пробок"</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Существует также понятие"профиля транспортного средства". При выборе типа транспорта (автомобиль, грузовик, такси) меняются ограничения. Для грузовиков исключаются дороги с запретом движения, а для такси могут учитываться зоны высадки пассажиров.</p>
+
+<ul>
+<li>🚙 Учет габаритов и типа ТС для исключения запрещенных участков.</li>
+<li>🏎 Анализ индивидуального стиля вождения (в перспективных функциях).</li>
+<li>🛣 Предпочтение определенных типов дорог (трассы vs городские улицы).</li>
+<li>🅿 Учет сложности парковки в конечной точке маршрута.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Не полагайтесь слепо на навигатор при выборе режима"грузовик" или"такси", если вы управляете нестандартным транспортом. Всегда сверяйтесь с дорожными знаками, так как база данных может не содержать свежие изменения в организации движения.</p>
+</blockquote>
+
+<h2 id="человеческий-фактор-и-ошибки-алгоритмов">Человеческий фактор и ошибки алгоритмов</h2>
+
+<p>Несмотря на мощь искусственного интеллекта, система не идеальна. Существуют ситуации, когда расчет времени оказывается неверным. Чаще всего это связано с внезапными событиями, которые еще не попали в базу данных: только что случившееся ДТП, упавшее дерево или внезапное перекрытие полицией.</p>
+
+<p>Также влияет человеческий фактор. Если навигатор ведет по сложному маршруту с множеством поворотов, водитель может растеряться, пропустить поворот или долго искать место для разворота. В таких случаях фактическое время в пути будет больше расчетного.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Если навигатор предлагает два маршрута с одинаковым временем, выберите тот, который проще визуально. Меньшее количество маневров снижает стресс и риск ошибки, что в итоге часто экономит время.</p></aside>
+
+<p>Еще одна причина расхождений —"эффект толпы". Когда навигатор направляет всех водителей на объездной путь, этот путь быстро встает в пробку. Алгоритм реагирует, перенаправляя поток снова, создавая колебания. В такие моменты время прибытия может"скакать" туда-сюда.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Точность навигатора — это результат баланса между математической моделью, историей и живыми данными, но всегда запас в 10-15% на непредвиденные обстоятельства.</p></aside>
+
+<p> Его данные требуют критического осмысления, особенно в незнакомой местности или в сложных погодных условиях. Опыт водителя и здравый смысл остаются главными инструментами безопасного вождения.</p>
+
+<details>
+<summary>Почему навигатор показывает разное время для одного и того же маршрута?</summary>
+<p>Время меняется динамически в зависимости от текущей ситуации на дорогах. Если вы построите маршрут в 8:00 утра и в 8:15, данные о пробках уже могут обновиться. Кроме того, система может предложить разные варианты объезда, каждый со своим временем.</p>
+</details>
+
+<details>
+<summary>Как часто обновляются данные о пробках?</summary>
+<p>Обновление происходит практически в реальном времени, с задержкой в несколько секунд или минут, необходимой для сбора достаточного объема телеметрии и ее обработки сервером. В часы пик обновление происходит чаще.</p>
+</details>
+
+<details>
+<summary>Может ли навигатор специально вести дольше, чтобы избежать пробок?</summary>
+<p>Да, алгоритм всегда стремится минимизировать время в пути. Если он предлагает более длинный по километражу маршрут, значит, математическая модель predicts, что вы доедете быстрее, чем стоя в заторе на коротком пути.</p>
+</details>
+
+<details>
+<summary>Влияет ли модель телефона на точность расчета?</summary>
+<p>Модель телефона влияет на скорость работы GPS-модуля и качество связи с сервером. На старых устройствах с медленным интернетом или слабым GPS обновление позиции и пересчет маршрута могут занимать больше времени, создавая ощущение"лагания".</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/p/pa/parol-na-bessmertie-gta-5.html" class="pb-related-card">
+                <span class="pb-related-title">Пароль на бессмертие в GTA 5: мифы, читы и секреты 2026</span>
+                <span class="pb-related-desc">Разбираемся, существует ли пароль на бессмертие в GTA 5 на ПК/консолях, как активировать читы и каки</span>
+            </a><a href="/articles/a/an/animatsiya-marshruta-na-karte-dlya-video.html" class="pb-related-card">
+                <span class="pb-related-title">Анимация маршрута на карте для видео: лучшие программы</span>
+                <span class="pb-related-desc">Как сделать анимацию маршрута для видео? Обзор программ, пошаговая инструкция и советы по созданию т</span>
+            </a><a href="/articles/e/e0/e04-oshibka-posudomoechnoj-mashiny-bosch.html" class="pb-related-card">
+                <span class="pb-related-title">Ошибка E04 в посудомоечной машине Bosch: причины и ремонт</span>
+                <span class="pb-related-desc">Подробный разбор ошибки E04 в посудомойках Bosch. Диагностика системы Aquastop, проверка шлангов и п</span>
+            </a><a href="/articles/s/sk/skachat-albom-novykh-pesen-v-mashinu.html" class="pb-related-card">
+                <span class="pb-related-title">Как скачать альбом новых песен в машину: 5 способов 2026</span>
+                <span class="pb-related-desc">Пошаговая инструкция: как бесплатно скачать музыку для прослушивания в автомобиле через USB, Bluetoo</span>
+            </a><a href="/articles/k/ka/kak-oplatit-elektrichestvo-v-my-summer-car.html" class="pb-related-card">
+                <span class="pb-related-title">Как оплатить электричество в My Summer Car: полное руководство</span>
+                <span class="pb-related-desc">Пошаговая инструкция по оплате счетов за свет в My Summer Car. Узнайте, как пользоваться компьютером</span>
+            </a><a href="/articles/a/av/avtomobilnaya-sumka-kholodilnik-ot-prikurivatelya.html" class="pb-related-card">
+                <span class="pb-related-title">Автомобильная сумка-холодильник от прикуривателя: выбор и обзор</span>
+                <span class="pb-related-desc">Как выбрать автомобильную сумку-холодильник от прикуривателя. Сравнение термоэлектрических моделей, </span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

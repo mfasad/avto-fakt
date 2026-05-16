@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Яндекс Плюс и Android Auto: как связать, настроить и использовать — Авто Факт</title>
+    <meta name="description" content="Подробное руководство по интеграции Яндекс Плюс с Android Auto: настройка подписки, оптимизация сервисов, решение проблем и советы по безопасности. Узнайте, как получить максимум от мультимедиа в машине!">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/y/ya/yandeks-plyus-i-android-avto.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Яндекс Плюс и Android Auto: как связать, настроить и использовать">
+    <meta property="og:description" content="Подробное руководство по интеграции Яндекс Плюс с Android Auto: настройка подписки, оптимизация сервисов, решение проблем и советы по безопасности. Узнайте, как получить максимум от мультимедиа в машине!">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Яндекс Плюс и Android Auto: как связать, настроить и использовать</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#что-такое-яндекс-плюс-и-зачем-он-нужен-в-android-auto">Что такое Яндекс Плюс и зачем он нужен в Android Auto</a></li><li><a href="#требования-для-подключения-устройства-версии-аккаунты">Требования для подключения: устройства, версии, аккаунты</a></li><li><a href="#пошаговая-настройка-яндекс-плюс-в-android-auto">Пошаговая настройка Яндекс Плюс в Android Auto</a></li><li><a href="#оптимизация-яндекс-музыки-для-android-auto">Оптимизация Яндекс Музыки для Android Auto</a></li><li><a href="#яндекс-навигатор-с-премиум-функциями-в-android-auto">Яндекс Навигатор с премиум-функциями в Android Auto</a></li><li><a href="#распространённые-проблемы-и-их-решения">Распространённые проблемы и их решения</a></li><li><a href="#безопасность-и-конфиденциальность-что-нужно-знать">Безопасность и конфиденциальность: что нужно знать</a></li><li><a href="#faq-ответы-на-частые-вопросы">FAQ: ответы на частые вопросы</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/k/ka/kak-konditsioner-rabotaet-na-osushenie.html">Как работает кондиционер на осушение: принцип и особенности</a></li><li><a href="/articles/s/sh/shifter-perevod-na-russkij.html">Shifter перевод на русский: значение, сленг и техника</a></li><li><a href="/articles/p/pu/pusko-zaryadnoe-ustrojstvo-dlya-avtomobilnogo-akkumulyatora-kakoe-vybrat.html">Пуско-зарядное устройство для авто: как выбрать лучшее в 2026 году</a></li><li><a href="/articles/d/de/derzhatel-dlya-telefona-v-mashinu-obzor.html">Держатель для телефона в машину: обзор типов, креплений и моделей</a></li><li><a href="/articles/e/ev/evro-taksi-simulyator-2.html">Euro Truck Simulator 2: Полное руководство по игре</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Яндекс Плюс и Android Auto: полное руководство по настройке и использованию</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#что-такое-яндекс-плюс-и-зачем-он-нужен-в-android-auto">Что такое Яндекс Плюс и зачем он нужен в Android Auto</a></li><li><a href="#требования-для-подключения-устройства-версии-аккаунты">Требования для подключения: устройства, версии, аккаунты</a></li><li><a href="#пошаговая-настройка-яндекс-плюс-в-android-auto">Пошаговая настройка Яндекс Плюс в Android Auto</a></li><li><a href="#оптимизация-яндекс-музыки-для-android-auto">Оптимизация Яндекс Музыки для Android Auto</a></li><li><a href="#яндекс-навигатор-с-премиум-функциями-в-android-auto">Яндекс Навигатор с премиум-функциями в Android Auto</a></li><li><a href="#распространённые-проблемы-и-их-решения">Распространённые проблемы и их решения</a></li><li><a href="#безопасность-и-конфиденциальность-что-нужно-знать">Безопасность и конфиденциальность: что нужно знать</a></li><li><a href="#faq-ответы-на-частые-вопросы">FAQ: ответы на частые вопросы</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body"><p>Современные автомобили всё чаще превращаются в умные мультимедийные центры, где <strong>Android Auto</strong> играет ключевую роль. А с появлением <strong>Яндекс Плюс</strong> — подписочного сервиса от Яндекса — возможности развлечений и удобства за рулём расширились ещё больше. Но как правильно связать эти два сервиса, чтобы получить доступ к премиум-функциям музыки, карт и голосового помощника прямо на бортовом экране? В этой статье разберём все нюансы: от подключения до решения типичных проблем.</p>
+
+<p>Многие водители сталкиваются с путаницей: почему <em>Яндекс Музыка</em> в <em>Android Auto</em> не показывает премиум-треки, хотя подписка <strong>Яндекс Плюс</strong> активна? Или почему голосовые команды работают нестабильно? Ответы кроются в тонкостях синхронизации аккаунтов, версий приложений и настроек самого <em>Android Auto</em>. Мы не только дадим пошаговые инструкции, но и раскроем <mark>скрытые функции, о которых Яндекс не рассказывает в официальной документации</mark> — например, как заставить работать офлайн-карты в <em>Яндекс Навигаторе</em> через <em>Android Auto</em> без подключения к интернету.</p>
+
+<h2 id="что-такое-яндекс-плюс-и-зачем-он-нужен-в-android-auto">Что такое Яндекс Плюс и зачем он нужен в Android Auto</h2>
+
+<p><strong>Яндекс Плюс</strong> — это подписочный сервис, который объединяет премиум-доступ к основным продуктам Яндекса: <em>Яндекс Музыка</em>, <em>Кинопоиск</em>, <em>Яндекс Навигатор</em>, <em>Яндекс Диск</em> и другим. В контексте <em>Android Auto</em> подписка даёт три ключевых преимущества:</p>
+
+<ul>
+ <li>🎵 <strong>Безлимитная музыка без лишней воды</strong> — доступ к миллионам треков в высоком качестве, включая офлайн-проигрывание.</li>
+ <li>🗺️ <strong>Расширенные функции Навигатора</strong> — голосовые подсказки от звёзд, офлайн-карты для 200+ стран, предупреждения о камерах и пробках в реальном времени.</li>
+ <li>🎬 <strong>Кинопоиск в машине</strong> — прослушивание аудиокниг и подкастов (через <em>Android Auto</em> доступно только аудио, видео заблокировано по соображениям безопасности).</li>
+</ul>
+
+<p>Без подписки <strong>Яндекс Плюс</strong> в <em>Android Auto</em> вы получите урезанный функционал: музыка с рекламой, карты без офлайн-режима, отсутствие голосовых пакетов в Навигаторе. При этом сама подписка стоит от <strong>169 ₽/месяц</strong> (при оплате на год), что дешевле отдельных премиум-версий каждого сервиса.</p>
+
+<blockquote>⚠️ <strong>Внимание:</strong> Если вы используете <em>Android Auto</em> на экране автомобиля (не на телефоне!), некоторые функции <strong>Яндекс Плюс</strong> могут быть ограничены производителем. Например, <em>Honda</em> и <em>Toyota</em> блокируют доступ к <em>Яндекс Музыке</em> во время движения — это ограничение на уровне прошивки мультимедийной системы.</blockquote>
+
+<h2 id="требования-для-подключения-устройства-версии-аккаунты">Требования для подключения: устройства, версии, аккаунты</h2>
+
+<p>Чтобы <strong>Яндекс Плюс</strong> работал в <em>Android Auto</em>, необходимо выполнить несколько условий:</p>
+
+<div class="pb-table-wrap"><table>
+ <thead>
+  <tr>
+   <th>Компонент</th>
+   <th>Минимальные требования</th>
+   <th>Рекомендуемая версия</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><em>Android Auto</em></td>
+   <td>Версия 6.0+</td>
+   <td>8.0+ (полная поддержка голосовых команд)</td>
+  </tr>
+  <tr>
+   <td><em>Яндекс Музыка</em></td>
+   <td>5.0+</td>
+   <td>6.50+ (стабильная работа с офлайн-треками)</td>
+  </tr>
+  <tr>
+   <td><em>Яндекс Навигатор</em></td>
+   <td>4.0+</td>
+   <td>5.30+ (поддержка офлайн-карт для <strong>Яндекс Плюс</strong>)</td>
+  </tr>
+  <tr>
+   <td>Android на телефоне</td>
+   <td>8.0 (Oreo)</td>
+   <td>10+ (оптимизированная работа с мультимедиа)</td>
+  </tr>
+  <tr>
+   <td>Подключение к машине</td>
+   <td>USB или Bluetooth</td>
+   <td>USB (стабильнее для потоковой передачи музыки)</td>
+  </tr>
+ </tbody>
+</table></div>
+
+<p>Критично важно, чтобы на телефоне и в <em>Android Auto</em> был использован <strong>один и тот же аккаунт Яндекса</strong>, к которому привязана подписка <strong>Яндекс Плюс</strong>. Если вы залогинены под разными почтами — премиум-функции работать не будут. Проверить текущий аккаунт можно в настройках приложения <em>Яндекс</em> на телефоне: <code>Профиль → Аккаунт</code>.</p>
+
+<div class="pb-poll" id="poll-30210d02"><div class="pb-poll-question">📊 Как вы подключаете телефон к Android Auto?</div><div class="pb-poll-option" data-poll="30210d02" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">По USB</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="30210d02" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">По Bluetooth</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="30210d02" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">По Wi-Fi</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="30210d02" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Не знаю</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<p>Ещё один нюанс: некоторые китайские смартфоны (например, <em>Xiaomi</em> или <em>Realme</em>) могут блокировать фоновую активность <em>Android Auto</em> из-за агрессивной оптимизации батареи. В этом случае нужно вручную добавить приложение в исключения: <code>Настройки → Батарея → Оптимизация батареи → Android Auto → Отключить оптимизацию</code>.</p>
+
+<h2 id="пошаговая-настройка-яндекс-плюс-в-android-auto">Пошаговая настройка Яндекс Плюс в Android Auto</h2>
+
+<p>Если все требования выполнены, переходим к подключению. Инструкция актуальна для <em>Android Auto</em> версии 8.0+ и <strong>Яндекс Плюс</strong> 2026 года.</p>
+
+<ol>
+ <li>
+  <p><strong>Активируйте подписку <strong>Яндекс Плюс</strong>.</p>
+  <p>Перейдите на сайт <a href="https://plus.yandex.ru" target="_blank" rel="nofollow noopener">plus.yandex.ru</a> или в приложение <em>Яндекс</em> на телефоне (<code>Профиль → Яндекс Плюс</code>). Оплатите подписку (можно пробный период на 14 дней). Убедитесь, что статус активен.</p>
+ </li>
+ <li>
+  <p><strong>Обновите приложения.</strong></p>
+  <p>Зайдите в <em>Google Play</em> и обновлите:
+  <ul>
+   <li>📱 <em>Android Auto</em></li>
+   <li>🎶 <em>Яндекс Музыка</em></li>
+   <li>🗺️ <em>Яндекс Навигатор</em></li>
+   <li>🔍 <em>Яндекс</em> (главное приложение)</li>
+  </ol>
+  </p>
+ </li>
+ <li>
+  <p><strong>Подключите телефон к машине.</strong></p>
+  <p>Используйте оригинальный USB-кабель (Bluetooth может не передавать музыку в высоком качестве). Разрешите доступ к <em>Android Auto</em> на экране автомобиля.</p>
+ </li>
+ <li>
+  <p><strong>Авторизуйтесь в сервисах Яндекса.</strong></p>
+  <p>Запустите <em>Яндекс Музыку</em> или <em>Навигатор</em> на телефоне, чтобы система синхронизировала данные с <strong>Яндекс Плюс</strong>.</p>
+ </li>
+</ul>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка перед поездкой</h4><label class="check-item"><input type="checkbox"><span>Подписка Яндекс Плюс активна</span></label><label class="check-item"><input type="checkbox"><span>Приложения обновлены</span></label><label class="check-item"><input type="checkbox"><span>Телефон подключён по USB</span></label><label class="check-item"><input type="checkbox"><span>Аккаунт Яндекса один и тот же на всех устройствах</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Если после подключения в <em>Android Auto</em> не отображаются премиум-функции, попробуйте:</p>
+<ul>
+ <li>🔄 Перезагрузить телефон и мультимедийную систему автомобиля.</li>
+ <li>🔌 Отключить/подключить USB-кабель.</li>
+ <li>📱 В настройках <em>Android Auto</em> на телефоне выбрать <code>Очистить кэш</code>.</li>
+</ul>
+
+<h2 id="оптимизация-яндекс-музыки-для-android-auto">Оптимизация Яндекс Музыки для Android Auto</h2>
+
+<p><em>Яндекс Музыка</em> — самый популярный сервис среди пользователей <strong>Яндекс Плюс</strong> в машине. Но чтобы она работала идеально, нужно настроить несколько параметров:</p>
+
+<p><strong>1. Офлайн-режим.</strong> Чтобы слушать музыку без интернета (например, в роуминге или за городом), скачайте плейлисты заранее:</p>
+<ol>
+ <li>Откройте <em>Яндекс Музыку</em> на телефоне.</li>
+ <li>Выберите плейлист и нажмите <code>Скачать</code> (значок стрелочки вниз).</li>
+ <li>В настройках приложения (<code>Настройки → Память</code>) выберите <code>Высокое качество</code> (320 кбит/с).</li>
+</ol>
+
+<p><strong>2. Голосовое управление.</strong> В <em>Android Auto</em> можно управлять музыкой голосом через <em>Алису</em>:</p>
+<ul>
+ <li>🎤 Скажите: «<em>Окей, Google</em>, включи <название трека> в Яндекс Музыке».</li>
+ <li>🎤 Или: «<em>Алиса</em>, поставь плейлист <название>».</li>
+</ul>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Если Алиса не реагирует на команды, проверьте в настройках <em>Android Auto</em>, включён ли доступ к микрофону для приложения <em>Яндекс</em> (<code>Настройки → Приложения → Яндекс → Разрешения → Микрофон</code>).</p></aside>
+
+<p><strong>3. Настройка интерфейса.</strong> В <em>Android Auto</em> отображаются только основные элементы управления. Чтобы упростить навигацию:</p>
+<ul>
+ <li>📌 Закрепите <em>Яндекс Музыку</em> на главном экране <em>Android Auto</em> (удерживайте иконку приложения).</li>
+ <li>🔀 Включите автовоспроизведение любимых треков в настройках <em>Яндекс Музыки</em> (<code>Настройки → Воспроизведение → Автовоспроизведение</code>).</li>
+</ul>
+
+<blockquote>⚠️ <strong>Внимание:</strong> На некоторых автомобилях (например, <em>Volkswagen</em> с системой <em>MIB3</em>) <em>Яндекс Музыка</em> может «подвисать» при переключении треков. Это связано с ограничениями прошивки. Решение — использовать проводное подключение вместо Bluetooth.</blockquote>
+
+<h2 id="яндекс-навигатор-с-премиум-функциями-в-android-auto">Яндекс Навигатор с премиум-функциями в Android Auto</h2>
+
+<p><em>Яндекс Навигатор</em> в паре с <strong>Яндекс Плюс</strong> предлагает уникальные возможности для водителей:</p>
+
+<ul>
+ <li>🗣️ <strong>Голосовые пакеты</strong> — подсказки от известных личностей (например, <em>Дмитрия Нагиева</em> или <em>Ивана Урганта</em>).</li>
+ <li>🚧 <strong>Офлайн-карты</strong> — загрузка карт регионов для работы без интернета.</li>
+ <li>🚨 <strong>Предупреждения о камерах</strong> — данные о стационарных и мобильных камерах в реальном времени.</li>
+ <li>🛣️ <strong>Альтернативные маршруты</strong> — предложение до 3 вариантов пути с учётом пробок.</li>
+</ul>
+
+<p>Чтобы активировать эти функции:</p>
+<ol>
+ <li>Откройте <em>Яндекс Навигатор</em> на телефоне.</li>
+ <li>Перейдите в <code>Профиль → Яндекс Плюс</code> и убедитесь, что подписка активна.</li>
+ <li>Скачайте офлайн-карты: <code>Настройки → Карты → Скачать карты</code>.</li>
+ <li>Выберите голосовой пакет: <code>Настройки → Голос → Премиум-голоса</code>.</li>
+</ol>
+
+<p>В <em>Android Auto</em> <em>Яндекс Навигатор</em> будет автоматически использовать премиум-настройки, если:</p>
+<ul>
+ <li>📱 Приложение обновлено до последней версии.</li>
+ <li>🔄 На телефоне включена синхронизация данных (<code>Настройки → Аккаунт → Синхронизация</code>).</li>
+ <li>🚗 Мультимедийная система автомобиля поддерживает отображение карт (некоторые старые модели показывают только аудио-плеер).</li>
+</ul>
+
+<details class="pb-accordion"><summary>Как обновить офлайн-карты в Яндекс Навигаторе?</summary><div class="pb-accordion-body"><p>Чтобы обновить офлайн-карты, откройте <em>Яндекс Навигатор</em> на телефоне, перейдите в <code>Настройки → Карты → Мои карты</code> и нажмите <code>Обновить</code> рядом с нужным регионом. Обновление займёт от 5 до 30 минут в зависимости от размера карты и скорости интернета. Не прерывайте процесс, иначе карта может повредиться.</p></div></details>
+
+<h2 id="распространённые-проблемы-и-их-решения">Распространённые проблемы и их решения</h2>
+
+<p>Даже при правильной настройке пользователи сталкиваются с багами. Вот самые частые и способы их устранения:</p>
+
+<div class="pb-table-wrap"><table>
+ <thead>
+  <tr>
+   <th>Проблема</th>
+   <th>Причина</th>
+   <th>Решение</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>Яндекс Музыка проигрывает треки в низком качестве</td>
+   <td>В настройках выбрано «Экономить трафик»</td>
+   <td>В <em>Яндекс Музыке</em>: <code>Настройки → Качество → Высокое (320 кбит/с)</code></td>
+  </tr>
+  <tr>
+   <td>Алиса не отвечает на голосовые команды</td>
+   <td>Микрофон заблокирован для <em>Android Auto</em></td>
+   <td>Проверьте разрешения в <code>Настройки → Приложения → Android Auto → Разрешения</code></td>
+  </tr>
+  <tr>
+   <td>Навигатор не показывает пробки</td>
+   <td>Отсутствует интернет или устаревшие данные</td>
+   <td>Обновите карты в <code>Настройки → Карты → Обновить</code> или проверьте подключение</td>
+  </tr>
+  <tr>
+   <td>Приложения Яндекса не отображаются в <em>Android Auto</em></td>
+   <td>Устаревшая версия <em>Android Auto</em> или кэш</td>
+   <td>Обновите <em>Android Auto</em> и очистите кэш (<code>Настройки → Приложения → Android Auto → Память → Очистить кэш</code>)</td>
+  </tr>
+ </tbody>
+</table></div>
+
+<p>Если проблема не решена, попробуйте <strong>сбросить настройки <em>Android Auto</em></em>:</p>
+<ol>
+ <li>Откройте <em>Android Auto</em> на телефоне.</li>
+ <li>Перейдите в <code>Настройки → Сброс</code>.</li>
+ <li>Подтвердите сброс и перезапустите приложение.</li>
+</ol>
+
+<blockquote>⚠️ <strong>Внимание:</strong> На автомобилях с <em>wireless Android Auto</em> (например, <em>BMW</em> или <em>Hyundai</em> после 2020 года) могут возникать задержки при подключении. Это связано с протоколом <code>Wi-Fi Direct</code>. Решение — использовать USB-кабель для стабильной работы.</blockquote>
+
+<h2 id="безопасность-и-конфиденциальность-что-нужно-знать">Безопасность и конфиденциальность: что нужно знать</h2>
+
+<p>Использование <strong>Яндекс Плюс</strong> в <em>Android Auto</em> поднимает вопросы приватности. Вот что стоит учесть:</p>
+
+<ul>
+ <li>📍 <strong>Геоданные.</strong> <em>Яндекс Навигатор</em> собирает информацию о ваших маршрутах, даже в офлайн-режиме. Эти данные используются для улучшения карт, но могут быть переданы третьим лицам (например, для таргетированной рекламы). Отключить сбор можно в <code>Настройки → Конфиденциальность → История местоположений</code>.</li>
+ <li>🎤 <strong>Голосовые записи.</strong> Все запросы к <em>Алисе</em> через <em>Android Auto</em> сохраняются на серверах Яндекса. Удалить их можно на странице <a href="https://passport.yandex.ru/profile" target="_blank" rel="nofollow noopener">управления аккаунтом</a>.</li>
+ <li>🔗 <strong>Синхронизация с другими устройствами.</strong> Если вы используете один аккаунт <strong>Яндекс Плюс</strong> на нескольких устройствах (например, телефон и планшет), история прослушивания музыки и маршруты будут объединяться.</li>
+</ul>
+
+<p>Для максимальной безопасности:</p>
+<ul>
+ <li>🔐 Используйте <strong>двухфакторную аутентификацию</strong> для аккаунта Яндекса.</li>
+ <li>📵 Отключайте <em>Android Auto</em> при продаже или сдаче автомобиля в аренду (чтобы новый владелец не получил доступ к вашим данным).</li>
+ <li>🔄 Регулярно проверяйте активные сессии в аккаунте Яндекса (<code>Профиль → Безопасность → Активные сессии</code>).</li>
+</ul>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Голосовые команды и геоданные из <em>Android Auto</em> могут использоваться для персонализированной рекламы. Если это критично, отключите сбор данных в настройках приложений Яндекса.</p></aside>
+
+<h2 id="faq-ответы-на-частые-вопросы">FAQ: ответы на частые вопросы</h2>
+
+<details>
+ <summary>Можно ли использовать Яндекс Плюс на нескольких устройствах одновременно?</summary>
+ <p>Да, подписка <strong>Яндекс Плюс</strong> привязана к аккаунту, а не к устройству. Вы можете слушать музыку или использовать Навигатор на телефоне, планшете и в <em>Android Auto</em> одновременно. Однако некоторые функции (например, офлайн-проигрывание музыки) требуют авторизации на каждом устройстве.</p>
+</details>
+
+<details>
+ <summary>Почему в Android Auto не работает премиум-голос в Яндекс Навигаторе?</summary>
+ <p>Это может быть связано с:</p>
+ <ul>
+  <li>Устаревшей версией <em>Яндекс Навигатора</em> (обновите до 5.30+).</li>
+  <li>Отсутствием интернета (голосовые пакеты загружаются онлайн).</li>
+  <li>Ограничениями производителя автомобиля (например, <em>Mazda</em> блокирует сторонние голоса).</li>
+ </ul>
+ <p>Попробуйте переустановить приложение или использовать USB-подключение вместо Bluetooth.</p>
+</details>
+
+<details>
+ <summary>Как отменить подписку Яндекс Плюс, если оплатил через Google Play?</summary>
+ <p>Если вы оформили подписку через <em>Google Play</em>, отменить её можно только в настройках аккаунта Google:</p>
+ <ol>
+  <li>Откройте <em>Google Play</em> на телефоне.</li>
+  <li>Перейдите в <code>Профиль → Платежи и подписки → Подписки</code>.</li>
+  <li>Найдите <strong>Яндекс Плюс</strong> и нажмите <code>Отменить подписку</code>.</li>
+ </ol>
+ <p>Доступ к премиум-функциям сохранится до конца оплаченного периода.</p>
+</details>
+
+<details>
+ <summary>Можно ли слушать подкасты из Кинопоиска в Android Auto?</summary>
+ <p>Да, но с ограничениями. В <em>Android Auto</em> доступны только <strong>аудиоподкасты и аудиокниги</strong> из <em>Кинопоиска</em>. Видео и фильмы заблокированы по соображениям безопасности. Чтобы слушать:</p>
+ <ol>
+  <li>Скачайте подкаст в приложении <em>Кинопоиск</em> на телефоне.</li>
+  <li>Подключите телефон к <em>Android Auto</em>.</li>
+  <li>Запустите воспроизведение через <em>Яндекс Музыку</em> (раздел «Подкасты»).</li>
+ </ol>
+</details>
+
+<details>
+ <summary>Почему Android Auto не показывает Яндекс Навигатор в списке приложений?</summary>
+ <p>Это может происходить по следующим причинам:</p>
+ <ul>
+  <li>Приложение не обновлено (требуется версия 5.0+).</li>
+  <li>В настройках <em>Android Auto</em> отключён показ <em>Яндекс Навигатора</em> (<code>Настройки → Приложения → Яндекс Навигатор → Показывать в меню</code>).</li>
+  <li>Производитель автомобиля заблокировал сторонние навигаторы (актуально для <em>Toyota</em>, <em>Lexus</em>).</li>
+ </ul>
+ <p>Попробуйте перезагрузить телефон и мультимедийную систему автомобиля.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/k/ka/kak-konditsioner-rabotaet-na-osushenie.html" class="pb-related-card">
+                <span class="pb-related-title">Как работает кондиционер на осушение: принцип и особенности</span>
+                <span class="pb-related-desc">Подробный разбор режима осушения воздуха в сплит-системах. Отличия от охлаждения, влияние на влажнос</span>
+            </a><a href="/articles/s/sh/shifter-perevod-na-russkij.html" class="pb-related-card">
+                <span class="pb-related-title">Shifter перевод на русский: значение, сленг и техника</span>
+                <span class="pb-related-desc">Shifter перевод на русский: перевод слова, сленговые значения в авто-мире и технические аспекты пере</span>
+            </a><a href="/articles/p/pu/pusko-zaryadnoe-ustrojstvo-dlya-avtomobilnogo-akkumulyatora-kakoe-vybrat.html" class="pb-related-card">
+                <span class="pb-related-title">Пуско-зарядное устройство для авто: как выбрать лучшее в 2026 году</span>
+                <span class="pb-related-desc">Экспертный гайд по выбору пуско-зарядного устройства для автомобиля: типы, параметры, рейтинг моделе</span>
+            </a><a href="/articles/d/de/derzhatel-dlya-telefona-v-mashinu-obzor.html" class="pb-related-card">
+                <span class="pb-related-title">Держатель для телефона в машину: обзор типов, креплений и моделей</span>
+                <span class="pb-related-desc">Полный обзор держателей для телефона в авто. Сравнение магнитных, механических и беспроводных крепле</span>
+            </a><a href="/articles/e/ev/evro-taksi-simulyator-2.html" class="pb-related-card">
+                <span class="pb-related-title">Euro Truck Simulator 2: Полное руководство по игре</span>
+                <span class="pb-related-desc">Обзор Euro Truck Simulator 2: настройки, выбор грузовиков, советы по заработку и управлению. Все сек</span>
+            </a><a href="/articles/m/ma/maksimalnyj-zapas-khoda-elektromobilya.html" class="pb-related-card">
+                <span class="pb-related-title">Максимальный запас хода электромобиля: от чего зависит и как увеличить</span>
+                <span class="pb-related-desc">Анализ факторов, влияющих на дальность пробега EV. Реальный запас хода зимой, методики тестирования </span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

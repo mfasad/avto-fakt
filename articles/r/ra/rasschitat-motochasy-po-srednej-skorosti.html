@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как рассчитать моточасы по средней скорости: формулы и нюансы — Авто Факт</title>
+    <meta name="description" content="Узнайте, как точно рассчитать моточасы по средней скорости двигателя. Разбор формул, таблицы соответствия и влияние нагрузки на ресурс техники.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/r/ra/rasschitat-motochasy-po-srednej-skorosti.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как рассчитать моточасы по средней скорости: формулы и нюансы">
+    <meta property="og:description" content="Узнайте, как точно рассчитать моточасы по средней скорости двигателя. Разбор формул, таблицы соответствия и влияние нагрузки на ресурс техники.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/spetstekhnika-i-moto/">Спецтехника и Мото</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как рассчитать моточасы по средней скорости: формулы и нюансы</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#что-такое-моточас-и-почему-важна-средняя-скорость">Что такое моточас и почему важна средняя скорость</a></li><li><a href="#формула-расчета-и-базовые-коэффициенты">Формула расчета и базовые коэффициенты</a></li><li><a href="#влияние-типа-техники-на-расчеты">Влияние типа техники на расчеты</a></li><li><a href="#метод-пересчета-через-расход-топлива">Метод пересчета через расход топлива</a></li><li><a href="#практическое-применение-когда-считать-по-скорости">Практическое применение: когда считать по скорости</a></li><li><a href="#ошибки-при-расчете-и-как-их-избежать">Ошибки при расчете и как их избежать</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/a/at/ats-5-40-rasshifrovka.html">АЦ 5-40: расшифровка маркировки пожарного авто, технические характеристики</a></li><li><a href="/articles/v/ve/ves-avtobusa-paz-3205.html">Вес автобуса ПАЗ 3205: масса, грузоподъемность и характеристики</a></li><li><a href="/articles/s/sa/samaya-krutaya-voennaya-tekhnika.html">Топ-10 самой крутой военной техники 2026: обзор и характеристики</a></li><li><a href="/articles/3/35/350-motochasov-eto-skolko-km.html">350 моточасов это сколько км: точный расчет ресурса</a></li><li><a href="/articles/6/6-/6-park-avtobusnyj-v-spb.html">6-й автобусный парк СПб: история, техника и современность</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Расчет моточасов по средней скорости: точные формулы и практические примеры</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#что-такое-моточас-и-почему-важна-средняя-скорость">Что такое моточас и почему важна средняя скорость</a></li><li><a href="#формула-расчета-и-базовые-коэффициенты">Формула расчета и базовые коэффициенты</a></li><li><a href="#влияние-типа-техники-на-расчеты">Влияние типа техники на расчеты</a></li><li><a href="#метод-пересчета-через-расход-топлива">Метод пересчета через расход топлива</a></li><li><a href="#практическое-применение-когда-считать-по-скорости">Практическое применение: когда считать по скорости</a></li><li><a href="#ошибки-при-расчете-и-как-их-избежать">Ошибки при расчете и как их избежать</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+<p>Владельцы спецтехники, генераторов и лодочных моторов часто сталкиваются с ситуацией, когда необходимо сопоставить реальный пробег или время работы с ресурсом двигателя. Стандартные часы на спидометре или таймере не всегда отражают реальную нагрузку, особенно если техника работает в режиме частых остановок или холостого хода. Именно здесь на помощь приходит понятие <strong>моточаса</strong>, которое позволяет оценить износ узлов более объективно, чем обычный хронометраж.</p>
+
+<p>Понимание того, как <em>рассчитать моточасы по средней скорости</em>, критически важно для планирования технического обслуживания и замены масла. Это не просто теоретическая задача для инженеров, а практическая необходимость для каждого, кто хочет продлить жизнь своему оборудованию. В этой статье мы разберем математические модели, коэффициенты пересчета и влияние режима работы на итоговые цифры.</p>
+
+<p>Многие ошибочно полагают, что один моточас равен одному астрономическому часу работы двигателя. На практике это верно только для определенных режимов, в то время как работа под полной нагрузкой или, наоборот, на холостом ходу требует совершенно иных подходов к учету. Мы детально рассмотрим, почему <strong>средняя скорость</strong> становится ключевым параметром в упрощенных формулах пересчета для колесной и гусеничной техники.</p>
+
+<h2 id="что-такое-моточас-и-почему-важна-средняя-скорость">Что такое моточас и почему важна средняя скорость</h2>
+<p><strong>Моточас</strong> — это единица измерения продолжительности работы двигателя, учитывающая не только время, но и режим нагрузки. Проще говоря, это время, за которое коленчатый вал совершает количество оборотов, эквивалентное работе на номинальной мощности в течение одного часа. Для дизельных двигателей стационарных установок один моточас часто приравнивают к 1000 оборотов вала, но для подвижной техники с переменной скоростью движения этот параметр трансформируется.</p>
+
+<p>Связь между моточасами и средней скоростью обусловлена тем, что при движении техники с разной скоростью двигатель испытывает разную нагрузку. Если трактор или погрузчик движется медленно с полным ковшом, двигатель работает в напряженном режиме, сжигая больше топлива и изнашиваясь быстрее, чем при движении порожняком на высокой передаче. Поэтому <em>средняя скорость</em> выступает индикатором интенсивности использования машины.</p>
+
+<blockquote>⚠️ Внимание: Использование усредненных коэффициентов без учета фактической загрузки машины может привести к ошибкам в планировании ТО до 20-30%. Всегда учитывайте специфику работ.</blockquote>
+
+<p>Существует несколько методов конвертации, но наиболее распространенным в полевых условиях является метод, базирующийся на <strong>среднескоростном режиме</strong>. Он позволяет быстро получить приближенное значение без подключения сложной диагностической электроники. Это особенно актуально для старой техники или арендного оборудования, где счетчик моточасов может быть неисправен.</p>
+
+<div class="pb-poll" id="poll-8c9eb881"><div class="pb-poll-question">📊 Как вы обычно учитываете ресурс техники?</div><div class="pb-poll-option" data-poll="8c9eb881" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">По спидометру (пробегу)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="8c9eb881" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">По счетчику моточасов</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="8c9eb881" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">По расходу топлива</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="8c9eb881" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Визуально, на глаз</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="формула-расчета-и-базовые-коэффициенты">Формула расчета и базовые коэффициенты</h2>
+<p>Для перевода времени работы в моточасы с учетом скорости используется эмпирическая формула, которая базируется на соотношении фактической скорости движения к максимально возможной или эталонной. Базовая формула выглядит следующим образом: <strong>МЧ = Т × К</strong>, где Т — время работы в часах, а К — коэффициент, зависящий от режима работы.</p>
+
+<p>Однако, если мы говорим именно о привязке к скорости, то часто используют упрощенную логику: чем ниже средняя скорость при высокой мощности, тем выше коэффициент пересчета. Например, для колесных тракторов принято считать, что 1 моточас равен:</p>
+<ul>
+<li>🚜 1 час работы на холостом ходу (скорость 0 км/ч) = 0,2–0,3 моточаса.</li>
+<li>🚜 1 час работы в транспортном режиме (максимальная скорость) = 1 моточас.</li>
+<li>🚜 1 час работы в тяговом режиме (средняя скорость 5-10 км/ч) = 1,5–2 моточаса.</li>
+</ul>
+
+<p>Важно отметить, что для дизельных двигателей промышленного назначения часто используется правило: <mark>один моточас приравнивается к работе двигателя на номинальных оборотах в течение 60 минут, что примерно соответствует 25-30 км пробега для легковой техники или 10-15 км для тяжелой спецтехники</mark>. Это позволяет пересчитывать моточасы в километры и обратно, используя среднюю скорость как связующее звено.</p>
+
+<p>При расчетах необходимо учитывать тип трансмиссии. Гидротрансформаторные передачи вносят свои коррективы, так как часть мощности теряется на тепло, и двигатель может работать на высоких оборотах при нулевой скорости движения (режим stall). В таких случаях <strong>средняя скорость</strong> не является достоверным показателем, и лучше опираться на расход топлива.</p>
+
+<h2 id="влияние-типа-техники-на-расчеты">Влияние типа техники на расчеты</h2>
+<p>Различия в конструкции диктуют разные подходы к учету ресурса. Для колесной техники, такой как погрузчики или экскаваторы-погрузчики, средняя скорость движения напрямую зависит от длины плеча перевозки грунта. Если цикл короткий, машина большую часть времени разгоняется и тормозит, что увеличивает износ.</p>
+
+<p>Гусеничная техника, например бульдозеры или гусеничные экскаваторы, имеет свои особенности. Здесь понятие"скорость" менее информативно, так как гусеницы создают высокое сопротивление. Для них часто используется коэффициент 1,5 при работе в тяжелых условиях. Расчет по средней скорости здесь применим только для перегоночных режимов.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Для гусеничной техники лучше использовать метод пересчета через расход топлива: 1 моточас ≈ 10-12 литров дизеля для двигателей объемом 4-6 литров.</p></aside>
+
+<p>Лодочные моторы и стационарные генераторы требуют отдельного внимания. У лодочных моторов <em>средняя скорость</em> судна мало влияет на износ, важнее обороты винта и нагрузка на гребной вал. Генераторы же работают в постоянном режиме, и для них 1 моточас равен 1 часу работы, если нагрузка составляет более 70% от номинала.</p>
+
+<p>Ниже приведена таблица ориентировочных коэффициентов пересчета для различных видов техники в зависимости от режима эксплуатации:</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Тип техники</th>
+<th>Режим работы</th>
+<th>Ср. скорость (км/ч)</th>
+<th>Коэффициент (1 час =? МЧ)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Колесный трактор</td>
+<td>Транспортный</td>
+<td>25-30</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Колесный трактор</td>
+<td>Пахота/Тяга</td>
+<td>5-8</td>
+<td>1.6</td>
+</tr>
+<tr>
+<td>Фронтальный погрузчик</td>
+<td>Цикличный (карьер)</td>
+<td>10-15</td>
+<td>1.4</td>
+</tr>
+<tr>
+<td>Гусеничный экскаватор</td>
+<td>Копка грунта</td>
+<td>0 (стационарно)</td>
+<td>1.2 (по оборотам)</td>
+</tr>
+<tr>
+<td>Легковой авто (дизель)</td>
+<td>Трасса</td>
+<td>80-100</td>
+<td>0.8</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2 id="метод-пересчета-через-расход-топлива">Метод пересчета через расход топлива</h2>
+<p>Когда данные о средней скорости недоступны или ненадежны, наиболее точным методом остается расчет через <strong>расход топлива</strong>. Этот способ считается"золотым стандартом" в логистике и управлении автопарками. Логика проста: двигатель изнашивается пропорционально количеству сгоревшего топлива, которое, в свою очередь, зависит от нагрузки.</p>
+
+<p>Формула расчета выглядит так: <strong>МЧ = (Фактический расход за период) / (Нормативный расход на 1 моточас)</strong>. Нормативный расход берется из технической документации двигателя при работе на номинальных оборотах. Например, если двигатель потребляет 5 литров в час на холостых и 15 литров под нагрузкой, то усредненный показатель поможет определить реальный ресурс.</p>
+
+<blockquote>⚠️ Внимание: Не используйте данные бортового компьютера для старых автомобилей — они часто имеют погрешность до 15%. Лучше заправлять технику по мернику и считать фактический литраж.</blockquote>
+
+<p>Преимущество топливного метода в том, что он автоматически учитывает все факторы: пробуксовку, работу гидравлики, движение в гору и простои с работающим двигателем. Средняя скорость здесь не нужна, так как <em>топливо</em> уже является интегральным показателем совершенной работы.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка данных для расчета</h4><label class="check-item"><input type="checkbox"><span>Зафиксировать начальные показания счетчика</span></label><label class="check-item"><input type="checkbox"><span>Замерить точный объем залитого топлива</span></label><label class="check-item"><input type="checkbox"><span>Записать часы работы двигателя</span></label><label class="check-item"><input type="checkbox"><span>Рассчитать средний расход в час</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="практическое-применение-когда-считать-по-скорости">Практическое применение: когда считать по скорости</h2>
+<p>Расчет по средней скорости актуален в первую очередь для транспортных операций. Если ваш фронтальный погрузчик 80% времени проводит в движении по складу или карьеру, то скорость будет хорошим индикатором. В этом случае можно установить GPS-трекер, который будет снимать данные о скорости и пересчитывать их в условные моточасы.</p>
+
+<p>Также этот метод полезен для оценки износа шин и трансмиссии, которые напрямую зависят от пройденного расстояния. Зная среднюю скорость и время работы, легко получить пробег, а затем, используя паспортный ресурс узла, спрогнозировать остаток.</p>
+
+<p>Однако, если техника работает в режиме"старт-стоп" (например, коммунальная машина, убирающая снег), то средняя скорость будет низкой, но нагрузка на двигатель — высокой из-за работы навесного оборудования. В таких случаях формула по скорости даст сильную погрешность в меньшую сторону, занизив реальный износ.</p>
+
+<p>Для точного планирования бюджета на ремонт важно понимать, что <strong>моточасы</strong> влияют на стоимость машино-часа при аренде. Арендодатели часто используют повышенные коэффициенты для тяжелых условий, и знание формул расчета поможет вам проверить корректность выставленных счетов.</p>
+
+<h2 id="ошибки-при-расчете-и-как-их-избежать">Ошибки при расчете и как их избежать</h2>
+<p>Самая распространенная ошибка — игнорирование работы на холостом ходу. Многие считают, что если машина стоит, то ресурс не расходуется. Это неверно. Двигатель внутреннего сгорания изнашивается даже на холостых, хотя и медленнее. При расчете по средней скорости этот простой часто выпадает из уравнения, если не ввести поправочный коэффициент.</p>
+
+<p>Вторая ошибка — использование паспортной максимальной скорости вместо реальной средней. Если в документации указано, что трактор развивает 40 км/ч, а по полю он идет со скоростью 6 км/ч, то подстановка 40 в формулу даст катастрофически неверный результат. Необходимо использовать данные телеметрии или замеры.</p>
+
+<details class="pb-accordion"><summary>Влияние качества топлива на моточасы</summary><div class="pb-accordion-body"><p>Низкокачественное топливо с высоким содержанием серы может сократить интервал замены масла на 30-40%. В этом случае расчетные моточасы не будут соответствовать реальному состоянию масляной пленки, и двигатель износится быстрее, чем предсказывает математика. Всегда делайте скидку на качество ГСМ.</p></div></details>
+
+<p>Третья ошибка — отсутствие дифференциации по сезонам. Зимой, при прогреве и работе в мороз, износ двигателя выше. Летом, в жару, выше нагрузка на систему охлаждения. Среднегодовая скорость не учитывает эти климатические факторы, поэтому для точного учета лучше вести сезонные коэффициенты.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Для максимальной точности комбинируйте методы: используйте данные о средней скорости для оценки пробега и трансмиссии, а данные о расходе топлива — для оценки состояния двигателя и масла.</p></aside>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Сколько километров в одном моточасе для легкового автомобиля?</summary>
+<p>Для легкового дизельного автомобиля в смешанном цикле 1 моточас условно приравнивается к 25-30 км пробега. Для бензинового двигателя этот показатель может быть выше — около 35-40 км, так как они чаще работают на более высоких оборотах при той же скорости.</p>
+</details>
+
+<details>
+<summary>Можно ли рассчитать моточасы только по пробегу?</summary>
+<p>Нет, нельзя точно. Пробег показывает расстояние, но не учитывает время работы двигателя на месте (простои, работа гидравлики). 100 км по трассе и 100 км в городском режиме"старт-стоп" дадут одинаковый пробег, но разный износ двигателя в моточасах.</p>
+</details>
+
+<details>
+<summary>Зачем вообще нужно переводить часы в моточасы?</summary>
+<p>Это необходимо для правильного планирования технического обслуживания (замена масла, фильтров, ремней). Ресурс многих узлов исчисляется именно в моточасах, а не в календарном времени или километрах, особенно для спецтехники.</p>
+</details>
+
+<details>
+<summary>Влияет ли марка двигателя на расчет?</summary>
+<p>Да, косвенно. Разные двигатели имеют разный рабочий объем и обороты номинальной мощности. Формулы пересчета могут варьироваться в зависимости от рекомендаций производителя (например, <em>Caterpillar</em>, <em>Kubota</em> или <em>ЯМЗ</em> имеют свои спецификации).</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/a/at/ats-5-40-rasshifrovka.html" class="pb-related-card">
+                <span class="pb-related-title">АЦ 5-40: расшифровка маркировки пожарного авто, технические характеристики</span>
+                <span class="pb-related-desc">Что означает АЦ 5-40 в пожарной технике? Полная расшифровка аббревиатуры, технические параметры, наз</span>
+            </a><a href="/articles/v/ve/ves-avtobusa-paz-3205.html" class="pb-related-card">
+                <span class="pb-related-title">Вес автобуса ПАЗ 3205: масса, грузоподъемность и характеристики</span>
+                <span class="pb-related-desc">Подробный разбор веса автобуса ПАЗ 3205. Узнайте полную и снаряженную массу, распределение нагрузки </span>
+            </a><a href="/articles/s/sa/samaya-krutaya-voennaya-tekhnika.html" class="pb-related-card">
+                <span class="pb-related-title">Топ-10 самой крутой военной техники 2026: обзор и характеристики</span>
+                <span class="pb-related-desc">Подробный разбор самой мощной и технологичной военной техники мира: от гиперзвуковых ракет до беспил</span>
+            </a><a href="/articles/3/35/350-motochasov-eto-skolko-km.html" class="pb-related-card">
+                <span class="pb-related-title">350 моточасов это сколько км: точный расчет ресурса</span>
+                <span class="pb-related-desc">Узнайте, как перевести 350 моточасов в километры. Формулы расчета, коэффициенты износа и влияние реж</span>
+            </a><a href="/articles/6/6-/6-park-avtobusnyj-v-spb.html" class="pb-related-card">
+                <span class="pb-related-title">6-й автобусный парк СПб: история, техника и современность</span>
+                <span class="pb-related-desc">Полный обзор 6-го автобусного парка Санкт-Петербурга: история создания, маршрутная сеть, используема</span>
+            </a><a href="/articles/k/ku/kupit-avtogidropodemnik-b-u.html" class="pb-related-card">
+                <span class="pb-related-title">Автогидроподъемники Б/У: как купить выгодно и безопасно в 2026 году</span>
+                <span class="pb-related-desc">Полное руководство по покупке б/у автогидроподъемников: проверка состояния, лучшие модели, цены, юри</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

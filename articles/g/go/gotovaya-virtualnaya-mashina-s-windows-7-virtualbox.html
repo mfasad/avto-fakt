@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Готовая виртуальная машина с Windows 7 для VirtualBox: установка — Авто Факт</title>
+    <meta name="description" content="Где скачать готовую виртуальную машину с Windows 7 для VirtualBox. Пошаговая инструкция настройки, установка драйверов и решение проблем совместимости.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/g/go/gotovaya-virtualnaya-mashina-s-windows-7-virtualbox.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Готовая виртуальная машина с Windows 7 для VirtualBox: установка">
+    <meta property="og:description" content="Где скачать готовую виртуальную машину с Windows 7 для VirtualBox. Пошаговая инструкция настройки, установка драйверов и решение проблем совместимости.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Готовая виртуальная машина с Windows 7 для VirtualBox: установка</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#риски-использования-готовых-образов-из-интернета">Риски использования готовых образов из интернета</a></li><li><a href="#технические-требования-и-подготовка-хоста">Технические требования и подготовка хоста</a></li><li><a href="#процесс-импорта-и-настройки-виртуальной-машины">Процесс импорта и настройки виртуальной машины</a></li><li><a href="#установка-драйверов-и-дополнений-гостевой-ос">Установка драйверов и дополнений гостевой ОС</a></li><li><a href="#оптимизация-производительности-и-стабильности">Оптимизация производительности и стабильности</a></li><li><a href="#безопасность-и-изоляция-среды">Безопасность и изоляция среды</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/l/li/liaz-4292-dlya-omsi-2.html">ЛиАЗ 4292 для OMSI 2: установка, настройка и моды</a></li><li><a href="/articles/1/15/150-motochasov-eto-skolko-kilometrov.html">150 моточасов это сколько км: Точный расчет и таблицы</a></li><li><a href="/articles/c/ch/chto-znachit-sistema-start-stop-v-avtomobile.html">Система Старт-Стоп в автомобиле: принцип, плюсы и минусы</a></li><li><a href="/articles/k/ka/kak-perevoditsya-power-off.html">Как переводится Power Off: значение кнопки и режимы</a></li><li><a href="/articles/c/ch/chasy-s-khronometrom-eto.html">Часы с хронометром — что это, как выбрать и использовать в 2026 году</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Готовая виртуальная машина с Windows 7 для VirtualBox: полное руководство</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#риски-использования-готовых-образов-из-интернета">Риски использования готовых образов из интернета</a></li><li><a href="#технические-требования-и-подготовка-хоста">Технические требования и подготовка хоста</a></li><li><a href="#процесс-импорта-и-настройки-виртуальной-машины">Процесс импорта и настройки виртуальной машины</a></li><li><a href="#установка-драйверов-и-дополнений-гостевой-ос">Установка драйверов и дополнений гостевой ОС</a></li><li><a href="#оптимизация-производительности-и-стабильности">Оптимизация производительности и стабильности</a></li><li><a href="#безопасность-и-изоляция-среды">Безопасность и изоляция среды</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Использование операционной системы <strong>Windows 7</strong> в современных реалиях часто продиктовано необходимостью запуска специфического программного обеспечения, которое не совместимо с более новыми версиями "окон". Многие пользователи ищут готовые решения, чтобы избежать сложного процесса настройки, установки драйверов и активации. <em>Oracle VM VirtualBox</em> является одним из самых популярных инструментов для создания изолированной среды, позволяющей запускать старые ОС без риска для основной системы.</p>
+
+<p>Поиск готовой виртуальной машины (VM) может показаться быстрым путем, однако он сопряжен с серьезными рисками безопасности и юридическими нюансами. В этой статье мы подробно разберем, где искать проверенные образы, как правильно их импортировать и какие настройки критически важны для стабильной работы. <mark>Использование официальных образов или создание собственной VM с лицензионного диска — единственный безопасный способ работы с устаревшими ОС в 2026-2026 годах.</mark></p>
+
+<p>Вам предстоит изучить не только технические аспекты импорта, но и методы оптимизации производительности. Мы рассмотрим нюансы работы с файлами <code>.vdi</code> и <code>.vmdk</code>, а также обсудим, почему стандартные настройки виртуализации часто требуют ручной корректировки для корректного отображения графики и работы сети.</p>
+
+<h2 id="риски-использования-готовых-образов-из-интернета">Риски использования готовых образов из интернета</h2>
+
+<p>Первое, с чем сталкивается пользователь при вводе запроса о готовой виртуальной машине, — это множество предложений скачать уже настроенную систему. Однако загрузка бинарных файлов <code>.iso</code> или архивов с диска неизвестного происхождения несет в себе колоссальные угрозы. В отличие от установки с чистого образа, готовая VM может содержать скрытые майнеры, бэкдоры или вирусы, которые активируются сразу после подключения к сети.</p>
+
+<p>Кроме того, лицензионная чистота таких сборок часто вызывает вопросы. Microsoft давно прекратила поддержку Windows 7, и найти легальные каналы дистрибуции становится сложнее. Использование пиратских сборок (так называемых "репаков") в корпоративной среде может привести к аудиту и штрафам.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Никогда не используйте готовые VM-образы с предустановленным "кряком" или активатором для работы с конфиденциальными данными, банковскими клиентами или корпоративной почтой. Риск утечки информации в таких системах приближается к 100%.</p>
+</blockquote>
+
+<p>Существует несколько проверенных источников, где можно найти относительно безопасные образы. Часто это тестовые среды от Microsoft (хотя для Win7 они уже архивные), либо образы, предоставленные сообществом разработчиков для тестирования совместимости. Всегда проверяйте контрольные суммы (MD5 или SHA256) скачанного файла с данными, указанными на сайте-источнике.</p>
+
+<h2 id="технические-требования-и-подготовка-хоста">Технические требования и подготовка хоста</h2>
+
+<p>Прежде чем запускать тяжеловесную операционную систему вроде Windows 7, необходимо убедиться, что ваш физический компьютер (хост) обладает достаточными ресурсами. Виртуализация требует выделения части оперативной памяти и процессорного времени, что может замедлить работу основной системы при нехватке мощностей.</p>
+
+<p>Для комфортной работы Windows 7 в среде VirtualBox рекомендуется выделить не менее 2 ГБ оперативной памяти, хотя сама "семерка" может запуститься и на 512 МБ. Однако для работы современных браузеров и приложений внутри виртуалки этого будет критически мало. Также важен объем видеопамяти, который по умолчанию часто занижен.</p>
+
+<ul>
+<li>🖥️ <strong>Процессор:</strong> Поддержка технологий виртуализации Intel VT-x или AMD-V (должна быть включена в BIOS/UEFI).</li>
+<li>💾 <strong>Оперативная память:</strong> Минимум 4 ГБ на хосте для выделения 2 ГБ виртуальной машине.</li>
+<li>💿 <strong>Дисковое пространство:</strong> Не менее 25 ГБ свободного места на SSD для системного диска виртуалки.</li>
+</ul>
+
+<p>Важно также убедиться, что на хосте установлен актуальный пакет расширений <em>VirtualBox Extension Pack</em>. Он добавляет поддержку USB 2.0/3.0, шифрование дисков и другие важные функции, необходимые для полноценной работы гостевой ОС.</p>
+
+<div class="pb-poll" id="poll-ea120a83"><div class="pb-poll-question">📊 Какой объем памяти вы готовы выделить под Windows 7?</div><div class="pb-poll-option" data-poll="ea120a83" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">1 ГБ</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="ea120a83" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">2 ГБ</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="ea120a83" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">4 ГБ</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="ea120a83" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">8 ГБ и более</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="процесс-импорта-и-настройки-виртуальной-машины">Процесс импорта и настройки виртуальной машины</h2>
+
+<p>Если вы нашли надежный источник или создали резервную копию своей старой системы, следующим шагом будет импорт. VirtualBox поддерживает формат <code>.ova</code> (Open Virtualization Format), который содержит все настройки и диски в одном файле. Это упрощает процесс развертывания.</p>
+
+<p>После импорта не спешите запускать систему. Стандартные настройки часто не оптимальны. Необходимо зайти в свойства виртуальной машины и скорректировать параметры. Особое внимание уделите разделу <code>Система → Материнская плата</code>, где можно включить EFI (если требуется) или настроить порядок загрузки.</p>
+
+<p>В разделе <code>Дисплей</code> обязательно увеличьте объем видеопамяти до 128 МБ и включите 3D-ускорение. Без этого интерфейс Windows 7 будет работать медленно, а прозрачность окон Aero не заработает. Также проверьте настройки сети: режим <strong>NAT</strong> подойдет для выхода в интернет, но если нужен доступ к VM с хоста, лучше выбрать "Сетевой мост" (Bridged Adapter).</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Настройка перед запуском</h4><label class="check-item"><input type="checkbox"><span>Выделить 2 ГБ RAM</span></label><label class="check-item"><input type="checkbox"><span>Увеличить видеопамять до 128 МБ</span></label><label class="check-item"><input type="checkbox"><span>Включить 3D-ускорение</span></label><label class="check-item"><input type="checkbox"><span>Настроить общую папку</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Для передачи файлов между хостом и гостевой системой используйте механизм общих папок. В настройках VirtualBox укажите путь к папке на хосте, а внутри Windows 7 подключите сетевой диск, используя путь <code>\\vboxsvr\sharename</code>. Это безопаснее, чем использование общих сетевых папок Windows.</p>
+
+<h2 id="установка-драйверов-и-дополнений-гостевой-ос">Установка драйверов и дополнений гостевой ОС</h2>
+
+<p>Самым критическим этапом после первого запуска является установка <strong>Guest Additions</strong>. Без этого пакета дополнений система будет работать в низко_resolution режиме, не будет работать общий буфер обмена, drag-and-drop файлов, а также могут некорректно отображаться шрифты.</p>
+
+<p>Процесс установки прост: в меню окна запущенной виртуальной машины выберите <code>Устройства → Подключить образ диска Дополнений гостевой ОС</code>. Внутри Windows 7 откроется виртуальный CD-привод, откуда нужно запустить installer. После установки потребуется перезагрузка.</p>
+
+<p>Часто возникают проблемы с драйверами звуковой карты или сетевой карты. Виртуальная машина эмулирует стандартное оборудование (обычно Intel PRO/1000 для сети и Intel HD Audio), поэтому Windows 7, как правило, находит драйверы автоматически через Центр обновлений (если он еще работает) или с установочного диска.</p>
+
+<details class="pb-accordion"><summary>Что делать, если не работает общий буфер обмена?</summary><div class="pb-accordion-body"><p>Если после установки Guest Additions буфер обмена не работает, проверьте настройки в меню VirtualBox: Устройства → Drag'n'Drop → Двунаправленный. Также убедитесь, что процесс VBoxTray.exe запущен в диспетчере задач Windows 7.>
+
+<h2 id="оптимизация-производительности-и-стабильности">Оптимизация производительности и стабильности</h2>
+
+<p>Windows 7 на виртуальной машине может работать медленнее, чем на реальном железе, особенно если хост перегружен. Для ускорения работы рекомендуется отключить визуальные эффекты, не используемые в работе. Также стоит исключить папку виртуального диска из проверки антивирусом хоста, чтобы избежать конфликтов доступа к файлам.</p>
+
+<p>Использование SSD для хранения файлов виртуальной машины дает колоссальный прирост скорости по сравнению с HDD. Фрагментация виртуального диска со временем растет, поэтому периодически полезно проводить дефрагментацию внутри гостевой ОС или использовать команду сжатия диска VirtualBox.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Рекомендуемое значение</th>
+<th>Влияние</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Количество CPU</td>
+<td>2 ядра</td>
+<td>Плавность работы интерфейса</td>
+</tr>
+<tr>
+<td>Память (RAM)</td>
+<td>2048 МБ</td>
+<td>Многозадачность внутри VM</td>
+</tr>
+<tr>
+<td>Видеопамять</td>
+<td>128 МБ</td>
+<td>Графический интерфейс, Aero</td>
+</tr>
+<tr>
+<td>Кэш I/O</td>
+<td>Включен</td>
+<td>Скорость записи на диск</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Не забывайте делать снимки состояния (Snapshots) перед установкой сомнительного ПО или обновлением драйверов. Это позволит откатиться к рабочей версии системы за секунды. Однако не храните цепочки снимков слишком долго, так как это размывает виртуальный диск и снижает производительность.</p>
+
+
+
+<h2 id="безопасность-и-изоляция-среды">Безопасность и изоляция среды</h2>
+
+<p>Поскольку Windows 7 больше не получает обновлений безопасности, подключение такой системы к интернету — это риск. Если старое ПО требует сети, постарайтесь максимально изолировать виртуальную машину. Используйте режим "Внутренняя сеть" (Internal Network), если доступ в интернет не обязателен, или настройте строгие правила фаервола.</p>
+
+<p>Для работы с файлами используйте только общие папки с правами "Только чтение", если вам не нужно записывать данные из виртуалки на хост. Это предотвратит заражение основной системы в случае активации вируса внутри гостевой ОС.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Никогда не подключайте к виртуальной машине с Windows 7 физические USB-устройства, содержащие важные данные (флешки с банковскими ключами, архивы документов), без предварительной проверки на хосте.</p>
+</blockquote>
+
+<p>Рассмотрите возможность использования специализированных сборок Windows 7 Embedded или POSReady, которые имеют более длительную поддержку, если ваша задача требует именно этой версии ядра. Однако принцип работы в VirtualBox для них остается идентичным.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Главный принцип безопасности: считайте Windows 7 в виртуалке уже зараженной или уязвимой. Полная изоляция от основной сети и данных — лучшая защита.</p></aside>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Можно ли активировать Windows 7 в VirtualBox легально?</summary>
+<p>Да, если у вас есть действующий лицензионный ключ от retail-версии или корпоративной лицензии с правом использования в виртуальных средах. Однако серверы активации Microsoft могут блокировать старые ключи или требовать телефонной активации, так как поддержка ОС прекращена.</p>
+</details>
+
+<details>
+<summary>Почему не работает звук в Windows 7 на VirtualBox?</summary>
+<p>Чаще всего проблема в драйверах Audio Controller. Попробуйте в настройках VM (Раздел Звук) сменить контроллер на <code>Intel HD Audio</code> или <code>AC97</code>. Также убедитесь, что в самой Windows 7 в диспетчере устройств нет ошибок в разделе "Звуковые устройства".</p>
+</details>
+
+<details>
+<summary>Как пробросить USB-флешку внутрь виртуалки?</summary>
+<p>Для этого необходим установленный <em>Extension Pack</em> на хосте. В запущенной VM перейдите в меню <code>Устройства → USB</code> и выберите ваше устройство из списка. Если список пуст, проверьте, включен ли контроллер USB 2.0/3.0 в настройках самой виртуальной машины.</p>
+</details>
+
+<details>
+<summary>Безопасно ли использовать такую VM для онлайн-банкинга?</summary>
+<p>Категорически нет. Windows 7 уязвима для тысяч эксплойтов. Даже в виртуальной среде существует риск выхода за пределы VM (VM escape), хотя он и маловероятен для обычного пользователя. Для банковских операций используйте только актуальные, поддерживаемые ОС.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/l/li/liaz-4292-dlya-omsi-2.html" class="pb-related-card">
+                <span class="pb-related-title">ЛиАЗ 4292 для OMSI 2: установка, настройка и моды</span>
+                <span class="pb-related-desc">Полный гайд по автобусу ЛиАЗ 4292 для симулятора OMSI 2. Разбор аддона, настройка маршрутов, работа </span>
+            </a><a href="/articles/1/15/150-motochasov-eto-skolko-kilometrov.html" class="pb-related-card">
+                <span class="pb-related-title">150 моточасов это сколько км: Точный расчет и таблицы</span>
+                <span class="pb-related-desc">Узнайте, сколько километров в 150 моточасах для авто, спецтехники и лодок. Формула перевода, коэффиц</span>
+            </a><a href="/articles/c/ch/chto-znachit-sistema-start-stop-v-avtomobile.html" class="pb-related-card">
+                <span class="pb-related-title">Система Старт-Стоп в автомобиле: принцип, плюсы и минусы</span>
+                <span class="pb-related-desc">Подробный разбор системы старт-стоп: как работает, экономит ли топливо, ресурс стартера и аккумулято</span>
+            </a><a href="/articles/k/ka/kak-perevoditsya-power-off.html" class="pb-related-card">
+                <span class="pb-related-title">Как переводится Power Off: значение кнопки и режимы</span>
+                <span class="pb-related-desc">Подробный перевод фразы Power Off. Разница между выключением и режимом ожидания. Как правильно выклю</span>
+            </a><a href="/articles/c/ch/chasy-s-khronometrom-eto.html" class="pb-related-card">
+                <span class="pb-related-title">Часы с хронометром — что это, как выбрать и использовать в 2026 году</span>
+                <span class="pb-related-desc">Хронометр в часах: отличие от секундомера, как работает, лучшие модели для автолюбителей и спортсмен</span>
+            </a><a href="/articles/p/pe/perekhodnik-usb-na-aux-dlya-magnitoly.html" class="pb-related-card">
+                <span class="pb-related-title">Переходник USB на AUX для магнитолы: как выбрать и подключить</span>
+                <span class="pb-related-desc">Как работает адаптер USB-AUX для авто, какой выбрать для вашей магнитолы и как избежать помех. Подро</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

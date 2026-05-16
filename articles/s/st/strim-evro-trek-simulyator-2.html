@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Стрим Euro Truck Simulator 2: настройка OBS и Twitch — Авто Факт</title>
+    <meta name="description" content="Как запустить стрим Euro Truck Simulator 2 на Twitch. Настройка OBS, оптимизация FPS, выбор модов и звукового оформления для дальнобойных трансляций.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/s/st/strim-evro-trek-simulyator-2.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Стрим Euro Truck Simulator 2: настройка OBS и Twitch">
+    <meta property="og:description" content="Как запустить стрим Euro Truck Simulator 2 на Twitch. Настройка OBS, оптимизация FPS, выбор модов и звукового оформления для дальнобойных трансляций.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Стрим Euro Truck Simulator 2: настройка OBS и Twitch</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#технические-требования-и-подготовка-пк">Технические требования и подготовка ПК</a></li><li><a href="#настройка-obs-studio-для-симуляторов">Настройка OBS Studio для симуляторов</a></li><li><a href="#оформление-сцены-и-виджеты">Оформление сцены и виджеты</a></li><li><a href="#работа-со-звуком-и-атмосферой">Работа со звуком и атмосферой</a></li><li><a href="#использование-модов-для-стрима">Использование модов для стрима</a></li><li><a href="#таблица-оптимальных-настроек-кодирования">Таблица оптимальных настроек кодирования</a></li><li><a href="#психология-и-общение-с-аудиторией">Психология и общение с аудиторией</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/d/de/de-longi-685-instruktsiya.html">De Longi 685: инструкция по эксплуатации и настройке</a></li><li><a href="/articles/t/ts/tsifrovoj-krossover-dlya-akustiki.html">Цифровой кроссовер для акустики: настройка и выбор</a></li><li><a href="/articles/p/pr/printsip-bernulli-v-aerodinamike.html">Принцип Бернулли в аэродинамике: как он работает</a></li><li><a href="/articles/c/ch/chem-smazyvat-igrovoj-rul.html">Чем смазывать игровой руль: выбор смазки и уход за приводом</a></li><li><a href="/articles/o/oc/ochki-kotorye-ne-tsarapayutsya.html">Очки которые не царапаются: мифы, покрытия и выбор</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Стрим Euro Truck Simulator 2: Полное руководство для дальнобойщиков</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#технические-требования-и-подготовка-пк">Технические требования и подготовка ПК</a></li><li><a href="#настройка-obs-studio-для-симуляторов">Настройка OBS Studio для симуляторов</a></li><li><a href="#оформление-сцены-и-виджеты">Оформление сцены и виджеты</a></li><li><a href="#работа-со-звуком-и-атмосферой">Работа со звуком и атмосферой</a></li><li><a href="#использование-модов-для-стрима">Использование модов для стрима</a></li><li><a href="#таблица-оптимальных-настроек-кодирования">Таблица оптимальных настроек кодирования</a></li><li><a href="#психология-и-общение-с-аудиторией">Психология и общение с аудиторией</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Мир виртуальных дальнобойщиков уже давно перестал быть просто симулятором вождения, превратившись в полноценную социальную платформу, где тысячи людей проводят часы за рулем <strong>Scania</strong> и <strong>Volvo</strong>. Запуск трансляции в этой игре требует особого подхода, так как темп геймплея сильно отличается от динамичных шутеров или гоночных симуляторов. Здесь царит медитативность, и зрителям важнее качественный звук мотора и общение, чем высокий FPS в перестрелке.</p>
+
+<p>Чтобы ваш стрим Euro Truck Simulator 2 выглядел профессионально, необходимо учитывать множество технических нюансов, от настройки битрейта до правильного позиционирования веб-камеры. Многие новички совершают ошибку, копируя настройки из шутеров, что приводит к размытой картинке на длинных перегонах по лесам и полям. Важно понимать, что статичная картинка кабины требует более высокого битрейта для сохранения четкости деталей интерьера.</p>
+
+<p>В этой статье мы разберем все аспекты создания идеальной трансляции, включая работу с модами, которые добавляют реализма, и настройку звука для передачи атмосферы дальнобойной романтики. Вы узнаете, как избежать рассинхронизации аудио и видео, а также как правильно оформить канал, чтобы привлечь аудиторию любителей спокойного геймплея и разговоров обо всем на свете.</p>
+
+<h2 id="технические-требования-и-подготовка-пк">Технические требования и подготовка ПК</h2>
+
+<p>Прежде чем запускать OBS или Streamlabs, необходимо убедиться, что ваш компьютер справится с одновременной рендерингом игры и кодированием видеопотока. Euro Truck Simulator 2, несмотря на свой возраст, может быть требовательна к процессору при использовании большого количества модов и высоком трафике в городах. <strong>Оптимизация</strong> системы — первый шаг к стабильному стриму без фризов.</p>
+
+<p>Критически важным параметром является использование видеокарты для кодирования. Если у вас оборудование от <em>NVIDIA</em>, то использование кодека <code>NVENC H.264 (new)</code> позволит разгрузить процессор. Это даст прирост производительности в самой игре, что особенно заметно в плотном трафике Берлина или Парижа.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Использование программных кодеков (x264) на слабых процессорах приведет к падению FPS в игре и появлению артефактов на стриме. Всегда проверяйте нагрузку на ЦП перед началом трансляции.</p>
+</blockquote>
+
+<p>Также стоит обратить внимание на оперативную память. Симуляторы с модами могут потреблять до 16 ГБ RAM, поэтому закрытие лишних вкладок браузера и фоновых приложений освобождает ресурсы для стабильной работы стрим-софта.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Убедитесь, что игра и OBS запущены от имени администратора — это часто решает проблемы с захватом экрана и приоритетом процессов в Windows.</p></aside>
+
+<h2 id="настройка-obs-studio-для-симуляторов">Настройка OBS Studio для симуляторов</h2>
+
+<p>Настройка сцены в OBS Studio — это фундамент вашего стрима. В отличие от динамичных игр, здесь важно правильно настроить захват окна и баланс между игрой и лицом стримера. Основное окно должно занимать большую часть экрана, но не перекрывать важные элементы интерфейса, такие как GPS-навигатор и зеркало заднего вида.</p>
+
+<p>В разделе «Вывод» (Output) необходимо выбрать режим расширенный. Для платформы Twitch оптимальным будет битрейт в диапазоне 6000-8000 Кбит/с, если позволяет скорость интернета. Для симуляторов с медленным движением камеры и статичными объектами высокий битрейт важнее, чем для быстрых шутеров, так как артефакты сжатия на текстуре асфальта и деревьях очень заметны.</p>
+
+<ul>
+<li>🎥 <strong>Захват игры:</strong> Используйте режим «Захват игры» (Game Capture), а не «Захват окна», чтобы избежать проблем с черным экраном при переключении вкладок.</li>
+<li>🎙️ <strong>Аудиомикшер:</strong> Разделите источники звука: игра, микрофон, музыка и звуки уведомлений должны быть на отдельных каналах для пост-обработки.</li>
+<li>📉 <strong>Ключевые кадры:</strong> Установите интервал ключевых кадров строго на 2 секунды, это стандарт для всех стриминговых платформ.</li>
+</ul>
+
+<p>Не забудьте настроить фильтр шумоподавления для микрофона. В кабине грузовика часто бывает тихо, и любой фоновый шум, такой как гул кулера или стук клавиатуры, будет слышен очень отчетливо. Использование фильтра <em>RNNoise</em> (если доступен через плагины) или стандартного шумоподавления OBS значительно улучшит качество голоса.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка настроек OBS</h4><label class="check-item"><input type="checkbox"><span>Выбран кодек NVENC или AMD AMF</span></label><label class="check-item"><input type="checkbox"><span>Битрейт установлен 6000+ Кбит/с</span></label><label class="check-item"><input type="checkbox"><span>Интервал ключевых кадров 2 сек</span></label><label class="check-item"><input type="checkbox"><span>Настроен шумодав на микрофоне</span></label><label class="check-item"><input type="checkbox"><span>Проверен захват звука игры</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="оформление-сцены-и-виджеты">Оформление сцены и виджеты</h2>
+
+<p>Визуальная составляющая стрима Euro Truck Simulator 2 должна подчеркивать атмосферу путешествия. Перегруженность экрана лишними элементами может отвлекать зрителя от созерцания виртуальных пейзажей. Используйте минималистичные рамки для веб-камеры и оверлеи, имитирующие приборную панель или лог-лист.</p>
+
+<p>Важным элементом является отображение текущего маршрута. Многие стримеры используют моды или браузерные виджеты, которые выводят информацию из игры (скорость, топливо, пункт назначения) прямо на экран трансляции. Это позволяет зрителям следить за прогрессом, даже если они отошли от монитора.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Интерфейс виджетов и модов может меняться после обновлений игры или самого симулятора. Всегда проверяйте совместимость оверлеев с текущей версией Euro Truck Simulator 2 перед стримом.</p>
+</blockquote>
+
+<p>Для добавления интерактивности можно использовать алерты на донаты, оформленные в стиле дорожных знаков или звуками клаксона. Это добавляет юмора и вовлекает аудиторию. Однако не стоит делать звуки слишком громкими или резкими, чтобы не напугать зрителя и не нарушить immersion.</p>
+
+<details class="pb-accordion"><summary>Идеи для оверлеев</summary><div class="pb-accordion-body"><p>Дорожная карта с отметкой текущего положения|Список выполненных заказов за стрим|Таймер до следующего перерыва (по правилам дальнобойщика)|Текущая скорость и расход топлива в реальном времени</p></div></details>
+
+<h2 id="работа-со-звуком-и-атмосферой">Работа со звуком и атмосферой</h2>
+
+<p>Звук в ETS2 — это 50% успеха трансляции. Шум дизельного двигателя, свист турбины, стук дождя по крыше кабины — все это создает ту самую атмосферу, ради которой приходят зрители. Необходимо тонко настроить баланс между звуками игры и вашим голосом.</p>
+
+<p>Голос стримера не должен перекрывать звуки мотора, особенно в моменты переключения передач или торможения. Используйте компрессию на канале микрофона, чтобы выровнять громкость речи, когда вы говорите шепотом ночью или эмоционально комментируете ситуацию на дороге.</p>
+
+<p>Музыкальное сопровождение также играет важную роль. В игре есть лицензионные радиостанции, но для стрима лучше использовать собственные плейлисты, чтобы избежать проблем с авторскими правами (DMCA). Многие дальнобойщики включают спокойную музыку, подкасты или аудиокниги, что становится темой для обсуждения с чатом.</p>
+
+<div class="pb-poll" id="poll-1d4682f1"><div class="pb-poll-question">📊 Что важнее в стриме по симулятору?</div><div class="pb-poll-option" data-poll="1d4682f1" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Качество картинки</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="1d4682f1" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Общение с чатом</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="1d4682f1" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Атмосферный звук</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="1d4682f1" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Реализм вождения</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="использование-модов-для-стрима">Использование модов для стрима</h2>
+
+<p>Модификации могут значительно разнообразить геймплей и визуальную часть стрима. Однако использование большого количества модов может вызвать нестабильность. Для трансляций рекомендуется использовать проверенные карты-моды, такие как <em>ProMods</em> или <em>RusMap</em>, которые добавляют новые города и дороги.</p>
+
+<p>Также популярны моды на трафик, делающие движение на дорогах более плотным и реалистичным. Это добавляет напряжения в геймплей и делает процесс вождения более интересным для наблюдения. Зрителям нравится смотреть, как стример справляется с сложными развязками в час пик.</p>
+
+<p>Не стоит забывать и о визуальных улучшениях: моды на погоду, тени и текстуры делают картинку сочнее. Но помните, что каждый дополнительный мод — это нагрузка на систему. Перед стримом обязательно протестируйте сборку модов на предмет вылетов.</p>
+
+<h2 id="таблица-оптимальных-настроек-кодирования">Таблица оптимальных настроек кодирования</h2>
+
+<p>Для удобства приведем основные параметры, которые следует выставить в OBS для достижения баланса между качеством и производительностью. Эти значения являются базовыми и могут быть адаптированы под мощность вашего оборудования.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Рекомендуемое значение</th>
+<th>Влияние</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Разрешение</td>
+<td>1920x1080</td>
+<td>Стандарт HD качества</td>
+</tr>
+<tr>
+<td>FPS</td>
+<td>60 (или 30 для слабых ПК)</td>
+<td>Плавность движения</td>
+</tr>
+<tr>
+<td>Битрейт</td>
+<td>6000 - 8000 Кбит/с</td>
+<td>Четкость статичной картинки</td>
+</tr>
+<tr>
+<td>Пресет кодирования</td>
+<td>Quality (Качество)</td>
+<td>Лучшее соотношение вес/качество</td>
+</tr>
+<tr>
+<td>Профиль</td>
+<td>high</td>
+<td>Улучшает детализацию</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Эти настройки обеспечат стабильную картинку даже при резких поворотах камеры в кабине. Если наблюдаются проблемы с буферизацией у зрителей, попробуйте снизить битрейт или разрешение, но не жертвуйте стабильностью FPS в самой игре.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Стабильность соединения важнее максимального качества картинки. Лучше стримить в 720p без лагов, чем в 1080p с постоянными буферизациями.</p></aside>
+
+<h2 id="психология-и-общение-с-аудиторией">Психология и общение с аудиторией</h2>
+
+<p>Стримы симуляторов часто называют «каминными» (cozy streams). Зрители приходят сюда отдохнуть, поговорить и расслабиться. Поэтому тон общения должен быть спокойным и дружелюбным. Не бойтесь молчать некоторое время, наслаждаясь дорогой, но старайтесь комментировать свои действия.</p>
+
+<p>Взаимодействие с чатом — ключевой элемент успеха. Отвечайте на вопросы, обсуждайте маршруты, спрашивайте совета у опытных дальнобойщиков в чате. Часто аудитория помогает с навигацией или подсказывает shortcuts, что делает стрим интерактивным.</p>
+
+<p>Соблюдение виртуальных правил дорожного движения также становится частью шоу. Нарушение ПДД ради сокращения времени пути может вызвать негативную реакцию у части аудитории, ценящей реализм. Стрим — это не только игра, но и демонстрация вашего стиля вождения.</p>
+
+<details>
+<summary>Какую веб-камеру лучше использовать для стрима ETS2?</summary>
+<p>Для симуляторов не обязательно нужна 4K камера. Достаточно качественной 1080p модели с хорошим микрофоном или отдельного USB-микрофона. Важно, чтобы камера имела автофокус, так как вы можете двигаться в кресле, имитируя проверку слепых зон.</p>
+</details>
+
+<details>
+<summary>Нужен ли руль для стрима Euro Truck Simulator?</summary>
+<p>Наличие руля (Logitech, Thrustmaster) значительно повышает зрелищность стрима. Зрители любят смотреть на работу рук, переключение передач и работу с рычагами. Однако начинать можно и с клавиатуры, используя камеру на руль как дополнительный ракурс, если руль есть, но не подключен.</p>
+</details>
+
+<details>
+<summary>Почему падает FPS во время стрима?</summary>
+<p>Чаще всего проблема в нехватке ресурсов процессора или перегреве. Попробуйте снизить настройки графики в игре, отключить вертикальную синхронизацию и убедиться, что OBS использует аппаратное ускорение GPU. Также проверьте, не запущены ли фоновые загрузки.</p>
+</details>
+
+<details>
+<summary>Можно ли стримить с модом на деньги?</summary>
+<p>Технически можно, но модерация платформы может негативно относиться к читам, если это нарушает правила сервера multiplayer (TruckersMP). Для одиночной игры ограничений нет, но честность перед аудиторией всегда ценится выше.</p>
+</details>
+
+<details>
+<summary>Как добавить карту в OBS?</summary>
+<p>Используйте браузер-источник (Browser Source) и сервисы вроде MapChart или специализированные оверлеи для ETS2, которые синхронизируются с GPS игры. Это требует установки дополнительных плагинов или использования второго монитора для захвата карты.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/d/de/de-longi-685-instruktsiya.html" class="pb-related-card">
+                <span class="pb-related-title">De Longi 685: инструкция по эксплуатации и настройке</span>
+                <span class="pb-related-desc">Подробная инструкция по использованию De Longi 685: запуск, настройки, устранение неисправностей. Ск</span>
+            </a><a href="/articles/t/ts/tsifrovoj-krossover-dlya-akustiki.html" class="pb-related-card">
+                <span class="pb-related-title">Цифровой кроссовер для акустики: настройка и выбор</span>
+                <span class="pb-related-desc">Как работает цифровой кроссовер в автоакустике. Настройка срезов, задержек и эквалайзера для идеальн</span>
+            </a><a href="/articles/p/pr/printsip-bernulli-v-aerodinamike.html" class="pb-related-card">
+                <span class="pb-related-title">Принцип Бернулли в аэродинамике: как он работает</span>
+                <span class="pb-related-desc">Узнайте, как закон Бернулли влияет на подъемную силу крыла автомобиля и расход топлива. Разбор физич</span>
+            </a><a href="/articles/c/ch/chem-smazyvat-igrovoj-rul.html" class="pb-related-card">
+                <span class="pb-related-title">Чем смазывать игровой руль: выбор смазки и уход за приводом</span>
+                <span class="pb-related-desc">Узнайте, чем смазывать игровой руль, чтобы устранить скрип и гул. Инструкция по выбору смазки, обслу</span>
+            </a><a href="/articles/o/oc/ochki-kotorye-ne-tsarapayutsya.html" class="pb-related-card">
+                <span class="pb-related-title">Очки которые не царапаются: мифы, покрытия и выбор</span>
+                <span class="pb-related-desc">Существуют ли очки которые не царапаются? Разбираем типы упрочняющих покрытий, их ресурс и правила у</span>
+            </a><a href="/articles/s/s-/s-max-mashinka-na-pulte.html" class="pb-related-card">
+                <span class="pb-related-title">S Max машинка на пульте: обзор, характеристики и тюнинг</span>
+                <span class="pb-related-desc">Полный гид по радиоуправляемым моделям серии S Max. Разбор конструкции, выбор аккумуляторов, настрой</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

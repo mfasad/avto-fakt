@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как создать свою модель автомобиля: от эскиза до 3D-модели — Авто Факт</title>
+    <meta name="description" content="Пошаговое руководство, как создать свою модель автомобиля. Разбор софта, методов лепки, прототипирования и подготовки к 3D-печати для автодизайнеров.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/s/so/sozdat-svoyu-model-avtomobilya.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как создать свою модель автомобиля: от эскиза до 3D-модели">
+    <meta property="og:description" content="Пошаговое руководство, как создать свою модель автомобиля. Разбор софта, методов лепки, прототипирования и подготовки к 3D-печати для автодизайнеров.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tyuning-i-stil/">Тюнинг и Стиль</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как создать свою модель автомобиля: от эскиза до 3D-модели</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#концептуализация-и-подготовительный-этап">Концептуализация и подготовительный этап</a></li><li><a href="#традиционное-макетирование-и-работа-с-глиной">Традиционное макетирование и работа с глиной</a></li><li><a href="#выбор-программного-обеспечения-для-3d-моделирования">Выбор программного обеспечения для 3D-моделирования</a></li><li><a href="#процесс-цифрового-моделирования-кузова">Процесс цифрового моделирования кузова</a></li><li><a href="#детализация-интерьера-и-технических-узлов">Детализация интерьера и технических узлов</a></li><li><a href="#рендеринг-и-презентация-проекта">Рендеринг и презентация проекта</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/r/ra/ramka-so-strazami-na-avto.html">Рамка со стразами на авто: как украсить номер своими руками</a></li><li><a href="/articles/o/ok/oklejka-avto-plenkoj-v-domodedovo.html">Оклейка авто плёнкой в Домодедово: цены, виды, где сделать</a></li><li><a href="/articles/m/ma/material-dlya-shumoizolyatsii-arok-avtomobilya.html">Материал для шумоизоляции арок: лучшие решения</a></li><li><a href="/articles/a/ak/akusticheskij-porolon-v-mashinu.html">Акустический поролон для машины: выбор, установка и эффект</a></li><li><a href="/articles/k/kr/krasnye-diski-na-beloj-mashine.html">Красные диски на белой машине: секреты идеального тюнинга</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как создать свою модель автомобиля: от эскиза до 3D-модели</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#концептуализация-и-подготовительный-этап">Концептуализация и подготовительный этап</a></li><li><a href="#традиционное-макетирование-и-работа-с-глиной">Традиционное макетирование и работа с глиной</a></li><li><a href="#выбор-программного-обеспечения-для-3d-моделирования">Выбор программного обеспечения для 3D-моделирования</a></li><li><a href="#процесс-цифрового-моделирования-кузова">Процесс цифрового моделирования кузова</a></li><li><a href="#детализация-интерьера-и-технических-узлов">Детализация интерьера и технических узлов</a></li><li><a href="#рендеринг-и-презентация-проекта">Рендеринг и презентация проекта</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Желание увидеть уникальную машину на дороге или в игре посещает многих энтузиастов, но мало кто знает, с чего именно начинается путь от идеи до готового <strong>цифрового прототипа</strong>. Процесс создания собственной модели автомобиля — это сложное переплетение инженерных расчетов, художественного видения и глубокого понимания аэродинамики. В современном мире дизайн перестал быть уделом избранных студий, и теперь каждый может попробовать себя в роли создателя, используя доступные инструменты.</p>
+
+<p>Разработка собственного <em>concept car</em> требует не только фантазии, но и системного подхода к геометрии кузова. Вам предстоит пройти путь от простых карандашных набросков до сложной <strong>полигональной сетки</strong> в профессиональном программном обеспечении. Важно понимать, что даже виртуальный автомобиль должен подчиняться законам физики, чтобы выглядеть убедительно и гармонично в любой среде.</p>
+
+<p>В этой статье мы разберем все этапы создания <strong>автомобильного дизайна</strong>, уделив внимание как классическим методам макетирования, так и передовым цифровым технологиям. Вы узнаете, какие инструменты необходимы для старта, как правильно строить пропорции и где искать вдохновение. Готовность погрузиться в мир инженерии и искусства станет первым шагом к реализации вашей мечты.</p>
+
+<h2 id="концептуализация-и-подготовительный-этап">Концептуализация и подготовительный этап</h2>
+
+<p>Прежде чем открывать сложные программы, необходимо четко сформулировать идею будущего транспортного средства. На этом этапе создается <strong> moodboard</strong> (доска настроения), куда собираются референсы, цветовые схемы и примеры форм, которые должны воплотиться в вашем проекте. Без четкого технического задания дальнейшая работа превратится в хаотичные попытки угадать желаемый результат.</p>
+
+<p>Определите класс автомобиля: будет ли это агрессивный <em>спорткар</em>, утилитарный внедорожник или футуристический городской электрокар? От этого зависят пропорции колесной базы, свесы кузова и общая силуэтная линия. Профессиональные дизайнеры часто начинают с создания десятков быстрых скетчей, чтобы отбросить неудачные варианты и найти ту самую <strong>золотую пропорцию</strong>.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Не пытайтесь сразу внедрять сложные аэродинамические элементы без понимания их функции. Избыток деталей на раннем этапе часто приводит к потере читаемости силуэта и делает дизайн перегруженным.</p>
+</blockquote>
+
+<p>Соберите информацию о целевой аудитории и условиях эксплуатации. Если вы планируете создать модель для гоночного симулятора, важно учесть требования к видимости из кабины пилота. Для статичного рендера важнее визуальная выразительность граней и бликов. <strong>Техническое задание</strong> должно отвечать на вопросы о типах используемых материалов, предполагаемой цветовой гамме и ключевых особенностях, отличающих вашу модель от аналогов.</p>
+
+<div class="pb-poll" id="poll-8e08dae6"><div class="pb-poll-question">📊 Какой тип кузова вы планируете создать?</div><div class="pb-poll-option" data-poll="8e08dae6" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Купе</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="8e08dae6" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Седан</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="8e08dae6" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Внедорожник</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="8e08dae6" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Родстер</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="8e08dae6" data-idx="4" onclick="pbPollVote(this)"><span class="pb-poll-label">Пикап</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="традиционное-макетирование-и-работа-с-глиной">Традиционное макетирование и работа с глиной</h2>
+
+<p>Несмотря на доминирование цифровых технологий, многие именитые студии до сих пор используют физическое макетирование. Лепка из специального <strong>индустриального пластилина</strong> позволяет (дизайнеру) ощутить объем и понять, как свет ложится на поверхности в реальности. Это тактильный опыт, который невозможно полностью заменить монитором, каким бы качественным он ни был.</p>
+
+<p>Для работы с глиной требуется металлический каркас, называемый арматурой, который повторяет основные габариты будущего автомобиля. На него наносится слой материала, после чего начинается процесс скульптурирования с помощью специальных стеков, скребков и шаблонов. Такой метод позволяет быстро вносить изменения в <strong>кривизну поверхностей</strong>, оценивая их глазом с разных ракурсов.</p>
+
+<ul>
+<li> 🛠️ <strong>Инструментарий:</strong> Наборы стальных скребков, шаблоны радиусов, нагреватели для размягчения глины и измерительные штангенциркули.</li>
+<li> 📏 <strong>Точность:</strong> Физический макет позволяет выявить ошибки в симметрии, которые часто проскальзывают при работе в 3D-пространстве без должного контроля.</li>
+<li> 🎨 <strong>Материалы:</strong> Используется специальный воскосодержащий пластилин, который не сохнет на воздухе и сохраняет пластичность при нагреве.</li>
+</ul>
+
+<p>После завершения лепки макет часто покрывают специальной пленкой, имитирующей лакокрасочное покрытие. Это помогает оценить, как будет выглядеть финальный <em>car paint</em> (автомобильная краска) при различном освещении. Хотя этот метод трудоемок, он дает unparalleled понимание формы, которое затем переносится в цифровую среду для детализации.</p>
+
+<h2 id="выбор-программного-обеспечения-для-3d-моделирования">Выбор программного обеспечения для 3D-моделирования</h2>
+
+<p>Переход в цифровую среду открывает безграничные возможности, но требует выбора подходящего инструмента. Индустрия автомобильного дизайна стандартизировала ряд программ, каждая из которых имеет свои сильные стороны. Для создания <strong>классов А поверхностей</strong> (идеально гладких поверхностей кузова) чаще всего используют <em>Alias AutoStudio</em> от Autodesk. Это профессиональный стандарт, требующий серьезного обучения.</p>
+
+<p>Для тех, кто только начинает или занимается концепт-артом для игр, отличным выбором станут <em>Blender</em> или <em>3ds Max</em>. Эти программы обладают мощным инструментарием для полигонального моделирования и позволяют быстро создавать детализированные модели с высокой <strong>топологией</strong>. Важно понимать разницу между NURBS-моделированием (используемым в Alias для производства) и полигональным (используемым для визуализации и игр).</p>
+
+<pre><code>Рекомендуемый стек ПО для старта:
+<p>1. Blender (бесплатно, мощное полигональное моделирование)</p>
+<p>2. ZBrush (для детализации сложных форм и скульптинга)</p>
+<p>3. Substance Painter (для текстурирования материалов)</p>
+</code></pre>
+
+<p>Не стоит забывать и о CAD-системах, таких как <em>CATIA</em> или <em>SolidWorks</em>, если ваша цель — реальное производство деталей. Однако для чисто дизайнерских задач они могут быть избыточны. Ключевым моментом является освоение работы с сплайнами и контрольными точками, так как именно они формируют <strong>каркас</strong> вашей будущей модели.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Начните изучение 3D-моделирования с простых геометрических форм (куб, шар), пытаясь повторить контуры фар или дисков реальных автомобилей. Это поможет понять логику построения сетки.</p></aside>
+
+<h2 id="процесс-цифрового-моделирования-кузова">Процесс цифрового моделирования кузова</h2>
+
+<p>Создание цифрового двойника начинается с импорта чертежей (blueprints) в видовые окна программы. Эти чертежи служат основой для соблюдения правильных <strong>пропорций</strong>. Сначала создается базовая сетка, повторяющая общие очертания автомобиля, затем она постепенно уплотняется и детализируется. Этот процесс называется блокинг-аутом.</p>
+
+<p>На следующем этапе дизайнер работает над построением поверхностей. В автомобильном дизайне критически важна непрерывность кривизны. Границы между панелями, линии штампов и изгибы арок должны читаться в отражениях. Использование <strong>subdivision surface</strong> (субдивизионных поверхностей) позволяет сглаживать низкополигональную сетку, получая гладкий финальный результат.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Этап</th>
+<th>Задача</th>
+<th>Инструменты</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Блокинг</td>
+<td>Создание общей формы и габаритов</td>
+<td>Cube, Plane, Extrude</td>
+</tr>
+<tr>
+<td>Детализация</td>
+<td>Проработка элементов кузова</td>
+<td>Loop Cut, Bevel, Slide</td>
+</tr>
+<tr>
+<td>Сглаживание</td>
+<td>Доведение поверхностей до идеала</td>
+<td>Subdivision Modifier, Smooth</td>
+</tr>
+<tr>
+<td>Текстурирование</td>
+<td>Наложение материалов и цветов</td>
+<td>UV Unwrap, Shader Editor</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Особое внимание уделяется зазорам между кузовными панелями. В реальном автомобиле они необходимы для работы механизмов и термического расширения, в 3D-модели они добавляют реализма. Правильно настроенный <strong>UV-развертка</strong> позволит в дальнейшем наложить качественные текстуры металла, пластика и стекла без искажений.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Чек-лист моделирования кузова</h4><label class="check-item"><input type="checkbox"><span>Импортировать чертежи в видовые окна</span></label><label class="check-item"><input type="checkbox"><span>Создать базовую блокинг-сетку</span></label><label class="check-item"><input type="checkbox"><span>Выстроить основные линии кузова</span></label><label class="check-item"><input type="checkbox"><span>Добавить детали (фары, зеркала)</span></label><label class="check-item"><input type="checkbox"><span>Проверить гладкость поверхностей</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="детализация-интерьера-и-технических-узлов">Детализация интерьера и технических узлов</h2>
+
+<p>Автомобиль — это не только внешняя оболочка, но и сложный механизм внутри. Моделирование интерьера требует еще большей точности, так как камера часто находится в непосредственной близости от объектов. Салон состоит из сотен мелких деталей: кнопок, переключателей, элементов <strong>торпедо</strong> и сидений.</p>
+
+<p>При создании сидений важно учитывать эргономику и структуру материалов. Кожа должна иметь характерную перфорацию и потертости, пластик — легкий рельеф и шероховатость. Для реалистичности используется техника <em>PBR</em> (Physically Based Rendering), которая симулирует физическое взаимодействие света с поверхностью.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Не игнорируйте оптимизацию полигонов в салоне. Излишняя детализация скрытых элементов может значительно снизить производительность рендера или игрового движка без видимого улучшения качества картинки.</p>
+</blockquote>
+
+<p>Технические узлы, такие как подвеска, тормозная система и двигатель, также требуют проработки, если модель предполагается использовать в разрезе или для технической анимации. Здесь на помощь приходят справочные материалы и <strong>инженерные чертежи</strong>. Даже если эти детали не видны игроку или зрителю, их наличие добавляет модели вес и достоверность.</p>
+
+<h2 id="рендеринг-и-презентация-проекта">Рендеринг и презентация проекта</h2>
+
+<p>Финальный этап создания модели — это рендеринг, процесс превращения 3D-сцены в 2D-изображение. Качество итоговой картинки напрямую зависит от настройки освещения и материалов. Использование <strong>HDRI-карт</strong> (карт высокого динамического диапазона) позволяет получить реалистичные отражения на кузове автомобиля.</p>
+
+<p>Для презентации часто создают студийное освещение с несколькими источниками света: рисующим, заполняющим и контровым. Это позволяет подчеркнуть линии кузова и создать драматичный эффект. В современных движках, таких как <em>Unreal Engine 5</em> или <em>Blender Cycles</em>, можно добиться фотореалистичного результата, неотличимого от фотографии.</p>
+
+<ul>
+<li> 📸 <strong>Ракурсы:</strong> Выберите динамичные ракурсы, подчеркивающие скорость и характер автомобиля (например, низкая точка съемки спереди).</li>
+<li> 🌆 <strong>Окружение:</strong> Поместите модель в подходящую среду: гоночный трек, городской пейзаж или студийный фон.</li>
+<li> 🎞️ <strong>Анимация:</strong> Для портфолио часто создают пролет камеры вокруг модели или короткую анимацию работы механизмов.</li>
+</ul>
+
+<p>Помните, что даже самая детальная модель будет выглядеть плохо при неправильном освещении. Экспериментируйте с настройками <strong>камеры</strong>, глубиной резкости и экспозицией. Именно финальная картинка продает вашу работу заказчику или зрителю, создавая первое и последнее впечатление о проделанном труде.</p>
+
+<details class="pb-accordion"><summary>Секрет фотореализма</summary><div class="pb-accordion-body"><p>Используйте карты нормалей и карты шероховатости (roughness map) даже для seemingly гладких поверхностей. Идеально гладких объектов в природе не существует, микрорельеф добавляет реализма.</p></div></details>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Успех проекта зависит не только от сложности 3D-модели, но и от грамотной настройки сцены, света и материалов на этапе рендеринга.</p></aside>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Сколько времени занимает создание одной модели автомобиля?</summary>
+<p>Время создания варьируется от 20 часов для простой низкополигональной модели (low-poly) до 500+ часов для детализированного фотореалистичного проекта уровня AAA-игр. Все зависит от требуемого уровня детализации и опыта автора.</p>
+</details>
+
+<details>
+<summary>Нужно ли уметь рисовать от руки, чтобы создавать 3D-модели?</summary>
+<p>Навыки рисования крайне полезны для этапа концептуализации и понимания композиции, но не являются строго обязательными. Многие дизайнеры сразу начинают лепить форму в 3D, используя референсы. Однако умение быстро набросать идею на бумаге значительно ускоряет работу.</p>
+</details>
+
+<details>
+<summary>Какой компьютер нужен для автомобильного 3D-моделирования?</summary>
+<p>Для комфортной работы требуется мощный процессор (минимум 6-8 ядер), минимум 16-32 ГБ оперативной памяти и видеокарта с поддержкой Ray Tracing (например, NVIDIA RTX серии 3000/4000). Работа с тяжелыми сценами и рендеринг очень ресурсоемки.</p>
+</details>
+
+<details>
+<summary>Можно ли 3D-модель превратить в реальный автомобиль?</summary>
+<p>Теоретически да, но для этого модель должна быть создана с соблюдением инженерных норм (толщина стенок, зазоры, возможность сборки). Обычно дизайнерскую модель дорабатывают инженеры-конструкторы в CAD-системах перед запуском в производство или 3D-печать.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/r/ra/ramka-so-strazami-na-avto.html" class="pb-related-card">
+                <span class="pb-related-title">Рамка со стразами на авто: как украсить номер своими руками</span>
+                <span class="pb-related-desc">Рамка со стразами на авто: виды, способы крепления и выбор. Узнайте, разрешены ли такие рамки по ПДД</span>
+            </a><a href="/articles/o/ok/oklejka-avto-plenkoj-v-domodedovo.html" class="pb-related-card">
+                <span class="pb-related-title">Оклейка авто плёнкой в Домодедово: цены, виды, где сделать</span>
+                <span class="pb-related-desc">Где заказать оклейку авто виниловой плёнкой в Домодедово? Виды плёнок, цены 2026, отзывы, советы по </span>
+            </a><a href="/articles/m/ma/material-dlya-shumoizolyatsii-arok-avtomobilya.html" class="pb-related-card">
+                <span class="pb-related-title">Материал для шумоизоляции арок: лучшие решения</span>
+                <span class="pb-related-desc">Выбираем материал для шумоизоляции арок автомобиля. Сравниваем вибропласт, жидкую резину и войлок. И</span>
+            </a><a href="/articles/a/ak/akusticheskij-porolon-v-mashinu.html" class="pb-related-card">
+                <span class="pb-related-title">Акустический поролон для машины: выбор, установка и эффект</span>
+                <span class="pb-related-desc">Как выбрать и правильно установить акустический поролон в авто для улучшения звукоизоляции. Сравнени</span>
+            </a><a href="/articles/k/kr/krasnye-diski-na-beloj-mashine.html" class="pb-related-card">
+                <span class="pb-related-title">Красные диски на белой машине: секреты идеального тюнинга</span>
+                <span class="pb-related-desc">Как выбрать красные диски для белого авто? Разбор оттенков, техобслуживания и психологии цвета. Полн</span>
+            </a><a href="/articles/k/ka/kak-ukrasit-mashinu-na-svadbu-gostyam.html" class="pb-related-card">
+                <span class="pb-related-title">Как украсить машину на свадьбу гостям: 50 идей и инструкции</span>
+                <span class="pb-related-desc">Пошаговые советы по оформлению авто для свадебного кортежа: от цветов до светодиодов. Узнайте, что м</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

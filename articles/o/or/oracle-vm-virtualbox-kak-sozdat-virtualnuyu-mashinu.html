@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Oracle VM VirtualBox: как создать виртуальную машину — Авто Факт</title>
+    <meta name="description" content="Пошаговая инструкция: как создать виртуальную машину в VirtualBox. Настройка памяти, диска и сети для Windows, Linux и macOS.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/o/or/oracle-vm-virtualbox-kak-sozdat-virtualnuyu-mashinu.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Oracle VM VirtualBox: как создать виртуальную машину">
+    <meta property="og:description" content="Пошаговая инструкция: как создать виртуальную машину в VirtualBox. Настройка памяти, диска и сети для Windows, Linux и macOS.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Oracle VM VirtualBox: как создать виртуальную машину</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#подготовка-к-установке-и-выбор-дистрибутива">Подготовка к установке и выбор дистрибутива</a></li><li><a href="#запуск-мастера-создания-новой-машины">Запуск мастера создания новой машины</a></li><li><a href="#настройка-аппаратных-ресурсов">Настройка аппаратных ресурсов</a></li><li><a href="#создание-и-настройка-виртуального-жесткого-диска">Создание и настройка виртуального жесткого диска</a></li><li><a href="#установка-операционной-системы">Установка операционной системы</a></li><li><a href="#настройка-сети-и-общих-папок">Настройка сети и общих папок</a></li><li><a href="#установка-guest-additions-и-оптимизация">Установка Guest Additions и оптимизация</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/k/ka/kak-pravilno-kleit-kameru-avtomobilya.html">Как правильно клеить камеру на авто: пошаговая инструкция 2026</a></li><li><a href="/articles/m/mo/mozhno-li-podklyuchit-avtomobilnyj-nasos-k-zaryadnomu-ustrojstvu.html">Можно ли подключить автонасос к зарядке? Технические нюансы</a></li><li><a href="/articles/c/ch/chem-otlichaetsya-euro-truck-simulator-2-ot-euro-truck-simulator-2-demo.html">Euro Truck Simulator 2 vs Demo: 7 ключевых отличий перед покупкой</a></li><li><a href="/articles/o/ot/otlichie-pvkh-ot-poliuretana.html">Отличие ПВХ от полиуретана: что лучше для авто?</a></li><li><a href="/articles/t/to/top-rossijskikh-proizvoditelej-chasov.html">Топ российских производителей часов: обзор брендов 2026</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Oracle VM VirtualBox: как создать виртуальную машину</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#подготовка-к-установке-и-выбор-дистрибутива">Подготовка к установке и выбор дистрибутива</a></li><li><a href="#запуск-мастера-создания-новой-машины">Запуск мастера создания новой машины</a></li><li><a href="#настройка-аппаратных-ресурсов">Настройка аппаратных ресурсов</a></li><li><a href="#создание-и-настройка-виртуального-жесткого-диска">Создание и настройка виртуального жесткого диска</a></li><li><a href="#установка-операционной-системы">Установка операционной системы</a></li><li><a href="#настройка-сети-и-общих-папок">Настройка сети и общих папок</a></li><li><a href="#установка-guest-additions-и-оптимизация">Установка Guest Additions и оптимизация</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+<p>Современные пользователи часто сталкиваются с необходимостью запуска программ, несовместимых с их основной операционной системой, или желают протестировать новый дистрибутив Linux без риска для личных данных. Решением этой задачи становится виртуализация, позволяющая запускать одну ОС внутри другой. <strong>Oracle VM VirtualBox</strong> является одним из самых популярных и бесплатных инструментов для реализации этой технологии на персональных компьютерах.</p>
+
+<p>Процесс создания изолированной среды может показаться сложным новичкам, но на деле он требует лишь внимательного следования шагам мастера настройки. Правильная конфигурация ресурсов хоста, таких как оперативная память и дисковое пространство, критически важна для стабильной работы гостевой системы. В этой статье мы детально разберем, как подготовить окружение и запустить полноценный компьютер внутри вашего текущего.</p>
+
+<p>Использование виртуальных машин открывает широкие возможности для тестирования софта, изучения сетевых протоколов и безопасного серфинга в потенциально опасных средах. Вы получаете полностью изолированный контур, ошибки в котором не повлияют на работоспособность основного железа. Это делает технологию незаменимой для разработчиков, системных администраторов и энтузиастов.</p>
+
+<h2 id="подготовка-к-установке-и-выбор-дистрибутива">Подготовка к установке и выбор дистрибутива</h2>
+<p>Первым шагом перед запуском процесса создания виртуальной машины является подготовка необходимого программного обеспечения. Вам потребуется установочный файл самого <em>VirtualBox</em>, который можно скачать с официального сайта разработчика, а также образ операционной системы, которую вы планируете эмулировать. Чаще всего это файлы с расширением <code>.iso</code>, содержащие установочные данные Windows, Linux или macOS.</p>
+
+<p>Важно заранее определить, какие ресурсы вашего физического компьютера (хоста) готовы быть выделены под виртуальную среду. Если выделите слишком мало памяти, гостевая система будет работать медленно; если слишком много — может пострадать производительность основной ОС. Также стоит убедиться, что в BIOS/UEFI вашего компьютера активирована технология аппаратной виртуализации, известная как <strong>Intel VT-x</strong> или <strong>AMD-V</strong>.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Перед началом установки обязательно закройте все тяжелые приложения на хосте. Это позволит избежать конфликтов при выделении ресурсов и снизит риск ошибок во время первоначальной настройки.</p>
+</blockquote>
+
+<p>Образы операционных систем весят разное количество гигабайт, поэтому проверьте наличие свободного места на жестком диске. Для современных версий Windows 10 или 11 рекомендуется иметь запас не менее 40-60 Гб, в то время как легковесные дистрибутивы Linux могут довольствоваться 10-15 Гб.</p>
+
+<div class="pb-poll" id="poll-ec61d68a"><div class="pb-poll-question">📊 Какая ОС вам нужна в виртуалке?</div><div class="pb-poll-option" data-poll="ec61d68a" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Windows 10/11</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="ec61d68a" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Linux (Ubuntu/Mint)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="ec61d68a" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">macOS</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="ec61d68a" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Другая (BSD, Haiku)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="запуск-мастера-создания-новой-машины">Запуск мастера создания новой машины</h2>
+<p>После установки приложения запустите Oracle VM VirtualBox и нажмите кнопку <code>Создать</code> (или <code>New</code>) на панели инструментов. Откроется окно мастера, где первым делом необходимо ввести имя для вашей виртуальной машины. Название может быть любым, но лучше выбирать понятные идентификаторы, особенно если вы планируете создавать несколько разных конфигураций.</p>
+
+<p>Система автоматически попытается определить тип и версию операционной системы на основе введенного имени. Если этого не произошло, выберите соответствующие пункты из выпадающих списков вручную. Например, для установки Ubuntu выберите тип <em>Linux</em> и версию <em>Ubuntu (64-bit)</em>. Корректный выбор версии важен, так как от него зависят некоторые низкоуровневые настройки эмуляции.</p>
+
+<p>На следующем этапе мастер предложит выбрать режим создания. В новых версиях VirtualBox доступен режим "Extended", который предлагает сразу настроить память и диск, или базовый режим для ручной настройки каждого параметра. Опытным пользователям часто удобнее использовать ручной режим, чтобы иметь полный контроль над распределением ресурсов.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Используйте префиксы в названиях, например "Test_Win10" или "Dev_Linux", чтобы быстро ориентироваться в списке, если машин станет много.</p></aside>
+
+<p>Выбор между динамическим и фиксированным размером диска делается именно на этапе именования и первичной настройки в расширенном режиме. Если вы оставите настройки по умолчанию, система создаст файл, который будет расти по мере заполнения данными, что экономит место на физическом носителе.</p>
+
+<h2 id="настройка-аппаратных-ресурсов">Настройка аппаратных ресурсов</h2>
+<p>Ключевым этапом является распределение оперативной памяти (RAM). Ползунок позволяет выбрать объем, но зеленый сектор шкалы указывает на рекомендуемый диапазон, безопасный для хоста. Выделение слишком большого объема может привести к тому, что основная система начнет активно использовать файл подкачки, что резко снизит общую производительность.</p>
+
+<p>Для современных операционных систем, таких как Windows 10 или 11, минимально комфортным объемом считается 4 Гб, хотя официально они могут запуститься и на 2 Гб. Linux-дистрибутивы с графическим интерфейсом обычно требуют от 2 до 4 Гб для плавной работы, а серверные версии могут обойтись и 512 Мб - 1 Гб.</p>
+
+<p>Далее следует настройка процессора. На вкладке <code>Процессор</code> можно указать количество ядер, доступных виртуальной машине. Не рекомендуется отдавать все ядра гостевой системе; оставьте хотя бы одно-два ядра для обслуживания фоновых процессов хоста. Активация технологии <strong>PAE/NX</strong> может потребоваться для запуска некоторых специфических версий ОС.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Интерфейсы программных продуктов часто обновляются. Расположение ползунков памяти и процессоров может незначительно отличаться в разных версиях VirtualBox, поэтому сверяйтесь с актуальными скриншотами или справкой, если интерфейс отличается.</p>
+</blockquote>
+
+<p>Также в этом разделе настраивается видеопамять. Увеличение объема видеопамяти до максимума (обычно 128 Мб) и включение 3D-ускорения необходимо для корректного отображения графических интерфейсов и работы оконной системы, особенно в Windows и современных Linux-дистрибутивах.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Оптимальная конфигурация памяти — это баланс: гостевая ОС должна работать быстро, но хост обязан оставаться отзывчивым.</p></aside>
+
+<h2 id="создание-и-настройка-виртуального-жесткого-диска">Создание и настройка виртуального жесткого диска</h2>
+<p>Виртуальная машина не может функционировать без дискового пространства для хранения операционной системы и пользовательских файлов. На этапе создания диска вам предложат выбрать формат файла. Наиболее совместимым и функциональным форматом является <strong>VDI</strong> (VirtualBox Disk Image), который является нативным для данного гипервизора.</p>
+
+<p>Существует два типа хранения файла диска: динамический и фиксированный. Динамический диск занимает на физическом носителе только тот объем, который реально используется данными внутри виртуалки. Фиксированный диск сразу резервирует весь заявленный объем (например, 50 Гб), что может немного ускорить работу, но займет место на хосте мгновенно.</p>
+
+<p>Размер диска зависит от ваших потребностей. Для тестовых целей может хватить 20-30 Гб, но для полноценной работы с программами лучше заложить 60-100 Гб. Виртуальный диск — это обычный файл на вашем компьютере, который можно копировать, переносить на внешние носители или удалять, как любой другой документ.</p>
+
+<details class="pb-accordion"><summary>Можно ли изменить размер диска позже?</summary><div class="pb-accordion-body"><p>Да, но это требует дополнительных действий через командную строку или меню менеджера виртуальных носителей. Проще сразу создать диск с запасом, используя динамическое выделение.</p></div></details>
+
+<p>После создания диск появится в списке носителей. Его можно отключать, подключать другие образы или создавать снимки состояния (снапшоты), что позволяет возвращать систему в предыдущие точки восстановления при критических ошибках.</p>
+
+<h2 id="установка-операционной-системы">Установка операционной системы</h2>
+<p>После завершения настройки аппаратной части машина готова к запуску, но на ней пока нет операционной системы. Выделите созданную машину в списке слева и нажмите кнопку <code>Запустить</code>. При первом запуске система запросит загрузочный носитель. Выберите пункт <code>Обзор</code> и укажите путь к ранее скачанному <code>.iso</code> файлу с образом ОС.</p>
+
+<p>Загрузится установщик выбранной операционной системы. С этого момента процесс ничем не отличается от установки на реальный компьютер: выбор языка, разметка диска (которую мы создали ранее) и копирование файлов. Виртуальная машина будет эмулировать загрузку с DVD или USB-накопителя.</p>
+
+<p>Во время установки может потребоваться взаимодействие с окном виртуальной машины. Чтобы курсор мыши "захватился" окном гостевой ОС и перестал выходить за его пределы, нужно кликнуть внутри окна. Для возврата курсора обратно на хост обычно используется комбинация клавиш, например, правый <code>Ctrl</code>.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Готовность к установке</h4><label class="check-item"><input type="checkbox"><span>ISO-образ скачан и проверен</span></label><label class="check-item"><input type="checkbox"><span>Создана виртуальная машина</span></label><label class="check-item"><input type="checkbox"><span>Выделено достаточно RAM</span></label><label class="check-item"><input type="checkbox"><span>Настроен виртуальный диск</span></label><label class="check-item"><input type="checkbox"><span>Машина запущена</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>После завершения установки и первой перезагрузки система загрузится уже с виртуального жесткого диска. Образ ISO можно отключить в настройках носителей, чтобы он не мешал при последующих запусках.</p>
+
+<h2 id="настройка-сети-и-общих-папок">Настройка сети и общих папок</h2>
+<p>Для полноценной работы виртуальной машине часто требуется доступ в интернет. По умолчанию VirtualBox использует режим NAT, что позволяет гостевой ОС выходить в сеть через соединение хоста, скрываясь за его IP-адресом. Это самый простой и безопасный вариант для большинства задач.</p>
+
+<p>Если вам нужно, чтобы виртуальная машина была видна в локальной сети как отдельное устройство, следует переключить режим сети на <strong>Сетевой мост</strong> (Bridged Adapter). В этом случае роутер выдаст виртуалке собственный IP-адрес, и она станет полноправным участником сети.</p>
+
+<p>Для обмена файлами между хостом и гостевой системой удобнее всего использовать общие папки. В настройках машины перейдите в раздел <code>Общие папки</code>, добавьте путь к нужной директории на хосте и поставьте галочки <code>Авто-подключение</code> и <code>Создать постоянную папку</code>.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Параметр настройки</th>
+<th>Режим NAT</th>
+<th>Сетевой мост</th>
+<th>Внутренняя сеть</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Доступ в Интернет</td>
+<td>Есть (через хост)</td>
+<td>Есть (прямой)</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Видимость в локальной сети</td>
+<td>Скрыта</td>
+<td>Видна как отдельный ПК</td>
+<td>Видна только другим VM</td>
+</tr>
+<tr>
+<td>Безопасность</td>
+<td>Высокая</td>
+<td>Зависит от сети</td>
+<td>Высокая (изолирована)</td>
+</tr>
+<tr>
+<td>Использование</td>
+<td>Серфинг, обновления</td>
+<td>Серверы, тесты сети</td>
+<td>Лабораторные стенды</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>После установки гостевых дополнений (Guest Additions) общие папки станут доступны как сетевые диски или смонтированные разделы внутри гостевой ОС, что значительно упрощает работу с данными.</p>
+
+<h2 id="установка-guest-additions-и-оптимизация">Установка Guest Additions и оптимизация</h2>
+<p>Последним критически важным шагом является установка пакета <strong>Guest Additions</strong>. Это набор драйверов и утилит, который позволяет гостевой ОС "понять", что она работает в виртуальной среде, и оптимизировать свою работу. Без этого пакета разрешение экрана будет низким, а работа с мышью — неудобной.</p>
+
+<p>Для установки в меню окна виртуальной машины выберите <code>Устройства → Подключить образ диска Guest Additions</code>. Внутри гостевой системы откроется виртуальный CD-диск с установщиком. Запустите его и следуйте инструкциям мастера, после чего потребуется перезагрузка.</p>
+
+<p>После установки дополнений становятся доступны такие функции, как общий буфер обмена, перетаскивание файлов (Drag'n'Drop) и автоматическое изменение размера окна гостевой ОС при растягивании окна VirtualBox. Это превращает работу с виртуалкой из неудобной эмуляции в комфортный рабочий инструмент.</p>
+
+<blockquote>
+<p>⚠️ Внимание: В некоторых дистрибутивах Linux для компиляции модулей Guest Additions могут потребоваться заголовочные файлы ядра (пакеты <code>linux-headers</code> и <code>build-essential</code>). Установите их перед запуском инсталлятора дополнений.</p>
+</blockquote>
+
+<p>Регулярно обновляйте VirtualBox и Guest Additions, так как новые версии часто содержат исправления безопасности и улучшения производительности для новых версий гостевых операционных систем.</p>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Может ли вирус из виртуальной машины повредить основной компьютер?</summary>
+<p>В стандартной конфигурации виртуальная машина изолирована от хоста. Однако, если включены общие папки с правами записи или настроен сетевой мост с уязвимостями, теоретический риск существует. Рекомендуется не включать ненужные функции интеграции при работе с подозрительным ПО.</p>
+</details>
+
+<details>
+<summary>Почему виртуальная машина работает медленно?</summary>
+<p>Основные причины: выделено мало оперативной памяти, не установлен или не обновлен пакет Guest Additions, отключена аппаратная виртуализация в BIOS, или хост перегружен другими задачами. Также скорость зависит от типа диска (SSD против HDD).</p>
+</details>
+
+<details>
+<summary>Как увеличить размер виртуального диска, если место закончилось?</summary>
+<p>Просто переместить ползунок нельзя. Необходимо использовать команду <code>VBoxManage modifyhd</code> для расширения файла диска, а затем внутри гостевой ОС расширить раздел через управление дисками. Проще изначально создавать диск с запасом.</p>
+</details>
+
+<details>
+<summary>Поддерживает ли VirtualBox звуковые карты?</summary>
+<p>Да, программа эмулирует звуковые контроллеры (например, Intel HD Audio или SoundBlaster 16). В настройках машины в разделе "Аудио" нужно включить звуковой контроллер и выбрать драйвер хоста для передачи звука на ваши реальные колонки или наушники.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/k/ka/kak-pravilno-kleit-kameru-avtomobilya.html" class="pb-related-card">
+                <span class="pb-related-title">Как правильно клеить камеру на авто: пошаговая инструкция 2026</span>
+                <span class="pb-related-desc">Подробное руководство по установке автомобильной камеры: выбор места, подготовка поверхности, поклей</span>
+            </a><a href="/articles/m/mo/mozhno-li-podklyuchit-avtomobilnyj-nasos-k-zaryadnomu-ustrojstvu.html" class="pb-related-card">
+                <span class="pb-related-title">Можно ли подключить автонасос к зарядке? Технические нюансы</span>
+                <span class="pb-related-desc">Разбираемся, как безопасно подключить автомобильный компрессор к зарядному устройству: схемы, риски,</span>
+            </a><a href="/articles/c/ch/chem-otlichaetsya-euro-truck-simulator-2-ot-euro-truck-simulator-2-demo.html" class="pb-related-card">
+                <span class="pb-related-title">Euro Truck Simulator 2 vs Demo: 7 ключевых отличий перед покупкой</span>
+                <span class="pb-related-desc">Чем полная версия ETS2 отличается от демо: сравнение карты, грузов, техники, мультиплеера и возможно</span>
+            </a><a href="/articles/o/ot/otlichie-pvkh-ot-poliuretana.html" class="pb-related-card">
+                <span class="pb-related-title">Отличие ПВХ от полиуретана: что лучше для авто?</span>
+                <span class="pb-related-desc">Полный разбор свойств полиуретана и винила. Что выбрать для защиты авто: пленку, втулки или подвеску</span>
+            </a><a href="/articles/t/to/top-rossijskikh-proizvoditelej-chasov.html" class="pb-related-card">
+                <span class="pb-related-title">Топ российских производителей часов: обзор брендов 2026</span>
+                <span class="pb-related-desc">Лучшие российские производители часов: история, технологии, модельный ряд. Сравнение брендов, особен</span>
+            </a><a href="/articles/b/bs/bsm-v-mashine-chto-eto.html" class="pb-related-card">
+                <span class="pb-related-title">BSM в машине: что это такое и как работает система</span>
+                <span class="pb-related-desc">Разбираемся, что такое BSM в автомобиле, как функционирует система слепых зон, её преимущества и осо</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

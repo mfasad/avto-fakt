@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Динамическая разметка камеры: принцип работы и настройка — Авто Факт</title>
+    <meta name="description" content="Подробный разбор технологии динамической разметки камеры заднего вида. Как перемещаются линии парковки и от чего зависит их корректность.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ka/kak-rabotaet-dinamicheskaya-razmetka-kamery-zadnego-vida.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Динамическая разметка камеры: принцип работы и настройка">
+    <meta property="og:description" content="Подробный разбор технологии динамической разметки камеры заднего вида. Как перемещаются линии парковки и от чего зависит их корректность.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/elektrika-avto/">Электрика Авто</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Динамическая разметка камеры: принцип работы и настройка</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#принцип-действия-и-физика-процесса">Принцип действия и физика процесса</a></li><li><a href="#типы-подключения-и-передача-данных">Типы подключения и передача данных</a></li><li><a href="#необходимость-калибровки-системы">Необходимость калибровки системы</a></li><li><a href="#сравнение-статической-и-динамической-разметки">Сравнение статической и динамической разметки</a></li><li><a href="#типичные-проблемы-и-их-решение">Типичные проблемы и их решение</a></li><li><a href="#перспективы-развития-технологии">Перспективы развития технологии</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/e/el/elektrooborudovanie-avtomobilya-ustrojstvo-i-printsip-raboty.html">Электрооборудование автомобиля: устройство и принцип работы систем</a></li><li><a href="/articles/s/s2/s2wr2-na-shine-rasshifrovka.html">S2WR2 на шине: расшифровка кода и назначение в автоэлектрике</a></li><li><a href="/articles/t/ts/tsokol-hb4-i-h4-raznitsa.html">HB4 и H4: в чем разница цоколей и как выбрать правильно</a></li><li><a href="/articles/k/kn/knopki-na-dveri-avtomobilya-vnutri-salona.html">Кнопки на двери авто: устройство, ремонт и функции</a></li><li><a href="/articles/s/si/signal-mashiny-zvuk-gromkij.html">Сигнал машины звук громкий: как сделать гудок мощнее</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как работает динамическая разметка камеры заднего вида</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-действия-и-физика-процесса">Принцип действия и физика процесса</a></li><li><a href="#типы-подключения-и-передача-данных">Типы подключения и передача данных</a></li><li><a href="#необходимость-калибровки-системы">Необходимость калибровки системы</a></li><li><a href="#сравнение-статической-и-динамической-разметки">Сравнение статической и динамической разметки</a></li><li><a href="#типичные-проблемы-и-их-решение">Типичные проблемы и их решение</a></li><li><a href="#перспективы-развития-технологии">Перспективы развития технологии</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Установка камеры заднего вида давно стала стандартом для современного автомобиля, однако базовая статическая картинка часто не дает полного понимания габаритов машины. Именно здесь на сцену выходит <strong>динамическая разметка</strong>, превращающая простой видеопоток в интеллектуальный помощник парковки. В отличие от статических линий, нанесенных на экран раз и навсегда, эта технология меняет свою геометрию в реальном времени, реагируя на поворот рулевого колеса.</p>
+
+<p>Принцип действия системы строится на сложном взаимодействии видеомодуля и датчиков управления автомобилем. Когда вы поворачиваете руль, траектория движения машины меняется, и на экране монитора линии парковки изгибаются, предсказывая путь, по которому поедет ваш автомобиль. Это позволяет водителю с высокой точностью оценить, впишется ли он в узкий карман или заденет ли бордюр при маневре.</p>
+
+<p>Понимание того, как именно функционирует этот механизм, необходимо не только для грамотной эксплуатации, но и для правильной установки дополнительного оборудования. Если система настроена неверно, "умные" линии могут показывать траекторию, которая не совпадает с реальностью, что создает опасную иллюзию безопасности. Разберем детально технические аспекты работы данной технологии.</p>
+
+<h2 id="принцип-действия-и-физика-процесса">Принцип действия и физика процесса</h2>
+
+<p>В основе работы динамической парковочной системы лежит непрерывный обмен данными между блоком управления автомобилем и процессором камеры или головного устройства. Ключевым элементом здесь является <strong>датчик угла поворота руля</strong> (Steering Angle Sensor), который считывает положение рулевой колонки с высокой частотой. Полученные данные передаются по шине CAN или через отдельный сигнальный провод на устройство обработки видео.</p>
+
+<p>Процессор анализирует угол поворота и, используя заложенные алгоритмы, рассчитывает предполагаемую траекторию движения задних колес. На экран выводятся специальные графические элементы — обычно это две изогнутые линии, продолжающие габариты автомобиля. Чем круче вы выворачиваете руль, тем сильнее изгибаются линии на дисплее, визуально показывая радиус разворота.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Динамическая разметка является лишь вспомогательным инструментом. Алгоритмы могут не учитывать резкие изменения дорожного покрытия, скользкую поверхность или нестандартные препятствия, поэтому визуальный контроль обстановки обязателен.</p>
+</blockquote>
+
+<p>Важно отметить, что для корректной работы системе требуется калибровка. Без привязки к конкретным геометрическим параметрам автомобиля (ширина колеи, вылет колес, база) расчеты будут некорректны. Именно поэтому при установке новой камеры часто требуется процедура настройки, о которой мы поговорим ниже.</p>
+
+<div class="pb-poll" id="poll-03613787"><div class="pb-poll-question">📊 Как часто вы пользуетесь парковочной камерой?</div><div class="pb-poll-option" data-poll="03613787" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Постоянно, только с ней паркуюсь</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="03613787" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Иногда, если место сложное</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="03613787" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Редко, привык по зеркалам</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="03613787" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Вообще нет камеры</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="типы-подключения-и-передача-данных">Типы подключения и передача данных</h2>
+
+<p>Реализация функции динамических линий может осуществляться двумя основными способами, каждый из которых имеет свои технические особенности. Первый вариант предполагает, что обработку видео и наложение графики берет на себя сама <em>камера заднего вида</em>. Такие модели обычно имеют дополнительный провод в разъеме, который подключается к датчику угла поворота руля или блоку управления.</p>
+
+<p>Второй, более распространенный в современных мультимедийных системах вариант, заключается в том, что камера передает "сырой" видеосигнал, а построением динамических линий занимается головное устройство (штатная магнитола или Android-планшет). В этом случае автомобиль сам считывает данные с CAN-шины и программно накладывает графику поверх видеопотока.</p>
+
+<ul>
+<li>📹 <strong>Внешний процессор:</strong> Камера имеет встроенный гироскоп или получает сигнал от руля, самостоятельно рисуя линии (менее точно, зависит от качества камеры).</li>
+<li>🚗 <strong>Штатная интеграция:</strong> Головное устройство считывает CAN-данные автомобиля и строит 3D-модель траектории (максимальная точность и адаптивность).</li>
+<li>📱 <strong>Программная эмуляция:</strong> Андроид-магнитолы используют акселерометр внутри себя или данные GPS для примерного расчета (наименее точный метод, не привязан к реальным колесам).</li>
+</ul>
+
+<p>При выборе оборудования важно обращать внимание на совместимость протоколов. Если вы планируете использовать возможности штатной системы, камера должна передавать чистый сигнал без встроенной графики. В противном случае может возникнуть конфликт, и на экране появятся двойные линии парковки.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>При покупке универсальной камеры для системы с динамической разметкой ищите в характеристиках пометку "Dynamic Guidelines Support" или наличие отдельного сигнального провода для подключения к рулевой рейке.</p></aside>
+
+<h2 id="необходимость-калибровки-системы">Необходимость калибровки системы</h2>
+
+<p>Критически важным этапом, без которого динамическая разметка превращается в бесполезную игрушку, является калибровка. Поскольку у каждого автомобиля своя геометрия кузова и подвески, стандартные настройки не могут обеспечить точное совпадение линий с реальной траекторией. Ошибка в несколько градусов может привести к тому, что на экране вы будете видеть свободное пространство, которого в реальности уже нет.</p>
+
+<p>Процесс настройки обычно проводится на ровной площадке с использованием специальных разметочных листов или виртуальных ориентиров. Владельцу необходимо установить автомобиль строго перпендикулярно контрольной линии, после чего запустить режим калибровки в меню системы. Алгоритм попросит совместить виртуальные точки на экране с реальными метками на земле.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Чек-лист перед калибровкой</h4><label class="check-item"><input type="checkbox"><span>Выбрать ровную горизонтальную площадку</span></label><label class="check-item"><input type="checkbox"><span>Проверить давление в шинах</span></label><label class="check-item"><input type="checkbox"><span>Очистить камеру от грязи</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в исправности датчиков руля</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Существует два основных метода калибровки: автоматический и ручной. Автоматический требует проезда по размеченному коридору задним ходом, во время которого система сама считает необходимые коэффициенты. Ручной метод подразумевает точную подгонку контрольных точек по сетке координат. Второй вариант часто встречается в aftermarket-решениях для Android-систем.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не игнорируйте этап калибровки после установки новой камеры или замены элементов рулевого управления. Некорректные данные угла поворота могут привести к ДТП при парковке в ограниченном пространстве.</p>
+</blockquote>
+
+<h2 id="сравнение-статической-и-динамической-разметки">Сравнение статической и динамической разметки</h2>
+
+<p>Чтобы понять ценность технологии, стоит сравнить её возможности с обычными статическими линиями. Статика показывает лишь габариты автомобиля в текущий момент, не учитывая вектор движения. Динамика же добавляет четвертое измерение — время и направление, позволяя прогнозировать положение машины через несколько секунд.</p>
+
+<p>Ниже приведена таблица, демонстрирующая ключевые различия между двумя типами систем парковочной помощи:</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Параметр сравнения</th>
+<th>Статическая разметка</th>
+<th>Динамическая разметка</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Реакция на руль</td>
+<td>Отсутствует, линии неподвижны</td>
+<td>Линии изгибаются по траектории</td>
+</tr>
+<tr>
+<td>Точность парковки</td>
+<td>Средняя, требует опыта</td>
+<td>Высокая, видно будущий путь</td>
+</tr>
+<tr>
+<td>Зависимость от датчиков</td>
+<td>Не зависит</td>
+<td>Зависит от датчика угла поворота</td>
+</tr>
+<tr>
+<td>Сложность установки</td>
+<td>Минимальная</td>
+<td>Требует подключения и настройки</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Очевидно, что динамическая система предоставляет значительно больше информации водителю. Однако за эту информативность приходится платить более сложным монтажом и необходимостью регулярной проверки корректности работы. Для новичков или владельцев крупногабаритных автомобилей разница в комфорте использования будет колоссальной.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Главное преимущество динамики — возможность увидеть траекторию движения задних колес до начала фактического маневра, что исключает "тыкание" туда-сюда.</p></aside>
+
+<h2 id="типичные-проблемы-и-их-решение">Типичные проблемы и их решение</h2>
+
+<p>В процессе эксплуатации водители могут столкнуться с рядом неисправностей, связанных с работой парковочных линий. Самая распространенная проблема — рассинхронизация. Вы крутите руль влево, а линии на экране стоят прямо или двигаются в противоположную сторону. Это часто указывает на ошибку при первоначальной настройке или сбой в работе датчика угла поворота руля.</p>
+
+<p>Еще одна частая ситуация — "дрожание" или скачкообразное изменение положения линий. Это может быть вызвано плохим контактом в проводке, помехами в видеосигнале или низким напряжением в бортовой сети при работе двигателя. Также стоит проверить, не сбилась ли калибровка после посещения сервиса, где производились работы с подвеской или развалом-схождением.</p>
+
+<ul>
+<li>🔧 <strong>Проверка контактов:</strong> Окисление в разъеме RCA или сигнальном проводе может приводить к потере данных о повороте руля.</li>
+<li>💻 <strong>Перезагрузка системы:</strong> Программный сбой головного устройства иногда решается полным сбросом настроек (Reset).</li>
+<li>📐 <strong>Повторная калибровка:</strong> Если линии визуально не совпадают с реальностью более чем на 10-15 см, настройку необходимо повторить.</li>
+</ul>
+
+<p>В некоторых случаях, особенно на автомобилях с электроусилителем руля, проблема может крыться в программном обеспечении самого блока управления. Обновление прошивки <em>ECU</em> или головного устройства часто устраняет некорректную обработку данных с CAN-шины.</p>
+
+<details class="pb-accordion"><summary>Скрытая проблема с "зимним" эффектом</summary><div class="pb-accordion-body"><p>При сильных морозах смазка в механизме поворотных кулаков густеет, создавая люфт или задержку в реакции колес на руль. Камера показывает реакцию мгновенно, а машина поворачивает с запозданием, что может сбить с толку водителя.</p></div></details>
+
+<h2 id="перспективы-развития-технологии">Перспективы развития технологии</h2>
+
+<p>Технологии парковки не стоят на месте, и классическая динамическая разметка постепенно трансформируется в более сложные системы. На смену простым изогнутым линиям приходит <strong>3D-моделирование</strong> окружения, где автомобиль строит виртуальный каркас препятствий в реальном времени. Камеры с высоким разрешением и лидары позволяют накладывать графику непосредственно на объекты, а не просто рисовать путь на асфальте.</p>
+
+<p>Современные системы уже умеют автоматически парковать автомобиль, полностью беря управление рулем на себя. В этом случае динамическая разметка служит скорее индикатором для водителя, показывая, что "видит" и "планирует" искусственный интеллект автомобиля. Интеграция с навигационными картами позволяет заранее знать о наличии парковочных мест и их габаритах.</p>
+
+<p>Однако, несмотря на все новшества, базовый принцип работы — связь угла поворота колес и видеопотока — остается фундаментом безопасности. Понимание этого принципа помогает водителю не слепо доверять электронике, а использовать её как мощный инструмент контроля ситуации.</p>
+
+<details>
+<summary>Влияет ли размер шин на работу динамической разметки?</summary>
+<p>Да, установка шин нестандартного размера (например, более высокого профиля или большего диаметра) меняет эффективный радиус качения и может незначительно повлиять на траекторию. Однако основным фактором остается геометрия поворота колес, поэтому влияние размера шин минимально и обычно укладывается в допустимую погрешность системы.</p>
+</details>
+
+<details>
+<summary>Можно ли отключить динамические линии, если они мешают?</summary>
+<p>В большинстве штатных систем и продвинутых головных устройств эту функцию можно отключить в настройках камеры (меню "Parking Guide Lines" или аналогичное). В простых китайских камерах без дисплея отключение возможно только физическим разрывом сигнального провода, идущего к датчику руля, после чего линии станут статическими или исчезнут.</p>
+</details>
+
+<details>
+<summary>Работает ли динамическая разметка при движении задним ходом вперед?</summary>
+<p>Система активируется только при включении передачи заднего хода (R). При движении вперед, даже если камера переключена в этот режим принудительно, динамические линии парковки, привязанные к алгоритму парковки, обычно не отображаются, так как логика построения траектории иная.</p>
+</details>
+
+<details>
+<summary>Почему линии могут "прыгать" на неровной дороге?</summary>
+<p>Если камера закреплена не жестко или имеет люфт в кронштейне, вибрации кузова передаются на объектив. Система обработки видео может воспринимать это как изменение угла обзора, что приводит к искажению или дрожанию наложенной графики. Проверьте надежность крепления камеры.</p>
+</details>
+
+<details>
+<summary>Нужна ли калибровка после замены аккумулятора?</summary>
+<p>Сам по себе съем аккумулятора не сбрасывает калибровку, если она сохранена в энергонезависимой памяти блока управления. Однако, если в автомобиле сбрасываются адаптации ЭБУ (например, при глубоком разряде), может потребоваться процедура "обучения" датчика угла поворота руля, что косвенно повлияет и на камеру.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/e/el/elektrooborudovanie-avtomobilya-ustrojstvo-i-printsip-raboty.html" class="pb-related-card">
+                <span class="pb-related-title">Электрооборудование автомобиля: устройство и принцип работы систем</span>
+                <span class="pb-related-desc">Подробный разбор электрики авто: от АКБ до ЭБУ. Как работает бортовая сеть, устройство генератора и </span>
+            </a><a href="/articles/s/s2/s2wr2-na-shine-rasshifrovka.html" class="pb-related-card">
+                <span class="pb-related-title">S2WR2 на шине: расшифровка кода и назначение в автоэлектрике</span>
+                <span class="pb-related-desc">Что означает маркировка S2WR2 на автомобильных шинах? Разбор стандарта, технические характеристики и</span>
+            </a><a href="/articles/t/ts/tsokol-hb4-i-h4-raznitsa.html" class="pb-related-card">
+                <span class="pb-related-title">HB4 и H4: в чем разница цоколей и как выбрать правильно</span>
+                <span class="pb-related-desc">Сравнение ламп HB4 и H4: технические характеристики, совместимость, особенности установки и выбор дл</span>
+            </a><a href="/articles/k/kn/knopki-na-dveri-avtomobilya-vnutri-salona.html" class="pb-related-card">
+                <span class="pb-related-title">Кнопки на двери авто: устройство, ремонт и функции</span>
+                <span class="pb-related-desc">Полный гид по кнопкам в дверях салона. Разбор неисправностей, замена концевиков, управление стеклопо</span>
+            </a><a href="/articles/s/si/signal-mashiny-zvuk-gromkij.html" class="pb-related-card">
+                <span class="pb-related-title">Сигнал машины звук громкий: как сделать гудок мощнее</span>
+                <span class="pb-related-desc">Громкий сигнал машины: выбор, установка и настройка пневмогудка. Разбор электрических схем, выбор ко</span>
+            </a><a href="/articles/k/ko/kombinirovannyj-rastsepitel-avtomaticheskogo-vyklyuchatelya-eto.html" class="pb-related-card">
+                <span class="pb-related-title">Комбинированный расцепитель автомата: принцип работы, виды и выбор</span>
+                <span class="pb-related-desc">Что такое комбинированный расцепитель в автоматическом выключателе, как он работает и чем отличается</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

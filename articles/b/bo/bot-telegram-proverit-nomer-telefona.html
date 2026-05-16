@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Бот Телеграм проверить номер телефона: поиск утечек и анализ — Авто Факт</title>
+    <meta name="description" content="Как бот Телеграм проверить номер телефона помогает найти утечки данных. Методы защиты, анализ риска и альтернативные способы проверки цифрового следа.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/b/bo/bot-telegram-proverit-nomer-telefona.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Бот Телеграм проверить номер телефона: поиск утечек и анализ">
+    <meta property="og:description" content="Как бот Телеграм проверить номер телефона помогает найти утечки данных. Методы защиты, анализ риска и альтернативные способы проверки цифрового следа.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Бот Телеграм проверить номер телефона: поиск утечек и анализ</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#механизм-работы-ботов-для-проверки-номеров-в-telegram">Механизм работы ботов для проверки номеров в Telegram</a></li><li><a href="#риски-использования-сторонних-ботов-для-osint-анализа">Риски использования сторонних ботов для OSINT-анализа</a></li><li><a href="#альтернативные-и-безопасные-методы-проверки-утечек">Альтернативные и безопасные методы проверки утечек</a></li><li><a href="#сравнение-популярных-сервисов-и-ботов-для-проверки">Сравнение популярных сервисов и ботов для проверки</a></li><li><a href="#как-защитить-свой-номер-телефона-от-утечек">Как защитить свой номер телефона от утечек</a></li><li><a href="#правовые-аспекты-и-ответственность">Правовые аспекты и ответственность</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/k/ka/kak-sest-v-mashinu-v-mafii-2.html">Как правильно сесть в машину в Mafia II: гайд для новичков 2026</a></li><li><a href="/articles/s/sk/skolko-edet-samaya-bystraya-mashina-v-mire.html">Сколько едет самая быстрая машина в мире: рекорды и факты</a></li><li><a href="/articles/m/mo/moshchnyj-avtomobilnyj-pylesos-na-akkumulyatore-rejting-luchshikh.html">ТОП-10 аккумуляторных автопылесосов 2026: рейтинг мощных моделей</a></li><li><a href="/articles/p/po/posudomoechnaya-mashina-indezit-ne-zapuskaetsya.html">Посудомоечная машина Indesit не запускается: диагностика и ремонт</a></li><li><a href="/articles/g/gd/gde-razmestit-antennu-gps-v-avtomobile.html">Где разместить антенну GPS в автомобиле: схемы и ошибки</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Проверка номера телефона через ботов Телеграм: поиск утечек и защита</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#механизм-работы-ботов-для-проверки-номеров-в-telegram">Механизм работы ботов для проверки номеров в Telegram</a></li><li><a href="#риски-использования-сторонних-ботов-для-osint-анализа">Риски использования сторонних ботов для OSINT-анализа</a></li><li><a href="#альтернативные-и-безопасные-методы-проверки-утечек">Альтернативные и безопасные методы проверки утечек</a></li><li><a href="#сравнение-популярных-сервисов-и-ботов-для-проверки">Сравнение популярных сервисов и ботов для проверки</a></li><li><a href="#как-защитить-свой-номер-телефона-от-утечек">Как защитить свой номер телефона от утечек</a></li><li><a href="#правовые-аспекты-и-ответственность">Правовые аспекты и ответственность</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>В современном цифровом пространстве <strong>номер телефона</strong> стал не просто средством связи, а уникальным цифровым идентификатором, привязанным к банковским картам, аккаунтам в социальных сетях и государственным сервисам. Утечки баз данных происходят с пугающей регулярностью, превращая персональную информацию в товар на черных рынках. Именно поэтому запрос"бот Телеграм проверить номер телефона" набирает огромную популярность, так как пользователи стремятся самостоятельно оценить масштаб угрозы.</p>
+<p>Многие ошибочно полагают, что подобные инструменты созданы исключительно для хакеров или недобросовестных маркетологов. На самом деле, понимание того, как работает <em>OSINT</em> (разведка по открытым источникам), критически важно для обычного человека. Если вы знаете, какие данные о вас доступны, вы можете предпринять шаги по их защите. Однако стоит сразу отметить, что большинство"пробивов" в мессенджере опираются на уже украденные базы, а не на прямое взлом серверов в реальном времени.</p>
+<p>Использование таких ботов — это палка о двух концах. С одной стороны, вы можете узнать,"светится" ли ваш номер в слитых базах. С другой — вы часто добровольно предоставляете свой номер боту, который может принадлежать неизвестным лицам. В этой статье мы разберем механику работы подобных сервисов, риски их использования и альтернативные, более безопасные способы проверки своего цифрового следа.</p>
+
+<h2 id="механизм-работы-ботов-для-проверки-номеров-в-telegram">Механизм работы ботов для проверки номеров в Telegram</h2>
+<p>Принцип действия большинства ботов, предлагающих услугу"проверить номер", базируется на агрегации данных из различных источников. Чаще всего речь идет о <strong>базах данных</strong>, которые были украдены с сайтов служб доставки, интернет-магазинов, форумов или социальных сетей в результате прошлых взломов. Бот выступает лишь интерфейсом, который позволяет пользователю быстро сделать запрос по этим гигантским архивам.</p>
+<p>Когда вы отправляете команду боту, он выполняет поиск по индексированным массивам информации. Если ваш номер телефона когда-либо фигурировал в одной из слитых баз, бот выдаст соответствующие данные. Это может быть просто подтверждение наличия номера в системе или же детальная информация: имя, адрес, email, ссылки на профили в соцсетях. Важно понимать, что сам бот не"взламывает" телефон, он лишьрует уже существующие записи.</p>
+<p>Существует два основных типа таких ботов. Первые работают по принципу"поиска по открытым источникам" (Social Engineering), собирая информацию из публичных профилей. Вторые используют нелегально полученные <strong>дампы баз данных</strong>. Именно вторые вызывают наибольшие опасения у специалистов по кибербезопасности, так как они оперируют конфиденциальной информацией, которую пользователи никогда не планировали делать публичной.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Используя бота для проверки, вы часто передаете свой номер телефона владельцу бота. Это может привести к попаданию вашего контакта в новые списки для спада или таргетированных атак.</p>
+</blockquote>
+
+<p>Технически процесс выглядит следующим образом: пользователь вводит команду, например, <code>/check +79990000000</code>, и бот обращается к своей базе данных (часто это MongoDB или PostgreSQL), где хранятся миллионы записей. Скорость выдачи результата зависит от оптимизации базы и мощности сервера, на котором запущен бот. Некоторые продвинутые боты могут даже показывать вероятность того, что номер принадлежит конкретному человеку, используя алгоритмы машинного обучения для сопоставления данных.</p>
+
+<h2 id="риски-использования-сторонних-ботов-для-osint-анализа">Риски использования сторонних ботов для OSINT-анализа</h2>
+<p>Главный риск заключается в потере контроля над собственной конфиденциальностью. Когда вы обращаетесь к неизвестному боту, вы фактически доверяете ему свой номер. Владелец бота может занести ваш контакт в список"активных пользователей" и продавать эту информацию третьим лицам. Это создает замкнутый круг: вы проверяете утечку, но сами становитесь частью новой утечки.</p>
+<p>Кроме того, многие боты являются фишинговыми. Они могут имитировать функционал проверки, но при этом пытаться выманить у пользователя дополнительную информацию или заставить перейти по опасной ссылке. В худшем случае, переход по ссылке может привести к установке вредоносного ПО на смартфон или краже cookies-файлов браузера.</p>
+<ul>
+ <li>🚫 <strong>Сбор данных:</strong> Бот может сохранять историю всех ваших запросов, формируя досье на ваши интересы и круг общения.</li>
+ <li>🚫 <strong>Рекламный спам:</strong> Ваш номер может быть добавлен в базы для рассылки рекламных сообщений или предложений мошеннического характера.</li>
+ <li>🚫 <strong>Социальная инженерия:</strong> Зная, что вы интересовались проверкой номера, мошенники могут использовать это для более убедительных атак (например, звонки якобы от службы безопасности).</li>
+</ul>
+
+<p>Еще один аспект — юридический. В некоторых юрисдикциях использование баз данных, полученных незаконным путем, может трактоваться как нарушение закона о персональных данных. Хотя конечный пользователь редко попадает под прицел правоохранительных органов, сам факт использования таких сервисов остается в"серой" зоне.</p>
+
+<div class="pb-poll" id="poll-68b8067b"><div class="pb-poll-question">📊 Насколько вы доверяете ботам в Telegram?</div><div class="pb-poll-option" data-poll="68b8067b" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Полностью доверяю</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="68b8067b" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Использую с осторожностью</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="68b8067b" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Никогда не пользуюсь</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="68b8067b" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Не знаю, что это</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="альтернативные-и-безопасные-методы-проверки-утечек">Альтернативные и безопасные методы проверки утечек</h2>
+<p>К счастью, существуют легальные и безопасные способы узнать, не утекли ли ваши данные в сеть. Крупные IT-компании и организации по кибербезопасности предлагают сервисы, которые проверяют email-адреса и номера телефонов по известным базам утечек, не собирая при этом дополнительную информацию о пользователе.</p>
+<p>Одним из самых известных сервисов является <em>Have I Been Pwned</em>. Он позволяет проверить, фигурирует ли ваш email или номер телефона в базах данных, использованных хакерами. Сервис не показывает пароли или полные данные, а лишь подтверждает факт утечки и указывает источник (какой именно сервис был взломан). Этого достаточно, чтобы понять, нужно ли менять пароли.</p>
+<p>Также стоит воспользоваться встроенными функциями безопасности в операционных системах. Например, Google Chrome и менеджеры паролей от Apple имеют функцию мониторинга утечек. Они автоматически сверяют сохраненные пароли с базами известных компрометаций и предупреждают пользователя.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка цифровой безопасности</h4><label class="check-item"><input type="checkbox"><span>Проверить email на Have I Been Pwned</span></label><label class="check-item"><input type="checkbox"><span>Включить двухфакторную аутентификацию</span></label><label class="check-item"><input type="checkbox"><span>Проверить активные сеансы в Telegram</span></label><label class="check-item"><input type="checkbox"><span>Удалить номер из публичных профилей</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Для более глубокого анализа можно использовать сервисы вроде <em>LeakCheck</em> или <em>IntelX</em>. Они предоставляют более детализированную информацию, но часто требуют регистрации. Главное преимущество таких платформ перед Telegram-ботами — прозрачность их работы и отсутствие скрытого сбора данных. Вы точно знаете, кому и зачем отправляете запрос.</p>
+
+<h2 id="сравнение-популярных-сервисов-и-ботов-для-проверки">Сравнение популярных сервисов и ботов для проверки</h2>
+<p>Чтобы лучше ориентироваться в доступных инструментах, рассмотрим сравнительную таблицу различных методов проверки. Она поможет понять разницу между специализированными сайтами и ботами в мессенджерах.</p>
+
+<div class="pb-table-wrap"><table>
+ <thead>
+ <tr>
+ <th>Тип сервиса</th>
+ <th>Безопасность данных</th>
+ <th>Глубина проверки</th>
+ <th>Риск для пользователя</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>Специализированные сайты (HIBP)</td>
+ <td>Высокая</td>
+ <td>Факт утечки, источник</td>
+ <td>Минимальный</td>
+ </tr>
+ <tr>
+ <td>Telegram-боты (агрегаторы)</td>
+ <td>Низкая</td>
+ <td>Личные данные, адреса</td>
+ <td>Высокий (сбор данных)</td>
+ </tr>
+ <tr>
+ <td>Поисковики (Google/Yandex)</td>
+ <td>Средняя</td>
+ <td>Открытые профили</td>
+ <td>Средний (цифровой след)</td>
+ </tr>
+ <tr>
+ <td>Операторы связи</td>
+ <td>Высокая</td>
+ <td>Только свои данные</td>
+ <td>Отсутствует</td>
+ </tr>
+ </tbody>
+</table></div>
+
+<p>Как видно из таблицы, специализированные сайты выигрывают по уровню безопасности. Telegram-боты часто дают более"вкусный" результат в виде адресов и имен, но цена этой информации — ваша собственная приватность. Операторы связи могут предоставить информацию только о том, какие услуги подключены к номеру, но не о том, где он засветился в интернете.</p>
+
+<details class="pb-accordion"><summary>Почему боты находят больше данных?</summary><div class="pb-accordion-body"><p>Боты часто используют нелегальные базы, которые включают в себя данные из закрытых источников, таких как базы доставок еды, такси и интернет-магазинов, которые не индексируются обычными поисковиками.</p></div></details>
+
+<h2 id="как-защитить-свой-номер-телефона-от-утечек">Как защитить свой номер телефона от утечек</h2>
+<p>Полностью исключить риск утечки номера невозможно, так как мы вынуждены указывать его при регистрации в банках, госуслугах и магазинах. Однако можно минимизировать последствия. Первым шагом является использование <strong>виртуальных номеров</strong> для регистрации в сомнительных сервисах. Для важных аккаунтов всегда используйте основной номер, для остального — временный.</p>
+<p>Второй важный шаг — настройка приватности в самом Telegram. Зайдите в <code>Настройки → Конфиденциальность → Номер телефона</code> и установите значение"Кто видит мой номер" в положение"Никто". Также ограничьте возможность добавления вас в группы только контактам. Это предотвратит сканирование вашего профиля ботами через групповые чаты.</p>
+<ul>
+ <li>🛡️ <strong>Двухфакторная аутентификация:</strong> Всегда включайте 2FA в Telegram и других важных сервисах. Это защитит аккаунт, даже если номер попадет к мошенникам.</li>
+ <li>🛡️ <strong>Ограничение видимости:</strong> Скройте номер в настройках мессенджеров, оставив его видимым только для сохраненных контактов.</li>
+ <li>🛡️ <strong>Осторожность при регистрации:</strong> Не указывайте личный номер на форумах, досках объявлений и в профилях игр.</li>
+</ul>
+
+<p>Регулярная проверка настроек безопасности поможет держать руку на пульсе. Если вы обнаружите, что ваш номер"засветился" в базе, немедленно смените пароли на всех сервисах, где использовалась эта связка логин-пароль, и будьте готовы к возможному спаму.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Используйте функцию"Скрыть номер" при регистрации в новых сервисах, если это возможно, или приобретите вторую SIM-карту специально для интернета и регистраций.</p></aside>
+
+<h2 id="правовые-аспекты-и-ответственность">Правовые аспекты и ответственность</h2>
+<p>В Российской Федерации и многих других странах сбор и распространение персональных данных без согласия субъекта запрещены законом. Использование ботов, которые агрегируют украденные базы, формально может подпадать под статьи о неправомерном доступе к компьютерной информации. Хотя доказать факт использования конкретного бота сложно, сам факт существования таких сервисов находится под пристальным вниманием Роскомнадзора и правоохранительных органов.</p>
+<p>Владельцы ботов рискуют получить реальные сроки, как это уже случалось с создателями популярных"пробивов". Пользователи, как правило, не несут уголовной ответственности за единичный запрос, но они становятся соучастниками процесса обработки нелегальных данных. Кроме того, если вы используете полученные данные для шантажа или угроз, ответственность наступает в полной мере.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Передача персональных данных третьим лицам (даже просто пересылка скриншота с информацией о человеке) может быть расценена как нарушение законодательства о персональных данных.</p>
+</blockquote>
+
+<p>Важно отличать OSINT-исследования, проводимые профессионалами в рамках закона (например, журналистские расследования или работа служб безопасности компаний), от бытового"пробива". В первом случае есть юридическое обоснование и методы, не нарушающие закон, во втором — часто используется краденое.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Использование нелегальных баз данных для поиска информации о людях несет юридические риски и угрозу собственной безопасности пользователя.</p></aside>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+ <summary>Может ли бот Телеграм взломать мой телефон, если я просто проверю номер?</summary>
+ <p>Сам по себе текстовый запрос боту не может привести к взлому телефона. Однако, если бот пришлет вам ссылку и вы по ней перейдете, или попросит скачать файл, риск заражения malware значительно возрастает. Будьте осторожны с любыми внешними ссылками.</p>
+ <p>Кроме того, сам факт обращения к боту фиксируется, и ваш номер помечается как"активный", что может привлечь внимание спамеров.</p>
+</details>
+
+<details>
+ <summary>Насколько точны данные, которые выдают такие боты?</summary>
+ <p>Точность зависит от давности базы данных. Если утечка была свежей, данные могут быть актуальными. Однако люди часто меняют адреса, номера и места работы. Данные 5-летней давности могут уже не соответствовать действительности, что приводит к ложным выводам.</p>
+ <p>Часто боты выдают информацию о предыдущем владельце номера, так как операторы связи периодически перераспределяют номера.</p>
+</details>
+
+<details>
+ <summary>Что делать, если бот нашел мои личные данные?</summary>
+ <p>Не паникуйте. Во-первых, смените пароли на всех важных ресурсах. Во-вторых, проверьте, не оформлены ли на вас кредиты (через Госуслуги или БКИ). В-третьих, предупредите близких, что от вашего имени могут поступать странные сообщения. Удалить данные из всех баз практически невозможно, поэтому лучшая защита — повышение общей цифровой гигиены.</p>
+</details>
+
+<details>
+ <summary>Существуют ли легальные способы найти человека по номеру?</summary>
+ <p>Легально найти человека по номеру могут только правоохранительные органы по запросу. Гражданские сервисы могут показать только ту информацию, которую человек сам оставил в открытом доступе (объявления, профили в соцсетях с открытым доступом). Все сервисы, обещающие точный адрес и паспортные данные, работают с нелегальными базами.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/k/ka/kak-sest-v-mashinu-v-mafii-2.html" class="pb-related-card">
+                <span class="pb-related-title">Как правильно сесть в машину в Mafia II: гайд для новичков 2026</span>
+                <span class="pb-related-desc">Пошаговая инструкция, как заходить в автомобиль в игре Mafia II на ПК/консолях. Разбор багов, горячи</span>
+            </a><a href="/articles/s/sk/skolko-edet-samaya-bystraya-mashina-v-mire.html" class="pb-related-card">
+                <span class="pb-related-title">Сколько едет самая быстрая машина в мире: рекорды и факты</span>
+                <span class="pb-related-desc">Сколько едет самая быстрая машина в мире? Узнайте актуальные рекорды скорости Bugatti и Koenigsegg. </span>
+            </a><a href="/articles/m/mo/moshchnyj-avtomobilnyj-pylesos-na-akkumulyatore-rejting-luchshikh.html" class="pb-related-card">
+                <span class="pb-related-title">ТОП-10 аккумуляторных автопылесосов 2026: рейтинг мощных моделей</span>
+                <span class="pb-related-desc">Экспертный обзор лучших беспроводных пылесосов для авто с аккумулятором: сравнение мощности, времени</span>
+            </a><a href="/articles/p/po/posudomoechnaya-mashina-indezit-ne-zapuskaetsya.html" class="pb-related-card">
+                <span class="pb-related-title">Посудомоечная машина Indesit не запускается: диагностика и ремонт</span>
+                <span class="pb-related-desc">Машина Indesit не включается? Разбор причин: от блокировки двери до сгорания платы. Пошаговая инстру</span>
+            </a><a href="/articles/g/gd/gde-razmestit-antennu-gps-v-avtomobile.html" class="pb-related-card">
+                <span class="pb-related-title">Где разместить антенну GPS в автомобиле: схемы и ошибки</span>
+                <span class="pb-related-desc">Правильная установка GPS-антенны в авто: выбор места, прокладка кабеля, экранировка и устранение пом</span>
+            </a><a href="/articles/k/ka/kakoj-film-posmotret-v-mashine.html" class="pb-related-card">
+                <span class="pb-related-title">Какой фильм посмотреть в машине: гид по форматам и контенту</span>
+                <span class="pb-related-desc">Полный обзор вариантов просмотра видео в автомобиле. Разбор мультимедийных систем, форматов файлов, </span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

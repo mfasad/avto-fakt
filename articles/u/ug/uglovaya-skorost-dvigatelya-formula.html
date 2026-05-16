@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Угловая скорость двигателя: формулы и расчёт — Авто Факт</title>
+    <meta name="description" content="Как найти угловую скорость двигателя? Формулы перевода оборотов в рад/с, связь с мощностью и крутящим моментом. Таблицы и примеры.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/u/ug/uglovaya-skorost-dvigatelya-formula.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Угловая скорость двигателя: формулы и расчёт">
+    <meta property="og:description" content="Как найти угловую скорость двигателя? Формулы перевода оборотов в рад/с, связь с мощностью и крутящим моментом. Таблицы и примеры.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/drugoe/">Другое</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Угловая скорость двигателя: формулы и расчёт</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#физический-смысл-и-основные-понятия">Физический смысл и основные понятия</a></li><li><a href="#базовая-формула-перевода-оборотов-в-радианы">Базовая формула перевода оборотов в радианы</a></li><li><a href="#связь-угловой-скорости-с-мощностью-и-моментом">Связь угловой скорости с мощностью и моментом</a></li><li><a href="#линейная-скорость-поршня-и-ход-кривошипа">Линейная скорость поршня и ход кривошипа</a></li><li><a href="#влияние-передаточного-числа-на-угловую-скорость">Влияние передаточного числа на угловую скорость</a></li><li><a href="#практическое-применение-в-диагностике">Практическое применение в диагностике</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/k/ka/kak-oformit-dogovor-kupli-prodazhi-transportnogo-sredstva.html">Договор купли-продажи авто: правила, бланк, риски</a></li><li><a href="/articles/o/ot/ot-chego-tryaset-mashinu-vo-vremya-ezdy.html">Почему трясет машину при езде: причины и диагностика</a></li><li><a href="/articles/s/st/stoyanka-gruzovykh-avtomobilej-vo-dvorakh-zhilykh-domov.html">Стоянка грузовиков во дворах: правила, штрафы и законы 2026</a></li><li><a href="/articles/r/ra/raschet-motochasov-po-srednej-skorosti.html">Как рассчитать моточасы по средней скорости: формулы и примеры</a></li><li><a href="/articles/r/ra/rasprodazha-arestovannykh-avtomobilej-sudebnymi-pristavami.html">Распродажа арестованных автомобилей: как купить авто у приставов</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Угловая скорость двигателя: формулы и расчёт</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#физический-смысл-и-основные-понятия">Физический смысл и основные понятия</a></li><li><a href="#базовая-формула-перевода-оборотов-в-радианы">Базовая формула перевода оборотов в радианы</a></li><li><a href="#связь-угловой-скорости-с-мощностью-и-моментом">Связь угловой скорости с мощностью и моментом</a></li><li><a href="#линейная-скорость-поршня-и-ход-кривошипа">Линейная скорость поршня и ход кривошипа</a></li><li><a href="#влияние-передаточного-числа-на-угловую-скорость">Влияние передаточного числа на угловую скорость</a></li><li><a href="#практическое-применение-в-диагностике">Практическое применение в диагностике</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Понимание того, как работает силовой агрегат, невозможно без знания базовых физических величин, описывающих вращение. <strong>Угловая скорость двигателя</strong> является одним из ключевых параметров, определяющих его динамические характеристики и эффективность работы. Именно от этой величины зависит, как быстро энергия сгорания топлива передается на трансмиссию и, в конечном итоге, на колеса автомобиля.</p>
+
+<p>В технической документации и справочниках часто встречаются различные единицы измерения, что может запутать неопытного специалиста. Если частота вращения коленчатого вала обычно указывается в оборотах в минуту, то для инженерных расчетов требуется значение в радианах в секунду. <em>Конвертация этих величин</em> является первым шагом к глубокому пониманию процессов, происходящих внутри мотора.</p>
+
+<p>Рассмотрение данной темы поможет вам не только в теории, но и в практике диагностики или тюнинга. Зная, как связаны между собой обороты, линейная скорость поршня и угловая скорость, можно точнее подбирать передаточные числа трансмиссии. Это знание критически важно для тех, кто стремится выжать максимум из своего автомобиля.</p>
+
+<h2 id="физический-смысл-и-основные-понятия">Физический смысл и основные понятия</h2>
+
+<p>Прежде чем переходить к математическим вычислениям, необходимо четко определить, что именно мы измеряем. Угловая скорость — это векторная физическая величина, которая характеризует быстроту вращения тела и направление оси вращения. В контексте двигателя внутреннего сгорания (ДВС) речь идет о вращении <strong>коленчатого вала</strong> вокруг своей оси.</p>
+
+<p>Основной единицей измерения в системе СИ является радиан в секунду (рад/с). Однако в автомобильной индустрии стандартом де-факто стали обороты в минуту (об/мин или rpm). Разница между этими величинами существенна, и путать их нельзя, так как это приведет к грубым ошибкам в расчетах мощности и момента.</p>
+
+<p>Важно понимать, что угловая скорость не является постоянной величиной даже при стабильной работе мотора. Она пульсирует в зависимости от такта работы конкретного цилиндра и угла поворота кривошипа. <em>Среднее значение</em> за один рабочий цикл обычно принимается за расчетное, но для анализа вибраций и балансировки рассматривают мгновенные значения.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> При проведении расчетов всегда проверяйте размерность входных данных. Использование оборотов в формулах, требующих радианы, увеличит результат в 9,55 раза, что сделает расчеты мощности неверными.</p>
+</blockquote>
+
+<h2 id="базовая-формула-перевода-оборотов-в-радианы">Базовая формула перевода оборотов в радианы</h2>
+
+<p>Самая распространенная задача, с которой сталкиваются инженеры и механики — перевод показаний тахометра в систему СИ. Для этого используется простая, но фундаментальная формула, связывающая частоту вращения <em>n</em> (об/мин) и угловую скорость <strong>ω</strong> (омега).</p>
+
+<p>Поскольку один полный оборот составляет 2π радиан, а в одной минуте 60 секунд, коэффициент пересчета всегда одинаков. Формула выглядит следующим образом:</p>
+
+<pre><code>ω = (2 <em> π </em> n) / 60</code></pre>
+
+<p>Где π (пи) — математическая константа, приблизительно равная 3.14159. Упрощенный коэффициент пересчета составляет примерно 0.1047. То есть, чтобы получить угловую скорость, достаточно умножить количество оборотов в минуту на этот коэффициент.</p>
+
+<ul>
+<li>🔄 <strong>Шаг 1:</strong> Снимите показания частоты вращения с тахометра или диагностического сканера.</li>
+<li>🧮 <strong>Шаг 2:</strong> Разделите полученное число на 60, чтобы получить обороты в секунду.</li>
+<li>📐 <strong>Шаг 3:</strong> Умножьте результат на 2π (примерно 6.28) для перевода в радианы.</li>
+</ul>
+
+<div class="pb-poll" id="poll-9d843d06"><div class="pb-poll-question">📊 Какой диапазон оборотов вы чаще всего используете для расчетов?</div><div class="pb-poll-option" data-poll="9d843d06" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Холостой ход (800-1000)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="9d843d06" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Средний (2000-3000)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="9d843d06" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Максимальный (5000+)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="9d843d06" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Крутящий момент (3500-4500)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<p>Рассмотрим практический пример. Если двигатель работает на 3000 об/мин, то угловая скорость составит: (2 <em> 3.14 </em> 3000) / 60 = 314 рад/с. Это значение используется для дальнейших вычислений мощности и нагрузок на детали.</p>
+
+<h2 id="связь-угловой-скорости-с-мощностью-и-моментом">Связь угловой скорости с мощностью и моментом</h2>
+
+<p>Одной из главных причин, по которой нам требуется значение угловой скорости, является расчет мощности двигателя. В физике мощность при вращательном движении равна произведению крутящего момента на угловую скорость. Это соотношение является <strong>фундаментальным</strong> для теории ДВС.</p>
+
+<p>Формула связи выглядит так: P = M * ω, где P — мощность в Ваттах, M — крутящий момент в Ньютон-метрах, а ω — искомая нами угловая скорость в радианах в секунду. Именно поэтому график мощности всегда растет быстрее графика момента при увеличении оборотов.</p>
+
+<details class="pb-accordion"><summary>Почему мощность падает на высоких оборотах?</summary><div class="pb-accordion-body"><p>Несмотря на рост угловой скорости, крутящий момент на высоких оборотах начинает резко падать из-за ухудшения наполняемости цилиндров и механических потерь. Произведение падающего момента и растущей скорости в какой-то момент дает максимум, после которого мощность тоже снижается.</p></div></details>
+
+<p>Зная эту зависимость, можно легко конвертировать мощность между различными системами измерения. Например, для перевода в лошадиные силы (л.с.) результат в Ваттах делится на 735.5 (метрическая л.с.) или 745.7 (английская л.с.).</p>
+
+<ul>
+<li>🚀 <strong>Мощность:</strong> Определяет максимальную скорость автомобиля и способность преодолевать сопротивление.</li>
+<li>💪 <strong>Крутящий момент:</strong> Отвечает за тягу, разгон и способность тащить груз.</li>
+<li>⚙️ <strong>Обороты:</strong> Являются множителем, который показывает, как часто прикладывается сила.</li>
+</ul>
+
+<h2 id="линейная-скорость-поршня-и-ход-кривошипа">Линейная скорость поршня и ход кривошипа</h2>
+
+<p>Угловая скорость вращения вала напрямую влияет на линейную скорость движения поршня. Это критически важный параметр для оценки механических нагрузок и тепловых режимов работы двигателя. Чем выше угловая скорость, тем быстрее движется поршень.</p>
+
+<p>Средняя скорость поршня рассчитывается по формуле: Vср = 2 <em> S </em> n / 60, где S — ход поршня. Однако мгновенная скорость меняется в течение цикла и зависит от угла поворота кривошипа. Наивысшая скорость достигается не в верхней или нижней мертвой точке, а примерно посередине хода.</p>
+
+<p>Для форсированных двигателей характерен меньший ход поршня при высокой угловой скорости вращения. Это позволяет снизить инерционные нагрузки и достичь больших значений мощности при меньшем объеме цилиндра. <em>Короткоходные моторы</em> считаются более быстроходными.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Тип двигателя</th>
+<th>Ход поршня (мм)</th>
+<th>Макс. обороты (об/мин)</th>
+<th>Ср. скорость поршня (м/с)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Грузовой дизель</td>
+<td>140</td>
+<td>2500</td>
+<td>11.6</td>
+</tr>
+<tr>
+<td>Легковой бензин</td>
+<td>85</td>
+<td>6000</td>
+<td>17.0</td>
+</tr>
+<tr>
+<td>Спортивный мотор</td>
+<td>75</td>
+<td>9000</td>
+<td>22.5</td>
+</tr>
+<tr>
+<td>Формула-1</td>
+<td>50</td>
+<td>15000</td>
+<td>25.0</td>
+</tr>
+</tbody>
+</table></div>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Превышение средней скорости поршня выше 25 м/с требует применения специальных сплавов и технологий смазки, так как масляная пленка может разрываться.</p></aside>
+
+<h2 id="влияние-передаточного-числа-на-угловую-скорость">Влияние передаточного числа на угловую скорость</h2>
+
+<p>Угловая скорость на выходе из двигателя — это лишь начало пути. Через коробку передач и главную передачу она трансформируется. Передаточное число трансмиссии уменьшает угловую скорость вращения колес, но пропорционально увеличивает крутящий момент.</p>
+
+<p>Формула расчета угловой скорости на колесах: ω_колес = ω_двигателя / (i_кпп * i_главной), где i — передаточные числа. Это позволяет автомобилю двигаться с комфортной скоростью при относительно высоких оборотах двигателя, обеспечивая необходимую тягу.</p>
+
+<p>При диагностике неисправностей трансмиссии часто сравнивают расчетную угловую скорость колес с фактической. Если датчики показывают расхождение, это может указывать на пробуксовку или проблемы с ABS. <strong>Электронные системы</strong> используют эти данные для стабилизации автомобиля.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Установка колес нестандартного размера изменяет фактическую скорость автомобиля при той же угловой скорости двигателя. Это может привести к некорректным показаниям спидометра и ошибкам в работе ESP.</p>
+</blockquote>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка соответствия трансмиссии</h4><label class="check-item"><input type="checkbox"><span>Сверить передаточные числа КПП</span></label><label class="check-item"><input type="checkbox"><span>Проверить состояние главной пары</span></label><label class="check-item"><input type="checkbox"><span>Замерить реальный диаметр шин</span></label><label class="check-item"><input type="checkbox"><span>Сравнить показания сканера и спидометра</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="практическое-применение-в-диагностике">Практическое применение в диагностике</h2>
+
+<p>Знание формул угловой скорости необходимо не только для расчетов на бумаге, но и для реальной диагностики. Современные осциллографы и мотор-тестеры позволяют снимать waveform сигналов с датчиков положения коленвала и сравнивать их с эталонными значениями.</p>
+
+<p>Анализируя временные интервалы между зубьями шкива коленвала, можно определить неравномерность вращения, вызванную пропусками зажигания или механическими проблемами в цилиндро-поршневой группе. Равномерность углового ускорения — важный показатель здоровья мотора.</p>
+
+<p>Также эти знания применяются при чип-тюнинге. Изменяя программное обеспечение, инженеры могут смещать ограничение отсечки по оборотам, позволяя двигателю работать в зоне максимальной мощности более длительное время. Однако это требует точного расчета нагрузок.</p>
+
+<ul>
+<li>📉 <strong>Анализ пропусков:</strong> Неравномерность углового ускорения между тактами расширения.</li>
+<li>⏱️ <strong>Замер компрессии:</strong> Косвенный метод по скорости прокрутки стартером.</li>
+<li>🛠️ <strong>Балансировка:</strong> Выявление дисбаланса вращающихся масс по вибрациям.</li>
+</ul>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Точный расчет угловой скорости позволяет диагностировать механические неисправности двигателя еще до появления явных симптомов, таких как дым или стук.</p></aside>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Чем отличается угловая скорость от частоты вращения?</summary>
+<p>Угловая скорость измеряется в радианах в секунду и используется в физических формулах (например, для расчета мощности). Частота вращения измеряется в оборотах в минуту (об/мин) и является основной величиной для индикации на приборах и в документации.</p>
+</details>
+
+<details>
+<summary>Как перевести км/ч в обороты двигателя?</summary>
+<p>Для этого нужно знать диаметр колеса и передаточные числа трансмиссии. Сначала скорость переводится в метры в секунду, затем рассчитывается угловая скорость колес, которая умножается на общее передаточное число коробки и главной передачи.</p>
+</details>
+
+<details>
+<summary>Почему на высоких оборотах растет расход топлива?</summary>
+<p>С ростом угловой скорости увеличиваются потери на трение и насосные потери. Двигатель совершает больше рабочих циклов в единицу времени, потребляя больше воздуха и топлива, даже если нагрузка на колеса невелика.</p>
+</details>
+
+<details>
+<summary>Что такое угловое ускорение двигателя?</summary>
+<p>Это скорость изменения угловой скорости во времени. Оно возникает при разгоне или торможении двигателя. Резкое изменение углового ускорения (рывок) свидетельствует о резком изменении крутящего момента, например, при воспламенении смеси.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/k/ka/kak-oformit-dogovor-kupli-prodazhi-transportnogo-sredstva.html" class="pb-related-card">
+                <span class="pb-related-title">Договор купли-продажи авто: правила, бланк, риски</span>
+                <span class="pb-related-desc">Как правильно оформить ДКП автомобиля в 2026 году. Образец договора, порядок действий, проверка доку</span>
+            </a><a href="/articles/o/ot/ot-chego-tryaset-mashinu-vo-vremya-ezdy.html" class="pb-related-card">
+                <span class="pb-related-title">Почему трясет машину при езде: причины и диагностика</span>
+                <span class="pb-related-desc">Разбираем, почему трясет машину во время езды. Причины вибраций на руле, кузове и педалях. Диагности</span>
+            </a><a href="/articles/s/st/stoyanka-gruzovykh-avtomobilej-vo-dvorakh-zhilykh-domov.html" class="pb-related-card">
+                <span class="pb-related-title">Стоянка грузовиков во дворах: правила, штрафы и законы 2026</span>
+                <span class="pb-related-desc">Можно ли парковать грузовики во дворах жилых домов? Полный разбор ПДД, размерные ограничения, штрафы</span>
+            </a><a href="/articles/r/ra/raschet-motochasov-po-srednej-skorosti.html" class="pb-related-card">
+                <span class="pb-related-title">Как рассчитать моточасы по средней скорости: формулы и примеры</span>
+                <span class="pb-related-desc">Точный расчет моточасов двигателя по пробегу и средней скорости: формулы, таблицы, примеры для легко</span>
+            </a><a href="/articles/r/ra/rasprodazha-arestovannykh-avtomobilej-sudebnymi-pristavami.html" class="pb-related-card">
+                <span class="pb-related-title">Распродажа арестованных автомобилей: как купить авто у приставов</span>
+                <span class="pb-related-desc">Пошаговая инструкция по покупке арестованных автомобилей через торги ФССП. Реальные цены, риски, пор</span>
+            </a><a href="/articles/c/ch/chto-takoe-kotel-v-mashine.html" class="pb-related-card">
+                <span class="pb-related-title">Что такое котел в машине: устройство, виды и неисправности</span>
+                <span class="pb-related-desc">Узнайте, что такое котел в машине, как работает предпусковой подогреватель, какие бывают виды и поче</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

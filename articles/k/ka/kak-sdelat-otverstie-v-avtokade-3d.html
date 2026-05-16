@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как сделать отверстие в AutoCAD 3D: подробная инструкция — Авто Факт</title>
+    <meta name="description" content="Узнайте, как сделать отверстие в автокаде 3д с помощью вычитания, CYLINDER и SUBTRACT. Полное руководство по моделированию сквозных и глухих отверстий.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ka/kak-sdelat-otverstie-v-avtokade-3d.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как сделать отверстие в AutoCAD 3D: подробная инструкция">
+    <meta property="og:description" content="Узнайте, как сделать отверстие в автокаде 3д с помощью вычитания, CYLINDER и SUBTRACT. Полное руководство по моделированию сквозных и глухих отверстий.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как сделать отверстие в AutoCAD 3D: подробная инструкция</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#подготовка-рабочего-пространства-и-исходной-модели">Подготовка рабочего пространства и исходной модели</a></li><li><a href="#создание-режущего-элемента-с-помощью-команды-cylinder">Создание режущего элемента с помощью команды CYLINDER</a></li><li><a href="#логическая-операция-вычитания-subtract">Логическая операция вычитания (SUBTRACT)</a></li><li><a href="#использование-специализированной-команды-hole">Использование специализированной команды HOLE</a></li><li><a href="#работа-с-пск-для-отверстий-на-наклонных-гранях">Работа с ПСК для отверстий на наклонных гранях</a></li><li><a href="#таблица-сравнения-методов-создания-отверстий">Таблица сравнения методов создания отверстий</a></li><li><a href="#типичные-ошибки-и-способы-их-устранения">Типичные ошибки и способы их устранения</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/s/sc/schityvatel-oshibok-na-avto-cherez-telefon.html">Считыватель ошибок авто через телефон: Полное руководство</a></li><li><a href="/articles/k/ka/kak-snyat-transponder-s-derzhatelya-avtodor.html">Как снять транспондер с держателя Автодор: полная инструкция</a></li><li><a href="/articles/s/st/styazhka-tekstilnaya-s-mekhanizmom-khrapovym.html">Текстильная стяжка с храповым механизмом: выбор и применение</a></li><li><a href="/articles/p/po/pochemu-kolonki-tikho-igrayut-na-vsyu-gromkost.html">Колонки тихо играют на максимуме: 7 причин и как исправить</a></li><li><a href="/articles/l/lu/luchshie-gonki-na-pk-dlya-gejmpada.html">Лучшие гонки на ПК для геймпада: Топ симуляторов и аркад 2026</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как сделать отверстие в AutoCAD 3D: пошаговое руководство</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#подготовка-рабочего-пространства-и-исходной-модели">Подготовка рабочего пространства и исходной модели</a></li><li><a href="#создание-режущего-элемента-с-помощью-команды-cylinder">Создание режущего элемента с помощью команды CYLINDER</a></li><li><a href="#логическая-операция-вычитания-subtract">Логическая операция вычитания (SUBTRACT)</a></li><li><a href="#использование-специализированной-команды-hole">Использование специализированной команды HOLE</a></li><li><a href="#работа-с-пск-для-отверстий-на-наклонных-гранях">Работа с ПСК для отверстий на наклонных гранях</a></li><li><a href="#таблица-сравнения-методов-создания-отверстий">Таблица сравнения методов создания отверстий</a></li><li><a href="#типичные-ошибки-и-способы-их-устранения">Типичные ошибки и способы их устранения</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+<p>Работа в трехмерном пространстве требует от инженера и проектировщика уверенного владения инструментами булевых операций. Когда возникает необходимость создать сквозной или глухой проем в твердотельной модели, пользователь часто сталкивается с выбором метода. <strong>AutoCAD</strong> предлагает несколько способов решения этой задачи, каждый из которых имеет свои преимущества в зависимости от геометрии детали и требований к проекту.</p>
+
+<p>Основной принцип создания пустоты в твердом теле базируется на логическом вычитании одного объема из другого. Это фундаментальная операция, без которой невозможно представить современное <em>3D-моделирование</em>. Понимание алгоритма действий позволяет избежать ошибок при построении сложных сборок и механизмов, где точность посадочных мест критически важна.</p>
+
+<p>В этой статье мы разберем не только базовые команды, но и нюансы, которые часто упускают новички. Вы научитесь правильно позиционировать режущий инструмент и управлять параметрами итоговой геометрии. <strong>Точность</strong> выполнения операций — залог того, что ваша модель будет готова к дальнейшей обработке или 3D-печати.</p>
+
+<h2 id="подготовка-рабочего-пространства-и-исходной-модели">Подготовка рабочего пространства и исходной модели</h2>
+<p>Прежде чем приступать к созданию отверстий, необходимо убедиться, что вы находитесь в правильном режиме работы. Переключите интерфейс на workspace <code>3D Modeling</code>, чтобы получить доступ ко всем необходимым панелям инструментов. Это действие активирует специальные вкладки и палитры, которые скрыты в классическом двумерном режиме.</p>
+
+<p>Исходное тело, в котором планируется сделать вырез, должно быть представлено в виде 3D-объекта (Solid). Если вы используете плоские контуры или поверхности, операция вычитания будет недоступна или даст непредсказуемый результат. Убедитесь, что ваша деталь является единым <strong>твердым телом</strong>.</p>
+
+<div class="pb-poll" id="poll-4789dc19"><div class="pb-poll-question">📊 Какой метод создания отверстий вы используете чаще?</div><div class="pb-poll-option" data-poll="4789dc19" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Через вычитание (SUBTRACT)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="4789dc19" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">С помощью Hole command</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="4789dc19" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Созданием полилиний</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="4789dc19" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Через сторонние плагины</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<p>Особое внимание стоит уделить системе координат. Для удобства работы с отверстиями на наклонных или сложных гранях рекомендуется временно изменить положение ПСК (Пользовательской Системы Координат). Это позволит вам строить режущие элементы перпендикулярно поверхности, что значительно упрощает процесс.</p>
+
+<h2 id="создание-режущего-элемента-с-помощью-команды-cylinder">Создание режущего элемента с помощью команды CYLINDER</h2>
+<p>Самый распространенный способ получить круглое отверстие — использовать команду <code>CYLINDER</code>. Этот инструмент создает твердотельный цилиндр, который впоследствии станет "ножом" для вашей основной детали. Введите команду в строку или выберите соответствующий значок на вкладке <code>Home</code> в панели <code>Modeling</code>.</p>
+
+<p>После активации команды система попросит указать центральную точку основания. Здесь важна <strong>привязка</strong>: используйте объектные привязки (например, Center или Quadrant), чтобы точно позиционировать центр будущего отверстия относительно краев детали или других элементов конструкции.</p>
+
+<p>Далее необходимо задать радиус или диаметр, а затем высоту цилиндра. Высота должна быть достаточной для того, чтобы цилиндр полностью пронзил основную деталь с обеих сторон. Если цилиндр будет слишком коротким, отверстие получится глухим или несквозным, что может быть нежелательно.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Используйте команду CYLINDER с опцией Axis endpoint, если нужно создать отверстие под углом, не совпадающим с осями координат.</p></aside>
+
+<p>Для создания отверстий сложной формы можно использовать команду <code>EXTRUDE</code>. Нарисуйте замкнутый контур (полилинию, круг, многоугольник) на поверхности или в пространстве, а затем выдавите его на высоту, превышающую толщину детали. Полученный объем также послужит булевым инструментом.</p>
+
+<h2 id="логическая-операция-вычитания-subtract">Логическая операция вычитания (SUBTRACT)</h2>
+<p>Ключевым моментом во всем процессе является выполнение булевой операции. Команда <code>SUBTRACT</code> позволяет вычесть объем одного или нескольких объектов из основного тела. Именно этот шаг превращает два пересекающихся объема в единую деталь с пустотой внутри.</p>
+
+<p>Порядок выбора объектов имеет критическое значение. Сначала программа запрашивает исходные объекты (из которых будем вычитать), а затем — вычитаемые объекты (которые будут удалены). Ошибка в последовательности приведет к исчезновению основной детали вместо появления отверстия.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Если после выполнения команды основной объект исчез, значит, вы перепутали порядок выбора. Отмените действие (<code>Ctrl+Z</code>) и повторите операцию, внимательно следя за запросами в командной строке.</p>
+</blockquote>
+
+<p>Для выполнения операции выделите основное тело, нажмите <code>Enter</code>, затем выберите цилиндр (или другой режущий элемент) и снова нажмите <code>Enter</code>. Визуально цилиндр исчезнет, оставив после себя чистое пространство там, где он пересекался с основной деталью.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Алгоритм создания отверстия</h4><label class="check-item"><input type="checkbox"><span>Выбрать команду SUBTRACT</span></label><label class="check-item"><input type="checkbox"><span>Выделить основное тело и нажать Enter</span></label><label class="check-item"><input type="checkbox"><span>Выделить режущий цилиндр и нажать Enter</span></label><label class="check-item"><input type="checkbox"><span>Проверить результат в режиме каркаса</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Результатом операции станет единый объект. Проверить это можно, выделив деталь: если подсветилась вся модель целиком, включая грани отверстия, значит, операция прошла успешно. Если же объекты остались раздельными, проверьте, пересекались ли они в пространстве до выполнения команды.</p>
+
+<h2 id="использование-специализированной-команды-hole">Использование специализированной команды HOLE</h2>
+<p>В новых версиях <em>AutoCAD</em> появилась команда <code>HOLE</code>, которая автоматизирует процесс создания стандартных отверстий. Этот инструмент особенно полезен, когда необходимо создать резьбовые отверстия или отверстия под крепеж по стандартам <strong>ISO</strong> или <strong>ANSI</strong>.</p>
+
+<p>При активации команды <code>HOLE</code> пользователю предлагается выбрать тип отверстия (сквозное, глухое, зенкованное). В диалоговом окне можно задать диаметр, угол при вершине сверла и другие параметры, не создавая вручную режущие геометрии.</p>
+
+<p>Преимущество этого метода заключается в параметричности. Изменив значение диаметра в свойствах объекта, вы автоматически обновите геометрию отверстия без необходимости пересоздавать модель. Это значительно ускоряет внесение правок в проект на поздних стадиях проектирования.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Команда HOLE создает отверстия только на плоских гранях твердых тел. Для криволинейных поверхностей все же придется использовать метод вычитания цилиндром.</p>
+</blockquote>
+
+<p>Также доступна опция создания массивов отверстий. Вы можете указать шаг и количество повторений, что идеально подходит для фланцев и крепежных пластин. Программа сама расположит отверстия равномерно по окружности или прямоугольной сетке.</p>
+
+<h2 id="работа-с-пск-для-отверстий-на-наклонных-гранях">Работа с ПСК для отверстий на наклонных гранях</h2>
+<p>Часто возникает ситуация, когда отверстие нужно сделать не перпендикулярно основным осям, а под углом или на склоне. В этом случае стандартное построение цилиндра вдоль оси Z приведет к ошибочному результату. Решение кроется в управлении ПСК.</p>
+
+<p>Используйте команду <code>UCS</code> (или <code>ПСК</code>) с опцией <code>Face</code> (Грань). Это позволит "приклеить" систему координат к выбранной поверхности детали. Теперь ось Z будет перпендикулярна этой грани, и любой создаваемый цилиндр пойдет строго в нужном направлении.</p>
+
+<p>После настройки ПСК можно смело создавать цилиндр и выполнять вычитание. После завершения операции рекомендуется вернуть систему координат в исходное состояние командой <code>UCS</code> -> <code>World</code>, чтобы не запутаться в дальнейшем построении.</p>
+
+<details class="pb-accordion"><summary>Секреты работы с ПСК</summary><div class="pb-accordion-body"><p>Если грань сложной формы, используйте опцию 3 Point для ручной установки начала координат и направления осей X и Y. Это дает максимальный контроль над ориентацией инструмента.</p></div></details>
+
+<p>Альтернативный метод — использование команды <code>ROTATE3D</code> для поворота уже созданного цилиндра. Однако метод с ПСК считается более профессиональным и менее трудоемким, так как не требует расчетов углов поворота.</p>
+
+<h2 id="таблица-сравнения-методов-создания-отверстий">Таблица сравнения методов создания отверстий</h2>
+<p>Для систематизации знаний полезно сравнить рассмотренные методы. Каждый из них имеет свою сферу применения, и выбор зависит от конкретных требований к модели и версии используемого программного обеспечения.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Сложность</th>
+<th>Гибкость формы</th>
+<th>Параметричность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CYLINDER + SUBTRACT</td>
+<td>Базовая</td>
+<td>Высокая (любой профиль)</td>
+<td>Низкая</td>
+</tr>
+<tr>
+<td>Команда HOLE</td>
+<td>Простая</td>
+<td>Только стандарты</td>
+<td>Высокая</td>
+</tr>
+<tr>
+<td>EXTRUDE + SUBTRACT</td>
+<td>Средняя</td>
+<td>Максимальная</td>
+<td>Средняя</td>
+</tr>
+<tr>
+<td>Sweep + SUBTRACT</td>
+<td>Высокая</td>
+<td>Криволинейные каналы</td>
+<td>Средняя</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Как видно из таблицы, классический метод вычитания остается наиболее универсальным. Он позволяет создавать отверстия любой конфигурации, включая эллиптические, квадратные или составные. Однако для массовой стандартизированной работы лучше подходят специализированные инструменты.</p>
+
+<h2 id="типичные-ошибки-и-способы-их-устранения">Типичные ошибки и способы их устранения</h2>
+<p>Одной из частых проблем является появление "мусорной" геометрии внутри модели. Это может происходить, если режущий цилиндр не полностью пересекал деталь или если грани совпадали с высокой точностью, но не были объединены. Используйте команду <code>SOLIDEDIT</code> для проверки целостности тела.</p>
+
+<p>Еще одна ошибка — создание слишком большого количества отдельных объектов перед объединением. Это утяжеляет файл и замедляет работу. Старайтесь выполнять булевы операции последовательно или объединять режущие элементы в один объект перед вычитанием.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Всегда проверяйте модель в режиме каркаса (Wireframe) после булевых операций, чтобы убедиться в отсутствии скрытых внутренних граней.</p></aside>
+
+<p>Если отверстие получилось "рваным" или с артефактами, попробуйте немного увеличить размер режущего цилиндра. Иногда микроскопические зазоры между гранями приводят к ошибкам вычислений ядра моделирования. <strong>Запас</strong> в 0.1 мм часто решает проблему.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Не используйте слишком сложные полилинии с большим количеством вершин для выдавливания отверстий. Это может привести к сбоям при построении и увеличению размера файла.</p>
+</blockquote>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+<details>
+<summary>Как сделать отверстие сложной формы, например, шпоночный паз?</summary>
+<p>Для этого используйте команду <code>POLYLINE</code> или <code>RECTANGLE</code> для создания контура паза на поверхности. Затем примените команду <code>EXTRUDE</code>, выдавив контур насквозь через деталь. В завершение выполните операцию <code>SUBTRACT</code>, вычтя полученный объем из основного тела.</p>
+</details>
+
+<details>
+<summary>Почему команда SUBTRACT не работает и ничего не происходит?</summary>
+<p>Скорее всего, ваши объекты не пересекаются в трехмерном пространстве или один из них не является твердым телом (Solid). Проверьте режим отображения и убедитесь, что режущий элемент проходит сквозь основной объект. Также проверьте, не находятся ли объекты на разных слоях с заблокированными свойствами.</p>
+</details>
+
+<details>
+<summary>Можно ли редактировать размер отверстия после вычитания?</summary>
+<p>В классическом AutoCAD после операции <code>SUBTRACT</code> история построения исчезает, и редактировать размер напрямую нельзя. Однако, если вы использовали параметрические ограничения или команду <code>HOLE</code>, редактирование возможно через панель параметров или свойства объекта.</p>
+</details>
+
+<details>
+<summary>Как сделать коническое отверстие?</summary>
+<p>Используйте команду <code>CONE</code> вместо цилиндра при создании режущего элемента. Постройте конус с необходимым углом раствора и высотой, затем вычтите его из основного тела. Это позволит получить отверстия под зенковки или конические переходы.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/s/sc/schityvatel-oshibok-na-avto-cherez-telefon.html" class="pb-related-card">
+                <span class="pb-related-title">Считыватель ошибок авто через телефон: Полное руководство</span>
+                <span class="pb-related-desc">Как выбрать и использовать считыватель ошибок на авто через телефон. Обзор Bluetooth ELM327, OBD2 ад</span>
+            </a><a href="/articles/k/ka/kak-snyat-transponder-s-derzhatelya-avtodor.html" class="pb-related-card">
+                <span class="pb-related-title">Как снять транспондер с держателя Автодор: полная инструкция</span>
+                <span class="pb-related-desc">Подробный гид по демонтажу транспондера Автодор. Как отклеить устройство, не повредив чип, и куда об</span>
+            </a><a href="/articles/s/st/styazhka-tekstilnaya-s-mekhanizmom-khrapovym.html" class="pb-related-card">
+                <span class="pb-related-title">Текстильная стяжка с храповым механизмом: выбор и применение</span>
+                <span class="pb-related-desc">Полный гид по текстильным стяжкам с храповиком. Виды, характеристики, правила использования и таблиц</span>
+            </a><a href="/articles/p/po/pochemu-kolonki-tikho-igrayut-na-vsyu-gromkost.html" class="pb-related-card">
+                <span class="pb-related-title">Колонки тихо играют на максимуме: 7 причин и как исправить</span>
+                <span class="pb-related-desc">Почему даже на полной громкости колонки звучат тихо? Разбираем аппаратные и программные причины, дае</span>
+            </a><a href="/articles/l/lu/luchshie-gonki-na-pk-dlya-gejmpada.html" class="pb-related-card">
+                <span class="pb-related-title">Лучшие гонки на ПК для геймпада: Топ симуляторов и аркад 2026</span>
+                <span class="pb-related-desc">Обзор лучших гоночных игр на ПК для игры на геймпаде. Симуляторы, аркады, эксклюзивы Steam и рейтинг</span>
+            </a><a href="/articles/r/ra/radio-russkij-rok-kakaya-chastota.html" class="pb-related-card">
+                <span class="pb-related-title">Радио Русский Рок: частоты вещания в Москве и РФ</span>
+                <span class="pb-related-desc">Полный список частот радиостанции Русский Рок в Москве, Санкт-Петербурге и регионах. Как настроить п</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

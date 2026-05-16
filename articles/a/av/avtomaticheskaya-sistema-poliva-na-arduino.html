@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Автоматическая система полива на Ардуино: сборка своими руками — Авто Факт</title>
+    <meta name="description" content="Как сделать автополив на Ардуино для теплицы или дачи. Схемы, код, выбор датчиков влажности и насосов. Полное руководство по сборке умного сада.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/a/av/avtomaticheskaya-sistema-poliva-na-arduino.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Автоматическая система полива на Ардуино: сборка своими руками">
+    <meta property="og:description" content="Как сделать автополив на Ардуино для теплицы или дачи. Схемы, код, выбор датчиков влажности и насосов. Полное руководство по сборке умного сада.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/byt-i-khobbi/">Быт и Хобби</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Автоматическая система полива на Ардуино: сборка своими руками</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#выбор-компонентов-для-системы-автополива">Выбор компонентов для системы автополива</a></li><li><a href="#схема-подключения-и-электрическая-часть">Схема подключения и электрическая часть</a></li><li><a href="#программирование-контроллера-arduino">Программирование контроллера Arduino</a></li><li><a href="#настройка-пороговых-значений-и-калибровка">Настройка пороговых значений и калибровка</a></li><li><a href="#организация-автономного-питания">Организация автономного питания</a></li><li><a href="#расширение-функционала-и-модернизация">Расширение функционала и модернизация</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/s/sk/skachat-film-voditel-avtobusa.html">Где скачать фильм «Водитель автобуса» легально и безопасно в 2026 году</a></li><li><a href="/articles/p/pu/puteshestvie-s-sobakoj-na-poezde.html">Путешествие с собакой на поезде: правила 2026, документы, советы</a></li><li><a href="/articles/s/st/stiralnaya-mashinka-hi-otzyvy.html">Стиральная машинка Hi: отзывы, характеристики и реальные плюсы</a></li><li><a href="/articles/k/ka/kakoe-vino-kupit-v-pyaterochke-polusladkoe-krasnoe.html">Какое полусладкое красное вино купить в Пятёрочке: 5 лучших вариантов 2026</a></li><li><a href="/articles/d/dv/dvustoronnij-skotch-dlya-plastika.html">Двусторонний скотч для пластика: виды, выбор и монтаж</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Автоматическая система полива на Ардуино: полное руководство</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#выбор-компонентов-для-системы-автополива">Выбор компонентов для системы автополива</a></li><li><a href="#схема-подключения-и-электрическая-часть">Схема подключения и электрическая часть</a></li><li><a href="#программирование-контроллера-arduino">Программирование контроллера Arduino</a></li><li><a href="#настройка-пороговых-значений-и-калибровка">Настройка пороговых значений и калибровка</a></li><li><a href="#организация-автономного-питания">Организация автономного питания</a></li><li><a href="#расширение-функционала-и-модернизация">Расширение функционала и модернизация</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Создание <strong>умной системы полива</strong> на базе микроконтроллера Arduino — это не просто способ автоматизировать уход за растениями, но и отличный проект для старта в мире IoT. Владелец дачного участка или владелец теплицы часто сталкивается с проблемой неравномерного увлажнения почвы, особенно в периоды длительного отсутствия. Использование программируемого контроллера позволяет решить эту проблему раз и навсегда, сделав процесс независимым от человеческого фактора.</p>
+
+<p>В отличие от простых таймеров, <em>Arduino</em> дает возможность внедрить интеллектуальные алгоритмы, реагирующие на реальное состояние грунта. Вы можете настроить систему так, чтобы вода подавалась только тогда, когда это действительно необходимо, основываясь на показаниях <strong>датчиков влажности</strong>. Это не только экономит водные ресурсы, но и предотвращает загнивание корней, что часто случается при избыточном поливе.</p>
+
+<p>В этой статье мы подробно разберем все этапы создания такого устройства: от подбора компонентов до написания кода. Мы рассмотрим, как правильно подключить периферию, выбрать насос и организовать питание всей системы. Готовое решение станет надежным помощником в вашем саду или оранжерее.</p>
+
+<h2 id="выбор-компонентов-для-системы-автополива">Выбор компонентов для системы автополива</h2>
+
+<p>Фундаментом любой электроники является правильный подбор комплектующих. Для создания базовой системы вам потребуется плата <strong>Arduino Uno</strong> или <em>Arduino Nano</em>, которые отлично справляются с задачами чтения сенсоров и управления реле. Эти микроконтроллеры имеют достаточное количество портов ввода-вывода для подключения всех необходимых модулей без использования дополнительных расширителей.</p>
+
+<p>Ключевым элементом здесь выступает датчик влажности почвы. Существует два основных типа: резистивные и емкостные. Резистивные модели дешевле, но подвержены быстрой коррозии металлических щупов при контакте с влажной землей. <strong>Емкостные датчики</strong> лишены этого недостатка, так как измеряют диэлектрическую проницаемость грунта без прямого электрического контакта электродов с почвой, что значительно продлевает срок их службы.</p>
+
+<p>Для подачи воды чаще всего используют миниатюрные погружные насосы на 5В или 12В. Важно подобрать насос, который сможет поднять воду на нужную высоту, если емкость расположена низко. Также вам понадобится модуль реле для коммутации напряжения насоса, так как напрямую подключать его к пинам Arduino нельзя — это приведет к сгоранию контроллера.</p>
+
+<ul>
+<li>💧 <strong>Микроконтроллер:</strong> Arduino Uno, Nano или совместимые клоны.</li>
+<li>🌱 <strong>Сенсор:</strong> Емкостный датчик влажности почвы (рекомендуется).</li>
+<li>⚙️ <strong>Исполнительный механизм:</strong> Мини-насос 12В и модуль реле.</li>
+<li>🔌 <strong>Питание:</strong> Блок питания 12В или аккумуляторная батарея.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> При использовании насосов мощностью более 200 мА не запитывайте их от порта USB или вывода 5В платы Arduino. Используйте внешнее питание, соединив земли (GND) насоса и контроллера.</p>
+</blockquote>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Для долгосрочных проектов выбирайте емкостные датчики влажности с покрытием из черного графита — они служат в 3-4 раза дольше обычных резистивных аналогов.</p></aside>
+
+<h2 id="схема-подключения-и-электрическая-часть">Схема подключения и электрическая часть</h2>
+
+<p>Сборка электрической цепи требует внимательности, особенно в вопросах изоляции и разделения цепей питания. Основная задача — правильно соединить управляющие сигналы и силовые линии. Датчик влажности подключается к аналоговому входу (например, <code>A0</code>), что позволяет считывать изменение напряжения в зависимости от проводимости почвы.</p>
+
+<p>Модуль реле управляется цифровым пином (например, <code>D2</code>). Когда на пин подается высокий уровень сигнала, реле замыкается, и ток поступает на насос. Важно соблюдать полярность подключения: красный провод обычно отвечает за питание (<code>VCC</code>), черный за землю (<code>GND</code>), а желтый или белый — за сигнал.</p>
+
+<p>Ниже приведена таблица стандартного подключения компонентов для сборки системы:</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Компонент</th>
+<th>Пин Arduino</th>
+<th>Назначение</th>
+<th>Примечание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Датчик влажности</td>
+<td>A0</td>
+<td>Аналоговый сигнал</td>
+<td>Питание 3.3В или 5В</td>
+</tr>
+<tr>
+<td>Модуль реле</td>
+<td>D2</td>
+<td>Цифровой выход</td>
+<td>Управление насосом</td>
+<tr>
+<td>Кнопка (опционально)</td>
+<td>D3</td>
+<td>Цифровой вход</td>
+<td>Ручной запуск</td>
+</tr>
+<tr>
+<td>Светодиод</td>
+<td>D13</td>
+<td>Индикация</td>
+<td>Встроенный или внешний</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Для соединения проводов лучше всего использовать пайку с последующей изоляцией термоусадкой, либо качественные клеммники. Скрутки в условиях повышенной влажности теплицы быстро окисляются, что приводит к потере контакта и нестабильной работе системы.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка электрики</h4><label class="check-item"><input type="checkbox"><span>Проверить полярность подключения датчика</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в изоляции всех контактов</span></label><label class="check-item"><input type="checkbox"><span>Проверить работу реле без насоса</span></label><label class="check-item"><input type="checkbox"><span>Измерить напряжение на выходе блока питания</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="программирование-контроллера-arduino">Программирование контроллера Arduino</h2>
+
+<p>Логика работы системы закладывается в программный код, который загружается в память микроконтроллера. Среда разработки <em>Arduino IDE</em> предоставляет удобный интерфейс для написания скетчей на языке, близком к C++. Алгоритм работы прост: контроллер постоянно опрашивает датчик, сравнивает полученные значения с заданным порогом и принимает решение о включении насоса.</p>
+
+<p>В коде необходимо предусмотреть гистерезис — разницу между значениями включения и выключения. Без этого параметра, при пограничном значении влажности, система начнет постоянно включать и выключать насос, что быстро выведет его из строя. Например, включаем полив при значении сенсора 700, а выключаем только когда значение упадет до 400.</p>
+
+<pre><code>int sensorPin = A0;
+<p>int pumpPin = 2;</p>
+<p>int threshold = 600; // Порог сухости</p>
+
+<p>void setup() {</p>
+<p>pinMode(pumpPin, OUTPUT);</p>
+<p>Serial.begin(9600);</p>
+<p>}</p>
+
+<p>void loop() {</p>
+<p>int moisture = analogRead(sensorPin);</p>
+
+<p>if (moisture > threshold) {</p>
+<p>digitalWrite(pumpPin, HIGH); // Включить насос</p>
+<p>} else {</p>
+<p>digitalWrite(pumpPin, LOW); // Выключить насос</p>
+<p>}</p>
+
+<p>delay(1000); // Пауза 1 секунда</p>
+<p>}</code></pre></p>
+
+<p>Данная программа является базовой. Для более сложной логики можно добавить таймеры, ограничивающие время работы насоса, или переменные задержки. Использование <strong>переменных</strong> позволяет гибко настраивать систему под разные типы растений без переписывания кода.</p>
+
+<details class="pb-accordion"><summary>Как калибровать датчик?</summary><div class="pb-accordion-body"><p>Погрузите датчик в воздух и запишите значение (это будет 100% сухости). Затем опустите его в стакан с водой и запишите новое значение (100% влажность). Используйте эти данные для настройки пороговых значений в коде.</p></div></details>
+
+<h2 id="настройка-пороговых-значений-и-калибровка">Настройка пороговых значений и калибровка</h2>
+
+<p>Калибровка — критически важный этап, от которого зависит эффективность всей системы. Значения, выдаваемые аналоговым датчиком, могут варьироваться в зависимости от типа почвы, ее плотности и даже минерализации воды. Стандартные значения, найденные в интернете, могут не подойти для вашего конкретного случая.</p>
+
+<p>Процесс настройки начинается с измерения показаний в полностью сухом грунте и в полностью насыщенном водой. Полученные данные заносятся в код как константы <code>dryValue</code> и <code>wetValue</code>. Это позволяет нормализовать показания и перевести их в проценты влажности, что делает управление более интуитивным.</p>
+
+<p>Не забывайте, что разные растения требуют разного уровня увлажнения. Кактусам нужна сухая земля, а огурцам — постоянно влажная. <mark>Оптимальный порог срабатывания для большинства огородных культур находится в диапазоне 40-50% от полной емкости влагоудержания почвы.</mark> Слишком частый полив вымывает питательные вещества, а редкий вызывает стресс у растения.</p>
+
+<ul>
+<li>📉 <strong>Сухой грунт:</strong> высокие значения на аналоговом входе (ближе к 1023).</li>
+<li>📈 <strong>Мокрый грунт:</strong> низкие значения (ближе к 0-200).</li>
+<li>⚖️ <strong>Среднее значение:</strong> требует экспериментального подбора.</li>
+</ul>
+
+<h2 id="организация-автономного-питания">Организация автономного питания</h2>
+
+<p>Для работы системы на удаленном дачном участке, где нет стационарного электричества, требуется автономное питание. Наиболее распространенным решением является связка из аккумуляторной батареи (например, 12В для насоса) и контроллера заряда. Плату Arduino в этом случае лучше запитывать через пин <code>VIN</code>, который принимает напряжение от 7 до 12 вольт.</p>
+
+<p>Солнечная панель мощностью 10-20 Вт позволит поддерживать заряд аккумулятора в летний период. Однако необходимо учитывать пасмурные дни и рассчитывать емкость батареи с запасом на 2-3 суток работы без солнца. Литий-железо-фосфатные (<em>LiFePO4</em>) аккумуляторы предпочтительнее свинцово-кислотных из-за большего количества циклов заряда-разряда.</p>
+
+<p>При проектировании схемы питания важно учитывать токи потребления. Насос в момент запуска потребляет ток в 2-3 раза выше номинального. Поэтому провода должны быть достаточного сечения, а аккумулятор — отдавать необходимый ток без сильного просаживания напряжения, которое может вызвать перезагрузку микроконтроллера.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Использование отдельного источника питания для насоса и Arduino через общий провод GND — залог стабильной работы системы без перезагрузок и сбоев логики.</p></aside>
+
+<h2 id="расширение-функционала-и-модернизация">Расширение функционала и модернизация</h2>
+
+<p>Базовая система полива может быть значительно улучшена добавлением новых модулей. Подключение модуля реального времени (<em>RTC DS3231</em>) позволит поливать растения в строго определенное время суток, например, ранним утром, когда испарение минимально. Это особенно актуально для культур, чувствительных к температуре воды.</p>
+
+<p>Интеграция дисплея <em>OLED</em> или <em>LCD</em> позволит выводить текущие показатели влажности и статус системы прямо на устройстве, избавляя от необходимости подключать компьютер для диагностики. Также можно добавить зуммер, который будет сигнализировать об окончании воды в баке или критически низком уровне заряда батареи.</p>
+
+<p>Самым продвинутым шагом станет подключение модуля <strong>Wi-Fi</strong> (например, <em>ESP8266</em> или <em>ESP32</em>). Это превратит ваш полив в устройство Интернета Вещей (IoT). Вы сможете получать уведомления на смартфон, управлять поливом из любой точки мира и собирать статистику влажности в облаке для дальнейшего анализа.</p>
+
+<div class="pb-poll" id="poll-959a531d"><div class="pb-poll-question">📊 Какой модуль связи вы планируете добавить?</div><div class="pb-poll-option" data-poll="959a531d" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Wi-Fi (ESP8266/ESP32)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="959a531d" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">GSM (SIM800L)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="959a531d" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Bluetooth (HC-05)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="959a531d" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">NFC метки</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="959a531d" data-idx="4" onclick="pbPollVote(this)"><span class="pb-poll-label">Ничего, хватит базовой версии</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Как часто нужно менять воду в емкости для полива?</summary>
+<p>Вода в емкости может застаиваться и цвести, особенно на солнце. Рекомендуется использовать непрозрачные баки и менять воду или добавлять биопрепараты раз в 2-3 недели, чтобы избежать засорения насоса водорослями.</p>
+</details>
+
+<details>
+<summary>Можно ли использовать эту систему для удобрения растений?</summary>
+<p>Да, но с осторожностью. Жидкие удобрения могут засорить насос или вызвать коррозию, если он не предназначен для химически активных сред. Лучше использовать отдельный дозирующий насос для подкормки или промывать систему чистой водой после внесения удобрений.</p>
+</details>
+
+<details>
+<summary>Какой длины могут быть провода до датчика влажности?</summary>
+<p>Для аналогового сигнала длина провода не должна превышать 1-2 метров без использования экранированного кабеля, иначе возможны наводки и искажение показаний. Для цифровых датчиков (например, по протоколу I2C или 1-Wire) расстояние можно увеличить до 10 и более метров.</p>
+</details>
+
+<details>
+<summary>Что делать, если насос гудит, но вода не идет?</summary>
+<p>Скорее всего, в системе образовалась воздушная пробка. Попробуйте несколько раз кратковременно включить и выключить насос, опустив шланг ниже уровня воды. Также проверьте фильтр на входе в насос — он мог забиться мусором.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/s/sk/skachat-film-voditel-avtobusa.html" class="pb-related-card">
+                <span class="pb-related-title">Где скачать фильм «Водитель автобуса» легально и безопасно в 2026 году</span>
+                <span class="pb-related-desc">Пошаговая инструкция, где найти фильм «Водитель автобуса» (1991) в высоком качестве: легальные платф</span>
+            </a><a href="/articles/p/pu/puteshestvie-s-sobakoj-na-poezde.html" class="pb-related-card">
+                <span class="pb-related-title">Путешествие с собакой на поезде: правила 2026, документы, советы</span>
+                <span class="pb-related-desc">Как правильно ездить с собакой на поезде в 2026 году: требования РЖД, необходимые документы, выбор м</span>
+            </a><a href="/articles/s/st/stiralnaya-mashinka-hi-otzyvy.html" class="pb-related-card">
+                <span class="pb-related-title">Стиральная машинка Hi: отзывы, характеристики и реальные плюсы</span>
+                <span class="pb-related-desc">Честные отзывы о стиральных машинах Hi. Разбор моделей, анализ поломок, инструкция по эксплуатации и</span>
+            </a><a href="/articles/k/ka/kakoe-vino-kupit-v-pyaterochke-polusladkoe-krasnoe.html" class="pb-related-card">
+                <span class="pb-related-title">Какое полусладкое красное вино купить в Пятёрочке: 5 лучших вариантов 2026</span>
+                <span class="pb-related-desc">Рейтинг полусладких красных вин из Пятёрочки по цене/качеству: от бюджетных до премиум-вариантов. Ка</span>
+            </a><a href="/articles/d/dv/dvustoronnij-skotch-dlya-plastika.html" class="pb-related-card">
+                <span class="pb-related-title">Двусторонний скотч для пластика: виды, выбор и монтаж</span>
+                <span class="pb-related-desc">Полный гид по двустороннему скотчу для пластика. Как выбрать клейкую ленту для авто, быта и ремонта.</span>
+            </a><a href="/articles/p/po/pochemu-voda-ne-slivaetsya-iz-stiralnoj-mashinki-avtomat.html" class="pb-related-card">
+                <span class="pb-related-title">Вода не сливается из стиральной машины: причины и ремонт</span>
+                <span class="pb-related-desc">Почему не сливается вода из стиральной машины автомат? Полный разбор причин, кодов ошибок и инструкц</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как сделать разрез детали в КОМПАС-3D: пошаговая инструкция — Авто Факт</title>
+    <meta name="description" content="Узнайте, как выполнить разрез детали в КОМПАС-3D. Пошаговое руководство по созданию сечений, настройке штриховки и работе с видами.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ka/kak-sdelat-razrez-detali-v-kompase-3d.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как сделать разрез детали в КОМПАС-3D: пошаговая инструкция">
+    <meta property="og:description" content="Узнайте, как выполнить разрез детали в КОМПАС-3D. Пошаговое руководство по созданию сечений, настройке штриховки и работе с видами.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/drugoe/">Другое</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как сделать разрез детали в КОМПАС-3D: пошаговая инструкция</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#подготовка-модели-и-рабочего-пространства">Подготовка модели и рабочего пространства</a></li><li><a href="#использование-стандартного-разреза-по-линии">Использование стандартного разреза по линии</a></li><li><a href="#настройка-параметров-штриховки-и-отображения">Настройка параметров штриховки и отображения</a></li><li><a href="#работа-с-местными-разрезами">Работа с местными разрезами</a></li><li><a href="#построение-вынесенных-сечений">Построение вынесенных сечений</a></li><li><a href="#автоматизация-и-ассоциативная-связь">Автоматизация и ассоциативная связь</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/d/de/detskoe-radio-volna-fm.html">Детское радио Волна ФМ: частота вещания и программы</a></li><li><a href="/articles/n/ne/need-for-speed-rajan-kuper.html">Need for Speed: Райан Купер — разбор персонажа NFS Payback</a></li><li><a href="/articles/t/to/top-7-mestnykh-vnedorozhnikov.html">Топ 7 местных внедорожников: выбор экспертов 2026</a></li><li><a href="/articles/s/sh/shtraf-za-prosrochennuyu-registratsiyu-avto.html">Штраф за просроченную регистрацию авто в 2026 году: размеры и сроки</a></li><li><a href="/articles/p/po/pochemu-zaklinilo-zadnee-koleso-na-mashine.html">Заклинило заднее колесо: причины, диагностика и срочный ремонт</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как сделать разрез детали в КОМПАС-3D: полное руководство</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#подготовка-модели-и-рабочего-пространства">Подготовка модели и рабочего пространства</a></li><li><a href="#использование-стандартного-разреза-по-линии">Использование стандартного разреза по линии</a></li><li><a href="#настройка-параметров-штриховки-и-отображения">Настройка параметров штриховки и отображения</a></li><li><a href="#работа-с-местными-разрезами">Работа с местными разрезами</a></li><li><a href="#построение-вынесенных-сечений">Построение вынесенных сечений</a></li><li><a href="#автоматизация-и-ассоциативная-связь">Автоматизация и ассоциативная связь</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Работа с трехмерными моделями и их двумерными проекциями в системе автоматизированного проектирования КОМПАС-3D требует от инженера глубокого понимания инструментов оформления чертежей. <strong>Разрез детали</strong> является одним из ключевых элементов, позволяющих показать внутреннюю структуру объекта, скрытые полости и особенности конструкции, которые невозможно рассмотреть на внешнем виде. Правильное выполнение этой операции критически важно для читаемости технической документации и отсутствия ошибок при производстве.</p>
+
+<p>В данной статье мы подробно разберем алгоритм действий, необходимый для грамотного создания разрезов в среде КОМПАС-3D. Вы научитесь использовать стандартные средства системы, работать с линиями разрезов и настраивать параметры отображения сечений. Освоение этих навыков позволит вам значительно ускорить процесс подготовки проектной документации и избежать распространенных ошибок при оформлении видов.</p>
+
+<p>Современные версии программного обеспечения предлагают гибкие настройки, но базовый принцип остается неизменным: необходимо задать секущую плоскость и выбрать вид, на котором будет отображен результат. <em>Инженерная графика</em> подразумевает строгое соблюдение правил, и КОМПАС-3D помогает автоматизировать этот процесс, однако контроль со стороны пользователя обязателен. Давайте перейдем к практической части и рассмотрим необходимые инструменты.</p>
+
+<h2 id="подготовка-модели-и-рабочего-пространства">Подготовка модели и рабочего пространства</h2>
+
+<p>Прежде чем приступать к созданию разрезов, необходимо убедиться, что трехмерная модель детали или сборки собрана корректно и не содержит геометрических ошибок. <strong>Трехмерная модель</strong> является источником всех данных для чертежа, и любые дефекты в ней автоматически отразятся на двумерном изображении. Рекомендуется провести предварительный анализ модели на наличие пересечений и зазоров, которые могут исказить линию разреза.</p>
+
+<p>Откройте файл чертежа или создайте новый документ, внедрив в него вид с модели. Важно правильно выбрать масштаб и ориентацию главного вида, так как именно от него часто отталкиваются при построении дополнительных проекций. В дереве построения убедитесь, что связь с исходным файлом модели активна, что позволит вносить изменения в геометрию и видеть их на чертеже в реальном времени.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Если модель имеет сложную структуру с множеством мелких элементов, производительность программы при перестроении разрезов может снизиться. В таких случаях целесообразно временно упростить модель или отключить отображение декоративных элементов.</p>
+</blockquote>
+
+<p>Рабочее пространство следует настроить так, чтобы были видны все необходимые панели инструментов. Особое внимание уделите панели <code>Обозначения</code>, где располагаются основные инструменты для работы с видами и разрезами. Правильная организация рабочего места экономит время и снижает риск случайных ошибок при выборе команд.</p>
+
+<h2 id="использование-стандартного-разреза-по-линии">Использование стандартного разреза по линии</h2>
+
+<p>Самым распространенным способом получения внутреннего вида является создание разреза по линии. Для этого в панели инструментов выберите команду <code>Разрез/Сечение по линии</code>. Система предложит указать начальную и конечную точки линии разреза на существующем виде модели. Точки привязки следует выбирать с учетом правил проекционной связи.</p>
+
+<p>После указания точек линии разреза появится фантом изображения, который можно перемещать в нужную область чертежа. <strong>Линия разреза</strong> может быть ломаной или ступенчатой, что позволяет раскрыть несколько внутренних полостей, не лежащих в одной плоскости. Направление взгляда задается автоматически, но при необходимости его можно изменить, переключив стрелки на линии разреза.</p>
+
+<div class="pb-poll" id="poll-00a6ea2b"><div class="pb-poll-question">📊 Какой тип разреза вы используете чаще всего?</div><div class="pb-poll-option" data-poll="00a6ea2b" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Простой</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="00a6ea2b" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Ступенчатый</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="00a6ea2b" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Ломаный</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="00a6ea2b" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Местный</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="00a6ea2b" data-idx="4" onclick="pbPollVote(this)"><span class="pb-poll-label">Сложный</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<p>В диалоговом окне настройки параметров можно выбрать тип линии (сплошная, штриховая) и указать обозначение секущей плоскости. Часто требуется изменить положение вида разреза относительно линии, чтобы оптимизировать компоновку чертежа. <em>АСКОН</em> предусмотрел возможность поворота вида на произвольный угол, что полезно для размещения наклонных сечений.</p>
+
+<h2 id="настройка-параметров-штриховки-и-отображения">Настройка параметров штриховки и отображения</h2>
+
+<p>Ключевым моментом в оформлении разреза является правильная настройка штриховки материала. По умолчанию система назначает штриховку «Металл», но для разных материалов (пластик, дерево, бетон) необходимо выбирать соответствующие обозначения согласно ГОСТ. Сделать это можно через меню свойств вида или непосредственно в параметрах штриховки.</p>
+
+<p>В окне параметров доступны настройки шага, угла наклона и толщины линий штриховки. <strong>Штриховка</strong> должна быть читаемой и не сливаться с основными контурами детали. При масштабировании чертежа параметры штриховки можно привязать к масштабу вида, чтобы при изменении размера чертежа плотность линий оставалась оптимальной.</p>
+
+<details class="pb-accordion"><summary>Как сбросить настройки штриховки по умолчанию?</summary><div class="pb-accordion-body"><p>Если штриховка отображается некорректно, в окне параметров найдите кнопку «Сбросить» или выберите стиль «По умолчанию». Также можно удалить файл настроек профиля пользователя, но это вернет все настройки программы к заводским значениям.</p></div></details>
+
+<p>Отдельного внимания заслуживает отображение тонких стенок и спиц. Согласно правилам оформления, при продольном разрезе такие элементы не заштрихововываются. В КОМПАС-3D можно вручную исключить определенные контуры из штриховки или использовать специальные флаги в настройках вида для автоматического распознавания тонких элементов.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+<th>Рекомендуемое значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Шаг штриховки</td>
+<td>Расстояние между линиями</td>
+<td>Зависит от масштаба (обычно 1-2 мм)</td>
+</tr>
+<tr>
+<td>Угол наклона</td>
+<td>Ориентация линий заполнения</td>
+<td>45 градусов (стандарт)</td>
+</tr>
+<tr>
+<td>Толщина линии</td>
+<td>Визальная весовость штрихов</td>
+<td>Тонкая (0.18 - 0.25 мм)</td>
+</tr>
+<tr>
+<td>Прозрачность</td>
+<td>Степень видимости фона</td>
+<td>0% (полностью непрозрачная)</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2 id="работа-с-местными-разрезами">Работа с местными разрезами</h2>
+
+<p>Когда необходимо показать внутреннюю структуру только небольшой части детали, используется местный разрез. Этот инструмент позволяет «вырезать» фрагмент материала без создания полноценной линии разреза через весь объект. Для активации команды выберите <code>Местный разрез</code> и укажите вид, на котором будет выполняться операция.</p>
+
+<p>Система попросит начертить замкнутый контур, ограничивающий область разреза. Это может быть окружность, прямоугольник или произвольный сплайн. <strong>Контур разреза</strong> должен быть выполнен тонкой сплошной линией и не пересекать сам себя. Глубина разреза задается либо указанием точки на другом виде, либо вводом числового значения.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Алгоритм создания местного разреза</h4><label class="check-item"><input type="checkbox"><span>Выбрать команду «Местный разрез»</span></label><label class="check-item"><input type="checkbox"><span>Указать вид для операции</span></label><label class="check-item"><input type="checkbox"><span>Нарисовать замкнутый контур</span></label><label class="check-item"><input type="checkbox"><span>Задать глубину или точку</span></label><label class="check-item"><input type="checkbox"><span>Настроить штриховку</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>Важно следить за тем, чтобы линия обрыва местного разреза не совпадала с другими линиями изображения и не проходила через оси симметрии, если это не требуется по условиям задачи. Местные разрезы значительно упрощают чтение чертежа, избавляя от необходимости строить дополнительные полные виды.</p>
+
+<h2 id="построение-вынесенных-сечений">Построение вынесенных сечений</h2>
+
+<p>Вынесенные сечения применяются для показа формы детали в определенном месте, часто на длинномерных элементах, таких как валы или балки. В отличие от разреза, сечение показывает только то, что находится непосредственно в секущей плоскости. Команда <code>Сечение</code> позволяет быстро создать такой вид.</p>
+
+<p>При построении вынесенного сечения линия секущей плоскости может быть размещена в разрыве основного изображения или вынесена за его пределы. <em>Инженерная графика</em> требует, чтобы вынесенные сечения выполнялись в увеличенном масштабе для лучшей читаемости мелких элементов. Система автоматически связывает сечение с моделью, обновляя его при изменениях.</p>
+
+<blockquote>
+<p>⚠️ Внимание: При создании сечений на деталях с ребрами жесткости убедитесь, что секущая плоскость проходит перпендикулярно оси ребра, иначе форма сечения может быть искажена и не будет соответствовать реальности.</p>
+</blockquote>
+
+<p>Оформление вынесенных сечений также подчиняется строгим правилам: контур выполняется сплошной основной линией, а внутренняя область заштриховывается. Если сечение симметрично, его можно расположить на продолжении линии секущей плоскости без дополнительных обозначений букв.</p>
+
+<h2 id="автоматизация-и-ассоциативная-связь">Автоматизация и ассоциативная связь</h2>
+
+<p>Одним из главных преимуществ КОМПАС-3D является ассоциативная связь между трехмерной моделью и чертежом. Любое изменение геометрии в файле модели мгновенно отражается на всех видах, разрезах и сечениях. <strong>Ассоциативность</strong> исключает необходимость вручную перечерчивать детали при внесении правок в конструкцию.</p>
+
+<p>Для управления связями используется дерево построения чертежа. В нем можно увидеть структуру видов и зависящих от них элементов. Если связь нарушена (например, файл модели был перемещен), система выдаст предупреждение и предложит найти файл. Регулярное сохранение и правильная организация файлов проекта предотвращают потерю данных.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Используйте библиотеку стандартных элементов для часто повторяющихся узлов. Это ускорит создание разрезов, так как стандартные изделия уже имеют настроенные параметры отображения и штриховки.</p></aside>
+
+<p>Также доступна функция автоматического создания видов по модели. При внедрении новой модели в чертеж можно сразу сгенерировать необходимые проекции и разрезы, выбрав их в диалоговом окне. Это особенно полезно при начале работы над новым документом, позволяя получить базовую компоновку за несколько кликов.</p>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Как изменить направление взгляда на созданном разрезе?</summary>
+<p>Для изменения направления взгляда выделите линию разреза на чертеже. В появившемся меню параметров или на панели свойств найдите кнопку со стрелками, переключающую направление. Также можно нажать правой кнопкой мыши на линию разреза и выбрать соответствующий пункт в контекстном меню.</p>
+</details>
+
+<details>
+<summary>Почему штриховка на разрезе не обновляется после изменения модели?</summary>
+<p>Обычно обновление происходит автоматически. Если этого не случилось, проверьте, не отключена ли связь с моделью. Попробуйте перестроить изображение, нажав кнопку «Перестроить» в панели инструментов или обновив весь чертеж через меню «Сервис». Иногда требуется regenerate конкретного вида.</p>
+</details>
+
+<details>
+<summary>Можно ли создать разрез по криволинейной поверхности?</summary>
+<p>Да, в КОМПАС-3D существует возможность создания развернутых сечений по криволинейным траекториям. Для этого при построении линии разреза используйте опцию построения по пути или сплайну. Результат будет развернут в плоскость для удобства чтения размеров.</p>
+</details>
+
+<details>
+<summary>Как удалить линию разреза, оставив сам вид?</summary>
+<p>Линия разреза и сам вид являются связанными объектами. Если удалить линию, вид также исчезнет. Чтобы скрыть линию, но оставить вид, можно переместить линию разреза на слой, который отключен для печати, или просто сдвинуть ее за пределы видимой области чертежа, если это допускает логика оформления.</p>
+</details>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Главная мысль: Использование параметрических связей и автоматических инструментов КОМПАС-3D позволяет создавать сложные разрезы за секунды, обеспечивая полную соответствие чертежа трехмерной модели.</p></aside></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/d/de/detskoe-radio-volna-fm.html" class="pb-related-card">
+                <span class="pb-related-title">Детское радио Волна ФМ: частота вещания и программы</span>
+                <span class="pb-related-desc">Всё о радиостанции Волна ФМ: частоты вещания, расписание программ, детские сказки, конкурсы и образо</span>
+            </a><a href="/articles/n/ne/need-for-speed-rajan-kuper.html" class="pb-related-card">
+                <span class="pb-related-title">Need for Speed: Райан Купер — разбор персонажа NFS Payback</span>
+                <span class="pb-related-desc">Полный гид по Райану Куперу из Need for Speed Payback. Биография, характеристики, сюжетные повороты </span>
+            </a><a href="/articles/t/to/top-7-mestnykh-vnedorozhnikov.html" class="pb-related-card">
+                <span class="pb-related-title">Топ 7 местных внедорожников: выбор экспертов 2026</span>
+                <span class="pb-related-desc">Подробный обзор 7 лучших отечественных внедорожников. Сравниваем УАЗ Патриот, Lada Niva Legend, новы</span>
+            </a><a href="/articles/s/sh/shtraf-za-prosrochennuyu-registratsiyu-avto.html" class="pb-related-card">
+                <span class="pb-related-title">Штраф за просроченную регистрацию авто в 2026 году: размеры и сроки</span>
+                <span class="pb-related-desc">Какой штраф за просроченную регистрацию авто в 2026 году? Актуальные размеры взысканий, сроки оформл</span>
+            </a><a href="/articles/p/po/pochemu-zaklinilo-zadnee-koleso-na-mashine.html" class="pb-related-card">
+                <span class="pb-related-title">Заклинило заднее колесо: причины, диагностика и срочный ремонт</span>
+                <span class="pb-related-desc">Почему заклинило заднее колесо на машине? Полный разбор причин: от закисшего суппорта до ручника. Чт</span>
+            </a><a href="/articles/p/po/pozdravlenie-s-pokupkoj-novogo-avtomobilya.html" class="pb-related-card">
+                <span class="pb-related-title">Поздравление с покупкой нового автомобиля: идеи и сценарии</span>
+                <span class="pb-related-desc">Как оригинально поздравить с покупкой нового авто? Сценарии вручения, идеи подарков, традиции и этик</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

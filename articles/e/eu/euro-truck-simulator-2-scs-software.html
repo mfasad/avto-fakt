@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Euro Truck Simulator 2: Гид по SCS Software и модификациям — Авто Факт</title>
+    <meta name="description" content="Полный обзор Euro Truck Simulator 2 от SCS Software. Установка модов, оптимизация графики, DLC и советы для начинающих дальнобойщиков в 2026 году.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/e/eu/euro-truck-simulator-2-scs-software.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Euro Truck Simulator 2: Гид по SCS Software и модификациям">
+    <meta property="og:description" content="Полный обзор Euro Truck Simulator 2 от SCS Software. Установка модов, оптимизация графики, DLC и советы для начинающих дальнобойщиков в 2026 году.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/byt-i-khobbi/">Быт и Хобби</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Euro Truck Simulator 2: Гид по SCS Software и модификациям</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#философия-scs-software-и-эволюция-симулятора">Философия SCS Software и эволюция симулятора</a></li><li><a href="#технические-требования-и-оптимизация-в-2026-году">Технические требования и оптимизация в 2026 году</a></li><li><a href="#установка-и-управление-модификациями">Установка и управление модификациями</a></li><li><a href="#обзор-популярных-карт-и-dlc-от-разработчиков">Обзор популярных карт и DLC от разработчиков</a></li><li><a href="#экономика-бизнес-и-развитие-автопарка">Экономика, бизнес и развитие автопарка</a></li><li><a href="#реалистичное-вождение-и-настройки-физики">Реалистичное вождение и настройки физики</a></li><li><a href="#мультиплеер-и-сообщество-truckersmp">Мультиплеер и сообщество TruckersMP</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/s/sk/skolko-sokhnet-kraska-dlya-kozhi.html">Сколько сохнет краска для кожи: полное время высыхания</a></li><li><a href="/articles/t/ts/tsitata-pro-lyubov-i-puteshestviya.html">Цитаты про любовь и путешествия: 50+ вдохновляющих фраз для автопутешествий</a></li><li><a href="/articles/k/ka/kak-dobratsya-do-valaama-na-mashine.html">Как добраться до Валаама на машине: маршрут, паром, цены</a></li><li><a href="/articles/k/ka/kartonnaya-mashina-svoimi-rukami.html">Картонная машина своими руками: чертежи, шаблоны и сборка</a></li><li><a href="/articles/r/ra/razmery-mashinok-detskikh-v-masshtabe.html">Размеры детских машинок в масштабе: таблица и советы по выбору</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Euro Truck Simulator 2: Энциклопедия SCS Software</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#философия-scs-software-и-эволюция-симулятора">Философия SCS Software и эволюция симулятора</a></li><li><a href="#технические-требования-и-оптимизация-в-2026-году">Технические требования и оптимизация в 2026 году</a></li><li><a href="#установка-и-управление-модификациями">Установка и управление модификациями</a></li><li><a href="#обзор-популярных-карт-и-dlc-от-разработчиков">Обзор популярных карт и DLC от разработчиков</a></li><li><a href="#экономика-бизнес-и-развитие-автопарка">Экономика, бизнес и развитие автопарка</a></li><li><a href="#реалистичное-вождение-и-настройки-физики">Реалистичное вождение и настройки физики</a></li><li><a href="#мультиплеер-и-сообщество-truckersmp">Мультиплеер и сообщество TruckersMP</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Виртуальный мир грузоперевозок уже много лет захватывает миллионы игроков по всему земному шару, превращаясь из простой аркады в сложнейший симулятор логистики. <strong>Euro Truck Simulator 2</strong>, детище чешской студии <em>SCS Software</mark>, задал новый стандарт качества в жанре симуляторов, предложив невероятную детализацию кабин, реалистичную физику вождения и постоянно расширяющуюся карту Европы. В 2026 году игра продолжает активно развиваться, обрастая новыми механиками и регионами, что делает её актуальной как для новичков, так и для ветеранов виртуальных магистралей.</p>
+
+<p>Успех проекта кроется не только в базовой механике, но и в открытом подходе разработчиков к модификациям, позволяющем превратить стандартный симулятор в персонализированный опыт. Понимание того, как работает движок <em>Prism3D</em>, и знание тонкостей файлов модов — это ключ к получению максимального удовольствия от игры. Мы подробно разберем технические аспекты, настройки и скрытые возможности, которые помогут вам стать лучшим водителем на дорогах цифровой Европы.</p>
+
+<h2 id="философия-scs-software-и-эволюция-симулятора">Философия SCS Software и эволюция симулятора</h2>
+<p>Компания <em>SCS Software</em> прошла долгий путь от создания простых гоночных треков до разработки масштабных симуляторов с открытым миром. Их подход к <strong>Euro Truck Simulator 2</strong> кардинально отличался от конкурентов: вместо погони за экстремальными скоростями, разработчики сделали ставку на медитативный ритм, соблюдение правил дорожного движения и экономическую составляющую. Это позволило создать уникальную атмосферу, где каждая поездка ощущается как реальная работа, требующая концентрации и ответственности.</p>
+
+<p>Одной из ключевых особенностей движка стала модульность. Игра спроектирована так, чтобы сторонние разработчики могли легко внедрять свои изменения, будь то новые грузовики, карты или звуковые пакеты. <strong>SCS Software</strong> регулярно выпускает бесплатные обновления, исправляющие баги и добавляющие мелкие улучшения, параллельно разрабатывая крупные платные дополнения. Такая модель поддержки позволяет игре оставаться свежей даже спустя более десяти лет после релиза.</p>
+
+<blockquote>⚠️ Внимание: Обновление игры до последней версии может привести к временной неработоспособности старых модификаций карт. Всегда проверяйте совместимость модов с текущей версией <code>1.5x+</code> перед их активацией, чтобы избежать вылетов на рабочем столе.</blockquote>
+
+<p>Важно отметить, что студера уделяет огромное внимание звуковому оформлению. Звуки двигателя, турбины, ретардера и даже стук дождя по крыше кабины записываются с реальных прототипов. Это создает эффект присутствия, который усиливается при использовании качественной акустической системы или гарнитуры. Именно такие детали отличают продукты <em>SCS</em> от простых "каталок" и делают процесс вождения глубоким и погружающим.</p>
+
+<h2 id="технические-требования-и-оптимизация-в-2026-году">Технические требования и оптимизация в 2026 году</h2>
+<p>Несмотря на почтенный возраст, современные версии симулятора требуют все более производительного железа, особенно если вы планируете использовать графические моды. Базовые системные требования позволяют запустить игру на большинстве офисных компьютеров, но для комфортной игры в разрешении <code>4K</code> с трассировкой лучей (если она добавлена в будущих патчах) или с модом <em>ProMods</em> понадобятся серьезные ресурсы.</p>
+
+<p>Оптимизация кода в последних патчах значительно улучшила работу с оперативной памятью, однако "прожорливость" к CPU при большом трафике AI-машин остается актуальной. Если вы замечаете просадки FPS в крупных городах вроде Парижа или Берлина, попробуйте снизить настройки плотности трафика или детализации теней. Эти параметры сильнее всего влияют на <strong>производительность</strong> процессора в движке <em>Prism3D</em>.</p>
+
+<div class="pb-poll" id="poll-ff360d0f"><div class="pb-poll-question">📊 Какой параметр графики для вас важнее всего?</div><div class="pb-poll-option" data-poll="ff360d0f" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Максимальная детализация текстур</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="ff360d0f" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Высокая дальность прорисовки</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="ff360d0f" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Стабильный FPS</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="ff360d0f" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Наличие Ray Tracing</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<p>Для владельцев слабых ПК существует множество оптимизированных модов, которые заменяют тяжелые текстуры на более легкие аналоги без критической потери визуального качества. Также рекомендуется отключить вертикальную синхронизацию в настройках игры и выставить её через драйвер видеокарты, что может снизить задержку ввода. Использование <strong>SSD</strong> накопителя значительно сокращает время загрузки карт и текстур при быстрой езде по карте.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка перед запуском тяжелых модов</h4><label class="check-item"><input type="checkbox"><span>Установлено более 16 ГБ ОЗУ</span></label><label class="check-item"><input type="checkbox"><span>Обновлены драйверы видеокарты</span></label><label class="check-item"><input type="checkbox"><span>Освобождено 50 ГБ на диске</span></label><label class="check-item"><input type="checkbox"><span>Проверена целостность файлов в Steam</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="установка-и-управление-модификациями">Установка и управление модификациями</h2>
+<p>Модификации — это сердце и душа <strong>Euro Truck Simulator 2</strong>. Они позволяют расширить карту до размеров всей Евразии, добавить сотни новых моделей грузовиков от <em>MAN</em>, <em>Scania</em> и <em>Volvo</em>, а также улучшить физику подвески. Установка модов обычно происходит через папку <code>Documents/Euro Truck Simulator 2/mod</code>, куда загружаются файлы с расширением <code>.scs</code> или <code>.zip</code>.</p>
+
+<p>Критически важным аспектом является правильный порядок загрузки модов в меню лаунчера. Модификации, изменяющие карту, должны находиться в самом низу списка, а моды, меняющие текстуры или звуки — выше. Нарушение иерархии приводит к тому, что объекты могут исчезать, дороги обрываться, а игра вылетать при загрузке профиля. Всегда внимательно читайте описания модов на предмет требований к совместимости.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Тип мода</th>
+<th>Пример популярного мода</th>
+<th>Приоритет загрузки</th>
+<th>Влияние на FPS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Карта</td>
+<td>ProMods / RusMap</td>
+<td>Низкий (внизу)</td>
+<td>Среднее</td>
+</tr>
+<tr>
+<td>Грузовики</td>
+<td>Real Truck Physics</td>
+<td>Средний</td>
+<td>Низкое</td>
+</tr>
+<tr>
+<td>Графика</td>
+<td>HD Road Pack</td>
+<td>Высокий (вверху)</td>
+<td>Высокое</td>
+</tr>
+<tr>
+<td>Звук</td>
+<td>Real Sound Pack</td>
+<td>Средний</td>
+<td>Минимальное</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Для управления большим количеством модов удобно использовать сторонние лаунчеры, которые автоматически сортируют файлы и проверяют конфликты версий. Такие инструменты позволяют создавать разные профили: один для ванильной игры, другой для хардкорного симулятора с реалистичной экономикой. Это избавляет от необходимости постоянно перемещать файлы вручную и рисковать целостностью игрового профиля.</p>
+
+<h2 id="обзор-популярных-карт-и-dlc-от-разработчиков">Обзор популярных карт и DLC от разработчиков</h2>
+<p>Официальные дополнения от <em>SCS Software</em> всегда отличаются высоким качеством проработки и стабильностью. Каждое DLC добавляет новые города, дороги и иногда целые страны. Среди самых популярных расширений стоит выделить <em>Going East!</em>, которое открыло восточную Европу, и <em>Scandinavia</em>, подарившее заснеженные трассы и сложные погодные условия. В 2026 году карта игры охватывает практически весь континент.</p>
+
+
+
+<p>Фанатские карты, такие как <em>ProMods</em>, часто превосходят официальные по масштабу, добавляя Крым, Северную Африку и детализированные версии Скандинавии еще до выхода официальных DLC. Однако они требуют наличия всех основных дополнений от разработчиков для корректной работы, так как используют их ассеты. Это создает симбиоз, где платный контент становится фундаментом для бесплатных масштабных модификаций.</p>
+
+<p>При выборе между ожиданием официального DLC и установкой фанатской карты стоит учитывать ваши цели. Официальный контент гарантирует стабильность и достижения Steam, в то время как моды предлагают безграничную свободу и новые механики, но могут быть нестабильны после обновлений игры. Для новичков лучше начать с официальных карт, чтобы понять базовую механику.</p>
+
+<h2 id="экономика-бизнес-и-развитие-автопарка">Экономика, бизнес и развитие автопарка</h2>
+<p>В <strong>Euro Truck Simulator 2</strong> вы начинаете как наемный водитель, но конечная цель — создание собственной транспортной империи. Система кредитов позволяет покупать первые гаражи и нанимать водителей, которые будут приносить пассивный доход. Грамотное управление финансами требует расчета рентабельности каждого нового грузовика и анализа стоимости топлива на разных заправках.</p>
+
+<p>Наемные водители имеют свои навыки и предпочтения по типу груза и дальности поездок. Опытные водители со временем требуют повышения зарплаты, но и приносят больше прибыли. Важно не нанимать их слишком рано, когда ваш стартовый капитал еще мал, иначе проценты по кредитам съедят всю прибыль. Оптимальная стратегия — сначала купить второй гараж, затем третий, и только потом активно расширять штат.</p>
+
+<ul>
+<li>🚛 Покупка гаража в крупном логистическом центре (например, Дюссельдорф или Милан) дает доступ к более дорогим контрактам.</li>
+<li>⛽ Топливные карты разных компаний позволяют экономить до 25% на заправках, что критично на больших дистанциях.</li>
+<li>💰 Инвестиции в собственные грузовики окупаются быстрее, если использовать их для выполнения срочных и ценных заказов.</li>
+</ul>
+
+<p>Существует также рынок подержанных грузовиков, где можно купить технику с пробегом дешевле, а затем отремонтировать её или перепродать. Некоторые игроки специализируются исключительно на торговле техникой, скупая редкие модели у дилеров в одном конце карты и продавая в другом. Это добавляет слой экономической симуляции, выходящий за рамки простого вождения.</p>
+
+<h2 id="реалистичное-вождение-и-настройки-физики">Реалистичное вождение и настройки физики</h2>
+<p>Для достижения максимального реализма стандартных настроек управления может быть недостаточно. Профессионалы рекомендуют использовать руль с обратной связью (Force Feedback), который передает вибрацию дороги и сопротивление на поворотах. Настройки чувствительности руля и силы обратной связи индивидуальны для каждого устройства и требуют времени на тонкую настройку в меню <code>Options → Controls</code>.</p>
+
+<blockquote>⚠️ Внимание: Чрезмерная сила обратной связи на дешевых рулях может привести к быстрому износу моторчиков. Не выставляйте значение на 100%, если не уверены в надежности вашего оборудования.</blockquote>
+
+<p>Включите в настройках геймпжа опции "Повреждения грузовика" и "Расход топлива", чтобы усложнить игру. Реалистичный режим переключения передач (нелинейный) потребует от вас использования сцепления и соблюдения последовательности переключения, что особенно сложно на крутых подъемах с тяжелым грузом. Это превращает вождение из аркадного занятия в навык, требующий обучения.</p>
+
+
+
+<h2 id="мультиплеер-и-сообщество-truckersmp">Мультиплеер и сообщество TruckersMP</h2>
+<p>Официально <strong>Euro Truck Simulator 2</strong> не имеет встроенного мультиплеера, но модификация <em>TruckersMP</em> заполнила этот пробел, позволив тысячам игроков одновременно находиться на серверах. Это создает уникальную атмосферу живого трафика, где необходимо соблюдать правила, общаться по рации и координировать действия в конвоях. Однако правила поведения там строги: за нарушения ПДД следуют баны.</p>
+
+<p>В multiplayer-режиме важно помнить о лагах и задержках, которые могут возникать при большом скоплении игроков. Дистанция между грузовиками в конвое должна быть больше, чем в одиночной игре, чтобы иметь запас времени на реакцию. Общение с другими дальнобойщиками через встроенный чат или внешние программы вроде Discord делает дальние рейсы менее скучными и более социальными.</p>
+
+<p>Сообщество <em>SCS Software</em> невероятно активно и дружелюбно. Форумы, Discord-каналы и группы в социальных сетях полны советов, готовых пресетов настроек и помощи в решении технических проблем. Участие в виртуальных компаниях (Virtual Companies) позволяет работать в команде, выполняя корпоративные заказы и поднимаясь по карьерной лестнице внутри игрового сообщества.</p>
+
+
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Как активировать консоль разработчика в ETS 2?</summary>
+<p>Для включения консоли найдите файл <code>config.sii</code> в папке <code>Documents/Euro Truck Simulator 2</code>. Откройте его блокнотом и найдите строку <code>uset g_developer "0"</code>. Замените <code>0</code> на <code>1</code>. Также измените строку <code>uset g_console "0"</code> на <code>1</code>. После сохранения и перезапуска игры консоль вызывается клавишей тильды (<code>~</code> или <code>ё</code>).</p>
+</details>
+
+<details>
+<summary>Почему игра вылетает при загрузке профиля с модами?</summary>
+<p>Чаще всего это происходит из-за конфликта версий модов после обновления игры. Попробуйте отключить все моды и запустить игру. Если она работает, включайте моды по одному или группами, чтобы найти виновника. Также проверьте лог-файл <code>game.log</code> в папке документов — там будет указана конкретная ошибка.</p>
+</details>
+
+<details>
+<summary>Можно ли играть в ETS 2 без интернета?</summary>
+<p>Да, игра полностью функциональна в оффлайн-режиме. Вам не нужен интернет для прохождения кампании, использования модов (кроме мультиплеера TruckersMP) или настройки грузовика. Однако для активации лицензии Steam и первоначальной установки соединение необходимо.</p>
+</details>
+
+<details>
+<summary>Как заработать первые деньги быстрее?</summary>
+<p>В начале игры берите заказы с пометкой "Срочная доставка" (Urgent Delivery), они оплачиваются с наценкой. Избегайте штрафов за повреждение груза и опоздание. Также старайтесь заправляться в странах с дешевым топливом (например, Польша или страны Балтии) перед длинными перегонами.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/s/sk/skolko-sokhnet-kraska-dlya-kozhi.html" class="pb-related-card">
+                <span class="pb-related-title">Сколько сохнет краска для кожи: полное время высыхания</span>
+                <span class="pb-related-desc">Узнайте точное время высыхания краски для кожи. Таблицы по брендам, факторы влияния, способы ускорен</span>
+            </a><a href="/articles/t/ts/tsitata-pro-lyubov-i-puteshestviya.html" class="pb-related-card">
+                <span class="pb-related-title">Цитаты про любовь и путешествия: 50+ вдохновляющих фраз для автопутешествий</span>
+                <span class="pb-related-desc">Коллекция лучших цитат о любви и приключениях на дороге — от классиков до современных авторов. Как и</span>
+            </a><a href="/articles/k/ka/kak-dobratsya-do-valaama-na-mashine.html" class="pb-related-card">
+                <span class="pb-related-title">Как добраться до Валаама на машине: маршрут, паром, цены</span>
+                <span class="pb-related-desc">Полный гид: как доехать до Валаама на автомобиле через Сортавала или Приозерск. Расписание парома, с</span>
+            </a><a href="/articles/k/ka/kartonnaya-mashina-svoimi-rukami.html" class="pb-related-card">
+                <span class="pb-related-title">Картонная машина своими руками: чертежи, шаблоны и сборка</span>
+                <span class="pb-related-desc">Пошаговая инструкция: как сделать картонный автомобиль для детей. Готовые чертежи, схемы сборки, иде</span>
+            </a><a href="/articles/r/ra/razmery-mashinok-detskikh-v-masshtabe.html" class="pb-related-card">
+                <span class="pb-related-title">Размеры детских машинок в масштабе: таблица и советы по выбору</span>
+                <span class="pb-related-desc">Подробный гайд по масштабам детских машинок (1:18, 1:24, 1:64) с сравнением размеров, таблицами и со</span>
+            </a><a href="/articles/k/ka/kak-vzyat-instrument-v-my-summer-car.html" class="pb-related-card">
+                <span class="pb-related-title">Как взять инструмент в My Summer Car: полное руководство 2026</span>
+                <span class="pb-related-desc">Пошаговая инструкция, где найти и как правильно использовать инструменты в игре My Summer Car. Секре</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

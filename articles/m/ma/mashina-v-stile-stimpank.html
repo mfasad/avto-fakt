@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Машина в стиле стимпанк: тюнинг, идеи и реализация проекта — Авто Факт</title>
+    <meta name="description" content="Как создать машину в стиле стимпанк своими руками. Детали, цвета, материалы и технические решения для ретро-фантастического авто.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/m/ma/mashina-v-stile-stimpank.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Машина в стиле стимпанк: тюнинг, идеи и реализация проекта">
+    <meta property="og:description" content="Как создать машину в стиле стимпанк своими руками. Детали, цвета, материалы и технические решения для ретро-фантастического авто.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tyuning-i-stil/">Тюнинг и Стиль</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Машина в стиле стимпанк: тюнинг, идеи и реализация проекта</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#философия-стимпанка-в-автомобильном-дизайне">Философия стимпанка в автомобильном дизайне</a></li><li><a href="#выбор-автомобиля-донора-и-подготовка-кузова">Выбор автомобиля-донора и подготовка кузова</a></li><li><a href="#материалы-и-цветовая-палитра-проекта">Материалы и цветовая палитра проекта</a></li><li><a href="#технические-решения-пар-шестерни-и-механизмы">Технические решения: пар, шестерни и механизмы</a></li><li><a href="#интерьер-викторианский-салон-на-колесах">Интерьер: викторианский салон на колесах</a></li><li><a href="#юридические-аспекты-и-безопасность-на-дорогах">Юридические аспекты и безопасность на дорогах</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/p/po/pol-uoker-i-skajlajn.html">Пол Уокер и Скайлайн: Легендарный R34 из Форсажа</a></li><li><a href="/articles/s/sh/shirokie-diski-na-avto.html">Широкие диски на авто: плюсы, минусы и риски</a></li><li><a href="/articles/e/et/et35-i-et40-raznitsa.html">ET35 и ET40: разница в вылете диска, что выбрать для авто</a></li><li><a href="/articles/m/mo/mod-na-mark-2-v-gta-5.html">Мод на Марк 2 в GTA 5: установка и лучшие модификации</a></li><li><a href="/articles/k/ka/kak-ukrasit-avto-na-svadbu.html">Как украсить авто на свадьбу: идеи, материалы и советы</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Машина в стиле стимпанк: от идеи до реализации проекта</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#философия-стимпанка-в-автомобильном-дизайне">Философия стимпанка в автомобильном дизайне</a></li><li><a href="#выбор-автомобиля-донора-и-подготовка-кузова">Выбор автомобиля-донора и подготовка кузова</a></li><li><a href="#материалы-и-цветовая-палитра-проекта">Материалы и цветовая палитра проекта</a></li><li><a href="#технические-решения-пар-шестерни-и-механизмы">Технические решения: пар, шестерни и механизмы</a></li><li><a href="#интерьер-викторианский-салон-на-колесах">Интерьер: викторианский салон на колесах</a></li><li><a href="#юридические-аспекты-и-безопасность-на-дорогах">Юридические аспекты и безопасность на дорогах</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Представьте себе автомобиль, который выглядит так, словно сошел со страниц романов Жюля Верна или Герберта Уэллса. Машина в стиле стимпанк — это не просто транспортное средство, а настоящий артефакт альтернативной истории, где паровые двигатели и латунные механизмы правят бал вместо электроники и пластика. В современном мире, перенасыщенном стерильными линиями и цифровыми интерфейсами, такие проекты привлекают внимание своей уникальностью и бунтарским духом.</p>
+
+<p>Создание подобного авто требует не только технических навыков, но и глубокого погружения в эстетику викторианской эпохи, смешанной с индустриальной фантазией. Это сложный процесс, который часто называют <strong>арт-каром</strong>, так как функциональность здесь отходит на второй план, уступая место визуальному нарративу. Владелец такого транспорта становится не просто водителем, а капитаном воздушного (или наземного) судна из параллельной вселенной.</p>
+
+<p>В этой статье мы разберем ключевые аспекты превращения обычного автомобиля в шедевр ретро-футуризма. Мы обсудим выбор донора, материалы, цветовую гамму и технические нюансы, которые позволят воплотить смелую мечту в реальность, сохранив при этом возможность legally передвигаться по дорогам общего пользования.</p>
+
+<h2 id="философия-стимпанка-в-автомобильном-дизайне">Философия стимпанка в автомобильном дизайне</h2>
+
+<p>Основой любого проекта в этом направлении является понимание того, что стимпанк — это торжество механики над цифрой. Визуальный язык здесь диктуется открытыми шестернями, медными трубами, манометрами и кожаными элементами. Машина должна выглядеть так, будто она была собрана в мастерской безумного изобретателя конца XIX века, но с использованием технологий, опережающих свое время.</p>
+
+<p>Ключевым элементом становится <strong>декоративная избыточность</strong>. Там, где современный автопром прячет провода и механизмы, стимпанк выставляет их напоказ. Однако важно не скатиться в китч: каждая деталь должна казаться функциональной, даже если она лишь имитирует работу сложного механизма. Это тонкая грань между искусным инжинирингом и простым наклеиванием «прибамбасов».</p>
+
+<ul>
+<li>⚙️ Доминирование природных материалов: дерево, латунь, медь, кожа и стекло.</li>
+<li>🔧 Визуализация работы механизмов: шестерни, рычаги, клапаны должны быть видны.</li>
+<li>🎩 Викторианская элегантность: сочетание грубой индустриальности с аристократизмом.</li>
+</ul>
+
+<p>Стоит отметить, что настоящий стимпанк в автомобиле — это не только внешность, но и тактильные ощущения. Скрип кожи, холод металла, запах масла и полированного дерева создают атмосферу, недоступную в стандартных салонах. <em>Эстетика утилитарности</em> здесь переплетается с роскошью, создавая уникальный сплав, который невозможно игнорировать.</p>
+
+<div class="pb-poll" id="poll-ea261f92"><div class="pb-poll-question">📊 Какой элемент стимпанка вам нравится больше всего?</div><div class="pb-poll-option" data-poll="ea261f92" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Латунные трубы</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="ea261f92" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Шестеренки и механизмы</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="ea261f92" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Кожаный салон</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="ea261f92" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Викторианские шрифты</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="ea261f92" data-idx="4" onclick="pbPollVote(this)"><span class="pb-poll-label">Паровые клапаны</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="выбор-автомобиля-донора-и-подготовка-кузова">Выбор автомобиля-донора и подготовка кузова</h2>
+
+<p>Не каждая машина подойдет для воплощения идеи стимпанка. Идеальный кандидат должен обладать определенным набором характеристик, позволяющих гармонично вписать ретро-элементы. Чаще всего выбор падает на автомобили с классическими, округлыми формами кузова, так как острые грани и агрессивный дизайн современных спорткаров конфликтуют с плавностью викторианской эпохи.</p>
+
+<p>Отличной базой могут стать старые модели <em>Volkswagen Beetle</em>, <em>Mini Cooper</em> классических серий или даже советская «классика» вроде <em>ВАЗ-2101</em>, если грамотно подойти к обработке. Кузов должен быть в хорошем состоянии, так как основной акцент будет сделан на металлических элементах, и любая ржавчина или дефекты ЛКП будут бросаться в глаза.</p>
+
+<blockquote>⚠️ Внимание: Перед началом любых работ по изменению внешности автомобиля убедитесь, что планируемые изменения не нарушают законодательство вашей страны regarding изменения конструкции ТС. Некоторые элементы могут потребовать официального согласования.</blockquote>
+
+<p>Процесс подготовки кузова начинается с полной зачистки и грунтовки. Поверхность должна быть идеально гладкой, если вы планируете наносить сложные узоры или патину. Часто используется техника искусственного состаривания металла, чтобы создать эффект времени, прошедшего через машину.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Подготовка кузова к стилизации</h4><label class="check-item"><input type="checkbox"><span>Оценка состояния металла</span></label><label class="check-item"><input type="checkbox"><span>Удаление ржавчины и старого ЛКП</span></label><label class="check-item"><input type="checkbox"><span>Грунтовка поверхности</span></label><label class="check-item"><input type="checkbox"><span>Выбор цветовой схемы</span></label><label class="check-item"><input type="checkbox"><span>Планирование мест крепления декора</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="материалы-и-цветовая-палитра-проекта">Материалы и цветовая палитра проекта</h2>
+
+<p>Цветовая гамма — это фундамент настроения вашего автомобиля. В стимпанке правят бал теплые, землистые тона, которые ассоциируются с промышленной революцией. Основными цветами часто становятся глубокий коричневый, цвет вороненой стали, темно-зеленый (цвет бутылочного стекла) и, конечно же, все оттенки меди и латуни.</p>
+
+<p>Для имитации металлических элементов используется не только настоящий металл, но и качественные имитации. Аэрография, хромирование отдельных деталей и использование специальных пленок позволяют добиться нужного эффекта без критического увеличения веса машины. <strong>Патина</strong> наносится искусственно, чтобы создать ощущение, что автомобиль повидал виды в параллельных мирах.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Материал</th>
+<th>Применение</th>
+<th>Визуальный эффект</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Латунь/Медь</td>
+<td>Трубы, фитинги, окантовка</td>
+<td>Теплое свечение, антикварный вид</td>
+</tr>
+<tr>
+<td>Кожа (искусственная/натуральная)</td>
+<td>Салон, обивка крыльев, ремни</td>
+<td>Винтажная роскошь, текстура</td>
+</tr>
+<tr>
+<td>Дерево (полированное)</td>
+<td>Панель приборов, элементы кузова</td>
+<td>Классическая elegance, контраст с металлом</td>
+</tr>
+<tr>
+<td>Стекло (линзы)</td>
+<td>Фары, иллюминаторы</td>
+<td>Оптические искажения, ретро-свет</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Важно соблюдать баланс между блеском металла и матовостью других поверхностей. Если вся машина будет сиять как новая монета, она потеряет свою «историчность». <mark>Сочетание окисленной меди и полированной латуни создает наиболее достоверный эффект aged metal.</mark></p>
+
+<h2 id="технические-решения-пар-шестерни-и-механизмы">Технические решения: пар, шестерни и механизмы</h2>
+
+<p>Самая сложная часть проекта — интеграция механических элементов. Конечно, полноценный паровой двигатель на современном авто — это удел очень смелых экспериментаторов, часто нарушающих экологические нормы. Поэтому чаще всего речь идет о визуальной имитации работы паровой машины.</p>
+
+<p>Трубопроводы, идущие вдоль кузова, манометры, показывающие «давление пара», и клапаны, из которых периодически вырывается безопасный туман (с помощью ультразвукового генератора), создают необходимую иллюзию. Все эти элементы должны быть надежно закреплены, чтобы вибрация на дороге не превратила ваш шедевр в груду звенящего металла.</p>
+
+<p>Для создания подвижных элементов часто используют электромоторы от стеклоочистителей или дворников, скрытые внутри декоративных кожухов. Они приводят в движение видимые шестерни, создавая гипнотический эффект работающего механизма. <strong>Кинетический декор</strong> — это то, что отличает профессиональный проект от любительской поделки.</p>
+
+<details class="pb-accordion"><summary>Как сделать безопасный «пар» для авто?</summary><div class="pb-accordion-body"><p>Для имитации пара лучше всего использовать ультразвуковые генераторы тумана, работающие на обычной воде. Они безопасны, не оставляют следов на кузове и потребляют минимум энергии. Можно добавить немного безопасного ароматизатора для эффекта запаха масла или угля.</p></div></details>
+
+<h2 id="интерьер-викторианский-салон-на-колесах">Интерьер: викторианский салон на колесах</h2>
+
+<p>Салон автомобиля в стиле стимпанк требует полного отказа от современного пластика и яркой электроники. Приборная панель заменяется на деревянную или металлическую, инкрустированную analog-приборами. Цифровые дисплеи прячутся или маскируются под старинные индикаторы.</p>
+
+<p>Сиденья обшиваются кожей с каретной стяжкой, часто используются элементы мебели в стиле честерфилд. Рулевое колесо может быть изготовлено из полированного дерева с латунными спицами. Освещение в салоне делается теплым, желтоватым, имитирующим свет газовых ламп или масляных фонарей.</p>
+
+<ul>
+<li>🕰 Замена пластиковых кнопок на металлические тумблеры и рычаги.</li>
+<li>🗺 Использование карт и старинных навигационных приборов как декора.</li>
+<li>🔦 Установка дополнительных светильников в стиле фонарей «летучая мышь».</li>
+</ul>
+
+<p>Особое внимание стоит уделить звуковому сопровождению. Вместо современной аудиосистемы, которая будет резать слух в таком интерьере, можно использовать стилизованные динамики, замаскированные под раструбы граммофонов или медные трубы органа.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Используйте старые механические часы или будильники, встроив их в панель приборов. Даже если они не связаны с системами авто, их тиканье добавит атмосферы живого механизма.</p></aside>
+
+<h2 id="юридические-аспекты-и-безопасность-на-дорогах">Юридические аспекты и безопасность на дорогах</h2>
+
+<p>Создание машины в стиле стимпанк — это не только творчество, но и ответственность. Любые изменения, влияющие на конструкцию автомобиля, должны быть узаконены. Выступающие элементы (трубы, шестерни) не должны иметь острых кромок, которые могут травмировать пешеходов в случае ДТП.</p>
+
+<p>Световые приборы должны соответствовать стандартам: фары должны светить белым, поворотники — оранжевым, и все они должны быть сертифицированы. Использование открытых источников огня или генераторов дыма на ходу может быть запрещено правилами дорожного движения в ряде регионов.</p>
+
+<blockquote>⚠️ Внимание: Установка декоративных элементов, закрывающих обзор водителю или ухудшающих аэродинамическую устойчивость, может привести к запрету эксплуатации транспортного средства инспектором ГИБДД.</blockquote>
+
+<p>Всегда сохраняйте штатные детали, которые вы заменяете. Это позволит вам при необходимости вернуть автомобиль в заводское состояние для прохождения технического осмотра или продажи. <strong>Документация</strong> — ваш лучший друг в мире эксклюзивного тюнинга.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Главный принцип стимпанк-тюнинга — безопасность и законность не должны страдать ради эстетики. Все выступающие части должны быть надежно закреплены и не нести угрозы окружающим.</p></aside>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+
+<details>
+<summary>Сколько стоит переделать машину в стиле стимпанк?</summary>
+<p>Стоимость сильно варьируется от исходного состояния авто и степени детализации. Бюджетный вариант с минимальным декором может обойтись в несколько сотен долларов, тогда как полноценный проект с custom-изготовлением деталей и качественными материалами может стоить как новый автомобиль премиум-класса.</p>
+</details>
+
+<details>
+<summary>Можно ли ездить на такой машине каждый день?</summary>
+<p>Технически — да, если автомобиль исправен и узаконен. Однако стоит учитывать, что сложный декор требует постоянного ухода, полировки и проверки креплений. Кроме того, вы будете привлекать очень много внимания, что не всегда удобно в повседневной жизни.</p>
+</details>
+
+<details>
+<summary>Где брать детали для стимпанка?</summary>
+<p>Источниками могут служить блошиные рынки, антикварные магазины, сайты объявлений (раздел сантехника, запчасти для котлов, старый инструмент). Также многие детали изготавливаются вручную из пластика, металла и эпоксидной смолы.</p>
+</details>
+
+<details>
+<summary>Нужно ли регистрировать изменения в документах?</summary>
+<p>Да, если изменения затрагивают конструкцию ТС (изменение цвета более 50%, замена фар, изменение геометрии кузова). В большинстве стран требуется разрешение на внесение изменений в конструкцию транспортного средства.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/p/po/pol-uoker-i-skajlajn.html" class="pb-related-card">
+                <span class="pb-related-title">Пол Уокер и Скайлайн: Легендарный R34 из Форсажа</span>
+                <span class="pb-related-desc">История Nissan Skyline R34 Пола Уокера. Технические характеристики, тюнинг для съемок Форсажа и судь</span>
+            </a><a href="/articles/s/sh/shirokie-diski-na-avto.html" class="pb-related-card">
+                <span class="pb-related-title">Широкие диски на авто: плюсы, минусы и риски</span>
+                <span class="pb-related-desc">Всё о широких дисках: влияние на управляемость, расход и износ подвески. Как правильно подобрать шир</span>
+            </a><a href="/articles/e/et/et35-i-et40-raznitsa.html" class="pb-related-card">
+                <span class="pb-related-title">ET35 и ET40: разница в вылете диска, что выбрать для авто</span>
+                <span class="pb-related-desc">Подробное сравнение ET35 и ET40: как вылет диска влияет на управляемость, износ подвески и внешний в</span>
+            </a><a href="/articles/m/mo/mod-na-mark-2-v-gta-5.html" class="pb-related-card">
+                <span class="pb-related-title">Мод на Марк 2 в GTA 5: установка и лучшие модификации</span>
+                <span class="pb-related-desc">Полный гид по установке Toyota Mark 2 в GTA 5. Лучшие моды на дрифт, JDM-стиль, тюнинг и реалистичну</span>
+            </a><a href="/articles/k/ka/kak-ukrasit-avto-na-svadbu.html" class="pb-related-card">
+                <span class="pb-related-title">Как украсить авто на свадьбу: идеи, материалы и советы</span>
+                <span class="pb-related-desc">Полный гид по декору свадебного автомобиля. Узнайте, как украсить машину цветами, лентами и магнитам</span>
+            </a><a href="/articles/r/ra/razmer-rulya-v-mashine.html" class="pb-related-card">
+                <span class="pb-related-title">Размер руля в машине: стандарт, выбор и влияние на управление</span>
+                <span class="pb-related-desc">Какой диаметр руля считается оптимальным? Влияние размера на комфорт и безопасность, сравнение по ма</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

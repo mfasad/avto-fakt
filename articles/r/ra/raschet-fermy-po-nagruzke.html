@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Расчет фермы по нагрузке: точные формулы и ГОСТ — Авто Факт</title>
+    <meta name="description" content="Профессиональный расчет фермы по нагрузке. Методы вычисления усилий в поясах, выбор сечения, учет снеговой и ветровой нагрузки по актуальным СНиП.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/r/ra/raschet-fermy-po-nagruzke.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Расчет фермы по нагрузке: точные формулы и ГОСТ">
+    <meta property="og:description" content="Профессиональный расчет фермы по нагрузке. Методы вычисления усилий в поясах, выбор сечения, учет снеговой и ветровой нагрузки по актуальным СНиП.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/garazh-master/">Гараж Мастер</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Расчет фермы по нагрузке: точные формулы и ГОСТ</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#сбор-нагрузок-снег-ветер-и-собственный-вес">Сбор нагрузок: снег, ветер и собственный вес</a></li><li><a href="#определение-усилий-в-стержнях-фермы">Определение усилий в стержнях фермы</a></li><li><a href="#расчет-сечений-и-проверка-устойчивости">Расчет сечений и проверка устойчивости</a></li><li><a href="#учет-прогиба-и-жесткости-конструкции">Учет прогиба и жесткости конструкции</a></li><li><a href="#типовые-ошибки-при-проектировании-навесов">Типовые ошибки при проектировании навесов</a></li><li><a href="#инструменты-и-по-для-точного-расчета">Инструменты и ПО для точного расчета</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/m/ma/manualy-po-remontu-avtomobilej-skachat-besplatno.html">Мануалы по ремонту автомобилей: скачать бесплатно схемы</a></li><li><a href="/articles/k/ko/konvektor-s-12-volt-na-220.html">Конвектор 12В на 220В: как подключить и выбрать для авто/гаража</a></li><li><a href="/articles/c/ch/chem-zamenit-atseton-kak-rastvoritel.html">Чем заменить ацетон: лучшие растворители для гаража</a></li><li><a href="/articles/m/ma/marka-betona-dlya-plity-pod-garazh.html">Марка бетона для плиты под гараж: какой выбрать и почему</a></li><li><a href="/articles/o/of/oformlenie-garazha-v-pib.html">Оформление гаража в ПИБ: пошаговая инструкция и нюансы</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Точный расчет фермы по нагрузке: методика и формулы</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#сбор-нагрузок-снег-ветер-и-собственный-вес">Сбор нагрузок: снег, ветер и собственный вес</a></li><li><a href="#определение-усилий-в-стержнях-фермы">Определение усилий в стержнях фермы</a></li><li><a href="#расчет-сечений-и-проверка-устойчивости">Расчет сечений и проверка устойчивости</a></li><li><a href="#учет-прогиба-и-жесткости-конструкции">Учет прогиба и жесткости конструкции</a></li><li><a href="#типовые-ошибки-при-проектировании-навесов">Типовые ошибки при проектировании навесов</a></li><li><a href="#инструменты-и-по-для-точного-расчета">Инструменты и ПО для точного расчета</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Проектирование навеса для автомобиля или перекрытие гаража — это не просто сварка труб в треугольники, а сложный инженерный процесс, требующий точных вычислений. Ошибки в определении усилий в элементах конструкции могут привести к деформации, а в худшем случае — к внезапному обрушению под тяжестью снега или порыва ветра. <strong>Расчет фермы по нагрузке</strong> является фундаментом безопасности, позволяющим выбрать оптимальное сечение профиля и избежать перерасхода металла.</p>
+
+<p>Существует заблуждение, что для легких конструкций достаточно использовать типовые решения из интернета, однако каждый пролет уникален. Геометрия, шаг установки опор и региональные климатические условия диктуют свои правила. Без грамотной <em>статической схемы</em> невозможно предсказать, как поведет себя узел соединения стоек при пиковых значениях давления на кровлю.</p>
+
+<p>В этой статье мы разберем методику определения действующих сил, способы вычисления внутренних напряжений и правила подбора сечений согласно строительным нормам. Вы узнаете, почему <strong>коэффициент надежности</strong> критически важен и как не допустить фатальных ошибок на этапе проектирования каркаса.</p>
+
+<h2 id="сбор-нагрузок-снег-ветер-и-собственный-вес">Сбор нагрузок: снег, ветер и собственный вес</h2>
+
+<p>Первым этапом любого расчета является определение внешних воздействий, которые будут передаваться на узлы фермы. Основными факторами здесь выступают <strong>снеговая нагрузка</strong>, зависящая от географического района строительства, и ветровое давление, которое может создавать как прижимающие, так и отрывающие силы. Также нельзя игнорировать <em>собственный вес</em> металлоконструкций и вес кровельного покрытия, который часто недооценивают.</p>
+
+<p>Нормативные значения для снеговых районов можно найти в актуальных таблицах СНиП или СП. Для центральных регионов России это значение может варьироваться от 120 до 320 кг/м², что является существенным весом для легкой конструкции. Ветер же рассчитывается с учетом высоты здания и типа местности, создавая динамические нагрузки, меняющиеся во времени.</p>
+
+<blockquote>⚠️ <strong>Внимание:</strong> При расчете навесов с пологой кровлей (менее 15 градусов) необходимо учитывать возможность образования снеговых мешков, где локальная нагрузка может превышать нормативную в 2-3 раза.</blockquote>
+
+<p>Для упрощения понимания распределения сил рассмотрим основные типы воздействий на примере:</p>
+
+<ul>
+<li>❄️ <strong>Снеговая нагрузка:</strong> Равномерно распределенная или мешковая нагрузка на верхний пояс фермы.</li>
+<li>💨 <strong>Ветровая нагрузка:</strong> Горизонтальное давление на стойки и вертикальное (отрицательное) давление на скаты.</li>
+<li>⚖️ <strong>Постоянная нагрузка:</strong> Вес профнастила, обрешетки и самой фермы, действующая постоянно.</li>
+</ul>
+
+<div class="pb-poll" id="poll-5a91e812"><div class="pb-poll-question">📊 Какой тип кровли вы планируете для навеса?</div><div class="pb-poll-option" data-poll="5a91e812" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Поликарбонат</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="5a91e812" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Профнастил</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="5a91e812" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Мягкая черепица</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="5a91e812" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Металлочерепица</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="5a91e812" data-idx="4" onclick="pbPollVote(this)"><span class="pb-poll-label">Остекление</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<p>Суммарная нагрузка собирается с грузовой площади, которая определяется шагом ферм и шагом прогонов. Именно эти значения подставляются в формулы для нахождения узловых сил. </p>
+
+<h2 id="определение-усилий-в-стержнях-фермы">Определение усилий в стержнях фермы</h2>
+
+<p>После того как внешние силы определены, необходимо найти внутренние усилия, возникающие в каждом стержне конструкции. Для этого ферму представляют как систему стержней, соединенных шарнирно, что позволяет считать, что в узлах передаются только <strong>осевые усилия</strong> (растяжение или сжатие). Изгибающие моменты в узлах правильной ферменной схемы пренебрежимо малы.</p>
+
+<p>Наиболее распространенным методом для простых ферм является метод вырезания узлов или метод сквозных сечений (метод Риттера). Вырезая узел, мы записываем уравнения равновесия для всех сходящихся в нем сил. Сумма проекций всех сил на оси X и Y должна быть равна нулю. Это позволяет последовательно найти усилия во всех элементах, двигаясь от опоры к середине пролета.</p>
+
+<p>Для более сложных систем, таких как <em>фермы Полигонсо</em> или фахверки, удобнее использовать метод Риттера, разрезая ферму плоскостью так, чтобы она пересекала не более трех стержней с неизвестными усилиями. Уравнение моментов относительно точки пересечения двух неизвестных сил позволяет найти третью силу напрямую.</p>
+
+<details class="pb-accordion"><summary>Методика расчета для сложных ферм</summary><div class="pb-accordion-body"><p>Для ферм с большим количеством стержней (более 20) ручной расчет становится трудоемким. В таких случаях применяют матричный метод или метод перемещений, который удобно реализовывать в специализированных программах типа LIRA или SCAD. Однако понимание физического смысла усилий, полученных вручную, необходимо для проверки результатов компьютерного моделирования.</p></div></details>
+
+<p>Результатом этого этапа становится таблица или эпюра, показывающая, какие стержни работают на растяжение, а какие — на сжатие. <strong>Сжатые элементы</strong> требуют проверки на устойчивость, так как они склонны к выпучиванию, тогда как растянутые проверяются только по прочности сечения.</p>
+
+<h2 id="расчет-сечений-и-проверка-устойчивости">Расчет сечений и проверка устойчивости</h2>
+
+<p>Зная максимальные усилия, можно приступить к подбору сечений профилей. Для растянутых элементов основным критерием является прочность, которая проверяется по формуле: отношение силы к площади сечения не должно превышать расчетное сопротивление материала. Для стали С245 это значение составляет 245 МПа (2450 кг/см²) с учетом <strong>коэффициента условий работы</strong>.</p>
+
+<p>Сжатые элементы требуют более тщательной проверки. Здесь критическим параметром становится <em>гибкость стержня</em>, зависящая от его длины и радиуса инерции сечения. Чем тоньше и длиннее труба, тем выше риск потери устойчивости задолго до достижения предела прочности материала.</p>
+
+<p>Проверка сжатого стержня производится по формуле, включающей коэффициент продольного изгиба (фи). Этот коэффициент уменьшается с ростом гибкости, drastically снижая допустимую нагрузку. Поэтому для стоек и верхнего пояса часто требуются трубы большего диаметра или толщины стенки, чем для нижнего пояса, работающего на растяжение.</p>
+
+<blockquote>⚠️ <strong>Внимание:</strong> При сварке ферм вблизи опорных узлов возникают остаточные напряжения, которые могут снижать несущую способность. Всегда используйте профиль с запасом по толщине стенки, особенно если ферма будет эксплуатироваться при отрицательных температурах.</blockquote>
+
+<p>Для визуализации зависимости допустимой нагрузки от типа профиля рассмотрим пример для стойки длиной 2 метра из стали С245:</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Тип профиля</th>
+<th>Размер (мм)</th>
+<th>Площадь сечения (см²)</th>
+<th>Допустимая нагрузка (т)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Труба круглая</td>
+<td>57x3.0</td>
+<td>5.09</td>
+<td>4.2</td>
+</tr>
+<tr>
+<td>Труба профильная</td>
+<td>60x60x3.0</td>
+<td>6.68</td>
+<td>6.1</td>
+</tr>
+<tr>
+<td>Труба профильная</td>
+<td>80x80x3.0</td>
+<td>9.08</td>
+<td>9.5</td>
+</tr>
+<tr>
+<td>Швеллер</td>
+<td>№ 6.5</td>
+<td>7.51</td>
+<td>5.8</td>
+</tr>
+</tbody>
+</table></div>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>При выборе профиля отдавайте предпочтение квадратным трубам для поясов фермы — они обеспечивают одинаковую жесткость в двух плоскостях, что упрощает расчет на устойчивость.</p></aside>
+
+<h2 id="учет-прогиба-и-жесткости-конструкции">Учет прогиба и жесткости конструкции</h2>
+
+<p>Прочность — не единственный критерий надежности. Даже если ферма не разрушится, она может прогнуться настолько, что это приведет к повреждению кровельного покрытия или нарушению водоотвода. <strong>Предельный прогиб</strong> нормируется строительными правилами и обычно составляет 1/200 или 1/250 от длины пролета для конструкций с кровлей из профнастила.</p>
+
+<p>Прогиб рассчитывается методом Мора или способом перемножения эпюр (правило Верещагина). Для треугольной фермы с равномерно распределенной нагрузкой максимальный прогиб возникает в середине пролета. Если расчетный прогиб превышает нормативный, необходимо увеличивать высоту фермы в коньке или применять профили большего сечения.</p>
+
+<p>Жесткость также зависит от качества узловых соединений. <em>Жесткая заделка</em> (сварка встык с полным проваром) работает иначе, чем шарнирное соединение. В реальных металлических фермах узлы обладают некоторой жесткостью, что может благоприятно сказываться на перераспределении усилий, но в расчетах для безопасности часто принимают шарнирную схему.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Если прогиб фермы превышает 1/200 длины пролета, велик риск скопления воды (или снега) в центре, что приведет к лавинообразному росту нагрузки и разрушению.</p></aside>
+
+<h2 id="типовые-ошибки-при-проектировании-навесов">Типовые ошибки при проектировании навесов</h2>
+
+<p>Анализ аварийных ситуаций показывает, что большинство обрушений происходит из-за систематических ошибок, допускаемых на этапе проектирования. Часто домашние мастера пренебрегают расчетом ветровой составляющей, считая, что главное — выдержать снег. Однако отрыв кровли ветром — частое явление для легких конструкций с большой парусностью.</p>
+
+<p>Еще одной распространенной ошибкой является неправильный выбор схемы опирания. Ферма, свободно лежащая на столбах, и ферма, жестко защемленная в колоннах, работают по-разному. В первом случае возникают только вертикальные реакции, во втором — еще и изгибающие моменты в опорах, которые требуют усиления стоек у основания.</p>
+
+<ul>
+<li>📉 <strong>Игнорирование коррозии:</strong> Расчетное сечение выбирают без учета запаса на ржавчину, что через 5-10 лет приводит к истончению стенок.</li>
+<li>🔩 <strong>Слабые узлы:</strong> Использование слишком коротких фасонок или малых катетов сварных швов, которые становятся слабым звеном.</li>
+<li>🏗️ <strong>Отсутствие связей:</strong> Ферма рассчитана верно, но отсутствует система связей между фермами, из-за чего конструкция теряет устойчивость в плоскости, перпендикулярной пролету.</li>
+</ul>
+
+<blockquote>⚠️ <strong>Внимание:</strong> Никогда не используйте для несущих элементов фермы профильные трубы с дефектами (вмятины, свищи, сильная коррозия). Местное ослабление сечения может стать точкой начала разрушения всего элемента.</blockquote>
+
+<p>Также стоит упомянуть проблему <strong>температурных деформаций</strong>. Длинные навесы (более 30-40 метров) без температурных швов могут создавать огромные усилия в опорах при нагреве солнцем. В таких случаях необходимо предусматривать подвижные опоры или компенсаторы.</p>
+
+<h2 id="инструменты-и-по-для-точного-расчета">Инструменты и ПО для точного расчета</h2>
+
+<p>В современном строительстве ручной расчет используется в основном для проверки или для простых конструкций. Для сложных систем, таких как <em>арочные фермы</em> или конструкции с ломаным контуром, целесообразно использовать программные комплексы. Они позволяют учесть сотни факторов, которые трудно просчитать вручную.</p>
+
+<p>Популярные программы для расчета металлоконструкций позволяют строить 3D-модель, задавать нагрузки и автоматически подбирать сечения из сортамента. Однако пользователь должен четко понимать физику процесса, чтобы правильно задать граничные условия. Программа не знает, стоит ли ваша ферма на песке или на скальном основании, если вы ей об этом не "скажете".</p>
+
+<p>Для быстрой оценки можно использовать специализированные онлайн-калькуляторы, но их результаты следует перепроверять. Они часто используют упрощенные формулы и не учитывают специфику вашего региона.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Контрольный список перед сваркой фермы</h4><label class="check-item"><input type="checkbox"><span>Проверка сечений по таблице нагрузок</span></label><label class="check-item"><input type="checkbox"><span>Наличие раскосов для устойчивости</span></label><label class="check-item"><input type="checkbox"><span>Проверка свариваемости металла</span></label><label class="check-item"><input type="checkbox"><span>Нанесение антикоррозийного грунта</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Использование <code>Excel</code> для создания собственных таблиц расчета также является отличным вариантом для инженера. Можно запрограммировать формулы проверки устойчивости по СП 16.13330 и быстро варьировать сечения, находя оптимальный вариант по весу и стоимости.</p>
+
+<details>
+<summary>Как часто нужно проверять состояние фермы?</summary>
+<p>Визуальный осмотр рекомендуется проводить ежегодно, перед зимним сезоном. Особое внимание уделяйте нижним поясам и местам сварки у опор. Раз в 5 лет желателен инструментальный контроль толщины металла и качества антикоррозийного покрытия.</p>
+</details>
+
+<details>
+<summary>Можно ли усилить готовую ферму?</summary>
+<p>Да, это возможно. Усиление обычно производят путем приварки дополнительных профилей (сплошность сечения) или установки дополнительных раскосов. Важно, чтобы новая ферма работала совместно со старой, для чего иногда требуется предварительное напряжение или разгрузка конструкции.</p>
+</details>
+
+<details>
+<summary>Какая сталь лучше для гаражных ферм?</summary>
+<p>Оптимальным выбором является конструкционная углеродистая сталь обыкновенного качества, например, Ст3пс или Ст3сп по ГОСТ 380. Для ответственных узлов в условиях севера лучше использовать низколегированные стали с повышенной хладостойкостью, например, 09Г2С.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/m/ma/manualy-po-remontu-avtomobilej-skachat-besplatno.html" class="pb-related-card">
+                <span class="pb-related-title">Мануалы по ремонту автомобилей: скачать бесплатно схемы</span>
+                <span class="pb-related-desc">Полный обзор источников: где найти мануалы по ремонту автомобилей скачать бесплатно. Разбор форматов</span>
+            </a><a href="/articles/k/ko/konvektor-s-12-volt-na-220.html" class="pb-related-card">
+                <span class="pb-related-title">Конвектор 12В на 220В: как подключить и выбрать для авто/гаража</span>
+                <span class="pb-related-desc">Полное руководство по выбору и подключению конвекторов 12В→220В для обогрева гаража, автофургона или</span>
+            </a><a href="/articles/c/ch/chem-zamenit-atseton-kak-rastvoritel.html" class="pb-related-card">
+                <span class="pb-related-title">Чем заменить ацетон: лучшие растворители для гаража</span>
+                <span class="pb-related-desc">Чем заменить ацетон при покраске авто? Обзор растворителей 646, 647, уайт-спирита и бензина. Таблица</span>
+            </a><a href="/articles/m/ma/marka-betona-dlya-plity-pod-garazh.html" class="pb-related-card">
+                <span class="pb-related-title">Марка бетона для плиты под гараж: какой выбрать и почему</span>
+                <span class="pb-related-desc">Какую марку бетона использовать для фундаментной плиты гаража? Сравнение М200-М400, расчет толщины, </span>
+            </a><a href="/articles/o/of/oformlenie-garazha-v-pib.html" class="pb-related-card">
+                <span class="pb-related-title">Оформление гаража в ПИБ: пошаговая инструкция и нюансы</span>
+                <span class="pb-related-desc">Как правильно оформить гараж в ПИБ: полный алгоритм действий, список документов, стоимость работ и т</span>
+            </a><a href="/articles/b/by/bystryj-garazh-dlya-mashiny.html" class="pb-related-card">
+                <span class="pb-related-title">Быстрый гараж для машины: 7 проверенных решений за 1-3 дня</span>
+                <span class="pb-related-desc">Как построить или установить гараж за несколько дней: сравнение быстровозводимых конструкций, цены 2</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

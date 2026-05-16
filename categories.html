@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Все разделы — Авто Факт</title>
+    <meta name="description" content="Все тематические разделы сайта Авто Факт. Удобная навигация по категориям.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/categories.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    <style>
+        .categories-hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 30%, #f8fafc 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 48px 0 40px; text-align: center;
+        }
+        .categories-hero h1 { font-size: 2rem; color: var(--text); margin-bottom: 8px; }
+        .categories-hero p { color: var(--text-secondary); font-size: 1.1rem; }
+        .cat-page-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px; padding: 40px 0 60px;
+        }
+        .cat-page-card {
+            display: flex; align-items: flex-start; gap: 16px;
+            padding: 24px; border-radius: 16px;
+            background: var(--card-bg, #fff);
+            border: 1px solid var(--border);
+            text-decoration: none; color: var(--text);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .cat-page-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+            border-color: var(--primary);
+        }
+        .cat-page-icon {
+            font-size: 2.4rem; flex-shrink: 0;
+            width: 56px; height: 56px; display: flex;
+            align-items: center; justify-content: center;
+            background: linear-gradient(135deg, #eff6ff, #f0f9ff);
+            border-radius: 14px;
+        }
+        .cat-page-name { font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; }
+        .cat-page-desc { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 6px; }
+        .cat-page-count {
+            font-size: 0.82rem; font-weight: 600;
+            color: var(--primary); background: rgba(37,99,235,0.08);
+            padding: 3px 10px; border-radius: 20px; display: inline-block;
+        }
+        @media (max-width: 640px) {
+            .cat-page-grid { grid-template-columns: 1fr; gap: 12px; padding: 24px 0 40px; }
+            .cat-page-card { padding: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚗</span>
+                <span>Авто Факт</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/pokupka-i-prodazha/" class="nav-link">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="nav-link">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="nav-link">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="nav-link">🔨 Кузовной Ремонт</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="categories-hero">
+        <div class="container">
+            <h1>📂 Все разделы</h1>
+            <p>Удобная навигация по всем тематическим разделам</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="cat-page-grid">
+            <a href="/category/zakony-i-pdd/" class="cat-page-card">
+            <div class="cat-page-icon">⚖️</div>
+            <div class="cat-page-info">
+                <div class="cat-page-name">Законы и ПДД</div>
+                <div class="cat-page-desc">Правила дорожного движения, штрафы, требования к аптечкам, знакам и документам.</div>
+            </div>
+        </a>
+<a href="/category/kuzovnoj-remont/" class="cat-page-card">
+            <div class="cat-page-icon">🔨</div>
+            <div class="cat-page-info">
+                <div class="cat-page-name">Кузовной Ремонт</div>
+                <div class="cat-page-desc">Удаление вмятин, покраска, антикор, борьба с ржавчиной и восстановление геометрии.</div>
+            </div>
+        </a>
+<a href="/category/elektrika-avto/" class="cat-page-card">
+            <div class="cat-page-icon">⚡</div>
+            <div class="cat-page-info">
+                <div class="cat-page-name">Электрика Авто</div>
+                <div class="cat-page-desc">Ремонт проводки, диагностика аккумуляторов, установка сигнализаций и дополнительного оборудования.</div>
+            </div>
+        </a>
+<a href="/category/garazh-master/" class="cat-page-card">
+            <div class="cat-page-icon">🏗️</div>
+            <div class="cat-page-info">
+                <div class="cat-page-name">Гараж Мастер</div>
+                <div class="cat-page-desc">Строительство и обустройство гаражей, выбор инструментов, хранение и организация пространства.</div>
+            </div>
+        </a>
+<a href="/category/bezopasnost/" class="cat-page-card">
+            <div class="cat-page-icon">🛡️</div>
+            <div class="cat-page-info">
+                <div class="cat-page-name">Безопасность</div>
+                <div class="cat-page-desc">Детские кресла, огнетушители, правила перевозки грузов и личные средства защиты.</div>
+            </div>
+        </a>
+<a href="/category/tyuning-i-stil/" class="cat-page-card">
+            <div class="cat-page-icon">🎨</div>
+            <div class="cat-page-info">
+                <div class="cat-page-name">Тюнинг и Стиль</div>
+                <div class="cat-page-desc">Виниловые пленки, наклейки, улучшение интерьера, установка кенгурятников и обвесов.</div>
+            </div>
+        </a>
+<a href="/category/ukhod-i-mojka/" class="cat-page-card">
+            <div class="cat-page-icon">🧼</div>
+            <div class="cat-page-info">
+                <div class="cat-page-name">Уход и Мойка</div>
+                <div class="cat-page-desc">Средства для чистки, полировка, удаление пятен и защита лакокрасочного покрытия.</div>
+            </div>
+        </a>
+<a href="/category/voditel-i-zdorove/" class="cat-page-card">
+            <div class="cat-page-icon">🍷</div>
+            <div class="cat-page-info">
+                <div class="cat-page-name">Водитель и Здоровье</div>
+                <div class="cat-page-desc">Влияние алкоголя на вождение, время выветрения, первая помощь и физическое состояние водителя.</div>
+            </div>
+        </a>
+<a href="/category/tekhnika-i-gadzhety/" class="cat-page-card">
+            <div class="cat-page-icon">📱</div>
+            <div class="cat-page-info">
+                <div class="cat-page-name">Техника и Гаджеты</div>
+                <div class="cat-page-desc">Автомобильная электроника, навигация, видеорегистраторы, радар-детекторы и мультимедиа.</div>
+            </div>
+        </a>
+<a href="/category/spetstekhnika-i-moto/" class="cat-page-card">
+            <div class="cat-page-icon">🚜</div>
+            <div class="cat-page-info">
+                <div class="cat-page-name">Спецтехника и Мото</div>
+                <div class="cat-page-desc">Обзоры грузовиков, военной техники, мотоциклов и специализированного транспорта.</div>
+            </div>
+        </a>
+<a href="/category/byt-i-khobbi/" class="cat-page-card">
+            <div class="cat-page-icon">🏠</div>
+            <div class="cat-page-info">
+                <div class="cat-page-name">Быт и Хобби</div>
+                <div class="cat-page-desc">Ремонт бытовой техники, строительство, садовые инструменты и другие мужские увлечения.</div>
+            </div>
+        </a>
+<a href="/category/finansy-avto/" class="cat-page-card">
+            <div class="cat-page-icon">💰</div>
+            <div class="cat-page-info">
+                <div class="cat-page-name">Финансы Авто</div>
+                <div class="cat-page-desc">Кредиты, лизинг, страхование, налоги на транспорт и возврат средств.</div>
+            </div>
+        </a>
+<a href="/category/obuchenie-vozhdeniyu/" class="cat-page-card">
+            <div class="cat-page-icon">🎓</div>
+            <div class="cat-page-info">
+                <div class="cat-page-name">Обучение Вождению</div>
+                <div class="cat-page-desc">Советы новичкам, выбор автошколы, механика vs автомат и психология вождения.</div>
+            </div>
+        </a>
+<a href="/category/zapchasti-i-masla/" class="cat-page-card">
+            <div class="cat-page-icon">🛢️</div>
+            <div class="cat-page-info">
+                <div class="cat-page-name">Запчасти и Масла</div>
+                <div class="cat-page-desc">Подбор расходников, классификация масел, антифризов и совместимость деталей.</div>
+            </div>
+        </a>
+<a href="/category/istoriya-i-fakty/" class="cat-page-card">
+            <div class="cat-page-icon">📜</div>
+            <div class="cat-page-info">
+                <div class="cat-page-name">История и Факты</div>
+                <div class="cat-page-desc">Интересные факты об автопроме, история моделей, кино и культурные аспекты автомобилей.</div>
+            </div>
+        </a>
+<a href="/category/drugoe/" class="cat-page-card">
+            <div class="cat-page-icon">📁</div>
+            <div class="cat-page-info">
+                <div class="cat-page-name">Другое</div>
+                <div class="cat-page-desc">Различные вопросы, не вошедшие в основные категории, и общие темы.</div>
+            </div>
+        </a>
+
+        </div>
+    </main>
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚗 Авто Факт</div>
+                    <p class="footer-about">Энциклопедия практических знаний об автомобилях, ремонте, законах и гаражном хозяйстве.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a></li>
+<li><a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a></li>
+<li><a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a></li>
+<li><a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a></li>
+<li><a href="/category/elektrika-avto/">⚡ Электрика Авто</a></li>
+<li><a href="/category/garazh-master/">🏗️ Гараж Мастер</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+
+    <script>
+    document.getElementById('menuBtn')?.addEventListener('click', () => {
+        document.getElementById('mainNav')?.classList.toggle('open');
+    });
+    </script>
+</body>
+</html>

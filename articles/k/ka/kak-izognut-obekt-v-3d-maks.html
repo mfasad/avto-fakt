@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как изогнуть объект в 3D Max: 5 способов сгибания моделей — Авто Факт</title>
+    <meta name="description" content="Пошаговые инструкции по изгибанию объектов в 3D Max: модификаторы Bend, FFD, Spline IK и ручные методы. Подходит для новичков и профессионалов.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ka/kak-izognut-obekt-v-3d-maks.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как изогнуть объект в 3D Max: 5 способов сгибания моделей">
+    <meta property="og:description" content="Пошаговые инструкции по изгибанию объектов в 3D Max: модификаторы Bend, FFD, Spline IK и ручные методы. Подходит для новичков и профессионалов.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/byt-i-khobbi/">Быт и Хобби</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как изогнуть объект в 3D Max: 5 способов сгибания моделей</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#1-модификатор-bend-быстрый-изгиб-по-оси">1. Модификатор Bend: быстрый изгиб по оси</a></li><li><a href="#2-ffd-free-form-deformation-точный-контроль-над-деформацией">2. FFD (Free Form Deformation): точный контроль над деформацией</a></li><li><a href="#3-spline-ik-изгиб-по-сплайну-для-анимации">3. Spline IK: изгиб по сплайну для анимации</a></li><li><a href="#4-path-deform-обтекание-объекта-по-траектории">4. Path Deform: обтекание объекта по траектории</a></li><li><a href="#5-ручной-изгиб-с-помощью-edit-poly-для-опытных-пользователей">5. Ручной изгиб с помощью Edit Poly: для опытных пользователей</a></li><li><a href="#6-проблемы-и-решения-почему-объект-деформируется-неправильно">6. Проблемы и решения: почему объект деформируется неправильно</a></li><li><a href="#7-оптимизация-и-экспорт-изогнутых-моделей">7. Оптимизация и экспорт изогнутых моделей</a></li><li><a href="#faq-частые-вопросы-об-изгибе-объектов-в-3d-max">FAQ: Частые вопросы об изгибе объектов в 3D Max</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/g/gd/gde-nakhoditsya-datchik-protechki-v-posudomoechnoj-mashine.html">Где находится датчик протечки в посудомоечной машине — схема и фото</a></li><li><a href="/articles/p/po/posudomojka-bosh-ne-reagiruet-na-knopki.html">Почему посудомойка Bosch не реагирует на кнопки: причины и ремонт</a></li><li><a href="/articles/h/ho/hotpoint-ariston-posudomoechnaya-mashina-kak-vklyuchit.html">Hotpoint Ariston посудомоечная машина: как включить, коды ошибок</a></li><li><a href="/articles/k/ku/kuda-poekhat-na-novyj-god-na-avto.html">Куда поехать на Новый год 2026 на авто: 12 маршрутов для автомобилистов</a></li><li><a href="/articles/n/ne/neispravnosti-kofemashiny-krups-i-remont-svoimi-silami.html">Неисправности кофемашины Krups: ремонт своими руками (инструкция 2026)</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как изогнуть объект в 3D Max: от простого Bend до сложных деформаций</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#1-модификатор-bend-быстрый-изгиб-по-оси">1. Модификатор Bend: быстрый изгиб по оси</a></li><li><a href="#2-ffd-free-form-deformation-точный-контроль-над-деформацией">2. FFD (Free Form Deformation): точный контроль над деформацией</a></li><li><a href="#3-spline-ik-изгиб-по-сплайну-для-анимации">3. Spline IK: изгиб по сплайну для анимации</a></li><li><a href="#4-path-deform-обтекание-объекта-по-траектории">4. Path Deform: обтекание объекта по траектории</a></li><li><a href="#5-ручной-изгиб-с-помощью-edit-poly-для-опытных-пользователей">5. Ручной изгиб с помощью Edit Poly: для опытных пользователей</a></li><li><a href="#6-проблемы-и-решения-почему-объект-деформируется-неправильно">6. Проблемы и решения: почему объект деформируется неправильно</a></li><li><a href="#7-оптимизация-и-экспорт-изогнутых-моделей">7. Оптимизация и экспорт изогнутых моделей</a></li><li><a href="#faq-частые-вопросы-об-изгибе-объектов-в-3d-max">FAQ: Частые вопросы об изгибе объектов в 3D Max</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body"><p>Создание реалистичных 3D-моделей часто требует работы с изогнутыми формами — от простых труб и кабелей до сложных органических поверхностей. <em>Autodesk 3ds Max</em> предлагает несколько инструментов для деформации объектов, но выбор правильного метода зависит от задачи. Новичкам достаточно модификатора <strong>Bend</strong> для базовых изгибов, а профессионалы используют <strong>FFD-решётки</strong> или <strong>Spline IK</strong> для контроля над кривизной. В этой статье разберём все способы — от автоматизированных до ручных — с учётом их плюсов, минусов и типичных ошибок.</p>
+
+<p>Особенность работы с изгибами в <em>3D Max</em> заключается в том, что результат зависит не только от выбранного инструмента, но и от топологии модели. Например, низкополигональные объекты с жёсткой геометрией могут «рваться» при деформации, тогда как высокополигональные сетки дают плавные переходы. Мы рассмотрим, как избежать артефактов, сохранить пропорции и даже анимировать изгибы для динамичных сцен.</p>
+
+<h2 id="1-модификатор-bend-быстрый-изгиб-по-оси">1. Модификатор Bend: быстрый изгиб по оси</h2>
+
+<p>Самый простой способ согнуть объект — использовать встроенный модификатор <strong>Bend</strong> (<code>Modifiers → Parametric Deformers → Bend</code>). Он подходит для цилиндрических объектов, труб, листов металла и других симметричных форм. Главное преимущество — настройка изгиба в реальном времени через параметры <code>Angle</code> (угол) и <code>Direction</code> (направление).</p>
+
+<p>Чтобы применить модификатор:</p>
+<ul>
+  <li>🔹 Выделите объект в сцене.</li>
+  <li>🔹 Перейдите в панель <code>Modify</code> и выберите <code>Bend</code> из списка модификаторов.</li>
+  <li>🔹 В разделе <code>Parameters</code> задайте угол изгиба (например, <code>90°</code> для прямого угла).</li>
+  <li>🔹 Используйте <code>Gizmo</code> (оранжевый манипулятор) для визуальной настройки оси изгиба.</li>
+</ul>
+
+<p>Ограничение метода: <strong>Bend</strong> изгибает объект равномерно по всей длине, что не всегда уместно. Например, для создания волнистой поверхности или локального изгиба потребуются другие инструменты. Также модификатор может искажать текстуры, если они не имеют правильных UV-развёрток.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Если после применения <strong>Bend</strong> объект выглядит «сломанным», увеличьте количество сегментов (<code>Segments</code>) в параметрах модификатора или добавьте <code>TurboSmooth</code> для сглаживания.</p></aside>
+
+<h2 id="2-ffd-free-form-deformation-точный-контроль-над-деформацией">2. FFD (Free Form Deformation): точный контроль над деформацией</h2>
+
+<p>Для сложных изгибов, где нужен контроль над отдельными участками объекта, используют <strong>FFD-модификаторы</strong> (<code>Modifiers → Free Form Deformers</code>). Они создают вокруг модели трёхмерную решётку, узлы которой можно перемещать как контрольные точки. Это идеальный вариант для:</p>
+<ul>
+  <li>🔧 Органических форм (тела персонажей, растения).</li>
+  <li>🔧 Локальных деформаций (например, согнуть только кончик трубы).</li>
+  <li>🔧 Анимации изгибов с плавными переходами.</li>
+</ul>
+
+<p>Алгоритм работы:</p>
+<ol>
+  <li>Примените к объекту модификатор <code>FFD 4×4×4</code> (количество точек решётки зависит от сложности деформации).</li>
+  <li>В подуровне <code>Control Points</code> выделите узлы решётки и перемещайте их инструментом <code>Select and Move</code>.</li>
+  <li>Для симметричного изгиба используйте модификатор <code>Symmetry</code> перед <code>FFD</code>.</li>
+</ol>
+
+<p>Важный нюанс: чем больше точек в решётке (<code>FFD 6×6×6</code> и выше), тем точнее контроль, но тем тяжелее сцена для рендера. Для оптимизации можно комбинировать <code>FFD</code> с <code>TurboSmooth</code>, применяя сглаживание только на финальном этапе.</p>
+
+<div class="pb-poll" id="poll-d9b3c6ec"><div class="pb-poll-question">📊 Какой модификатор вы используете чаще для изгибов?</div><div class="pb-poll-option" data-poll="d9b3c6ec" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Bend</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="d9b3c6ec" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">FFD</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="d9b3c6ec" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Spline IK</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="d9b3c6ec" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Path Deform</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="d9b3c6ec" data-idx="4" onclick="pbPollVote(this)"><span class="pb-poll-label">Другой</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="3-spline-ik-изгиб-по-сплайну-для-анимации">3. Spline IK: изгиб по сплайну для анимации</h2>
+
+<p>Если вам нужно анимировать изгиб (например, движение хвоста животного или гибкого шланга), лучший выбор — <strong>Spline IK</strong> (<code>Animation → IK Solvers → SplineIK Solver</code>). Этот метод привязывает цепочку костей (<code>Bones</code>) или объекты к сплайну, позволяя деформировать модель вдоль кривой.</p>
+
+<p>Пошаговая инструкция:</p>
+<ol>
+  <li>Создайте <code>Line</code> (сплайн) с нужной траекторией изгиба.</li>
+  <li>Добавьте к объекту систему костей (<code>Systems → Bones → Create Bones</code>) или используйте готовую <code>Skin</code>-модель.</li>
+  <li>Примените <code>Spline IK Solver</code> к первой кости в цепочке и привяжите её к сплайну.</li>
+  <li>Настройте параметры <code>Twist</code> (скручивание) и <code>Stretch</code> (растяжение) для реалистичного эффекта.</li>
+</ol>
+
+<p><strong>Spline IK</strong> незаменим для динамичных сцен, но требует предварительной подготовки: модель должна быть разбита на сегменты (например, с помощью модификатора <code>Skin</code> или <code>Bones</code>). Для статичных объектов этот метод избыточен — проще использовать <code>Bend</code> или <code>FFD</code>.</p>
+
+<details class="pb-accordion"><summary>Что делать, если Spline IK «рвёт» модель?</summary><div class="pb-accordion-body"><p>Если после применения <strong>Spline IK</strong> модель деформируется неправильно, проверьте:
+<p>- Количество костей (должно совпадать с количеством сегментов сплайна).</p>
+<p>- Настройки <code>Skin</code>-модификатора (веса вершин).</p>
+<p>- Параметр <code>Spline Roll</code> (может вызывать нежелательное скручивание).</p></div></details></p>
+
+<h2 id="4-path-deform-обтекание-объекта-по-траектории">4. Path Deform: обтекание объекта по траектории</h2>
+
+<p>Модификатор <strong>Path Deform</strong> (<code>Modifiers → Patch/Spline Editing → PathDeform</code>) позволяет «натянуть» объект на сплайн, создавая эффект обтекания. Это полезно для:</p>
+<ul>
+  <li>🚗 Создания рельсов, дорожек или кабелей, повторяющих форму траектории.</li>
+  <li>🚗 Деформации текстур вдоль изогнутой поверхности (например, полос на гоночной трассе).</li>
+  <li>🚗 Анимации движения объектов по кривой (в сочетании с <code>Animate Along Path</code>).</li>
+</ul>
+
+<p>Пример применения:</p>
+<ol>
+  <li>Создайте сплайн-путь (<code>Shapes → Line</code> или <code>Helix</code>).</li>
+  <li>Примените к деформируемому объекту модификатор <code>PathDeform (WSM)</code>.</li>
+  <li>В параметрах выберите сплайн (<code>Pick Path</code>) и настройте <code>Percent</code> (процент обтекания).</li>
+  <li>Для корректной деформации включите опцию <code>Stretch</code>.</li>
+</ol>
+
+<p><mark>Критическая особенность: <strong>Path Deform</strong> работает только с объектами, имеющими достаточное количество сегментов вдоль оси деформации. Если модель «рвётся», увеличьте количество разделов (<code>Slices</code>) в параметрах создания примитива или добавьте модификатор <code>Slice</code>.</mark></p>
+
+<h2 id="5-ручной-изгиб-с-помощью-edit-poly-для-опытных-пользователей">5. Ручной изгиб с помощью Edit Poly: для опытных пользователей</h2>
+
+<p>Когда автоматические модификаторы не справляются (например, при работе с нестандартной топологией), приходится изгибать объект вручную. Для этого используют инструменты подуровня <code>Edit Poly</code>:</p>
+<ul>
+  <li>🔨 <code>Vertex</code> — перемещение отдельных вершин.</li>
+  <li>🔨 <code>Edge</code> — вращение рёбер для создания складок.</li>
+  <li>🔨 <code>Soft Selection</code> — плавное смещение группы вершин.</li>
+</ul>
+
+<p>Техника ручного изгиба:</p>
+<ol>
+  <li>Преобразуйте объект в <code>Editable Poly</code> (правый клик → <code>Convert To → Editable Poly</code>).</li>
+  <li>Перейдите на уровень <code>Vertex</code> или <code>Edge</code>.</li>
+  <li>Используйте <code>Soft Selection</code> (настройте радиус влияния в <code>Settings</code>) для плавной деформации.</li>
+  <li>Для симметричного изгиба включите <code>Symmetry</code> в настройках выбора.</li>
+</ol>
+
+<p>Преимущество метода — полный контроль над геометрией, но он требует опыта и времени. Для ускорения процесса можно комбинировать ручную правку с модификаторами: например, сначала применить <code>Bend</code>, а затем доработать форму в <code>Edit Poly</code>.</p>
+
+
+<p>Добавить модификатор TurboSmooth для визуального контроля|</p>
+<p>Увеличить количество полигонов в зоне деформации|</p>
+<p>Сохранить копию модели перед редактированием|</p>
+<p>Использовать Reference Coordinate System для точных преобразований--></p>
+
+<h2 id="6-проблемы-и-решения-почему-объект-деформируется-неправильно">6. Проблемы и решения: почему объект деформируется неправильно</h2>
+
+<p>Даже при правильном выборе инструмента изгиб может давать артефакты. Рассмотрим типичные ошибки и способы их исправления:</p>
+
+<div class="pb-table-wrap"><table>
+  <thead>
+    <tr>
+      <th>Проблема</th>
+      <th>Причина</th>
+      <th>Решение</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Объект «рвётся» при изгибе</td>
+      <td>Недостаточно полигонов вдоль оси деформации</td>
+      <td>Увеличьте <code>Segments</code> в параметрах примитива или добавьте <code>TurboSmooth</code></td>
+    </tr>
+    <tr>
+      <td>Некорректное скручивание</td>
+      <td>Неправильная ось в <code>Gizmo</code> модификатора <code>Bend</code></td>
+      <td>Переместите центр манипулятора или измените <code>Bend Axis</code></td>
+    </tr>
+    <tr>
+      <td>Текстура искажается</td>
+      <td>UV-развёртка не адаптирована под деформацию</td>
+      <td>Используйте <code>Unwrap UVW</code> для ручной правки или модификатор <code>UVW Map</code> после деформации</td>
+    </tr>
+    <tr>
+      <td><strong>Spline IK</strong> не работает</td>
+      <td>Несовпадение количества костей и сегментов сплайна</td>
+      <td>Добавьте/удалите кости или отредактируйте сплайн</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>Ещё одна распространённая проблема — <strong>неравномерный изгиб</strong> при использовании <code>FFD</code>. Это происходит, если контрольные точки решётки расположены слишком далеко от объекта. Решение: уменьшите размер <code>FFD-бокса</code> или увеличьте количество точек (<code>FFD 6×6×6</code> вместо <code>4×4×4</code>).</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Перед применением любых деформаций всегда проверяйте топологию модели. Изгиб низкополигональных объектов с жёсткими рёбрами приведёт к визуальным артефактам, которые сложно исправить на поздних этапах.</p></aside>
+
+<h2 id="7-оптимизация-и-экспорт-изогнутых-моделей">7. Оптимизация и экспорт изогнутых моделей</h2>
+
+<p>После деформации модель может стать слишком тяжёлой для рендера или экспорта. Чтобы оптимизировать её:</p>
+<ul>
+  <li>📦 Примените модификаторы (<code>Collapse To</code>) перед экспортом, если деформация финальная.</li>
+  <li>📦 Для анимации оставьте модификаторы активными, но отключите их видимость в портах (<code>Hide by Category → Helpers/Gizmos</code>).</li>
+  <li>📦 Используйте <code>ProOptimizer</code> для уменьшения количества полигонов без потери формы.</li>
+</ul>
+
+<p>При экспорте в другие программы (например, <em>Unity</em> или <em>Unreal Engine</em>) учитывайте:</p>
+<ul>
+  <li>🔄 <code>Spline IK</code> и <code>Path Deform</code> не поддерживаются во многих игровых движках — конвертируйте деформацию в геометрию.</li>
+  <li>🔄 Для <code>FFD</code> может потребоваться пекарь (<code>Bake</code>) анимации в ключи.</li>
+</ul>
+
+<p>Если модель предназначена для 3D-печати, избегайте самопересечений после изгиба. Проверьте геометрию с помощью модификатора <code>STL Check</code> или внешних инструментов вроде <em>Netfabb</em>.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Для экспорта анимированных изгибов в <em>Unity</em> используйте плагин <em>FBX Exporter</em> с включённой опцией <code>Bake Animation</code>. Это преобразует деформации в ключевые кадры, совместимые с движком.</p></aside>
+
+<h2 id="faq-частые-вопросы-об-изгибе-объектов-в-3d-max">FAQ: Частые вопросы об изгибе объектов в 3D Max</h2>
+
+<details>
+  <summary>Можно ли анимировать модификатор Bend?</summary>
+  <p>Да, но для этого нужно анимировать его параметры (например, <code>Angle</code>) через <code>Auto Key</code> или <code>Set Key</code>. Однако такой подход менее гибок, чем <code>Spline IK</code>, так как не позволяет контролировать форму изгиба во времени. Для сложных анимаций лучше использовать кости или сплайны.</p>
+</details>
+
+<details>
+  <summary>Почему после применения FFD модель становится «угловатой»?</summary>
+  <p>Это происходит из-за недостаточного количества контрольных точек в решётке. Попробуйте:</p>
+  <ol>
+    <li>Увеличить размер <code>FFD</code> (например, с <code>4×4×4</code> до <code>6×6×6</code>).</li>
+    <li>Добавить модификатор <code>TurboSmooth</code> после <code>FFD</code>.</li>
+    <li>Вручную отредактировать топологию модели в <code>Edit Poly</code>.</li>
+  </ol>
+</details>
+
+<details>
+  <summary>Как изогнуть объект по дуге с фиксированным радиусом?</summary>
+  <p>Для точного изгиба по дуге:</p>
+  <ol>
+    <li>Создайте сплайн <code>Arc</code> с нужным радиусом (<code>Shapes → Arc</code>).</li>
+    <li>Примените к объекту модификатор <code>PathDeform</code> и привяжите его к сплайну.</li>
+    <li>Настройте <code>Percent</code> на 100% для полного обтекания.</li>
+  </ol>
+  <p>Альтернатива: используйте модификатор <code>Bend</code> с точной настройкой угла и позиции <code>Gizmo</code>.</p>
+</details>
+
+<details>
+  <summary>Можно ли изогнуть объект вдоль нескольких осей одновременно?</summary>
+  <p>Да, для этого комбинируйте несколько модификаторов <code>Bend</code> в стеке. Например:</p>
+  <ol>
+    <li>Добавьте первый <code>Bend</code> для изгиба по оси X.</li>
+    <li>Добавьте второй <code>Bend</code> для изгиба по оси Y.</li>
+    <li>Отрегулируйте порядок модификаторов в стеке для корректного результата.</li>
+  </ol>
+  <p>Для сложных деформаций лучше использовать <code>FFD</code> или <code>Edit Poly</code>.</p>
+</details>
+
+<details>
+  <summary>Как сохранить пропорции объекта при изгибе?</summary>
+  <p>Чтобы избежать растяжения или сжатия:</p>
+  <ul>
+    <li>В модификаторе <code>Bend</code> включите опцию <code>Squash</code> (сжатие).</li>
+    <li>Для <code>PathDeform</code> отключите <code>Stretch</code>.</li>
+    <li>Используйте модификатор <code>Preserve</code> (<code>Modifiers → Parametric Deformers → Preserve</code>) для защиты отдельных частей объекта.</li>
+  </ul>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/g/gd/gde-nakhoditsya-datchik-protechki-v-posudomoechnoj-mashine.html" class="pb-related-card">
+                <span class="pb-related-title">Где находится датчик протечки в посудомоечной машине — схема и фото</span>
+                <span class="pb-related-desc">Пошаговое руководство по поиску датчика протечки в посудомоечных машинах Bosch, Electrolux, Siemens </span>
+            </a><a href="/articles/p/po/posudomojka-bosh-ne-reagiruet-na-knopki.html" class="pb-related-card">
+                <span class="pb-related-title">Почему посудомойка Bosch не реагирует на кнопки: причины и ремонт</span>
+                <span class="pb-related-desc">Посудомойка Бош не реагирует на кнопки? Разбираем причины поломки панели, залива контактов и блокиро</span>
+            </a><a href="/articles/h/ho/hotpoint-ariston-posudomoechnaya-mashina-kak-vklyuchit.html" class="pb-related-card">
+                <span class="pb-related-title">Hotpoint Ariston посудомоечная машина: как включить, коды ошибок</span>
+                <span class="pb-related-desc">Подробная инструкция по запуску посудомоечной машины Hotpoint Ariston. Разбор кнопок, программ, кодо</span>
+            </a><a href="/articles/k/ku/kuda-poekhat-na-novyj-god-na-avto.html" class="pb-related-card">
+                <span class="pb-related-title">Куда поехать на Новый год 2026 на авто: 12 маршрутов для автомобилистов</span>
+                <span class="pb-related-desc">Планируете встретить Новый год за рулём? Мы подобрали лучшие направления для автопутешествий: от гор</span>
+            </a><a href="/articles/n/ne/neispravnosti-kofemashiny-krups-i-remont-svoimi-silami.html" class="pb-related-card">
+                <span class="pb-related-title">Неисправности кофемашины Krups: ремонт своими руками (инструкция 2026)</span>
+                <span class="pb-related-desc">Топ-10 поломок кофеварок Krups: как диагностировать и устранить неисправности самостоятельно. Схемы,</span>
+            </a><a href="/articles/p/po/pochemu-ne-otzhimaet-stiralnaya-mashinka-avtomat-indezit.html" class="pb-related-card">
+                <span class="pb-related-title">Стиральная машинка Индезит не отжимает: причины и ремонт</span>
+                <span class="pb-related-desc">Почему стиральная машина Indesit не отжимает белье? Полный разбор поломок: от засоров слива до неисп</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

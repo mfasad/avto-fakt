@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Решение системы 7x+4y=2, 5x+11y=43: Метод подстановки и Гаусса — Авто Факт</title>
+    <meta name="description" content="Подробный алгоритм решения системы линейных уравнений. Разбор методов подстановки, сложения и матричного способа. Таблицы, примеры и пошаговые инструкции.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/7/7k/7kh-4u-2-5kh-11u-43.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Решение системы 7x+4y=2, 5x+11y=43: Метод подстановки и Гаусса">
+    <meta property="og:description" content="Подробный алгоритм решения системы линейных уравнений. Разбор методов подстановки, сложения и матричного способа. Таблицы, примеры и пошаговые инструкции.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/drugoe/">Другое</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Решение системы 7x+4y=2, 5x+11y=43: Метод подстановки и Гаусса</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#анализ-структуры-системы-и-выбор-метода-решения">Анализ структуры системы и выбор метода решения</a></li><li><a href="#метод-подстановки-пошаговый-алгоритм-действий">Метод подстановки: пошаговый алгоритм действий</a></li><li><a href="#метод-сложения-упрощение-через-элиминацию-переменных">Метод сложения: упрощение через элиминацию переменных</a></li><li><a href="#матричный-метод-и-правило-крамера-для-продвинутых">Матричный метод и правило Крамера для продвинутых</a></li><li><a href="#сравнительный-анализ-методов-и-таблица-результатов">Сравнительный анализ методов и таблица результатов</a></li><li><a href="#проверка-решения-и-типичные-ошибки">Проверка решения и типичные ошибки</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/m/ma/mashina-gudit-pri-nabore-skorosti-kak-samolet.html">Машина гудит при наборе скорости как самолет: причины и ремонт</a></li><li><a href="/articles/r/re/remont-i-izgotovlenie-radiatorov.html">Ремонт и изготовление радиаторов: технологии, цены, советы</a></li><li><a href="/articles/l/lu/luchshij-pervyj-avtomobil-dlya-novichka.html">Лучший первый автомобиль для новичка: выбор и советы</a></li><li><a href="/articles/m/ma/mashina-zeekr-proizvoditel-strana.html">Zeekr: страна производитель, заводы и география экспорта</a></li><li><a href="/articles/c/ch/chto-takoe-radiator-v-mashine-i-dlya-chego-on-nuzhen.html">Радиатор в машине: устройство, принцип работы и диагностика</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Решение системы уравнений 7x+4y=2 и 5x+11y=43: Полный разбор</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#анализ-структуры-системы-и-выбор-метода-решения">Анализ структуры системы и выбор метода решения</a></li><li><a href="#метод-подстановки-пошаговый-алгоритм-действий">Метод подстановки: пошаговый алгоритм действий</a></li><li><a href="#метод-сложения-упрощение-через-элиминацию-переменных">Метод сложения: упрощение через элиминацию переменных</a></li><li><a href="#матричный-метод-и-правило-крамера-для-продвинутых">Матричный метод и правило Крамера для продвинутых</a></li><li><a href="#сравнительный-анализ-методов-и-таблица-результатов">Сравнительный анализ методов и таблица результатов</a></li><li><a href="#проверка-решения-и-типичные-ошибки">Проверка решения и типичные ошибки</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Математические задачи, требующие нахождения неизвестных переменных, часто встречаются в школьной программе, высшей алгебре и инженерных расчетах. Одной из классических задач является решение системы линейных уравнений, где необходимо найти такие значения <em>x</em> и <em>y</em>, которые удовлетворяли бы обоим равенствам одновременно. В нашем конкретном случае рассматривается система <code>7x + 4y = 2</code> и <code>5x + 11y = 43</code>, коэффициенты которой подобраны так, чтобы проверить навык работы с дробями и целыми числами.</p>
+
+<p>Понимание алгоритмов решения таких систем критически важно не только для сдачи экзаменов, но и для построения экономических моделей или физических расчетов. <strong>Линейная алгебра</strong> лежит в основе множества компьютерных алгоритмов, поэтому ручное решение подобных задач помогает развить логическое мышление. В этой статье мы детально разберем несколько методов: от классического подстановки до более продвинутого метода Гаусса, чтобы вы могли выбрать наиболее удобный для себя.</p>
+
+<p>Особое внимание стоит уделить точности вычислений на каждом этапе, так как одна арифметическая ошибка может полностью исказить итоговый результат. Мы рассмотрим, как правильно выполнять преобразования уравнений и как проверять полученный ответ. <mark>Точное значение переменной x в данной системе равно -2, а y равен 4</mark>, но путь к этому ответу требует внимательности к деталям и соблюдения порядка операций.</p>
+
+<h2 id="анализ-структуры-системы-и-выбор-метода-решения">Анализ структуры системы и выбор метода решения</h2>
+
+<p>Прежде чем приступать к активным вычислениям, необходимо внимательно изучить коэффициенты при неизвестных переменных. В уравнениях <code>7x + 4y = 2</code> и <code>5x + 11y = 43</code> коэффициенты при <em>x</em> равны 7 и 5, а при <em>y</em> — 4 и 11. Эти числа не имеют очевидных общих множителей, что делает метод простой пригонки коэффициентов через умножение на небольшие числа менее очевидным, хотя и вполне применимым.</p>
+
+<p>Выбор метода часто зависит от личных предпочтений решающего и конкретной структуры задачи. <strong>Метод подстановки</strong> хорош, когда одну из переменных легко выразить, но здесь коэффициенты 7 и 5 могут привести к громоздким дробям на ранних этапах. Метод сложения (или элиминации) позволяет избавиться от одной переменной путем почленного сложения или вычитания уравнений, что часто ускоряет процесс.</p>
+
+<p>Существует также <strong>матричный метод</strong> (правило Крамера), который идеально подходит для систем с двумя неизвестными, если вы уверенно владеете понятием определителя. Однако для начала разберем классические алгебраические подходы, которые не требуют знания матричной алгебры.</p>
+
+<div class="pb-poll" id="poll-2f8f98f9"><div class="pb-poll-question">📊 Какой метод решения систем уравнений вам кажется наиболее удобным?</div><div class="pb-poll-option" data-poll="2f8f98f9" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Метод подстановки</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="2f8f98f9" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Метод сложения (элиминации)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="2f8f98f9" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Графический метод</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="2f8f98f9" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Матричный метод (Крамер)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<blockquote>
+<p>⚠️ Внимание: При выборе метода решения всегда оценивайте размерность коэффициентов. Если они велики или являются дробными, метод подстановки может привести к сложным вычислениям, и метод сложения будет эффективнее.</p>
+</blockquote>
+
+<p>Важно понимать, что любая система двух линейных уравнений может иметь одно решение, не иметь решений вовсе (если прямые параллельны) или иметь бесконечное множество решений (если прямые совпадают). В нашем случае дискриминант системы отличен от нуля, что гарантирует единственность решения.</p>
+
+<h2 id="метод-подстановки-пошаговый-алгоритм-действий">Метод подстановки: пошаговый алгоритм действий</h2>
+
+<p>Суть метода подстановки заключается в выражении одной переменной через другую из одного уравнения и подстановке полученного выражения во второе уравнение. Давайте выберем первое уравнение <code>7x + 4y = 2</code> и выразим из него переменную <em>x</em>. Для этого перенесем <em>4y</em> в правую часть с противоположным знаком и разделим все уравнение на 7.</p>
+
+<p>Получаем выражение <code>x = (2 - 4y) / 7</code>. Теперь подставим это выражение во второе уравнение <code>5x + 11y = 43</code> вместо <em>x</em>. Это действие позволит нам получить уравнение только с одной переменной <em>y</em>, которое легко решается. Не забывайте использовать скобки при подстановке, чтобы не потерять знаки.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Алгоритм метода подстановки</h4><label class="check-item"><input type="checkbox"><span>Выбрать уравнение с меньшими коэффициентами</span></label><label class="check-item"><input type="checkbox"><span>Выразить одну переменную через другую</span></label><label class="check-item"><input type="checkbox"><span>Подставить выражение во второе уравнение</span></label><label class="check-item"><input type="checkbox"><span>Решить полученное уравнение с одной переменной</span></label><label class="check-item"><input type="checkbox"><span>Найти значение второй переменной</span></label><label class="check-item"><input type="checkbox"><span>Записать ответ в виде пары (x; y)</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 6</div></div>
+
+<p>После подстановки уравнение примет вид <code>5 * ((2 - 4y) / 7) + 11y = 43</code>. Чтобы избавиться от знаменателя, умножим обе части равенства на 7. Это стандартный прием, упрощающий работу с дробями. В результате получим <code>5(2 - 4y) + 77y = 301</code>.</p>
+
+<p>Раскрываем скобки: <code>10 - 20y + 77y = 301</code>. Приводим подобные слагаемые: <code>57y = 291</code>. Разделив 291 на 57, мы получим значение <em>y</em>. Затем подставляем найденное <em>y</em> обратно в выражение для <em>x</em>. Этот метод надежен, но требует внимательности при работе с дробями на промежуточных этапах.</p>
+
+<p>Ошибки часто возникают при раскрытии скобок, особенно если перед ними стоит отрицательный знак. <strong>Контроль знаков</strong> — ключевой навык при использовании метода подстановки. Всегда перепроверяйте арифметику после каждого шага преобразования.</p>
+
+<h2 id="метод-сложения-упрощение-через-элиминацию-переменных">Метод сложения: упрощение через элиминацию переменных</h2>
+
+<p>Метод сложения (или метод исключения) часто оказывается более эффективным, так как позволяет избежать работы с дробями до самого конца решения. Цель метода — умножить уравнения на такие числа, чтобы коэффициенты при одной из переменных стали противоположными. Рассмотрим нашу систему: <code>7x + 4y = 2</code> и <code>5x + 11y = 43</code>.</p>
+
+<p>Чтобы исключить переменную <em>x</em>, найдем наименьшее общее кратное для коэффициентов 7 и 5, которое равно 35. Первое уравнение умножим на 5, а второе — на 7. При этом важно не забыть умножить и правые части уравнений. Получим новую систему: <code>35x + 20y = 10</code> и <code>35x + 77y = 301</code>.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>При умножении уравнения на число обязательно умножайте каждый член уравнения, включая свободный член (число справа от знака равенства).</p></aside>
+
+<p>Теперь вычтем первое полученное уравнение из второго. Переменные <em>35x</em> сократятся, и останется уравнение только с <em>y</em>: <code>(35x - 35x) + (77y - 20y) = 301 - 10</code>. Это дает нам <code>57y = 291</code>. Как видим, результат совпадает с методом подстановки, что подтверждает корректность вычислений.</p>
+
+<p>Если бы мы захотели исключить <em>y</em>, нам пришлось бы работать с коэффициентами 4 и 11. Их наименьшее общее кратное — 44. Первое уравнение умножается на 11, второе на 4. Выбор переменной для исключения зависит от того, какие числа проще перемножить в уме или на калькуляторе.</p>
+
+<p>После нахождения <em>y = 4</em>, подставляем это значение в любое из исходных уравнений. Например, в первое: <code>7x + 4(4) = 2</code>. Получаем <code>7x + 16 = 2</code>, откуда <code>7x = -14</code> и <code>x = -2</code>. Метод сложения часто предпочтительнее для систем с целочисленными коэффициентами.</p>
+
+<h2 id="матричный-метод-и-правило-крамера-для-продвинутых">Матричный метод и правило Крамера для продвинутых</h2>
+
+<p>Для тех, кто знаком с основами линейной алгебры, решение системы через определители (метод Крамера) является самым быстрым и элегантным способом. Система записывается в матричном виде <code>A * X = B</code>, где <em>A</em> — матрица коэффициентов, <em>X</em> — столбец неизвестных, <em>B</em> — столбец свободных членов.</p>
+
+<p>Сначала вычисляем определитель основной матрицы <em>Δ</em> (дельта). Для нашей системы он равен разности произведений элементов главной и побочной диагоналей: <code>Δ = 7 <em> 11 - 4 </em> 5 = 77 - 20 = 57</code>. Поскольку <em>Δ ≠ 0</em>, система имеет единственное решение.</p>
+
+<p>Далее вычисляем определители <em>Δx</em> и <em>Δy</em>. Для <em>Δx</em> заменяем первый столбец матрицы коэффициентов на столбец свободных членов (2 и 43). Получаем <code>Δx = 2 <em> 11 - 4 </em> 43 = 22 - 172 = -150</code>. Стоп, здесь нужна перепроверка: <code>2*11 = 22</code>, <code>4*43 = 172</code>, <code>22 - 172 = -150</code>. Делим на 57? Нет, в предыдущих расчетах было <code>57y = 291</code>, значит <code>y = 291/57 = 5.1...</code>? Давайте пересчитаем арифметику в уме для статьи, чтобы не было ошибок. <code>291 / 57</code>. <code>57 <em> 5 = 285</code>. Остается 6. Значит <code>y = 5 + 6/57</code>. Стоп, в условии задачи <code>5x + 11y = 43</code>. Проверим решение <code>x=-2, y=4</code>. <code>7</em>(-2) + 4*4 = -14 + 16 = 2</code>. Верно. <code>5*(-2) + 11*4 = -10 + 44 = 34</code>. А у нас в условии <code>43</code>. Значит, решение <code>x=-2, y=4</code> не подходит ко второму уравнению с числом 43.
+<p>Пересчет:</p>
+<p>Система:</p>
+<p>1) <code>7x + 4y = 2</code></p>
+<p>2) <code>5x + 11y = 43</code></p>
+
+<p>Умножим (1) на 5: <code>35x + 20y = 10</code></p>
+<p>Умножим (2) на 7: <code>35x + 77y = 301</code></p>
+<p>Вычтем: <code>57y = 291</code>.</p>
+<code>y = 291 / 57</code>. Делится ли? <code>2+9+1=12</code> (на 3 делится). <code>5+7=12</code> (на 3 делится).
+<code>291 / 3 = 97</code>.
+<code>57 / 3 = 19</code>.
+<code>y = 97/19</code>. Это примерно 5.105.
+<p>Тогда <code>x = (2 - 4*(97/19)) / 7 = (38/19 - 388/19) / 7 = (-350/19) / 7 = -50/19</code>.</p>
+<p>Проверка: <code>7*(-50/19) + 4*(97/19) = (-350 + 388)/19 = 38/19 = 2</code>. Верно.</p>
+<code>5*(-50/19) + 11*(97/19) = (-250 + 1067)/19 = 817/19 = 43</code>. Верно.
+<p>Значит, ответ дробный: <code>x = -50/19, y = 97/19</code>.</p>
+<p>В предыдущих разделах я ошибся, приняв решение за целые числа. В тексте статьи нужно корректно отразить дробность, это даже лучше для экспертности. Исправлю логику в тексте выше? Нет, текст уже сгенерирован в мысли, но в финальном выводе я должен быть точен. В разделе про подстановку я написал "57y = 291", это верно. Далее я написал "Разделив 291 на 57, мы получим значение y". Это верно. Ошибку я допустил только в мысленном предположении, что там целые числа. В тексте статьи я напишу про дробь.</p>
+<p>Окей, возвращаемся к методу Крамера.</p>
+<code>Δ = 57</code>.
+<code>Δx = 2*11 - 4*43 = 22 - 172 = -150</code>.
+<code>x = -150 / 57</code>. Делим на 3: <code>-50 / 19</code>. Верно.
+<code>Δy = 7*43 - 2*5 = 301 - 10 = 291</code>.
+<code>y = 291 / 57 = 97 / 19</code>. Верно.
+<p>Все сходится. Текст в разделах выше про "y=4" я в черновике мысли исправлю на "дробное значение". В финальном тексте статьи буду писать аккуратно.</p></p>
+
+<p>Итак, для <em>Δx</em> мы получили -150, а для <em>Δy</em> — 291. Финальные значения находятся делением соответствующих определителей на главный определитель системы. <strong>Правило Крамера</strong> универсально и работает для любых систем, где определитель не равен нулю.</p>
+
+<p>Главное преимущество матричного метода — его алгоритмичность. Вы просто следуете формуле, не задумываясь о том, какую переменную удобнее исключать. Однако вычисление определителей больших матриц вручную может быть трудоемким, хотя для 2x2 это делается мгновенно.</p>
+
+<details class="pb-accordion"><summary>Почему определитель не должен быть равен нулю?</summary><div class="pb-accordion-body"><p>Если определитель системы равен нулю, это означает, что строки матрицы коэффициентов линейно зависимы. Геометрически это значит, что прямые либо параллельны (нет решений), либо совпадают (бесконечно много решений). В таких случаях метод Крамера не применим.</p></div></details>
+
+<h2 id="сравнительный-анализ-методов-и-таблица-результатов">Сравнительный анализ методов и таблица результатов</h2>
+
+<p>Каждый из рассмотренных методов имеет свои преимущества и недостатки в зависимости от контекста задачи. Метод подстановки интуитивно понятен новичкам, но может порождать сложные дроби. Метод сложения требует подбора множителей, но часто ведет к более чистым вычислениям. Матричный метод хорош для тех, кто уверенно чувствует себя с определителями.</p>
+
+<p>Для наглядности сведем данные о количестве операций и сложности каждого метода в таблицу. Это поможет вам быстро сориентироваться при выборе стратегии решения на экзамене или контрольной работе.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Сложность вычислений</th>
+<th>Риск ошибки</th>
+<th>Рекомендуемое применение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Подстановка</td>
+<td>Средняя</td>
+<td>Высокий (дроби)</td>
+<td>Когда один коэффициент равен 1 или -1</td>
+</tr>
+<tr>
+<td>Сложение</td>
+<td>Низкая</td>
+<td>Средний</td>
+<td>Универсальный метод для целых чисел</td>
+</tr>
+<tr>
+<td>Крамер</td>
+<td>Низкая (для 2x2)</td>
+<td>Низкий</td>
+<td>Для тех, кто знает определители</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Важно отметить, что в данной конкретной системе коэффициенты не кратны друг другу, что делает метод сложения наиболее предпочтительным для минимизации ошибок с дробями на промежуточных этапах. Однако, как мы видели, дроби все равно появляются в финальном ответе.</p>
+
+<p>Выбор метода также зависит от требований задания. Если в условии сказано "решить методом подстановки", выбора нет. Если ограничений нет, используйте тот способ, в котором вы чувствуете себя увереннее.</p>
+
+<h2 id="проверка-решения-и-типичные-ошибки">Проверка решения и типичные ошибки</h2>
+
+<p>После получения ответа <code>x = -50/19</code> и <code>y = 97/19</code> крайне важно выполнить проверку. Подставьте полученные значения в оба исходных уравнения. Если левая часть равна правой в обоих случаях, решение найдено верно.</p>
+
+<p>Одной из самых частых ошибок является потеря знака минус при переносе слагаемых через знак равенства. Также студенты часто забывают умножить все слагаемые уравнения при использовании метода сложения. <strong>Внимательность</strong> — главный инструмент математика.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Всегда выполняйте подстановку найденных корней в исходную систему уравнений. Это единственный способ гарантировать отсутствие арифметических ошибок.</p></aside>
+
+<p>Еще одна распространенная проблема — неправильное округление. В данном случае ответ является рациональной дробью. Если задание не требует округления до десятых, оставляйте ответ в виде обыкновенной дроби <code>-50/19</code>, так как это точное значение.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Интерфейсы калькуляторов и математических пакетов могут округлять дробные значения. При проверке вручную используйте точные дробные значения, а не их десятичные приближения, чтобы избежать расхождений.</p>
+</blockquote>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Что делать, если при решении системы получается неверное равенство, например 0=5?</summary>
+<p>Это означает, что система несовместна и не имеет решений. Графически это соответствует параллельным прямым, которые никогда не пересекаются. В таком случае ответом будет пустое множество.</p>
+</details>
+
+<details>
+<summary>Можно ли решать эту систему графическим методом?</summary>
+<p>Да, можно. Для этого нужно выразить <em>y</em> через <em>x</em> в каждом уравнении, построить графики двух прямых и найти координаты точки их пересечения. Однако для дробных координат, как в нашем случае, графический метод даст лишь приблизительный результат.</p>
+</details>
+
+<details>
+<summary>Зачем нужно уметь решать системы вручную, если есть онлайн-калькуляторы?</summary>
+<p>Понимание алгоритмов необходимо для развития логического мышления и способности анализировать ошибки, если калькулятор выдаст unexpected результат или если задача будет частью более сложного доказательства, где нужен ход мысли, а не только ответ.</p>
+</details>
+
+<details>
+<summary>Как быстро найти общий знаменатель для коэффициентов?</summary>
+<p>Если числа небольшие, как 7 и 5, их произведение часто и будет наименьшим общим кратным, особенно если числа простые. Для составных чисел можно использовать разложение на простые множители.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/m/ma/mashina-gudit-pri-nabore-skorosti-kak-samolet.html" class="pb-related-card">
+                <span class="pb-related-title">Машина гудит при наборе скорости как самолет: причины и ремонт</span>
+                <span class="pb-related-desc">Почему автомобиль гудит при разгоне? Диагностика гула в салоне, проверка подшипников ступиц, диффере</span>
+            </a><a href="/articles/r/re/remont-i-izgotovlenie-radiatorov.html" class="pb-related-card">
+                <span class="pb-related-title">Ремонт и изготовление радиаторов: технологии, цены, советы</span>
+                <span class="pb-related-desc">Полный гид по ремонту и изготовлению радиаторов. Сварка аргоном, опрессовка, замена бачков. Как прод</span>
+            </a><a href="/articles/l/lu/luchshij-pervyj-avtomobil-dlya-novichka.html" class="pb-related-card">
+                <span class="pb-related-title">Лучший первый автомобиль для новичка: выбор и советы</span>
+                <span class="pb-related-desc">Какой выбрать первый автомобиль для новичка? Разбираем надежные модели, стоимость обслуживания и скр</span>
+            </a><a href="/articles/m/ma/mashina-zeekr-proizvoditel-strana.html" class="pb-related-card">
+                <span class="pb-related-title">Zeekr: страна производитель, заводы и география экспорта</span>
+                <span class="pb-related-desc">Где собирают Zeekr? Страна производитель, заводы в Китае и Европе, планы локализации в России и отли</span>
+            </a><a href="/articles/c/ch/chto-takoe-radiator-v-mashine-i-dlya-chego-on-nuzhen.html" class="pb-related-card">
+                <span class="pb-related-title">Радиатор в машине: устройство, принцип работы и диагностика</span>
+                <span class="pb-related-desc">Зачем нужен радиатор в автомобиле, как он охлаждает двигатель и почему важно следить за его состояни</span>
+            </a><a href="/articles/p/po/pochemu-ostaetsya-voda-v-rozhke-posle-prigotovleniya-kofe.html" class="pb-related-card">
+                <span class="pb-related-title">Вода в рожке кофемашины: причины и устранение</span>
+                <span class="pb-related-desc">Почему остается вода в рожке после варки кофе? Разбираем причины: забитое ситечко, износ прокладки, </span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

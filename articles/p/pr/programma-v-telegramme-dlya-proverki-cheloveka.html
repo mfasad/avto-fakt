@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Программа в Телеграм для проверки человека: боты и OSINT — Авто Факт</title>
+    <meta name="description" content="Обзор Telegram-ботов для проверки личности, поиска по фото и базе данных. Методы OSINT, риски утечек и защита персональных данных в мессенджере.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/p/pr/programma-v-telegramme-dlya-proverki-cheloveka.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Программа в Телеграм для проверки человека: боты и OSINT">
+    <meta property="og:description" content="Обзор Telegram-ботов для проверки личности, поиска по фото и базе данных. Методы OSINT, риски утечек и защита персональных данных в мессенджере.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Программа в Телеграм для проверки человека: боты и OSINT</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#принцип-работы-ботов-и-методы-сбора-данных">Принцип работы ботов и методы сбора данных</a></li><li><a href="#поиск-по-фотографии-мифы-и-реальность">Поиск по фотографии: мифы и реальность</a></li><li><a href="#анализ-аватарки-и-метаданных-профиля">Анализ аватарки и метаданных профиля</a></li><li><a href="#проверка-по-номеру-телефона-и-базе-данных">Проверка по номеру телефона и базе данных</a></li><li><a href="#определение-геолокации-и-ip-адреса">Определение геолокации и IP-адреса</a></li><li><a href="#защита-личных-данных-от-проверки">Защита личных данных от проверки</a></li><li><a href="#правовые-аспекты-и-ответственность">Правовые аспекты и ответственность</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/d/de/devushka-iz-andegraund-2.html">Девушка из андеграунд 2: Секреты, сюжет и концовки игры</a></li><li><a href="/articles/r/ra/radio-dyadya-vanya-na-dache-kakaya-volna.html">Радио Дядя Ваня на даче: частота и как ловить волну</a></li><li><a href="/articles/t/ts/tsokol-g13-chto-eto.html">Цоколь G13: что это, размеры, схема подключения и виды ламп</a></li><li><a href="/articles/m/me/megafon-simkarta-dlya-umnykh-ustrojstv.html">МегаФон SIM-карта для умных устройств: выбор, настройка и тарифы</a></li><li><a href="/articles/7/70/70-m-v-sekundu-skolko-km-v-chas.html">70 м/с в км/ч: точный расчет скорости и перевод единиц</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Программа в Телеграм для проверки человека: полный разбор возможностей</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-работы-ботов-и-методы-сбора-данных">Принцип работы ботов и методы сбора данных</a></li><li><a href="#поиск-по-фотографии-мифы-и-реальность">Поиск по фотографии: мифы и реальность</a></li><li><a href="#анализ-аватарки-и-метаданных-профиля">Анализ аватарки и метаданных профиля</a></li><li><a href="#проверка-по-номеру-телефона-и-базе-данных">Проверка по номеру телефона и базе данных</a></li><li><a href="#определение-геолокации-и-ip-адреса">Определение геолокации и IP-адреса</a></li><li><a href="#защита-личных-данных-от-проверки">Защита личных данных от проверки</a></li><li><a href="#правовые-аспекты-и-ответственность">Правовые аспекты и ответственность</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>В эпоху тотальной цифровизации мессенджеры стали не просто средством общения, а огромными хранилищами данных о пользователях. <strong>Telegram</strong> занимает здесь лидирующие позиции, предлагая открытые API, что позволило разработчикам создать тысячи ботов, включая те, что позиционируются как программы для проверки человека. Пользователи часто ищут способы узнать больше о собеседнике, проверить контрагента или найти знакомых, используя лишь номер телефона или никнейм.</p>
+
+<p>Однако важно сразу обозначить границы: не существует единой"волшебной кнопки", которая выдаст паспортные данные, переписки или местоположение в реальном времени. <em>OSINT-инструменты</em> (разведка по открытым источникам) позволяют собрать лишь ту информацию, которую человек сам оставил в сети или которая попала в утечки. Использование таких данных должно строго соответствовать законодательству о защите персональных данных, иначе можно столкнуться с серьезными юридическими последствиями.</p>
+
+<p>В данной статье мы разберем, как работают популярные боты, какие методы <strong>социальной инженерии</strong> они используют и как обезопасить себя от подобных проверок. Вы узнаете о реальных возможностях поиска по фото, анализе аватарок и работе с базами данных, а также о том, почему бесплатные сервисы часто оказываются опаснее платных аналогов.</p>
+
+<h2 id="принцип-работы-ботов-и-методы-сбора-данных">Принцип работы ботов и методы сбора данных</h2>
+
+<p>Любая программа в Телеграм для проверки человека базируется на агрегации данных из различных источников. Чаще всего речь идет о парсинге открытых профилей в социальных сетях, мусорных базах данных, которые регулярно сливаются в сеть, и metadata файлов, загружаемых пользователями. Бот выступает лишь интерфейсом, упрощающим запрос к этим огромным массивам информации.</p>
+
+<p>Основной метод работы — это поиск по цифровому следу. Если вы когда-либо регистрировались на форумах, оставляли комментарии на новостных сайтах или участвовали в публичных чатах, ваш <strong>IP-адрес</strong> или привязанный номер телефона могли быть сохранены. Боты сканируют эти"следы", сопоставляют их с известными профилями и выдают результат. Некоторые продвинутые алгоритмы умеют даже определять примерное местоположение по времени активности и языку сообщений.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Большинство ботов, обещающих"полный пробив" бесплатно, являются фишинговыми. Они созданы для кражи вашего номера, сбора данных о ваших контактах или навязывания платной подписки без предоставления реального функционала.</p>
+</blockquote>
+
+<p>Технически процесс выглядит следующим образом: вы отправляете боту вводные данные (ник, телефон, фото). Скрипт запускает поиск по подключенным базам (например, <em>EyeOfGod</em>, <em>Leak-Check</em> или аналоги). Если совпадение найдено, формируется отчет. Важно понимать, что точность таких отчетов варьируется, и часто данные могут быть устаревшими или принадлежать тезкам.</p>
+
+<div class="pb-poll" id="poll-5eb8c490"><div class="pb-poll-question">📊 Зачем вам нужна проверка человека в Telegram?</div><div class="pb-poll-option" data-poll="5eb8c490" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Найти старого друга</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="5eb8c490" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Проверить нового знакомого</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="5eb8c490" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Обезопасить себя от мошенников</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="5eb8c490" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Просто из любопытства</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="поиск-по-фотографии-мифы-и-реальность">Поиск по фотографии: мифы и реальность</h2>
+
+<p>Один из самых востраиванных запросов — это проверка человека по фото. Пользователи надеются, что загрузив аватарку собеседника в бота, они получат его полное досье. Реальность такова, что полноценный <strong>Face ID</strong> поиск в открытых источниках работает ограниченно. Telegram сжимает изображения, удаляя часть метаданных, что усложняет технический анализ.</p>
+
+<p>Тем не менее, существуют боты, использующие обратный поиск изображений. Они отправляют фото в поисковые системы (Google Images, Яндекс.Картинки, Search4Faces) и проверяют, не использовалось ли это изображение на других ресурсах. Если человек использовал одну и ту же фотографию для профиля в ВКонтакте и в Телеграме, вероятность его идентификации резко возрастает.</p>
+
+<details class="pb-accordion"><summary>Почему поиск по фото может не сработать?</summary><div class="pb-accordion-body"><p>Современные мессенджеры при загрузке фото автоматически стирают EXIF-данные (модель камеры, геолокация, время). Без этих метаданных бот видит лишь набор пикселей. Кроме того, если аватарка уникальна и нигде больше не публиковалась, найти её владельца через обратный поиск практически невозможно.</p></div></details>
+
+<p>Для повышения эффективности поиска рекомендуется использовать несколько изображений. Если у вас есть разные фото человека, их можно прогнать через разные алгоритмы. Некоторые системы используют нейросети для анализа черт лица, пытаясь найти похожие профили даже при измененном ракурсе или освещении, но это уже уровень специализированных служб, а не обычных Telegram-ботов.</p>
+
+<h2 id="анализ-аватарки-и-метаданных-профиля">Анализ аватарки и метаданных профиля</h2>
+
+<p>Аватарка в Telegram — это не просто картинка, а источник информации. Специализированные боты умеют вытаскивать из загруженного изображения скрытые <strong>EXIF-данные</strong>. В них может содержаться информация о модели телефона, дате съемки и, что самое критичное, GPS-координатах места, где было сделано фото.</p>
+
+<p>Однако, как упоминалось ранее, сам Telegram при загрузке фото в профиль очищает эти данные ради безопасности. Поэтому боты чаще анализируют визуальную часть: определяют пол, примерный возраст, наличие брендовой одежды или узнаваемых объектов на фоне. Это помогает составить психологический портрет владельца аккаунта.</p>
+
+<ul>
+<li>📸 <strong>Reverse Image Search:</strong> Поиск оригинала изображения в интернете для выявления фейковых аккаунтов.</li>
+<li>📍 <strong>Geo-tagging:</strong> Анализ фона на предмет узнаваемых landmarks (зданий, вывесок) для определения города.</li>
+<li>📅 <strong>Date Analysis:</strong> Определение даты создания аккаунта по первому появлению аватарки в кэше поисковиков.</li>
+</ul>
+
+<p>Существуют также боты, отслеживающие историю смены аватарок. Если пользователь часто меняет фото, некоторые сервисы могут сохранить их в своем архиве. Это позволяет увидеть, как менялся внешний вид человека или какие изображения он использовал ранее, что может быть полезно для идентификации.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Используйте ботов для анализа EXIF только на фотографиях, полученных напрямую файлом (без сжатия). Фотографии из профиля или чата уже обработаны сервером и не содержат скрытых данных.</p></aside>
+
+<h2 id="проверка-по-номеру-телефона-и-базе-данных">Проверка по номеру телефона и базе данных</h2>
+
+<p>Самый распространенный метод — проверка по номеру телефона. Боты сверяют введенный номер с огромными базами данных, собранными из утечек (даркнет, слитые базы доставок, служб такси). В ответ пользователь может получить информацию о том, зарегистрирован ли номер в мессенджерах, к каким банкам он привязан (через системы быстрых платежей) и есть ли он в списках должников.</p>
+
+<p>Важно отметить, что легальные способы проверки ограничены. Официальные сервисы могут показать только имя и фамилию (если они указаны в профиле и не скрыты настройками приватности) и статус регистрации. Все остальное — это работа с нелегальными базами, использование которых может быть расценено как нарушение закона.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Тип данных</th>
+<th>Источник получения</th>
+<th>Достоверность</th>
+<th>Легальность</th>
+</tr>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Имя и Фамилия</td>
+<td>Профиль Telegram / СБП</td>
+<td>Высокая</td>
+<td>Легально (открытые данные)</td>
+</tr>
+<tr>
+<td>Фото профиля</td>
+<td>Кэш Telegram</td>
+<td>Высокая</td>
+<td>Легально</td>
+</tr>
+<tr>
+<td>Адрес проживания</td>
+<td>Слитые базы (ЖКХ, доставки)</td>
+<td>Средняя (может быть старым)</td>
+<td>Нелегально</td>
+</tr>
+<tr>
+<td>Переписки</td>
+<td>Доступ к устройству / Облаку</td>
+<td>Н/Д (недоступно через бота)</td>
+<td>Криминал</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Некоторые боты предлагают функцию"глаз бога" или аналогичные названия, утверждая, что могут показать переписки. Это ложь. Ни один бот не имеет доступа к секретным чатам или облачным перепискам других пользователей из-за шифрования. Такие предложения — чистой воды мошенничество.</p>
+
+<h2 id="определение-геолокации-и-ip-адреса">Определение геолокации и IP-адреса</h2>
+
+<p>Вопрос отслеживания местоположения часто волнует пользователей. Telegram не передает геолокацию собеседника в реальном времени через стандартные средства API. Однако существуют методы социальной инженерии. Бот может сгенерировать специальную ссылку-ловушку. Если жертва перейдет по ней, ее IP-адрес будет зафиксирован на сервере владельца бота.</p>
+
+<p>По IP-адресу можно определить примерное местоположение (город, район, провайдер), но не точный адрес квартиры. Точность таких данных зависит от типа подключения (мобильный интернет дает менее точные данные, чем проводной). Кроме того, многие пользователи используют VPN, что полностью скрывает их реальное местоположение.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Отправка ссылок-ловушек с целью получения доступа к устройству или данным без согласия владельца является незаконной. Использование таких методов может привести к уголовной ответственности по статье о неправомерном доступе к компьютерной информации.</p>
+</blockquote>
+
+<p>Существуют боты, анализирующие время активности пользователя. Зная часовой пояс и типичное время онлайн-активности, можно сделать выводы о регионе проживания. Например, если человек активен строго с 9 до 18 по местному времени и молчит ночью, это сужает круг поиска.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Безопасность при общении с незнакомцами</h4><label class="check-item"><input type="checkbox"><span>Не переходите по подозрительным ссылкам</span></label><label class="check-item"><input type="checkbox"><span>Скройте номер телефона в настройках приватности</span></label><label class="check-item"><input type="checkbox"><span>Не загружайте фото с геотегами</span></label><label class="check-item"><input type="checkbox"><span>Используйте двухфакторную аутентификацию</span></label><label class="check-item"><input type="checkbox"><span>Проверьте активные сеансы в настройках</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="защита-личных-данных-от-проверки">Защита личных данных от проверки</h2>
+
+<p>Зная, как работают программы для проверки, можно эффективно защитить себя. Первым шагом является настройка приватности в самом Telegram. Зайдите в <code>Настройки → Конфиденциальность</code> и ограничьте круг лиц, которые видят ваш номер телефона, фото профиля и статус"был(а)". Рекомендуется установить значение"Никто" или"Мои контакты".</p>
+
+<p>Второй важный аспект — цифровая гигиена. Не используйте одну и ту же аватарку на всех ресурсах. Если ваше фото есть в соцсетях с реальным именем и в Telegram с псевдонимом, связать эти аккаунты не составит труда. Также стоит периодически проверять, не попали ли ваши данные в утечки, используя сервисы мониторинга.</p>
+
+<ul>
+<li>🔒 <strong>Двухфакторная аутентификация:</strong> Обязательна для защиты от взлома и угона аккаунта.</li>
+<li>🚫 <strong>Скрытие номера:</strong> Позволяет общаться, не показывая телефонный номер собеседнику.</li>
+<li>🗑️ <strong>Удаление метаданных:</strong> Используйте инструменты для очистки EXIF перед отправкой фото.</li>
+</ul>
+
+<p>Если вы обнаружили, что бот распространяет ваши личные данные (адрес, паспорт), необходимо написать в поддержку Telegram с требованием удалить контент, нарушающий правила платформы. В случаях серьезной угрозы следует обращаться в правоохранительные органы, так как распространение персональных данных без согласия субъекта запрещено.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Полная анонимность в интернете невозможна, но грамотная настройка приватности и осознанное поведение снижают риск сбора данных о вас на 90%.</p></aside>
+
+<h2 id="правовые-аспекты-и-ответственность">Правовые аспекты и ответственность</h2>
+
+<p>Использование OSINT-инструментов находится в серой зоне. Сбор информации из открытых источников (фото профиля, имя) законен. Однако покупка и использование баз данных, содержащих паспортные данные, адреса и телефоны, полученных незаконным путем, подпадает под статью 272 УК РФ (Неправомерный доступ к компьютерной информации) и 137 УК РФ (Нарушение неприкосновенности частной жизни).</p>
+
+<p>Заказывая"пробив" человека через бота, вы фактически становитесь соучастником преступления, так как финансируете деятельность по незаконному сбору и распространению данных. Даже если сам бот находится в юрисдикции другой страны, пользователи могут быть привлечены к ответственности в своей стране при выявлении факта использования.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Законодательство в сфере цифровых данных постоянно меняется. То, что было условно допустимо вчера, сегодня может стать уголовным преступлением. Всегда сверяйтесь с актуальными законами вашей страны перед использованием любых инструментов слежки.</p>
+</blockquote>
+
+<p>Существует также риск стать жертвой мошенников. Оплачивая услуги сомнительных ботов, вы передаете деньги неизвестным лицам, которые могут не только не предоставить информацию, но и использовать ваши платежные данные для дальнейших махинаций. Доверие к таким сервисам должно быть минимальным.</p>
+
+<details>
+<summary>Можно ли через бота узнать переписку удаленного собеседника?</summary>
+<p>Нет, это технически невозможно через стандартный API Telegram. Переписки защищены сквозным шифрованием (в секретных чатах) или шифрованием сервера. Доступ к ним есть только у владельцев устройств участников диалога. Любые заявления о возможности взлома — обман.</p>
+</details>
+
+<details>
+<summary>Безопасно ли пользоваться бесплатными ботами для проверки?</summary>
+<p>Использование бесплатных ботов несет высокие риски. Вы можете потерять свой аккаунт (если бот попросит авторизацию), стать жертвой фишинга или получить вирус. Кроме того, вы сами становитесь источником данных для таких сервисов.</p>
+</details>
+
+<details>
+<summary>Как узнать, проверяли ли меня через такие программы?</summary>
+<p>Узнать это практически невозможно, так как запросы к базам данных оставляют следы только на стороне владельца бота. Единственный признак — если вам начинают писать детали, известные только узкому кругу лиц, или звонят с неизвестных номеров, называя вашу личную информацию.</p>
+</details>
+
+<details>
+<summary>Что делать, если бот требует оплату за проверку?</summary>
+<p>Ничего не платить. В 99% случаев это мошенничество. После оплаты вас либо заблокируют, либо пришлют общедоступную информацию, которую можно найти бесплатно. Легальные сервисы безопасности так не работают.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/d/de/devushka-iz-andegraund-2.html" class="pb-related-card">
+                <span class="pb-related-title">Девушка из андеграунд 2: Секреты, сюжет и концовки игры</span>
+                <span class="pb-related-desc">Полный разбор игры Девушка из андеграунд 2. Гайд по выживанию, выборам, концовкам и скрытым механика</span>
+            </a><a href="/articles/r/ra/radio-dyadya-vanya-na-dache-kakaya-volna.html" class="pb-related-card">
+                <span class="pb-related-title">Радио Дядя Ваня на даче: частота и как ловить волну</span>
+                <span class="pb-related-desc">На какой частоте вещает радио Дядя Ваня? Узнайте точные значения FM-волны, советы по настройке антен</span>
+            </a><a href="/articles/t/ts/tsokol-g13-chto-eto.html" class="pb-related-card">
+                <span class="pb-related-title">Цоколь G13: что это, размеры, схема подключения и виды ламп</span>
+                <span class="pb-related-desc">Подробно о цоколе G13: размеры, отличие от G5, схема подключения люминесцентных и светодиодных ламп,</span>
+            </a><a href="/articles/m/me/megafon-simkarta-dlya-umnykh-ustrojstv.html" class="pb-related-card">
+                <span class="pb-related-title">МегаФон SIM-карта для умных устройств: выбор, настройка и тарифы</span>
+                <span class="pb-related-desc">Как выбрать и настроить сим-карту МегаФон для умных часов, GPS-трекеров и IoT-гаджетов. Тарифы, форм</span>
+            </a><a href="/articles/7/70/70-m-v-sekundu-skolko-km-v-chas.html" class="pb-related-card">
+                <span class="pb-related-title">70 м/с в км/ч: точный расчет скорости и перевод единиц</span>
+                <span class="pb-related-desc">Узнайте, сколько составляет 70 м/с в км/ч. Подробный разбор формулы перевода, таблицы значений и при</span>
+            </a><a href="/articles/k/ko/kompressor-avtomobilnyj-xiaomi-70mai-tp03.html" class="pb-related-card">
+                <span class="pb-related-title">Xiaomi 70mai TP03: обзор автомобильного компрессора 2026 года</span>
+                <span class="pb-related-desc">Характеристики, плюсы и минусы компрессора 70mai TP03 от Xiaomi: как пользоваться, какие шины качать</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

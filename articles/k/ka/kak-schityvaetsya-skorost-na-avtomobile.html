@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как считывается скорость на автомобиле: датчики и принципы работы — Авто Факт</title>
+    <meta name="description" content="Подробный разбор того, как считывается скорость на автомобиле. Датчики ABS, механические приводы, погрешности спидометра и влияние шин.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ka/kak-schityvaetsya-skorost-na-avtomobile.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как считывается скорость на автомобиле: датчики и принципы работы">
+    <meta property="og:description" content="Подробный разбор того, как считывается скорость на автомобиле. Датчики ABS, механические приводы, погрешности спидометра и влияние шин.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/elektrika-avto/">Электрика Авто</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как считывается скорость на автомобиле: датчики и принципы работы</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#механические-системы-классический-тросовый-привод">Механические системы: классический тросовый привод</a></li><li><a href="#электронные-датчики-принцип-работы-и-типы">Электронные датчики: принцип работы и типы</a></li><li><a href="#откуда-берется-сигнал-трансмиссия-или-колеса">Откуда берется сигнал: трансмиссия или колеса?</a></li><li><a href="#влияние-размера-шин-на-показания-спидометра">Влияние размера шин на показания спидометра</a></li><li><a href="#почему-спидометр-всегда-врет-стандарты-и-погрешности">Почему спидометр всегда врет: стандарты и погрешности</a></li><li><a href="#неисправности-системы-измерения-скорости">Неисправности системы измерения скорости</a></li><li><a href="#современные-тенденции-камеры-и-радары">Современные тенденции: камеры и радары</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/z/za/za-chto-otvechaet-katushka-zazhiganiya-v-avtomobile.html">За что отвечает катушка зажигания: устройство и симптомы неисправности</a></li><li><a href="/articles/k/ka/kak-uvelichit-moshchnost-avtomobilnogo-generatora.html">Как увеличить мощность генератора: полная инструкция</a></li><li><a href="/articles/c/ch/chem-mozhno-pochistit-kontakty-v-razemakh-na-avtomobile.html">Чем почистить контакты в разъемах авто: средства и методы</a></li><li><a href="/articles/s/sg/sgorel-prikurivatel-v-mashine-chto-delat.html">Сгорел прикуриватель в машине: что делать и как заменить</a></li><li><a href="/articles/f/fo/fon-v-kolonkakh-ot-usilitelya-kak-izbavitsya.html">Фон в колонках от усилителя: как убрать шум навсегда</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как считывается скорость на автомобиле: от датчика до стрелки</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#механические-системы-классический-тросовый-привод">Механические системы: классический тросовый привод</a></li><li><a href="#электронные-датчики-принцип-работы-и-типы">Электронные датчики: принцип работы и типы</a></li><li><a href="#откуда-берется-сигнал-трансмиссия-или-колеса">Откуда берется сигнал: трансмиссия или колеса?</a></li><li><a href="#влияние-размера-шин-на-показания-спидометра">Влияние размера шин на показания спидометра</a></li><li><a href="#почему-спидометр-всегда-врет-стандарты-и-погрешности">Почему спидометр всегда врет: стандарты и погрешности</a></li><li><a href="#неисправности-системы-измерения-скорости">Неисправности системы измерения скорости</a></li><li><a href="#современные-тенденции-камеры-и-радары">Современные тенденции: камеры и радары</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Современный водитель привык доверять показаниям приборной панели, но мало кто задумывается о сложном пути, который проходит сигнал от колеса до цифры на экране. В эпоху цифровых технологий и жестких экологических норм точность измерения параметров движения стала критически важной не только для соблюдения ПДД, но и для корректной работы электронных систем управления двигателем. Понимание того, <strong>как считывается скорость</strong>, помогает владельцу автомобиля лучше разбираться в возможных неисправностях и избегать неприятных сюрпризов при общении с инспекторами.</p>
+
+<p>Исторически сложилось так, что методы измерения эволюционировали от простой механики до сложных электронных вычислений. Если в старых моделях <em>ВАЗ</em> или <em>ГАЗ</em> использовался трос, передающий вращение напрямую на механизм спидометра, то сегодня в дело вступают высокоточные магнитные сенсоры и программные алгоритмы. <mark>Скорость вращения выходного вала коробки передач или отдельных колес является первичным источником данных, который затем многократно обрабатывается блоком управления.</mark></p>
+
+<p>В этой статье мы детально разберем физические и электронные принципы работы спидометров, рассмотрим влияние размера колес на показания и выясним, почему завод-производитель всегда закладывает определенную погрешность. Это знание позволит вам объективно оценивать реальную скорость движения вашего транспортного средства в любых дорожных условиях.</p>
+
+<h2 id="механические-системы-классический-тросовый-привод">Механические системы: классический тросовый привод</h2>
+
+<p>Долгое время основным способом передачи данных о скорости был механический трос. Это простое и надежное решение, которое до сих пор можно встретить на бюджетных моделях автомобилей и мотоциклах. Принцип работы основан на прямой физической связи: вращение одного из валов трансмиссии передается через гибкий трос на входной вал самого спидометра.</p>
+
+<p>Внутри приборной панели располагался механизм, где вращение троса передавалось на магнитный диск. Этот диск, вращаясь внутри металлической чашки, создавал вихревые токи, которые увлекали за собой стрелку прибора. Сила отклонения стрелки напрямую зависела от <strong>скорости вращения</strong> магнита. Чем быстрее крутился трос, тем сильнее магнитное поле отклоняло стрелку против силы возвратной пружины.</p>
+
+<p>Несмотря на простоту, у такой системы были свои недостатки. Трос мог изнашиваться, смазка в нем загустевала на морозе, что приводило к рывкам стрелки или полному отказу прибора. Кроме того, механическая инерция системы не позволяла отображать мгновенные изменения скорости так быстро, как это делают современные электронные аналоги.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> В автомобилях с механическим приводом спидометра замена коробки передач или главной пары без пересчета передаточного числа шестерни привода спидометра приведет к неверным показаниям скорости.</p>
+</blockquote>
+
+<h2 id="электронные-датчики-принцип-работы-и-типы">Электронные датчики: принцип работы и типы</h2>
+
+<p>В современных автомобилях, будь то <em>Toyota</em>, <em>BMW</em> или <em>Lada</em>, механика уступила место электронике. Теперь за измерение отвечают датчики, преобразующие механическое вращение в электрический сигнал. Существует два основных типа таких сенсоров, каждый из которых имеет свои особенности конструкции и диагностики.</p>
+
+<p>Первый тип — датчики на основе эффекта Холла. Они генерируют сигнал, частота которого пропорциональна скорости вращения вала. Внутри датчика находится магнит и полупроводниковый элемент. При прохождении зубцов гребенки (звездочки) через магнитное поле, напряжение на выходе датчика меняется. Блок управления считывает частоту этих импульсов и вычисляет скорость.</p>
+
+<p>Второй тип — индуктивные датчики. Они не требуют внешнего питания и работают за счет изменения магнитного потока. При вращении зубчатого колеса рядом с датчиком в его обмотке наводится ЭДС. Амплитуда и частота сигнала зависят от скорости вращения. Такие системы надежны, но могут давать погрешности на очень низких скоростях, когда сигнал становится слишком слабым для считывания.</p>
+
+<div class="pb-poll" id="poll-dccfb0d4"><div class="pb-poll-question">📊 Какой тип спидометра в вашем авто?</div><div class="pb-poll-option" data-poll="dccfb0d4" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Механический с тросом</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="dccfb0d4" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Электронный (стрелочный)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="dccfb0d4" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Цифровой экран</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="dccfb0d4" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Не знаю / Не смотрел</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<p>Электронные системы позволяют передавать данные не только на приборную панель, но и в <strong>блок управления двигателем (ЭБУ)</strong>, систему ABS и навигационный комплекс. Это обеспечивает синхронизацию работы всех узлов автомобиля. Например, при резком торможении данные о скорости мгновенно передаются в систему стабилизации.</p>
+
+<h2 id="откуда-берется-сигнал-трансмиссия-или-колеса">Откуда берется сигнал: трансмиссия или колеса?</h2>
+
+<p>Место установки датчика скорости зависит от года выпуска автомобиля и его конструкции. В старых заднеприводных автомобилях датчик чаще всего располагался на выходном валу коробки передач. Он считывал скорость вращения карданного вала, которая затем пересчитывалась в скорость движения с учетом передаточного числа главной пары.</p>
+
+<p>В современных переднеприводных и полноприводных автомобилях ситуация изменилась. Здесь часто используется информация от датчиков антиблокировочной системы (ABS), расположенных непосредственно на ступицах колес. ЭБУ получает данные о скорости вращения каждого колеса отдельно и вычисляет среднее значение или выбирает опорное колесо для расчета скорости автомобиля.</p>
+
+<p>Использование данных от колес имеет свои преимущества и недостатки. С одной стороны, это повышает точность и позволяет системе ABS работать эффективнее. С другой стороны, разница в давлении в шинах или установке колес разного диаметра может сбить расчеты электроники. <strong>Скорость вращения колес</strong> в этом случае становится критическим параметром для всей бортовой логики.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Диагностика проблем со скоростью</h4><label class="check-item"><input type="checkbox"><span>Проверка целостности проводки датчика</span></label><label class="check-item"><input type="checkbox"><span>Замер сопротивления датчика Холла</span></label><label class="check-item"><input type="checkbox"><span>Проверка зубчатого венца на загрязнения</span></label><label class="check-item"><input type="checkbox"><span>Сканирование ошибок через OBDII</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="влияние-размера-шин-на-показания-спидометра">Влияние размера шин на показания спидометра</h2>
+
+<p>Одним из самых важных факторов, влияющих на точность показаний, является фактический диаметр колеса. Завод-производитель программирует ЭБУ с расчетом на штатный размер шин, указанный в технической документации. Любое отклонение от этого размера меняет длину окружности колеса, а значит, и расстояние, которое проходит автомобиль за один оборот.</p>
+
+<p>Если вы установите шины большего диаметра, колесо будет проходить больший путь за один оборот, но датчик выдаст то же количество импульсов. В результате спидометр будет показывать скорость меньше реальной. И наоборот, уменьшение диаметра шин приведет к тому, что прибор будет «врать» в большую сторону.</p>
+
+<p>Рассмотрим влияние изменений в таблице ниже:</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Изменение диаметра</th>
+<th>Показания спидометра</th>
+<th>Реальная скорость</th>
+<th>Влияние на расход</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Штатный размер</td>
+<td>Точно (с погрешностью)</td>
+<td>Соответствует</td>
+<td>Нормальный</td>
+</tr>
+<tr>
+<td>Увеличение диаметра (+3%)</td>
+<td>Занижает (показывает 100, едем 103)</td>
+<td>Выше показаний</td>
+<td>Снижается (формально)</td>
+</tr>
+<tr>
+<td>Уменьшение диаметра (-3%)</td>
+<td>Завышает (показывает 100, едем 97)</td>
+<td>Ниже показаний</td>
+<td>Возрастает</td>
+</tr>
+<tr>
+<td>Сильный износ протектора</td>
+<td>Незначительно завышает</td>
+<td>Чуть ниже</td>
+<td>Минимальное</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Владельцам тюнингованных автомобилей с лифтом подвески и большими колесами необходимо проводить перепрошивку блока управления или установку корректора спидометра. В противном случае возможны проблемы с динамикой разгона и некорректное переключение передач в <em>автоматических коробках</em>.</p>
+
+<h2 id="почему-спидометр-всегда-врет-стандарты-и-погрешности">Почему спидометр всегда врет: стандарты и погрешности</h2>
+
+<p>Многие водители замечают, что спидометр практически всегда показывает скорость больше реальной. На скорости 60 км/ч реальная может составлять 54-56 км/ч. Это не неисправность, а требование международных стандартов безопасности (например, ЕЭК ООН № 39). Согласно им, спидометр не имеет права показывать скорость меньше реальной, чтобы исключить риск непреднамеренного превышения limits.</p>
+
+<p>Погрешность обычно составляет от 3 до 10 км/ч в зависимости от скорости движения. Производители специально закладывают этот запас, учитывая возможные изменения диаметра колес при разной загрузке автомобиля, износе протектора или установке нештатных шин. Также играет роль температура воздуха, которая влияет на давление в шинах и, следовательно, на их радиус.</p>
+
+<details class="pb-accordion"><summary>Как узнать реальную скорость?</summary><div class="pb-accordion-body"><p>Самый точный способ — использование GPS-навигатора. Навигационные системы определяют скорость по спутникам, и их погрешность минимальна на прямых участках дороги. Сравните показания спидометра и навигатора на стабильной скорости.>
+
+<p>Цифровые спидометры, как правило, имеют меньшую погрешность, чем стрелочные, так как они лишены механической инерции. Однако даже в цифровых системах алгоритмы усреднения данных могут сглаживать резкие скачки, что иногда воспринимается водителем как задержка реакции прибора.</p>
+
+<h2 id="неисправности-системы-измерения-скорости">Неисправности системы измерения скорости</h2>
+
+<p>Сбои в работе датчиков скорости могут привести к серьезным последствиям: от загорания лампочки Check Engine до перехода двигателя в аварийный режим. ЭБУ, не получая корректных данных о скорости, не может правильно рассчитать нагрузку и состав топливно-воздушной смеси.</p>
+
+<p>Наиболее частые симптомы неисправности:</p>
+<ul>
+<li>🔴 Стрелка спидометра хаотично «прыгает» или лежит на нуле при движении.</li>
+<li>🔴 Двигатель глохнет при сбросе газа или на холостом ходу.</li>
+<li>🔴 Загорается индикатор неисправности ABS или ESP.</li>
+<li>🔴 Увеличивается расход топлива и ухудшается динамика разгона.</li>
+</ul>
+
+<p>Чаще всего выходит из строя сам датчик или нарушается целостность проводки. Окисление контактов, перетирание проводов о кузов или попадание влаги в разъем — все это может прервать сигнал. В случае с механическим приводом проблема может быть в изношенном тросе или разбитых шестернях привода.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> При замене датчика скорости на некоторых моделях автомобилей (например, <em>Ford</em> или <em>Volkswagen</em>) может потребоваться калибровка через диагностический сканер, иначе система не распознает новый компонент.</p>
+</blockquote>
+
+
+
+<h2 id="современные-тенденции-камеры-и-радары">Современные тенденции: камеры и радары</h2>
+
+<p>Технологии не стоят на месте, и в современных автомобилях появляются системы, использующие камеры и радары для определения скорости относительно других объектов. Хотя спидометр по-прежнему опирается на датчики вращения, системы адаптивного круиз-контроля и ограничения скорости самостоятельно считывают дорожные знаки и данные навигации.</p>
+
+<p>Камера, установленная за лобовым стеклом, распознает знаки ограничения скорости и выводит актуальное значение на дисплей. Если автомобиль начинает разгоняться быстрее разрешенного, система подает звуковой сигнал или визуально предупреждает водителя. Это дополнительный уровень контроля, который работает параллельно с основным каналом измерения.</p>
+
+<p>В будущем, с развитием беспилотных технологий, точность измерения скорости станет абсолютной, так как от нее будет зависеть безопасность пассажиров и окружающих. Интеграция данных V2X (vehicle-to-everything) позволит автомобилям «общаться» друг с другом, передавая данные о своей скорости и траектории движения в реальном времени.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Точность спидометра зависит не только от исправности датчика, но и от соответствия размера шин заводским рекомендациям.</p></aside>
+
+<details>
+<summary>Почему на спидометре нет цифр выше 200-220 км/ч, если машина может быстрее?</summary>
+<p>Это связано с маркетинговыми решениями и стандартами оформления приборных панелей. Шкала делается с запасом, но размечается до типичных скоростей движения. Кроме того, в большинстве стран такие скорости запрещены, и производители не видят смысла детализировать шкалу в нерабочей зоне.</p>
+</details>
+
+<details>
+<summary>Влияет ли разряд аккумулятора на точность показаний спидометра?</summary>
+<p>Косвенно — да. При низком напряжении в бортовой сети электронные датчики и блок управления могут работать некорректно, выдавая ошибки или искаженные данные. Однако сам принцип измерения скорости от этого не меняется, страдает лишь стабильность работы электроники.</p>
+</details>
+
+<details>
+<summary>Можно ли изменить показания спидометра программно?</summary>
+<p>Да, во многих современных автомобилях можно изменить коэффициент пересчета импульсов в скорость через перепрошивку ЭБУ (чип-тюнинг). Это часто делают при установке колес нестандартного размера, чтобы вернуть показаниям точность.</p>
+</details>
+
+<details>
+<summary>Как часто нужно менять датчик скорости?</summary>
+<p>Ресурс датчиков скорости обычно велик и сопоставим с ресурсом автомобиля. Замена требуется только при появлении явных симптомов неисправности или при обнаружении ошибок в системе при компьютерной диагностике.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/z/za/za-chto-otvechaet-katushka-zazhiganiya-v-avtomobile.html" class="pb-related-card">
+                <span class="pb-related-title">За что отвечает катушка зажигания: устройство и симптомы неисправности</span>
+                <span class="pb-related-desc">Узнайте, за что отвечает катушка зажигания в автомобиле. Подробный разбор устройства, принцип работы</span>
+            </a><a href="/articles/k/ka/kak-uvelichit-moshchnost-avtomobilnogo-generatora.html" class="pb-related-card">
+                <span class="pb-related-title">Как увеличить мощность генератора: полная инструкция</span>
+                <span class="pb-related-desc">Узнайте, как увеличить мощность автомобильного генератора. Замена обмотки, установка шкива, модерниз</span>
+            </a><a href="/articles/c/ch/chem-mozhno-pochistit-kontakty-v-razemakh-na-avtomobile.html" class="pb-related-card">
+                <span class="pb-related-title">Чем почистить контакты в разъемах авто: средства и методы</span>
+                <span class="pb-related-desc">Профессиональный обзор средств для чистки контактов авто: от спреев до народных методов. Как убрать </span>
+            </a><a href="/articles/s/sg/sgorel-prikurivatel-v-mashine-chto-delat.html" class="pb-related-card">
+                <span class="pb-related-title">Сгорел прикуриватель в машине: что делать и как заменить</span>
+                <span class="pb-related-desc">Сгорел прикуриватель в машине что делать? Полная инструкция по диагностике, ремонту и замене предохр</span>
+            </a><a href="/articles/f/fo/fon-v-kolonkakh-ot-usilitelya-kak-izbavitsya.html" class="pb-related-card">
+                <span class="pb-related-title">Фон в колонках от усилителя: как убрать шум навсегда</span>
+                <span class="pb-related-desc">Почему гудит усилитель в колонках и как избавиться от фона: 7 проверенных способов устранения помех.</span>
+            </a><a href="/articles/p/po/pochemu-pishchit-generator-na-avtomobile.html" class="pb-related-card">
+                <span class="pb-related-title">Почему пищит генератор: причины свиста и ремонт</span>
+                <span class="pb-related-desc">Разбираем, почему пищит генератор на автомобиле. Основные причины свиста: ремень, подшипники, обгонн</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

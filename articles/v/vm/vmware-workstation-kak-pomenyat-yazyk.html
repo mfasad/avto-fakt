@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>VMware Workstation: как поменять язык интерфейса и клавиатуры — Авто Факт</title>
+    <meta name="description" content="Пошаговая инструкция, как изменить язык интерфейса VMware Workstation на русский или английский. Решение проблем с отсутствием локализации и настройкой раскладки.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/v/vm/vmware-workstation-kak-pomenyat-yazyk.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="VMware Workstation: как поменять язык интерфейса и клавиатуры">
+    <meta property="og:description" content="Пошаговая инструкция, как изменить язык интерфейса VMware Workstation на русский или английский. Решение проблем с отсутствием локализации и настройкой раскладки.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">VMware Workstation: как поменять язык интерфейса и клавиатуры</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#официальные-методы-смены-языка-в-новых-версиях">Официальные методы смены языка в новых версиях</a></li><li><a href="#ручная-установка-языковых-пакетов-через-конфигурационные-файлы">Ручная установка языковых пакетов через конфигурационные файлы</a></li><li><a href="#использование-сторонних-локализаторов-и-патчей">Использование сторонних локализаторов и патчей</a></li><li><a href="#настройка-раскладки-клавиатуры-в-виртуальной-машине">Настройка раскладки клавиатуры в виртуальной машине</a></li><li><a href="#таблица-кодов-языков-и-параметров-конфигурации">Таблица кодов языков и параметров конфигурации</a></li><li><a href="#решение-распространенных-проблем-с-локализацией">Решение распространенных проблем с локализацией</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/c/ch/chto-oznachaet-koaksialnyj-dinamik.html">Коаксиальный динамик: что это, устройство и особенности звука</a></li><li><a href="/articles/p/pr/pribor-dlya-nakachivaniya-koles.html">Приборы для накачивания колес: как выбрать и пользоваться 2026</a></li><li><a href="/articles/m/ma/magnitnaya-zaryadka-dlya-ajfona-v-mashinu.html">Магнитная зарядка для Айфона в машину: выбор и установка</a></li><li><a href="/articles/k/ko/kofemashina-kaffit-com-a3.html">Кофемашина Kaffit COM A3: Обзор, Характеристики и Инструкция</a></li><li><a href="/articles/k/ko/kontroller-dlya-bldc-motora.html">Контроллер для BLDC мотора: выбор, подключение и настройка</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>VMware Workstation: как поменять язык интерфейса и клавиатуры</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#официальные-методы-смены-языка-в-новых-версиях">Официальные методы смены языка в новых версиях</a></li><li><a href="#ручная-установка-языковых-пакетов-через-конфигурационные-файлы">Ручная установка языковых пакетов через конфигурационные файлы</a></li><li><a href="#использование-сторонних-локализаторов-и-патчей">Использование сторонних локализаторов и патчей</a></li><li><a href="#настройка-раскладки-клавиатуры-в-виртуальной-машине">Настройка раскладки клавиатуры в виртуальной машине</a></li><li><a href="#таблица-кодов-языков-и-параметров-конфигурации">Таблица кодов языков и параметров конфигурации</a></li><li><a href="#решение-распространенных-проблем-с-локализацией">Решение распространенных проблем с локализацией</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Многие пользователи, устанавливая программное обеспечение для виртуализации, сталкиваются с неожиданным барьером — полностью англоязычным интерфейсом. <strong>VMware Workstation</strong> является мощнейшим инструментом для разработчиков и системных администраторов, но отсутствие родного языка может существенно замедлить работу новичка. Вопрос о том, как изменить настройки локализации, становится особенно актуальным сразу после первой инсталляции продукта.</p>
+
+<p>Ситуация осложняется тем, что в последних версиях ПО компания-разработчик изменила подход к распространению языковых пакетов. Если раньше можно было просто выбрать нужный язык при установке, то теперь <em>VMware Workstation Pro</em> и <em>Player</em> часто поставляются только с английской локалью по умолчанию. Это требует от пользователя понимания структуры файлов конфигурации или использования специальных утилит.</p>
+
+<p>В данном руководстве мы разберем все доступные способы решения этой задачи. Вы узнаете, как активировать скрытые возможности программы, где искать официальные патчи и что делать, если стандартные методы не работают. Также уделим внимание настройке клавиатуры внутри виртуальных машин, так как это смежная проблема, часто возникающая у пользователей.</p>
+
+<h2 id="официальные-методы-смены-языка-в-новых-версиях">Официальные методы смены языка в новых версиях</h2>
+
+<p>Начиная с определенных версий, разработчики внедрили более гибкую систему управления локализацией. Однако стоит сразу отметить важный нюанс: <mark>официальная русская локализация для версий 16 и 17 может отсутствовать в базовом дистрибутиве</mark>. Это связано с политикой компании и смещением фокуса на глобальный английский стандарт в IT-среде. Тем не менее, проверить наличие встроенных опций необходимо в первую очередь.</p>
+
+<p>Для начала следует запустить приложение и перейти в главное меню. Найдите пункт <code>Edit</code> в верхней панели инструментов. В выпадающем списке выберите <code>Preferences</code>. Откроется окно настроек, где в левой части расположен список категорий. Нас интересует раздел <code>Workspace</code> или иногда <code>Language</code>, если он выведен отдельно. Здесь может находиться выпадающий список <strong>UI Language</strong>.</p>
+
+<p>Если в списке присутствует нужный вам язык (например, Japanese, German или French), просто выберите его и нажмите кнопку <code>OK</code>. После этого потребуется перезапустить программу. Если же список пуст или содержит только English, значит, языковой пакет не установлен в системе. В таком случае простые настройки не помогут, и придется прибегать к ручной установке файлов локализации или использованию сторонних патчей.</p>
+
+<ul>
+<li>🌐 Проверьте раздел <code>Edit → Preferences</code> на наличие выпадающего списка языков.</li>
+<li>💾 Убедитесь, что при установке галочка напротив нужного языка была активна (если такая опция имелась).</li>
+<li>🔄 Перезапустите <em>VMware Workstation</em> после применения изменений для активации нового интерфейса.</li>
+</ul>
+
+<div class="pb-poll" id="poll-c497dce8"><div class="pb-poll-question">📊 С какой версией VMware Workstation вы работаете?</div><div class="pb-poll-option" data-poll="c497dce8" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">VMware 15</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="c497dce8" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">VMware 16</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="c497dce8" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">VMware 17</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="c497dce8" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Я использую Player</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="ручная-установка-языковых-пакетов-через-конфигурационные-файлы">Ручная установка языковых пакетов через конфигурационные файлы</h2>
+
+<p>Когда стандартный интерфейс не предлагает выбора, единственным вариантом остается ручная модификация конфигурации. Этот метод требует внимательности, так как вы будете работать с системными файлами программы. Ошибка в синтаксисе может привести к тому, что приложение перестанет запускаться, поэтому перед началом манипуляций рекомендуется создать точку восстановления системы или резервную копию папки с программой.</p>
+
+<p>Основной файл, отвечающий за настройки, обычно находится по пути установки программы. Стандартный путь выглядит как <code>C:\Program Files (x86)\VMware\VMware Workstation</code>. Вам потребуется найти файл с расширением <code>.cfg</code> или специфический файл локализации, часто называемый <code>messages_XX</code>, где XX — код языка. Для русификации часто используются файлы от предыдущих версий или сторонних сборок, совместимых с текущим релизом.</p>
+
+<p>После копирования необходимых файлов в директорию установки, нужно отредактировать главный конфигурационный файл. Откройте его с помощью текстового редактора, например, <em>Notepad++</em> или стандартного Блокнота. Найдите строку, начинающуюся с <code>pref.locale</code>. Если такой строки нет, добавьте её в конец файла. Значение должно соответствовать коду языка, например, <code>ru</code> для русского или <code>de</code> для немецкого.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка перед редактированием файлов</h4><label class="check-item"><input type="checkbox"><span>Создать резервную копию папки VMware</span></label><label class="check-item"><input type="checkbox"><span>Закрыть все запущенные виртуальные машины</span></label><label class="check-item"><input type="checkbox"><span>Запустить редактор от имени администратора</span></label><label class="check-item"><input type="checkbox"><span>Скопировать путь к папке установки</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не редактируйте файлы конфигурации, пока запущен процесс <em>vmware-vmx.exe</em> или сама консоль управления. Это может привести к повреждению файла настроек и потере изменений.</p>
+</blockquote>
+
+<h2 id="использование-сторонних-локализаторов-и-патчей">Использование сторонних локализаторов и патчей</h2>
+
+<p>Поскольку официальная поддержка некоторых языков ограничена, сообщество пользователей создает собственные патчи. Эти утилиты автоматически заменяют оригинальные ресурсы программы переведенными аналогами. Использование таких инструментов несет определенные риски, поэтому скачивать их следует только с проверенных ресурсов с хорошей репутацией.</p>
+
+<p>Процесс установки стороннего локализатора обычно прост: запускается исполняемый файл, выбирается путь к установленной <strong>VMware Workstation</strong>, и нажимается кнопка «Патч» или «Установить». Программа сама определит версию ПО и подберет соответствующие файлы перевода. После завершения работы патчера необходимо полностью закрыть диспетчер задач и запустить виртуализатор заново.</p>
+
+<p>Важно помнить о совместимости версий. Патч, созданный для версии 15.5, может некорректно работать на версии 17.0, вызывая вылеты интерфейса или нечитаемый текст (так называемую «кашу» из символов). Всегда проверяйте версию вашего ПО перед применением модификаций. Если после установки патча программа ведет себя нестаб--no-cutoff
+<p>ильно, лучше удалить изменения через панель управления или восстановить файлы из резервной копии.</p></p>
+
+<ul>
+<li>🛡️ Скачивайте патчи только с официальных форумов поддержки или проверенных репозиториев.</li>
+<li>📦 Убедитесь, что версия локализатора точно соответствует версии установленной <em>VMware</em>.</li>
+<li>💾 Обязательно делайте бэкап папки <code>C:\Program Files (x86)\VMware</code> перед внесением изменений.</li>
+</ul>
+
+<details class="pb-accordion"><summary>Где искать надежные источники патчей?</summary><div class="pb-accordion-body"><p>Лучше всего искать информацию на специализированных IT-порталах и форумах системных администраторов. Избегайте сайтов с большим количеством рекламы и кнопками «Скачать» яркого цвета, так как они часто распространяют вредоносное ПО под видом полезных утилит.</p></div></details>
+
+<h2 id="настройка-раскладки-клавиатуры-в-виртуальной-машине">Настройка раскладки клавиатуры в виртуальной машине</h2>
+
+<p>Часто пользователи путают язык интерфейса самой программы VMware с раскладкой клавиатуры внутри гостевой операционной системы. Если у вас в виртуальной машине неправильно работают символы или не переключается язык, проблема кроется не в настройках хоста, а в параметрах ввода виртуальной среды. Для корректной работы необходимо установить <strong>VMware Tools</strong>.</p>
+
+<p>После установки гостевых дополнений (Tools) управление клавиатурой становится более предсказуемым. Вы можете настроить поведение клавиш-модификаторов, таких как Ctrl, Alt и Windows Key. Для этого перейдите в меню <code>VM</code> (или <code>Edit</code> в зависимости от версии) и выберите <code>Preferences</code>, затем вкладку <code>Input</code>. Здесь можно настроить захват клавиатуры и мыши.</p>
+
+<p>Если раскладка «слетает» или ведет себя странно, попробуйте принудительно задать язык ввода для конкретной виртуальной машины. В файле конфигурации виртуалки (расширение <code>.vmx</code>) можно прописать параметр <code>keyboard.layout</code>. Однако чаще всего проблема решается простой переустановкой VMware Tools внутри гостевой ОС и настройкой языковой панели уже в самой операционной системе (Windows, Linux или macOS).</p>
+
+<pre><code>keyboard.layout = "Russian"
+<p>keyboard.type = "standard"</p>
+</code></pre>
+
+<blockquote>
+<p>⚠️ Внимание: Изменение параметров файла <code>.vmx</code> вручную возможно только когда виртуальная машина полностью выключена (состояние Powered Off), а не приостановлена.</p>
+</blockquote>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Используйте сочетание клавиш Ctrl+G для принудительного захвата ввода клавиатуры и мыши виртуальной машиной, если курсор «застрял» за её пределами.</p></aside>
+
+<h2 id="таблица-кодов-языков-и-параметров-конфигурации">Таблица кодов языков и параметров конфигурации</h2>
+
+<p>Для тех, кто предпочитает тонкую настройку через конфигурационные файлы, ниже приведена таблица основных параметров. Эти коды используются в файлах <code>config</code> или при редактировании реестра для принудительной установки языка интерфейса. Значения чувствительны к регистру, поэтому вводите их точно так, как указано.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Язык интерфейса</th>
+<th>Код локали (Locale)</th>
+<th>Параметр в конфиге</th>
+<th>Статус поддержки</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Английский (США)</td>
+<td><code>en</code></td>
+<td><code>pref.locale = "en"</code></td>
+<td>Полная</td>
+</tr>
+<tr>
+<td>Русский</td>
+<td><code>ru</code></td>
+<td><code>pref.locale = "ru"</code></td>
+<td>Частичная / Патч</td>
+</tr>
+<tr>
+<td>Немецкий</td>
+<td><code>de</code></td>
+<td><code>pref.locale = "de"</code></td>
+<td>Полная</td>
+</tr>
+<tr>
+<td>Французский</td>
+<td><code>fr</code></td>
+<td><code>pref.locale = "fr"</code></td>
+<td>Полная</td>
+</tr>
+<tr>
+<td>Японский</td>
+<td><code>ja</code></td>
+<td><code>pref.locale = "ja"</code></td>
+<td>Полная</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Использование этих кодов позволяет гибко управлять окружением, особенно в корпоративных сетях, где требуется унификация настроек для всех сотрудников. Просто добавив нужную строку в глобальный конфиг, администратор может обеспечить единый стандарт работы.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Правильный код локали в конфигурационном файле — самый надежный способ заставить программу использовать нужный язык, если он доступен в системе.</p></aside>
+
+<h2 id="решение-распространенных-проблем-с-локализацией">Решение распространенных проблем с локализацией</h2>
+
+<p>Даже после выполнения всех инструкций пользователи могут столкнуться с артефактами: непереведенными окнами, битым шрифтом или вылетами программы. Часто это связано с тем, что шрифты, используемые в русском языке, отличаются по высоте и ширине от латинских, и элементы интерфейса «наезжают» друг на друга. В таких случаях помогает изменение разрешения экрана или масштабирования в настройках совместимости ярлыка запуска.</p>
+
+<p>Еще одна частая проблема — конфликт версий библиотек. Если вы обновили <strong>VMware Workstation</strong>, но оставили старые файлы локализации от предыдущей версии, программа может вести себя непредсказуемо. Решение одно: полностью удалить программу, очистить остаточные файлы в папке <code>AppData</code> и установить свежую версию начисто, после чего применить патч, соответствующий именно этой сборке.</p>
+
+<p>Если интерфейс стал нечитаемым, можно запустить программу с параметром сброса настроек. Для этого создайте ярлык для исполняемого файла и добавьте в конец строки запуска ключ <code>/reset-configuration</code>. Это вернет все настройки к заводским, включая язык, но сохранит ваши виртуальные машины intact.</p>
+
+<ul>
+<li>🧹 Полностью удаляйте старые версии перед установкой новых языковых пакетов.</li>
+<li>🖥️ Проверьте настройки масштабирования Windows, если текст в интерфейсе слишком мелкий или обрезан.</li>
+<li>🔍 Используйте логи программы в папке <code>%TEMP%</code> для поиска ошибок загрузки модулей локализации.</li>
+</ul>
+
+<details>
+<summary>Почему после смены языка программа перестала запускаться?</summary>
+<p>Скорее всего, файл локализации поврежден или несовместим с текущей версией ядра программы. Попробуйте удалить добавленные файлы из папки установки или восстановить оригиналы из резервной копии. Также проверьте, не блокирует ли антивирус модифицированные DLL-библиотеки.</p>
+</details>
+
+<details>
+<summary>Можно ли иметь несколько языков одновременно?</summary>
+<p>Нет, <em>VMware Workstation</em> поддерживает только один активный язык интерфейса для всех пользователей системы. Однако вы можете создавать разные ярлыки запуска с разными параметрами конфигурации, если используете сложные скрипты переключения файлов на лету, но штатными средствами это не реализуется.</p>
+</details>
+
+<details>
+<summary>Влияет ли смена языка хоста на гостевую ОС?</summary>
+<p>Нет, язык интерфейса программы-хоста (VMware) и язык операционной системы внутри виртуальной машины — это независимые параметры. Сменив меню программы на русский, вы не измените язык Windows или Linux, запущенных внутри виртуалки.</p>
+</details>
+
+<details>
+<summary>Где найти официальную поддержку языковых пакетов?</summary>
+<p>Официально компания VMware (теперь часть Broadcom) предоставляет документацию на портале поддержки. Однако полные языковые пакеты часто доступны только для корпоративных версий с подпиской. Для домашних пользователей (Player/Pro Personal) основным источником остаются сообщества и форумы.</p>
+</details>
+
+<p>Подводя итог, можно сказать, что изменение языка в <strong>VMware Workstation</strong> — задача решаемая, но требующая внимательного подхода. Будь то использование встроенных настроек, ручное редактирование конфигов или применение патчей, главное — соблюдать совместимость версий и делать резервные копии. Правильно настроенный интерфейс значительно повышает продуктивность работы с виртуальными средами.</p></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/c/ch/chto-oznachaet-koaksialnyj-dinamik.html" class="pb-related-card">
+                <span class="pb-related-title">Коаксиальный динамик: что это, устройство и особенности звука</span>
+                <span class="pb-related-desc">Узнайте, что означает коаксиальный динамик, как он устроен и чем отличается от компонентной акустики</span>
+            </a><a href="/articles/p/pr/pribor-dlya-nakachivaniya-koles.html" class="pb-related-card">
+                <span class="pb-related-title">Приборы для накачивания колес: как выбрать и пользоваться 2026</span>
+                <span class="pb-related-desc">Экспертный обзор компрессоров для шин: виды, критерии выбора, рейтинг 2026 года и практические совет</span>
+            </a><a href="/articles/m/ma/magnitnaya-zaryadka-dlya-ajfona-v-mashinu.html" class="pb-related-card">
+                <span class="pb-related-title">Магнитная зарядка для Айфона в машину: выбор и установка</span>
+                <span class="pb-related-desc">Полный гид по выбору магнитной зарядки для iPhone в авто. Обзор стандартов MagSafe, советы по монтаж</span>
+            </a><a href="/articles/k/ko/kofemashina-kaffit-com-a3.html" class="pb-related-card">
+                <span class="pb-related-title">Кофемашина Kaffit COM A3: Обзор, Характеристики и Инструкция</span>
+                <span class="pb-related-desc">Полный гид по автоматической кофемашине Kaffit COM A3. Разбор функций, настройка помола, таблица код</span>
+            </a><a href="/articles/k/ko/kontroller-dlya-bldc-motora.html" class="pb-related-card">
+                <span class="pb-related-title">Контроллер для BLDC мотора: выбор, подключение и настройка</span>
+                <span class="pb-related-desc">Как выбрать контроллер для бесколлекторного двигателя (BLDC): виды, схемы подключения, настройка пар</span>
+            </a><a href="/articles/k/ka/kak-vybrat-servisnyj-tsentr.html" class="pb-related-card">
+                <span class="pb-related-title">Как выбрать сервисный центр: чек-лист проверки качества</span>
+                <span class="pb-related-desc">Как выбрать надежный сервисный центр для ремонта техники? Разбор сертификатов, отзывы, скрытые услов</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>My Summer Car: как использовать Lua-скрипты для модификаций — Авто Факт</title>
+    <meta name="description" content="Полное руководство по созданию и установке Lua-модов в My Summer Car: от базовых скриптов до продвинутого тюнинга. Разбор ошибок, примеры кода и советы по оптимизации.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/m/my/my-summer-car-luar.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="My Summer Car: как использовать Lua-скрипты для модификаций">
+    <meta property="og:description" content="Полное руководство по созданию и установке Lua-модов в My Summer Car: от базовых скриптов до продвинутого тюнинга. Разбор ошибок, примеры кода и советы по оптимизации.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tyuning-i-stil/">Тюнинг и Стиль</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">My Summer Car: как использовать Lua-скрипты для модификаций</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#что-такое-lua-и-почему-он-используется-в-my-summer-car">Что такое Lua и почему он используется в My Summer Car</a></li><li><a href="#как-установить-lua-скрипты-пошаговая-инструкция">Как установить Lua-скрипты: пошаговая инструкция</a></li><li><a href="#популярные-lua-скрипты-для-my-summer-car-обзор-и-возможности">Популярные Lua-скрипты для My Summer Car: обзор и возможности</a></li><li><a href="#как-написать-свой-lua-скрипт-для-my-summer-car-базовые-принципы">Как написать свой Lua-скрипт для My Summer Car: базовые принципы</a></li><li><a href="#типичные-ошибки-и-их-исправление">Типичные ошибки и их исправление</a></li><li><a href="#продвинутые-техники-события-хуки-и-взаимодействие-с-миром">Продвинутые техники: события, хуки и взаимодействие с миром</a></li><li><a href="#оптимизация-и-производительность-как-не-тормозить-игру">Оптимизация и производительность: как не тормозить игру</a></li><li><a href="#faq-часто-задаваемые-вопросы-о-lua-в-my-summer-car">FAQ: Часто задаваемые вопросы о Lua в My Summer Car</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/c/ch/chto-takoe-r-lajn.html">R-Line в Volkswagen: что это, отличия и комплектация</a></li><li><a href="/articles/m/ma/mashina-so-znachkom-betmena.html">Машина с логотипом Бэтмена: как сделать и не нарушить закон</a></li><li><a href="/articles/m/ma/mashinka-shablon-dlya-risovaniya.html">Машинка-шаблон для рисования: как выбрать и использовать в 2026 году</a></li><li><a href="/articles/a/am/amg-chto-eto-mashina.html">АМГ: что это за машина и почему она стоит дорого</a></li><li><a href="/articles/z/za/zachem-nuzhen-blou-off.html">Зачем нужен blow off клапан: принцип работы и виды</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Lua-скрипты в My Summer Car: от простых читов до сложных модов</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#что-такое-lua-и-почему-он-используется-в-my-summer-car">Что такое Lua и почему он используется в My Summer Car</a></li><li><a href="#как-установить-lua-скрипты-пошаговая-инструкция">Как установить Lua-скрипты: пошаговая инструкция</a></li><li><a href="#популярные-lua-скрипты-для-my-summer-car-обзор-и-возможности">Популярные Lua-скрипты для My Summer Car: обзор и возможности</a></li><li><a href="#как-написать-свой-lua-скрипт-для-my-summer-car-базовые-принципы">Как написать свой Lua-скрипт для My Summer Car: базовые принципы</a></li><li><a href="#типичные-ошибки-и-их-исправление">Типичные ошибки и их исправление</a></li><li><a href="#продвинутые-техники-события-хуки-и-взаимодействие-с-миром">Продвинутые техники: события, хуки и взаимодействие с миром</a></li><li><a href="#оптимизация-и-производительность-как-не-тормозить-игру">Оптимизация и производительность: как не тормозить игру</a></li><li><a href="#faq-часто-задаваемые-вопросы-о-lua-в-my-summer-car">FAQ: Часто задаваемые вопросы о Lua в My Summer Car</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body"><p><em>My Summer Car</em> — это не просто игра о сборке автомобиля в финской глубинке, а целый симулятор жизни с детально проработанной физикой, экономикой и даже психологией персонажа. Но что делать, если стандартного геймплея мало? Здесь на помощь приходит <strong>Lua</strong> — скриптовый язык, который позволяет модифицировать игру буквально под любые нужды: от мелких улучшений интерфейса до полной переработки механики транспортных средств.</p>
+
+<p>В этом руководстве мы разберём, как работают Lua-скрипты в <em>MSC</em>, где их искать, как устанавливать и писать самостоятельно. Вы узнаете, какие возможности открывает <strong>модификация через Lua</strong> — от простых читов (бесконечные деньги, мгновенная сборка деталей) до сложных систем (автопилот, динамическая погода, новые транспортные средства). Особое внимание уделим типичным ошибкам новичков, методам отладки и совместимости с последними версиями игры.</p>
+
+<p>Важно: Lua в <em>My Summer Car</em> — это не официальный инструмент от разработчиков, а продукт сообщества. Это означает, что некоторые скрипты могут конфликтовать друг с другом или ломаться после обновлений игры. Однако гибкость языка позволяет адаптировать код под новые реалии, и именно этому мы научимся.</p>
+
+<h2 id="что-такое-lua-и-почему-он-используется-в-my-summer-car">Что такое Lua и почему он используется в My Summer Car</h2>
+
+<p><strong>Lua</strong> — это лёгкий, встраиваемый скриптовый язык, изначально созданный для расширения функциональности программ без их перекомпиляции. В контексте <em>My Summer Car</em> он выполняет роль моста между игровым движком и пользовательскими модификациями. Преимущества Lua для моддинга:</p>
+
+<ul>
+  <li>🔹 <strong>Простота синтаксиса</strong>: даже без опыта программирования можно разобраться в базовых конструкциях за несколько часов.</li>
+  <li>🔹 <strong>Быстрое выполнение</strong>: скрипты обрабатываются в реальном времени без задержек.</li>
+  <li>🔹 <strong>Гибкость</strong>: можно изменять почти любой аспект игры — от физики до диалогов NPC.</li>
+  <li>🔹 <strong>Сообщество</strong>: тысячи готовых скриптов на форумах и в Steam Workshop.</li>
+</ul>
+
+<p>В <em>MSC</em> Lua-скрипты взаимодействуют с игровыми объектами через <strong>API</strong> (Application Programming Interface), которое предоставляет доступ к:</p>
+<ul>
+  <li>📌 Параметрам транспортных средств (скорость, износ деталей, топливо).</li>
+  <li>📌 Состоянию игрока (усталость, голод, деньги).</li>
+  <li>📌 Окружающей среде (время суток, погода, спавн NPC).</li>
+  <li>📌 Интерфейсу (HUD, меню, уведомления).</li>
+</ul>
+
+<p>Главный файл, с которым работает большинство скриптов — это <code>game.lua</code>, расположенный в папке с игрой. Именно через него происходит основное взаимодействие с игровым миром. Однако для установки модов обычно не требуется редактировать оригинальные файлы: скрипты подгружаются из отдельных папок, что делает процесс безопасным.</p>
+
+<div class="pb-poll" id="poll-16f72610"><div class="pb-poll-question">📊 Для чего вы хотите использовать Lua в My Summer Car?</div><div class="pb-poll-option" data-poll="16f72610" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Читы (деньги, здоровье)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="16f72610" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Улучшение физики автомобиля</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="16f72610" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Новые транспортные средства</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="16f72610" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Кастомные миссии и NPC</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="16f72610" data-idx="4" onclick="pbPollVote(this)"><span class="pb-poll-label">Другое</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="как-установить-lua-скрипты-пошаговая-инструкция">Как установить Lua-скрипты: пошаговая инструкция</h2>
+
+<p>Установка скриптов в <em>My Summer Car</em> не требует глубоких технических знаний, но важно следовать алгоритму, чтобы избежать ошибок. Вот универсальная инструкция для большинства модов:</p>
+
+<ol>
+  <li><strong>Скачайте скрипт</strong> с проверенного источника (рекомендуем <a href="https://steamcommunity.com/app/516750/workshop/" target="_blank" rel="noopener">Steam Workshop</a> или <a href="https://www.beamng.com/threads/" target="_blank" rel="noopener">форумы моддеров</a>). Обращайте внимание на версию игры, для которой предназначен мод.</li>
+  <li><strong>Распакуйте архив</strong> (если скрипт в формате <code>.zip</code> или <code>.rar</code>). Чаще всего внутри будет папка с названием мода и файлом <code>script.lua</code>.</li>
+  <li><strong>Поместите файлы</strong> в правильную директорию:
+    <pre><code>Steam\steamapps\common\My Summer Car\data\scripts\</code></pre>
+<p>Если папки <code>scripts</code> нет — создайте её вручную.</li></p>
+  <li><strong>Активируйте мод</strong> в игре через консоль (клавиша <code>~</code>) командой:
+    <pre><code>script.load("название_скрипта.lua")</code></pre>
+<p>Или добавьте строку в файл <code>autoexec.cfg</code> для автоматической загрузки.</li></p>
+</ol>
+
+<p>Некоторые скрипты требуют дополнительных библиотек (например, <code>json.lua</code> для работы с данными). Их нужно скачивать отдельно и размещать в той же папке <code>scripts</code>. Если после установки мод не работает, проверьте:</p>
+
+<p>Правильное название файла (регистр важен!)</p>
+<p>Отсутствие опечаток в команде загрузки</p>
+<p>Совместимость версии скрипта с версией игры</p>
+<p>Наличие всех зависимостей (дополнительные файлы .dll или .lua)</p>
+<p>Отсутствие конфликтов с другими модами--></p>
+
+<p><mark>Критическая ошибка: никогда не заменяйте оригинальные файлы игры (например, <code>game.lua</code> в папке <code>data</code>) без резервной копии. Это может привести к неработоспособности игры и необходимости полной переустановки.</mark></p>
+
+<h2 id="популярные-lua-скрипты-для-my-summer-car-обзор-и-возможности">Популярные Lua-скрипты для My Summer Car: обзор и возможности</h2>
+
+<p>Сообщество моддеров создало сотни скриптов для <em>MSC</em>, решающих разные задачи — от упрощения геймплея до полной его трансформации. Рассмотрим наиболее востребованные категории:</p>
+
+<div class="pb-table-wrap"><table>
+  <thead>
+    <tr>
+      <th>Категория</th>
+      <th>Примеры скриптов</th>
+      <th>Что меняет</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Читы</strong></td>
+      <td><code>infinite_money.lua</code>, <code>no_hunger.lua</code></td>
+      <td>Бесконечные деньги, отсутствие голода/усталости, мгновенный ремонт деталей.</td>
+    </tr>
+    <tr>
+      <td><strong>Физика</strong></td>
+      <td><code>realistic_damage.lua</code>, <code>better_suspension.lua</code></td>
+      <td>Более реалистичные повреждения, улучшенная подвеска, изменённое сцепление с дорогой.</td>
+    </tr>
+    <tr>
+      <td><strong>Транспорт</strong></td>
+      <td><code>new_cars.lua</code>, <code>boat_physics.lua</code></td>
+      <td>Добавление новых машин (например, <em>Satsuma</em> с турбиной), улучшенная физика лодок.</td>
+    </tr>
+    <tr>
+      <td><strong>Интерфейс</strong></td>
+      <td><code>custom_hud.lua</code>, <code>speedometer_fix.lua</code></td>
+      <td>Новые элементы HUD, исправление багов спидометра, добавление индикаторов износа деталей.</td>
+    </tr>
+    <tr>
+      <td><strong>Геймплей</strong></td>
+      <td><code>dynamic_weather.lua</code>, <code>npc_ai_improved.lua</code></td>
+      <td>Динамическая смена погоды, улучшенное поведение NPC, новые квесты.</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>Один из самых популярных скриптов — <code>satsuma_tuning.lua</code>, который позволяет глубоко кастомизировать <em>Satsuma</em>:</p>
+<ul>
+  <li>🔧 Изменение передаточных чисел коробки передач.</li>
+  <li>🔧 Настройка давления в шинах и жёсткости подвески.</li>
+  <li>🔧 Добавление турбины или компрессора с реалистичным бустом.</li>
+  <li>🔧 Регулировка расхода топлива и температуры двигателя.</li>
+</ul>
+
+<p>Для установки большинства скриптов из таблицы достаточно скачать их и поместить в папку <code>scripts</code>, но некоторые (например, добавляющие новые модели машин) требуют дополнительных файлов текстур и 3D-моделей. Всегда читайте инструкцию автора мода!</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Перед установкой нескольких скриптов проверьте их на совместимость. Некоторые модификации физики могут конфликтовать с читами (например, бесконечное топливо и реалистичный расход).</p></aside>
+
+<h2 id="как-написать-свой-lua-скрипт-для-my-summer-car-базовые-принципы">Как написать свой Lua-скрипт для My Summer Car: базовые принципы</h2>
+
+<p>Если готовые моды не покрывают ваши нужды, можно создать собственный скрипт. Для начала разберёмся с основами синтаксиса Lua и спецификой <em>MSC</em>.</p>
+
+<p>Любой скрипт начинается с подключения к игровому API. Минимальный рабочий пример:</p>
+<pre><code>-- Подключаем основные функции игры
+<p>local game = require('game')</p>
+
+<p>-- Функция, которая выполняется каждый кадр</p>
+<p>function onUpdate(dt)</p>
+<p>-- Ваш код здесь</p>
+<p>game.player.money = 1000000 -- Пример: установка денег</p>
+<p>end</p>
+
+<p>-- Регистрируем функцию в игре</p>
+<p>game.addUpdateHandler(onUpdate)</code></pre></p>
+
+<p>Ключевые элементы скрипта:</p>
+<ul>
+  <li>📝 <code>require('game')</code> — подключает игровой API.</li>
+  <li>📝 <code>onUpdate(dt)</code> — функция, вызываемая каждый кадр (где <code>dt</code> — время между кадрами в секундах).</li>
+  <li>📝 <code>game.addUpdateHandler</code> — регистрирует вашу функцию в игре.</li>
+  <li>📝 <code>game.player</code>, <code>game.vehicles</code> — объекты для взаимодействия с игроком и транспортом.</li>
+</ul>
+
+<p>Пример скрипта, который выводит координаты игрока в консоль:</p>
+<pre><code>local game = require('game')
+
+<p>function onUpdate(dt)</p>
+<p>local pos = game.player.position</p>
+<p>print(string.format("X: %.2f, Y: %.2f, Z: %.2f", pos.x, pos.y, pos.z))</p>
+<p>end</p>
+
+<p>game.addUpdateHandler(onUpdate)</code></pre></p>
+
+<p>Для отладки используйте команду <code>print()</code> — она выводит текст в консоль игры (открывается клавишей <code>~</code>). Также полезно знать основные объекты API:</p>
+<ul>
+  <li>🚗 <code>game.vehicles[1]</code> — доступ к первому транспортному средству (обычно это <em>Satsuma</em>).</li>
+  <li>💰 <code>game.player.money</code> — текущее количество денег.</li>
+  <li>⚡ <code>game.vehicles[1].engineHealth</code> — состояние двигателя (от 0 до 1).</li>
+  <li>🛠️ <code>game.vehicles[1].repairPart("engine")</code> — ремонт детали.</li>
+</ul>
+
+<details class="pb-accordion"><summary>Как найти ID детали для ремонта?</summary><div class="pb-accordion-body"><p>В <em>My Summer Car</em> каждая деталь имеет уникальный идентификатор. Чтобы узнать ID, используйте скрипт:
+<pre><code>local game = require('game')
+<p>for k,v in pairs(game.vehicles[1].parts) do</p>
+<p>print(k) -- Выведет все доступные детали</p>
+<p>end</code></pre></p>
+<p>Список включает такие ID, как <code>"engine"</code>, <code>"gearbox"</code>, <code>"wheel_fl"</code> (переднее левое колесо) и другие.</p></div></details></p>
+
+<h2 id="типичные-ошибки-и-их-исправление">Типичные ошибки и их исправление</h2>
+
+<p>Даже опытные моддеры сталкиваются с багами при работе с Lua в <em>MSC</em>. Вот наиболее распространённые проблемы и способы их решения:</p>
+
+<blockquote>⚠️ <strong>Внимание:</strong> Если после установки скрипта игра перестаёт запускаться, удалите файл мода из папки <code>scripts</code> и проверьте логи ошибок в файле <code>output_log.txt</code> (находится в корневой папке игры). Чаще всего причиной являются синтаксические ошибки или отсутствие зависимостей.</blockquote>
+
+<div class="pb-table-wrap"><table>
+  <thead>
+    <tr>
+      <th>Ошибка</th>
+      <th>Причина</th>
+      <th>Решение</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>attempt to index a nil value</code></td>
+      <td>Попытка обратиться к несуществующему объекту (например, машине, которой нет на карте).</td>
+      <td>Проверьте наличие объекта через <code>if game.vehicles[1] then</code>.</td>
+    </tr>
+    <tr>
+      <td><code>invalid argument</code></td>
+      <td>Передан неверный тип данных в функцию (например, строка вместо числа).</td>
+      <td>Используйте <code>tonumber()</code> для преобразования типов.</td>
+    </tr>
+    <tr>
+      <td>Скрипт не загружается</td>
+      <td>Опечатка в имени файла или команде <code>script.load()</code>.</td>
+      <td>Проверьте регистр символов и расширение (<code>.lua</code>).</td>
+    </tr>
+    <tr>
+      <td>Игра вылетает при загрузке</td>
+      <td>Конфликт с другим модом или повреждённый файл скрипта.</td>
+      <td>Отключите все скрипты и подключайте по одному, чтобы найти виновника.</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>Одна из самых коварных ошибок — <strong>бесконечный цикл</strong>, который "подвешивает" игру. Например, такой код застопорит <em>MSC</em>:</p>
+<pre><code>while true do
+<p>game.player.money = game.player.money + 1</p>
+<p>end</code></pre></p>
+<p>Чтобы избежать зависаний, всегда ограничивайте циклы по времени или условию:</p>
+<pre><code>local timer = 0
+<p>function onUpdate(dt)</p>
+<p>timer = timer + dt</p>
+<p>if timer > 1 then -- Выполняем раз в секунду</p>
+<p>game.player.money = game.player.money + 100</p>
+<p>timer = 0</p>
+<p>end</p>
+<p>end</code></pre></p>
+
+<p>Если скрипт работает нестабильно, добавьте проверки на <code>nil</code>:</p>
+<pre><code>function onUpdate(dt)
+<p>if game and game.player then</p>
+<p>game.player.money = 1000000</p>
+<p>end</p>
+<p>end</code></pre></p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Всегда тестируйте скрипты на резервной копии сохранения. Некоторые модификации (например, изменение физики) могут сделать игру несбалансированной или даже непригодной для прохождения.</p></aside>
+
+<h2 id="продвинутые-техники-события-хуки-и-взаимодействие-с-миром">Продвинутые техники: события, хуки и взаимодействие с миром</h2>
+
+<p>Базовые скрипты меняют параметры игрока или машин, но настоящая мощь Lua в <em>My Summer Car</em> проявляется при работе с <strong>событиями</strong> и <strong>хуками</strong> (hook — "крючок", точка перехвата управления). Это позволяет реагировать на действия игрока или изменять логику игры на глубоком уровне.</p>
+
+<p>Примеры событий, которые можно отслеживать:</p>
+<ul>
+  <li>🔧 <code>onVehicleEnter(vehicle)</code> — игрок садится в транспорт.</li>
+  <li>🔧 <code>onPartBroken(part)</code> — деталь ломается.</li>
+  <li>🔧 <code>onMoneyChange(amount)</code> — изменяется количество денег.</li>
+  <li>🔧 <code>onTimeChange(hour)</code> — меняется время суток.</li>
+</ul>
+
+<p>Пример скрипта, который чинит машину при посадке в неё:</p>
+<pre><code>local game = require('game')
+
+<p>function onVehicleEnter(vehicle)</p>
+<p>if vehicle then</p>
+<p>vehicle:repairAllParts() -- Чиним все детали</p>
+<p>game.player:notify("Машина отремонтирована!") -- Уведомление игроку</p>
+<p>end</p>
+<p>end</p>
+
+<p>game.addEventHandler("onVehicleEnter", onVehicleEnter)</code></pre></p>
+
+<p>Для создания новых механик часто используют <strong>таймеры</strong> и <strong>корутины</strong> (потоки выполнения). Например, скрипт динамической погоды:</p>
+<pre><code>local game = require('game')
+<p>local weatherTypes = {"clear", "rain", "snow"}</p>
+<p>local currentWeather = 1</p>
+
+<p>function updateWeather()</p>
+<p>currentWeather = currentWeather + 1</p>
+<p>if currentWeather > #weatherTypes then currentWeather = 1 end</p>
+<p>game.setWeather(weatherTypes[currentWeather])</p>
+<p>game.player:notify("Погода изменилась на " .. weatherTypes[currentWeather])</p>
+<p>end</p>
+
+<p>-- Меняем погоду каждые 5 минут (300 секунд)</p>
+<p>game.setTimer(updateWeather, 300000)</code></pre></p>
+
+<p>Для работы с <em>NPC</em> и квестами потребуется глубокое понимание структуры игры. Например, чтобы заставить <em>Теймо</em> (Teimo) продавать детали дешевле, можно модифицировать его таблицу цен:</p>
+<pre><code>local game = require('game')
+<p>game.shops.teimo.priceMultiplier = 0.5 -- Скидка 50%</code></pre></p>
+
+<blockquote>⚠️ <strong>Внимание:</strong> Изменение логики NPC или квестов может сломать прохождение основной истории. Рекомендуется создавать резервные копии файлов <code>savegame.lua</code> перед экспериментами.</blockquote>
+
+<h2 id="оптимизация-и-производительность-как-не-тормозить-игру">Оптимизация и производительность: как не тормозить игру</h2>
+
+<p>Плохо написанные Lua-скрипты могут значительно снизить FPS в <em>My Summer Car</em>, особенно если они выполняют тяжёлые вычисления каждый кадр. Следуйте этим правилам для оптимизации:</p>
+
+<ul>
+  <li>⚡ <strong>Избегайте частых вызовов <code>print()</code></strong>: каждый вывод в консоль тормозит игру. Используйте его только для отладки.</li>
+  <li>⚡ <strong>Кэшируйте объекты</strong>: не ищите <code>game.vehicles[1]</code> каждый кадр — сохраните ссылку в переменную.</li>
+  <li>⚡ <strong>Ограничивайте частоту обновлений</strong>: не все скрипты нужно выполнять 60 раз в секунду.</li>
+  <li>⚡ <strong>Избегайте вложенных циклов</strong>: они экспоненциально увеличивают нагрузку.</li>
+</ul>
+
+<p>Пример оптимизированного скрипта (обновляет деньги раз в секунду, а не каждый кадр):</p>
+<pre><code>local game = require('game')
+<p>local timer = 0</p>
+
+<p>function onUpdate(dt)</p>
+<p>timer = timer + dt</p>
+<p>if timer >= 1 then -- Раз в секунду</p>
+<p>game.player.money = game.player.money + 100</p>
+<p>timer = 0</p>
+<p>end</p>
+<p>end</p>
+
+<p>game.addUpdateHandler(onUpdate)</code></pre></p>
+
+<p>Для сложных скриптов (например, изменяющих физику всех машин на карте) используйте <strong>пространственные разделёные структуры</strong> (например, октодеревья), чтобы не проверять все объекты каждый кадр. Пример оптимизации проверки столкновений:</p>
+<pre><code>-- Плохо (проверяем все машины каждый кадр)
+<p>for i, veh in ipairs(game.vehicles) do</p>
+<p>if veh.position:distance(game.player.position) < 10 then</p>
+<p>-- Делаем что-то</p>
+<p>end</p>
+<p>end</p>
+
+<p>-- Лучше (проверяем только близкие объекты)</p>
+<p>local lastCheck = 0</p>
+<p>local nearbyVehicles = {}</p>
+
+<p>function onUpdate(dt)</p>
+<p>lastCheck = lastCheck + dt</p>
+<p>if lastCheck > 0.5 then -- Раз в 0.5 секунды</p>
+<p>nearbyVehicles = game.getVehiclesInRadius(game.player.position, 10)</p>
+<p>lastCheck = 0</p>
+<p>end</p>
+<p>for _, veh in ipairs(nearbyVehicles) do</p>
+<p>-- Работаем только с близкими машинами</p>
+<p>end</p>
+<p>end</code></pre></p>
+
+<p>Если скрипт всё равно тормозит, попробуйте:</p>
+<ol>
+  <li>Отключить другие моды — они могут конфликтовать.</li>
+  <li>Уменьшить частоту обновлений (например, с 60 до 30 раз в секунду).</li>
+  <li>Использовать <code>game.collectgarbage()</code> для очистки памяти (вызывайте раз в несколько минут).</li>
+</ol>
+
+<h2 id="faq-часто-задаваемые-вопросы-о-lua-в-my-summer-car">FAQ: Часто задаваемые вопросы о Lua в My Summer Car</h2>
+
+<details>
+  <summary>Можно ли использовать Lua-скрипты в мультиплеере?</summary>
+  <p>Официальный мультиплеер <em>My Summer Car</em> (через <em>Teardown Multiplayer Mod</em>) не поддерживает большинство Lua-скриптов, так как они взаимодействуют с локальной копией игры. Однако некоторые серверы разрешают клиентские моды, не затрагивающие сетевую синхронизацию (например, изменение HUD). Всегда уточняйте правила на конкретном сервере.</p>
+</details>
+
+<details>
+  <summary>Как обновить скрипт после обновления игры?</summary>
+  <p>После крупных обновлений <em>MSC</em> некоторые функции API могут меняться или удаляться. Чтобы адаптировать скрипт:</p>
+  <ol>
+    <li>Проверьте логи ошибок (<code>output_log.txt</code>).</li>
+    <li>Сравните старую и новую версию <code>game.lua</code> (можно найти в архивах Steam).</li>
+    <li>Обновите вызовы устаревших функций (например, <code>game.player.setMoney()</code> мог стать <code>game.player.money = value</code>).</li>
+  </ol>
+  <p>Если автор скрипта больше не поддерживает его, попробуйте найти форк на GitHub или адаптируйте код самостоятельно.</p>
+</details>
+
+<details>
+  <summary>Где учиться писать сложные скрипты для MSC?</summary>
+  <p>Для глубокого погружения в моддинг <em>My Summer Car</em> изучите:</p>
+  <ul>
+    <li>📖 <a href="https://www.lua.org/pil/" target="_blank" rel="noopener">Официальное руководство по Lua</a> (на английском).</li>
+    <li>📖 <a href="https://github.com/inally/MSC-Lua-Docs" target="_blank" rel="noopener">Документацию API для MSC</a> (составленную сообществом).</li>
+    <li>📖 Раздел <a href="https://steamcommunity.com/app/516750/discussions/5/" target="_blank" rel="noopener">Steam Workshop</a> — там часто выкладывают исходники скриптов.</li>
+    <li>📖 Видеоуроки на YouTube (поиск по запросам "<em>My Summer Car Lua tutorial</em>").</li>
+  </ul>
+  <p>Начните с простых модификаций (например, изменение HUD), затем переходите к физике и NPC.</p>
+</details>
+
+<details>
+  <summary>Могут ли скрипты забанить аккаунт в Steam?</summary>
+  <p>Нет, использование Lua-скриптов в <em>одиночной игре</em> не нарушает правила Steam, так как они не затрагивают сетевые функции. Однако:</p>
+  <ul>
+    <li>Использование читов в <strong>мультиплеере</strong> может привести к бану на конкретном сервере.</li>
+    <li>Скрипты, модифицирующие исполняемые файлы игры (например, через DLL-инъекции), теоретически могут вызвать подозрения у античита VAC, но таких случаев для <em>MSC</em> не зафиксировано.</li>
+  </ul>
+  <p>Для полной безопасности отключайте моды перед входом в онлайн-режимы.</p>
+</details>
+
+<details>
+  <summary>Как сделать резервную копию перед установкой скриптов?</summary>
+  <p>Чтобы избежать потери прогресса:</p>
+  <ol>
+    <li>Скопируйте папку с сохранениями:
+      <pre><code>Steam\userdata\{YOUR_STEAM_ID}\516750\remote</code></pre>
+    </li>
+    <li>Создайте копию файла <code>savegame.lua</code> в папке игры (если используете моды, сохраняющие прогресс).</li>
+    <li>Используйте Steam Cloud: включите облачные сохранения в свойствах игры (правый клик → <code>Облачные сохранения</code>).</li>
+  </ol>
+  <p>Для быстрого отката достаточно заменить файлы из резервной копии.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/c/ch/chto-takoe-r-lajn.html" class="pb-related-card">
+                <span class="pb-related-title">R-Line в Volkswagen: что это, отличия и комплектация</span>
+                <span class="pb-related-desc">Подробный разбор R-Line в автомобилях Volkswagen. Чем отличается от GTI и R, какие опции входят в па</span>
+            </a><a href="/articles/m/ma/mashina-so-znachkom-betmena.html" class="pb-related-card">
+                <span class="pb-related-title">Машина с логотипом Бэтмена: как сделать и не нарушить закон</span>
+                <span class="pb-related-desc">Хотите автомобиль с эмблемой Бэтмена? Узнайте, как легально установить значок, избежать штрафов и вы</span>
+            </a><a href="/articles/m/ma/mashinka-shablon-dlya-risovaniya.html" class="pb-related-card">
+                <span class="pb-related-title">Машинка-шаблон для рисования: как выбрать и использовать в 2026 году</span>
+                <span class="pb-related-desc">Подробный гайд по выбору машинки-шаблона для рисования: виды, применение в авто-дизайне, обзор лучши</span>
+            </a><a href="/articles/a/am/amg-chto-eto-mashina.html" class="pb-related-card">
+                <span class="pb-related-title">АМГ: что это за машина и почему она стоит дорого</span>
+                <span class="pb-related-desc">Разбираем, что означает АМГ в контексте автомобилей Mercedes-Benz. История бренда, технические особе</span>
+            </a><a href="/articles/z/za/zachem-nuzhen-blou-off.html" class="pb-related-card">
+                <span class="pb-related-title">Зачем нужен blow off клапан: принцип работы и виды</span>
+                <span class="pb-related-desc">Узнайте, зачем нужен blow off клапан в системе турбонаддува. Разбираем принцип работы, типы перепуск</span>
+            </a><a href="/articles/k/ka/kak-dobavit-mashiny-v-gta-san-andreas.html" class="pb-related-card">
+                <span class="pb-related-title">Как добавить машины в GTA San Andreas: полный гайд</span>
+                <span class="pb-related-desc">Подробная инструкция, как установить моды на авто в GTA SA. Обзор модлоадеров, поиск качественных мо</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

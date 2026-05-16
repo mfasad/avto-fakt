@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Расстояние между городами на АТИ: как посчитать точно — Авто Факт</title>
+    <meta name="description" content="Подробный гид по расчету километража на АТИ.СУТЬ. Как правильно строить маршруты, учитывать пустые пробеги и использовать API для логистики.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/a/at/ati-rasstoyanie-mezhdu-gorodami.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Расстояние между городами на АТИ: как посчитать точно">
+    <meta property="og:description" content="Подробный гид по расчету километража на АТИ.СУТЬ. Как правильно строить маршруты, учитывать пустые пробеги и использовать API для логистики.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Расстояние между городами на АТИ: как посчитать точно</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#основные-принципы-расчета-маршрута-на-платформе-ати">Основные принципы расчета маршрута на платформе АТИ</a></li><li><a href="#пошаговая-инструкция-как-построить-маршрут-через-точки">Пошаговая инструкция: как построить маршрут через точки</a></li><li><a href="#учет-пустых-пробегов-и-оптимизация-логистики">Учет пустых пробегов и оптимизация логистики</a></li><li><a href="#сравнение-расстояний-ати-против-яндекскарт-и-google-maps">Сравнение расстояний: АТИ против Яндекс.Карт и Google Maps</a></li><li><a href="#работа-с-api-и-автоматизация-расчетов">Работа с API и автоматизация расчетов</a></li><li><a href="#типичные-ошибки-при-расчете-расстояний">Типичные ошибки при расчете расстояний</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/m/mu/multiskaner-dlya-diagnostiki-avtomobilej-kakoj-vybrat.html">Мультисканер для диагностики авто: как выбрать лучший в 2026 году</a></li><li><a href="/articles/k/ka/kak-pravilno-podobrat-dinamiki-k-avtomagnitole-bez-usilitelya-v-mashinu.html">Как подобрать динамики к магнитоле без усилителя: гид по мощности и чувствительности</a></li><li><a href="/articles/p/pr/printsip-raboty-gibridnogo-dvigatelya-na-avtomobile.html">Принцип работы гибридного двигателя: устройство и виды</a></li><li><a href="/articles/k/ko/kofemashina-delongi-magnifika-pronto-kapuchino.html">Delonghi Magnifica Pronto Cappuccino: обзор и настройки</a></li><li><a href="/articles/a/ac/ac-v-avtomobile-chto-eto.html">AC в автомобиле: что это такое и как работает кондиционер</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как точно рассчитать расстояние между городами на АТИ: полное руководство для логистов</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#основные-принципы-расчета-маршрута-на-платформе-ати">Основные принципы расчета маршрута на платформе АТИ</a></li><li><a href="#пошаговая-инструкция-как-построить-маршрут-через-точки">Пошаговая инструкция: как построить маршрут через точки</a></li><li><a href="#учет-пустых-пробегов-и-оптимизация-логистики">Учет пустых пробегов и оптимизация логистики</a></li><li><a href="#сравнение-расстояний-ати-против-яндекскарт-и-google-maps">Сравнение расстояний: АТИ против Яндекс.Карт и Google Maps</a></li><li><a href="#работа-с-api-и-автоматизация-расчетов">Работа с API и автоматизация расчетов</a></li><li><a href="#типичные-ошибки-при-расчете-расстояний">Типичные ошибки при расчете расстояний</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+<p>В мире современных грузоперевозок точность планирования маршрута является не просто удобством, а критически важным фактором рентабельности бизнеса. <strong>Расстояние между городами</strong> на АТИ.СУТЬ (ранее АТИ.РУ) рассчитывается с учетом реальной дорожной сети, что позволяет логистам и экспедиторам избегать ошибок, вызванных измерением по прямой линии. Использование специализированных картографических сервисов, интегрированных в платформу, дает возможность получить детализированную информацию о пробеге, времени в пути и даже примерном расходе топлива.</p>
+<p>Многие новички в логистике ошибочно полагают, что достаточно просто посмотреть на карту и прикинуть километраж"на глаз". Однако профессиональная работа требует точных цифр для составления <em>путевых листов</em> и расчета стоимости фрахта. Платформа АТИ предоставляет инструменты, которые учитывают не только геометрию дорог, но и актуальную дорожную ситуацию, включая платные участки и ограничения по весу. Именно поэтому умение правильно пользоваться калькулятором расстояний на этом ресурсе становится базовым навыком для любого диспетчера.</p>
+<p>В данной статье мы подробно разберем алгоритмы работы встроенных инструментов, рассмотрим нюансы ручного построения маршрута через точки и обсудим, как избежать типичных ошибок при планировании сложных рейсов с заездами. <mark>Точный расчет километража на АТИ позволяет сократить холостые пробеги до 15%, что напрямую влияет на чистую прибыль транспортной компании.</mark> Понимание этих механизмов необходимо как владельцам автопарков, так и частным перевозчикам, работающим через биржу.</p>
+
+<h2 id="основные-принципы-расчета-маршрута-на-платформе-ати">Основные принципы расчета маршрута на платформе АТИ</h2>
+<p>Система АТИ.СУТЬ базируется на мощных картографических движках, которые позволяют строить маршруты любой сложности. Когда вы вводите пункты отправления и назначения, алгоритм автоматически прокладывает путь по существующим дорогам, игнорируя прямые линии, которые физически невозможно преодолеть на грузовике. <strong>Автоматический расчет</strong> учитывает классификацию дорог, что особенно важно для крупногабаритных грузовиков, которым запрещен проезд по узким участкам или грунтовкам.</p>
+<p>Одной из ключевых особенностей является возможность добавления промежуточных точек. Логист может задать последовательность городов, через которые должен проследовать транспорт, и система суммирует все отрезки пути. Это незаменимо при сборных грузах или мультимодальных перевозках. </p>
+<p>Для точности данных система периодически обновляет картографическую основу, однако всегда стоит учитывать человеческий фактор при вводе данных. Неправильно указанная область или город-тезка могут увести маршрут в совершенно другой регион. Поэтому <strong>географическая привязка</strong> должна всегда перепроверяться визуально на карте перед финализацией заявки или расчетом стоимости.</p>
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Автоматический прокладчик маршрута на АТИ учитывает реальную дорожную сеть, а не расстояние по прямой, что критично для расчета расхода топлива и времени водителя.</p></aside>
+
+<h2 id="пошаговая-инструкция-как-построить-маршрут-через-точки">Пошаговая инструкция: как построить маршрут через точки</h2>
+<p>Процесс построения маршрута на сайте требует внимательности и соблюдения определенной последовательности действий. Интерфейс сервиса разработан интуитивно понятным, но содержит ряд скрытых функций, которые облегчают работу профессионалов. Для начала необходимо авторизоваться в личном кабинете, так как расширенный функционал калькулятора доступен именно зарегистрированным пользователям.</p>
+<p>Рассмотрим алгоритм действий более детально:</p>
+<ul>
+ <li>🚛 Перейдите в раздел «Калькулятор расстояний» или используйте виджет построения маршрута при создании новой заявки на поиск груза.</li>
+ <li>🗺️ В поле «Откуда» введите название города, выберите правильный вариант из выпадающего списка, обращая внимание на регион, чтобы избежать ошибок с одноименными населенными пунктами.</li>
+ <li>🏁 В поле «Куда» укажите конечную точку маршрута, также сверяясь с картой для подтверждения локации.</li>
+ <li>➕ При необходимости нажмите кнопку «Добавить точку», чтобы вставить промежуточные города, и перетащите их в нужном порядке, если система выстроила их не оптимально.</li>
+</ul>
+<p>После заполнения полей система мгновенно произведет вычисления. Вы увидите не только общее расстояние, но и разбивку по участкам. Это позволяет детально анализировать каждый отрезок пути. Если вас не устраивает предложенный вариант дороги (например, система ведет через центр города, где действуют ограничения), вы можете вручную скорректировать маршрут, перетаскивая синюю линию на карте или добавляя <strong>контрольные точки</strong> (via points) для принудительного следования через конкретные трассы.</p>
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка перед расчетом</h4><label class="check-item"><input type="checkbox"><span>Уточнить точное название города и регион</span></label><label class="check-item"><input type="checkbox"><span>Проверить наличие ограничений для грузовиков в центре</span></label><label class="check-item"><input type="checkbox"><span>Сверить альтернативные маршруты</span></label><label class="check-item"><input type="checkbox"><span>Зафиксировать итоговый километраж в заявке</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="учет-пустых-пробегов-и-оптимизация-логистики">Учет пустых пробегов и оптимизация логистики</h2>
+<p>Одной из главных проблем в грузоперевозках является так называемый «пустой пробег» — движение транспорта без груза. На АТИ расстояние между городами часто рассчитывается именно для минимизации этих затрат. Логисты используют сервис, чтобы найти грузы в обратном направлении или построить кольцевой маршрут, где машина не возвращается в гараж порожняком. <strong>Оптимизация маршрута</strong> позволяет превратить убыточный перегон в доходный рейс.</p>
+<p>При планировании стоит учитывать, что расстояние туда и обратно может отличаться. Дорожная сеть не всегда симметрична: в одну сторону можно проехать по скоростной трассе, а обратно, из-за ограничений или ремонтов, придется выбирать объездной путь. Сервис АТИ помогает выявить такие нюансы заранее. Кроме того, при расчете <em>коммерческой скорости</em> необходимо закладывать время на загрузку, разгрузку и отдых водителя, а не только чистое время в пути.</p>
+<blockquote>
+ <p>⚠️ Внимание: При расчете стоимости перевозки всегда закладывайте запас в 5-10% к расстоянию, показанному на карте. Реальные условия (ремонт дорог, объезды, навигационные ошибки водителя) могут увеличить фактический пробег.</p>
+</blockquote>
+<p>Использование аналитики по направлениям помогает понять, насколько востребована та или иная связка городов. Если вы видите, что расстояние между двумя промышленными центрами велико, а обратных грузов мало, возможно, стоит рассмотреть вариант доставки сборного груза или консолидации партии. Это снижает удельную стоимость перевозки для каждого клиента.</p>
+
+<h2 id="сравнение-расстояний-ати-против-яндекскарт-и-google-maps">Сравнение расстояний: АТИ против Яндекс.Карт и Google Maps</h2>
+<p>Часто возникает вопрос: почему расстояние на АТИ отличается от данных в навигаторе или на других картографических сервисах? Разница обусловлена разными алгоритмами построения маршрута и целями использования. Яндекс.Карты и Google Maps часто приоритизируют скорость прибытия легковым автомобилем, предлагая маршруты через платные скоростные трассы или короткие, но сложные участки.</p>
+<p>АТИ.СУТЬ, будучи специализированным сервисом для грузового транспорта, старается учитывать габариты и массу ТС. Хотя базовая картография может быть схожей, логика выбора пути различается. Например, навигатор может повести через узкий мост в центре города, который свободен от пробок, но закрыт для фур. Поэтому <strong>расстояние на АТИ</strong> часто оказывается больше, но оно более реалистично для коммерческого транспорта.</p>
+<p>Для наглядности сравним показатели для условного маршрута Москва — Екатеринбург:</p>
+<div class="pb-table-wrap"><table>
+ <thead>
+ <tr>
+ <th>Сервис</th>
+ <th>Расстояние (км)</th>
+ <th>Время в пути</th>
+ <th>Особенности маршрута</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>АТИ.СУТЬ</td>
+ <td>~1810</td>
+ <td>24 ч 30 мин</td>
+ <td>Учет ограничений для грузовиков</td>
+ </tr>
+ <tr>
+ <td>Яндекс.Карты</td>
+ <td>~1790</td>
+ <td>23 ч 15 мин</td>
+ <td>Оптимально для легковых авто</td>
+ </tr>
+ <tr>
+ <td>Google Maps</td>
+ <td>~1805</td>
+ <td>23 ч 50 мин</td>
+ <td>Альтернативные объезды</td>
+ </tr>
+ </tbody>
+</table></div>
+<p>Как видно из таблицы, разница может составлять несколько десятков километров. Для разовой поездки это не критично, но в масштабах автопарка из 50 машин расхождение в 20 км на рейс выливается в тысячи литров лишнего топлива в месяц. Поэтому для <em>коммерческих расчетов</em> рекомендуется использовать специализированные инструменты логистических платформ.</p>
+<div class="pb-poll" id="poll-190a25c1"><div class="pb-poll-question">📊 Какой сервис вы используете для расчета маршрутов чаще всего?</div><div class="pb-poll-option" data-poll="190a25c1" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">АТИ.СУТЬ</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="190a25c1" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Яндекс.Карты</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="190a25c1" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Google Maps</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="190a25c1" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">2ГИС</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="190a25c1" data-idx="4" onclick="pbPollVote(this)"><span class="pb-poll-label">Другой</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="работа-с-api-и-автоматизация-расчетов">Работа с API и автоматизация расчетов</h2>
+<p>Для крупных транспортных компаний и интеграторов ручное построение маршрутов через веб-интерфейс может быть слишком медленным. В таких случаях на помощь приходит <strong>API АТИ</strong> (или аналогичные сервисы, интегрируемые с их базой). Это программный интерфейс, который позволяет вашей учетной системе (ERP, TMS) автоматически запрашивать расстояние между двумя координатами или адресами.</p>
+<p>Использование API позволяет:</p>
+<ul>
+ <li>📦 Мгновенно рассчитывать стоимость доставки для тысяч заказов в день без участия диспетчера.</li>
+ <li>📊 Вести точную статистику по пробегу и расходам в реальном времени.</li>
+ <li>🤖 Автоматически подбирать наиболее выгодные маршруты при планировании развозки (задача коммивояжера).</li>
+</ul>
+<p>Техническая реализация требует наличия токена доступа и базовых знаний программирования. Запрос обычно отправляется в формате JSON или XML, а в ответ система возвращает массив данных с координатами, километражем и временем. Это позволяет создавать сложные <em>алгоритмические модели</em> логистики, где расстояние является лишь одним из многих переменных, наряду с тарифами, типом кузова и срочностью.</p>
+<details class="pb-accordion"><summary>Пример запроса к API</summary><div class="pb-accordion-body"><p>Для получения расстояния через API необходимо сформировать GET-запрос с параметрами start_lat, start_lon, end_lat, end_lon. Ответ придет в виде JSON-объекта, содержащего поле'distance' в метрах и'duration' в секундах.</p></div></details>
+
+<h2 id="типичные-ошибки-при-расчете-расстояний">Типичные ошибки при расчете расстояний</h2>
+<p>Даже опытные логисты иногда допускают ошибки, которые приводят к финансовым потерям. Самая распространенная из них — игнорирование точного адреса. Город может быть огромным, и расстояние от склада на окраине до склада на другом конце может составлять 30-40 км, которые не учтены в межгородском пробеге. Всегда уточняйте <strong>индексы</strong> и конкретные улицы.</p>
+<p>Вторая ошибка — reliance on outdated data. Дороги строятся, открываются новые развязки, меняются схемы движения. Хотя АТИ обновляется, всегда полезно сверяться с актуальной ситуацией на местности, особенно если речь идет о удаленных регионах или сезонных дорогах (зимниках). <em>Сезонная доступность</em> некоторых направлений может кардинально менять маршрут.</p>
+<blockquote>
+ <p>⚠️ Внимание: Не используйте расстояние «по прямой» для расчета стоимости ГСМ и времени водителя. Реальный путь всегда длиннее, и игнорирование этого факта приведет к кассовому разрыву.</p>
+</blockquote>
+<p>Также стоит помнить о человеческом факторе при вводе данных. Опечатка в названии населенного пункта может перекинуть маршрут за сотни километров. Всегда визуально проверяйте синюю линию на карте после того, как система произведет расчет. Если линия идет через водоем или проходит сквозь кварталы без дорог — значит, точка выбрана неверно.</p>
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Сохраняйте часто используемые маршруты в избранное или создавайте шаблоны заявок. Это сэкономит время и исключит риск ошибки при повторном вводе названий городов.</p></aside>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+<details>
+ <summary>Можно ли рассчитать расстояние на АТИ без регистрации?</summary>
+ <p>Базовый функционал просмотра карты доступен всем, но для полноценного построения маршрутов, сохранения истории и использования калькулятора расстояний требуется авторизация. Регистрация на платформе бесплатна и занимает несколько минут.</p>
+</details>
+<details>
+ <summary>Учитывает ли система платные участки трасс?</summary>
+ <p>Да, современные алгоритмы построения маршрутов на АТИ учитывают наличие платных участков (например, М4, М11, М12). Однако точный расчет стоимости проезда через эти участки лучше производить отдельно, используя актуальные тарифы операторов дорог.</p>
+</details>
+<details>
+ <summary>Как быть, если город не находится в базе?</summary>
+ <p>Если населенный пункт очень маленький и отсутствует в базе, попробуйте ввести название ближайшего крупного города и добавить точные координаты или адрес вручную. Также можно использовать функцию «Точка на карте», чтобы задать координаты кликом мыши.</p>
+</details>
+<details>
+ <summary>Актуальны ли данные о ремонте дорог в калькуляторе?</summary>
+ <p>Картографическая основа обновляется регулярно, но информация о временных ограничениях и ремонтах может поступать с задержкой. Рекомендуется всегда проверять оперативную информацию в дорожных сервисах или чатах дальнобойщиков перед рейсом.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/m/mu/multiskaner-dlya-diagnostiki-avtomobilej-kakoj-vybrat.html" class="pb-related-card">
+                <span class="pb-related-title">Мультисканер для диагностики авто: как выбрать лучший в 2026 году</span>
+                <span class="pb-related-desc">Рейтинг мультисканеров для диагностики автомобилей: сравнение функций, совместимости и цен. Какой вы</span>
+            </a><a href="/articles/k/ka/kak-pravilno-podobrat-dinamiki-k-avtomagnitole-bez-usilitelya-v-mashinu.html" class="pb-related-card">
+                <span class="pb-related-title">Как подобрать динамики к магнитоле без усилителя: гид по мощности и чувствительности</span>
+                <span class="pb-related-desc">Узнайте, как правильно выбрать акустику для штатной магнитолы. Разбор мощности, чувствительности и ч</span>
+            </a><a href="/articles/p/pr/printsip-raboty-gibridnogo-dvigatelya-na-avtomobile.html" class="pb-related-card">
+                <span class="pb-related-title">Принцип работы гибридного двигателя: устройство и виды</span>
+                <span class="pb-related-desc">Подробный разбор того, как работает гибридный двигатель автомобиля. Схема, типы приводов, плюсы и ми</span>
+            </a><a href="/articles/k/ko/kofemashina-delongi-magnifika-pronto-kapuchino.html" class="pb-related-card">
+                <span class="pb-related-title">Delonghi Magnifica Pronto Cappuccino: обзор и настройки</span>
+                <span class="pb-related-desc">Полный гид по кофемашине Delonghi Magnifica Pronto Cappuccino. Настройка помола, капучинатора, устра</span>
+            </a><a href="/articles/a/ac/ac-v-avtomobile-chto-eto.html" class="pb-related-card">
+                <span class="pb-related-title">AC в автомобиле: что это такое и как работает кондиционер</span>
+                <span class="pb-related-desc">Разбираемся, что такое AC в машине, как работает автокондиционер, какие функции выполняет и как прав</span>
+            </a><a href="/articles/m/m4/m4-don-vkontakte-avtoklub.html" class="pb-related-card">
+                <span class="pb-related-title">М4 Дон ВКонтакте автоклуб: как создать, продвинуть и оформить</span>
+                <span class="pb-related-desc">Полная инструкция по созданию и оформлению автоклуба М4 Дон ВКонтакте. Сценарии ботов, идеи для пост</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

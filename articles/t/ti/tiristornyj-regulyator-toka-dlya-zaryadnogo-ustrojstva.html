@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Тиристорный регулятор тока для зарядного устройства своими руками — Авто Факт</title>
+    <meta name="description" content="Схема тиристорного регулятора тока для зарядного устройства. Настройка, принцип работы, преимущества фазового управления и таблица компонентов.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/t/ti/tiristornyj-regulyator-toka-dlya-zaryadnogo-ustrojstva.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Тиристорный регулятор тока для зарядного устройства своими руками">
+    <meta property="og:description" content="Схема тиристорного регулятора тока для зарядного устройства. Настройка, принцип работы, преимущества фазового управления и таблица компонентов.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/elektrika-avto/">Электрика Авто</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Тиристорный регулятор тока для зарядного устройства своими руками</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#принцип-фазового-регулирования-тока">Принцип фазового регулирования тока</a></li><li><a href="#типовая-схема-регулятора-на-тиристоре">Типовая схема регулятора на тиристоре</a></li><li><a href="#выбор-компонентов-и-их-характеристики">Выбор компонентов и их характеристики</a></li><li><a href="#процесс-сборки-и-монтажа-устройства">Процесс сборки и монтажа устройства</a></li><li><a href="#первый-запуск-и-настройка-регулятора">Первый запуск и настройка регулятора</a></li><li><a href="#преимущества-и-недостатки-тиристорных-схем">Преимущества и недостатки тиристорных схем</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/k/ka/kak-proverit-rabochij-li-generator-snyatyj.html">Как проверить генератор снятый с машины: пошаговая инструкция</a></li><li><a href="/articles/u/us/ustanovka-videokamery-zadnego-vida-na-avtomobil.html">Установка камеры заднего вида: пошаговая инструкция 2026</a></li><li><a href="/articles/n/na/na-chto-vliyaet-dlina-antenny.html">Длина антенны: как влияет на приём сигнала и мощность связи</a></li><li><a href="/articles/a/av/avtokholl-chto-eto-v-mashine-takoe.html">Автохолл что это в машине такое: принцип работы и устройство</a></li><li><a href="/articles/i/iz/izmerit-utechku-toka-multimetrom-na-avtomobile.html">Как измерить утечку тока мультиметром на авто: пошаговая инструкция</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Тиристорный регулятор тока для зарядного устройства: схема и настройка</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-фазового-регулирования-тока">Принцип фазового регулирования тока</a></li><li><a href="#типовая-схема-регулятора-на-тиристоре">Типовая схема регулятора на тиристоре</a></li><li><a href="#выбор-компонентов-и-их-характеристики">Выбор компонентов и их характеристики</a></li><li><a href="#процесс-сборки-и-монтажа-устройства">Процесс сборки и монтажа устройства</a></li><li><a href="#первый-запуск-и-настройка-регулятора">Первый запуск и настройка регулятора</a></li><li><a href="#преимущества-и-недостатки-тиристорных-схем">Преимущества и недостатки тиристорных схем</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Сборка самодельного <strong>зарядного устройства</strong> (ЗУ) для автомобильного аккумулятора часто начинается с выбора схемы управления выходным током. Наиболее надежным и проверенным временем решением является использование <em>тиристорных</em> схем, которые обеспечивают плавную регулировку и высокую надежность. В отличие от транзисторных аналогов, тиристоры меньше греются при больших токах и не боятся кратковременных перегрузок в цепи.</p>
+
+<p>Основная задача такого регулятора заключается в изменении угла открытия тиристора, что позволяет отсекать часть синусоиды напряжения и тем самым менять среднее значение тока зарядки. Это особенно актуально для свинцово-кислотных батарей, требующих строгого контроля параметров. Правильно собранный <strong>фазовый регулятор</strong> на тиристорах прослужит десятилетия без необходимости сложного обслуживания.</p>
+
+<p>В данной статье мы детально разберем принцип работы, рассмотрим типовую схему и обсудим нюансы настройки <strong>фазового управления</strong>. Понимание физических процессов, происходящих в полупроводниковых элементах, поможет избежать распространенных ошибок при сборке. Мы также уделим внимание безопасности, так как работа с сетевым напряжением требует строгого соблюдения правил.</p>
+
+<blockquote>⚠️ <strong>Внимание:</strong> Сборка и эксплуатация устройств, подключенных к сети 220В, несет риск поражения электрическим током. Все работы по пайке и первичному запуску проводите только при полностью отключенном питании и разряженных конденсаторах.</blockquote>
+
+<h2 id="принцип-фазового-регулирования-тока">Принцип фазового регулирования тока</h2>
+
+<p>В основе работы тиристорного регулятора лежит метод фазово-импульсного управления. <strong>Тиристор</strong> (или симистор) открывается только при подаче управляющего импульса на его затвор. Если подать этот импульс в начале полупериода синусоиды, тиристор откроется почти сразу, и в нагрузку пройдет максимальная мощность.</p>
+
+<p>Если же задержать подачу импульса, тиристор откроется позже, "срезав" верхушку синусоиды. Чем больше задержка, тем меньше времени открыт ключ и тем ниже средний ток, протекающий через аккумулятор. Этот процесс повторяется 100 раз в секунду (для сети 50 Гц), что обеспечивает достаточно плавную зарядку без сильных пульсаций, вредных для <strong>электролита</strong>.</p>
+
+<p>Для формирования задержки обычно используется <em>RC-цепочка</em> (резистор-конденсатор) или специализированная микросхема-таймер. Конденсатор заряжается через резистор, и когда напряжение на нем достигает порога срабатывания динистора или транзистора, происходит разряд на затвор тиристора. Изменяя сопротивление резистора, мы меняем время заряда конденсатора и, соответственно, угол открытия.</p>
+
+<ul>
+<li>🔌 <strong>Фаза открытия:</strong> момент времени, когда тиристор начинает проводить ток.</li>
+<li>📉 <strong>Средний ток:</strong> зависит от длительности открытого состояния в каждом полупериоде.</li>
+<li>⚡ <strong>Управляющий импульс:</strong> короткий сигнал, переводящий тиристор из закрытого состояния в открытое.</li>
+</ul>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Для уменьшения уровня пульсаций на выходе зарядного устройства рекомендуется использовать сглаживающий дроссель или увеличивать емкость выходного конденсатора, если позволяет схема выпрямителя.</p></aside>
+
+<h2 id="типовая-схема-регулятора-на-тиристоре">Типовая схема регулятора на тиристоре</h2>
+
+<p>Классическая схема зарядного устройства состоит из нескольких ключевых узлов: понижающего трансформатора, выпрямительного моста и самого тиристорного регулятора. Трансформатор снижает сетевое напряжение до безопасных 12-24 Вольт, а мост преобразует переменный ток в пульсирующий. Именно на этот пульсирующий ток и воздействует <strong>регулирующий элемент</strong>.</p>
+
+<p>В цепь управления часто включают <em>динистор</em> (например, серии КН102), который работает как пороговый элемент. Пока напряжение на конденсаторе не достигнет напряжения пробоя динистора, тиристор закрыт. Как только порог преодолен, динистор открывается и передает накопленный заряд на затвор, мгновенно открывая силовой ключ.</p>
+
+<p>Важным элементом является защитный диод, включенный параллельно управляющему электроду, который защищает затвор от обратного напряжения. Также в схеме присутствует мощный <strong>резистор</strong>, ограничивающий ток заряда конденсатора и позволяющий вручную регулировать скорость его накопления, тем самым управляя током зарядки аккумулятора.</p>
+
+<div class="pb-poll" id="poll-dcfe9805"><div class="pb-poll-question">📊 Какой тип трансформатора вы предпочитаете для самодельных ЗУ?</div><div class="pb-poll-option" data-poll="dcfe9805" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Тороидальный (компактный)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="dcfe9805" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Стандартный Ш-образный (доступный)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="dcfe9805" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Импульсный блок питания</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="dcfe9805" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Уже готовое ЗУ с регулировкой</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="выбор-компонентов-и-их-характеристики">Выбор компонентов и их характеристики</h2>
+
+<p>Качество и надежность работы зарядного устройства напрямую зависят от правильно подобранных компонентов. Силовой тиристор должен иметь запас по току минимум в 1.5-2 раза выше планируемого тока зарядки. Например, для тока 10А рекомендуется использовать тиристоры серии <em>Т122</em> или импортные аналоги <strong>BT138</strong> с радиатором.</p>
+
+<p>Диоды в выпрямительном мосту также должны выдерживать рабочий ток с запасом. Часто используют диодные сборки <em>KBPC</em> или отдельные диоды серии <strong>Д242</strong>. Особое внимание следует уделить системе охлаждения: даже при фазовом управлении тиристоры и диоды выделяют значительное количество тепла.</p>
+
+<p>Конденсаторы в цепи управления должны быть рассчитаны на напряжение не менее 50В (для низковольтной части) или 400В (если управление ведется непосредственно от сети до трансформатора, что менее безопасно). Резисторы лучше выбирать мощностью не менее 2Вт, чтобы они не перегревались при длительной работе.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Компонент</th>
+<th>Рекомендуемая модель</th>
+<th>Макс. ток (А)</th>
+<th>Макс. напряжение (В)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Тиристор</td>
+<td>Т122-10 или КУ202Н</td>
+<td>10</td>
+<td>400</td>
+</tr>
+<tr>
+<td>Диод выпрямительный</td>
+<td>Д242А или 1N5408</td>
+<td>5-10</td>
+<td>100-1000</td>
+</tr>
+<tr>
+<td>Динистор</td>
+<td>КН102А (Д227)</td>
+<td>0.2</td>
+<td>150</td>
+</tr>
+<tr>
+<td>Резистор регулировки</td>
+<td>СП3-30 (потенциометр)</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table></div>
+
+<blockquote>⚠️ <strong>Внимание:</strong> При использовании тиристоров серии КУ202 в схемах с током выше 2А обязательно устанавливайте их на алюминиевый радиатор площадью не менее 50-100 см², иначе возможен тепловой пробой.</blockquote>
+
+<h2 id="процесс-сборки-и-монтажа-устройства">Процесс сборки и монтажа устройства</h2>
+
+<p>Сборку устройства следует начинать с установки силовых элементов на радиаторы. Между корпусом тиристора и радиатором необходимо проложить слюдяную теплоизолирующую прокладку, если радиатор общий для нескольких элементов или касается корпуса прибора. Контактные поверхности желательно смазать термопастой для улучшения теплоотдачи.</p>
+
+<p>Монтаж управляющей части удобнее всего выполнять на печатной плате, но для простых схем допустима навесная пайка на выводах мощных элементов. Важно использовать провода с сечением, соответствующим току нагрузки: для тока 10А сечение медного провода должно быть не менее 1.5-2.5 мм². Тонкие провода будут греться и вносить паразитное сопротивление.</p>
+
+<p>После пайки всех компонентов необходимо визуально inspectровать плату на наличие "соплей" (замыканий припоем) и непропаков. Особое внимание уделите полярности подключения диодов и тиристоров — ошибка в один элемент приведет к короткому замыканию или отсутствию регулировки. Все соединения должны быть механически прочными.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Контрольный список сборки ЗУ</h4><label class="check-item"><input type="checkbox"><span>Проверка номиналов резисторов</span></label><label class="check-item"><input type="checkbox"><span>Установка термопрокладок под тиристоры</span></label><label class="check-item"><input type="checkbox"><span>Проверка полярности диодного моста</span></label><label class="check-item"><input type="checkbox"><span>Визуальный поиск замыканий припоем</span></label><label class="check-item"><input type="checkbox"><span>Прозвонка цепи мультиметром</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="первый-запуск-и-настройка-регулятора">Первый запуск и настройка регулятора</h2>
+
+<p>Первое включение собранного <strong>зарядного устройства</strong> лучше всего производить через лабораторный автотрансформатор (ЛАТР) или последовательно включенную лампу накаливания мощностью 100-200 Вт. Это позволит избежать взрыва компонентов в случае ошибки в монтаже: лампа загорится в полный накал при коротком замыкании, ограничив ток.</p>
+
+<p>Подключите на выход эквивалент нагрузки (например, мощную лампу 12В) и измерительный прибор — амперметр. Плавно вращая ручку потенциометра, наблюдайте за изменением яркости лампы и показаниями амперметра. Ток должен изменяться от минимума до максимума плавно, без скачков и провалов.</p>
+
+<p>Если регулировка есть, но диапазон слишком узок, можно подобрать емкость конденсатора в цепи управления или сопротивление постоянного резистора. Увеличение емкости конденсатора сдвигает фазу и может расширить диапазон регулировки в сторону меньших токов. Стабильность работы проверяется нагревом элементов через 15-20 минут работы под нагрузкой.</p>
+
+<details class="pb-accordion"><summary>Что делать, если ток не регулируется?</summary><div class="pb-accordion-body"><p>Если ток не меняется, проверьте целостность потенциометра и динистора. Часто причиной становится пробой тиристора — он начинает пропускать ток постоянно, независимо от импульсов на затворе. Также проверьте, не "залип" ли управляющий электрод на массу.</p></div></details>
+
+<h2 id="преимущества-и-недостатки-тиристорных-схем">Преимущества и недостатки тиристорных схем</h2>
+
+<p>Главным преимуществом тиристорных регуляторов является их высокий <strong>КПД</strong>. Поскольку тиристор работает в ключевом режиме (либо полностью открыт, либо закрыт), потери мощности на нем минимальны по сравнению с линейными регуляторами на транзисторах. Это позволяет создавать компактные устройства без огромных радиаторов.</p>
+
+<p>Однако у фазового метода есть и недостатки. Срезание синусоиды создает высокочастотные помехи, которые могут проникать в радиосеть и мешать работе другой электроники. Поэтому такие зарядные устройства не рекомендуется использовать рядом с радиоприемниками или чувствительным аудиооборудованием без установки фильтров.</p>
+
+<p>Кроме того, форма тока на выходе не является идеально гладкой, что теоретически может способствовать более интенсивному газообразованию в аккумуляторе при неправильной настройке. Тем не менее, для свинцово-кислотных стартерных батарей этот фактор считается допустимым, а простота и дешевизна схемы перекрывают этот нюанс.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Тиристорный регулятор — это "золотая середина" между простотой трансформаторных ЗУ с переключением обмоток и сложностью импульсных схем, идеально подходящая для гаражного использования.</p></aside>
+
+<details>
+<summary>Можно ли использовать симистор вместо тиристора?</summary>
+<p>Да, симистор (например, <em>КУ208</em> или <strong>BT138</strong>) может работать в цепях переменного тока, пропуская обе полуволны. Однако в схемах зарядных устройств чаще используют тиристоры, включенные после диодного моста, так как это упрощает схему управления (нужно управлять только в одном квадранте) и позволяет легче реализовать защиту от переполюсовки.</p>
+</details>
+
+<details>
+<summary>Почему греется тиристор при малом токе?</summary>
+<p>При малых углах открытия (малый ток зарядки) тиристор большую часть времени проводит ток в открытом состоянии, но при этом падение напряжения на нем максимально в момент включения. Если форма тока сильно искажена, могут возникать локальные перегревы. Также причиной может быть недостаточная площадь радиатора или плохой контакт.</p>
+</details>
+
+<details>
+<summary>Нужен ли фильтр от помех для такого ЗУ?</summary>
+<p>Желательно установить простой LC-фильтр (дроссель и конденсатор) на входе или выходе. Тиристорные ключи генерируют гармонические искажения, которые могут "фонить" в динамиках аудиосистемы автомобиля или создавать помехи радиоприему. Простой ферритовый кольцо на проводе также может помочь.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/k/ka/kak-proverit-rabochij-li-generator-snyatyj.html" class="pb-related-card">
+                <span class="pb-related-title">Как проверить генератор снятый с машины: пошаговая инструкция</span>
+                <span class="pb-related-desc">Подробная инструкция, как проверить генератор, снятый с автомобиля, в домашних условиях. Методы диаг</span>
+            </a><a href="/articles/u/us/ustanovka-videokamery-zadnego-vida-na-avtomobil.html" class="pb-related-card">
+                <span class="pb-related-title">Установка камеры заднего вида: пошаговая инструкция 2026</span>
+                <span class="pb-related-desc">Как правильно подключить камеру заднего вида на авто: схемы, выбор оборудования, ошибки монтажа и на</span>
+            </a><a href="/articles/n/na/na-chto-vliyaet-dlina-antenny.html" class="pb-related-card">
+                <span class="pb-related-title">Длина антенны: как влияет на приём сигнала и мощность связи</span>
+                <span class="pb-related-desc">Разбираемся, как длина антенны определяет частотный диапазон, силу сигнала и эффективность работы ра</span>
+            </a><a href="/articles/a/av/avtokholl-chto-eto-v-mashine-takoe.html" class="pb-related-card">
+                <span class="pb-related-title">Автохолл что это в машине такое: принцип работы и устройство</span>
+                <span class="pb-related-desc">Подробный разбор: автохолл что это в машине такое, как работает и зачем нужен. Устройство датчика, п</span>
+            </a><a href="/articles/i/iz/izmerit-utechku-toka-multimetrom-na-avtomobile.html" class="pb-related-card">
+                <span class="pb-related-title">Как измерить утечку тока мультиметром на авто: пошаговая инструкция</span>
+                <span class="pb-related-desc">Подробное руководство, как найти и устранить утечку тока в автомобиле мультиметром. Нормы потреблени</span>
+            </a><a href="/articles/r/re/rele-regtajm-3-24.html" class="pb-related-card">
+                <span class="pb-related-title">Реле РТ-3 (24В): устройство, схема подключения и проверка</span>
+                <span class="pb-related-desc">Подробный анализ реле РТ-3 на 24В. Разбор конструкции, схема подключения, типовые неисправности и ме</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

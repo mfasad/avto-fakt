@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>ELM327 Mini: как подключить и настроить за 5 минут — Авто Факт</title>
+    <meta name="description" content="Подробная инструкция: как подключить адаптер ELM327 Mini к телефону и компьютеру. Настройка Bluetooth и USB, выбор ПО, коды ошибок и расшифровка.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/e/el/elm327-mini-kak-podklyuchit.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ELM327 Mini: как подключить и настроить за 5 минут">
+    <meta property="og:description" content="Подробная инструкция: как подключить адаптер ELM327 Mini к телефону и компьютеру. Настройка Bluetooth и USB, выбор ПО, коды ошибок и расшифровка.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">ELM327 Mini: как подключить и настроить за 5 минут</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#поиск-диагностического-разъема-и-подготовка-оборудования">Поиск диагностического разъема и подготовка оборудования</a></li><li><a href="#подключение-через-bluetooth-на-android-устройствах">Подключение через Bluetooth на Android устройствах</a></li><li><a href="#особенности-подключения-к-iphone-ios">Особенности подключения к iPhone (iOS)</a></li><li><a href="#использование-адаптера-с-ноутбуком-и-кабелем-usb">Использование адаптера с ноутбуком и кабелем USB</a></li><li><a href="#выбор-программного-обеспечения-для-диагностики">Выбор программного обеспечения для диагностики</a></li><li><a href="#расшифровка-кодов-ошибок-и-частые-проблемы">Расшифровка кодов ошибок и частые проблемы</a></li><li><a href="#частые-вопросы-и-ответы-faq">Частые вопросы и ответы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/r/ra/radio-s-sovremennymi-pesnyami-kakaya-volna.html">Радио с современными песнями: частоты FM и онлайн-сервисы</a></li><li><a href="/articles/o/oc/ochki-polaroid-chem-otlichayutsya-ot-obychnykh-solntsezashchitnykh-ochkov.html">Очки Поляроид и обычные: отличие технологии поляризации</a></li><li><a href="/articles/c/ch/chto-takoe-rezhim-rekuperatsii.html">Режим рекуперации: что это, как работает и экономит ли</a></li><li><a href="/articles/s/sk/skaner-dlya-starykh-yaponskikh-avtomobilej.html">Сканеры для старых японских авто: как выбрать и подключить</a></li><li><a href="/articles/a/an/antenna-teleskopicheskaya-dlya-avto.html">Телескопическая антенна для авто: выбор, установка, ремонт</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>ELM327 Mini: как подключить адаптер для диагностики авто</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#поиск-диагностического-разъема-и-подготовка-оборудования">Поиск диагностического разъема и подготовка оборудования</a></li><li><a href="#подключение-через-bluetooth-на-android-устройствах">Подключение через Bluetooth на Android устройствах</a></li><li><a href="#особенности-подключения-к-iphone-ios">Особенности подключения к iPhone (iOS)</a></li><li><a href="#использование-адаптера-с-ноутбуком-и-кабелем-usb">Использование адаптера с ноутбуком и кабелем USB</a></li><li><a href="#выбор-программного-обеспечения-для-диагностики">Выбор программного обеспечения для диагностики</a></li><li><a href="#расшифровка-кодов-ошибок-и-частые-проблемы">Расшифровка кодов ошибок и частые проблемы</a></li><li><a href="#частые-вопросы-и-ответы-faq">Частые вопросы и ответы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+<p>Владельцы современных автомобилей часто сталкиваются с необходимостью быстрой диагностики двигателя без посещения автосервиса. Устройство <strong>ELM327 Mini</strong> стало стандартом де-факто для самостоятельного сканирования систем управления двигателем благодаря своей компактности и доступности. Этот крошечный гаджет способен считать ошибки, отобразить параметры работы датчиков в реальном времени и даже провести адаптацию некоторых узлов.</p>
+<p>Однако новички часто задаются вопросом: как правильно подключить этот адаптер, чтобы он заработал с первого раза? Процесс установки не требует глубоких знаний электроники, но имеет свои нюансы, зависящие от версии протокола и типа операционной системы вашего смартфона. Важно понимать, что <em>ELM327</em> — это лишь мост между бортовым компьютером машины и вашим гаджетом, а качество связи зависит от правильности сопряжения.</p>
+<p>В этой статье мы разберем все этапы подключения: от поиска диагностического разъема до настройки специализированного софта. Вы узнаете, чем отличаются версии 1.5 и 2.1, как избежать проблем с драйверами и какие программы лучше всего подходят для вашего <em>Android</em> или <em>iOS</em> устройства. Грамотная настройка позволит вам сэкономить время и деньги на визитах к диагносту.</p>
+
+<h2 id="поиск-диагностического-разъема-и-подготовка-оборудования">Поиск диагностического разъема и подготовка оборудования</h2>
+<p>Первым шагом перед тем как подключить <strong>ELM327 Mini</strong>, необходимо физически найти диагностический разъем в вашем автомобиле. Стандарт <em>OBD-II</em> обязателен для всех бензиновых автомобилей, выпущенных после 2001 года, и дизельных — после 2004 года. Чаще всего разъем расположен под рулевой колонкой, в районе педалей или за декоративной заглушкой в нижней части торпеды со стороны водителя.</p>
+<p>Иногда производители прячут порт глубже или закрывают его пластиковой крышкой, которую нужно аккуратно снять. В редких случаях, например, в некоторых моделях <em>Peugeot</em> или <em>Citroen</em>, разъем может находиться под бардачком или даже в багажнике, но это скорее исключение из правил. Если вы не можете найти гнездо за 5-10 минут, стоит обратиться к инструкции по эксплуатации вашего конкретного автомобиля.</p>
+<p>Убедитесь, что сам адаптер исправен и заряжен (если это беспроводная модель) или не имеет видимых повреждений контактов. Перед вставкой в разъем осмотрите пины на наличие окислов или грязи. <strong>Напряжение</strong> в бортовой сети должно быть стабильным, поэтому не пытайтесь проводить диагностику при работающем стартере или критически разряженном аккумуляторе.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не оставляйте адаптер <strong>ELM327</strong> подключенным к автомобилю на длительную стоянку (более 2-3 дней). Даже в спящем режиме устройство потребляет ток, что может привести к полному разряду аккумуляторной батареи и невозможности запустить двигатель.</p>
+</blockquote>
+
+<h2 id="подключение-через-bluetooth-на-android-устройствах">Подключение через Bluetooth на Android устройствах</h2>
+<p>Самый распространенный способ использования сканера — это беспроводное соединение с телефоном на базе <em>Android</em>. Для начала вставьте адаптер в разъем OBD-II автомобиля и включите зажигание. На корпусе устройства должен загореться светодиодный индикатор, сигнализирующий о подаче питания. Если индикатор не горит, проверьте плотность посадки или исправность предохранителя прикуривателя.</p>
+<p>Далее возьмите смартфон и перейдите в настройки Bluetooth. Нажмите кнопку поиска новых устройств. В списке доступных гаджетов обычно отображается название вроде <code>HH OBDII</code>, <code>OBDMII</code> или <code>V-LINK</code>. Стандартный пин-код для сопряжения чаще всего составляет <code>1234</code> или <code>0000</code>, однако в некоторых китайских версиях он может отличаться и быть указан на наклейке.</p>
+<p>После успешного сопряжения (статус "Подключено" в настройках Bluetooth) необходимо запустить диагностическое приложение. Не пытайтесь искать устройство внутри приложения, пока не произведено сопряжение в системных настройках телефона. Если телефон видит устройство, но не подключается, попробуйте "забыть" устройство и повторить процедуру заново.</p>
+
+<div class="pb-poll" id="poll-1a814ffe"><div class="pb-poll-question">📊 Какой операционной системой вы пользуетесь для диагностики?</div><div class="pb-poll-option" data-poll="1a814ffe" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Android</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="1a814ffe" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">iOS (iPhone)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="1a814ffe" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Windows (ноутбук)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="1a814ffe" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Не знаю, только планирую</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<p>Для стабильной связи важно, чтобы версия Bluetooth на телефоне была совместима с адаптером. Старые модели <strong>ELM327</strong> используют Bluetooth 2.0/3.0, тогда как новые версии Mini могут требовать Bluetooth 4.0 (Low Energy). Если ваш телефон новый, а адаптер старый, проблем обычно не возникает, но обратная совместимость иногда требует дополнительных настроек в приложении.</p>
+
+<h2 id="особенности-подключения-к-iphone-ios">Особенности подключения к iPhone (iOS)</h2>
+<p>Владельцам техники <em>Apple</em> повезло меньше, так как политика компании ограничивает использование стандартного Bluetooth для передачи данных такого типа. Для iPhone подходят только адаптеры с маркировкой <strong>iCar</strong> или устройства, поддерживающие протокол <em>Wi-Fi</em>. Обычный Bluetooth-сканер, работающий с Android, с айфоном просто не соединится на уровне приложения, даже если система его увидит.</p>
+<p>Наиболее универсальным решением является использование Wi-Fi версии <strong>ELM327 Mini</strong>. После вставки в разъем и включения зажигания, на корпусе загорится индикатор. Вам нужно зайти в настройки Wi-Fi на iPhone, найти сеть с названием, похожим на <code>WiFi-OBD</code> или <code>VLink</code>, и подключиться к ней. Пароль по умолчанию обычно <code>12345678</code>.</p>
+<p>Важный нюанс: после подключения к Wi-Fi адаптера интернет на телефоне пропадет, так как соединение с локальной сетью сканера имеет приоритет. Некоторые приложения умеют временно переключать трафик, но чаще придется проводить диагностику без доступа к глобальной сети. После завершения процедуры не забудьте переключиться обратно на мобильный интернет или домашний Wi-Fi.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Если iPhone пишет "Нет подключения к интернету" при подключении к Wi-Fi адаптеру, нажмите "Продолжить без интернета". Это нормально для работы диагностического софта.</p></aside>
+
+<p>Приложение для iOS должно поддерживать работу именно с Wi-Fi протоколами. Популярные программы вроде <em>Car Scanner ELM OBD2</em> или <em>Engine Doctor</em> отлично справляются с этой задачей. В настройках приложения обязательно выберите тип соединения <code>Wi-Fi</code>, а не Bluetooth, иначе поиск устройства будет безуспешным.</p>
+
+<h2 id="использование-адаптера-с-ноутбуком-и-кабелем-usb">Использование адаптера с ноутбуком и кабелем USB</h2>
+<p>Для профессиональной диагностики или работы со старыми автомобилями часто требуется подключение к компьютеру. В этом случае используется версия <strong>ELM327</strong> с интерфейсом <em>USB</em>. Подключите кабель к адаптеру и вставьте его в разъем OBD-II, затем соедините USB-штекер с портом ноутбука. Система должна обнаружить новое оборудование.</p>
+<p>Основная сложность здесь кроется в драйверах. Дешевые китайские клоны часто базируются на чипах <em>CH340</em> или <em>PL2303</em>, драйверы для которых не всегда устанавливаются автоматически. Вам может потребоваться вручную скачать и установить драйвер с диска (если он есть в комплекте) или найти его на сайте производителя чипа. Без правильного драйвера устройство будет отображаться в диспетчере устройств как "Неизвестное устройство".</p>
+<p>После установки драйвера необходимо узнать номер <strong>COM-порта</strong>, который был присвоен адаптеру. Это делается через "Диспетчер устройств" в разделе "Порты (COM и LPT)". Запомните этот номер (например, COM3 или COM4), так как он понадобится для настройки диагностической программы.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка готовности к диагностике</h4><label class="check-item"><input type="checkbox"><span>Адаптер вставлен в OBD разъем,Зажигание включено,Драйверы установлены,Порт COM определен в системе</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 1</div></div>
+
+<p>Запустите выбранную программу (например, <em>ScanMaster-ELM</em> или <em>OpenDiag</em>), перейдите в настройки соединения и выберите тип подключения <code>USB</code> или <code>Direct USB</code>. Укажите правильный порт и нажмите кнопку подключения. Если все сделано верно, программа покажет статус связи с ЭБУ автомобиля.</p>
+
+<h2 id="выбор-программного-обеспечения-для-диагностики">Выбор программного обеспечения для диагностики</h2>
+<p>Железо — это только половина дела. Чтобы <strong>ELM327 Mini</strong> заработал, ему нужна программа-интерфейс. Выбор софта зависит от ваших целей: просто считать ошибку или провести глубокую адаптацию. Для новичков идеально подойдут универсальные приложения с понятным интерфейсом и русификацией.</p>
+<p>Одной из самых популярных программ является <em>Torque Pro</em>. Она позволяет выводить показания датчиков на рабочий стол в виде красивых приборов, записывать треки и считывать ошибки. Для владельцев автомобилей группы <em>VAG</em> (Volkswagen, Audi, Skoda) незаменима программа <em>Carista</em> или <em>VagMobile</em>, которые умеют делать скрытые настройки.</p>
+<p>Для отечественных автомобилей <em>ВАЗ</em>, <em>ГАЗ</em> и <em>УАЗ</em> лучше всего подходит приложение <em>OpenDiag Mobile</em>. Оно заточено под специфику российских контроллеров <em>Январь</em>, <em>Бош</em> и <em>Ителма</em>. В таблице ниже приведено сравнение популярных приложений для разных задач.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Приложение</th>
+<th>Платформа</th>
+<th>Лучше всего для</th>
+<th>Цена</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Torque Pro</em></td>
+<td>Android</td>
+<td>Универсальная диагностика, мониторинг</td>
+<td>Платно</td>
+</tr>
+<tr>
+<td><em>Car Scanner ELM</em></td>
+<td>Android / iOS</td>
+<td>Удобный интерфейс, русский язык</td>
+<td>Freemium</td>
+</tr>
+<tr>
+<td><em>OpenDiag</em></td>
+<td>Android</td>
+<td>Автомобили ВАЗ, ГАЗ, УАЗ</td>
+<td>Платно</td>
+</tr>
+<tr>
+<td><em>BimmerCode</em></td>
+<td>Android / iOS</td>
+<td>Кодирование BMW и Mini</td>
+<td>Платно</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>При выборе софта обращайте внимание на поддержку протоколов. Если у вас старый автомобиль (до 2005 года), убедитесь, что приложение поддерживает протокол <strong>K-Line</strong>. Современные машины общаются преимущественно по протоколу <em>CAN-Bus</em>, который поддерживается практически всеми актуальными версиями программ.</p>
+
+<h2 id="расшифровка-кодов-ошибок-и-частые-проблемы">Расшифровка кодов ошибок и частые проблемы</h2>
+<p>После подключения вы можете увидеть список кодов ошибок, например, <code>P0300</code> или <code>P0171</code>. Эти коды стандартизированы, но их расшифровка может варьироваться. Первая буква указывает на систему: <strong>P</strong> — двигатель и трансмиссия, <strong>B</strong> — кузов, <strong>C</strong> — шасси, <strong>U</strong> — сеть. Цифры следуют за буквой и конкретизируют неисправность.</p>
+<p>Частой проблемой при использовании <strong>ELM327 Mini</strong> является версия прошивки самого адаптера. Самые дешевые модели версии 2.1 часто имеют урезанный функционал и не поддерживают некоторые протоколы, работая только с CAN-шиной. Если ваш автомобиль старый и программа пишет "Нет связи", скорее всего, дело именно в несовместимости версий.</p>
+
+<details class="pb-accordion"><summary>Что означает код ошибки P0300?</summary><div class="pb-accordion-body"><p>Этот код указывает на пропуски воспламенения в одном или нескольких цилиндрах. Причины могут быть разными: от свечей зажигания и катушек до подсоса воздуха или низкого качества топлива. Требуется проверка системы зажигания.</p></div></details>
+
+<p>Если связь с блоком управления теряется во время движения или чтения параметров, попробуйте уменьшить скорость соединения (Baud rate) в настройках приложения. Стандартная скорость 115200 бод может быть слишком высокой для старых ЭБУ или при наличии помех в проводке автомобиля.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Сброс ошибок (функция "Clear Codes") не устраняет физическую поломку. Если проблема в датчике или проводке, ошибка появится снова через несколько циклов работы двигателя. Используйте сброс только после ремонта.</p>
+</blockquote>
+
+<h2 id="частые-вопросы-и-ответы-faq">Частые вопросы и ответы (FAQ)</h2>
+<details>
+<summary>Почему адаптер горит, но телефон его не видит?</summary>
+<p>Скорее всего, проблема в драйверах Bluetooth или несовместимости версий. Убедитесь, что вы пытаетесь подключить устройство через настройки Bluetooth телефона, а не сразу через приложение. Также проверьте, не подключен ли адаптер к другому устройству автоматически.</p>
+</details>
+<details>
+<summary>Можно ли оставить ELM327 в машине навсегда?</summary>
+<p>Теоретически можно, но не рекомендуется. Адаптер потребляет ток постоянно, что зимой за 2-3 недели может посадить аккумулятор. Кроме того, торчащий гаджет могут заметить злоумышленники и использовать для угона (хотя это сложно, но риск существует).</p>
+</details>
+<details>
+<summary>Подойдет ли ELM327 для диагностики АКПП?</summary>
+<p>Базовые функции (чтение ошибок) работают в большинстве случаев. Однако для глубокой диагностики коробки передач, проверки давления и адаптации часто требуются более дорогие профессиональные сканеры, так как стандартный протокол OBD-II ориентирован в первую очередь на двигатель.</p>
+</details>
+<details>
+<summary>Как отличить версию 1.5 от 2.1?</summary>
+<p>Визуально они почти одинаковы. Версия 2.1 обычно дешевле и имеет зеленую печатную плату внутри (видно через прозрачный корпус), а также урезанный чип. Версия 1.5 (часто на чипе PIC18F25K80) более универсальна и поддерживает больше протоколов, включая K-Line для старых авто.</p>
+</details>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Главный секрет успеха — не сам адаптер, а правильно подобранное программное обеспечение под конкретную марку автомобиля и версию протокола.</p></aside></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/r/ra/radio-s-sovremennymi-pesnyami-kakaya-volna.html" class="pb-related-card">
+                <span class="pb-related-title">Радио с современными песнями: частоты FM и онлайн-сервисы</span>
+                <span class="pb-related-desc">Где найти радиостанции с современными хитами? Частоты FM, онлайн-потоки, настройка магнитолы и топ-1</span>
+            </a><a href="/articles/o/oc/ochki-polaroid-chem-otlichayutsya-ot-obychnykh-solntsezashchitnykh-ochkov.html" class="pb-related-card">
+                <span class="pb-related-title">Очки Поляроид и обычные: отличие технологии поляризации</span>
+                <span class="pb-related-desc">Чем отличаются очки Поляроид от обычных? Подробный разбор технологии поляризации, тесты на проверку </span>
+            </a><a href="/articles/c/ch/chto-takoe-rezhim-rekuperatsii.html" class="pb-related-card">
+                <span class="pb-related-title">Режим рекуперации: что это, как работает и экономит ли</span>
+                <span class="pb-related-desc">Подробно разбираем, что такое режим рекуперации в авто. Как система работает, экономит ли она топлив</span>
+            </a><a href="/articles/s/sk/skaner-dlya-starykh-yaponskikh-avtomobilej.html" class="pb-related-card">
+                <span class="pb-related-title">Сканеры для старых японских авто: как выбрать и подключить</span>
+                <span class="pb-related-desc">Подробный гайд по выбору диагностических сканеров для японских машин 80-2000-х годов: совместимость,</span>
+            </a><a href="/articles/a/an/antenna-teleskopicheskaya-dlya-avto.html" class="pb-related-card">
+                <span class="pb-related-title">Телескопическая антенна для авто: выбор, установка, ремонт</span>
+                <span class="pb-related-desc">Как выбрать телескопическую антенну для машины? Обзор типов, советы по монтажу, устранение неисправн</span>
+            </a><a href="/articles/2/25/250-mikron-skolko-mm.html" class="pb-related-card">
+                <span class="pb-related-title">250 микрон: сколько это мм? Точный перевод и таблицы</span>
+                <span class="pb-related-desc">Сколько миллиметров в 250 микронах? Простой конвертер, формулы перевода, таблицы значений и практиче</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

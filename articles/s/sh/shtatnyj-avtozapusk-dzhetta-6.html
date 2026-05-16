@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Штатный автозапуск Джетта 6: настройка и управление — Авто Факт</title>
+    <meta name="description" content="Подробное руководство по настройке штатного автозапуска на Volkswagen Jetta 6. Программирование времени, температуры и управление через кнопку Start/Stop.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/s/sh/shtatnyj-avtozapusk-dzhetta-6.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Штатный автозапуск Джетта 6: настройка и управление">
+    <meta property="og:description" content="Подробное руководство по настройке штатного автозапуска на Volkswagen Jetta 6. Программирование времени, температуры и управление через кнопку Start/Stop.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/elektrika-avto/">Электрика Авто</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Штатный автозапуск Джетта 6: настройка и управление</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#принцип-работы-и-программная-активация">Принцип работы и программная активация</a></li><li><a href="#настройка-параметров-через-кнопку-startstop">Настройка параметров через кнопку Start/Stop</a></li><li><a href="#запуск-двигателя-по-температуре-окружающей-среды">Запуск двигателя по температуре окружающей среды</a></li><li><a href="#ограничения-и-временные-интервалы-работы">Ограничения и временные интервалы работы</a></li><li><a href="#управление-с-ключа-брелока-и-сигнализации">Управление с ключа-брелока и сигнализации</a></li><li><a href="#частые-неисправности-и-методы-диагностики">Частые неисправности и методы диагностики</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/s/sk/skaner-dlya-diagnostiki-avtomobilya-vag.html">Сканер для диагностики авто ВАГ: выбор, настройка, ошибки</a></li><li><a href="/articles/z/za/zaryadnoe-ustrojstvo-dlya-avtomobilnogo-akkumulyatora-zu-120m-3-instruktsiya-po-primeneniyu.html">ЗУ 120м 3: инструкция, характеристики и ремонт своими руками</a></li><li><a href="/articles/k/ka/kak-proverit-signal-na-avto.html">Как проверить сигнал авто: диагностика датчиков ABS и ESP</a></li><li><a href="/articles/k/ka/kak-ochistit-kontakty-ot-okislov.html">Как очистить контакты от окислов: полная инструкция</a></li><li><a href="/articles/k/ka/kamera-zadnego-vida-stala-mutno-pokazyvat.html">Камера заднего вида мутнеет: причины, чистка и замена</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Штатный автозапуск Джетта 6: полное руководство</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-работы-и-программная-активация">Принцип работы и программная активация</a></li><li><a href="#настройка-параметров-через-кнопку-startstop">Настройка параметров через кнопку Start/Stop</a></li><li><a href="#запуск-двигателя-по-температуре-окружающей-среды">Запуск двигателя по температуре окружающей среды</a></li><li><a href="#ограничения-и-временные-интервалы-работы">Ограничения и временные интервалы работы</a></li><li><a href="#управление-с-ключа-брелока-и-сигнализации">Управление с ключа-брелока и сигнализации</a></li><li><a href="#частые-неисправности-и-методы-диагностики">Частые неисправности и методы диагностики</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Владение автомобилем <em>Volkswagen Jetta</em> шестого поколения часто связано с желанием максимально использовать возможности немецкой инженерии, и одной из самых желанных функций для жителей стран с холодным климатом является возможность дистанционного запуска двигателя.</p>
+<p>К сожалению, <strong>штатный автозапуск Джетта 6</strong> в базовых комплектациях часто остается скрытым или программно заблокированным, хотя физическая возможность его реализации присутствует в блоке управления <em>BCM</em>.</p>
+<p>Активация данной опции позволяет не только прогреть салон до посадки, но и предотвратить замерзание механизмов в зимний период, что существенно продлевает ресурс силового агрегата.</p>
+
+<h2 id="принцип-работы-и-программная-активация">Принцип работы и программная активация</h2>
+<p>Реализация функции запуска двигателя без поворота ключа в замке зажигания на <em>VW Jetta VI</em> базируется на взаимодействии нескольких электронных блоков, основным из которых является бортовой контроллер <em>BCM</em> (Body Control Module).</p>
+<p>В большинстве случаев, поступающих на российский рынок, данная функция программно отключена дилером или импортером, однако физическая «железная» часть, включая антенный модуль и проводку, часто уже установлена на заводе.</p>
+<p>Для активации необходимо подключение диагностического сканера, такого как <em>VCDS</em> или <em>OBDEleven</em>, который позволит изменить длинное кодирование центрального электрического блока.</p>
+<p><mark>Критически важно понимать, что активация через софт возможна только если на автомобиле установлена кнопка Start/Stop, в противном случае потребуется сложная доработка проводки.</mark></p>
+<p>Процесс изменения конфигурации занимает не более 15 минут, но требует точного попадания в каналы адаптации, чтобы избежать конфликтов в работе иммобилайзера.</p>
+
+<ul>
+<li>🔌 Подключение диагностического интерфейса к разъему <em>OBD-II</em>.</li>
+<li>⚙️ Вход в блок <code>09 – Cent. Elect.</code> для изменения параметров.</li>
+<li>📝 Сохранение оригинальной карты кодировки на случай отката изменений.</li>
+<li>🚗 Проверка работы системы после перезагрузки бортовой сети.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Некорректное изменение длинного кодирования блока <em>BCM</em> может привести к неработоспособности центрального замка, стеклоподъемников или системы освещения.</p>
+</blockquote>
+
+<details class="pb-accordion"><summary>Технические нюансы активации</summary><div class="pb-accordion-body"><p>Для успешной активации часто требуется наличие ключа с чипом 4-го поколения (48 bit) и совместимость прошивки приборной панели. В некоторых случаях требуется адаптация ключей через онлайн-доступ к серверам Volkswagen (FAZIT).</p></div></details>
+
+<h2 id="настройка-параметров-через-кнопку-startstop">Настройка параметров через кнопку Start/Stop</h2>
+<p>После успешной программной активации функции, управление ею становится доступным непосредственно с панели управления климатической системой или через мультимедийный экран, в зависимости от года выпуска <em>Jetta 6</em>.</p>
+<p>Основной метод активации режима ожидания запуска осуществляется через кнопку <code>Start/Stop</code>, расположенную рядом с рычагом переключения передач или на центральной консоли.</p>
+<p>Для входа в режим программирования времени запуска необходимо нажать и удерживать кнопку <code>Start/Stop</code> в течение нескольких секунд, пока на дисплее магнитолы или климат-контроля не появится соответствующее меню.</p>
+<p>Система позволяет установить конкретное время, когда двигатель должен запуститься автоматически, что особенно удобно для утренних выездов на работу или возвращения домой к определенному часу.</p>
+
+<div class="pb-poll" id="poll-58ac0873"><div class="pb-poll-question">📊 Как вы планируете использовать автозапуск?</div><div class="pb-poll-option" data-poll="58ac0873" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Только зимой по температуре:По расписанию каждое утро:Для прогрева перед поездкой:Мне это не нужно</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<p>Интерфейс системы интуитивно понятен, однако стоит учитывать, что при разряженном аккумуляторе настройки могут сброситься, и процедуру придется повторить.</p>
+<p>В некоторых модификациях с блоком <em>MIB</em> настройка временных интервалов вынесена в отдельное меню «Автомобиль» -> «Настройки» -> «Запуск двигателя».</p>
+
+<ul>
+<li>🕒 Установка точного времени активации с шагом в 1 минуту.</li>
+<li>📅 Выбор дней недели для повторения цикла запуска.</li>
+<li>🔔 Визуальное и звуковое подтверждение активации режима.</li>
+<li>🛑 Возможность экстренной отмены запуска из салона.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Не оставляйте автомобиль в режиме ожидания автозапуска в закрытых гаражах или помещениях с плохой вентиляцией во избежание отравления угарным газом.</p>
+</blockquote>
+
+<h2 id="запуск-двигателя-по-температуре-окружающей-среды">Запуск двигателя по температуре окружающей среды</h2>
+<p>Одной из самых полезных функций для российских условий является возможность запуска двигателя при достижении датчиком температуры определенной отрицательной величины.</p>
+<p>Штатная система <em>Volkswagen</em> позволяет задать пороговое значение, при котором блок управления инициирует запуск для поддержания температуры антифриза и масла.</p>
+<p>Обычно доступны градации от -5 до -25 градусов Цельсия, что дает гибкость в настройке под конкретные погодные условия вашего региона.</p>
+
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Для более точной работы температурного запуска рекомендуется периодически очищать зону переднего бампера от наледи и грязи, чтобы датчик не показывал ложные значения.</p></aside>
+
+<p>Система учитывает также заряд аккумуляторной батареи, и если напряжение ниже допустимого порога, автозапуск по температуре может быть заблокирован для предотвращения полного разряда.</p>
+<p>После успешного прогрева двигателя до рабочей температуры или истечения времени работы, мотор автоматически глохнет, переходя в режим ожидания следующего цикла.</p>
+
+<h2 id="ограничения-и-временные-интервалы-работы">Ограничения и временные интервалы работы</h2>
+<p>Инженеры <em>VAG</em> предусмотрели ряд ограничений для защиты двигателя и экономии топлива, которые жестко прошиты в алгоритмы работы блока управления.</p>
+<p>Максимальное время работы двигателя в режиме автозапуска обычно ограничено 10-15 минутами, после чего система принудительно глушит мотор, независимо от степени прогрева.</p>
+<p>Также существует лимит на количество попыток запуска: если двигатель не завелся с трех попыток, система блокирует дальнейшие действия до снятия режима охраны или поворота ключа.</p>
+<p>Интервал между повторными запусками по таймеру или температуре составляет не менее 60 минут, что предотвращает частые циклы «старт-стоп» в щадящем режиме.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Значение / Описание</th>
+<th>Возможность изменения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Время работы</td>
+<td>10-15 минут</td>
+<td>Нет (зашито в BCM)</td>
+</tr>
+<tr>
+<td>Попытки запуска</td>
+<td>3 попытки</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Мин. интервал</td>
+<td>60 минут</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Температурный порог</td>
+<td>-5..-25°C</td>
+<td>Да (через меню)</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Эти ограничения являются неизменными и служат гарантом безопасности, предотвращая перегрев катализатора или выход из строя стартера при частом использовании.</p>
+<p>Пользователю следует планировать свои поездки с учетом этих временных рамок, особенно если требуется длительный прогрев в сильные морозы.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Штатный автозапуск имеет жесткие временные ограничения (10-15 мин работы), которые нельзя изменить программно без замены прошивки блока управления.</p></aside>
+
+<h2 id="управление-с-ключа-брелока-и-сигнализации">Управление с ключа-брелока и сигнализации</h2>
+<p>В зависимости от установленной комплектации и типа охранной системы, запуск двигателя может производиться не только по таймеру, но и дистанционно с брелока.</p>
+<p>Если на автомобиле установлена штатная сигнализация с функцией <em>Comfort</em>, то комбинация кнопок на ключе (обычно длительное нажатие кнопки закрытия или специфическая последовательность) может инициировать запуск.</p>
+<p>Однако, радиус действия штатного радиоканала ограничен несколькими метрами, что делает этот способ менее удобным по сравнению с GSM-модулями.</p>
+<p>При использовании сторонних охранных комплексов, интегрированных с CAN-шиной <em>Jetta 6</em>, управление осуществляется через мобильное приложение, что расширяет функционал до контроля уровня топлива и положения GPS.</p>
+
+<ul>
+<li>🔑 Комбинация кнопок на штатном ключе (зависит от версии ПО).</li>
+<li>📱 Управление через Bluetooth при наличии модуля.</li>
+<li>📡 Интеграция с GSM-сигнализациями через CAN-интерфейс.</li>
+<li>🔒 Блокировка запуска при открытой двери или капоте.</td>
+</ul>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> При установке нештатных систем автозапуска убедитесь, что они корректно обходят иммобилайзер, иначе автомобиль может заблокироваться после разряда батареи в обходчике.</p>
+</blockquote>
+
+<h2 id="частые-неисправности-и-методы-диагностики">Частые неисправности и методы диагностики</h2>
+<p>Несмотря на надежность электроники <em>Volkswagen</em>, система автозапуска может давать сбои, чаще всего связанные с качеством топлива, состоянием аккумулятора или ошибками датчиков.</p>
+<p>Типичной проблемой является отказ запуска при низком напряжении в бортовой сети, что система воспринимает как критическую ошибку и блокирует работу стартера.</p>
+<p>Также возможны ситуации, когда двигатель заводится, но сразу глохнет через 2-3 секунды, что часто указывает на проблему с распознаванием ключа в замке или неисправность антенны иммобилайзера.</p>
+<p>Для диагностики необходимо считать коды ошибок через интерфейс <code>09 – Cent. Elect.</code> и <code>17 – Instruments</code>, обращая внимание на статусы концевиков дверей и капота.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Диагностика отказа автозапуска</h4><label class="check-item"><input type="checkbox"><span>Проверить заряд аккумулятора:Считать ошибки сканером:Проверить концевик капота:Проверить наличие топлива в баке</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 1</div></div>
+
+<p>Чистка контактов концевика капота — простая, но эффективная процедура, так как окисление часто приводит к ложному сигналу об открытии, блокирующему запуск.</p>
+<p>Если проблема носит программный характер, может потребоваться сброс адаптаций или обновление прошивки блока управления двигателем.</p>
+
+<details>
+<summary>Почему не работает автозапуск по температуре?</summary>
+<p>Чаще всего причина кроется в неисправности самого датчика температуры наружного воздуха или в том, что заданное пороговое значение еще не достигнуто. Также система может игнорировать команду, если с момента последнего запуска прошло менее 60 минут или уровень топлива в баке ниже минимального порога (обычно менее 5 литров).</p>
+</details>
+
+<details>
+<summary>Можно ли увеличить время работы двигателя при автозапуске?</summary>
+<p>Штатными средствами увеличить время работы свыше 15 минут невозможно. Это ограничение заложено в алгоритмах безопасности. Некоторые владельцы прибегают к «костылям» в виде установки таймеров-реле, которые имитируют повторный запуск, но это не рекомендуется из-за риска повреждения стартера.</p>
+</details>
+
+<details>
+<summary>Влияет ли автозапуск на ресурс двигателя?</summary>
+<p>Частые запуски двигателя без движения (реим холодного хода) способствуют образованию конденсата в выхлопной системе и неполному сгоранию топлива, что может привести к быстрому загрязнению свечей и масла. Однако для современных моторов <em>TSI</em> и <em>MPI</em> кратковременные прогревы не являются критичными.</p>
+</details>
+
+<details>
+<summary>Что делать, если после автозапуска не открываются двери?</summary>
+<p>В редких случаях система иммобилайзера может «зависнуть». Попробуйте открыть дверь механическим ключом, затем вставить его в замок зажигания и повернуть в положение «Зажигание включено», после чего заглушить двигатель штатно. Это перезагрузит систему доступа.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/s/sk/skaner-dlya-diagnostiki-avtomobilya-vag.html" class="pb-related-card">
+                <span class="pb-related-title">Сканер для диагностики авто ВАГ: выбор, настройка, ошибки</span>
+                <span class="pb-related-desc">Как выбрать сканер для диагностики автомобилей VAG (VW, Audi, Skoda, Seat). Сравнение OBD2 адаптеров</span>
+            </a><a href="/articles/z/za/zaryadnoe-ustrojstvo-dlya-avtomobilnogo-akkumulyatora-zu-120m-3-instruktsiya-po-primeneniyu.html" class="pb-related-card">
+                <span class="pb-related-title">ЗУ 120м 3: инструкция, характеристики и ремонт своими руками</span>
+                <span class="pb-related-desc">Полная инструкция к зарядному устройству ЗУ 120м 3. Схемы, неисправности, режимы работы и правильная</span>
+            </a><a href="/articles/k/ka/kak-proverit-signal-na-avto.html" class="pb-related-card">
+                <span class="pb-related-title">Как проверить сигнал авто: диагностика датчиков ABS и ESP</span>
+                <span class="pb-related-desc">Полная инструкция по проверке сигналов датчиков ABS, ESP и скорости. Методы диагностики мультиметром</span>
+            </a><a href="/articles/k/ka/kak-ochistit-kontakty-ot-okislov.html" class="pb-related-card">
+                <span class="pb-related-title">Как очистить контакты от окислов: полная инструкция</span>
+                <span class="pb-related-desc">Узнайте, как эффективно очистить контакты от окислов в автомобиле. Проверенные методы, химия и механ</span>
+            </a><a href="/articles/k/ka/kamera-zadnego-vida-stala-mutno-pokazyvat.html" class="pb-related-card">
+                <span class="pb-related-title">Камера заднего вида мутнеет: причины, чистка и замена</span>
+                <span class="pb-related-desc">Почему камера заднего вида стала мутно показывать? Разбор причин запотевания, помутнения линзы, окис</span>
+            </a><a href="/articles/m/mo/moshchnyj-avtomobilnyj-kompressor-12-volt-dlya-vnedorozhnikov.html" class="pb-related-card">
+                <span class="pb-related-title">Мощный автомобильный компрессор 12 вольт: выбор для внедорожника</span>
+                <span class="pb-related-desc">Как выбрать мощный компрессор 12 вольт для внедорожников. Обзор производительности, типов подключени</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

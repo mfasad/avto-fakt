@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Автозапуск генератора: схемы, контроллеры и монтаж — Авто Факт</title>
+    <meta name="description" content="Как настроить автоматическое включение генератора при отключении электричества. Обзор АВР, схемы подключения, выбор контроллера и частые ошибки.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/a/av/avtomaticheskoe-vklyuchenie-generatora-pri-otklyuchenii-elektrichestva.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Автозапуск генератора: схемы, контроллеры и монтаж">
+    <meta property="og:description" content="Как настроить автоматическое включение генератора при отключении электричества. Обзор АВР, схемы подключения, выбор контроллера и частые ошибки.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/garazh-master/">Гараж Мастер</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Автозапуск генератора: схемы, контроллеры и монтаж</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#принцип-работы-системы-авр-и-ключевые-компоненты">Принцип работы системы АВР и ключевые компоненты</a></li><li><a href="#выбор-контроллера-для-автозапуска">Выбор контроллера для автозапуска</a></li><li><a href="#схемы-подключения-и-коммутация-нагрузки">Схемы подключения и коммутация нагрузки</a></li><li><a href="#настройка-и-тестирование-системы">Настройка и тестирование системы</a></li><li><a href="#типичные-ошибки-и-проблемы-эксплуатации">Типичные ошибки и проблемы эксплуатации</a></li><li><a href="#безопасность-и-обслуживание-оборудования">Безопасность и обслуживание оборудования</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/a/av/avtoservis-koreana-v-spb-adresa.html">Автосервис Кореана в СПБ: адреса, контакты и услуги</a></li><li><a href="/articles/p/pr/pravilno-sobrat-elektroshchitok-s-avtomatami.html">Сборка электрощитка с автоматами: пошаговая инструкция</a></li><li><a href="/articles/o/op/optimalnaya-vysota-garazhnykh-vorot.html">Оптимальная высота гаражных ворот: стандарты и расчёты 2026</a></li><li><a href="/articles/k/ka/kak-pokryt-kryshu-myagkoj-krovlej.html">Как покрыть крышу мягкой кровлей: пошаговая инструкция 2026</a></li><li><a href="/articles/c/ch/chto-daet-privatizatsiya-zemli-pod-garazhom.html">Приватизация земли под гаражом: плюсы, минусы и риски 2026</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Автоматическое включение генератора: полное руководство по системам АВР</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-работы-системы-авр-и-ключевые-компоненты">Принцип работы системы АВР и ключевые компоненты</a></li><li><a href="#выбор-контроллера-для-автозапуска">Выбор контроллера для автозапуска</a></li><li><a href="#схемы-подключения-и-коммутация-нагрузки">Схемы подключения и коммутация нагрузки</a></li><li><a href="#настройка-и-тестирование-системы">Настройка и тестирование системы</a></li><li><a href="#типичные-ошибки-и-проблемы-эксплуатации">Типичные ошибки и проблемы эксплуатации</a></li><li><a href="#безопасность-и-обслуживание-оборудования">Безопасность и обслуживание оборудования</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Внезапное отключение электроэнергии в частном доме или на даче часто становится серьезной проблемой, особенно если это происходит зимой, когда работает система отопления, или летом, когда необходимо охлаждение продуктов. <strong>Автоматическое включение генератора</strong> решает этот вопрос без участия человека, обеспечивая бесперебойную подачу энергии за считанные секунды после пропадания сети. Это не просто удобство, а необходимость для комфортной жизни в условиях нестабильного энергоснабжения.</p>
+
+<p>Ручной запуск резервного источника питания требует постоянного присутствия владельца и времени на прогрев двигателя, что не всегда возможно. Современные системы <em>АВР (Автоматического Ввода Резерва)</em> берут весь процесс на себя: они мониторят параметры сети, подают команду на старт, переключают нагрузку и даже глушат двигатель при восстановлении электричества. В этой статье мы разберем, как устроена такая система, какие компоненты необходимы и как избежать типичных ошибок при монтаже.</p>
+
+<p>Суть работы системы заключается в постоянном контроле напряжения основной сети. Как только датчики фиксируют выход параметров за допустимые пределы, логика контроллера инициирует запуск. Важно понимать, что <strong>автоматика генератора</strong> должна работать в связке с надежным перекидным рубильником или контакторами, чтобы исключить встречное включение, которое может привести к фатальным последствиям для оборудования.</p>
+
+<h2 id="принцип-работы-системы-авр-и-ключевые-компоненты">Принцип работы системы АВР и ключевые компоненты</h2>
+
+<p>Основой любой схемы автозапуска является <strong>контроллер АВР</strong>. Это электронное устройство, которое непрерывно сравнивает напряжение в основной сети с заданными эталонными значениями. Если напряжение падает ниже порога (обычно 170-180 Вольт) или пропадает полностью, контроллер подает сигнал стартеру. Время задержки перед запуском настраивается индивидуально, чтобы исключить реакцию на кратковременные скачки напряжения.</p>
+
+<p>Вторым важнейшим элементом является силовой блок коммутации. Он может быть выполнен на базе контакторов с механической блокировкой или специализированных перекидных рубильников с мотор-приводом. <mark>Главная задача этого узла — физически разорвать соединение с внешней сетью до момента подключения генератора, предотвращая короткое замыкание двух источников энергии.</mark> Использование простых переходников здесь недопустимо и опасно.</p>
+
+<p>Третий компонент — сам генератор, оснащенный системой электрического запуска. Механические модели с ручным стартером не могут быть интегрированы в полноценную систему автоматизации без сложной и дорогой доработки. Также необходим источник постоянного тока (АКБ) для питания стартера и электроники контроллера в момент отсутствия сети.</p>
+
+<ul>
+<li>⚡ <strong>Контроллер</strong> — мозг системы, анализирующий параметры сети.</li>
+<li>🔌 <strong>Силовые контакторы</strong> — обеспечивают безопасное переключение фаз.</li>
+<li>🔋 <strong>Аккумуляторная батарея</strong> — питает стартер и логику в автономном режиме.</li>
+</ul>
+
+<div class="pb-poll" id="poll-2b920f13"><div class="pb-poll-question">📊 Какой у вас источник резервного питания?</div><div class="pb-poll-option" data-poll="2b920f13" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Дизельный генератор>10кВт</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="2b920f13" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Бензиновый генератор<5кВт</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="2b920f13" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Инвертор с АКБ</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="2b920f13" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Пока нет резерва</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="2b920f13" data-idx="4" onclick="pbPollVote(this)"><span class="pb-poll-label">Другое</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="выбор-контроллера-для-автозапуска">Выбор контроллера для автозапуска</h2>
+
+<p>Рынок предлагает множество решений для реализации автозапуска, от простых реле контроля фаз до сложных программируемых блоков. Для бытового использования чаще всего выбирают специализированные модули, такие как <em>AutoStart</em>, <em>MasterVolt</em> или китайские аналоги серии <em>HGM</em>. Эти устройства уже имеют встроенную логику работы с бензиновыми и дизельными двигателями.</p>
+
+<p>Простые реле контроля напряжения (например, <em>РКН</em>) могут использоваться в бюджетных схемах, но они требуют сборки дополнительной логики на промежуточных реле. Это увеличивает риск ошибки при монтаже. Программируемые контроллеры позволяют настроить время прогрева, время работы на холостом ходу перед подключением нагрузки и интервалы периодического запуска для прогрева двигателя.</p>
+
+<blockquote>⚠️ Внимание: Дешевые китайские контроллеры без сертификации могут некорректно работать при низких температурах. Электроника должна быть рассчитана на диапазон от -20°C до +50°C, иначе зимой система может отказать в самый неподходящий момент.</blockquote>
+
+<p>При выборе устройства обращайте внимание на количество поддерживаемых фаз. Для однофазной сети достаточно простого модуля, но для трехфазной требуется контроль перекоса фаз. <strong>Защита от перекоса</strong> критически важна для трехфазных двигателей насосов и компрессоров, которые могут сгореть при работе на двух фазах.</p>
+
+<ul>
+<li>📟 <strong>Дисплей</strong> — позволяет визуально контролировать статус системы.</li>
+<li>🔧 <strong>Настраиваемые таймеры</strong> — гибкое управление циклами работы.</li>
+<li>📡 <strong>GSM-модуль</strong> — опция для удаленного управления и уведомлений.</li>
+</ul>
+
+<details class="pb-accordion"><summary>Нужен ли GSM-модуль?</summary><div class="pb-accordion-body"><p>Наличие GSM-модуля позволяет получать SMS-сообщения о запуске генератора, уровне топлива и критических ошибках. Это особенно полезно, если вы находитесь не дома. Однако такие модули требуют отдельной сим-карты и могут быть чувствительны к уровню сигнала в месте установки щита.</p></div></details>
+
+<h2 id="схемы-подключения-и-коммутация-нагрузки">Схемы подключения и коммутация нагрузки</h2>
+
+<p>Реализация схемы переключения — самый ответственный этап. Существует два основных пути: использование готовых щитов <strong>АВР</strong> или сборка щита самостоятельно. В готовых решениях все контакторы уже подобраны по току и установлены с правильной блокировкой. При самостоятельной сборке необходимо строго соблюдать последовательность подключения.</p>
+
+<p>Классическая схема включает в себя два контактора: один подключает дом к сети, второй — к генератору. Между ними устанавливается механическая блокировка, которая физически не дает взвестись обоим контакторам одновременно. Электрическая блокировка реализуется через дополнительные контакты, разрывающие цепь управления противоположного контактора.</p>
+
+<p>Для мощных потребителей (более 10 кВт) рекомендуется использовать реверсивные рубильники с моторным приводом. Они обеспечивают более надежный контакт и меньшее искрение при коммутации больших токов. Схема управления мотором также встраивается в логику контроллера автозапуска.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Тип коммутации</th>
+<th>Максимальный ток</th>
+<th>Сложность монтажа</th>
+<th>Стоимость</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Контакторы с блокировкой</td>
+<td>до 63 А</td>
+<td>Средняя</td>
+<td>Низкая</td>
+</tr>
+<tr>
+<td>Рубильник с мотором</td>
+<td>до 1000 А</td>
+<td>Высокая</td>
+<td>Высокая</td>
+</tr>
+<tr>
+<td>Готовый щит АВР</td>
+<td>до 100 А</td>
+<td>Низкая</td>
+<td>Средняя</td>
+</tr>
+</tbody>
+</table></div>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>При монтаже контакторов используйте провод с запасом по сечению. Нагрев контактов управления — частая причина ложных срабатываний или залипания реле в самый ответственный момент.</p></aside>
+
+<h2 id="настройка-и-тестирование-системы">Настройка и тестирование системы</h2>
+
+<p>После монтажа электрической части необходимо провести первичную настройку контроллера. В первую очередь задается пороговое напряжение отсечки. Стандартное значение — 170 Вольт. Если установить слишком высокий порог, генератор будет запускаться при каждом проседании сети, что приведет к износу ресурса двигателя.</p>
+
+<p>Следующий этап — настройка таймеров. Таймер задержки старта (обычно 5-10 секунд) нужен, чтобы переждать кратковременные моргания света. Таймер прогрева (30-60 секунд) позволяет двигателю выйти на рабочий температурный режим перед принятием нагрузки. <strong>Холодный двигатель</strong> под нагрузкой может быстро выйти из строя или заглохнуть.</p>
+
+<p>Тестирование проводится путем имитации аварии. Необходимо искусственно отключить вводной автомат основной сети и проконтролировать алгоритм действий системы: пауза -> команда старт -> прогрев -> переключение -> работа. После включения сети система должна выдержать генератор на холостом ходу для остывания и только потом заглушить его.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка системы АВР</h4><label class="check-item"><input type="checkbox"><span>Замерить напряжение АКБ</span></label><label class="check-item"><input type="checkbox"><span>Проверить натяжение ремня генератора</span></label><label class="check-item"><input type="checkbox"><span>Имитировать отключение сети</span></label><label class="check-item"><input type="checkbox"><span>Замерить время переключения</span></label><label class="check-item"><input type="checkbox"><span>Проверить работу вхолостую после восстановления</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<blockquote>⚠️ Внимание: При первом тестовом запуске обязательно отключите чувствительную электронику (компьютеры, котлы отопления). Скачки напряжения при переключении контакторов могут повредить их входные цепи.</blockquote>
+
+<h2 id="типичные-ошибки-и-проблемы-эксплуатации">Типичные ошибки и проблемы эксплуатации</h2>
+
+<p>Одной из самых распространенных ошибок является пренебрежение качеством топлива при длительном простое. Бензин теряет свои свойства за 3-6 месяцев, образуя смолистый налет в карбюраторе. Система может успешно запустить двигатель, но через несколько минут он заглохнет из-за закупорки жиклеров.</p>
+
+<p>Вторая проблема — разряд аккумулятора. Если генератор стоит без дела месяцами, АКБ саморазряжается. В момент аварии стартер не сможет провернуть двигатель. Решение — установка автоматического зарядного устройства (АЗУ) с режимом десульфатации и поддержания заряда, которое всегда подключено к батарее.</p>
+
+<p>Третья ошибка — отсутствие регулярного обслуживания. <strong>Масло в двигателе</strong> должно меняться не только по моточасам, но и по времени (раз в сезон), так как оно окисляется. Также необходимо периодически проверять состояние свечей зажигания и воздушных фильтров.</p>
+
+<ul>
+<li>🛢️ <strong>Старое топливо</strong> — главная причина отказа после успешного старта.</li>
+<li>🪫 <strong>Разряженная АКБ</strong> — делает автозапуск невозможным физически.</li>
+<li>❄️ <strong>Замерзший конденсат</strong> — в выхлопной системе может создать противодавление.</li>
+</ul>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Регулярный профилактический запуск генератора (раз в 2-3 недели) под нагрузкой продлевает его жизнь и гарантирует готовность системы в критический момент.</p></aside>
+
+<h2 id="безопасность-и-обслуживание-оборудования">Безопасность и обслуживание оборудования</h2>
+
+<p>Эксплуатация генератора с автозапуском требует соблюдения строгих мер безопасности. Помещение для установки должно быть вентилируемым, так как работающий двигатель выделяет угарный газ. Выхлопная система должна быть герметичной и выведенной за пределы помещения.</p>
+
+<p>Электрическая безопасность подразумевает наличие надежного заземления как самого генератора, так и щита АВР. В случае пробоя изоляции на корпусе не должно появляться опасное для жизни напряжение. Все соединения в щите должны быть протянуты динамометрическим ключом и проверены тепловизором после первых циклов работы под нагрузкой.</p>
+
+<p>Плановое техническое обслуживание должно проводиться не реже одного раза в год. Оно включает замену масла, фильтров, проверку уровня антифриза (для жидкостных моделей) и тестовый запуск. Игнорирование этих процедур может привести к тому, что <em>автоматика</em> сработает, но двигатель не запустится или выйдет из строя в первые минуты работы.</p>
+
+<details>
+<summary>Как часто нужно менять масло в генераторе с автозапуском?</summary>
+<p>Если генератор работает регулярно, масло меняют каждые 50-100 моточасов. Если он стоит в резерве, масло меняют раз в год, независимо от наработки, так как оно теряет свои смазывающие свойства и набирает влагу из воздуха.</p>
+</details>
+
+<details>
+<summary>Можно ли использовать инверторный генератор с системой АВР?</summary>
+<p>Да, можно, но есть нюансы. Инверторные генераторы часто имеют электронную дроссельную заслонку, которая управляется своим блоком. Для интеграции с АВР может потребоваться специальный переходник или доработка, чтобы контроллер АВР мог управлять throttle-сигналом.</p>
+</details>
+
+<details>
+<summary>Что делать, если генератор не глохнет после появления сети?</summary>
+<p>Необходимо проверить настройки таймера охлаждения. Если таймер установлен на 0 или слишком мал, система может не успеть отработать цикл останова. Также стоит проверить целостность цепи управления топливным клапаном или электроникой двигателя.</p>
+</details>
+
+<details>
+<summary>Нужно ли заземлять нейтраль генератора?</summary>
+<p>Это зависит от типа вашей сети. В однофазной сети с изолированной нейтралью (IT) заземление не требуется. В сети TN-C-S или TN-S, где нейтраль глухозаземлена, корпус генератора должен быть заземлен, а схема соединения обмоток должна соответствовать основной сети.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/a/av/avtoservis-koreana-v-spb-adresa.html" class="pb-related-card">
+                <span class="pb-related-title">Автосервис Кореана в СПБ: адреса, контакты и услуги</span>
+                <span class="pb-related-desc">Ищете автосервис Кореана в СПб? Актуальные адреса филиалов, карта сервисов, график работы и перечень</span>
+            </a><a href="/articles/p/pr/pravilno-sobrat-elektroshchitok-s-avtomatami.html" class="pb-related-card">
+                <span class="pb-related-title">Сборка электрощитка с автоматами: пошаговая инструкция</span>
+                <span class="pb-related-desc">Как правильно собрать электрощиток своими руками: схема, выбор автоматов, монтаж DIN-рейки и правила</span>
+            </a><a href="/articles/o/op/optimalnaya-vysota-garazhnykh-vorot.html" class="pb-related-card">
+                <span class="pb-related-title">Оптимальная высота гаражных ворот: стандарты и расчёты 2026</span>
+                <span class="pb-related-desc">Как выбрать высоту гаражных ворот для легкового авто, внедорожника или микроавтобуса? Стандарты СНиП</span>
+            </a><a href="/articles/k/ka/kak-pokryt-kryshu-myagkoj-krovlej.html" class="pb-related-card">
+                <span class="pb-related-title">Как покрыть крышу мягкой кровлей: пошаговая инструкция 2026</span>
+                <span class="pb-related-desc">Полное руководство по укладке мягкой кровли своими руками: выбор материалов, подготовка основания, т</span>
+            </a><a href="/articles/c/ch/chto-daet-privatizatsiya-zemli-pod-garazhom.html" class="pb-related-card">
+                <span class="pb-related-title">Приватизация земли под гаражом: плюсы, минусы и риски 2026</span>
+                <span class="pb-related-desc">Стоит ли оформлять землю под гаражом в собственность? Разбираем риски сноса, налоги, юридические нюа</span>
+            </a><a href="/articles/a/ak/akt-priema-peredachi-mashiny-v-remont.html" class="pb-related-card">
+                <span class="pb-related-title">Акт приема-передачи машины в ремонт: бланк и правила заполнения</span>
+                <span class="pb-related-desc">Как правильно оформить акт приема-передачи авто в сервис. Образец документа, порядок заполнения, юри</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

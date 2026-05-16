@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Выбор вводного автомата по мощности: расчет и таблица — Авто Факт</title>
+    <meta name="description" content="Как правильно выбрать вводной автомат по мощности? Формулы расчета, таблица сечений и номиналов, советы по защите проводки.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/v/vy/vybor-vvodnogo-avtomata-po-moshchnosti.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Выбор вводного автомата по мощности: расчет и таблица">
+    <meta property="og:description" content="Как правильно выбрать вводной автомат по мощности? Формулы расчета, таблица сечений и номиналов, советы по защите проводки.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/garazh-master/">Гараж Мастер</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Выбор вводного автомата по мощности: расчет и таблица</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#основы-расчета-мощности-и-тока">Основы расчета мощности и тока</a></li><li><a href="#влияние-сечения-кабеля-на-выбор-автомата">Влияние сечения кабеля на выбор автомата</a></li><li><a href="#время-токовые-характеристики-и-типы-расцепителей">Время-токовые характеристики и типы расцепителей</a></li><li><a href="#температурные-коэффициенты-и-условия-монтажа">Температурные коэффициенты и условия монтажа</a></li><li><a href="#селективность-и-схема-подключения">Селективность и схема подключения</a></li><li><a href="#ошибки-при-выборе-и-эксплуатации">Ошибки при выборе и эксплуатации</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/s/st/stoyanka-dlya-avto-na-dache.html">Парковка на даче своими руками: выбор покрытия и технология</a></li><li><a href="/articles/k/kh/kholodnyj-garazh-dlya-avtomobilya.html">Холодный гараж для автомобиля: утепление, вентиляция и хранение</a></li><li><a href="/articles/c/ch/chem-razvesti-dorozhnuyu-krasku.html">Чем развести дорожную краску: растворители и пропорции 2026</a></li><li><a href="/articles/g/ga/garazh-iz-metallokonstruktsij-svoimi-rukami.html">Гараж из металлоконструкций своими руками: пошаговая инструкция</a></li><li><a href="/articles/e/es/estakada-dlya-avto-ryadom.html">Эстакада для авто рядом: где найти, как выбрать и правила пользования</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Выбор вводного автомата по мощности: полное руководство</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#основы-расчета-мощности-и-тока">Основы расчета мощности и тока</a></li><li><a href="#влияние-сечения-кабеля-на-выбор-автомата">Влияние сечения кабеля на выбор автомата</a></li><li><a href="#время-токовые-характеристики-и-типы-расцепителей">Время-токовые характеристики и типы расцепителей</a></li><li><a href="#температурные-коэффициенты-и-условия-монтажа">Температурные коэффициенты и условия монтажа</a></li><li><a href="#селективность-и-схема-подключения">Селективность и схема подключения</a></li><li><a href="#ошибки-при-выборе-и-эксплуатации">Ошибки при выборе и эксплуатации</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Владельцы частных домов и гаражей часто сталкиваются с задачей модернизации электросети, где первым этапом становится грамотный подбор защитного оборудования. <strong>Вводной автомат</strong> — это не просто рубильник для отключения напряжения, а сложное устройство, предотвращающее перегрев проводки и возгорание при критических токах. Ошибка в расчетах может привести к тому, что при включении мощного сварочного аппарата или компрессора будет постоянно выбивать пробки, либо, что еще хуже, автомат не сработает при перегрузке.</p>
+
+<p>Основная цель автоматического выключателя заключается в защите кабельной линии, а не подключенных электроприборов. Именно поэтому <strong>номинальный ток</strong> устройства должен строго соответствовать сечению проложенного кабеля, а не суммарной мощности всех потребителей. Многие ошибочно полагают, что чем мощнее автомат, тем лучше, но это прямой путь к расплавлению изоляции и пожару в электрощите.</p>
+
+<p>В этой статье мы подробно разберем методику расчета, рассмотрим влияние температуры и коэффициентов на выбор оборудования, а также изучим особенности работы разных типов расцепителей. Вы научитесь определять необходимый запас прочности и поймете, почему <em>характеристика C</em> является стандартом для бытовых сетей.</p>
+
+<h2 id="основы-расчета-мощности-и-тока">Основы расчета мощности и тока</h2>
+
+<p>Для правильного подбора защиты необходимо перевести заявленную мощность в силу тока, так как автоматы калибруются именно в Амперах. В однофазных сетях напряжением 220 В используется простая формула: сила тока равна мощности, деленной на напряжение. Однако для трехфазных сетей 380 В, которые часто встречаются в гаражах для подключения профессионального оборудования, расчет ведется с учетом коэффициента <strong>√3</strong> и косинуса фи.</p>
+
+<p>Косинус фи (<em>cos φ</em>) отражает соотношение активной и реактивной мощности. Для чисто активной нагрузки, такой как нагреватели или лампы накаливания, этот параметр близок к единице. Но если в гараже работают <strong>электродвигатели</strong>, трансформаторы или сварочные инверторы, возникает реактивная составляющая, и <em>cos φ</em> может снижаться до 0,8 и менее, что увеличивает ток в цепи.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не округляйте расчетный ток в большую сторону без учета сечения кабеля. Если расчет показал 24 Ампера, установка автомата на 32А может привести к перегрузке провода, рассчитанного на 25А, так как тепловой расцепитель сработает только при значительном превышении номинала.</p>
+</blockquote>
+
+<p>Важно учитывать, что паспортная мощность приборов часто отличается от реальной потребляемой. Например, <strong>пусковой ток</strong> двигателя может в 5-7 раз превышать номинальный, что требует запаса по току или использования автоматов с соответствующей время-токовой характеристикой, чтобы избежать ложных срабатываний при запуске.</p>
+
+<h2 id="влияние-сечения-кабеля-на-выбор-автомата">Влияние сечения кабеля на выбор автомата</h2>
+
+<p>Главное правило электромонтажа гласит: автомат защищает кабель. Поэтому первым шагом всегда является определение максимально допустимого тока для имеющегося или планируемого сечения жил. Медь и алюминий обладают разной проводимостью, и для одинакового сечения их пропускная способность отличается. В современных условиях <strong>медный кабель</strong> является предпочтительным выбором из-за меньшего сопротивления и окисления.</p>
+
+<p>Ниже представлена таблица соответствия сечений медного кабеля и рекомендуемых номиналов автоматических выключателей для однофазной сети. Данные актуальны для скрытой проводки в штробах или коробах, где теплоотдача хуже, чем у открытого монтажа.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Сечение кабеля (мм²)</th>
+<th>Допустимый ток (А)</th>
+<th>Рекомендуемый автомат (А)</th>
+<th>Макс. мощность (кВт)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.5</td>
+<td>19</td>
+<td>10</td>
+<td>2.2</td>
+</tr>
+<tr>
+<td>2.5</td>
+<td>27</td>
+<td>16</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>4.0</td>
+<td>38</td>
+<td>25</td>
+<td>5.5</td>
+</tr>
+<tr>
+<td>6.0</td>
+<td>50</td>
+<td>32</td>
+<td>7.0</td>
+</tr>
+<tr>
+<td>10.0</td>
+<td>70</td>
+<td>40-50</td>
+<td>11.0</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Если вы планируете установку <strong>вводного автомата</strong> на 40 Ампер, сечение вводного кабеля должно быть не менее 10 мм². Использование провода 6 мм² с автоматом 40А недопустимо, так как кабель начнет греться задолго до того, как сработает защита. Всегда выбирайте автомат с номиналом, меньшим или равным допустимому току кабеля.</p>
+
+<p>При использовании алюминиевых проводов их сечение необходимо увеличивать. Например, там, где достаточно меди 2.5 мм², для алюминия потребуется 4 мм². Старые алюминиевые сети в гаражах часто не выдерживают современных нагрузок, и попытка просто заменить автомат на более мощный приведет к нагреву контактов и плавлению изоляции в местах скруток.</p>
+
+<div class="pb-poll" id="poll-19a118ae"><div class="pb-poll-question">📊 Какое сечение кабеля у вашего ввода в гараж?</div><div class="pb-poll-option" data-poll="19a118ae" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">2.5 мм²</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="19a118ae" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">4 мм²</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="19a118ae" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">6 мм²</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="19a118ae" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">10 мм² и более</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="19a118ae" data-idx="4" onclick="pbPollVote(this)"><span class="pb-poll-label">Не знаю / Алюминий</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="время-токовые-характеристики-и-типы-расцепителей">Время-токовые характеристики и типы расцепителей</h2>
+
+<p>Автоматические выключатели делятся на классы в зависимости от скорости срабатывания при превышении тока. Для бытовых нужд и небольших мастерских наиболее распространены характеристики <em>B</em>, <em>C</em> и <em>D</em>. Понимание разницы между ними критически важно для стабильной работы сети без ложных отключений.</p>
+
+<p>Автоматы типа <strong>B</strong> срабатывают при превышении номинала в 3-5 раз. Они подходят для сетей с активной нагрузкой, где нет больших пусковых токов. Однако в гараже, где часто используются инструменты с электромоторами, такой автомат может выбивать при каждом запуске компрессора или циркулярной пилы.</p>
+
+<p>Наиболее универсальным выбором является характеристика <strong>C</strong>. Эти устройства выдерживают кратковременное превышение тока в 5-10 раз, что позволяет пережить пусковые броски тока двигателей. Именно их чаще всего рекомендуют устанавливать на ввод в частный дом или гаражный бокс. Тип <em>D</em> применяется для мощных трансформаторов и двигателей с тяжелым пуском, где кратность тока может достигать 10-20 номиналов.</p>
+
+<details class="pb-accordion"><summary>Что такое тепловой и электромагнитный расцепитель?</summary><div class="pb-accordion-body"><p>Внутри автомата находятся два механизма защиты. Тепловой расцепитель (биметаллическая пластина) реагирует на длительное, незначительное превышение тока, защищая от перегрева. Электромагнитный расцепитель (соленоид) срабатывает мгновенно при коротком замыкании, предотвращая разрушение сети.</p></div></details>
+
+<p>При выборе стоит обращать внимание на <strong>отключающую способность</strong>. Для гаражных кооперативов, где трансформаторная подстанция может находиться далеко, токи короткого замыкания невелики, и достаточно 4.5 кА или 6 кА. В городских условиях или near промышленных зон лучше брать модели с отключающей способностью 10 кА (обозначается цифрой в рамке на корпусе).</p>
+
+<h2 id="температурные-коэффициенты-и-условия-монтажа">Температурные коэффициенты и условия монтажа</h2>
+
+<p>Номинальный ток автомата указывается для стандартной температуры окружающего воздуха +30°C. Если электрощит установлен в неотапливаемом гараже, где зимой температура опускается ниже нуля, или, наоборот, в жарком цеху, характеристики устройства меняются. При низких температурах автомат «дубеет» и может не отключиться вовремя, а при высоких — срабатывать раньше времени.</p>
+
+<p>Производители предоставляют специальные графики и коэффициенты для пересчета номинала. Например, при температуре -10°C автомат номиналом 25А может реально держать ток около 28-29А. Это создает опасную ситуацию, когда проводка уже перегружена, а защита молчит. В таких случаях рекомендуется брать автомат с запасом или учитывать этот фактор при расчете сечения.</p>
+
+<ul>
+<li>🌡️ При установке в герметичном щите без вентиляции температура внутри может быть на 10-15 градусов выше уличной.</li>
+<li>📉 Если щит стоит на солнечной стороне, летом нагрев корпуса может провоцировать ложные отключения даже при нормальной нагрузке.</li>
+<li>🏗️ Плотная установка нескольких автоматов в ряд также снижает их номинальный ток из-за взаимного нагрева (коэффициент 0.9-0.95 на каждый соседний прибор).</li>
+</ul>
+
+<p>Особое внимание следует уделить качеству монтажа. Плохо затянутые контакты греются, передавая тепло на корпус автомата, что может вызвать срабатывание теплового расцепителя. Регулярная протяжка винтовых соединений (раз в год) помогает избежать проблем с <strong>контактной группой</strong>.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Используйте динамометрическую отвертку или строго соблюдайте усилие затяжки, указанное производителем, чтобы избежать перегрева контактов из-за слабой фиксации.</p></aside>
+
+<h2 id="селективность-и-схема-подключения">Селективность и схема подключения</h2>
+
+<p>Селективность — это способность системы отключать только аварийный участок, не обесточивая всю сеть. В идеале при коротком замыкании в розетке должен сработать автомат на линии, а не вводной рубильник. Для достижения этого номиналы автоматов должны выстраиваться в иерархическую цепочку с шагом разницы минимум в 2 ступени.</p>
+
+<p>Например, если на вводе стоит автомат 40А, то первый уровень защиты (на розетки) должен быть 16А или 20А, а второй (на освещение) — 10А. Такая схема гарантирует, что при перегрузке в цепи освещения не погаснет свет во всем гараже и не остановится работающий станок.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка селективности защиты</h4><label class="check-item"><input type="checkbox"><span>Номинал вводного автомата выше групповых</span></label><label class="check-item"><input type="checkbox"><span>Разница между автоматами минимум 2 ступени</span></label><label class="check-item"><input type="checkbox"><span>Кабель соответствует номиналу каждого автомата</span></label><label class="check-item"><input type="checkbox"><span>Установлено УЗО или дифавтомат для защиты человека</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>В современных схемах часто применяют <strong>дифференциальную защиту</strong> (УЗО или дифавтоматы). Вводной автомат защищает кабель от перегрузки, а УЗО — человека от поражения током при утечке. </p>
+
+<blockquote>
+<p>⚠️ Внимание: Суммарный ток утечки всех приборов в сети не должен превышать 33% от номинала УЗО. Для вводного автомата с УЗО на 100мА (противопожарное) и групповыми на 30мА (защитные) обеспечивается двухуровневая защита без ложных срабатываний.</p>
+</blockquote>
+
+<h2 id="ошибки-при-выборе-и-эксплуатации">Ошибки при выборе и эксплуатации</h2>
+
+<p>Одной из самых частых ошибок является установка автоматов с «запасом», купленных по дешевке на рынках. Дешевые китайские аналоги часто имеют реальный ток срабатывания, превышающий номинал на 20-30%. Автомат с маркировкой 25А может спокойно держать 32А часами, что приведет к деградации изоляции кабеля.</p>
+
+<p>Вторая распространенная ошибка — игнорирование состояния проводки при замене автомата. Если в старом гараже стоит автомат 16А и его постоянно выбивает, установка автомата на 25А не решит проблему, а лишь перенесет точку нагрева глубже в стену, где найти и устранить повреждение будет сложнее и дороже.</p>
+
+<ul>
+<li>🚫 Использование автоматов неизвестных брендов без сертификатов соответствия.</li>
+<li>🚫 Замена однополюсного автомата на двухполюсный в разрыве фазы и нуля без необходимости (хотя это безопаснее, но занимает место).</li>
+<li>🚫 Попытка «подлечить» автомат, заклинив его механизм, что полностью лишает сеть защиты.</li>
+</ul>
+
+<p>Также стоит избегать монтажа автоматов в пыльных и влажных помещениях без соответствующей защиты корпуса (IP). Пыль, смешиваясь с влагой, образует токопроводящую дорожку, что может привести к межфазному замыканию внутри щита.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Автомат должен быть подобран под сечение кабеля, а не под мощность потребителей. Кабель — самое слабое и трудно заменяемое звено цепи.</p></aside>
+
+<details>
+<summary>Можно ли поставить автомат большей мощности, если его постоянно выбивает?</summary>
+<p>Нет, это категорически запрещено без замены проводки. Если автомат выбивает, значит, ток превышает допустимый для вашей проводки. Увеличение номинала автомата приведет к перегреву кабеля, оплавлению изоляции и возможному пожару. Сначала проверьте суммарную мощность приборов или замените кабель на более толстый.</p>
+</details>
+
+<details>
+<summary>Какой автомат выбрать для сварочного аппарата?</summary>
+<p>Для сварочных инверторов обычно подходят автоматы характеристики <em>C</em> или <em>D</em> (если пусковые токи очень велики). Номинал зависит от мощности аппарата: для бытовых моделей (до 5 кВт) часто хватает 16-20А, для профессиональных (до 10 кВт) — 32А. Обязательно проверьте сечение кабеля, так как сварка создает высокую нагрузку.</p>
+</details>
+
+<details>
+<summary>В чем разница между однополюсным и двухполюсным автоматом на вводе?</summary>
+<p>Однополюсный разрывает только фазу, двухполюсный — фазу и ноль одновременно. Для ввода в гараж или дом предпочтительнее двухполюсный автомат, так как он позволяет полностью обесточить сеть для безопасного ремонта и защищает от аварийного появления фазы на нулевом проводе.</p>
+</details>
+
+<details>
+<summary>Как часто нужно менять автоматический выключатель?</summary>
+<p>Автоматы не имеют строгого срока годности, но механический ресурс ограничен количеством циклов включения/выключения (обычно 4000-10000 раз). Если автомат начал греться, гудеть или самопроизвольно отключаться, его необходимо заменить немедленно, независимо от срока службы.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/s/st/stoyanka-dlya-avto-na-dache.html" class="pb-related-card">
+                <span class="pb-related-title">Парковка на даче своими руками: выбор покрытия и технология</span>
+                <span class="pb-related-desc">Как сделать стоянку для авто на даче своими руками. Обзор материалов, пошаговая инструкция укладки и</span>
+            </a><a href="/articles/k/kh/kholodnyj-garazh-dlya-avtomobilya.html" class="pb-related-card">
+                <span class="pb-related-title">Холодный гараж для автомобиля: утепление, вентиляция и хранение</span>
+                <span class="pb-related-desc">Как подготовить холодный гараж для зимнего хранения авто. Утепление стен, пола и ворот своими руками</span>
+            </a><a href="/articles/c/ch/chem-razvesti-dorozhnuyu-krasku.html" class="pb-related-card">
+                <span class="pb-related-title">Чем развести дорожную краску: растворители и пропорции 2026</span>
+                <span class="pb-related-desc">Какие растворители подходят для разведения дорожной краски? Проверенные составы, пропорции и советы </span>
+            </a><a href="/articles/g/ga/garazh-iz-metallokonstruktsij-svoimi-rukami.html" class="pb-related-card">
+                <span class="pb-related-title">Гараж из металлоконструкций своими руками: пошаговая инструкция</span>
+                <span class="pb-related-desc">Как построить гараж из металлоконструкций своими руками: выбор фундамента, сварка каркаса, монтаж пр</span>
+            </a><a href="/articles/e/es/estakada-dlya-avto-ryadom.html" class="pb-related-card">
+                <span class="pb-related-title">Эстакада для авто рядом: где найти, как выбрать и правила пользования</span>
+                <span class="pb-related-desc">Ищем ближайшую эстакаду для ремонта авто: карты, правила безопасности, альтернативы и советы по выбо</span>
+            </a><a href="/articles/s/st/standartnyj-garazh-na-1-mashinu-razmery-ploshchad.html" class="pb-related-card">
+                <span class="pb-related-title">Стандартный гараж на 1 машину: размеры, площадь, чертежи</span>
+                <span class="pb-related-desc">Каков стандартный размер гаража на одну машину? Расчет оптимальной площади, габариты ворот и зоны об</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

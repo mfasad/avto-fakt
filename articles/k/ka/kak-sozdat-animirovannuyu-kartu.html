@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как создать анимированную карту: полное руководство — Авто Факт</title>
+    <meta name="description" content="Узнайте, как создать анимированную карту с нуля. Обзор инструментов, пошаговый алгоритм работы и советы по оптимизации для веба.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ka/kak-sozdat-animirovannuyu-kartu.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как создать анимированную карту: полное руководство">
+    <meta property="og:description" content="Узнайте, как создать анимированную карту с нуля. Обзор инструментов, пошаговый алгоритм работы и советы по оптимизации для веба.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как создать анимированную карту: полное руководство</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#выбор-концепции-и-сбор-исходных-данных">Выбор концепции и сбор исходных данных</a></li><li><a href="#инструменты-для-создания-анимации-карт">Инструменты для создания анимации карт</a></li><li><a href="#подготовка-векторных-слоев-и-стилей">Подготовка векторных слоев и стилей</a></li><li><a href="#алгоритм-создания-анимации">Алгоритм создания анимации</a></li><li><a href="#оптимизация-производительности-и-веса">Оптимизация производительности и веса</a></li><li><a href="#публикация-и-интеграция-на-сайт">Публикация и интеграция на сайт</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/k/ko/kofevarka-rozhkovogo-tipa-delonghi-ec685-bk.html">Рожковая кофеварка Delonghi EC685 BK: Полный обзор и настройки</a></li><li><a href="/articles/r/ro/rost-optimusa-prajma-v-transformerakh-prajm.html">Рост Оптимуса Прайма в Трансформерах Прайм: факты</a></li><li><a href="/articles/y/ya/yandex-pogoda-karta-osadkov.html">Yandex Погода: карта осадков и радар в реальном времени</a></li><li><a href="/articles/s/sk/skachat-sbornik-muzyki-v-tachku.html">Как скачать музыку в машину: сборники для авто 2026 года</a></li><li><a href="/articles/k/ka/kakie-byvayut-gps-trekery.html">Какие бывают GPS трекеры: виды, отличия и выбор</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как создать анимированную карту: пошаговый гайд</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#выбор-концепции-и-сбор-исходных-данных">Выбор концепции и сбор исходных данных</a></li><li><a href="#инструменты-для-создания-анимации-карт">Инструменты для создания анимации карт</a></li><li><a href="#подготовка-векторных-слоев-и-стилей">Подготовка векторных слоев и стилей</a></li><li><a href="#алгоритм-создания-анимации">Алгоритм создания анимации</a></li><li><a href="#оптимизация-производительности-и-веса">Оптимизация производительности и веса</a></li><li><a href="#публикация-и-интеграция-на-сайт">Публикация и интеграция на сайт</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Визуализация геоданных превратилась из удела узких специалистов в стандарт для современных веб-сайтов и аналитических отчетов. Статичное изображение уже не способно удержать внимание пользователя, который привык к динамичному контенту и интерактивным интерфейсам. Именно поэтому вопрос о том, как создать анимированную карту, становится все более актуальным для разработчиков, маркетологов и дизайнеров.</p>
+
+<p>Движение на экране помогает мгновенно считывать изменения, маршруты перемещения объектов или динамику распространения явления во времени. Грамотно реализованная <strong>анимация</strong> не просто украшает интерфейс, но и выполняет функцию навигационного указателя, подсказывая глазу зрителя, куда смотреть в следующую секунду. Это особенно важно при работе с большими массивами данных, где статика превращается в нечитаемое пятно.</p>
+
+<p>Современные инструменты позволяют реализовать такие проекты без глубоких знаний программирования, хотя код дает максимальную гибкость. В этой статье мы разберем основные этапы подготовки, выберем подходящий софт и рассмотрим технические нюансы рендеринга. Вы поймете, с чего начать и какие ошибки чаще всего допускают новички при первой попытке оживить географическую модель.</p>
+
+<h2 id="выбор-концепции-и-сбор-исходных-данных">Выбор концепции и сбор исходных данных</h2>
+
+<p>Прежде чем открывать графический редактор, необходимо четко определить цель вашей визуализации. Будет ли это отслеживание курьера в реальном времени, историческая реконструкция битвы или просто красивое вступление для сайта о путешествиях? От ответа на этот вопрос зависит выбор <strong>инструментария</strong> и формата итоговых данных. Непонимание задачи на старте часто приводит к тому, что приходится переделывать половину работы заново.</p>
+
+<p>Сбор качественных исходников — это фундамент, на котором строится весь проект. Вам понадобятся координаты точек, треки перемещения или полигоны регионов в актуальном состоянии. Часто данные разбросаны по разным источникам и требуют серьезной обработки перед импортом в графическую среду.</p>
+
+<p>Для работы вам могут потребоваться следующие форматы файлов:</p>
+<ul>
+<li>🗺️ <strong>GeoJSON</strong> — универсальный стандарт для хранения географических объектов с атрибутами.</li>
+<li>📍 <strong>KML/KMZ</strong> — форматы, часто используемые в Google Earth и навигационных системах.</li>
+<li>📊 <strong>CSV</strong> — таблицы с координатами, которые нужно будет конвертировать в пространственные данные.</li>
+<li>🖼️ <strong>SVG</strong> — векторные контуры карт, удобные для стилизации в дизайне.</li>
+</ul>
+
+<blockquote>⚠️ <strong>Внимание:</strong> Всегда проверяйте систему координат ваших данных. Смешение WGS84 и проекций Меркатора без пересчета приведет к критическим искажениям геометрии и смещению объектов.</blockquote>
+
+<p>Не стоит игнорировать этап очистки данных от шумов и дубликатов. <em>Топология</em> карты должна быть безупречной, иначе при анимации могут возникать артефакты, такие как разрывы границ или"прыгающие" точки. Если вы работаете с треками движения, убедитесь, что временные метки синхронизированы и идут в правильном хронологическом порядке.</p>
+
+<h2 id="инструменты-для-создания-анимации-карт">Инструменты для создания анимации карт</h2>
+
+<p>Рынок программного обеспечения предлагает решения для любого уровня подготовки. Выбор зависит от того, насколько сложной должна быть итоговая <strong>визуализация</strong> и где она будет использоваться. Профессиональные ГИС-системы дают полный контроль, но требуют обучения, тогда как онлайн-сервисы позволяют получить результат за несколько кликов.</p>
+
+<p>Для веб-разработчиков идеальным выбором станут JavaScript-библиотеки. Они позволяют встраивать интерактивные карты прямо в код сайта, обеспечивая высокую производительность и адаптивность. Дизайнеры же чаще обращают внимание на графические пакеты, где можно создать эффектный видеоролик для презентации или рекламы.</p>
+
+<p>Сравним основные категории инструментов:</p>
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Тип инструмента</th>
+<th>Примеры</th>
+<th>Сложность</th>
+<th>Лучшее применение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Библиотеки JS</td>
+<td>Leaflet, Mapbox GL JS</td>
+<td>Высокая</td>
+<td>Интерактивные веб-сайты</td>
+</tr>
+<tr>
+<td>ГИС-платформы</td>
+<td>QGIS, ArcGIS Pro</td>
+<td>Средняя</td>
+<td>Аналитика и рендер видео</td>
+</tr>
+<tr>
+<td>Онлайн-сервисы</td>
+<td>Mapbox Studio, Felt</td>
+<td>Низкая</td>
+<td>Быстрые проекты без кода</td>
+</tr>
+<tr>
+<td>3D и Моушн</td>
+<td>Blender, After Effects</td>
+<td>Очень высокая</td>
+<td>Кинематографичные ролики</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Отдельного внимания заслуживает связка <em>QGIS</em> и плагина <em>TimeManager</em>. Это мощное бесплатное решение, позволяющее анимировать изменения во времени прямо внутри геоинформационной системы. Вы можете настроить временную шкалу, добавить слои и экспортировать последовательность кадров для дальнейшего сведения в видеоредакторе.</p>
+
+<div class="pb-poll" id="poll-2567fabb"><div class="pb-poll-question">📊 Какой инструмент вы планируете использовать?</div><div class="pb-poll-option" data-poll="2567fabb" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Библиотеки JS (Leaflet/Mapbox)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="2567fabb" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">ГИС (QGIS/ArcGIS)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="2567fabb" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Онлайн-конструкторы</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="2567fabb" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">3D-редакторы (Blender)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="подготовка-векторных-слоев-и-стилей">Подготовка векторных слоев и стилей</h2>
+
+<p>Ключевым моментом в создании эффектной карты является правильная стилизация. Скучные стандартные цвета редко вызывают интерес, поэтому необходимо разработать уникальную <strong>палитру</strong> и правила отрисовки объектов. Векторные тайлы позволяют менять внешний вид карты на лету, не перерисовывая всю геометрию заново.</p>
+
+<p>При настройке стилей важно соблюдать баланс между эстетикой и читаемостью. Слишком яркие цвета могут отвлекать от основной информации, которую несет анимация. Используйте контрастные оттенки для активных элементов и приглушенные тона для фона.</p>
+
+<p>Основные этапы подготовки слоев:</p>
+<ul>
+<li>🎨 Упрощение геометрии полигонов для ускорения рендеринга в браузере.</li>
+<li>🏷️ Добавление атрибутов для динамического изменения цвета или размера в зависимости от данных.</li>
+<li>💡 Настройка уровней масштабирования (zoom levels), чтобы детализация менялась плавно.</li>
+<li>🚫 Скрытие лишних объектов, которые не участвуют в сценарии анимации.</li>
+</ul>
+
+<blockquote>⚠️ <strong>Внимание:</strong> Избегайте использования слишком тяжелых SVG-файлов с тысячами узлов. Это может вызвать"фризы" при прокрутке или анимации, особенно на мобильных устройствах.</blockquote>
+
+<p>Для веб-карт часто используется подход <mark>векторных тайлов</mark>, который позволяет передавать только те данные, которые видит пользователь в данный момент. Это кардинально отличается от растровых карт, где загружается готовое изображение. Векторный подход дает невероятную гибкость в стилизации и позволяет применять сложные эффекты свечения или пульсации программно.</p>
+
+<h2 id="алгоритм-создания-анимации">Алгоритм создания анимации</h2>
+
+<p>Процесс оживления карты можно разделить на несколько логических шагов. Сначала создается статичная сцена, затем настраивается временная шкала, и только после этого добавляются ключевые кадры или скрипты движения. Нарушение последовательности может привести к хаосу в проекте.</p>
+
+<p>Если вы работаете в коде, то анимация строится на обновлении состояния объектов с определенной частотой кадров. В графических редакторах вы работаете с таймлайном, расставляя ключевые точки (keyframes) для изменения параметров позиции, масштаба или прозрачности.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Чек-лист перед запуском анимации</h4><label class="check-item"><input type="checkbox"><span>Проверена геометрия всех слоев</span></label><label class="check-item"><input type="checkbox"><span>Настроены стили для всех зум-уровней</span></label><label class="check-item"><input type="checkbox"><span>Определен временной интервал</span></label><label class="check-item"><input type="checkbox"><span>Подготовлен сценарий движения</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Рассмотрим базовый принцип работы с ключевыми кадрами. Вы задаете начальное положение объекта в момент времени T=0. Затем перемещаетесь в момент T=10 и меняете координаты. Программа автоматически рассчитывает промежуточные значения, создавая иллюзию плавного движения. Этот метод называется <strong>интерполяцией</strong>.</p>
+
+<pre><code>// Пример логики обновления позиции (псевдокод)
+<p>function updateFrame(time) {</p>
+<p>let position = calculatePosition(time);</p>
+<p>map.setCenter(position);</p>
+<p>renderFrame;</p>
+<p>}</code></pre></p>
+
+<p>Важно учитывать easing (функции плавности). Линейное движение выглядит механически и неестественно. Использование функций ускорения и замедления (ease-in, ease-out) делает анимацию более живой и приятной для восприятия. Это касается как перемещения камеры, так и появления маркеров.</p>
+
+<h2 id="оптимизация-производительности-и-веса">Оптимизация производительности и веса</h2>
+
+<p>Анимированная карта — ресурсоемкий элемент. Если не оптимизировать проект, он может"положить" браузер пользователя или долго грузиться на мобильном интернете. Главная задача — найти баланс между качеством картинки и скоростью работы.</p>
+
+<p>Одним из главных врагов производительности является количество одновременно отрисовываемых объектов. Если вам нужно показать 10 000 точек, рендерить их все сразу в DOM-дереве — плохая идея. Используйте кластеризацию или WebGL-рендеринг для работы с большими данными.</p>
+
+<p>Советы по оптимизации:</p>
+<ul>
+<li>🚀 Используйте <em>WebGL</em> вместо Canvas или SVG для отрисовки тысяч объектов.</li>
+<li>📉 Применяйте упрощение геометрии (generalization) для дальних уровней зума.</li>
+<li>🗑️ Удаляйте объекты, выходящие за пределы видимости (view frustum culling).</li>
+<li>🖼️ Сжимайте текстуры и используйте современные форматы изображений.</li>
+</ul>
+
+<blockquote>⚠️ <strong>Внимание:</strong> Избегайте частых перерисовок всей карты (full repaint). Старайтесь обновлять только те области, где произошли изменения, или используйте аппаратное ускорение.</blockquote>
+
+<p>Также стоит обратить внимание на размер передаваемых данных. Формат <strong>Protobuf</strong> (используемый в векторных тайлах) сжимает данные гораздо эффективнее, чем JSON. Это уменьшает трафик и ускоряет загрузку карты на устройствах с медленным соединением.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Используйте формат WebP или AVIF для растровых текстур на карте — это уменьшит их вес на 30-50% без потери видимого качества по сравнению с PNG.</p></aside>
+
+<h2 id="публикация-и-интеграция-на-сайт">Публикация и интеграция на сайт</h2>
+
+<p>Финальный этап — внедрение готовой карты на целевую платформу. Если это веб-сайт, вам потребуется подключить соответствующие скрипты и стили. Для видео-презентаций достаточно экспортировать файл в нужном разрешении и кодеке. Однако вебинтеграция требует более тщательной подготовки.</p>
+
+<p>При вставке кода на сайт убедитесь, что у вас есть API-ключи (если используется проприетарный сервис) и что скрипты не конфликтуют с другими библиотеками на странице. Асинхронная загрузка скриптов карты поможет не блокировать отображение основного контента сайта.</p>
+
+<p>Код подключения обычно выглядит следующим образом:</p>
+<pre><code>&lt;div id="map"&gt;&lt;/div&gt;
+<p>&lt;script&gt;</p>
+<p>const map = new MapLibreGL.Map({</p>
+<p>container:'map',</p>
+<p>style:'style.json',</p>
+<p>center: [37.6, 55.75],</p>
+<p>zoom: 10</p>
+<p>});</p>
+<p>&lt;/script&gt;</code></pre></p>
+
+<p>Не забывайте про адаптивность. Карта должна корректно отображаться и на широкоформатных мониторах, и на узких экранах смартфонов. Проверьте работу тач-жестов и удобство интерфейса на разных устройствах перед финальным запуском.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Успех анимированной карты зависит не от сложности эффектов, а от скорости загрузки и понятности визуального языка для пользователя.</p></aside>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Какой формат лучше выбрать для анимации маршрутов: видео или код?</summary>
+<p>Если маршрут статичен и не требует взаимодействия, лучше использовать видео (MP4/WebM) — оно меньше весит и проще воспроизводится. Если пользователю нужно управлять картой, зумить или кликать по объектам, выбирайте код (JavaScript + WebGL).</p>
+</details>
+
+<details>
+<summary>Нужно ли платить за использование карт в коммерческом проекте?</summary>
+<p>Зависит от источника данных. OpenStreetMap бесплатны, но требуют указания авторства. Сервисы вроде Google Maps или Mapbox имеют бесплатные лимиты, после которых начинается оплата за количество запросов (views).</p>
+</details>
+
+<details>
+<summary>Можно ли сделать анимированную карту в PowerPoint?</summary>
+<p>Технически можно, используя пути перемещения объектов, но это будет не настоящая карта, а имитация. Для профессионального результата лучше использовать специализированный софт, а в PowerPoint вставлять готовое видео или скринкаст.</p>
+</details>
+
+<details>
+<summary>Как анимировать изменение цвета региона во времени?</summary>
+<p>В ГИС-системах (QGIS) это делается через плагин TimeManager, связывая цвет с атрибутом времени. В веб-разработке (Mapbox/Leaflet) нужно обновлять стиль слоя (setPaintProperty) в цикле animationFrame в зависимости от текущего таймстемпа.</p>
+</details>
+
+<details>
+<summary>Почему карта тормозит при анимации?</summary>
+<p>Чаще всего проблема в большом количестве DOM-элементов (маркеров), отсутствии аппаратного ускорения или тяжелом коде JavaScript, который блокирует основной поток. Переход на WebGL или кластеризацию данных обычно решает проблему.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/k/ko/kofevarka-rozhkovogo-tipa-delonghi-ec685-bk.html" class="pb-related-card">
+                <span class="pb-related-title">Рожковая кофеварка Delonghi EC685 BK: Полный обзор и настройки</span>
+                <span class="pb-related-desc">Подробный анализ рожковой кофеварки Delonghi EC685 BK. Характеристики, настройка помола, секреты кап</span>
+            </a><a href="/articles/r/ro/rost-optimusa-prajma-v-transformerakh-prajm.html" class="pb-related-card">
+                <span class="pb-related-title">Рост Оптимуса Прайма в Трансформерах Прайм: факты</span>
+                <span class="pb-related-desc">Узнайте точный рост Оптимуса Прайма в мультсериале Трансформеры Прайм. Сравнение размеров автоботов </span>
+            </a><a href="/articles/y/ya/yandex-pogoda-karta-osadkov.html" class="pb-related-card">
+                <span class="pb-related-title">Yandex Погода: карта осадков и радар в реальном времени</span>
+                <span class="pb-related-desc">Как пользоваться картой осадков Яндекс Погоды. Радар дождя, прогноз на час, настройка уведомлений и </span>
+            </a><a href="/articles/s/sk/skachat-sbornik-muzyki-v-tachku.html" class="pb-related-card">
+                <span class="pb-related-title">Как скачать музыку в машину: сборники для авто 2026 года</span>
+                <span class="pb-related-desc">Пошаговая инструкция по скачиванию и установке музыкальных сборников в автомобиль через USB, Bluetoo</span>
+            </a><a href="/articles/k/ka/kakie-byvayut-gps-trekery.html" class="pb-related-card">
+                <span class="pb-related-title">Какие бывают GPS трекеры: виды, отличия и выбор</span>
+                <span class="pb-related-desc">Подробный обзор видов GPS трекеров для авто, животных и людей. Разбор технических особенностей, скры</span>
+            </a><a href="/articles/a/av/avtomobilnaya-vaj-faj-kamera.html" class="pb-related-card">
+                <span class="pb-related-title">Автомобильная Wi-Fi камера: выбор, настройка и скрытый монтаж</span>
+                <span class="pb-related-desc">Полный гид по автомобильным Wi-Fi камерам. Выбор модели, скрытая установка, настройка P2P и устранен</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

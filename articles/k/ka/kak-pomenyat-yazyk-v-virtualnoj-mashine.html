@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как поменять язык в виртуальной машине: Windows, Linux, macOS — Авто Факт</title>
+    <meta name="description" content="Пошаговая инструкция по смене языка интерфейса в VirtualBox и VMware. Решение проблем с кодировкой и локалью в гостевых ОС.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ka/kak-pomenyat-yazyk-v-virtualnoj-mashine.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как поменять язык в виртуальной машине: Windows, Linux, macOS">
+    <meta property="og:description" content="Пошаговая инструкция по смене языка интерфейса в VirtualBox и VMware. Решение проблем с кодировкой и локалью в гостевых ОС.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как поменять язык в виртуальной машине: Windows, Linux, macOS</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#базовые-принципы-локализации-в-гостевых-ос">Базовые принципы локализации в гостевых ОС</a></li><li><a href="#смена-языка-в-windows-1011-внутри-virtualbox-и-vmware">Смена языка в Windows (10/11) внутри VirtualBox и VMware</a></li><li><a href="#настройка-локали-и-языка-в-linux-ubuntu-debian-centos">Настройка локали и языка в Linux (Ubuntu, Debian, CentOS)</a></li><li><a href="#интерфейс-macos-в-виртуальном-окружении">Интерфейс macOS в виртуальном окружении</a></li><li><a href="#таблица-соответствия-команд-и-путей-в-разных-ос">Таблица соответствия команд и путей в разных ОС</a></li><li><a href="#проблемы-с-кодировкой-и-шрифтами-после-смены-языка">Проблемы с кодировкой и шрифтами после смены языка</a></li><li><a href="#роль-гостевых-дополнений-guest-additions-vmware-tools">Роль гостевых дополнений (Guest Additions / VMware Tools)</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/k/ku/kupit-na-ozone-avtomobilnyj-kompressor-dlya-nakachki-koles.html">Купить автомобильный компрессор на Ozon: рейтинг лучших 2026</a></li><li><a href="/articles/s/sa/samaya-bystraya-serijnaya-mashina-0-100.html">Самая быстрая серийная машина 0-100: Топ-10 рекордсменов 2026</a></li><li><a href="/articles/r/ra/radio-gop-fm-volna.html">Радио «Гоп ФМ Волна»: как слушать в машине, частота и настройка</a></li><li><a href="/articles/c/ch/chto-takoe-liftbek-v-avtomobile.html">Лифтбек в автомобиле: что это, плюсы и минусы, отличие от хетчбека</a></li><li><a href="/articles/v/ve/vedushchaya-avto-24-yulianna-razuvaeva.html">Ведущая Авто 24 Юлианна Разуваева: карьера и факты</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как поменять язык в виртуальной машине: полное руководство</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#базовые-принципы-локализации-в-гостевых-ос">Базовые принципы локализации в гостевых ОС</a></li><li><a href="#смена-языка-в-windows-1011-внутри-virtualbox-и-vmware">Смена языка в Windows (10/11) внутри VirtualBox и VMware</a></li><li><a href="#настройка-локали-и-языка-в-linux-ubuntu-debian-centos">Настройка локали и языка в Linux (Ubuntu, Debian, CentOS)</a></li><li><a href="#интерфейс-macos-в-виртуальном-окружении">Интерфейс macOS в виртуальном окружении</a></li><li><a href="#таблица-соответствия-команд-и-путей-в-разных-ос">Таблица соответствия команд и путей в разных ОС</a></li><li><a href="#проблемы-с-кодировкой-и-шрифтами-после-смены-языка">Проблемы с кодировкой и шрифтами после смены языка</a></li><li><a href="#роль-гостевых-дополнений-guest-additions-vmware-tools">Роль гостевых дополнений (Guest Additions / VMware Tools)</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Работа с виртуальными окружениями часто сталкивает администраторов и разработчиков с ситуацией, когда операционная система внутри «гостя» отображает интерфейс на непонятном языке. Это может быть английская версия Windows, китайская сборка Linux или стандартные настройки macOS, которые не были изменены при развертывании образа. <strong>Локализация</strong> системы — это не просто вопрос комфорта, но и необходимость для корректного отображения шрифтов, форматов дат и валют.</p>
+<p>Процесс смены языка зависит не столько от самой программы-эмулятора, сколько от настроек гостевой операционной системы. Важно понимать, что <em>VirtualBox</em>, <em>VMware Workstation</em> или <em>Hyper-V</em> лишь предоставляют аппаратную платформу, а управление языковыми пакетами происходит внутри запущенной ОС. В этой статье мы разберем нюансы для самых популярных платформ.</p>
+<p>Неправильно выбранные настройки кодировки могут привести к появлению «кракозябр» в именах файлов или ошибкам компиляции программ. Поэтому к вопросу <strong>конфигурации региональных стандартов</strong> стоит подходить внимательно, особенно если виртуальная машина используется для развертывания серверных решений или тестирования софта.</p>
+
+<h2 id="базовые-принципы-локализации-в-гостевых-ос">Базовые принципы локализации в гостевых ОС</h2>
+<p>Прежде чем приступать к изменению настроек, необходимо определить тип операционной системы, установленной внутри виртуального контейнера. Архитектура изменений в Windows кардинально отличается от Linux-дистрибутивов или macOS. В современных системах язык интерфейса отделен от системных библиотек и может быть заменен «на лету» без полной переустановки.</p>
+<p>Ключевым моментом является наличие установленных <strong>языковых пакетов</strong>. Если нужный язык отсутствует в списке доступных, его придется загружать через системные репозитории или установочный диск. В корпоративных сборках (например, Windows Enterprise) этот процесс автоматизирован, тогда как в домашних версиях (Home) могут быть ограничения.</p>
+<blockquote>⚠️ Внимание: Перед внесением глобальных изменений в системные файлы локализации создайте точку восстановления или снимок (snapshot) виртуальной машины, чтобы иметь возможность откатиться в случае сбоя.</blockquote>
+<p>Также стоит учитывать, что смена языка интерфейса не всегда меняет язык ввода по умолчанию. <em>Раскладка клавиатуры</em> настраивается отдельно, и после смены основного языка системы может потребоваться ручная активация нужной клавиатуры в трее или настройках ввода.</p>
+
+<h2 id="смена-языка-в-windows-1011-внутри-virtualbox-и-vmware">Смена языка в Windows (10/11) внутри VirtualBox и VMware</h2>
+<p>В операционных системах семейства Windows процесс унифицирован для версий 10 и 11. Управление осуществляется через модуль «Параметры». Сначала необходимо открыть меню <code>Пуск</code> и перейти в раздел <code>Settings</code> (Параметры), затем выбрать <code>Time & Language</code> (Время и язык) и вкладку <code>Language</code> (Язык).</p>
+<p>Если нужного языка нет в списке «Preferred languages», нажмите кнопку <code>Add a language</code>. В открывшемся окне найдите требуемый язык (например, Russian или Spanish), выделите его и нажмите <code>Next</code>. На следующем этапе обязательно поставьте галочку <strong>Install language pack</strong> и опцию <code>Set as my Windows display language</code>.</p>
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка установки языка в Windows</h4><label class="check-item"><input type="checkbox"><span>Открыть Параметры Windows</span></label><label class="check-item"><input type="checkbox"><span>Перейти в Time & Language</span></label><label class="check-item"><input type="checkbox"><span>Найти нужный язык в списке</span></label><label class="check-item"><input type="checkbox"><span>Проверить наличие языкового пакета</span></label><label class="check-item"><input type="checkbox"><span>Перезагрузить виртуальную машину</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+<p>После установки пакета система потребует выхода из учетной записи (<code>Sign out</code>) или полной перезагрузки. Только после этого интерфейс полностью перейдет на выбранный язык. В некоторых случаях, особенно в старых сборках <em>Windows 7</em> или <em>8.1</em>, может потребоваться установка обновлений через <strong>Windows Update</strong>, чтобы пакет стал доступен для скачивания.</p>
+<p>Для серверных версий Windows процесс может отличаться отсутствием графического интерфейса управления языками в базовой комплектации. Там часто используется PowerShell или командная строка для установки пакетов через DISM. Например, команда для проверки установленных пакетов выглядит так:</p>
+<pre><code>Dism /Online /Get-IntlPacks</code></pre>
+
+<h2 id="настройка-локали-и-языка-в-linux-ubuntu-debian-centos">Настройка локали и языка в Linux (Ubuntu, Debian, CentOS)</h2>
+<p>В мире Linux подход к локализации более гибкий, но и более сложный для новичков. Здесь понятия «язык интерфейса» и «локаль» (locale) тесно переплетены. Локаль определяет не только язык сообщений, но и форматирование чисел, времени и сортировку символов. В дистрибутивах на базе Debian (например, <em>Ubuntu</em>, <em>Mint</em>) часто используется утилита <code>localectl</code> или редактирование файлов конфигурации.</p>
+<p>Для быстрой смены языка в Ubuntu с графическим интерфейсом GNOME перейдите в <code>Settings</code> → <code>Region & Language</code>. Если нужного языка нет, нажмите <code>Manage Installed Languages</code>. Система может предложить доустановить пакеты поддержки языка, на что следует согласиться. После установки перетащите нужный язык в верхнюю часть списка «Language for menus and windows».</p>
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>В Linux-системах без графического интерфейса (Server CLI) язык можно сменить, отредактировав файл /etc/default/locale и прописав там LANG="ru_RU.UTF-8", после чего выполнив команду update-locale.</p></aside>
+<p>В командной строке процесс выглядит иначе. Сначала нужно сгенерировать локаль, если она не активна. Откройте терминал и введите команду для редактирования конфигурации:</p>
+<pre><code>sudo nano /etc/locale.gen</code></pre>
+<p>Найдите строку с нужным языком (например, <code>ru_RU.UTF-8 UTF-8</code>) и уберите символ комментария <code>#</code> в начале строки. Сохраните файл и выполните команду <code>sudo locale-gen</code>. Затем обновите системные переменные:</p>
+<pre><code>sudo update-locale LANG=ru_RU.UTF-8</code></pre>
+<p>В дистрибутивах на базе <em>Red Hat</em> (CentOS, Fedora) используется аналогичный подход, но файлы конфигурации могут называться иначе, а для применения изменений часто требуется перезагрузка всей виртуальной машины командой <code>reboot</code>.</p>
+
+<h2 id="интерфейс-macos-в-виртуальном-окружении">Интерфейс macOS в виртуальном окружении</h2>
+<p>Запуск macOS на виртуальной машине (часто называемый Hackintosh илиный запуск на Apple Silicon через <em>UTM</em> или <em>Parallels</em>) требует специфического подхода. macOS строго привязывает языковые настройки к учетной записи пользователя и системным предпочтениям. Для смены языка перейдите в <code>System Preferences</code> (Системные настройки) → <code>Language & Region</code> (Язык и регион).</p>
+<p>Здесь вы увидите список preferred languages. Нажмите на плюс <code>+</code>, чтобы добавить новый язык. После добавления перетащите его в самый верх списка. Система спросит, использовать ли этот язык как основной для текущего пользователя или для всех пользователей сразу. Выберите подходящий вариант и перезагрузите виртуальную машину.</p>
+<blockquote>⚠️ Внимание: В виртуальных машинах macOS на базе QEMU/UTM изменение языка может требовать наличия установленных шрифтов. Если после смены языка текст стал нечитаемым, проверьте наличие пакетов шрифтов в системе.</blockquote>
+<p>Важно отметить, что некоторые системные сообщения в macOS могут оставаться на английском языке, если они относятся к низкоуровневым службам, не имеющим полной локализации в вашей версии ОС. Это нормальное поведение, особенно в бета-версиях <em>macOS Sonoma</em> или <em>Ventura</em>.</p>
+
+<div class="pb-poll" id="poll-bbadfbd7"><div class="pb-poll-question">📊 Какая виртуальная машина используется вами чаще всего?</div><div class="pb-poll-option" data-poll="bbadfbd7" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">VirtualBox</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="bbadfbd7" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">VMware Workstation</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="bbadfbd7" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Hyper-V</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="bbadfbd7" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">QEMU/KVM</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="bbadfbd7" data-idx="4" onclick="pbPollVote(this)"><span class="pb-poll-label">Parallels Desktop</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="таблица-соответствия-команд-и-путей-в-разных-ос">Таблица соответствия команд и путей в разных ОС</h2>
+<p>Для удобства навигации и быстрого поиска необходимых параметров мы составили сводную таблицу. Она поможет сориентироваться, где именно в каждой системе искать настройки языка, если интерфейс еще не переведен на понятный вам язык.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Операционная система</th>
+<th>Путь в GUI (англ.)</th>
+<th>Команда CLI</th>
+<th>Файл конфигурации</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows 10/11</td>
+<td>Settings > Time & Language > Language</td>
+<td>control intl.cpl</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Ubuntu / Debian</td>
+<td>Settings > Region & Language</td>
+<td>localectl set-locale</td>
+<td>/etc/default/locale</td>
+</tr>
+<tr>
+<td>CentOS / RHEL</td>
+<td>Settings > Region & Language</td>
+<td>localectl list-locales</td>
+<td>/etc/locale.conf</td>
+</tr>
+<tr>
+<td>macOS</td>
+<td>System Preferences > Language & Region</td>
+<td>defaults write -g AppleLocale</td>
+<td>-</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Использование командной строки (CLI) часто бывает быстрее, особенно при удаленном управлении виртуальной машиной через SSH или RDP. Знание базовых команд позволяет быстро исправить ситуацию, когда графический интерфейс «вылетел» или работает некорректно из-за проблем с видеодрайверами <strong>гостевых дополнений</strong>.</p>
+<p>Обратите внимание, что в некоторых серверных дистрибутивах Linux файл конфигурации может называться <code>/etc/sysconfig/i18n</code>. Это характерно для старых версий <em>CentOS 6</em> или <em>RHEL 6</em>. В современных системах стандартом стал <code>/etc/locale.conf</code>.</p>
+
+<h2 id="проблемы-с-кодировкой-и-шрифтами-после-смены-языка">Проблемы с кодировкой и шрифтами после смены языка</h2>
+<p>Частой проблемой после смены языка является появление квадратов или вопросительных знаков вместо букв. Это свидетельствует об отсутствии необходимых шрифтов в системе. В Linux это решается установкой пакетов <code>fonts-cyrillic</code>, <code>ttf-mscorefonts-installer</code> или аналогичных, в зависимости от дистрибутива.</p>
+<p>В Windows проблемы с отображением часто связаны с настройками региональных стандартов для программ, не поддерживающих Юникод. Перейдите в <code>Control Panel</code> → <code>Region</code> → вкладка <code>Administrative</code>. Нажмите кнопку <code>Change system locale</code> и убедитесь, что выбран правильный регион. Также может потребоваться включить опцию <strong>Beta: Use Unicode UTF-8 for worldwide language support</strong>, если вы работаете с мультиязычными текстовыми файлами.</p>
+<details class="pb-accordion"><summary>Почему шрифты выглядят «мыльными»?</summary><div class="pb-accordion-body"><p>Это часто происходит из-за отсутствия сглаживания шрифтов в гостевой ОС или неправильной настройки DPI. Попробуйте установить гостевые дополнения (Guest Additions) и в настройках экрана виртуальной машины увеличить объем видеопамяти.</p></div></details>
+<p>Если текст в терминале Linux отображается некорректно, проверьте переменную окружения <code>LANG</code>. Она должна содержать суффикс <code>UTF-8</code>. Если там указано <code>POSIX</code> или <code>C</code>, система будет использовать базовую ASCII-кодировку, что исключает поддержку национальных алфавитов.</p>
+
+<h2 id="роль-гостевых-дополнений-guest-additions-vmware-tools">Роль гостевых дополнений (Guest Additions / VMware Tools)</h2>
+<p>Хотя сами по себе <em>Guest Additions</em> или <em>VMware Tools</em> не меняют язык интерфейса операционной системы, они критически важны для корректного отображения шрифтов и работы буфера обмена. Без этих драйверов виртуальная машина может некорректно определять разрешение экрана, из-за чего элементы интерфейса могут «уезжать» за пределы видимой области, делая смену языка невозможной.</p>
+<p>После установки дополнений рекомендуется проверить настройки масштабирования. В <em>VirtualBox</em> это делается через меню <code>View</code> → <code>VirtualBox 1:1</code> или <code>Auto-resize Guest Display</code>. Если интерфейс обрезан, вы можете не увидеть кнопку «Apply» или «OK» в окне языковых настроек.</p>
+<blockquote>⚠️ Внимание: Установка гостевых дополнений требует перезагрузки виртуальной машины. Убедитесь, что все несохраненные данные внутри гостевой ОС сохранены перед рестартом.</blockquote>
+<p>Также драйверы видеоадаптера, поставляемые с дополнениями, обеспечивают аппаратное ускорение, что делает работу с тяжелыми графическими интерфейсами (как в GNOME или KDE) более плавной. Это особенно важно при переключении языков, когда система перерисовывает все элементы меню.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Установка Guest Additions / VMware Tools — обязательный шаг для комфортной работы с графикой и буфером обмена, хотя напрямую на язык системы не влияет.</p></aside>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+<details>
+<summary>Можно ли поменять язык в Windows без переустановки системы?</summary>
+<p>Да, в современных версиях Windows (7, 8, 10, 11) язык интерфейса меняется через настройки. В старых версиях (Home Basic) могла требоваться полная переустановка, но сейчас языковые пакеты загружаются из центра обновлений.</p>
+</details>
+<details>
+<summary>Почему в Linux после смены языка меню осталось на английском?</summary>
+<p>Скорее всего, вы изменили только переменную LANG для текущей сессии, но не обновили системные файлы конфигурации. Проверьте файл <code>/etc/default/locale</code> и выполните команду <code>update-locale</code>, затем перезагрузитесь.</p>
+</details>
+<details>
+<summary>Как вернуть всё обратно, если после смены языка система перестала грузиться?</summary>
+<p>При загрузке виртуальной машины выберите режим восстановления (Recovery Mode) или загрузитесь с установочного ISO-образа. В Linux можно отредактировать файл конфигурации через chroot, в Windows — использовать точку восстановления системы.</p>
+</details>
+<details>
+<summary>Влияет ли язык хостовой системы на язык внутри виртуальной машины?</summary>
+<p>Нет, по умолчанию виртуальная машина независима. Однако при создании новой ВМ некоторые эмуляторы могут предлагать скопировать настройки языка и региона с хоста. Это лишь начальная настройка, которую можно изменить в любой момент внутри гостевой ОС.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/k/ku/kupit-na-ozone-avtomobilnyj-kompressor-dlya-nakachki-koles.html" class="pb-related-card">
+                <span class="pb-related-title">Купить автомобильный компрессор на Ozon: рейтинг лучших 2026</span>
+                <span class="pb-related-desc">Как выбрать и купить мощный автомобильный компрессор на Ozon? Обзор моделей, критерии подбора, сравн</span>
+            </a><a href="/articles/s/sa/samaya-bystraya-serijnaya-mashina-0-100.html" class="pb-related-card">
+                <span class="pb-related-title">Самая быстрая серийная машина 0-100: Топ-10 рекордсменов 2026</span>
+                <span class="pb-related-desc">Какая серийная машина быстрее всех разгоняется до 100 км/ч? Полный разбор электромобильных рекордов,</span>
+            </a><a href="/articles/r/ra/radio-gop-fm-volna.html" class="pb-related-card">
+                <span class="pb-related-title">Радио «Гоп ФМ Волна»: как слушать в машине, частота и настройка</span>
+                <span class="pb-related-desc">Подробный гайд по настройке радиостанции Гоп ФМ Волна в автомобиле: частоты вещания, особенности при</span>
+            </a><a href="/articles/c/ch/chto-takoe-liftbek-v-avtomobile.html" class="pb-related-card">
+                <span class="pb-related-title">Лифтбек в автомобиле: что это, плюсы и минусы, отличие от хетчбека</span>
+                <span class="pb-related-desc">Что такое лифтбек в машине: конструкция, особенности, сравнение с хетчбеком и седаном. Преимущества </span>
+            </a><a href="/articles/v/ve/vedushchaya-avto-24-yulianna-razuvaeva.html" class="pb-related-card">
+                <span class="pb-related-title">Ведущая Авто 24 Юлианна Разуваева: карьера и факты</span>
+                <span class="pb-related-desc">Кто такая Юлианна Разуваева? Биография, карьера на телеканале Авто 24, любимые автомобили и интересн</span>
+            </a><a href="/articles/u/un/universalnaya-kamera-zadnego-vida-dlya-avtomobilya.html" class="pb-related-card">
+                <span class="pb-related-title">Универсальная камера заднего вида: выбор и установка</span>
+                <span class="pb-related-desc">Как выбрать универсальную камеру заднего вида? Обзор форматов, ночной съемки и советы по установке в</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

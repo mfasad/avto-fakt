@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как рассчитать линейную скорость по оборотам и диаметру: формула и примеры — Авто Факт</title>
+    <meta name="description" content="Пошаговый расчет линейной скорости через RPM и диаметр: формулы, таблицы, онлайн-калькуляторы и ошибки. Для авто, станков и механизмов.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/r/ra/raschet-linejnoj-skorosti-cherez-oboroty-v-minutu-i-diametr.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как рассчитать линейную скорость по оборотам и диаметру: формула и примеры">
+    <meta property="og:description" content="Пошаговый расчет линейной скорости через RPM и диаметр: формулы, таблицы, онлайн-калькуляторы и ошибки. Для авто, станков и механизмов.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как рассчитать линейную скорость по оборотам и диаметру: формула и примеры</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#1-основная-формула-как-связаны-rpm-диаметр-и-линейная-скорость">1. Основная формула: как связаны RPM, диаметр и линейная скорость</a></li><li><a href="#2-перевод-единиц-метры-миллиметры-дюймы-и-обороты">2. Перевод единиц: метры, миллиметры, дюймы и обороты</a></li><li><a href="#3-практические-примеры-от-автомобильных-колёс-до-станков">3. Практические примеры: от автомобильных колёс до станков</a></li><li><a href="#4-ошибки-и-ловушки-что-упускают-90-расчётчиков">4. Ошибки и ловушки: что упускают 90% расчётчиков</a></li><li><a href="#5-онлайн-калькуляторы-и-мобильные-приложения">5. Онлайн-калькуляторы и мобильные приложения</a></li><li><a href="#6-когда-формула-не-работает-сложные-случаи">6. Когда формула не работает: сложные случаи</a></li><li><a href="#7-таблица-готовых-значений-для-популярных-диаметров">7. Таблица готовых значений для популярных диаметров</a></li><li><a href="#faq-частые-вопросы-о-расчёте-линейной-скорости">FAQ: Частые вопросы о расчёте линейной скорости</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/1/10/103-8-fm-radio-slushat-onlajn.html">103.8 FM Радио: слушать онлайн, частота и покрытие</a></li><li><a href="/articles/a/ak/aktivnaya-antenna-chto-eto-znachit.html">Активная антенна: что это значит и зачем нужна</a></li><li><a href="/articles/c/ch/chto-takoe-stg-v-lampakh.html">Что такое СТГ в лампах: расшифровка и применение</a></li><li><a href="/articles/s/s-/s-maks-mashinka-na-radioupravlenii.html">Радиоуправляемая машинка с МАКСом: выбор, настройка, обзор</a></li><li><a href="/articles/r/ra/radio-rok-fm-kakaya-chastota.html">Радио Рок ФМ: частоты вещания в городах России</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Расчёт линейной скорости через обороты в минуту (RPM) и диаметр: формулы, примеры, нюансы</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#1-основная-формула-как-связаны-rpm-диаметр-и-линейная-скорость">1. Основная формула: как связаны RPM, диаметр и линейная скорость</a></li><li><a href="#2-перевод-единиц-метры-миллиметры-дюймы-и-обороты">2. Перевод единиц: метры, миллиметры, дюймы и обороты</a></li><li><a href="#3-практические-примеры-от-автомобильных-колёс-до-станков">3. Практические примеры: от автомобильных колёс до станков</a></li><li><a href="#4-ошибки-и-ловушки-что-упускают-90-расчётчиков">4. Ошибки и ловушки: что упускают 90% расчётчиков</a></li><li><a href="#5-онлайн-калькуляторы-и-мобильные-приложения">5. Онлайн-калькуляторы и мобильные приложения</a></li><li><a href="#6-когда-формула-не-работает-сложные-случаи">6. Когда формула не работает: сложные случаи</a></li><li><a href="#7-таблица-готовых-значений-для-популярных-диаметров">7. Таблица готовых значений для популярных диаметров</a></li><li><a href="#faq-частые-вопросы-о-расчёте-линейной-скорости">FAQ: Частые вопросы о расчёте линейной скорости</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Линейная скорость — ключевой параметр для оценки работы вращающихся механизмов: от колёс автомобиля до шпинделей станков. Зная <strong>обороты в минуту (RPM)</strong> и <strong>диаметр</strong> вращающегося элемента, можно точно определить, с какой скоростью движется его поверхность. Это критично для подбора шин, настройки ЧПУ-оборудования, расчёта износа ремней или даже безопасности при работе с токарными станками.</p>
+
+<p>Однако многие путают линейную скорость с угловой или ошибаются в переводе единиц. В этой статье разберём <strong>точные формулы</strong>, распространённые ошибки и практические примеры — от автомобильных колёс до промышленных вентиляторов. А в конце вас ждёт FAQ с ответами на острые вопросы и онлайн-калькулятор для быстрых расчётов.</p>
+
+<p>Линейная скорость (<em>v</em>) — это путь, который проходит точка на поверхности вращающегося объекта за единицу времени. Она измеряется в метрах в секунду (м/с) или километрах в час (км/ч), тогда как <strong>обороты в минуту (RPM)</strong> характеризуют угловую скорость. Связь между ними задаёт простая физика: чем больше диаметр и быстрее вращение, тем выше линейная скорость.</p>
+
+<p>Почему это важно? Для автомобилистов расчёт линейной скорости колёс помогает подобрать оптимальный размер шин без искажения спидометра. В промышленности — предотвратить разрыв ремней или перегрев подшипников из-за превышения допустимых скоростей. Даже в быту: например, при выборе наждачного круга для болгарки, где превышение линейной скорости чревато разрушением диска.</p>
+
+<div class="pb-poll" id="poll-c3cadda9"><div class="pb-poll-question">📊 Где вам чаще всего нужно рассчитывать линейную скорость?</div><div class="pb-poll-option" data-poll="c3cadda9" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">В автомобиле (шины, коробка передач)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="c3cadda9" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">На производстве (станки, конвейеры)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="c3cadda9" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">В быту (электроинструмент)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="c3cadda9" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">В учёбе/проектировании</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="c3cadda9" data-idx="4" onclick="pbPollVote(this)"><span class="pb-poll-label">Другое</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="1-основная-формула-как-связаны-rpm-диаметр-и-линейная-скорость">1. Основная формула: как связаны RPM, диаметр и линейная скорость</h2>
+
+<p>Базовая зависимость описывается формулой:</p>
+<p><strong><em>v = π × D × n / 60</strong></strong>, где:</p>
+<ul>
+  <li>📏 <strong>D</em> — диаметр вращающегося объекта (в <em>метрах</em>);</li>
+  <li>🌀 <strong>n</strong> — частота вращения (обороты в минуту, <em>RPM</em>);</li>
+  <li>⚡ <strong>v</strong> — линейная скорость (в <em>м/с</em>).</li>
+</ul>
+
+<p>Число <em>π</em> (≈3.1416) появляется потому, что длина окружности равна <code>π × D</code>. А делитель <code>60</code> нужен для перевода минут в секунды. Например, если колесо диаметром 0.6 м вращается со скоростью 1000 RPM, его линейная скорость составит:</p>
+<p><code>v = 3.1416 × 0.6 × 1000 / 60 ≈ 31.4 м/с</code> (или ~113 км/ч).</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Для быстрого расчёта в уме используйте приближённое значение π ≈ 3.14. Погрешность составит менее 0.05%, что допустимо для большинства практических задач.</p></aside>
+
+<h2 id="2-перевод-единиц-метры-миллиметры-дюймы-и-обороты">2. Перевод единиц: метры, миллиметры, дюймы и обороты</h2>
+
+<p>Главная ошибка новичков — несовпадение единиц измерения. Формула требует диаметр в <strong>метрах</strong>, но на практике часто встречаются:</p>
+<ul>
+  <li>📏 <em>Миллиметры</em> (например, диаметр вала станка — 50 мм);</li>
+  <li>📐 <em>Дюймы</em> (размер шин в маркировке типа <code>26×12.00-12</code>);</li>
+  <li>🚗 <em>Смешанные единицы</em> (диаметр колеса в дюймах, а RPM — в об/мин).</li>
+</ul>
+
+<p>Преобразования:</p>
+<div class="pb-table-wrap"><table>
+  <thead>
+    <tr><th>Исходная единица</th><th>Перевод в метры</th><th>Пример</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Миллиметры (мм)</td><td>D (м) = D (мм) / 1000</td><td>50 мм → 0.05 м</td></tr>
+    <tr><td>Дюймы (in)</td><td>D (м) = D (in) × 0.0254</td><td>12" → 0.3048 м</td></tr>
+    <tr><td>Сантиметры (см)</td><td>D (м) = D (см) / 100</td><td>15 см → 0.15 м</td></tr>
+  </tbody>
+</table></div>
+
+<p>Пример: шпиндель станка диаметром 2 дюйма вращается с 3000 RPM. Переводим дюймы в метры: <code>2 × 0.0254 = 0.0508 м</code>. Тогда линейная скорость:</p>
+<p><code>v = 3.1416 × 0.0508 × 3000 / 60 ≈ 7.98 м/с</code> (≈28.7 км/ч).</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Всегда проверяйте единицы измерения перед подстановкой в формулу. Ошибка в масштабе (например, мм вместо м) приведёт к завышению результата в 1000 раз!</p></aside>
+
+<h2 id="3-практические-примеры-от-автомобильных-колёс-до-станков">3. Практические примеры: от автомобильных колёс до станков</h2>
+
+<p>Разберём реальные случаи, где расчёт линейной скорости критичен.</p>
+
+<p><strong>🚗 Автомобильные шины</strong></p>
+<p>Допустим, у вас колесо с диаметром <em>600 мм</em> (0.6 м) и тахометр показывает <em>800 RPM</em> на 5-й передаче. Линейная скорость:</p>
+<p><code>v = 3.1416 × 0.6 × 800 / 60 ≈ 25.13 м/с</code> → <strong>90.5 км/ч</strong>.</p>
+<p>Если спидометр показывает иное, возможны проблемы с передаточными числами коробки или неверным размером шин.</p>
+
+<p><strong>⚙️ Токарный станок</strong></p>
+<p>При точении детали диаметром <em>100 мм</em> (0.1 м) на <em>2000 RPM</em> скорость резания:</p>
+<p><code>v = 3.1416 × 0.1 × 2000 / 60 ≈ 10.47 м/с</code> (≈37.7 км/ч).</p>
+<p>Превышение этого значения для данного материала и резца приведёт к перегреву или поломке инструмента.</p>
+
+<p><strong>💨 Вентиляторы и турбины</strong></p>
+<p>Лопасти вентилятора диаметром <em>0.5 м</em> на <em>1500 RPM</em> создают поток со скоростью:</p>
+<p><code>v = 3.1416 × 0.5 × 1500 / 60 ≈ 39.27 м/с</code> (≈141 км/ч!).</p>
+<p><mark>Превышение скорости 70 м/с для алюминиевых лопастей чревато их разрушением из-за центробежных сил.</mark></p>
+
+<details class="pb-accordion"><summary>Почему в маркировке шин указывают диаметр, а не линейную скорость?</summary><div class="pb-accordion-body"><p>Производители шин указывают диаметр и максимальную нагрузку, но не линейную скорость, потому что она зависит от RPM, которые варьируются в зависимости от передачи, двигателя и стиля вождения. Однако на высокоскоростных шинах (например, <em>Michelin Pilot Sport</em>) можно встретить индекс скорости (например, <code>V</code> — до 240 км/ч), который косвенно ограничивает допустимые RPM для данного диаметра.</p></div></details>
+
+<h2 id="4-ошибки-и-ловушки-что-упускают-90-расчётчиков">4. Ошибки и ловушки: что упускают 90% расчётчиков</h2>
+
+<p>Даже с правильной формулой легко ошибиться. Рассмотрим типичные подводные камни:</p>
+
+<blockquote>⚠️ <strong>Внимание:</strong> Если вы рассчитываете скорость для <em>ремённой передачи</em>, учитывайте не диаметр шкива, а <strong>рабочий диаметр</strong> (где лежит ремень). Он может отличаться на 10-15% из-за профиля канавки.</blockquote>
+
+<ul>
+  <li>🌀 <strong>Путаница с радиусом:</strong> Формула требует <em>диаметр</em>, но некоторые подставляют радиус (D/2), получая заниженный результат в 2 раза.</li>
+  <li>⚡ <strong>Игнорирование скольжения:</strong> В ременных передачах или колёсах на мокром асфальте фактическая скорость может быть на 5-15% ниже расчётной из-за проскальзывания.</li>
+  <li>📉 <strong>Нелинейность на высоких RPM:</strong> При скоростях выше 50 м/с возникают аэродинамические эффекты (например, подъёмная сила на лопастях), которые формула не учитывает.</li>
+</ul>
+
+<p>Пример ошибки: при расчёте скорости фрезерного станка взяли <strong>номинальный диаметр фрезы</strong> (50 мм), но не учли, что реальный режущий диаметр из-за износа сократился до 48 мм. Погрешность составила:</p>
+<p><code>(50 - 48)/50 × 100% = 4%</code> — казалось бы, немного, но на высоких скоростях это критично для точности обработки.</p>
+
+<h2 id="5-онлайн-калькуляторы-и-мобильные-приложения">5. Онлайн-калькуляторы и мобильные приложения</h2>
+
+<p>Для быстрых расчётов без формул используйте:</p>
+<ul>
+  <li>🌐 <strong>Веб-калькуляторы:</strong> <em>Engineering ToolBox</em>, <em>Omni Calculator</em> (раздел "Linear Speed");</li>
+  <li>📱 <strong>Мобильные приложения:</strong> <em>Machinist Calculator</em> (Android/iOS), <em>SpeedCalc</em>;</li>
+  <li>📊 <strong>Excel/Google Sheets:</strong> создайте таблицу с формулой <code>=ПИ()*D*RPM/60</code>, где <code>D</code> и <code>RPM</code> — ячейки с исходными данными.</li>
+</ul>
+
+<p>Пример работы с <em>Omni Calculator</em>:</p>
+<ol>
+  <li>Выберите раздел <code>Rotational Motion</code>;</li>
+  <li>Введите диаметр в мм (например, <code>600</code>);</li>
+  <li>Укажите RPM (например, <code>800</code>);</li>
+  <li>Получите результат в м/с и км/ч автоматически.</li>
+</ol>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка результатов онлайн-калькулятора</h4><label class="check-item"><input type="checkbox"><span>Сравните с ручным расчётом</span></label><label class="check-item"><input type="checkbox"><span>Убедитесь, что единицы совпадают</span></label><label class="check-item"><input type="checkbox"><span>Проверьте логичность результата (например, 1000 RPM на колесе 0.5 м не даст 1000 км/ч)</span></label><label class="check-item"><input type="checkbox"><span>Оцените реалистичность для вашей задачи</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="6-когда-формула-не-работает-сложные-случаи">6. Когда формула не работает: сложные случаи</h2>
+
+<p>Классическая формула <code>v = π × D × n / 60</code> справедлива для идеальных условий. В реальности приходится учитывать:</p>
+
+<p><strong>🔄 Передаточные отношения</strong></p>
+<p>Если вращение передаётся через редуктор (например, в коробке передач автомобиля), сначала рассчитайте <strong>реальные RPM</strong> на выходном валу:</p>
+<p><code>n_вых = n_вх × (Z_ведом / Z_ведущ)</code>, где <code>Z</code> — количество зубьев шестерён.</p>
+
+<p><strong>🌀 Деформация и износ</strong></p>
+<p>Для резиновых колёс или ремней диаметр может изменяться под нагрузкой. Например, шины <em>Michelin Energy Saver</em> "сплющиваются" при высоком давлении, уменьшая эффективный диаметр на 1-3%.</p>
+
+<p><strong>🌡️ Температурное расширение</strong></p>
+<p>Металлические детали (например, шпиндели станков) при нагреве увеличивают диаметр. Для стали коэффициент линейного расширения ~0.000012 на °C. При нагреве с 20°C до 100°C диаметр 100 мм увеличится на:</p>
+<p><code>100 × 0.000012 × (100-20) ≈ 0.096 мм</code> — незначительно для большинства задач, но критично в прецизионной механике.</p>
+
+<blockquote>⚠️ <strong>Внимание:</strong> Для турбин и компрессоров с рабочими скоростями выше 100 м/с используйте специализированное ПО (например, <em>ANSYS</em> или <em>SolidWorks Flow Simulation</em>), учитывающее газодинамические эффекты.</blockquote>
+
+<h2 id="7-таблица-готовых-значений-для-популярных-диаметров">7. Таблица готовых значений для популярных диаметров</h2>
+
+<p>Чтобы сэкономить время, воспользуйтесь готовыми расчётами для типовых диаметров (RPM = 1000 об/мин):</p>
+
+<div class="pb-table-wrap"><table>
+  <thead>
+    <tr><th>Диаметр (мм)</th><th>Диаметр (м)</th><th>Линейная скорость (м/с)</th><th>Линейная скорость (км/ч)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>100</td><td>0.1</td><td>5.24</td><td>18.85</td></tr>
+    <tr><td>200</td><td>0.2</td><td>10.47</td><td>37.70</td></tr>
+    <tr><td>300</td><td>0.3</td><td>15.71</td><td>56.55</td></tr>
+    <tr><td>500</td><td>0.5</td><td>26.18</td><td>94.25</td></tr>
+    <tr><td>1000</td><td>1.0</td><td>52.36</td><td>188.50</td></tr>
+  </tbody>
+</table></div>
+
+<p>Чтобы получить скорость для других RPM, умножьте значение из таблицы на <code>n / 1000</code>. Например, для диаметра 300 мм и 1500 RPM:</p>
+<p><code>15.71 × (1500 / 1000) = 23.57 м/с</code> (≈84.85 км/ч).</p>
+
+<h2 id="faq-частые-вопросы-о-расчёте-линейной-скорости">FAQ: Частые вопросы о расчёте линейной скорости</h2>
+
+<details>
+  <summary>Можно ли использовать эту формулу для расчёта скорости автомобиля по оборотам двигателя?</summary>
+  <p>Нет, для этого нужно учитывать <strong>передаточное отношение коробки передач</strong> и <strong>главной пары</strong>, а также <strong>динамический радиус колеса</strong> (он отличается от статического из-за деформации шины). Формула применима только к скорости <em>поверхности колеса</em>, но не к фактической скорости машины, так как не учитывает проскальзывание и передаточные числа.</p>
+</details>
+
+<details>
+  <summary>Почему при одинаковых RPM и диаметре разные материалы имеют разные ограничения по скорости?</summary>
+  <p>Линейная скорость определяет <strong>центробежные нагрузки</strong>, которые зависят от плотности материала. Например, алюминиевый диск того же диаметра, что и стальной, разрушится при меньшей скорости из-за меньшей прочности на разрыв. Для углепластика (<em>carbon fiber</em>) допустимые скорости выше благодаря высокому отношению прочности к весу.</p>
+</details>
+
+<details>
+  <summary>Как рассчитать линейную скорость для конического объекта (например, конусной фрезы)?</summary>
+  <p>Для конических деталей скорость varies по длине. Используйте <strong>средний диаметр</strong> (усреднённое значение между основанием и вершиной конуса) или разбейте объект на цилиндрические сегменты, рассчитывая скорость для каждого отдельно. В промышленности для таких задач применяют CAD-системы (<em>SolidWorks</em>, <em>Autodesk Inventor</em>).</p>
+</details>
+
+<details>
+  <summary>Влияет ли давление в шине на линейную скорость колеса?</summary>
+  <p>Да, но косвенно. Давление меняет <strong>деформированный радиус</strong> колеса: при низком давлении шина "проседает", уменьшая эффективный диаметр на 1-3%. Например, шина <em>205/55 R16</em> при давлении 1.8 бар имеет диаметр ~630 мм, а при 2.5 бар — ~640 мм. Разница в скорости при 1000 RPM:</p>
+  <p><code>(640 - 630)/630 × 100% ≈ 1.6%</code> — около <code>0.5 м/с</code> (1.8 км/ч).</p>
+</details>
+
+<details>
+  <summary>Какая максимальная линейная скорость для стандартных подшипников?</summary>
+  <p>Для шариковых подшипников общего назначения (например, <em>SKF 6205</em>) предел — <strong>12-15 м/с</strong>. Прецизионные подшипники (например, для шпинделей станков) выдерживают до <strong>30 м/с</strong>. Превышение ведёт к перегреву и разрушению сепаратора. Всегда сверяйтесь с паспортом подшипника!</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/1/10/103-8-fm-radio-slushat-onlajn.html" class="pb-related-card">
+                <span class="pb-related-title">103.8 FM Радио: слушать онлайн, частота и покрытие</span>
+                <span class="pb-related-desc">Как слушать радио 103.8 FM онлайн в высоком качестве. Информация о частоте, зоне вещания и способах </span>
+            </a><a href="/articles/a/ak/aktivnaya-antenna-chto-eto-znachit.html" class="pb-related-card">
+                <span class="pb-related-title">Активная антенна: что это значит и зачем нужна</span>
+                <span class="pb-related-desc">Разбираем, что такое активная антенна, её отличие от пассивной, устройство усилителя и критерии выбо</span>
+            </a><a href="/articles/c/ch/chto-takoe-stg-v-lampakh.html" class="pb-related-card">
+                <span class="pb-related-title">Что такое СТГ в лампах: расшифровка и применение</span>
+                <span class="pb-related-desc">Полный разбор аббревиатуры СТГ: что это за лампы, как они работают и где применяются. Технические ха</span>
+            </a><a href="/articles/s/s-/s-maks-mashinka-na-radioupravlenii.html" class="pb-related-card">
+                <span class="pb-related-title">Радиоуправляемая машинка с МАКСом: выбор, настройка, обзор</span>
+                <span class="pb-related-desc">Как выбрать машинку на радиоуправлении с МАКСом? Обзор моделей, настройка, тюнинг и уход за RC-автом</span>
+            </a><a href="/articles/r/ra/radio-rok-fm-kakaya-chastota.html" class="pb-related-card">
+                <span class="pb-related-title">Радио Рок ФМ: частоты вещания в городах России</span>
+                <span class="pb-related-desc">На какой частоте вещает Рок ФМ в Москве, Санкт-Петербурге и регионах. Таблица частот, онлайн-радио и</span>
+            </a><a href="/articles/n/ne/need-for-speed-payback-vremya-prokhozhdeniya.html" class="pb-related-card">
+                <span class="pb-related-title">Need for Speed Payback: время прохождения на 100% и скоростные секреты</span>
+                <span class="pb-related-desc">Сколько часов нужно на прохождение NFS Payback? Оптимальные маршруты, секреты 100% завершения и сове</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

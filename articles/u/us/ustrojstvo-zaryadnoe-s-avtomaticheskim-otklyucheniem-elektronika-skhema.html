@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Схема зарядного устройства с автоотключением: сборка и настройка — Авто Факт</title>
+    <meta name="description" content="Подробная инструкция по сборке зарядного устройства с автоматическим отключением. Разбор электронных схем, подбор компонентов и настройка пороговых напряжений.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/u/us/ustrojstvo-zaryadnoe-s-avtomaticheskim-otklyucheniem-elektronika-skhema.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Схема зарядного устройства с автоотключением: сборка и настройка">
+    <meta property="og:description" content="Подробная инструкция по сборке зарядного устройства с автоматическим отключением. Разбор электронных схем, подбор компонентов и настройка пороговых напряжений.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/garazh-master/">Гараж Мастер</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Схема зарядного устройства с автоотключением: сборка и настройка</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#принцип-работы-автоматики-в-зарядных-схемах">Принцип работы автоматики в зарядных схемах</a></li><li><a href="#необходимые-компоненты-и-их-назначение">Необходимые компоненты и их назначение</a></li><li><a href="#схема-на-базе-операционного-усилителя">Схема на базе операционного усилителя</a></li><li><a href="#использование-специализированных-микросхем">Использование специализированных микросхем</a></li><li><a href="#процесс-сборки-и-монтаж-компонентов">Процесс сборки и монтаж компонентов</a></li><li><a href="#настройка-пороговых-значений-и-тестирование">Настройка пороговых значений и тестирование</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/k/ka/kak-styanut-gruz-styazhkoj-treshchetkoj.html">Как стянуть груз стяжкой трещеткой: пошаговая инструкция</a></li><li><a href="/articles/p/pa/paneli-solnechnykh-batarej-na-kryshu-doma.html">Солнечные панели на крышу дома: монтаж, цена, оформление 2026</a></li><li><a href="/articles/k/ka/kak-pravilno-zalit-kryshu-garazha.html">Как правильно залить крышу гаража: пошаговая инструкция</a></li><li><a href="/articles/p/pr/programma-dlya-avtoservisa-po-remontu-avtomobilej-besplatno.html">Бесплатные программы для автосервиса: ТОП-7 решений 2026 года</a></li><li><a href="/articles/k/ko/komnata-dlya-otdykha-v-garazhe.html">Комната отдыха в гараже: обустройство своими руками</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Сборка зарядного устройства с автоматическим отключением своими руками</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-работы-автоматики-в-зарядных-схемах">Принцип работы автоматики в зарядных схемах</a></li><li><a href="#необходимые-компоненты-и-их-назначение">Необходимые компоненты и их назначение</a></li><li><a href="#схема-на-базе-операционного-усилителя">Схема на базе операционного усилителя</a></li><li><a href="#использование-специализированных-микросхем">Использование специализированных микросхем</a></li><li><a href="#процесс-сборки-и-монтаж-компонентов">Процесс сборки и монтаж компонентов</a></li><li><a href="#настройка-пороговых-значений-и-тестирование">Настройка пороговых значений и тестирование</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Свинцово-кислотные аккумуляторы, широко используемые в автомобильном транспорте и системах резервного питания, требуют строгого соблюдения режима заряда. Перезаряд электролита приводит к закипанию, испарению воды и, в конечном итоге, к необратимому разрушению пластин. Именно поэтому <strong>автоматическое отключение</strong> при достижении полного заряда является критически важной функцией для любого самодельного или доработанного зарядного устройства (ЗУ).</p>
+
+<p>Создание такой схемы в домашних условиях позволяет не только сэкономить на покупке дорогостоящего промышленного оборудования, но и получить инструмент с заданными характеристиками, идеально подходящий под конкретный тип батареи. В основе лежат доступные компоненты, такие как операционные усилители, компараторы или специализированные микросхемы, которые легко найти в старой электронике или приобрести в радиомагазинах.</p>
+
+<p>В данной статье мы разберем принцип работы типовых схем, рассмотрим процесс сборки и настройки пороговых значений напряжения. Особое внимание уделим вопросам безопасности и стабильности работы устройства в длительном режиме эксплуатации, так как ошибки в расчетах могут привести к выходу из строя как самого зарядника, так и обслуживаемой батареи.</p>
+
+<h2 id="принцип-работы-автоматики-в-зарядных-схемах">Принцип работы автоматики в зарядных схемах</h2>
+
+<p>Базовая задача схемы автоматического отключения заключается в непрерывном мониторинге напряжения на клеммах аккумулятора. Пока напряжение ниже заданного порога (обычно 14.4–14.8 В для 12-вольтовых батарей), цепь заряда остается замкнутой, и ток течет к пластинам. Как только напряжение достигает критической точки, управляющий элемент размыкает силовую цепь.</p>
+
+<p>Ключевым элементом здесь выступает <strong>компаратор напряжения</strong> или схема на базе операционного усилителя. Этот узел сравнивает эталонное напряжение (стабильный опорный сигнал) с текущим напряжением на аккумуляторе. Разница потенциалов преобразуется в логический сигнал, который управляет ключевым транзистором или реле.</p>
+
+<blockquote>⚠️ <strong>Внимание:</strong> Использование простых схем без гистерезиса может привести к "дребезгу" контактов реле при достижении порогового значения, что вызовет постоянное включение и выключение зарядки. Это опасно для коммутационных элементов.</p>
+
+<p>Для предотвращения ложных срабатываний и обеспечения четкого переключения в схему вводят петлю положительной обратной связи, создающую гистерезис. Это создает "коридор" напряжений: зарядка включается при падении до, например, 12.5 В и выключается при достижении 14.4 В, что обеспечивает стабильную работу устройства.</p>
+
+<div class="pb-poll" id="poll-81d630ca"><div class="pb-poll-question">📊 Какой тип АКБ вы планируете заряжать?</div><div class="pb-poll-option" data-poll="81d630ca" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Свинцово-кислотный (автомобильный)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="81d630ca" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Гелевый (GEL)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="81d630ca" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">AGM батарея</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="81d630ca" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Литий-ионный (Li-Ion)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="необходимые-компоненты-и-их-назначение">Необходимые компоненты и их назначение</h2>
+
+<p>Для сборки надежного устройства потребуется подобрать компоненты с запасом по току и напряжению. Основу схемы составляет трансформатор, который понижает сетевое напряжение до безопасного уровня, и выпрямительный мост, преобразующий переменный ток в постоянный.</p>
+
+<p>Управляющий блок базируется на микросхеме <em>LM358</em> или <em>TL431</em>. Эти элементы обеспечивают высокую точность сравнения напряжений. Также необходимы мощные транзисторы (например, полевые MOSFET) для коммутации тока заряда и реле, если используется контактная схема разрыва цепи.</p>
+
+<ul>
+<li>🔌 <strong>Трансформатор:</strong> Должен обеспечивать выходное напряжение на 2-3 В выше максимального зарядного напряжения аккумулятора (для 12 В батареи нужно около 15-16 В).</li>
+<li>⚡ <strong>Диодный мост:</strong> Подбирается с током, превышающим максимальный ток заряда (обычно 10 А и более), часто требует установки на радиатор.</li>
+<li>⚙️ <strong>Регулируемый резистор:</strong> Необходим для точной калибровки порога отключения в процессе настройки схемы.</li>
+</ul>
+
+<p>Важно использовать конденсаторы фильтрации достаточной емкости, чтобы сгладить пульсации выпрямленного напряжения. Пульсации могут вносить погрешности в работу компаратора, вызывая некорректное срабатывание автоматики.</p>
+
+<h2 id="схема-на-базе-операционного-усилителя">Схема на базе операционного усилителя</h2>
+
+<p>Одной из самых популярных и проверенных временем является схема, построенная вокруг операционного усилителя, работающего в режиме компаратора. Она отличается простотой, доступностью элементной базы и высокой повторяемостью результатов.</p>
+
+<p>На вход операционного усилителя подается напряжение с делителя, подключенного к аккумулятору, и опорное напряжение с стабилитрона. Выход микросхемы управляет базой транзистора, который, в свою очередь, включает или выключает реле в цепи питания.</p>
+
+<details class="pb-accordion"><summary>Расчет номиналов резисторов делителя</summary><div class="pb-accordion-body"><p>Для настройки порога срабатывания используется формула делителя напряжения. Если опорное напряжение составляет 2.5В, а сработать схема должна при 14.4В, то соотношение резисторов должно быть подобрано так, чтобы на входе компаратора было 2.5В именно при 14.4В на клеммах. Точность резисторов должна быть не хуже 1-5%.</p></div></details>
+
+<p>Преимуществом такой схемы является возможность легкой модернизации. Добавив светодиодные индикаторы на выход компаратора, можно визуально контролировать процесс: красный горит — идет заряд, зеленый — заряд окончен.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Используйте прецизионные резисторы с допуском 1% в цепях делителя напряжения опорного сигнала. Это обеспечит высокую точность срабатывания автоматики без необходимости частой подстройки.</p></aside>
+
+<h2 id="использование-специализированных-микросхем">Использование специализированных микросхем</h2>
+
+<p>Современная элементная база предлагает микросхемы, разработанные специально для управления зарядом аккумуляторов, такие как <em>UC2906</em> или аналоги. Они реализуют сложный алгоритм зарядки, включающий фазы объемного заряда, дозаряда и поддержания, что значительно продлевает жизнь батарее.</p>
+
+<p>Такие контроллеры автоматически переключают токи и пороги напряжения, исключая человеческий фактор при настройке. Схема на их основе сложнее в монтаже из-за меньшего размера компонентов, но надежнее в эксплуатации.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Схема на ОУ (LM358)</th>
+<th>Спец. контроллер (UC2906)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Сложность сборки</td>
+<td>Низкая</td>
+<td>Средняя</td>
+</tr>
+<tr>
+<td>Точность отсечки</td>
+<td>Зависит от настройки</td>
+<td>Высокая (заводская)</td>
+</tr>
+<tr>
+<td>Алгоритм заряда</td>
+<td>Одноступенчатый</td>
+<td>Многоступенчатый</td>
+</tr>
+<tr>
+<td>Стоимость компонентов</td>
+<td>Минимальная</td>
+<td>Выше средней</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>При выборе микросхемы-контроллера необходимо внимательно изучить datasheet (техническую документацию), так как требования к обвязке и питающим напряжениям могут отличаться у разных производителей.</p>
+
+<h2 id="процесс-сборки-и-монтаж-компонентов">Процесс сборки и монтаж компонентов</h2>
+
+<p>Сборка устройства начинается с подготовки печатной платы или монтажного поля. Для силовых цепей, по которым протекают токи свыше 5 Ампер, необходимо использовать медные провода сечением не менее 1.5–2.5 мм² или делать широкие дорожки на плате с лужением.</p>
+
+<p>Транзисторы и диодный мост обязательно устанавливаются на радиаторы охлаждения. Даже при правильной работе часть энергии рассеивается в виде тепла, и перегрев может привести к тепловому пробою и короткому замыканию.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Порядок сборки ЗУ</h4><label class="check-item"><input type="checkbox"><span>Проверка компонентов мультиметром</span></label><label class="check-item"><input type="checkbox"><span>Пайка слаботочной части схемы</span></label><label class="check-item"><input type="checkbox"><span>Установка силовых элементов на радиаторы</span></label><label class="check-item"><input type="checkbox"><span>Первичное тестирование без АКБ</span></label><label class="check-item"><input type="checkbox"><span>Настройка порогов срабатывания</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>После монтажа всех компонентов производится визуальный осмотр на предмет "холодной" пайки или замыканий припоем. Только убедившись в качестве сборки, можно подавать питание на вход схемы.</p>
+
+<blockquote>⚠️ <strong>Внимание:</strong> Все работы по коммутации проводов внутри корпуса зарядного устройства проводите только при полностью отключенном от сети приборе. Остаточное напряжение на конденсаторах может быть опасным.</p>
+
+<h2 id="настройка-пороговых-значений-и-тестирование">Настройка пороговых значений и тестирование</h2>
+
+<p>Настройка собранного устройства — самый ответственный этап. Для этого потребуется лабораторный блок питания или исправный аккумулятор с известным уровнем заряда, а также точный цифровой вольтметр.</p>
+
+<p>Подав на вход схемы напряжение, имитирующее разряженный аккумулятор, убеждаемся, что реле включилось и горит индикатор заряда. Плавно повышая напряжение, фиксируем момент, когда происходит отключение. Если порог не совпадает с расчетным, корректируем его переменным резистором.</p>
+
+<pre><code>Рекомендуемый порог отключения для WET АКБ: 14.4 В
+<p>Рекомендуемый порог отключения для GEL/AGM: 14.1 В</code></pre></p>
+
+<p>После настройки рекомендуется провести цикл заряда-разряда на реальной батарее, контролируя температуру корпуса ЗУ и напряжение на клеммах. Устройство не должно нагреваться выше 60–70 градусов Цельсия.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Правильная настройка порога отключения продлевает срок службы аккумулятора на 30-40%, предотвращая сульфатацию и выкипание электролита.</p></aside>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Можно ли использовать данное устройство для зарядки литиевых аккумуляторов?</summary>
+<p>Нет, представленные схемы предназначены для свинцово-кислотных батарей. Литиевые аккумуляторы требуют совершенно другого алгоритма зарядки (CC/CV) и специальной платы защиты (BMS). Зарядка лития свинцовым зарядником может привести к возгоранию.</p>
+</details>
+
+<details>
+<summary>Какой ток заряда считается оптимальным?</summary>
+<p>Оптимальным считается ток, составляющий 10% от емкости аккумулятора (например, 6А для батареи 60Ач). Увеличение тока ускоряет заряд, но снижает ресурс батареи, а слишком малый ток может не "прокипятить" электролит.</p>
+</details>
+
+<details>
+<summary>Почему реле щелкает при полном заряде?</summary>
+<p>Это свидетельствует об отсутствии гистерезиса в схеме. Напряжение на клеммах падает сразу после отключения, компаратор снова видит "разряд" и включает заряд, процесс повторяется циклически. Необходимо добавить обратную связь или увеличить емкость фильтра.</p>
+</details>
+
+<details>
+<summary>Нужно ли снимать аккумулятор с автомобиля для зарядки?</summary>
+<p>Желательно снимать, чтобы избежать скачков напряжения в бортовой сети автомобиля, которые могут повредить чувствительную электронику (ЭБУ, магнитолу). Если снять невозможно, обязательно отключите минусовую клемму.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/k/ka/kak-styanut-gruz-styazhkoj-treshchetkoj.html" class="pb-related-card">
+                <span class="pb-related-title">Как стянуть груз стяжкой трещеткой: пошаговая инструкция</span>
+                <span class="pb-related-desc">Подробный гид: как правильно крепить груз стяжной лентой с храповым механизмом. Техника безопасности</span>
+            </a><a href="/articles/p/pa/paneli-solnechnykh-batarej-na-kryshu-doma.html" class="pb-related-card">
+                <span class="pb-related-title">Солнечные панели на крышу дома: монтаж, цена, оформление 2026</span>
+                <span class="pb-related-desc">Как выбрать, установить и легализовать солнечные батареи на крыше частного дома: пошаговая инструкци</span>
+            </a><a href="/articles/k/ka/kak-pravilno-zalit-kryshu-garazha.html" class="pb-related-card">
+                <span class="pb-related-title">Как правильно залить крышу гаража: пошаговая инструкция</span>
+                <span class="pb-related-desc">Узнайте, как залить крышу гаража своими руками. Выбор бетона, армирование, пропорции и технологии за</span>
+            </a><a href="/articles/p/pr/programma-dlya-avtoservisa-po-remontu-avtomobilej-besplatno.html" class="pb-related-card">
+                <span class="pb-related-title">Бесплатные программы для автосервиса: ТОП-7 решений 2026 года</span>
+                <span class="pb-related-desc">Обзор лучших бесплатных программ для учета ремонта, клиентов и запчастей в автосервисе. Сравнение фу</span>
+            </a><a href="/articles/k/ko/komnata-dlya-otdykha-v-garazhe.html" class="pb-related-card">
+                <span class="pb-related-title">Комната отдыха в гараже: обустройство своими руками</span>
+                <span class="pb-related-desc">Как сделать комнату отдыха в гараже: утепление, зонирование, выбор мебели и освещения. Практическое </span>
+            </a><a href="/articles/k/ko/koreana-remont-avto-v-spb.html" class="pb-related-card">
+                <span class="pb-related-title">Кореана ремонт авто в СПб: цены, отзывы и особенности</span>
+                <span class="pb-related-desc">Полный гид по ремонту автомобилей KOREANA в Санкт-Петербурге. Разбор типичных неисправностей, стоимо</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

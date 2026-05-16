@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>HTTPS и MSBuild DeveloperPacks: настройка окружения разработчика — Авто Факт</title>
+    <meta name="description" content="Полное руководство по настройке MSBuild DeveloperPacks, работе с HTTPS в проектах.NET и устранению ошибок сборки. Решения для Windows.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/h/ht/https-aka-ms-msbuild-developerpacks.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="HTTPS и MSBuild DeveloperPacks: настройка окружения разработчика">
+    <meta property="og:description" content="Полное руководство по настройке MSBuild DeveloperPacks, работе с HTTPS в проектах.NET и устранению ошибок сборки. Решения для Windows.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">HTTPS и MSBuild DeveloperPacks: настройка окружения разработчика</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#архитектура-msbuild-и-роль-developer-packs">Архитектура MSBuild и роль Developer Packs</a></li><li><a href="#проблемы-https-при-работе-с-nuget-и-msbuild">Проблемы HTTPS при работе с NuGet и MSBuild</a></li><li><a href="#инструкция-по-установке-и-обновлению-компонентов">Инструкция по установке и обновлению компонентов</a></li><li><a href="#настройка-переменных-окружения-и-путей">Настройка переменных окружения и путей</a></li><li><a href="#диагностика-и-устранение-ошибок-сборки">Диагностика и устранение ошибок сборки</a></li><li><a href="#оптимизация-процесса-сборки-в-cicd">Оптимизация процесса сборки в CI/CD</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/p/pe/pesnya-s-basami-dlya-kolonki-bez-matov.html">Песня с басами для колонки без матов: Топ треков для теста</a></li><li><a href="/articles/k/kr/krossover-dlya-vch-dinamika.html">Кроссовер для ВЧ динамика: схемы, расчеты и настройка звука</a></li><li><a href="/articles/g/gi/gifka-kot-za-rulem.html">Гифка кот за рулем: как сделать и где найти</a></li><li><a href="/articles/c/ch/chto-luchshe-moshchnost-ili-krutyashchij-moment.html">Что важнее: мощность или крутящий момент двигателя?</a></li><li><a href="/articles/e/ev/evro-trek-simulyator-3-obzor.html">Euro Truck Simulator 3: обзор, геймплей и особенности (2026)</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>HTTPS и MSBuild DeveloperPacks: настройка окружения</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#архитектура-msbuild-и-роль-developer-packs">Архитектура MSBuild и роль Developer Packs</a></li><li><a href="#проблемы-https-при-работе-с-nuget-и-msbuild">Проблемы HTTPS при работе с NuGet и MSBuild</a></li><li><a href="#инструкция-по-установке-и-обновлению-компонентов">Инструкция по установке и обновлению компонентов</a></li><li><a href="#настройка-переменных-окружения-и-путей">Настройка переменных окружения и путей</a></li><li><a href="#диагностика-и-устранение-ошибок-сборки">Диагностика и устранение ошибок сборки</a></li><li><a href="#оптимизация-процесса-сборки-в-cicd">Оптимизация процесса сборки в CI/CD</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+
+<p>Современная разработка программного обеспечения на платформе.NET невозможна без корректно настроенного инструментария сборки. Когда вы сталкиваетесь с запросом, связывающим <strong>HTTPS</strong>, <em>MSBuild</em> и <strong>DeveloperPacks</strong>, речь идет о комплексной настройке среды, которая позволяет компилировать проекты, управлять зависимостями и обеспечивать безопасную передачу данных. Ошибки на стыке этих технологий часто приводят к тому, что сборка прерывается, а NuGet пакеты не загружаются.</p>
+
+<p>Основная сложность заключается в том, что <em>MSBuild</em> (Microsoft Build Engine) — это не просто компилятор, а целая платформа для сборки приложений. Для её работы требуются специфические наборы файлов, известные как <strong>DeveloperPacks</strong> или пакеты нацеливания (Targeting Packs). Без них система не знает, как компилировать код для конкретных версий.NET Framework или.NET Core. Одновременно с этим, механизмы безопасности <strong>HTTPS</strong> могут блокировать загрузку необходимых библиотек, если сертификаты не доверяются системой.</p>
+
+<p>В этой статье мы разберем архитектуру взаимодействия компонентов, методы установки недостающих пакетов и способы решения проблем с сетевым доступом. Вы научитесь диагностировать ошибки, связанные с отсутствием файлов нацеливания, и настраивать прокси-серверы для корректной работы NuGet. Понимание этих процессов критически важно для любого разработчика, работающего в корпоративной среде или с legacy-кодом.</p>
+
+<h2 id="архитектура-msbuild-и-роль-developer-packs">Архитектура MSBuild и роль Developer Packs</h2>
+
+<p>Движок <em>MSBuild</em> является фундаментом процесса сборки в экосистеме Microsoft. Он читает файлы проектов (например, <code>.csproj</code> или <code>.vbproj</code>) и определяет, какие задачи необходимо выполнить. Однако сам по себе движок не содержит компиляторов и библиотек для всех версий.NET. Именно здесь вступают в игру <strong>DeveloperPacks</strong>. Эти пакеты содержат справочные сборки (reference assemblies), которые позволяют компилятору понимать API конкретной версии фреймворка.</p>
+
+<p>Когда вы видите ошибку, указывающую на то, что"SDK или Targeting Pack" не найден, это означает, что <em>MSBuild</em> не может найти файлы, описывающие структуру.NET Framework, для которого предназначен ваш проект. Например, если проект создан для.NET Framework 4.7.2, а на машине установлен только 4.8, сборка может пройти успешно, но если проект требует 4.5, а установлен только 4.0, возникнет критическая ошибка. <strong>DeveloperPacks</strong> решают эту проблему, предоставляя недостающие метаданные.</p>
+
+<p>Важно различать Runtime и Developer Pack. Runtime нужен для <em>запуска</em> приложений, а Developer Pack — исключительно для их <strong>создания</strong>. Установка Visual Studio обычно включает в себя необходимые компоненты, но в минималистичных сборочных окружениях (CI/CD серверах) или на машинах разработчиков с легковесными IDE эти пакеты часто приходится устанавливать отдельно через установщик Visual Studio или независимые дистрибутивы.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не копируйте файлы из папок <code>Reference Assemblies</code> вручную с другой машины. Это нарушает целостность цифровой подписи библиотек и может привести к непредсказуемым ошибкам времени выполнения (Runtime errors), которые крайне сложно отладить.</p>
+</blockquote>
+
+<p>Для корректной работы среды необходимо, чтобы пути к инструментам были прописаны в переменных окружения. <em>MSBuild</em> ищет исполняемые файлы и библиотеки, опираясь на системный <code>PATH</code>. Если вы используете командную строку разработчика (Developer Command Prompt), эти переменные устанавливаются автоматически при запуске терминала.</p>
+
+<h2 id="проблемы-https-при-работе-с-nuget-и-msbuild">Проблемы HTTPS при работе с NuGet и MSBuild</h2>
+
+<p>В современных условиях разработка невозможна без постоянного обращения к удаленным репозиториям пакетов. Протокол <strong>HTTPS</strong> обеспечивает шифрование трафика между вашей машиной и серверами NuGet.org или корпоративными MyGet feed'ами. Однако именно механизмы защиты часто становятся причиной сбоев. Когда <em>MSBuild</code> пытается восстановить пакеты (Restore), он использует системные настройки безопасности.NET и Windows.</p>
+
+<p>Одной из самых частых проблем является ошибка"Unable to load the service index" или"Certificate validation failed". Это происходит, если на корпоративном шлюзе стоит HTTPS-сканирование трафика с подменой сертификата, а корневой сертификат компании не добавлен в хранилиство доверенных сертификатов пользователя или компьютера. В результате <strong>HTTPS</em> соединение разрывается, и сборка падает.</p>
+
+<p>Решение проблемы лежит в плоскости управления сертификатами. Вам необходимо экспортировать корневой сертификат прокси-сервера и импортировать его в хранилище <code>Trusted Root Certification Authorities</code>. Также стоит проверить настройки переменных окружения, таких как <code>NUGET_HTTP_TIMEOUT</code>, если проблема вызвана таймаутами при медленном соединении.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Если вы работаете в корпоративной сети, добавьте URL вашего NuGet-сервера в исключения антивируса или прокси, чтобы избежать глубокого сканирования SSL-трафика, которое часто ломает загрузку больших пакетов.</p></aside>
+
+<p>Кроме того, существуют специфические настройки в файле <code>nuget.config</code>, которые позволяют игнорировать ошибки сертификатов (только для локальной разработки!) или явно указывать путь к прокси. Использование параметра <code>disableSourceMapping</code> или настройка <code>http_proxy</code> может кардинально изменить ситуацию.</p>
+
+<div class="pb-poll" id="poll-93d680bf"><div class="pb-poll-question">📊 С какой проблемой HTTPS вы сталкиваетесь чаще?</div><div class="pb-poll-option" data-poll="93d680bf" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Сертификат не доверяется</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="93d680bf" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Таймаут соединения</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="93d680bf" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Прокси требует авторизации</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="93d680bf" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Проблем не было</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="инструкция-по-установке-и-обновлению-компонентов">Инструкция по установке и обновлению компонентов</h2>
+
+<p>Чтобы гарантировать стабильную работу <em>MSBuild</strong> и отсутствие ошибок, связанных с версиями фреймворков, необходимо правильно установить <strong>DeveloperPacks</strong>. Лучший способ сделать это — использовать установщик Visual Studio, даже если вы не пользуетесь самой IDE. Это обеспечивает централизованное управление версиями и зависимостями.</p>
+
+<p>Процесс установки требует внимательности к выбираемым компонентам. Не стоит устанавливать всё подряд, чтобы не раздувать диск, но основные пакеты нацеливания для поддерживаемых версий.NET должны быть present. Ниже приведен алгоритм действий для добавления недостающих компонентов.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка окружения разработчика</h4><label class="check-item"><input type="checkbox"><span>Запущен установщик Visual Studio</span></label><label class="check-item"><input type="checkbox"><span>Выбрана вкладка"Отдельные компоненты"</span></label><label class="check-item"><input type="checkbox"><span>Найдены пакеты.NET Framework Targeting Pack</span></label><label class="check-item"><input type="checkbox"><span>Установлен.NET Core SDK (если нужен)</span></label><label class="check-item"><input type="checkbox"><span>Проверена переменная PATH</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>После установки компонентов рекомендуется перезагрузить компьютер или хотя бы перезапустить терминал, чтобы обновились переменные окружения. Проверить наличие инструментов можно, вызвав команду <code>msbuild -version</code> в командной строке. Если система находит исполняемый файл и выводит номер версии, базовая настройка прошла успешно.</p>
+
+<p>Для проектов, использующих.NET Core или.NET 5/6/7/8, подход немного отличается. Здесь используются <strong>SDK</em> (Software Development Kits), которые включают в себя и компилятор, и библиотеки нацеливания. Их можно устанавливать бок о бок с разными версиями. <em>MSBuild</em>, входящий в состав Visual Studio, умеет автоматически переключаться на нужную версию SDK в зависимости от файла <code>global.json</code> в корне проекта.</p>
+
+<blockquote>
+<p>⚠️ Внимание: При установке нескольких версий.NET SDK порядок их установки важен. Более новые версии могут переопределять системные переменные. Всегда проверяйте, какая версия активна по умолчанию, используя команду <code>dotnet --info</code>.</p>
+</blockquote>
+
+<h2 id="настройка-переменных-окружения-и-путей">Настройка переменных окружения и путей</h2>
+
+<p>Корректная работа <strong>HTTPS</strong> и <em>MSBuild</em> напрямую зависит от системных переменных. В Windows существует множество переменных, влияющих на поведение инструментов разработки. Ключевыми являются <code>PATH</code>, <code>NUGET_PACKAGES</code>, <code>DOTNET_ROOT</code> и переменные прокси.</p>
+
+<p>Переменная <code>PATH</code> должна содержать пути к папкам, где лежат исполняемые файлы MSBuild (обычно это папки внутри <code>Program Files (x86)\Microsoft Visual Studio</code>) и dotnet CLI. Если пути отсутствуют, вы не сможете запустить сборку из любого места в системе, а только из специализированных консолей.</p>
+
+<p>Для настройки HTTPS-прокси необходимо задать переменные <code>http_proxy</code> и <code>https_proxy</code> в формате <code>http://user:password@server:port</code>. Также для игнорирования локальных адресов используется переменная <code>no_proxy</code>.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Переменная</th>
+<th>Назначение</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MSBuildSDKsPath</code></td>
+<td>Указывает путь к папке SDK</td>
+<td><code>C:\Program Files\dotnet\sdk\8.0.100\Sdks</code></td>
+</tr>
+<tr>
+<td><code>NUGET_HTTP_TIMEOUT</code></td>
+<td>Таймаут запроса в миллисекундах</td>
+<td><code>600000</code> (10 минут)</td>
+</tr>
+<tr>
+<td><code>DOTNET_CLI_TELEMETRY_OPTOUT</code></td>
+<td>Отключение телеметрии</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>https_proxy</code></td>
+<td>Адрес прокси-сервера</td>
+<td><code>http://proxy.corp:8080</code></td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Изменение системных переменных требует осторожности. Ошибка в синтаксисе пути может привести к тому, что перестанут работать другие программы. Рекомендуется вести лог изменений или делать скриншоты настроек перед модификацией.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Правильная настройка переменных окружения — это 90% успеха в устранении ошибок"command not found" и проблем с сетью в MSBuild.</p></aside>
+
+<h2 id="диагностика-и-устранение-ошибок-сборки">Диагностика и устранение ошибок сборки</h2>
+
+<p>Даже при правильной установке могут возникать специфические ошибки. Разберем наиболее распространенные сценарии, когда связка <strong>HTTPS</strong> и <em>MSBuild</em> дает сбой. Первая группа ошибок связана с сетью:"The SSL connection could not be established". Это прямой индикатор проблем с сертификатами или протоколами безопасности (например, попытка использовать TLS 1.0, который заблокирован).</p>
+
+<p>Вторая группа ошибок —"The reference assemblies for.NETFramework,Version=v4.x were not found". Это классическая нехватка <strong>DeveloperPacks</strong>. Решение — запустить установщик Visual Studio и добавить соответствующий компонент. Третья группа — конфликты версий NuGet, когда разные проекты требуют несовместимые версии библиотек.</p>
+
+<p>Для диагностики используйте ключ <code>/v:detailed</code> или <code>/v:diag</code> при запуске MSBuild. Это выведет подробнейший лог, в котором можно найти точное место остановки процесса. Ищите строки, начинающиеся с"Error" или"Warning". Часто в логе видно, по какому именно URL идет обращение и какой сертификат возвращается сервером.</p>
+
+<details class="pb-accordion"><summary>Скрытая ошибка TLS 1.2</summary><div class="pb-accordion-body"><p>В старых версиях.NET Framework (до 4.7) по умолчанию не включен TLS 1.2. Если ваш сервер NuGet требует именно его, сборка упадет. Решение: добавить в код перед любым сетевым вызовом строку: ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12; или обновить реестр Windows.</p></div></details>
+
+<p>Также стоит упомянуть проблему с кэшем NuGet. Иногда пакеты загружаются с ошибками из-за обрыва связи, и поврежденные файлы остаются в кэше. Очистка кэша командой <code>dotnet nuget locals all --clear</code> или через меню IDE часто решает загадочные проблемы со сборкой.</p>
+
+<h2 id="оптимизация-процесса-сборки-в-cicd">Оптимизация процесса сборки в CI/CD</h2>
+
+<p>В контексте непрерывной интеграции (CI/CD) вопросы установки <strong>DeveloperPacks</strong> и настройки <strong>HTTPS</strong> стоят особенно остро. Сборочные агенты часто работают на чистых образах ОС, где нет ничего лишнего. Использование Docker-контейнеров с предустановленным SDK — современный стандарт.</p>
+
+<p>Однако, если вы используете локальные серверы сборки (On-Premise), вам необходимо обеспечить наличие всех необходимых версий Targeting Packs на машине агента. Скрипты развертывания должны проверять наличие ключей реестра или файлов, характерных для установленных пакетов.</p>
+
+<p>Для ускорения сборки в корпоративной сети рекомендуется развернуть локальный прокси-кэш для NuGet (например, используя Azure Artifacts или ProGet). Это позволит избежать многократной загрузки одних и тех же пакетов через <strong>HTTPS</strong> из интернета и снизит нагрузку на канал связи. Кроме того, это решает проблему доверия сертификатам, так как вы доверяете своему внутреннему серверу.</p>
+
+<p>Не забывайте про параллелизм. <em>MSBuild</em> поддерживает параметр <code>/m</code> (multi-threading), который позволяет собирать несколько проектов одновременно. На мощных серверах это дает кратный прирост скорости, но требует достаточного количества оперативной памяти.</p>
+
+<details>
+<summary>Как проверить, какие версии.NET Framework установлены в системе?</summary>
+<p>Откройте реестр Windows (regedit) и перейдите по пути <code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full</code>. Значение параметра <code>Release</code> укажет точную версию. Также можно использовать PowerShell команду: <code>Get-ChildItem -Path'HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP' -Recurse -ErrorAction SilentlyContinue | Get-ItemProperty -Name Version -ErrorAction SilentlyContinue | Select-Object PSChildName, Version</code>.</p>
+</details>
+
+<details>
+<summary>Можно ли использовать MSBuild без Visual Studio?</summary>
+<p>Да, можно. Существует отдельный дистрибутив"Build Tools for Visual Studio". Он весит меньше полной IDE и содержит только компиляторы, библиотеки и MSBuild. Это идеальный выбор для серверов сборки и разработчиков, использующих VS Code или Rider.</p>
+</details>
+
+<details>
+<summary>Что делать, если NuGet не видит прокси?</summary>
+<p>Проверьте файл <code>nuget.config</code> в папке <code>%AppData%\NuGet</code>. Убедитесь, что там есть секция <code><config></code> с ключами <code>http_proxy</code> и <code>http_proxy.user</code>. Также проверьте, не блокирует ли антивирус процесс <code>nuget.exe</code> или <code>dotnet.exe</code>.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/p/pe/pesnya-s-basami-dlya-kolonki-bez-matov.html" class="pb-related-card">
+                <span class="pb-related-title">Песня с басами для колонки без матов: Топ треков для теста</span>
+                <span class="pb-related-desc">Лучшие песни с басами для проверки колонок без мата. Идеальный треклист для сабвуфера и тестирования</span>
+            </a><a href="/articles/k/kr/krossover-dlya-vch-dinamika.html" class="pb-related-card">
+                <span class="pb-related-title">Кроссовер для ВЧ динамика: схемы, расчеты и настройка звука</span>
+                <span class="pb-related-desc">Подробный гид по кроссоверам для ВЧ динамиков. Схемы, расчеты частот среза, типы фильтров и нюансы с</span>
+            </a><a href="/articles/g/gi/gifka-kot-za-rulem.html" class="pb-related-card">
+                <span class="pb-related-title">Гифка кот за рулем: как сделать и где найти</span>
+                <span class="pb-related-desc">Почему кот за рулем на гифке так популярен? Разбираем тренды, учимся делать мемы и выбираем безопасн</span>
+            </a><a href="/articles/c/ch/chto-luchshe-moshchnost-ili-krutyashchij-moment.html" class="pb-related-card">
+                <span class="pb-related-title">Что важнее: мощность или крутящий момент двигателя?</span>
+                <span class="pb-related-desc">Подробный разбор вечного спора: что важнее для автомобиля — мощность или крутящий момент? Влияние ха</span>
+            </a><a href="/articles/e/ev/evro-trek-simulyator-3-obzor.html" class="pb-related-card">
+                <span class="pb-related-title">Euro Truck Simulator 3: обзор, геймплей и особенности (2026)</span>
+                <span class="pb-related-desc">Подробный обзор Euro Truck Simulator 3: новые функции, графические улучшения, карта Европы и советы </span>
+            </a><a href="/articles/b/by/byd-yangwang-u8-2023.html" class="pb-related-card">
+                <span class="pb-related-title">BYD Yangwang U8 2023: обзор, характеристики, технологии</span>
+                <span class="pb-related-desc">Полный анализ BYD Yangwang U8 2023. Двигатели, запас хода, система Yisifang, особенности подвески и </span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

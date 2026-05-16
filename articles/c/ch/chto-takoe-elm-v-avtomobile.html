@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Что такое ELM в автомобиле: полное руководство по адаптеру OBD2 — Авто Факт</title>
+    <meta name="description" content="Подробный разбор адаптера ELM327 для диагностики авто. Как выбрать, подключить и использовать сканер для чтения ошибок двигателя через смартфон.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/c/ch/chto-takoe-elm-v-avtomobile.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Что такое ELM в автомобиле: полное руководство по адаптеру OBD2">
+    <meta property="og:description" content="Подробный разбор адаптера ELM327 для диагностики авто. Как выбрать, подключить и использовать сканер для чтения ошибок двигателя через смартфон.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/elektrika-avto/">Электрика Авто</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Что такое ELM в автомобиле: полное руководство по адаптеру OBD2</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#история-и-назначение-адаптера-elm327">История и назначение адаптера ELM327</a></li><li><a href="#технические-характеристики-и-совместимость-с-протоколами">Технические характеристики и совместимость с протоколами</a></li><li><a href="#как-выбрать-качественный-адаптер-версии-и-чипы">Как выбрать качественный адаптер: версии и чипы</a></li><li><a href="#подключение-и-настройка-оборудования">Подключение и настройка оборудования</a></li><li><a href="#обзор-программного-обеспечения-для-диагностики">Обзор программного обеспечения для диагностики</a></li><li><a href="#интерпретация-данных-и-кодов-ошибок">Интерпретация данных и кодов ошибок</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/p/po/polo-sedan-plokho-lovit-radio.html">Поло Седан плохо ловит радио: причины и ремонт антенны</a></li><li><a href="/articles/n/nu/nuzhno-li-regulirovat-fary-posle-zameny-lampochek.html">Регулировка фар после замены ламп: нужно ли это?</a></li><li><a href="/articles/d/dv/dva-generatora-na-avto.html">Два генератора на авто: схема подключения, установка и целесообразность</a></li><li><a href="/articles/m/mo/mozhet-li-iz-za-plokhoj-massy-saditsya-akkumulyator.html">Садится ли аккумулятор из-за плохой массы? Диагностика и решение</a></li><li><a href="/articles/p/po/pochemu-poteyut-fary-vnutri.html">Почему потеют фары изнутри: 7 причин и как устранить</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Что такое ELM в автомобиле: полная энциклопедия адаптера OBD2</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#история-и-назначение-адаптера-elm327">История и назначение адаптера ELM327</a></li><li><a href="#технические-характеристики-и-совместимость-с-протоколами">Технические характеристики и совместимость с протоколами</a></li><li><a href="#как-выбрать-качественный-адаптер-версии-и-чипы">Как выбрать качественный адаптер: версии и чипы</a></li><li><a href="#подключение-и-настройка-оборудования">Подключение и настройка оборудования</a></li><li><a href="#обзор-программного-обеспечения-для-диагностики">Обзор программного обеспечения для диагностики</a></li><li><a href="#интерпретация-данных-и-кодов-ошибок">Интерпретация данных и кодов ошибок</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Многие современные водители, столкнувшись с загоревшейся лампочкой <strong>Check Engine</strong> на приборной панели, впадают в панику, представляя дорогостоящий ремонт в сервисе. Однако существует доступное устройство, которое превращает ваш смартфон в профессиональный диагностический инструмент, способный считать коды неисправностей за считанные секунды. Это устройство известно как <em>ELM327</em> — компактный адаптер, подключаемый к разъему OBD2 автомобиля.</p>
+
+<p>В этой статье мы детально разберем, что скрывается внутри этого гаджета, как он взаимодействует с электронным блоком управления (ЭБУ) вашего авто и почему он стал стандартом де-факто для гаражной диагностики. Вы узнаете о различиях между версиями чипов, научитесь отличать качественный товар от дешевого аналога и поймете, какие реальные возможности открывает <mark>протокол обмена данными</mark> между машиной и внешним компьютером.</p>
+
+<p>Понимание принципов работы <strong>диагностического сканера</strong> сэкономит вам не только деньги на вызове эвакуатора или первичной диагностике, но и нервы, позволяя быстро оценить серьезность поломки. Давайте погрузимся в мир автомобильной электроники и разберемся, как маленькая «коробочка» может рассказать о состоянии вашего автомобиля больше, чем опытный механик на слух.</p>
+
+<h2 id="история-и-назначение-адаптера-elm327">История и назначение адаптера ELM327</h2>
+
+<p>Аббревиатура ELM происходит от названия компании <em>ELM Electronics</em>, кананского разработчика микросхем, который в начале 2000-х годов создал революционное решение для автомобильной индустрии. Инженеры поставили цель создать универсальный интерфейс, способный «переводить» сложные протоколы общения различных автомобильных компьютеров на понятный язык ASCII, передаваемый через стандартный порт RS-232. Это позволило подключать обычные компьютеры к автомобилям разных марок без необходимости создания уникального оборудования для каждого бренда.</p>
+
+<p>Основная задача чипа <strong>ELM327</strong> заключается в преобразовании сигналов. Автомобильные системы используют различные напряжения и логические уровни, которые могут отличаться от тех, что используются в персональной электронике. Адаптер выступает в роли посредника, принимая запросы от диагностического software на ноутбуке или смартфоне, перекодируя их в формат, понятный ЭБУ двигателя, коробки передач или ABS, и возвращая ответ обратно. Без такого преобразователя прямое подключение могло бы привести к повреждению портов.</p>
+
+<p>На сегодняшний день оригинальная компания <em>ELM Electronics</em> была поглощена корпорацией <em>Microchip Technology</em>, и производство оригинальных чипов под маркировкой ELM327 было прекращено. Однако, спецификации были широко распространены, и рынок наводнили китайские клоны, которые эмулируют работу оригинального чипа. Именно эти копии, чаще всего версии 1.5 или 2.1, мы и покупаем в магазинах электроники под общим названием «сканер ELM327».</p>
+
+<blockquote>
+<p>⚠️ Внимание: Рынок переполнен подделками. Дешевые версии адаптеров (часто маркируемые как v2.1) могут не поддерживать работу с некоторыми протоколами и не имеют защиты от скачков напряжения, что теоретически может создать риск для бортовой сети при использовании некачественных блоков питания.</p>
+</blockquote>
+
+<h2 id="технические-характеристики-и-совместимость-с-протоколами">Технические характеристики и совместимость с протоколами</h2>
+
+<p>Главная сила адаптера кроется в его способности поддерживать все пять основных протоколов диагностики OBDII, используемых в мировой автопромышленности. Когда вы подключаете сканер к разъему, он автоматически пытается определить, на каком «языке» говорит автомобиль. Это может быть протокол <strong>ISO 9141-2</strong>, популярный у европейских и азиатских производителей, или более современный <strong>CAN-bus</strong>, ставший обязательным для всех авто с 2008 года.</p>
+
+<p>Скорость обмена данными также играет критическую роль. Оригинальные чипы и качественные копии поддерживают скорость до 38400 бит/с и даже выше, что обеспечивает мгновенный отклик при чтении параметров в реальном времени. Дешевые аналоги могут работать медленно, вызывая задержки при построении графиков работы двигателя. Для работы с современными системами, такими как ABS или SRS (подушки безопасности), часто требуется поддержка расширенных команд, которые доступны не во всех версиях прошивок адаптера.</p>
+
+<p>Важно понимать разницу между поддержкой протокола и поддержкой конкретных команд производителя (Manufacturer Specific Codes). Базовый функционал OBDII позволяет читать ошибки двигателя, но для глубокой диагностики трансмиссии <em>Toyota</em> или системы впрыска <em>Bosch</em> могут потребоваться специфические запросы. Хороший адаптер ELM327 умеет отправлять и такие команды, если используемое вами приложение их поддерживает.</p>
+
+<p>Ниже приведена таблица совместимости основных протоколов с типами автомобилей:</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Протокол</th>
+<th>Тип связи</th>
+<th>Примеры авто</th>
+<th>Стандарт</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ISO 9141-2</td>
+<td>K-Line</td>
+<td>Европа, Азия (до 2004 г.)</td>
+<td>OBDII</td>
+</tr>
+<tr>
+<td>ISO 14230-4 (KWP2000)</td>
+<td>K-Line</td>
+<td>Группа VAG, Hyundai, Kia</td>
+<td>OBDII</td>
+</tr>
+<tr>
+<td>SAE J1850 PWM</td>
+<td>Двухпроводной</td>
+<td>Ford, Mazda, Lincoln</td>
+<td>OBDII</td>
+</tr>
+<tr>
+<td>SAE J1850 VPW</td>
+<td>Однопроводной</td>
+<td>GM, Chrysler, Dodge</td>
+<td>OBDII</td>
+</tr>
+<tr>
+<td>ISO 15765-4 (CAN)</td>
+<td>CAN-bus</td>
+<td>Все авто после 2008 года</td>
+<td>OBDII/CAN</td>
+</tr>
+</tbody>
+</table></div>
+
+<details class="pb-accordion"><summary>Почему важен CAN-bus?</summary><div class="pb-accordion-body"><p>Протокол CAN (Controller Area Network) позволяет передавать данные с высокой скоростью и надежностью, используя всего два провода. Это «нервная система» современного автомобиля, связывающая все блоки управления. Адаптер ELM327 должен уметь работать в режиме CAN, чтобы общаться с современными ЭБУ.</p></div></details>
+
+<h2 id="как-выбрать-качественный-адаптер-версии-и-чипы">Как выбрать качественный адаптер: версии и чипы</h2>
+
+<p>Выбор правильного устройства — это лотерея, в которой можно выиграть, если знать правила. На рынке существуют две основные версии прошивок, которые чаще всего встречаются в продаже: 1.5 и 2.1. Версия <strong>1.5</strong> считается «золотым стандартом» для старых и средних по возрасту автомобилей (примерно до 2010-2012 годов выпуска). Она построена на чипах, эмулирующих оригинал, и отличается высокой стабильностью работы.</p>
+
+<p>Версия <strong>2.1</strong> позиционируется как более новая и должна поддерживать работу с современными автомобилями, имеющими сложные системы CAN-bus. Однако парадокс в том, что многие версии 2.1 собраны на упрощенной элементной базе и часто глючат даже там, где отлично работала версия 1.5. Для владельцев авто после 2015 года часто рекомендуют искать адаптеры с маркировкой <em>ATmega328P</em> или специализированные версии для конкретных марок, так как универсальные «свистки» могут не справляться с высокой скоростью обмена данными.</p>
+
+<p>При покупке обращайте внимание на качество сборки. Хороший адаптер имеет:</p>
+<ul>
+<li>🔌 Качественный пластиковый корпус без запаха и заусенцев, плотно сидящий в разъеме.</li>
+<li>💡 Индикаторы состояния (LED), которые мигают при подключении и обмене данными.</li>
+<li>📜 Наличие маркировки версии прошивки на корпусе или в описании товара.</li>
+<li>🛡️ Защиту от переполюсовки и скачков напряжения (хотя бы базовую).</li>
+</ul>
+
+<div class="pb-poll" id="poll-5ab3a103"><div class="pb-poll-question">📊 Какой адаптер ELM327 у вас?</div><div class="pb-poll-option" data-poll="5ab3a103" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Оригинальный (редкость)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="5ab3a103" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Китайская копия v1.5</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="5ab3a103" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Китайская копия v2.1</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="5ab3a103" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Не знаю, купил первый попавшийся</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="подключение-и-настройка-оборудования">Подключение и настройка оборудования</h2>
+
+<p>Процесс установки адаптера предельно прост и не требует специальных инструментов. Вам необходимо найти диагностический разъем OBD2 в салоне автомобиля. Чаще всего он расположен под рулевой колонкой, слева от водителя, либо скрыт за декоративной панелью в районе ног. В некоторых моделях <em>Volvo</em> или <em>Saab</em> разъем может находиться в бардачке или под капотом, но это редкость.</p>
+
+<p>После того как вы вставили адаптер в разъем, необходимо включить зажигание. На адаптере должен загореться красный индикатор питания. Далее переходим к настройке соединения на смартфоне или планшете. Большинство устройств используют Bluetooth-соединение (реже Wi-Fi), и для сопряжения часто требуется ввести PIN-код. Стандартными кодами доступа являются <code>1234</code> или <code>0000</code>.</p>
+
+<p>Если устройство не определяется, проверьте следующие моменты:</p>
+<ul>
+<li>📱 Убедитесь, что в настройках телефона включена геолокация (требуется Android для работы с Bluetooth-сканерами).</li>
+<li>🔋 Проверьте, горит ли индикатор на самом адаптере.</li>
+<li>🚗 Убедитесь, что зажигание включено (на многих авто питание на разъем подается только при активном зажигании).</li>
+<li>🔄 Попробуйте «забыть» устройство в настройках Bluetooth и найти его заново.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ Внимание: Не оставляйте адаптер включенным в автомобиле на длительную стоянку (более 2-3 дней). Хотя многие современные авто засыпают и перестают питать разъем OBD2, на старых моделях адаптер может продолжать потреблять энергию, что приведет к полному разряду аккумуляторной батареи.</p>
+</blockquote>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка подключения</h4><label class="check-item"><input type="checkbox"><span>Адаптер вставлен в разъем до щелчка</span></label><label class="check-item"><input type="checkbox"><span>Загорелся красный светодиод</span></label><label class="check-item"><input type="checkbox"><span>Включено зажигание</span></label><label class="check-item"><input type="checkbox"><span>Введен PIN-код 1234</span></label><label class="check-item"><input type="checkbox"><span>Приложение видит устройство</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="обзор-программного-обеспечения-для-диагностики">Обзор программного обеспечения для диагностики</h2>
+
+<p>Сам по себе адаптер ELM327 — это лишь «железо», которое ничего не делает без программного обеспечения. Именно приложение превращает ваш гаджет в диагностический прибор. Для платформы <em>Android</em> наиболее популярным и функциональным приложением является <strong>Torque Pro</strong>. Оно позволяет не только считывать и стирать ошибки, но и выводить на экран в реальном времени такие параметры, как температура двигателя, давление наддува, угол опережения зажигания и положение дроссельной заслонки.</p>
+
+<p>Для владельцев устройств на базе <em>iOS</em> (iPhone, iPad) стандартом де-факто стало приложение <strong>Car Scanner ELM OBD2</strong>. Оно отличается дружелюбным интерфейсом и отличной поддержкой российских и азиатских автомобилей. Также стоит упомянуть приложение <em>HobDrive</em>, которое больше ориентировано на ведение бортового журнала и расчет расхода топлива, хотя и имеет функции диагностики.</p>
+
+<p>При выборе софта обращайте внимание на следующие возможности:</p>
+<ul>
+<li>📊 Возможность настройки пользовательских и графиков.</li>
+<li>🗣️ Поддержка голосовых предупреждений (например, при превышении температуры).</li>
+<li>💾 Функция записи логов (Log recording) для последующего анализа на ПК.</li>
+<li>🌍 Поддержка конкретного языка и наличие базы кодов ошибок с расшифровкой.</li>
+</ul>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Для глубокой диагностики автомобилей группы VAG (Volkswagen, Audi, Skoda) стандартные приложения могут быть недостаточны. Рассмотрите специализированный софт типа Carista или VCDS (последний требует своего кабеля, но есть мобильные аналоги), так как они умеют работать с специфическими блолями комфорта.</p></aside>
+
+<h2 id="интерпретация-данных-и-кодов-ошибок">Интерпретация данных и кодов ошибок</h2>
+
+<p>Когда приложение считывает ошибку, вы видите код, например, <code>P0300</code>. Понимание структуры этого кода помогает быстро сориентироваться в проблеме. Первая буква указывает на систему: <strong>P</strong> — двигатель и трансмиссия (Powertrain), <strong>B</strong> — кузов (Body), <strong>C</strong> — шасси (Chassis), <strong>U</strong> — сетевые взаимодействия. Первая цифра после буквы говорит о стандарте: 0</div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/p/po/polo-sedan-plokho-lovit-radio.html" class="pb-related-card">
+                <span class="pb-related-title">Поло Седан плохо ловит радио: причины и ремонт антенны</span>
+                <span class="pb-related-desc">Если Volkswagen Polo Sedan плохо ловит радио, проверьте усилитель и антенный кабель. Полный гид по у</span>
+            </a><a href="/articles/n/nu/nuzhno-li-regulirovat-fary-posle-zameny-lampochek.html" class="pb-related-card">
+                <span class="pb-related-title">Регулировка фар после замены ламп: нужно ли это?</span>
+                <span class="pb-related-desc">Нужно ли регулировать свет фар после замены лампочек? Разбираем технические нюансы, влияние типа цок</span>
+            </a><a href="/articles/d/dv/dva-generatora-na-avto.html" class="pb-related-card">
+                <span class="pb-related-title">Два генератора на авто: схема подключения, установка и целесообразность</span>
+                <span class="pb-related-desc">Нужны ли два генератора на авто? Подробный разбор схемы подключения, плюсы и минусы дублирования сис</span>
+            </a><a href="/articles/m/mo/mozhet-li-iz-za-plokhoj-massy-saditsya-akkumulyator.html" class="pb-related-card">
+                <span class="pb-related-title">Садится ли аккумулятор из-за плохой массы? Диагностика и решение</span>
+                <span class="pb-related-desc">Почему садится аккумулятор из-за плохой массы? Разбираем симптомы, проверяем контакты и устраняем ут</span>
+            </a><a href="/articles/p/po/pochemu-poteyut-fary-vnutri.html" class="pb-related-card">
+                <span class="pb-related-title">Почему потеют фары изнутри: 7 причин и как устранить</span>
+                <span class="pb-related-desc">Запотевание фар внутри — опасная проблема! Разбираем причины конденсата в блок-фарах, последствия и </span>
+            </a><a href="/articles/n/na/napryazhenie-15-volt-v-mashine.html" class="pb-related-card">
+                <span class="pb-related-title">Напряжение 15 вольт в машине: причины, риски и диагностика</span>
+                <span class="pb-related-desc">Почему в бортовой сети 15 вольт? Разбор причин высокого напряжения, рисков для электроники и способо</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

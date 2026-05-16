@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Система курсовой стабилизации ESP: принцип работы и диагностика — Авто Факт</title>
+    <meta name="description" content="Подробный разбор ESP: как работает система стабилизации, почему загорается лампочка и как проверить датчики. Реальные советы по эксплуатации.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/s/si/sistema-kursovoj-stabilizatsii-esp.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Система курсовой стабилизации ESP: принцип работы и диагностика">
+    <meta property="og:description" content="Подробный разбор ESP: как работает система стабилизации, почему загорается лампочка и как проверить датчики. Реальные советы по эксплуатации.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/bezopasnost/">Безопасность</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Система курсовой стабилизации ESP: принцип работы и диагностика</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#что-такое-esp-и-как-она-функционирует">Что такое ESP и как она функционирует</a></li><li><a href="#ключевые-компоненты-системы-стабилизации">Ключевые компоненты системы стабилизации</a></li><li><a href="#алгоритмы-работы-в-критических-ситуациях">Алгоритмы работы в критических ситуациях</a></li><li><a href="#диагностика-неисправностей-и-коды-ошибок">Диагностика неисправностей и коды ошибок</a></li><li><a href="#нужно-ли-отключать-esp-в-зимний-период">Нужно ли отключать ESP в зимний период</a></li><li><a href="#техническое-обслуживание-и-профилактика">Техническое обслуживание и профилактика</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/z/za/zamok-kodovyj-mekhanicheskij-zkm-1.html">Кодовый замок ЗКМ 1: Инструкция, Коды и Ремонт</a></li><li><a href="/articles/s/sk/skolko-mozhno-sidet-v-zavedennoj-mashine.html">Сколько можно сидеть в заведенной машине без движения — нормы и риски</a></li><li><a href="/articles/k/ka/kak-nachat-seks-v-mashine.html">Как начать секс в машине: безопасность, подготовка и советы</a></li><li><a href="/articles/b/bl/bloknot-formata-a7-dlya-aptechki.html">Блокнот А7 для аптечки: выбор, наполнение и хранение в 2026 году</a></li><li><a href="/articles/k/ka/kak-pravilno-tselitsya-s-ak.html">Как правильно целиться с АК: секреты меткой стрельбы</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Система курсовой стабилизации ESP: устройство, работа и диагностика</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#что-такое-esp-и-как-она-функционирует">Что такое ESP и как она функционирует</a></li><li><a href="#ключевые-компоненты-системы-стабилизации">Ключевые компоненты системы стабилизации</a></li><li><a href="#алгоритмы-работы-в-критических-ситуациях">Алгоритмы работы в критических ситуациях</a></li><li><a href="#диагностика-неисправностей-и-коды-ошибок">Диагностика неисправностей и коды ошибок</a></li><li><a href="#нужно-ли-отключать-esp-в-зимний-период">Нужно ли отключать ESP в зимний период</a></li><li><a href="#техническое-обслуживание-и-профилактика">Техническое обслуживание и профилактика</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Современный автомобиль представляет собой сложный комплекс электронных систем, призванных обеспечить безопасность водителя и пассажиров. Одной из ключевых технологий, ставших стандартом в автопроме, является <strong>система курсовой стабилизации</strong>. В различных мануалах и технической документации она может встречаться под аббревиатурами ESP, ESC или DSC, однако суть работы остается единой — предотвращение заноса или сноса транспортного средства.</p>
+
+<p>Многие водители сталкиваются с ситуацией, когда на приборной панели загорается индикатор этой системы, что часто вызывает недоумение или панику. Понимание того, как именно функционирует этот электронный помощник, позволяет не только грамотно реагировать на сигналы бортового компьютера, но и избегать опасных ситуаций на дороге. <em>Электронный стабилизатор</em> работает в связке с антиблокировочной системой тормозов, создавая мощный тандем активной безопасности.</p>
+
+<p>В данной статье мы подробно разберем физический принцип работы, рассмотрим типичные неисправности и обсудим, стоит ли отключать систему в определенных дорожных условиях. Знание этих нюансов критически важно для каждого владельца современного автомобиля, так как это напрямую влияет на стиль вождения и обслуживание машины.</p>
+
+<h2 id="что-такое-esp-и-как-она-функционирует">Что такое ESP и как она функционирует</h2>
+
+<p>Аббревиатура ESP расшифровывается как Electronic Stability Program, что переводится как электронная программа стабилизации. Первооткрывателем технологии считается компания Bosch, внедрившая её в серийное производство в середине 90-х годов. Суть работы заключается в постоянном мониторинге траектории движения автомобиля и сравнении её с intentions водителя, определяемыми по углу поворота рулевого колеса.</p>
+
+<p>Для реализации своих функций система использует данные с целого ряда датчиков, расположенных по всему кузову и ходовой части. <strong>Блок управления</strong> анализирует информацию сотни раз в секунду. Если реальное движение машины начинает отличаться от заданного водителем курса (например, начинается занос задней оси), электроника мгновенно вмешивается в работу.</p>
+
+<p>Вмешательство происходит путем выборочного подтормаживания определенных колес и, при необходимости, снижения крутящего момента двигателя. Это создает противодействующий момент, который возвращает автомобиль на нужную траекторию. Важно отметить, что <em>ESP</em> не творит чудес и ограничена законами физики: если скорость слишком высока для данного поворота, система может лишь минимизировать последствия, но не гарантировать сохранение контроля.</p>
+
+<blockquote>⚠️ <strong>Внимание:</strong> Система ESP не заменяет навыки аккуратного вождения. Она лишь расширяет предел устойчивости автомобиля, но при превышении скоростного режима физика остается неумолимой.</blockquote>
+
+<div class="pb-poll" id="poll-16927a4b"><div class="pb-poll-question">📊 Сталкивались ли вы с самопроизвольным включением ESP на скользкой дороге?</div><div class="pb-poll-option" data-poll="16927a4b" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Да, часто</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="16927a4b" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Бывало пару раз</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="16927a4b" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Нет, не замечал</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="16927a4b" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">У меня нет кнопки ESP</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="ключевые-компоненты-системы-стабилизации">Ключевые компоненты системы стабилизации</h2>
+
+<p>Эффективность работы электронного стабилизатора напрямую зависит от исправности всех его составляющих. Основой является гидравлический блок, который модифицирует давление в тормозной системе независимо от действий водителя педалью тормоза. Этот блок интегрирован с главным тормозным цилиндром и способен создавать давление даже при отпущенной педали.</p>
+
+<p>Информационную базу для принятия решений собирают несколько типов сенсоров. Центральным элементом является <strong>датчик угловой скорости</strong> (гироскоп), который фиксирует вращение автомобиля вокруг вертикальной оси. Именно он сообщает блоку управления о начале заноса.</p>
+
+<ul>
+<li>🚗 Датчики вращения колес — считывают скорость каждого колеса отдельно для выявления блокировки или пробуксовки.</li>
+<li>🎛️ Датчик угла поворота рулевого колеса — определяет, куда водитель <em>хочет</em> повернуть автомобиль.</li>
+<li>📉 Датчик поперечного ускорения — фиксирует боковые перегрузки при прохождении поворотов.</li>
+</ul>
+
+<p>Все эти компоненты связаны единой цифровой шиной, что позволяет обмениваться данными в реальном времени. Если один из датчиков выходит из строя или начинает передавать некорректные данные, система теряет способность объективно оценивать ситуацию. В таком случае на приборной панели загорается контрольная лампа, а сама функция стабилизации отключается во избежание неадекватных действий.</p>
+
+<details class="pb-accordion"><summary>Можно ли ездить с горящей лампой ESP?</summary><div class="pb-accordion-body"><p>Ездить можно, тормоза будут работать в штатном режиме, но функция стабилизации и антипробуксовки будет отключена. Однако затягивать с диагностикой не стоит, так как вы теряете важный элемент безопасности.</p></div></details>
+
+<h2 id="алгоритмы-работы-в-критических-ситуациях">Алгоритмы работы в критических ситуациях</h2>
+
+<p>Понимание того, как именно машина реагирует на потерю сцепления, помогает водителю не сопротивляться работе автоматики. Существует два основных сценария, которые призвана исправлять <strong>система курсовой устойчивости</strong>: недостаточная и избыточная поворачиваемость. В первом случае автомобиль «плужит» передней осью наружу поворота, во втором — задняя часть уходит в занос.</p>
+
+<p>При возникновении заноса (избыточная поворачиваемость) система подтормаживает внешнее переднее колесо. Это создает момент силы, который разворачивает кузов автомобиля в сторону поворота, выравнивая траекторию. Одновременно с этим может снижаться тяга двигателя, чтобы не срывать колеса в еще большее скольжение.</p>
+
+<p>Если же наблюдается снос передней оси, электроника действует иначе. Подтормаживаются внутренние колеса, что помогает «зацепить» машину за дугу поворота. <em>Алгоритмы работы</em> постоянно совершенствуются, и современные системы способны реагировать даже на такие сложные явления, как «лосиный тест» или резкое перестроение на мокром асфальте.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>При срабатывании ESP вы можете чувствовать пульсацию педали тормоза или слышать характерный треск. Не убирайте ногу с педали и продолжайте рулить в нужном направлении — система работает.</p></aside>
+
+<h2 id="диагностика-неисправностей-и-коды-ошибок">Диагностика неисправностей и коды ошибок</h2>
+
+<p>Когда на панели приборов загорается желтый индикатор с изображением автомобиля и следов шин, это сигнализирует о вмешательстве системы или её неисправности. Если лампа мигает во время движения — система работает. Если же она горит постоянно, значит, <strong>диагностика ESP</strong> выявила критическую ошибку, и функционал отключен.</p>
+
+<p>Часто проблема кроется не в самом блоке управления, а в смежных элементах. Например, загрязнение или выход из строя датчика ABS напрямую влияет на работу стабилизатора. Также частой причиной становится неисправность датчика положения руля, особенно после замены рулевого механизма или снятия аккумулятора.</p>
+
+<p>Для точного определения причины необходимо подключение специализированного сканера. Компьютерная диагностика позволяет считать конкретный код ошибки, хранящийся в памяти блока. Ниже приведена таблица распространенных причин активации индикатора.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Симптом</th>
+<th>Вероятная причина</th>
+<th>Метод решения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Горит постоянно</td>
+<td>Неисправность датчика ABS/ESP</td>
+<td>Замена датчика, проверка проводки</td>
+</tr>
+<tr>
+<td>Загорается при старте</td>
+<td>Низкий заряд аккумулятора</td>
+<td>Зарядка или замена АКБ</td>
+</tr>
+<tr>
+<td>Мигает в движении</td>
+<td>Проскальзывание колес (штатная работа)</td>
+<td>Сбросить газ, снизить скорость</td>
+</tr>
+<tr>
+<td>Горит после замены руля</td>
+<td>Не калиброван датчик угла</td>
+<td>Процедура калибровки сканером</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>В некоторых случаях для восстановления работоспособности достаточно выполнить процедуру калибровки датчика угла поворота рулевого колеса. Это делается путем выкручивания руля до упора в одну и другую сторону при заведенном двигателе, либо через диагностическое оборудование.</p>
+
+<blockquote>⚠️ <strong>Внимание:</strong> Если вместе с ESP горит красный индикатор тормозной системы, эксплуатация автомобиля может быть опасна. Проверьте уровень тормозной жидкости немедленно.</blockquote>
+
+<h2 id="нужно-ли-отключать-esp-в-зимний-период">Нужно ли отключать ESP в зимний период</h2>
+
+<p>Вопрос об отключении системы стабилизации зимой вызывает ожесточенные споры среди автолюбителей. На многих автомобилях предусмотрена кнопка <code>ESP OFF</code>, которая позволяет деактивировать систему. Однако важно понимать разницу между полным отключением и режимом повышенной проходимости.</p>
+
+<p>В глубоком снегу или грязи полный запрет работы электроники действительно необходим. Если колеса буксуют, система душит двигатель и не дает раскрутить их до состояния, когда возможен «грести» снег. В таких условиях <strong>отключение ESP</strong> позволяет автомобилю выбраться из ловушки за счет инерции и пробуксовки.</p>
+
+<p>На скользком асфальте или укатанном снегу отключать систему категорически не рекомендуется. Зимняя дорога полна сюрпризов, и реакция человека значительно медленнее реакции компьютера. <em>Электронный помощник</em> может спасти от вылета в кювет при неожиданном ледяном участке.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка перед зимой</h4><label class="check-item"><input type="checkbox"><span>Проверить давление в шинах</span></label><label class="check-item"><input type="checkbox"><span>Осмотреть датчики ABS на колесах</span></label><label class="check-item"><input type="checkbox"><span>Проверить уровень заряда АКБ</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в работе кнопки ESP</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Существует также режим «Sport», который разрешает небольшие заносы, но вмешивается только в критической ситуации. Это оптимальный вариант для опытных водителей на сухом асффальте, но не для зимней езды по городу.</p>
+
+<h2 id="техническое-обслуживание-и-профилактика">Техническое обслуживание и профилактика</h2>
+
+<p>Система курсовой стабилизации не требует специального планового обслуживания, как, например, замена масла в двигателе. Однако её надежность зависит от общего состояния автомобиля. Регулярная мойка колесных арок помогает избежать обрастания датчиков грязью и реагентами, что особенно актуально в зимний период.</p>
+
+<p>При замене тормозных колодок или дисков следует быть осторожным с проводкой датчиков ABS, которые часто идут в едином жгуте. Повреждение изоляции или окисление контактов — частая причина ложных срабатываний. Также необходимо следить за состоянием <strong>подшипников ступиц</strong>, так как люфт в подшипнике может искажать показания датчика скорости.</p>
+
+<p>Если вы планируете установку нестандартных колес или лифт подвески, помните, что изменение диаметра колес может сбить калибровки системы. Электроника будет получать неверные данные о скорости вращения, что приведет к некорректной работе стабилизатора.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Своевременная замена изношенных деталей подвески и тормозов — лучшая профилактика проблем с ESP. Неисправный узел одной системы часто становится причиной ошибки в другой.</p></aside>
+
+<p>В заключение стоит отметить, что ESP — это сложный, но надежный механизм. При правильном понимании принципов его работы и своевременном устранении неисправностей, он остается незаметным защитником на протяжении всего срока службы автомобиля.</p>
+
+<details>
+<summary>Почему загорелась ESP после замены аккумулятора?</summary>
+<p>При отключении питания блок управления мог потерять калибровку датчика угла поворота рулевого колеса. Необходимо выполнить процедуру адаптации: запустить двигатель, выкрутить руль до упора влево, затем вправо, и вернуть в центральное положение. Если лампа не гаснет, требуется сброс ошибки сканером.</p>
+</details>
+
+<details>
+<summary>Можно ли ездить, если горит лампочка ESP?</summary>
+<p>Да, ездить можно, так как основная тормозная система и двигатель продолжают работать штатно. Однако автомобиль лишается защиты от заносов и сносов. Следует двигаться с повышенной осторожностью, особенно в плохих погодных условиях, и как можно скорее обратиться в сервис.</p>
+</details>
+
+<details>
+<summary>Влияет ли разное давление в шинах на работу системы?</summary>
+<p>Да, существенная разница в давлении приводит к разному диаметру колес и, следовательно, разной скорости их вращения. Датчики фиксируют это как пробуксовку или неисправность, что может вызвать ложное срабатывание или загорание ошибки на панели приборов.</p>
+</details>
+
+<details>
+<summary>Что означает мигающий индикатор ESP во время движения?</summary>
+<p>Мигающий индикатор означает, что система в данный момент активна и выполняет работу по стабилизации автомобиля. Вы чувствуете ограничение тяги или пульсацию тормозов. Это сигнал водителю о том, что сцепление с дорогой потеряно и необходимо снизить скорость.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/z/za/zamok-kodovyj-mekhanicheskij-zkm-1.html" class="pb-related-card">
+                <span class="pb-related-title">Кодовый замок ЗКМ 1: Инструкция, Коды и Ремонт</span>
+                <span class="pb-related-desc">Полный обзор механического замка ЗКМ 1. Устройство, инструкция по смене кода, таблица заводских комб</span>
+            </a><a href="/articles/s/sk/skolko-mozhno-sidet-v-zavedennoj-mashine.html" class="pb-related-card">
+                <span class="pb-related-title">Сколько можно сидеть в заведенной машине без движения — нормы и риски</span>
+                <span class="pb-related-desc">Разбираемся, как долго можно находиться в работающем авто на холостом ходу: влияние на двигатель, ра</span>
+            </a><a href="/articles/k/ka/kak-nachat-seks-v-mashine.html" class="pb-related-card">
+                <span class="pb-related-title">Как начать секс в машине: безопасность, подготовка и советы</span>
+                <span class="pb-related-desc">Полное руководство по организации интимной близости в автомобиле: выбор места, подготовка салона, юр</span>
+            </a><a href="/articles/b/bl/bloknot-formata-a7-dlya-aptechki.html" class="pb-related-card">
+                <span class="pb-related-title">Блокнот А7 для аптечки: выбор, наполнение и хранение в 2026 году</span>
+                <span class="pb-related-desc">Как выбрать компактный блокнот А7 (74×105 мм) для автомобильной аптечки: материалы, водостойкость, к</span>
+            </a><a href="/articles/k/ka/kak-pravilno-tselitsya-s-ak.html" class="pb-related-card">
+                <span class="pb-related-title">Как правильно целиться с АК: секреты меткой стрельбы</span>
+                <span class="pb-related-desc">Узнайте, как правильно целиться с АК. Техника прицеливания, работа со спуском и дыхание для повышени</span>
+            </a><a href="/articles/a/ai/airbag-perevod-s-anglijskogo-na-russkij.html" class="pb-related-card">
+                <span class="pb-related-title">Airbag перевод: значение, устройство и работа подушек безопасности</span>
+                <span class="pb-related-desc">Полный перевод слова Airbag на русский язык. Как работают подушки безопасности, их типы, устройство </span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

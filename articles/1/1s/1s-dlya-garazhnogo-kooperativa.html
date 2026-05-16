@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>1С для гаражного кооператива: автоматизация учета и взносов — Авто Факт</title>
+    <meta name="description" content="Как настроить 1С для ГСК: учет членских взносов, электроэнергии и зарплат бухгалтеру. Автоматизация работы председателя и казначея.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/1/1s/1s-dlya-garazhnogo-kooperativa.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="1С для гаражного кооператива: автоматизация учета и взносов">
+    <meta property="og:description" content="Как настроить 1С для ГСК: учет членских взносов, электроэнергии и зарплат бухгалтеру. Автоматизация работы председателя и казначея.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/garazh-master/">Гараж Мастер</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">1С для гаражного кооператива: автоматизация учета и взносов</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#выбор-подходящей-конфигурации-1с-для-гск">Выбор подходящей конфигурации 1С для ГСК</a></li><li><a href="#настройка-базы-данных-и-справочников">Настройка базы данных и справочников</a></li><li><a href="#учет-членских-взносов-и-начисление-платежей">Учет членских взносов и начисление платежей</a></li><li><a href="#контроль-потребления-электроэнергии-и-ресурсов">Контроль потребления электроэнергии и ресурсов</a></li><li><a href="#бухгалтерский-учет-и-взаимодействие-с-банком">Бухгалтерский учет и взаимодействие с банком</a></li><li><a href="#формирование-отчетности-и-взаимодействие-с-фнс">Формирование отчетности и взаимодействие с ФНС</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/p/pl/plastikovaya-doroga-dlya-mashin.html">Пластиковая дорога для машин: виды, монтаж и преимущества</a></li><li><a href="/articles/p/po/pochemu-kraskopult-plyuetsya-kaplyami.html">Почему краскопульт плюется: причины и устранение</a></li><li><a href="/articles/a/ar/arenda-garazhej-kak-biznes.html">Аренда гаражей как бизнес: пошаговая инструкция и расчеты</a></li><li><a href="/articles/p/pe/perekhodnik-220-na-12-volt-prikurivatel-dlya-kompressora.html">Переходник 220 на 12 вольт для компрессора: выбор и схемы</a></li><li><a href="/articles/a/av/avtoservis-planeta-zhelezyaka-na-mkade.html">Автосервис «Планета Железяка» на МКАД: услуги, цены, отзывы 2026</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Автоматизация гаражного кооператива: внедрение 1С</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#выбор-подходящей-конфигурации-1с-для-гск">Выбор подходящей конфигурации 1С для ГСК</a></li><li><a href="#настройка-базы-данных-и-справочников">Настройка базы данных и справочников</a></li><li><a href="#учет-членских-взносов-и-начисление-платежей">Учет членских взносов и начисление платежей</a></li><li><a href="#контроль-потребления-электроэнергии-и-ресурсов">Контроль потребления электроэнергии и ресурсов</a></li><li><a href="#бухгалтерский-учет-и-взаимодействие-с-банком">Бухгалтерский учет и взаимодействие с банком</a></li><li><a href="#формирование-отчетности-и-взаимодействие-с-фнс">Формирование отчетности и взаимодействие с ФНС</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Управление гаражно-строительным кооперативом часто превращается в хаос из бумажных квитанций, таблиц Excel и бесконечных расчетов потребления электроэнергии. Председатели и бухгалтеры ГСК сталкиваются с необходимостью вести точный учет сотен собственников, контролировать поступления средств и вовремя оплачивать счета поставщиков ресурсов. Ручное ведение документации в таких условиях чревато ошибками, которые могут привести к финансовым потерям или конфликтам с членами кооператива.</p>
+<p>Современные программные комплексы позволяют перевести этот процесс на качественно новый уровень. Специализированные конфигурации на базе платформы <em>1С:Предприятие</em> созданы специально для нужд некоммерческих организаций и кооперативов. Они объединяют в себе функции бухгалтерского учета, управления членской базой и расчета коммунальных платежей, избавляя от необходимости использовать разрозненные инструменты.</p>
+<p>Внедрение такой системы требует понимания специфики работы ГСК и правильного выбора программного обеспечения. Важно не просто купить коробочный продукт, а адаптировать его под реальные нужды конкретного объединения гаражников. Это позволит автоматизировать рутинные операции, такие как рассылка уведомлений о задолженности или формирование платежных ведомостей, и сосредоточиться на развитии инфраструктуры.</p>
+
+<h2 id="выбор-подходящей-конфигурации-1с-для-гск">Выбор подходящей конфигурации 1С для ГСК</h2>
+<p>Первым шагом к автоматизации является выбор правильной программной оболочки. Стандартные бухгалтерские решения часто оказываются избыточными или, наоборот, не имеют специфических функций для кооперативов. Рынок предлагает специализированные продукты, заточенные под учет членских взносов и показаний счетчиков. Выбор зависит от масштаба кооператива и сложности внутренних процессов.</p>
+<p>Наиболее популярным решением является связка <strong>1С:Бухгалтерия</strong> с отраслевыми надстройками или конфигурация <em>1С:Управление ТСЖ</em>. Последняя обладает широким функционалом для начисления платежей по счетчикам, ведения реестра собственников и формирования отчетов. Для небольших ГСК может быть достаточно упрощенных версий, которые легче в освоении.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Лицензирование программного обеспечения зависит от количества пользователей. Если доступ к базе данных будет только у бухгалтера, подойдет однопользовательская версия. Для одновременной работы председателя и бухгалтера потребуется сетевая лицензия.</p>
+</blockquote>
+
+<p>При выборе стоит обратить внимание на возможность интеграции с онлайн-кассами и банковскими системами. Это позволит автоматически разносить поступления средств и формировать чеки. Также важна поддержка обновлений, так как законодательство и формы отчетности периодически меняются.</p>
+
+<ul>
+<li>🔹 <strong>Масштабируемость:</strong> Возможность расширения базы данных при увеличении количества гаражей.</li>
+<li>🔹 <strong>Интерфейс:</strong> Удобство ввода показаний счетчиков и формирования квитанций.</li>
+<li>🔹 <strong>Отчетность:</strong> Наличие готовых форм для налоговой и статистики.</li>
+<li>🔹 <strong>Поддержка:</strong> Доступность технических специалистов для решения проблем.</li>
+</ul>
+
+<div class="pb-poll" id="poll-1115f386"><div class="pb-poll-question">📊 Какой вариант учета вы используете сейчас?</div><div class="pb-poll-option" data-poll="1115f386" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Бумажные журналы</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="1115f386" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Excel таблицы</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="1115f386" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">1С Бухгалтерия (стандарт)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="1115f386" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Специализированная программа для ГСК</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="настройка-базы-данных-и-справочников">Настройка базы данных и справочников</h2>
+<p>После приобретения ПО начинается этап первичной настройки, который является фундаментом всей дальнейшей работы. Ошибки на этом этапе могут привести к некорректному начислению платежей в будущем. Необходимо создать структуру справочников, соответствующую реальной топографии кооператива.</p>
+<p>В первую очередь заполняется справочник <code>Контрагенты</code> или специализированный реестр членов ГСК. Для каждого владельца гаража вносятся персональные данные, номер участка, площадь и контактная информация. Важно сразу разделить лицевые счета, если у одного собственника несколько объектов или если объект находится в долевой собственности.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>При массовом импорте данных из Excel внимательно проверяйте кодировку файла, чтобы избежать появления "кракозябр" в фамилиях собственников.</p></aside>
+
+<p>Следующий критически важный этап — настройка справочника <strong>Номенклатура</strong>. Здесь прописываются все виды платежей: членские взносы, целевые взносы, оплата электроэнергии, охранные услуги. Для каждого вида платежа задается статья доходов и статья затрат, что впоследствии упростит формирование финансового результата.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Элемент справочника</th>
+<th>Необходимые данные</th>
+<th>Влияние на расчеты</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Владелец</td>
+<td>ФИО, ИНН, Номер гаража</td>
+<td>Формирование квитанции</td>
+</tr>
+<tr>
+<td>Вид платежа</td>
+<td>Ед. измерения, Ставка НДС</td>
+<td>Сумма начисления</td>
+</tr>
+<tr>
+<td>Счетчик</td>
+<td>Серийный номер, Тип ресурса</td>
+<td>Расход ресурса</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Особое внимание следует уделить настройке тарифов. В системе можно задать период действия тарифа, что позволит автоматически применять новые расценки с определенной даты без ручного пересчета истории. Это особенно актуально для электроэнергии, тарифы на которую меняются ежегодно.</p>
+
+<h2 id="учет-членских-взносов-и-начисление-платежей">Учет членских взносов и начисление платежей</h2>
+<p>Основная функция системы — регулярное начисление обязательных платежей. Автоматизация этого процесса занимает минимум времени у бухгалтера. Достаточно запустить регламентную операцию в начале месяца, и программа сама рассчитает суммы для каждого собственника на основе актуальных тарифов и показаний.</p>
+<p>Для членских взносов обычно используется фиксированная ставка с гаражеместа или с квадратного метра площади. В настройках документа <code>Начисление взносов</code> выбирается период, вид платежа и группа собственников. Система сама проверит наличие льгот, если такие предусмотрены уставом, и применит коэффициенты.</p>
+
+<details class="pb-accordion"><summary>Как обработать льготника?</summary><div class="pb-accordion-body"><p>Для применения льготы в карточке собственника создается отдельный документ "Льгота", где указывается процент скидки или фиксированная сумма вычета, а также период ее действия.</p></div></details>
+
+<p>Ситуация с переменными платежами, такими как свет, требует предварительного ввода показаний. Это можно делать через документ <code>Ввод показаний приборов учета</code>. Программа сравнит текущие показания с предыдущими, рассчитает расход и умножит его на тариф. Если расход превышает социальную норму, система автоматически применит повышенный тариф.</p>
+
+<ul>
+<li>💡 <strong>Групповое начисление:</strong> Одновременный расчет для всех членов кооператива.</li>
+<li>💡 <strong>Контроль долгов:</strong> Автоматическое добавление суммы задолженности в новую квитанцию.</li>
+<li>💡 <strong>Печать:</strong> Массовая печать квитанций на принтере или рассылка по email.</li>
+</ul>
+
+<p>Важно регулярно проводить сверку расчетов с членами ГСК. Отчеты по дебиторской задолженности позволяют видеть общую картину поступлений и выявлять должников. Это помогает планировать бюджет кооператива на ремонтные работы и закупку материалов.</p>
+
+<h2 id="контроль-потребления-электроэнергии-и-ресурсов">Контроль потребления электроэнергии и ресурсов</h2>
+<p>Энергопотребление — одна из самых сложных статей расходов в ГСК. Помимо учета показаний индивидуальных счетчиков, необходимо распределять общедомовые потери и расход на освещение территории. Программа 1С позволяет вести учет по схеме: "Общий счетчик минус сумма индивидуальных".</p>
+<p>Разница показаний распределяется пропорционально потреблению или площади между всеми участниками. В системе настраивается алгоритм распределения, который применяется при закрытии периода. Это исключает человеческий фактор и споры о том, кто сколько должен доплатить за потери в сетях.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Тарифы на электроэнергию и правила расчета потерь могут меняться региональными властями. Всегда сверяйте настройки формул в программе с актуальными постановлениями местной энергосбытовой компании.</p>
+</blockquote>
+
+<p>Для контроля за неучтенным потреблением можно использовать отчеты по анализу потребления. Резкий скачок показаний у одного из собственников или, наоборот, нулевое потребление при работающем оборудовании могут сигнализировать о неисправности счетчика или хищении. <strong>Мониторинг</strong> таких ситуаций позволяет оперативно реагировать и предотвращать убытки.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Автоматическое распределение потерь электроэнергии исключает конфликты между членами ГСК и обеспечивает прозрачность расчетов.</p></aside>
+
+<h2 id="бухгалтерский-учет-и-взаимодействие-с-банком">Бухгалтерский учет и взаимодействие с банком</h2>
+<p>Бухгалтерия ГСК, как и любой организации, обязана вести учет в соответствии с законодательством. Конфигурации 1С содержат все необходимые проводки для отражения хозяйственных операций. Поступление средств на расчетный счет загружается через систему <em>Клиент-Банк</em>, что ускоряет процесс разноски платежей.</p>
+<p>При поступлении денег от физических лиц система может автоматически определять плательщика по номеру лицевого счета или ИНН, если платеж помечен соответствующим идентификатором. Это значительно сокращает время обработки выписки. Неопознанные платежи попадают в специальный реестр для ручной обработки.</p>
+<p>Учет основных средств, таких как трансформаторные подстанции, ворота, системы видеонаблюдения, ведется в стандартном модуле ОС. Начисление амортизации происходит автоматически по утвержденным нормам. Это важно для формирования балансовой стоимости имущества кооператива.</p>
+
+<pre><code>Операция: Закрытие месяца
+<p>Действие: Формирование регламентных документов</p>
+<p>Результат: Сформированы проводки по амортизации и списанию расходов</p>
+</code></pre>
+
+<p>Финансовый результат определяется как разница между поступлениями и расходами. В конце года формируется отчет о целевом использовании средств, который обязателен для сдачи в налоговую инспекцию. Ошибки в классификации доходов и расходов могут привести к штрафам, поэтому важно правильно выбирать статьи затрат.</p>
+
+<h2 id="формирование-отчетности-и-взаимодействие-с-фнс">Формирование отчетности и взаимодействие с ФНС</h2>
+<p>Гаражные кооперативы являются плательщиками различных налогов и сборов. 1С позволяет формировать и отправлять отчетность в электронном виде через встроенные сервисы или внешние модули. Это касается не только налоговой отчетности, но и отчетов в ПФР, ФСС и Росстат.</p>
+<p>Особое внимание уделяется отчетам по страховым взносам с выплат сотрудникам (сторожам, электрикам, бухгалтеру). Программа сама рассчитывает суммы взносов, формирует расчеты и декларации. При изменении законодательных форм отчетов разработчики оперативно выпускают обновления.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Подготовка к сдаче годовой отчетности</h4><label class="check-item"><input type="checkbox"><span>Сверить остатки по счетам</span></label><label class="check-item"><input type="checkbox"><span>Провести амортизацию ОС</span></label><label class="check-item"><input type="checkbox"><span>Сформировать оборотно-содержательную ведомость</span></label><label class="check-item"><input type="checkbox"><span>Проверить отчеты по страховым взносам</span></label><label class="check-item"><input type="checkbox"><span>Сдать баланс в ФНС</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>Для членов ГСК также важна прозрачность. По запросу собственника можно сформировать справку о состоянии его лицевого счета, где будет видно начисленные суммы, оплаты и текущий долг. Это повышает доверие к правлению кооператива и снижает количество жалоб.</p>
+
+<details>
+<summary>Нужно ли ГСК вести полноценный бухгалтерский учет?</summary>
+<p>Да, гаражно-строительный кооператив является юридическим лицом и обязан вести бухгалтерский учет в полном объеме, независимо от системы налогообложения. Отсутствие учета может привести к блокировке счетов и штрафам.</p>
+</details>
+
+<details>
+<summary>Можно ли вести учет в Excel вместо 1С?</summary>
+<p>Технически можно, но это не рекомендуется. Excel не обеспечивает защиту данных от изменений, не имеет разграничения прав доступа и не гарантирует актуальность форм отчетности. Риск потери данных или ошибок в расчетах очень высок.</p>
+</details>
+
+<details>
+<summary>Как часто нужно обновлять программу 1С?</summary>
+<p>Рекомендуется устанавливать обновления ежемесячно или при выходе критических исправлений. Обновления содержат новые формы отчетности, исправления ошибок и улучшения функционала, необходимые для стабильной работы.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/p/pl/plastikovaya-doroga-dlya-mashin.html" class="pb-related-card">
+                <span class="pb-related-title">Пластиковая дорога для машин: виды, монтаж и преимущества</span>
+                <span class="pb-related-desc">Пластиковая дорога для машин: подробный обзор рулонных и модульных покрытий. Инструкция по укладке, </span>
+            </a><a href="/articles/p/po/pochemu-kraskopult-plyuetsya-kaplyami.html" class="pb-related-card">
+                <span class="pb-related-title">Почему краскопульт плюется: причины и устранение</span>
+                <span class="pb-related-desc">Разбираем, почему краскопульт плюется каплями. Основные причины: вязкость, давление, износ иглы. Реш</span>
+            </a><a href="/articles/a/ar/arenda-garazhej-kak-biznes.html" class="pb-related-card">
+                <span class="pb-related-title">Аренда гаражей как бизнес: пошаговая инструкция и расчеты</span>
+                <span class="pb-related-desc">Как открыть бизнес на сдаче гаражей в аренду. Анализ спроса, подготовка помещения, юридические нюанс</span>
+            </a><a href="/articles/p/pe/perekhodnik-220-na-12-volt-prikurivatel-dlya-kompressora.html" class="pb-related-card">
+                <span class="pb-related-title">Переходник 220 на 12 вольт для компрессора: выбор и схемы</span>
+                <span class="pb-related-desc">Как выбрать адаптер 220В на 12В для автокомпрессора. Расчет мощности, схемы подключения и защита от </span>
+            </a><a href="/articles/a/av/avtoservis-planeta-zhelezyaka-na-mkade.html" class="pb-related-card">
+                <span class="pb-related-title">Автосервис «Планета Железяка» на МКАД: услуги, цены, отзывы 2026</span>
+                <span class="pb-related-desc">Подробный обзор автосервиса «Планета Железяка» на МКАД: адрес, специализация, цены на ремонт двигате</span>
+            </a><a href="/articles/a/av/avtomobilnyj-kompressor-rabotaet-no-ne-kachaet-vozdukh.html" class="pb-related-card">
+                <span class="pb-related-title">Компрессор работает, но не качает: причины и ремонт своими руками</span>
+                <span class="pb-related-desc">Мотор гудит, но воздух не идет? Разбираем причины: порван манжет, сгорел клапан или забит фильтр. Ин</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

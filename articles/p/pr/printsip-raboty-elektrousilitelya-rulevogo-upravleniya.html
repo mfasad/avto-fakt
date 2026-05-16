@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Принцип работы электроусилителя руля: устройство, плюсы, поломки — Авто Факт</title>
+    <meta name="description" content="Подробно разберем принцип работы электроусилителя руля. Устройство EPS, сравнение с гидроусилителем, типичные неисправности и диагностика своими руками.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/p/pr/printsip-raboty-elektrousilitelya-rulevogo-upravleniya.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Принцип работы электроусилителя руля: устройство, плюсы, поломки">
+    <meta property="og:description" content="Подробно разберем принцип работы электроусилителя руля. Устройство EPS, сравнение с гидроусилителем, типичные неисправности и диагностика своими руками.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/elektrika-avto/">Электрика Авто</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Принцип работы электроусилителя руля: устройство, плюсы, поломки</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#архитектура-системы-основные-компоненты-eps">Архитектура системы: основные компоненты EPS</a></li><li><a href="#физика-процесса-как-создается-усилие">Физика процесса: как создается усилие</a></li><li><a href="#типы-размещения-электродвигателя">Типы размещения электродвигателя</a></li><li><a href="#сравнение-с-гидроусилителем-гур">Сравнение с гидроусилителем (ГУР)</a></li><li><a href="#дополнительные-функции-и-интеграция">Дополнительные функции и интеграция</a></li><li><a href="#типичные-неисправности-и-диагностика">Типичные неисправности и диагностика</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/k/ka/kakoe-napryazhenie-dolzhno-byt-v-bortovoj-seti-avtomobilya-pri-rabotayushchem-dvigatele.html">Напряжение бортовой сети автомобиля при работающем двигателе: норма и отклонения</a></li><li><a href="/articles/k/ku/kuda-vyvesti-datchik-temperatury-naruzhnogo-vozdukha-v-avtomobile.html">Где установить датчик температуры наружного воздуха в авто</a></li><li><a href="/articles/k/ka/kak-proverit-chto-razryazhaet-akkumulyator-v-mashine-multimetrom.html">Как проверить утечку тока мультиметром: полная инструкция</a></li><li><a href="/articles/k/ka/kalina-ne-zapuskaetsya-s-klyucha.html">Калина не заводится с ключа: причины и 10 способов ремонта</a></li><li><a href="/articles/a/av/avtomobilnyj-signal-s-melodiej.html">Автосигналы с мелодией: выбор, установка и настройка в 2026 году</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Принцип работы электроусилителя руля: от датчиков до мотора</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#архитектура-системы-основные-компоненты-eps">Архитектура системы: основные компоненты EPS</a></li><li><a href="#физика-процесса-как-создается-усилие">Физика процесса: как создается усилие</a></li><li><a href="#типы-размещения-электродвигателя">Типы размещения электродвигателя</a></li><li><a href="#сравнение-с-гидроусилителем-гур">Сравнение с гидроусилителем (ГУР)</a></li><li><a href="#дополнительные-функции-и-интеграция">Дополнительные функции и интеграция</a></li><li><a href="#типичные-неисправности-и-диагностика">Типичные неисправности и диагностика</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Современный автомобиль уже невозможно представить без систем, облегчающих управление. Если раньше водители прилагали значительные физические усилия, чтобы повернуть колеса тяжелого внедорожника или грузовика на низкой скорости, то сегодня этот процесс занимает доли секунды и требует минимального касания обода руля. За это удобство отвечает <strong>электроусилитель руля</strong> (EPS), который стал стандартом де-факто для большинства легковых автомобилей, пришедшим на смену громоздким гидравлическим системам.</p>
+
+<p>В отличие от своих предшественников, использующих давление жидкости, электрический привод работает исключительно на основе законов электродинамики и сложной логики управления. Понимание того, как именно электроника «угадывает» ваши желания и помогает поворачивать колеса, важно не только для общего развития, но и для своевременной диагностики проблем. Ведь когда загорается «желтый руль» на приборной панели, знание принципа работы поможет вам принять правильное решение о дальнейших действия.</p>
+
+<p>В этой статье мы детально разберем архитектуру EPS, рассмотрим взаимодействие датчиков и исполнительных механизмов, а также обсудим, почему инженеры массово отказываются от масла в пользу электричества. Вы узнаете, какие скрытые функции открывает наличие электропривода и как правильно обслуживать этот узел, чтобы он служил долгие годы.</p>
+
+<h2 id="архитектура-системы-основные-компоненты-eps">Архитектура системы: основные компоненты EPS</h2>
+
+<p>Сердцем любой системы электроусиления является связка из датчиков, блока управления и электродвигателя. В отличие от гидроусилителя, где насос создавал постоянное давление, здесь помощь оказывается только по требованию. Ключевым элементом, без которого работа системы невозможна, выступает <strong>датчик крутящего момента</strong>. Именно он расположен на рулевом валу и фиксирует малейшее усилие, которое водитель прикладывает к рулевому колесу.</p>
+
+<p>Как только вы начинаете поворачивать руль, датчик фиксирует скручивание торсиона — специального упругого элемента вала. Это скручивание преобразуется в электрический сигнал, который передается в электронный блок управления (ЭБУ). Параллельно с этим ЭБУ опрашивает другие системы автомобиля, получая данные о скорости движения, оборотах двигателя и угле поворота колес. На основе этого массива данных рассчитывается необходимая сила и направление вращения электромотора.</p>
+
+<ul>
+<li>⚡ <strong>Электродвигатель:</strong> бесщеточный мотор, создающий усилие на рулевом валу или рейке.</li>
+<li>📡 <strong>Блок управления (ECU):</strong> «мозг» системы, обрабатывающий сигналы датчиков.</li>
+<li>🔄 <strong>Редуктор:</strong> механизм передачи вращения от мотора к рулевому валу (часто червячный).</li>
+</ul>
+
+<details class="pb-accordion"><summary>Почему мотор бесщеточный?</summary><div class="pb-accordion-body"><p>Бесщеточные двигатели (BLDC) используются в EPS из-за их высокой надежности, отсутствия искрения и способности работать в широком диапазоне температур. Щеточные аналоги быстро изнашиваются и требуют обслуживания, что недопустимо для узла, установленного в подкапотном пространстве или непосредственно в рулевой колонке.</p></div></details>
+
+<p>Важно отметить, что расположение мотора может варьироваться. В одних моделях он установлен на рулевой колонке, в других — непосредственно на рулевой рейке, а в самых продвинутых системах — на рулевых тягах. Это влияет на характер работы и точность управления, но базовый принцип считывания намерений водителя остается неизменным.</p>
+
+<h2 id="физика-процесса-как-создается-усилие">Физика процесса: как создается усилие</h2>
+
+<p>Принцип работы электроусилителя базируется на простом, но эффективном алгоритме. Когда датчик крутящего момента фиксирует начало поворота, ЭБУ мгновенно подает ток на обмотки электродвигателя. Направление тока определяет направление вращения вала мотора — по часовой стрелке или против, в зависимости от того, куда вы крутите руль. Сила тока, в свою очередь, регулирует мощность assistance (помощи).</p>
+
+<p>Критически важным параметром здесь является скорость автомобиля. На парковке, когда скорость близка к нулю, система должна работать на полную мощность, чтобы водитель мог легко крутить тяжелые колеса одной рукой. Однако на трассе, при скорости 100 км/ч, такое усиление было бы опасным: малейшее движение рулем могло бы привести к резкому заносу. Поэтому ЭБУ динамически снижает коэффициент усиления с ростом скорости.</p>
+
+<blockquote>⚠️ <strong>Внимание:</strong> Если вы заметили, что на высокой скорости руль стал слишком «легким» и чувствительным, это может свидетельствовать о неисправности датчика скорости или ошибке в блоке управления EPS, что требует немедленной диагностики.</blockquote>
+
+<p>Механическая передача усилия происходит через редуктор. Чаще всего используется червячная передача, которая позволяет передавать вращение от мотора к валу с большим передаточным числом, обеспечивая значительный выигрыш в силе. При этом конструкция редуктора обычно предусматривает возможность механического разъединения в случае отказа электроники, чтобы водитель мог управлять автомобилем вручную, albeit с большим усилием.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Главная особенность EPS — переменный коэффициент усиления: максимальный на низких скоростях для комфорта и минимальный на высоких для безопасности.</p></aside>
+
+<h2 id="типы-размещения-электродвигателя">Типы размещения электродвигателя</h2>
+
+<p>Инженерная мысль не стоит на месте, и за годы развития технологии электроусилителя сформировалось несколько основных схем компоновки. Выбор конкретной схемы зависит от класса автомобиля, его веса и целевого назначения. Понимание этих различий помогает точнее диагностировать характерные шумы или проблемы с управлением.</p>
+
+<p>Первый и самый распространенный тип — <strong>EPS на рулевой колонке</strong>. Здесь моторчик крепится непосредственно к валу рулевой колонки, часто в салоне автомобиля или в подкапотном пространстве у перегородки. Это решение дешево и компактно, но имеет ограниченный крутящий момент, поэтому применяется на легких городских автомобилях.</p>
+
+<p>Второй вариант — <strong>EPS на рулевой рейке</strong>. Электродвигатель интегрирован в корпус рулевой рейки и воздействует на нее через шестерню. Такая схема позволяет создавать большее усилие и лучше подходит для автомобилей среднего и бизнес-класса. Она также обеспечивает более точную обратную связь, так как влияние люфтов колонки минимизировано.</p>
+
+<div class="pb-poll" id="poll-22e53e78"><div class="pb-poll-question">📊 Где у вашего авто расположен усилитель?</div><div class="pb-poll-option" data-poll="22e53e78" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">На рулевой колонке</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="22e53e78" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">На рулевой рейке</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="22e53e78" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">На рулевых тягах</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="22e53e78" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Не знаю / Нет усилителя</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<p>Третий тип, <strong>Dual-Pinion EPS</strong> или система с двумя шестернями, часто используется на тяжелых кроссоверах. Здесь мотор воздействует на рейку через дополнительную шестерню, что позволяет разделить точки приложения усилий и повысить надежность. Существуют также системы, где мотор воздействует непосредственно на рулевые тяги, обеспечивая максимальную точность и возможность реализации активного подруливания.</p>
+
+<h2 id="сравнение-с-гидроусилителем-гур">Сравнение с гидроусилителем (ГУР)</h2>
+
+<p>Чтобы полностью оценить преимущества электроусилителя, необходимо провести параллель с классическим гидравлическим усилителем. ГУР — это система, работающая постоянно: насос, приводимый ремнем от двигателя, гоняет жидкость по системе даже тогда, когда автомобиль стоит прямо и руль не повернут. Это создает parasitic loss (паразитные потери) мощности двигателя и увеличивает расход топлива.</p>
+
+<p>Электроусилитель лишен этого недостатка. Он потребляет энергию только в момент поворота руля. В остальное время система находится в «спящем» режиме или потребляет минимальный ток для поддержания работы электроники. Это дает ощутимую экономию топлива, особенно в городском цикле «старт-стоп», где количество поворотов руля максимально.</p>
+
+<p>Ниже приведена сравнительная таблица ключевых характеристик двух систем:</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Гидроусилитель (ГУР)</th>
+<th>Электроусилитель (EPS)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Расход топлива</td>
+<td>Увеличивает на 0.5-1.5 л/100км</td>
+<td>Не влияет (работает от генератора)</td>
+</tr>
+<tr>
+<td>Обслуживание</td>
+<td>Замена жидкости, ремней, шлангов</td>
+<td>Отсутствует (замена только при поломке)</td>
+</tr>
+<tr>
+<td>Зависимость от температуры</td>
+<td>Густеет на морозе, нужна прогрев</td>
+<td>Работает мгновенно при любой температуре</td>
+</tr>
+<tr>
+<td>Информативность руля</td>
+<td>Часто «ватный», меньше обратной связи</td>
+<td>Более четкий, настраиваемый программно</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Кроме того, EPS значительно экологичнее. Отсутствие гидравлической жидкости исключает риск ее утечки в почву и необходимость утилизации отработанного масла. С точки зрения надежности, электрическая схема менее подвержена износу от времени, если не считать естественного старения смазки в редукторе, которую, впрочем, меняют крайне редко.</p>
+
+<h2 id="дополнительные-функции-и-интеграция">Дополнительные функции и интеграция</h2>
+
+<p>Наличие электроники открывает двери для внедрения функций, которые были невозможны или крайне сложны в реализации на гидравлике. Самая популярная из них — <strong>автоматическое парковочное подруливание</strong>. Система сама крутит руль, пока водитель контролирует педали газа и тормоза, ориентируясь на данные ультразвуковых датчиков.</p>
+
+<p>Другая важная функция — компенсация увода автомобиля в сторону. Если автомобиль имеет неравномерную загрузку или разное давление в шинах, его может уводить от прямолинейной траектории. EPS способен незаметно для водителя создавать небольшой корректирующий момент, удерживая машину в полосе. Также система помогает стабилизировать автомобиль при порывах бокового ветра.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Функция «Return to Center» (возврат в ноль) в EPS работает мягче и точнее, чем в ГУР, так как блок управления «знает» точное положение колес и может actively подкрутить руль в центральное положение после поворота.</p></aside>
+
+<p>Современные системы EPS тесно интегрированы с комплексом безопасности. Например, при срабатывании системы курсовой устойчивости (ESP), электроусилитель может помочь водителю быстрее повернуть руль в нужную сторону или, наоборот, создать сопротивление, если движение опасно. В автомобилях с автопилотом именно EPS является исполнительным механизмом, осуществляющим повороты без участия человека.</p>
+
+<h2 id="типичные-неисправности-и-диагностика">Типичные неисправности и диагностика</h2>
+
+<p>Несмотря на высокую надежность, электроусилители руля не застрахованы от поломок. Чаще всего проблемы носят электрический характер. Одна из распространенных причин — выход из строя <strong>датчика крутящего момента</strong>. Симптомы проявляются в виде рывков руля, самопроизвольного подруливания или полного отказа усилителя с загоранием контрольной лампы.</p>
+
+<p>Также часто встречаются проблемы с электродвигателем, особенно если нарушена герметичность его корпуса и внутрь попала влага. Это приводит к коррозии обмоток или контактов. В зимний период может наблюдаться временное снижение эффективности работы из-за загустевания смазки в редукторе, хотя это и не является поломкой в строгом смысле слова.</p>
+
+<ul>
+<li>🔌 <strong>Проблемы с проводкой:</strong> окисление контактов, перетирание проводов в рулевой колонке.</li>
+<li>💻 <strong>Сбой ПО:</strong> ошибки в блоке управления, требующие перепрошивки или калибровки.</li>
+<li>🔧 <strong>Механический износ:</strong> люфт червячной пары или подшипников мотора.</li>
+</ul>
+
+<blockquote>⚠️ <strong>Внимание:</strong> Если после запуска двигателя индикатор неисправности рулевого управления не гаснет в течение 3-5 секунд, эксплуатация автомобиля может быть опасной. В некоторых режимах система может полностью отключиться, сделав руль «тяжелым».</blockquote>
+
+<p>Диагностика современных EPS невозможна без сканера. Блок управления хранит коды ошибок, которые точно укажут на проблемный узел: будь то обрыв цепи мотора, неверный сигнал датчика скорости или внутренняя ошибка процессора. Попытки ремонта без считывания кодов часто приводят к замене исправных деталей.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Симптомы неисправности EPS</h4><label class="check-item"><input type="checkbox"><span>Загорелась лампа ошибки на панели</span></label><label class="check-item"><input type="checkbox"><span>Руль стал тяжелым или, наоборот, слишком легким</span></label><label class="check-item"><input type="checkbox"><span>Появился посторонний шум/треск при вращении</span></label><label class="check-item"><input type="checkbox"><span>Руль самопроизвольно уходит в сторону</span></label><label class="check-item"><input type="checkbox"><span>Вибрация на руле при работе усилителя</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Можно ли ездить, если электроусилитель руля сломался?</summary>
+<p>Да, технически управлять автомобилем можно. Электроусилитель сконструирован так, что при отказе электрики механическая связь между рулем и колесами сохраняется. Однако руль станет очень тяжелым, особенно на низких скоростях и при парковке. Двигаться следует с повышенной осторожностью, избегая резких маневров, и как можно скорее обратиться в сервис.</p>
+</details>
+
+<details>
+<summary>Почему электроусилитель гудит или трещит?</summary>
+<p>Звук работающего мотора EPS обычно едва слышен. Если вы отчетливо слышите гул, жужжание или треск, это может указывать на износ подшипников электродвигателя, нехватку смазки в редукторе или механическое повреждение шестерен. Также посторонние звуки могут издавать растянутые ремни, если мотор усилителя имеет ременной привод (редко, но встречается на старых схемах).</p>
+</details>
+
+<details>
+<summary>Нужно ли прогревать электроусилитель зимой?</summary>
+<p>Специально «греть» EPS не нужно, так как в нем нет жидкости. Однако смазка в редукторе на сильном морозе может быть вязкой. Первые несколько минут движения рекомендуется избегать резких выкручиваний руля до упора, давая смазке распределиться и прогреться от трения. Это продлит жизнь механизму.</p>
+</details>
+
+<details>
+<summary>Как часто нужно обслуживать электроусилитель?</summary>
+<p>Регламентного обслуживания как такового у EPS нет. Производители часто заявляют, что узел необслуживаемый. Однако опытные мастера рекомендуют раз в 60-80 тысяч километров проверять состояние разъемов, чистить контакты и, при наличии такой возможности в конструкции, обновлять смазку в червячной паре.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/k/ka/kakoe-napryazhenie-dolzhno-byt-v-bortovoj-seti-avtomobilya-pri-rabotayushchem-dvigatele.html" class="pb-related-card">
+                <span class="pb-related-title">Напряжение бортовой сети автомобиля при работающем двигателе: норма и отклонения</span>
+                <span class="pb-related-desc">Какое напряжение должно быть в бортовой сети авто при заведенном моторе? Нормы для генератора, призн</span>
+            </a><a href="/articles/k/ku/kuda-vyvesti-datchik-temperatury-naruzhnogo-vozdukha-v-avtomobile.html" class="pb-related-card">
+                <span class="pb-related-title">Где установить датчик температуры наружного воздуха в авто</span>
+                <span class="pb-related-desc">Правильное место для датчика температуры наружного воздуха: защита от нагрева, ошибки показаний и со</span>
+            </a><a href="/articles/k/ka/kak-proverit-chto-razryazhaet-akkumulyator-v-mashine-multimetrom.html" class="pb-related-card">
+                <span class="pb-related-title">Как проверить утечку тока мультиметром: полная инструкция</span>
+                <span class="pb-related-desc">Узнайте, как проверить что разряжает аккумулятор в машине мультиметром. Точный алгоритм, нормы утечк</span>
+            </a><a href="/articles/k/ka/kalina-ne-zapuskaetsya-s-klyucha.html" class="pb-related-card">
+                <span class="pb-related-title">Калина не заводится с ключа: причины и 10 способов ремонта</span>
+                <span class="pb-related-desc">Разбираемся, почему Лада Калина не реагирует на ключ зажигания: от севшего аккумулятора до неисправн</span>
+            </a><a href="/articles/a/av/avtomobilnyj-signal-s-melodiej.html" class="pb-related-card">
+                <span class="pb-related-title">Автосигналы с мелодией: выбор, установка и настройка в 2026 году</span>
+                <span class="pb-related-desc">Как выбрать музыкальный автосигнал с мелодией? Обзор лучших моделей, схемы подключения и советы по н</span>
+            </a><a href="/articles/k/ka/kak-nazyvaetsya-prisposoblenie-dlya-soedineniya-provodov.html" class="pb-related-card">
+                <span class="pb-related-title">Как называется приспособление для соединения проводов в авто? 7 видов</span>
+                <span class="pb-related-desc">Клеммы, гильзы, скрутки: полный гайд по соединителям проводов в автомобиле. Как выбрать и правильно </span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

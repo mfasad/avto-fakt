@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как посчитать удельную мощность двигателя: формулы и примеры — Авто Факт</title>
+    <meta name="description" content="Удельная мощность — ключевой параметр для оценки эффективности авто. Узнайте, как правильно рассчитать её по формулам, с учётом объёма, массы и типа двигателя. Примеры для бензиновых, дизельных и электромоторов.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ka/kak-poschitat-udelnuyu-moshchnost.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как посчитать удельную мощность двигателя: формулы и примеры">
+    <meta property="og:description" content="Удельная мощность — ключевой параметр для оценки эффективности авто. Узнайте, как правильно рассчитать её по формулам, с учётом объёма, массы и типа двигателя. Примеры для бензиновых, дизельных и электромоторов.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/drugoe/">Другое</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как посчитать удельную мощность двигателя: формулы и примеры</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#что-такое-удельная-мощность-и-почему-её-путают-с-другими-параметрами">Что такое удельная мощность и почему её путают с другими параметрами</a></li><li><a href="#формулы-расчёта-удельной-мощности-от-теории-к-практике">Формулы расчёта удельной мощности: от теории к практике</a></li><li><a href="#где-взять-исходные-данные-для-расчётов">Где взять исходные данные для расчётов</a></li><li><a href="#примеры-расчётов-для-разных-типов-двигателей">Примеры расчётов для разных типов двигателей</a></li><li><a href="#что-влияет-на-удельную-мощность-5-ключевых-факторов">Что влияет на удельную мощность: 5 ключевых факторов</a></li><li><a href="#как-использовать-удельную-мощность-на-практике">Как использовать удельную мощность на практике</a></li><li><a href="#распространённые-ошибки-при-расчёте-удельной-мощности">Распространённые ошибки при расчёте удельной мощности</a></li><li><a href="#faq-частые-вопросы-об-удельной-мощности">FAQ: Частые вопросы об удельной мощности</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/v/vo/voyah-otzyvy-ob-avtomobile.html">VOYAH: реальные отзывы владельцев 2026 – плюсы и минусы китайских электрокаров</a></li><li><a href="/articles/a/av/avto-s-tretim-ryadom-sidenij.html">Авто с третьим рядом сидений: 7+ моделей для большой семьи (2026)</a></li><li><a href="/articles/t/to/top-kitajskikh-sedanov-2025.html">Топ китайских седанов 2026: обзор лучших моделей</a></li><li><a href="/articles/p/pr/predelnyj-srok-ekspluatatsii-avtomobilya.html">Предельный срок эксплуатации автомобиля: законы и реальность</a></li><li><a href="/articles/o/op/opisanie-o-prodazhe-avto.html">Как написать описание для продажи авто: советы эксперта</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Удельная мощность двигателя: как рассчитать и зачем это нужно автовладельцу</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#что-такое-удельная-мощность-и-почему-её-путают-с-другими-параметрами">Что такое удельная мощность и почему её путают с другими параметрами</a></li><li><a href="#формулы-расчёта-удельной-мощности-от-теории-к-практике">Формулы расчёта удельной мощности: от теории к практике</a></li><li><a href="#где-взять-исходные-данные-для-расчётов">Где взять исходные данные для расчётов</a></li><li><a href="#примеры-расчётов-для-разных-типов-двигателей">Примеры расчётов для разных типов двигателей</a></li><li><a href="#что-влияет-на-удельную-мощность-5-ключевых-факторов">Что влияет на удельную мощность: 5 ключевых факторов</a></li><li><a href="#как-использовать-удельную-мощность-на-практике">Как использовать удельную мощность на практике</a></li><li><a href="#распространённые-ошибки-при-расчёте-удельной-мощности">Распространённые ошибки при расчёте удельной мощности</a></li><li><a href="#faq-частые-вопросы-об-удельной-мощности">FAQ: Частые вопросы об удельной мощности</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body"><p>Удельная мощность — это один из тех технических параметров, который разделяет опытных автовладельцев и новичков. Первые понимают, что за цифрами в паспорте автомобиля скрывается реальная динамика, экономичность и даже ресурс двигателя. Вторые часто ограничиваются лошадиными силами, не задумываясь, как эти силы соотносятся с массой машины или объёмом мотора. А зря: именно <strong>удельная мощность</strong> объясняет, почему малолитражный турбомотор обгоняет атмосферный V6, а электрокар разгоняется быстрее суперкара с ДВС.</p>
+
+<p>В этой статье мы разберём, что такое удельная мощность, зачем её считать и как это сделать правильно — с учётом типа двигателя (бензин, дизель, электричество), массы автомобиля и других нюансов. Вы узнаете, какие формулы использовать, где брать исходные данные и как интерпретировать результаты. А ещё — почему этот параметр важен не только для гонщиков, но и для обычных водителей, которые хотят сэкономить на топливе и ремонте.</p>
+
+<h2 id="что-такое-удельная-мощность-и-почему-её-путают-с-другими-параметрами">Что такое удельная мощность и почему её путают с другими параметрами</h2>
+
+<p>Удельная мощность — это отношение <strong>максимальной мощности двигателя</strong> (в киловаттах или лошадиных силах) к какому-либо базовому параметру: массе автомобиля, объёму двигателя или даже количеству цилиндров. Она показывает, насколько эффективно мотор использует свои ресурсы. Но здесь начинается путаница:</p>
+
+<ul>
+  <li>🔹 <strong>Удельная мощность по массе</strong> (л.с./тонна или кВт/кг) — показывает динамические возможности авто. Чем выше, тем быстрее разгон.</li>
+  <li>🔹 <strong>Удельная мощность по объёму</strong> (л.с./литр) — характеризует форсированность мотора. Важна для тюнинга и сравнения технологий (например, атмосферник vs турбо).</li>
+  <li>🔹 <strong>Литровая мощность</strong> — это частный случай удельной мощности по объёму, но с жёсткими стандартами измерений (обычно для бензиновых ДВС).</li>
+</ul>
+
+<p>Многие ошибочно считают, что удельная мощность — это то же самое, что <em>удельный расход топлива</em> (грамм на л.с. в час). Нет! Удельный расход показывает экономичность, а удельная мощность — эффективность преобразования энергии в движение. Например, <em>Toyota Prius</em> имеет низкий удельный расход, но и скромную удельную мощность, а <em>Bugatti Chiron</em> — наоборот.</p>
+
+<p>Также не путайте её с <strong>коэффициентом мощности</strong> (в электротехнике) или <strong>плотностью мощности</strong> (в физике). В автотематике речь идёт именно о соотношении мощности к массе или объёму.</p>
+
+<div class="pb-poll" id="poll-d4621165"><div class="pb-poll-question">📊 Для чего вы рассчитываете удельную мощность?</div><div class="pb-poll-option" data-poll="d4621165" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Чтобы сравнить динамику машин</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="d4621165" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Для тюнинга двигателя</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="d4621165" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Из любопытства</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="d4621165" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Для выбора нового авто</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="формулы-расчёта-удельной-мощности-от-теории-к-практике">Формулы расчёта удельной мощности: от теории к практике</h2>
+
+<p>Существует три основные формулы, каждая из которых отвечает на свой вопрос:</p>
+
+<ol>
+  <li><strong>Удельная мощность по массе</strong> (динамический потенциал авто):
+    <pre><code>УМ_масса = (Мощность_двигателя [л.с.] / Масса_авто [тонны])</code></pre>
+    <em>Пример</em>: <em>VW Golf GTI</em> с 245 л.с. и массой 1.3 тонны → 245 / 1.3 ≈ 188 л.с./т.</li>
+  <li><strong>Удельная мощность по объёму</strong> (форсированность мотора):
+    <pre><code>УМ_объём = (Мощность_двигателя [л.с.] / Объём_двигателя [литры])</code></pre>
+    <em>Пример</em>: <em>Honda Civic Type R</em> (320 л.с., 2.0 л) → 320 / 2.0 = 160 л.с./л.</li>
+  <li><strong>Удельная мощность электромотора</strong> (для EV и гибридов):
+    <pre><code>УМ_электро = (Мощность [кВт] / Масса_батареи [кг])</code></pre>
+    <em>Пример</em>: <em>Tesla Model 3 Performance</em> (350 кВт, батарея 450 кг) → 350 / 450 ≈ 0.78 кВт/кг.</li>
+</ol>
+
+<p>Важно: для корректного сравнения используйте <strong>одни и те же единицы измерения</strong>. Если мощность в киловаттах, переведите её в лошадиные силы (1 кВт ≈ 1.36 л.с.), а массу — в тонны. Для электромоторов удобнее оперировать киловаттами и килограммами.</p>
+
+
+<p>Проверьте паспортные данные мощности (иногда указывается "нетто" или "брутто")</p>
+<p>Уточните снаряжённую массу авто (без водителя, но с топливом)</p>
+<p>Для турбомоторов берите мощность при максимальном бусте</p>
+<p>Для гибридов учитывайте суммарную мощность ДВС + электромотора--></p>
+
+<h2 id="где-взять-исходные-данные-для-расчётов">Где взять исходные данные для расчётов</h2>
+
+<p>Без точных данных формулы бесполезны. Вот где искать нужные цифры:</p>
+
+<div class="pb-table-wrap"><table>
+  <thead>
+    <tr>
+      <th>Параметр</th>
+      <th>Источник</th>
+      <th>Нюансы</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Мощность двигателя</td>
+      <td>Технический паспорт авто, шильдик под капотом, сайт производителя</td>
+      <td>Указывается в л.с. или кВт. Иногда разнятся данные для ЕС и США (из-за разных стандартов измерений).</td>
+    </tr>
+    <tr>
+      <td>Масса автомобиля</td>
+      <td>Паспорт (снаряжённая масса), весовые станции, каталоги запчастей</td>
+      <td>Не путать с полной массой! Для расчётов берите снаряжённую (+50–100 кг на водителя и груз).</td>
+    </tr>
+    <tr>
+      <td>Объём двигателя</td>
+      <td>VIN-декодер, маркировка на блоке цилиндров, документация</td>
+      <td>У турбомоторов объём может быть занижен за счёт короткоходных поршней.</td>
+    </tr>
+    <tr>
+      <td>Мощность электромотора</td>
+      <td>Сервисная документация, данные с бортового компьютера</td>
+      <td>У гибридов указывается отдельно мощность ДВС и электродвигателя.</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>⚠️ <strong>Внимание</strong>: данные с сайтов вроде <em>Auto.ru</em> или <em>Drom.ru</em> часто копируются из неофициальных источников и могут содержать ошибки. Например, мощность <em>Lada Vesta</em> с мотором 1.6 иногда указывают как 106 л.с. (реально — 102 л.с. по ГОСТ). Всегда сверяйтесь с официальными мануалами.</p>
+
+<p>Для электрокаров проблема ещё острее: производители могут указывать <strong>пиковую мощность</strong> (кратковременную) вместо номинальной. Например, <em>Nissan Leaf</em> имеет 110 кВт пиковой мощности, но в постоянном режиме выдаёт около 80 кВт.</p>
+
+<h2 id="примеры-расчётов-для-разных-типов-двигателей">Примеры расчётов для разных типов двигателей</h2>
+
+<p>Теория без практики мёртва. Разберём реальные примеры:</p>
+
+<h3>1. Бензиновый атмосферный двигатель (<em>Toyota Corolla 1.6</em>)</h3>
+<p>Данные:
+<ul>
+  <li>Мощность: 122 л.с. (90 кВт)</li>
+  <li>Масса: 1.25 тонны</li>
+  <li>Объём: 1.6 л</li>
+</ul>
+</p>
+<p>Расчёты:
+<ul>
+  <li>УМ_масса = 122 / 1.25 = <strong>97.6 л.с./т</strong> (средний показатель для седана)</li>
+  <li>УМ_объём = 122 / 1.6 = <strong>76.25 л.с./л</strong> (типично для атмосферников)</li>
+</ul>
+</p>
+
+<h3>2. Турбодизель (<em>BMW 320d</em>)</h3>
+<p>Данные:
+<ul>
+  <li>Мощность: 190 л.с.</li>
+  <li>Масса: 1.5 тонны</li>
+  <li>Объём: 2.0 л</li>
+</ul>
+</p>
+<p>Расчёты:
+<ul>
+  <li>УМ_масса = 190 / 1.5 = <strong>126.7 л.с./т</strong> (хорошая динамика для дизеля)</li>
+  <li>УМ_объём = 190 / 2.0 = <strong>95 л.с./л</strong> (высокий показатель для турбодизеля)</li>
+</ul>
+</p>
+
+<h3>3. Электромотор (<em>Tesla Model S Plaid</em>)</h3>
+<p>Данные:
+<ul>
+  <li>Мощность: 760 кВт (1020 л.с.)</li>
+  <li>Масса батареи: 600 кг</li>
+  <li>Масса авто: 2.2 тонны</li>
+</ul>
+</p>
+<p>Расчёты:
+<ul>
+  <li>УМ_масса = 1020 / 2.2 = <strong>463.6 л.с./т</strong> (рекордный показатель для серийных авто)</li>
+  <li>УМ_электро = 760 / 600 ≈ <strong>1.27 кВт/кг</strong> (типично для современных EV)</li>
+</ul>
+</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>У электрокаров удельная мощность по массе в 3–5 раз выше, чем у ДВС, благодаря мгновенному крутящему моменту и отсутствию трансмиссионных потерь.</p></aside>
+
+<h2 id="что-влияет-на-удельную-мощность-5-ключевых-факторов">Что влияет на удельную мощность: 5 ключевых факторов</h2>
+
+<p>Удельная мощность — не статичный параметр. Она зависит от:</p>
+
+<ol>
+  <li><strong>Типа двигателя</strong>:
+    <ul>
+      <li>🔥 <em>Атмосферные бензиновые</em> моторы: 50–80 л.с./л (ниже из-за отсутствия наддува).</li>
+      <li>💨 <em>Турбобензиновые</em>: 100–150 л.с./л (за счёт наддува и прямого впрыска).</li>
+      <li>⚡ <em>Электромоторы</em>: 1.0–1.5 кВт/кг (лидеры по эффективности).</li>
+    </ol>
+  </li>
+  <li><strong>Степени сжатия</strong>:
+    <p>Чем выше степень сжатия, тем больше КПД и удельная мощность. Например, моторы <em>Mazda Skyactiv</em> с степенью сжатия 14:1 выдают до 100 л.с./л без турбины.</p>
+  </li>
+  <li><strong>Материалов и технологий</strong>:
+    <p>Алюминиевые блоки цилиндров, кованные поршни и облегчённые шатуны позволяют повысить обороты и мощность без риска разрушения.</p>
+  </li>
+  <li><strong>Трансмиссии</strong>:
+    <p>Роботизированные КПП (например, <em>DSG</em>) теряют до 10% мощности, тогда как вариаторы — до 20%. У EV потерь почти нет.</p>
+  </li>
+  <li><strong>Топлива</strong>:
+    <p>На <em>АИ-98</em> или <em>Е85</em> (этанол) мотор может выдавать на 5–15% больше мощности, чем на <em>АИ-92</em>.</p>
+  </li>
+</ol>
+
+<p>⚠️ <strong>Внимание</strong>: производители часто занижают паспортную массу автомобиля, не учитывая опции (например, панорамную крышу или кожаный салон). Реальная удельная мощность может быть на 10–15% ниже заявленной. Чтобы избежать ошибок, взвесьте авто на весовой станции или используйте данные из <code>VIN-декодера</code> с пометкой "снаряжённая масса + 75 кг".</p>
+
+<details class="pb-accordion"><summary>Почему удельная мощность дизелей ниже, чем у бензиновых?</summary><div class="pb-accordion-body"><p>
+<p>Дизельные моторы имеют более прочную конструкцию (тяжёлые поршни, усиленный блок), что увеличивает массу. Кроме того, их максимальные обороты ниже (обычно до 4500–5000 об/мин против 6000–8000 у бензиновых), что ограничивает литровую мощность. Однако благодаря высокому крутящему моменту на низких оборотах они могут быть динамичнее в реальных условиях (например, при обгонах).</p></div></details></p>
+
+<h2 id="как-использовать-удельную-мощность-на-практике">Как использовать удельную мощность на практике</h2>
+
+<p>Знание удельной мощности помогает в четырёх ключевых ситуациях:</p>
+
+<ol>
+  <li><strong>Сравнение автомобилей</strong>:
+    <p>Допустим, вы выбираете между <em>Skoda Octavia 1.4 TSI</em> (150 л.с., 1.3 т) и <em>Kia Ceed 1.6 GDI</em> (130 л.с., 1.25 т). По мощности первая выигрывает, но посчитаем удельную:</p>
+    <ul>
+      <li><em>Octavia</em>: 150 / 1.3 ≈ 115 л.с./т</li>
+      <li><em>Ceed</em>: 130 / 1.25 = 104 л.с./т</li>
+    </ol>
+    <p>Разница в динамике будет заметна, несмотря на близкие "голые" л.с.</p>
+  </li>
+  <li><strong>Оценка потенциала тюнинга</strong>:
+    <p>Если у мотора низкая удельная мощность по объёму (например, 60 л.с./л), его можно форсировать без риска для ресурса. А вот если уже 120+ л.с./л (как у <em>Honda K20</em>), дальнейший тюнинг потребует усиления шатунов и коленвала.</p>
+  </li>
+  <li><strong>Проверка честности продавца</strong>:
+    <p>Если подержанный <em>BMW M3</em> с заявленными 420 л.с. весит 1.7 тонны, его удельная мощность должна быть ~247 л.с./т. Если при тест-драйве машина разгоняется как "обычный" 3-секундный седан, возможно, мощность занижена (чип-тюнинг, износ турбин).</p>
+  </li>
+  <li><strong>Выбор между ДВС и электрокаром</strong>:
+    <p>Электромобиль с удельной мощностью 300+ л.с./т будет быстрее любого ДВС-авто в городе (мгновенный крутящий момент), даже если его "голые" л.с. меньше.</p>
+  </li>
+</ul>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>При покупке подержанного авто с турбомотором проверьте удельную мощность по объёму. Если она ниже 80 л.с./л, возможно, двигатель "уставший" (износ турбины, залегание колец) или его растачивали (увеличивали объём без повышения мощности).</p></aside>
+
+<h2 id="распространённые-ошибки-при-расчёте-удельной-мощности">Распространённые ошибки при расчёте удельной мощности</h2>
+
+<p>Даже опытные автовладельцы иногда ошибаются. Вот что нельзя делать:</p>
+
+<ul>
+  <li>🚫 <strong>Использовать полную массу вместо снаряжённой</strong>:
+    <p>Полная масса включает пассажиров, груз и топливо. Для расчётов берите снаряжённую + 50–100 кг.</p>
+  </li>
+  <li>🚫 <strong>Сравнивать моторы разных типов "в лоб"</strong>:
+    <p>Удельная мощность дизеля по объёму всегда ниже бензинового — это нормально из-за разных принципов работы.</p>
+  </li>
+  <li>🚫 <strong>Игнорировать потери в трансмиссии</strong>:
+    <p>У ДВС на колёса передаётся только 70–85% мощности (остальное теряется в КПП, приводах). У EV — до 95%.</p>
+  </li>
+  <li>🚫 <strong>Брать данные с "бумажных" тестов</strong>:
+    <p>Производители иногда замеряют мощность на стенде без навесного оборудования (генератора, кондиционера). Реальная мощность на 10–20% ниже.</p>
+  </li>
+  <li>🚫 <strong>Не учитывать высоту над уровнем моря</strong>:
+    <p>На высоте 2000 м атмосферные моторы теряют до 20% мощности из-за разряженного воздуха. Турбомоторы страдают меньше.</p>
+  </li>
+</ul>
+
+<p>⚠️ <strong>Внимание</strong>: если вы рассчитываете удельную мощность для <em>гибрида</em>, не складывайте мощность ДВС и электромотора механически. В большинстве гибридов они работают вместе только в коротких режимах (например, при обгоне). Для реальной оценки берите мощность в <strong>пиковом совмещённом режиме</strong> (указывается в документации как "системная мощность").</p>
+
+<h2 id="faq-частые-вопросы-об-удельной-мощности">FAQ: Частые вопросы об удельной мощности</h2>
+
+<details>
+  <summary>Какая удельная мощность по массе считается хорошей для гражданских авто?</summary>
+  <p>Ответ зависит от класса:</p>
+  <ul>
+    <li>🚗 <strong>Бюджетные седаны/хэтчбеки</strong>: 80–100 л.с./т (например, <em>Hyundai Solaris</em>).</li>
+    <li>🚘 <strong>Средний класс</strong>: 100–130 л.с./т (<em>Toyota Camry</em>, <em>Skoda Octavia</em>).</li>
+    <li>🏎️ <strong>Спортивные авто</strong>: 150–250 л.с./т (<em>BMW M3</em>, <em>Audi RS</em>).</li>
+    <li>⚡ <strong>Электрокары</strong>: 200–400 л.с./т (<em>Tesla Model 3</em>, <em>Porsche Taycan</em>).</li>
+  </ul>
+  <p>Для комфортной езды в городе достаточно 90–100 л.с./т. Для трассы и обгонов — от 120 л.с./т.</p>
+</details>
+
+<details>
+  <summary>Почему у гоночных моторов удельная мощность по объёму выше 200 л.с./л?</summary>
+  <p>Это достигается за счёт:</p>
+  <ul>
+    <li>🔥 <strong>Высоких оборотов</strong> (до 15 000 об/мин в <em>Формуле-1</em>).</li>
+    <li>💣 <strong>Короткоходных поршней</strong> (уменьшают трение и инерцию).</li>
+    <li>⚡ <strong>Прямого впрыска топлива под давлением 300+ бар</strong>.</li>
+    <li>🌀 <strong>Систем изменения фаз газораспределения</strong> (например, <em>VTEC</em>, <em>Valvetronic</em>).</li>
+    <li>🧪 <strong>Специального топлива</strong> (октановое число 102–120).</li>
+  </ul>
+  <p>Однако ресурс таких моторов редко превышает 10 000 км.</p>
+</details>
+
+<details>
+  <summary>Как удельная мощность связана с расходом топлива?</summary>
+  <p>Прямой зависимости нет, но есть косвенные закономерности:</p>
+  <ul>
+    <li>🔋 Моторы с высокой удельной мощностью по объёму (100+ л.с./л) обычно имеют <strong>ниже удельный расход топлива</strong> на единицу мощности (грамм/л.с.), так как эффективнее сжигают топливо.</li>
+    <li>⛽ Однако в абсолютных цифрах они могут расходовать больше, потому что водитель использует высокую мощность (например, <em>Audi RS6</em> с 600 л.с. "съедает" 15–20 л/100 км).</li>
+    <li>⚖️ Оптимальный баланс для экономии: 70–90 л.с./л (например, <em>Toyota Corolla Hybrid</em>).</li>
+  </ul>
+</details>
+
+<details>
+  <summary>Можно ли повысить удельную мощность без тюнинга?</summary>
+  <p>Да, но незначительно:</p>
+  <ul>
+    <li>🛠️ <strong>Снижение массы авто</strong>: удаление ненужных опций (запаска, задний диван), замена стальных дисков на лёгкие сплавы.</li>
+    <li>⛽ <strong>Использование топлива с высшим октановым числом</strong> (например, <em>АИ-98</em> вместо <em>АИ-92</em>).</li>
+    <li>🔧 <strong>Чистка дроссельной заслонки и форсунок</strong> (может вернуть 5–10% "потерянной" мощности).</li>
+    <li>🌀 <strong>Установка спортивного воздушного фильтра</strong> (прибавляет 2–5 л.с.).</li>
+  </ul>
+  <p><mark>Критический нюанс: если удельная мощность по объёму превышает 120 л.с./л, любое дальнейшее повышение мощности потребует усиления трансмиссии и тормозной системы.</mark></p>
+</details>
+
+<details>
+  <summary>Как удельная мощность влияет на стоимость страховки ОСАГО?</summary>
+  <p>В России мощность двигателя (в л.с.) напрямую влияет на цену ОСАГО через <strong>коэффициент мощности (КМ)</strong>:</p>
+  <ul>
+    <li>До 50 л.с.: КМ = 0.6</li>
+    <li>50–70 л.с.: КМ = 1.0</li>
+    <li>70–100 л.с.: КМ = 1.1</li>
+    <li>100–120 л.с.: КМ = 1.2</li>
+    <li>120–150 л.с.: КМ = 1.4</li>
+    <li>Свыше 150 л.с.: КМ = 1.6</li>
+  </ul>
+  <p>Удельная мощность сама по себе не учитывается, но авто с высоким соотношением л.с./масса часто попадают в категорию "рисковых" у страховщиков, что может повысить тариф на 10–30%.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/v/vo/voyah-otzyvy-ob-avtomobile.html" class="pb-related-card">
+                <span class="pb-related-title">VOYAH: реальные отзывы владельцев 2026 – плюсы и минусы китайских электрокаров</span>
+                <span class="pb-related-desc">Честные отзывы о VOYAH: надежность, расход, ремонт, цены. Сравнение моделей Free, Dreamer, Passion. </span>
+            </a><a href="/articles/a/av/avto-s-tretim-ryadom-sidenij.html" class="pb-related-card">
+                <span class="pb-related-title">Авто с третьим рядом сидений: 7+ моделей для большой семьи (2026)</span>
+                <span class="pb-related-desc">Как выбрать машину с 7-8 местами? Сравнение кроссоверов, минивэнов и внедорожников по цене, габарита</span>
+            </a><a href="/articles/t/to/top-kitajskikh-sedanov-2025.html" class="pb-related-card">
+                <span class="pb-related-title">Топ китайских седанов 2026: обзор лучших моделей</span>
+                <span class="pb-related-desc">Рейтинг китайских седанов 2026 года. Сравнение характеристик, цен, надежности и оснащения. Выбираем </span>
+            </a><a href="/articles/p/pr/predelnyj-srok-ekspluatatsii-avtomobilya.html" class="pb-related-card">
+                <span class="pb-related-title">Предельный срок эксплуатации автомобиля: законы и реальность</span>
+                <span class="pb-related-desc">Сколько реально служит автомобиль? Разбор понятия предельного срока эксплуатации, влияние коррозии, </span>
+            </a><a href="/articles/o/op/opisanie-o-prodazhe-avto.html" class="pb-related-card">
+                <span class="pb-related-title">Как написать описание для продажи авто: советы эксперта</span>
+                <span class="pb-related-desc">Секреты создания продающего описания для авто. Как указать технические детали, скрыть дефекты и прив</span>
+            </a><a href="/articles/m/ma/mashina-s-panteroj-znachok.html" class="pb-related-card">
+                <span class="pb-related-title">Машина с пантерой значок: Jaguar, Ford, Peugeot и их история</span>
+                <span class="pb-related-desc">Разбор всех марок авто с логотипом пантеры или кошки. История Jaguar, Ford Puma, Peugeot и других. К</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Генератор случайных номеров авто: как проверить уникальность VIN — Авто Факт</title>
+    <meta name="description" content="Зачем нужен генератор случайных номеров авто? Тестируем базы данных, проверяем уникальность VIN и учимся распознавать подделки с помощью рандомизатора.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/g/ge/generator-sluchajnykh-nomerov-avto.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Генератор случайных номеров авто: как проверить уникальность VIN">
+    <meta property="og:description" content="Зачем нужен генератор случайных номеров авто? Тестируем базы данных, проверяем уникальность VIN и учимся распознавать подделки с помощью рандомизатора.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Генератор случайных номеров авто: как проверить уникальность VIN</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#зачем-программистам-и-тестировщикам-нужны-фейковые-vin-коды">Зачем программистам и тестировщикам нужны фейковые VIN-коды</a></li><li><a href="#алгоритмы-генерации-как-создаются-псевдо-номера">Алгоритмы генерации: как создаются псевдо-номера</a></li><li><a href="#проверка-уникальности-и-валидности-сгенерированных-данных">Проверка уникальности и валидности сгенерированных данных</a></li><li><a href="#применение-рандомизаторов-в-обучении-и-симуляциях">Применение рандомизаторов в обучении и симуляциях</a></li><li><a href="#безопасность-данных-почему-нельзя-использовать-реальные-vin-в-тестах">Безопасность данных: почему нельзя использовать реальные VIN в тестах</a></li><li><a href="#технические-ограничения-и-особенности-форматов-разных-стран">Технические ограничения и особенности форматов разных стран</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/c/ch/chto-znachit-knopka-dual-v-mashine.html">Кнопка Dual в машине: зачем нужна и как работает</a></li><li><a href="/articles/c/ch/chastota-radio-yumor-fm.html">Частота радио Юмор FM: как настроить в машине и онлайн</a></li><li><a href="/articles/c/ch/chistka-kofemashiny-filips-limonnoj-kislotoj.html">Чистка кофемашины Philips лимонной кислотой: пошаговая инструкция</a></li><li><a href="/articles/a/av/avtomobilnyj-kholodilnik-kompressornyj-rejting.html">ТОП-10 компрессорных холодильников для авто 2026: рейтинг и советы по выбору</a></li><li><a href="/articles/w/wo/wortex-pm-1813-se.html">Система Wortex PM 1813 SE: характеристики, отзывы, особенности</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Генератор случайных номеров авто: инструмент для тестирования и анализа</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#зачем-программистам-и-тестировщикам-нужны-фейковые-vin-коды">Зачем программистам и тестировщикам нужны фейковые VIN-коды</a></li><li><a href="#алгоритмы-генерации-как-создаются-псевдо-номера">Алгоритмы генерации: как создаются псевдо-номера</a></li><li><a href="#проверка-уникальности-и-валидности-сгенерированных-данных">Проверка уникальности и валидности сгенерированных данных</a></li><li><a href="#применение-рандомизаторов-в-обучении-и-симуляциях">Применение рандомизаторов в обучении и симуляциях</a></li><li><a href="#безопасность-данных-почему-нельзя-использовать-реальные-vin-в-тестах">Безопасность данных: почему нельзя использовать реальные VIN в тестах</a></li><li><a href="#технические-ограничения-и-особенности-форматов-разных-стран">Технические ограничения и особенности форматов разных стран</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>В мире автомобильной аналитики и разработки программного обеспечения часто возникают ситуации, когда требуется массив данных, не привязанный к реальным транспортным средствам. <strong>Генератор случайных номеров авто</strong> становится незаменимым инструментом для программистов, создающих базы данных автосалонов, или для специалистов по кибербезопасности, проверяющих уязвимости систем учета.</p>
+
+<p>Использование реальных VIN-кодов или государственных регистрационных знаков в тестовых средах категорически запрещено законодательством о защите персональных данных. Ошибка в этом вопросе может привести к серьезным юридическим последствиям и утечке конфиденциальной информации владельцев.</p>
+
+<p>Именно поэтому создание искусственных, но структурно правильных последовательностей символов является критически важной задачей. Такие данные позволяют имитировать реальную нагрузку на серверы без риска нарушения приватности.</p>
+
+<p>В этой статье мы разберем алгоритмы работы подобных генераторов, их применение в различных сферах автотематики и способы проверки сгенерированных кодов на валидность.</p>
+
+<h2 id="зачем-программистам-и-тестировщикам-нужны-фейковые-vin-коды">Зачем программистам и тестировщикам нужны фейковые VIN-коды</h2>
+
+<p>Разработка программного обеспечения для автотранспортной отрасли требует огромного количества тестовых данных. <strong>Виртуальные номера</strong> позволяют моделировать различные сценарии работы системы: от регистрации нового клиента до проведения сложной технической диагностики.</p>
+
+<p>Когда разработчик создает новую функцию в CRM-системе дилерского центра, ему необходимо проверить, как система реагирует на ввод данных. Использование реальных номеров в этот момент недопустимо, так как тестовые базы часто содержат ошибки или специально сформированные некорректные значения.</p>
+
+<p>Генерация случайных последовательностей помогает выявить баги в логике программы. Например, система может некорректно обрабатывать определенные комбинации символов или неправильно рассчитывать контрольную сумму.</p>
+
+<ul>
+<li>🚀 <strong>Масштабируемость:</strong> возможность создать миллионы уникальных записей за секунды для нагрузочного тестирования серверов.</li>
+<li>🛡️ <strong>Безопасность:</strong> полное исключение риска утечки реальных данных клиентов и соблюдения GDPR.</li>
+<li>🧪 <strong>Вариативность:</strong> создание номеров с разными характеристиками (разные годы выпуска, заводы-производители) для проверки фильтров.</li>
+</ul>
+
+<p>Кроме того, такие инструменты позволяют симулировать работу с архивными данными, где форматы номеров могли отличаться от современных стандартов. Это особенно актуально для ретро-автомобилей или техники, произведенной в разных странах.</p>
+
+<div class="pb-poll" id="poll-00e922ac"><div class="pb-poll-question">📊 Какой формат данных вам чаще всего нужен для тестов?</div><div class="pb-poll-option" data-poll="00e922ac" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Только VIN-коды</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="00e922ac" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Госномера РФ</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="00e922ac" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Европейские номера</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="00e922ac" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Смешанный формат</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="алгоритмы-генерации-как-создаются-псевдо-номера">Алгоритмы генерации: как создаются псевдо-номера</h2>
+
+<p>Процесс создания случайного номера — это не просто набор букв и цифр в произвольном порядке. <em>VIN-код</em> (Vehicle Identification Number) имеет строгую 17-значную структуру, закрепленную международными стандартами ISO 3779 и ISO 4030.</p>
+
+<p>Качественный генератор должен учитывать правила формирования <strong>Всемирного идентификатора изготовителя</strong> (WMI), описательной части (VDS) и отличительной части (VIS). Первые три символа указывают на страну и производителя, что важно для логических проверок в программе.</p>
+
+<p>Особое внимание уделяется девятому символу, который является контрольным. Он вычисляется по специальной формуле на основе остальных символов. Если генератор игнорирует это правило, полученный номер будет считаться невалидным большинством профессиональных сервисов.</p>
+
+<details class="pb-accordion"><summary>Как рассчитывается контрольная сумма VIN?</summary><div class="pb-accordion-body"><p>Для расчета каждой букве и цифре присваивается числовое значение. Затем значения символов умножаются на весовые коэффициенты (от 8 до 2). Сумма произведений делится на 11, и остаток от деления (или цифра 10, обозначаемая как X) становится контрольным символом на 9-й позиции.</p></div></details>
+
+<p>При генерации государственных регистрационных знаков (ГРЗ) алгоритмы проще, но тоже имеют свои ограничения. Например, в России используются определенные серии и коды регионов, которые не могут быть полностью случайными.</p>
+
+<p>Некоторые продвинутые алгоритмы используют <mark>метод Монте-Карло</mark> для распределения вероятностей, чтобы сгенерированный пул данных статистически напоминал реальный парк автомобилей в конкретном регионе.</p>
+
+<h2 id="проверка-уникальности-и-валидности-сгенерированных-данных">Проверка уникальности и валидности сгенерированных данных</h2>
+
+<p>После генерации массива данных критически важно провести их верификацию. <strong>Валидация</strong> проверяет соответствие формата правилам, а проверка на уникальность гарантирует отсутствие дубликатов внутри созданной выборки.</p>
+
+<p>Для проверки часто используются регулярные выражения (Regex). Они позволяют быстро отсечь строки, не соответствующие шаблону. Например, VIN-код не может содержать буквы I, O и Q, чтобы избежать путаницы с цифрами 1 и 0.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Параметр проверки</th>
+<th>Описание</th>
+<th>Инструмент</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Длина строки</td>
+<td>VIN всегда 17 символов</td>
+<td>Функция length()</td>
+</tr>
+<tr>
+<td>Набор символов</td>
+<td>Отсутствие I, O, Q</td>
+<td>Regex pattern</td>
+</tr>
+<tr>
+<td>Контрольная сумма</td>
+<td>Проверка 9-го знака</td>
+<td>Алгоритм ISO 3779</td>
+</tr>
+<tr>
+<td>Уникальность</td>
+<td>Отсутствие повторов в базе</td>
+<td>SQL DISTINCT / Hash</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Если вы работаете с базой данных, самый быстрый способ найти дубликаты — использовать SQL-запрос с группировкой. Это позволит мгновенно выявить ошибки в алгоритме генератора, если он вдруг выдал повторяющиеся значения.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Чек-лист проверки данных</h4><label class="check-item"><input type="checkbox"><span>Проверить длину всех строк</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в отсутствии букв I, O, Q</span></label><label class="check-item"><input type="checkbox"><span>Вычислить контрольную сумму</span></label><label class="check-item"><input type="checkbox"><span>Проверить базу на дубликаты</span></label><label class="check-item"><input type="checkbox"><span>Сравнить WMI с реальными заводами</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>Также стоит проверять логическую целостность. Например, 10-й символ VIN указывает на год выпуска. Если генератор выдал код, где 10-й символ соответствует 2030 году, а 7-й знак указывает на модель, снятую с производства в 2010 году, это логическая ошибка.</p>
+
+<h2 id="применение-рандомизаторов-в-обучении-и-симуляциях">Применение рандомизаторов в обучении и симуляциях</h2>
+
+<p>В учебных центрах для сотрудников ГИБДД, таможенных служб и страховых компаний часто проводятся тренинги по выявлению поддельных документов. <strong>Генератор случайных номеров</strong> позволяет создавать реалистичные, но фальшивые кейсы для отработки навыков.</p>
+
+<p>Курсанты учатся быстро считывать информацию, закодированную в номере, не рискуя перепутать реальные автомобили. Это формирует мышечную память и ускоряет работу в реальных условиях.</p>
+
+<p>В симуляторах вождения и логистических играх также используются подобные системы. Они создают ощущение живого трафика, где у каждого виртуального автомобиля есть свой уникальный идентификатор.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Использование сгенерированных номеров для попыток обхода блокировок на парковках или создания ложных алиби является незаконным и может повлечь уголовную ответственность.</p>
+</blockquote>
+
+<p>Исследователи трафика используют аноимизированные данные для моделирования потоков машин. Это помогает городским планировщикам понимать, как изменится нагрузка на дороги при открытии новой развязки.</p>
+
+<h2 id="безопасность-данных-почему-нельзя-использовать-реальные-vin-в-тестах">Безопасность данных: почему нельзя использовать реальные VIN в тестах</h2>
+
+<p>Использование реальных номеров в тестовой среде — это грубое нарушение информационной безопасности. Даже если база не содержит имен владельцев, по VIN-коду можно восстановить историю автомобиля, найти данные о собственнике через открытые источники или пробить наличие штрафов.</p>
+
+<p>Хакеры часто используют technique под названием "doxing", собирая разрозненные данные из разных утечек. Если ваш тестовый сервер будет взломан, а там окажутся реальные VIN-коды клиентов, компания понесет репутационные и финансовые потери.</p>
+
+<p>Кроме того, некоторые системы телематики позволяют удаленно управлять функциями автомобиля. Теоретически, зная VIN, злоумышленник может попытаться подобрать ключи доступа к конкретному транспортному средству, если оно подключено к сети.</p>
+
+<ul>
+<li>🔒 <strong>Конфиденциальность:</strong> защита личной жизни владельцев автомобилей от посторонних глаз.</li>
+<li>⚖️ <strong>Комплаенс:</strong> соблюдение законов о защите персональных данных (152-ФЗ в РФ, GDPR в Европе).</li>
+<li>🛑 <strong>Предотвращение мошенничества:</strong> исключение возможности клонирования номеров реальных авто.</li>
+</ul>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Всегда используйте разные наборы данных для сред разработки (Dev), тестирования (Test) и production. Никогда не копируйте боевую базу данных напрямую в тестовое окружение без процедуры обезличивания (masking).</p></aside>
+
+<p>Современные стандарты разработки (DevSecOps) требуют внедрения проверок на наличие чувствительных данных еще на этапе написания кода. Автоматические сканеры могут найти и заблокировать commit, содержащий реальные VIN-коды.</p>
+
+<h2 id="технические-ограничения-и-особенности-форматов-разных-стран">Технические ограничения и особенности форматов разных стран</h2>
+
+<p>Глобализация автопрома приводит к тому, что в одной базе данных могут оказаться машины из разных уголков мира. <strong>Форматы номеров</strong> сильно различаются: в США VIN начинается с 1, 4 или 5, в Германии — с W, в Японии — с J.</p>
+
+<p>Генератор должен уметь переключаться между режимами. Например, европейские номера часто содержат синюю полосу с флагом ЕС, что требует особого формата при генерации графического представления.</p>
+
+<p>В России с 2021 года действуют новые ГОСТы для номерных знаков, включая уменьшенные форматы для мотоциклов и ретро-автомобилей. Алгоритм должен учитывать эти изменения, чтобы не генерировать номера старого образца для новых автомобилей.</p>
+
+<blockquote>
+<p>⚠️ Внимание: При генерации номеров для США помните, что в VIN-кодах американских автомобилей 10-й символ обозначает год, но цикл повторяется каждые 30 лет, поэтому важно учитывать 7-й символ для точной идентификации decade.</p>
+</blockquote>
+
+<p>Для корректной работы с международными базами необходимо использовать кодировку UTF-8, чтобы правильно обрабатывать специфические символы, которые могут встречаться в описаниях или дополнительных полях, хотя сам VIN ограничен латиницей.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Универсальный генератор должен поддерживать переключение между стандартами ISO (международный), ГОСТ (РФ/СНГ) и специфическими форматами США/Азии для полноценного тестирования глобальных систем.</p></aside>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Можно ли по сгенерированному VIN-коду пробить историю автомобиля?</summary>
+<p>Нет, это невозможно. Сгенерированные коды не существуют в реальных базах данных ГИБДД, страховых компаний или производителей. Они созданы искусственно и не несут информации о реальном транспортном средстве.</p>
+</details>
+
+<details>
+<summary>Нарушает ли использование генератора VIN-кодов закон?</summary>
+<p>Сам процесс генерации и использование кодов для тестирования программного обеспечения полностью законны. Нарушением является лишь попытка использовать эти коды для регистрации реального транспорта или мошеннических действий.</p>
+</details>
+
+<details>
+<summary>Почему в VIN-коде нет букв I, O и Q?</summary>
+<p>Эти буквы исключены из стандарта ISO 3779, чтобы избежать визуальной путаницы с цифрами 1 и 0 при ручном вводе или считывании кода с кузова автомобиля.</p>
+</details>
+
+<details>
+<summary>Как проверить, является ли сгенерированный VIN валидным?</summary>
+<p>Необходимо проверить длину строки (17 символов), отсутствие запрещенных букв и рассчитать контрольную сумму 9-го знака по алгоритму взвешенной суммы. Также можно воспользоваться онлайн-калькуляторами проверки контрольной суммы.</p>
+</details>
+
+<details>
+<summary>Подойдут ли эти номера для игр или симуляторов?</summary>
+<p>Да, сгенерированные номера идеально подходят для симуляторов вождения, логистических стратегий и других игр, где требуется массовое количество уникальных идентификаторов для виртуального транспорта.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/c/ch/chto-znachit-knopka-dual-v-mashine.html" class="pb-related-card">
+                <span class="pb-related-title">Кнопка Dual в машине: зачем нужна и как работает</span>
+                <span class="pb-related-desc">Узнайте, что значит кнопка Dual в автомобиле. Разбираем принцип работы климат-контроля, настройки зо</span>
+            </a><a href="/articles/c/ch/chastota-radio-yumor-fm.html" class="pb-related-card">
+                <span class="pb-related-title">Частота радио Юмор FM: как настроить в машине и онлайн</span>
+                <span class="pb-related-desc">Полный гид по частоте радио Юмор FM. Узнайте, на какой частоте вещает станция в Москве и регионах, к</span>
+            </a><a href="/articles/c/ch/chistka-kofemashiny-filips-limonnoj-kislotoj.html" class="pb-related-card">
+                <span class="pb-related-title">Чистка кофемашины Philips лимонной кислотой: пошаговая инструкция</span>
+                <span class="pb-related-desc">Как почистить кофемашину Philips лимонной кислотой? Полное руководство по декальцинации, пропорции р</span>
+            </a><a href="/articles/a/av/avtomobilnyj-kholodilnik-kompressornyj-rejting.html" class="pb-related-card">
+                <span class="pb-related-title">ТОП-10 компрессорных холодильников для авто 2026: рейтинг и советы по выбору</span>
+                <span class="pb-related-desc">Как выбрать лучший компрессорный холодильник для машины? Рейтинг 2026 года, сравнение характеристик </span>
+            </a><a href="/articles/w/wo/wortex-pm-1813-se.html" class="pb-related-card">
+                <span class="pb-related-title">Система Wortex PM 1813 SE: характеристики, отзывы, особенности</span>
+                <span class="pb-related-desc">Полный обзор системы очистки Wortex PM 1813 SE. Технические параметры, принцип работы, плюсы и минус</span>
+            </a><a href="/articles/k/ka/kak-podklyuchit-muzyku-v-mashine-cherez-prikurivatel.html" class="pb-related-card">
+                <span class="pb-related-title">Как подключить музыку в машине через прикуриватель: FM-трансмиттер</span>
+                <span class="pb-related-desc">Подробная инструкция: как слушать музыку в авто через прикуриватель. Выбор FM-трансмиттера, настройк</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

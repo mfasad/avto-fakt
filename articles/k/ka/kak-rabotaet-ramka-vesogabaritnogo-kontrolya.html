@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как работает рамка весогабаритного контроля: устройство и принцип — Авто Факт</title>
+    <meta name="description" content="Подробный разбор работы рамок весогабаритного контроля (РВК). Устройство, типы датчиков, точность измерений и последствия нарушения габаритов для водителей.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ka/kak-rabotaet-ramka-vesogabaritnogo-kontrolya.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как работает рамка весогабаритного контроля: устройство и принцип">
+    <meta property="og:description" content="Подробный разбор работы рамок весогабаритного контроля (РВК). Устройство, типы датчиков, точность измерений и последствия нарушения габаритов для водителей.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-nav-active">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/zakony-i-pdd/">Законы и ПДД</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как работает рамка весогабаритного контроля: устройство и принцип</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#принцип-действия-и-архитектура-системы-рвк">Принцип действия и архитектура системы РВК</a></li><li><a href="#технические-компоненты-от-датчиков-до-сервера">Технические компоненты: от датчиков до сервера</a></li><li><a href="#процесс-динамического-взвешивания-в-движении">Процесс динамического взвешивания в движении</a></li><li><a href="#измерение-габаритов-высота-ширина-и-длина">Измерение габаритов: высота, ширина и длина</a></li><li><a href="#обработка-данных-и-фиксация-нарушений">Обработка данных и фиксация нарушений</a></li><li><a href="#таблица-допустимых-норм-и-погрешностей">Таблица допустимых норм и погрешностей</a></li><li><a href="#юридические-аспекты-и-оспаривание-штрафов">Юридические аспекты и оспаривание штрафов</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/e/ez/ezda-na-stop-uchete.html">Езда на стоп учете: штрафы, последствия и как снять</a></li><li><a href="/articles/p/pe/peshekhod-perekhodil-dorogu-v-nepolozhennom-meste-i-byl-sbit-kto-vinovat.html">Сбили пешехода вне перехода: кто виноват и как действовать</a></li><li><a href="/articles/p/pr/proverka-avto-cherez-gai.html">Проверка авто через ГАИ: как проверить машину перед покупкой</a></li><li><a href="/articles/l/lg/lgoty-na-platnykh-dorogakh-veteranam-boevykh-dejstvij.html">Льготы ветеранам боевых действий на платных дорогах: актуально</a></li><li><a href="/articles/s/sk/skolko-nachinayushchemu-voditelyu-nuzhno-ezdit-s-vosklitsatelnym-znakom.html">Сколько нужно ездить с восклицательным знаком: сроки и штрафы</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как работает рамка весогабаритного контроля: устройство и принцип</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-действия-и-архитектура-системы-рвк">Принцип действия и архитектура системы РВК</a></li><li><a href="#технические-компоненты-от-датчиков-до-сервера">Технические компоненты: от датчиков до сервера</a></li><li><a href="#процесс-динамического-взвешивания-в-движении">Процесс динамического взвешивания в движении</a></li><li><a href="#измерение-габаритов-высота-ширина-и-длина">Измерение габаритов: высота, ширина и длина</a></li><li><a href="#обработка-данных-и-фиксация-нарушений">Обработка данных и фиксация нарушений</a></li><li><a href="#таблица-допустимых-норм-и-погрешностей">Таблица допустимых норм и погрешностей</a></li><li><a href="#юридические-аспекты-и-оспаривание-штрафов">Юридические аспекты и оспаривание штрафов</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Современная система обеспечения безопасности дорожного движения немыслима без автоматизированных комплексов, способных контролировать параметры транспортных средств в движении. Одной из ключевых технологий в этой сфере являются <strong>рамки весогабаритного контроля</strong>, устанавливаемые на трассах федерального и регионального значения. Эти конструкции часто остаются незамеченными водителями легковых автомобилей, но для владельцев грузового транспорта они являются критически важным элементом маршрутизации.</p>
+
+<p>Основная задача таких систем заключается в предотвращении разрушения дорожного полотна тяжеловесными или негабаритными грузовиками. Принцип действия базируется на мгновенном сборе данных о массе и геометрических параметрах автомобиля без необходимости его остановки. Если вы управляете коммерческим транспортом, понимание того, как именно фиксируются нарушения, поможет избежать штрафов и правильно спланировать рейс.</p>
+
+<p>Внутри простой металлической арки скрыт сложный комплекс сенсоров, вычислительных модулей и систем видеофиксации. <em>Интеллектуальные системы</em> обрабатывают сигналы за доли секунды, сопоставляя полученные данные с законодательными нормами. Далее мы детально разберем устройство этих комплексов и ответим на вопрос, как работает рамка весогабаритного контроля с технической точки зрения.</p>
+
+<h2 id="принцип-действия-и-архитектура-системы-рвк">Принцип действия и архитектура системы РВК</h2>
+
+<p>Фундаментальной основой работы любой <strong>рамки весогабаритного контроля</strong> является синхронизация данных от различных типов датчиков. Система не просто"видит" машину, она проводит ее физический анализ. В момент пересечения транспортным средством контрольной зоны активируются весовые платформы, встроенные в дорожное полотно, и лазерные сканеры, расположенные на самой арке.</p>
+
+<p>Процесс измерения происходит динамически, то есть на скорости потока. <strong>Высокоточные тензодатчики</strong> регистрируют нагрузку на каждую ось автомобиля отдельно. Одновременно с этим лазерные дальномеры или оптические сенсоры строят трехмерный профиль грузовика, определяя его высоту, ширину и длину. Вся эта информация мгновенно передается в локальный вычислительный блок.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Попытка объехать рамку по обочине или"виляние" между датчиками часто фиксируется камерами видеоаналитики как попытка уклонения от контроля, что может повлечь дополнительные санкции со стороны ГИБДД.</p>
+</blockquote>
+
+<p>Полученные данные о массе и габаритах сверяются с базой данных допустимых значений для данного типа транспортного средства. Если фактические параметры превышают установленные лимиты, система автоматически формирует пакет доказательств. Это включает в себя не только цифровые значения, но и серию фотографий, а также видеозапись проезда.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Ключевой принцип работы РВК — динамическое взвешивание без остановки, основанное на синхронизации данных тензодатчиков и лазерных сканеров.</p></aside>
+
+<h2 id="технические-компоненты-от-датчиков-до-сервера">Технические компоненты: от датчиков до сервера</h2>
+
+<p>Конструктивно комплекс весогабаритного контроля представляет собой набор разнесенных элементов, объединенных единой сетью. Центральным элементом является сама арка или gantry-конструкция, на которой размещаются измерительные приборы. Однако"сердце" системы часто находится в шкафу управления рядом с дорогой или в удаленном центре обработки данных.</p>
+
+<p>Основу измерительного тракта составляют следующие компоненты:</p>
+<ul>
+<li>🚛 <strong>Весовые платформы:</strong> встраиваемые в асфальт модули, измеряющие осевую нагрузку с высокой точностью даже на скоростях до 100 км/ч.</li>
+<li>📐 <strong>Лазерные сканеры:</strong> устройства, создающие точечный облако точек для определения габаритов (высота, ширина, длина) с погрешностью не более 2-3 см.</li>
+<li>📷 <strong>Камеры распознавания:</strong> фиксируют номерной знак, тип кузова и определяют класс транспортного средства.</li>
+<li>🌡️ <strong>Датчики внешней среды:</strong> корректируют показания в зависимости от температуры воздуха и дорожного покрытия.</li>
+</ul>
+
+<p>Важным элементом является система <strong>индукционных датчиков</strong> или световых барьеров. Они служат триггером, сообщающим системе о приближении объекта. Это позволяет перевести оборудование из режима ожидания в режим активного измерения именно в нужный момент, экономя ресурс дорогостоящих сенсоров.</p>
+
+<p>Все данные агрегируются и передаются по защищенным каналам связи (часто используется выделенная оптоволоконная линия или LTE-канал с шифрованием) на региональный сервер. Там происходит финальная верификация данных и, в случае нарушения, формирование постановления.</p>
+
+<details class="pb-accordion"><summary>Почему важна калибровка датчиков?</summary><div class="pb-accordion-body"><p>Точность измерений напрямую зависит от регулярной поверки оборудования. Температурные расширения металла и асфальта могут вносить погрешности, которые компенсируются программными алгоритмами и периодической физической калибровкой эталонными грузами.</p></div></details>
+
+<h2 id="процесс-динамического-взвешивания-в-движении">Процесс динамического взвешивания в движении</h2>
+
+<p>Многие водители ошибочно полагают, что взвесить многотонный грузовик на ходу невозможно без огромной погрешности. Однако современные технологии <strong>динамического взв</strong>ешивания (WIM — Weigh-In-Motion) позволяют достигать точности, сопоставимой со статическими весами. Ключевым фактором здесь выступает частота опроса датчиков и алгоритмы фильтрации вибрационных шумов.</p>
+
+<p>Когда колесо автомобиля попадает на весовую платформу, возникает кратковременный импульс давления. Система считывает этот сигнал thousands раз в секунду. <em>Специализированное программное обеспечение</em> анализирует форму сигнала, отсекая помехи от неровностей дороги или порывов ветра. Результатом становится усредненное значение нагрузки на ось.</p>
+
+<p>Процесс проходит в несколько этапов:</p>
+<ol>
+<li>Фиксация момента въезда на весовую зону.</li>
+<li>Последовательное взвешивание каждой оси или колесной пары.</li>
+<li>Суммирование значений для получения полной массы автомобиля.</li>
+<li>Сравнение полученной суммы с нормативными значениями для данного типа ТС.</li>
+</ol>
+
+<p>Особое внимание уделяется распределению массы. Даже если общая масса грузовика в норме, перегруз одной из осей является серьезным нарушением, так как именно локальное давление разрушает верхние слои дорожного покрытия. Рамка весогабаритного контроля фиксирует этот параметр с высокой детализацией.</p>
+
+<div class="pb-poll" id="poll-bdedb9bd"><div class="pb-poll-question">📊 Сталкивались ли вы с системами весогабаритного контроля?</div><div class="pb-poll-option" data-poll="bdedb9bd" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Да, приходилось останавливаться</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="bdedb9bd" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Нет, проезжал свободно</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="bdedb9bd" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Получал штраф с камер</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="bdedb9bd" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Работаю диспетчером и вижу данные</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="измерение-габаритов-высота-ширина-и-длина">Измерение габаритов: высота, ширина и длина</h2>
+
+<p>Помимо веса, критически важным параметром является геометрия транспортного средства. Превышение габаритов создает угрозу безопасности при проезде под мостами, путепроводами и в тоннелях. Для измерения этих параметров на рамке устанавливаются <strong>лазерные дальномеры</strong> и оптические сенсоры.</p>
+
+<p>Сканеры обычно располагаются на вертикальных стойках арки и на ее горизонтальной перекладине. Они испускают веерообразные лучи, которые, отражаясь от поверхности грузовика, возвращаются к приемнику. Время прохождения луча позволяет с математической точностью рассчитать расстояние до объекта. Сканируя пространство с высокой частотой, система строит <strong>цифровой профиль</strong> автомобиля.</p>
+
+<p>Точность измерений габаритов зависит от нескольких факторов:</p>
+<ul>
+<li>📏 Чистота оптических линз (системы часто имеют автоматическую продувку).</li>
+<li>☀️ Освещение (работа ведется как днем, так и ночью благодаря ИК-подсветке).</li>
+<li>🚛 Ровность движения (резкие маневры могут исказить профиль).</li>
+</ul>
+
+<p>Если высота груза превышает допустимую (обычно 4 метра от земли), система немедленно сигнализирует об опасности. В некоторых случаях данные интегрируются со светофорными объектами, расположенными перед низкими мостами, блокируя проезд негабарита.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Нестандартные грузы (например, трубы, выходящие за габариты кабины, или тенты с неровными краями) могут быть неправильно интерпретированы сканерами. В таких случаях требуется особая внимательность при получении уведомления о нарушении.</p>
+</blockquote>
+
+<h2 id="обработка-данных-и-фиксация-нарушений">Обработка данных и фиксация нарушений</h2>
+
+<p>После сбора сырых данных начинается этап их обработки. Локальный контроллер формирует"карточку проезда", которая содержит временную метку, номерные знаки, класс ТС, осевые нагрузки и габариты. Эта информация передается на сервер весового контроля.</p>
+
+<p>На сервере происходит автоматическая проверка:</p>
+<pre><code>IF (Осевая_нагрузка > Норма) OR (Полная_масса > Норма) OR (Габариты > Лимит) THEN
+<p>Создать_дело_о_нарушении</p>
+<p>Сформировать_пакет_доказательств</p>
+<p>Отправить_в_ЦАФАП</p>
+<p>ELSE</p>
+<p>Сохранить_в_архив</p>
+<p>ENDIF</code></pre></p>
+
+<p>Человеческий фактор на этапе первичной фиксации практически исключен. Однако, перед выпиской штрафа, материалы часто проходят проверку оператором центра администрирования. Он verifies соответствие типа автомобиля данным базы, читает номер (если автоматика ошиблась) и подтверждает факт нарушения.</p>
+
+<p>Важно отметить, что система учитывает тип транспортного средства. Для этого используется база данных, куда вносится информация о разрешенной максимальной массе для конкретных моделей или классов. Если автомобиль не распознан автоматически, он классифицируется по умолчанию, что может привести к ошибке, которую легко оспорить.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Сохраняйте путевые листы и товарно-транспортные накладные минимум 6 месяцев. В случае спора о весе груза эти документы станут вашим главным доказательством в суде.</p></aside>
+
+<h2 id="таблица-допустимых-норм-и-погрешностей">Таблица допустимых норм и погрешностей</h2>
+
+<p>Для понимания работы системы необходимо знать, какие значения считаются предельными. Законодательство строго регламентирует нагрузки, а оборудование калибруется с учетом допустимой инструментальной погрешности. Ниже приведены ориентировочные данные для дорог общего пользования.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Тип параметра</th>
+<th>Нормативное значение</th>
+<th>Допустимая погрешность РВК</th>
+<th>Последствия превышения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Осевая нагрузка (одиночная)</td>
+<td>до 10-11 тонн</td>
+<td>± 3-5%</td>
+<td>Штраф, запрет движения</td>
+</tr>
+<tr>
+<td>Полная масса (фура)</td>
+<td>до 40 тонн</td>
+<td>± 3-5%</td>
+<td>Крупный штраф, выгрузка</td>
+</tr>
+<tr>
+<td>Высота ТС</td>
+<td>до 4.0 метров</td>
+<td>± 2-3 см</td>
+<td>Штраф, риск ДТП</td>
+</tr>
+<tr>
+<td>Ширина ТС</td>
+<td>до 2.55 метров</td>
+<td>± 2-3 см</td>
+<td>Штраф, ограничение маневра</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Погрешность в 3-5% является технологическим стандартом для динамического взвешивания. Это означает, что если ваш грузовик весит 40.5 тонн при норме 40, система может не зафиксировать нарушение, так как это попадает в диапазон погрешности измерительного средства. Однако полагаться на это не стоит.</p>
+
+<h2 id="юридические-аспекты-и-оспаривание-штрафов">Юридические аспекты и оспаривание штрафов</h2>
+
+<p>Материалы, полученные с комплексов весогабаритного контроля, имеют полную юридическую силу. Они приравниваются к доказательствам, полученным с стационарных камер фиксации скорости. Основанием для штрафа служит постановление, сформированное на основе данных РВК.</p>
+
+<p>Тем не менее, система не идеальна. Основаниями для успешного оспаривания могут стать:</p>
+<ul>
+<li>❌ Отсутствие знака"Контроль веса и габаритов" (в некоторых случаях).</li>
+<li>❌ Истекший срок поверки весового оборудования.</li>
+<li>❌ Несоответствие типа ТС в базе данных реальности.</li>
+<li>❌ Технические сбои в передаче данных (обрывы пакетов).</li>
+</ul>
+
+<p>При получении"письма счастья" с фотографиями и данными взвешивания, в первую очередь проверьте дату поверки комплекса. Эта информация часто публикуется на региональных порталах транспорта. Если на момент фиксации нарушения поверка не действовала, штраф можно аннулировать.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Что делать при получении штрафа с РВК</h4><label class="check-item"><input type="checkbox"><span>Проверить фото автомобиля</span></label><label class="check-item"><input type="checkbox"><span>Сверить номерные знаки</span></label><label class="check-item"><input type="checkbox"><span>Проверить дату поверки весов</span></label><label class="check-item"><input type="checkbox"><span>Сравнить вес в накладной и в протоколе</span></label><label class="check-item"><input type="checkbox"><span>Подать жалобу в течение 10 дней</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<details>
+<summary>Можно ли обмануть рамку весогабаритного контроля?</summary>
+<p>Попытки обмана, такие как использование"магнитов","глушилок" или движение по межколею, в современных условиях практически бесполезны и опасны. Системы оснащены датчиками магнитного поля и видеокамерами с ИК-подсветкой, фиксирующими любые манипуляции. Более того, такие действия могут быть квалифицированы как уголовное преступление.</p>
+</details>
+
+<details>
+<summary>Работает ли рамка ночью и в плохую погоду?</summary>
+<p>Да, комплексы РВК являются всепогодными системами. Лазерные сканеры и камеры работают в инфракрасном спектре, что делает их независимыми от освещения. Весовые платформы также функционируют при любых температурах, хотя экстремальные условия (снежная каша, лед) могут временно увеличить погрешность измерений.</p>
+</details>
+
+<details>
+<summary>Какова максимальная скорость для точного взвешивания?</summary>
+<p>Большинство современных рамок обеспечивают заявленную точность (±3-5%) при скоростях от 5 до 100 км/ч. Однако для минимизации вибрационных помех и получения наиболее точного результата рекомендуется соблюдать скоростной режим 40-60 км/ч в зоне действия знака контроля.</p>
+</details>
+
+<details>
+<summary>Кто владеет данными с рамок?</summary>
+<p>Операторами систем весогабаритного контроля выступают государственные учреждения (например,"Автодор" или региональные минтрансы) или частные компании, работающие по концессионному соглашению. Данные передаются в единую государственную систему, доступ к которой имеют сотрудники ГИБДД и Ространснадзора.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/e/ez/ezda-na-stop-uchete.html" class="pb-related-card">
+                <span class="pb-related-title">Езда на стоп учете: штрафы, последствия и как снять</span>
+                <span class="pb-related-desc">Что будет за езду на стоп учете в 2026 году? Размеры штрафов, риск конфискации авто, правила снятия </span>
+            </a><a href="/articles/p/pe/peshekhod-perekhodil-dorogu-v-nepolozhennom-meste-i-byl-sbit-kto-vinovat.html" class="pb-related-card">
+                <span class="pb-related-title">Сбили пешехода вне перехода: кто виноват и как действовать</span>
+                <span class="pb-related-desc">Разбор ДТП с пешеходом вне перехода. Кто виноват, как доказать резкое появление, размеры штрафов и н</span>
+            </a><a href="/articles/p/pr/proverka-avto-cherez-gai.html" class="pb-related-card">
+                <span class="pb-related-title">Проверка авто через ГАИ: как проверить машину перед покупкой</span>
+                <span class="pb-related-desc">Пошаговая инструкция, как проверить автомобиль через ГИБДД онлайн и офлайн. Узнайте историю авто, шт</span>
+            </a><a href="/articles/l/lg/lgoty-na-platnykh-dorogakh-veteranam-boevykh-dejstvij.html" class="pb-related-card">
+                <span class="pb-related-title">Льготы ветеранам боевых действий на платных дорогах: актуально</span>
+                <span class="pb-related-desc">Платят ли ветераны боевых действий за проезд по ЦКАД и М-1? Разбор актуального законодательства, рег</span>
+            </a><a href="/articles/s/sk/skolko-nachinayushchemu-voditelyu-nuzhno-ezdit-s-vosklitsatelnym-znakom.html" class="pb-related-card">
+                <span class="pb-related-title">Сколько нужно ездить с восклицательным знаком: сроки и штрафы</span>
+                <span class="pb-related-desc">Узнайте, сколько времени начинающий водитель может ездить с восклицательным знаком. Разбор актуальны</span>
+            </a><a href="/articles/t/tr/tranzitnaya-deklaratsiya-na-avtomobil.html" class="pb-related-card">
+                <span class="pb-related-title">Транзитная декларация на автомобиль: оформление и сроки 2026</span>
+                <span class="pb-related-desc">Как получить транзитную декларацию ТД-21 на авто? Полный гид по оформлению документов для вывоза, ср</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

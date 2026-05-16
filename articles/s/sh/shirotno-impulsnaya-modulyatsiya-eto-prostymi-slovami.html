@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>ШИМ (PWM): что это простыми словами для автоэлектрика — Авто Факт</title>
+    <meta name="description" content="Широтно-импульсная модуляция в автомобиле: как работает, где применяется и как диагностировать неисправности ШИМ-сигнала.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/s/sh/shirotno-impulsnaya-modulyatsiya-eto-prostymi-slovami.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ШИМ (PWM): что это простыми словами для автоэлектрика">
+    <meta property="og:description" content="Широтно-импульсная модуляция в автомобиле: как работает, где применяется и как диагностировать неисправности ШИМ-сигнала.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/elektrika-avto/">Электрика Авто</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">ШИМ (PWM): что это простыми словами для автоэлектрика</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#что-такое-шим-и-как-это-работает">Что такое ШИМ и как это работает</a></li><li><a href="#где-применяется-шим-в-автомобиле">Где применяется ШИМ в автомобиле</a></li><li><a href="#преимущества-импульсного-управления-перед-аналоговым">Преимущества импульсного управления перед аналоговым</a></li><li><a href="#как-диагностировать-неисправности-шим-сигнала">Как диагностировать неисправности ШИМ-сигнала</a></li><li><a href="#типичные-проблемы-и-их-симптомы">Типичные проблемы и их симптомы</a></li><li><a href="#влияние-помех-и-наводок-на-сигнал">Влияние помех и наводок на сигнал</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/k/ka/kakoj-avtomat-stavit-na-provod-6-kvadrata-mednyj.html">Автомат на 6 мм² медный кабель: какой ставить по ПУЭ и ГОСТ</a></li><li><a href="/articles/n/na/naklejki-na-elektroshchitok-raspechatat-besplatno.html">Наклейки на электрощиток распечатать бесплатно: шаблоны и ГОСТ</a></li><li><a href="/articles/i/iz/iz-za-chego-mogut-khripet-dinamiki-v-mashine.html">Почему хрипят динамики в машине: причины и ремонт</a></li><li><a href="/articles/r/ra/razryazhaetsya-akkumulyator-na-avtomobile-prichiny-za-2-dnya.html">Разряжается аккумулятор на автомобиле за 2 дня: причины и решение</a></li><li><a href="/articles/c/ch/chto-otvechaet-za-iskru-v-avtomobile.html">Что отвечает за искру в автомобиле: устройство и диагностика</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Широтно-импульсная модуляция (ШИМ): простыми словами для автолюбителя</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#что-такое-шим-и-как-это-работает">Что такое ШИМ и как это работает</a></li><li><a href="#где-применяется-шим-в-автомобиле">Где применяется ШИМ в автомобиле</a></li><li><a href="#преимущества-импульсного-управления-перед-аналоговым">Преимущества импульсного управления перед аналоговым</a></li><li><a href="#как-диагностировать-неисправности-шим-сигнала">Как диагностировать неисправности ШИМ-сигнала</a></li><li><a href="#типичные-проблемы-и-их-симптомы">Типичные проблемы и их симптомы</a></li><li><a href="#влияние-помех-и-наводок-на-сигнал">Влияние помех и наводок на сигнал</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Если вы хотя бы раз сталкивались с ремонтом современной машины, то наверняка слышали от диагноста загадочное слово «ШИМ». Многие водители пугаются этого термина, представляя себе сложнейшую математику и квантовую физику. Однако на самом деле <strong>широтно-импульсная модуляция</strong> — это удивительно простой и элегантный способ управления электроникой, который используется повсеместно: от регулировки яркости подсветки торпеды до управления форсунками двигателя.</p>
+
+<p>В этой статье мы разберем, как работает этот принцип, почему он заменил старые резисторы и как знание основ ШИМ может помочь вам избежать дорогостоящего ремонта. Понимание того, как <em>ECU</em> (электронный блок управления) общается с исполнительными механизмами, переводит вас из разряда простых водителей в статус разбирающихся автомобилистов.</p>
+
+<h2 id="что-такое-шим-и-как-это-работает">Что такое ШИМ и как это работает</h2>
+
+<p>Представьте себе обычный выключатель света, который может находиться только в двух положениях: включено или выключено. Если вы будете щелкать этим выключателем очень быстро, человеческий глаз не заметит мигания, а увидит лишь средний уровень яркости. Именно на этом принципе и построена <strong>широтно-импульсная модуляция</strong>.</p>
+
+<p>В отличие от плавного изменения напряжения, ШИМ подает на устройство полные 12 вольт (или 5 вольт), но делает это короткими импульсами. Ключевым параметром здесь является <strong>скважность</strong> или <em>duty cycle</em>. Если сигнал включен 50% времени и выключен остальные 50%, то устройство получит половину доступной мощности.</p>
+
+<p>Этот метод гораздо эффективнее, чем использование реостатов или резисторов, которые просто «сжигают» лишнюю энергию в виде тепла. В автомобильной электрике это критически важно для экономии топлива и снижения нагрузки на генератор.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> При диагностике ШИМ-сигналов обычным мультиметром в режиме измерения постоянного напряжения вы получите усредненное значение, которое может ввести в заблуждение. Для точной проверки необходима осциллограмма.</p>
+</blockquote>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Для быстрой проверки работы ШИМ-сигнала (например, на клапане холостого хода) можно использовать стрелочный тестер — стрелка будет дрожать или показывать среднее значение, в то время как цифровой может давать хаотичные скачки.</p></aside>
+
+<h2 id="где-применяется-шим-в-автомобиле">Где применяется ШИМ в автомобиле</h2>
+
+<p>Современный автомобиль буквально пронизан импульсными сигналами. Без <strong>PWM-сигналов</strong> (Pulse Width Modulation) невозможна работа ни одной современной системы комфорта или безопасности. Электроника управляет мощностью, меняя длительность импульса, а не силу тока.</p>
+
+<p>Чаще всего водители сталкиваются с проявлениями работы ШИМ в салоне. Регулировка яркости приборной панели, скорость вращения вентилятора печки и даже работа электродвигателей стеклоподъемников — все это управляется модуляцией. В двигателе ситуация еще серьезнее: топливные форсунки открываются на миллисекунды именно по этому принципу.</p>
+
+<ul>
+<li>🚗 <strong>Топливные форсунки:</strong> Точное дозирование бензина или дизеля в зависимости от нагрузки.</li>
+<li>❄️ <strong>Климат-контроль:</strong> Плавное изменение скорости вращения вентилятора без ступенчатых переключений.</li>
+<li>💡 <strong>Светотехника:</strong> Диммирование светодиодной подсветки салона и внешних фар (в некоторых системах).</li>
+<li>🔋 <strong>Зарядка аккумулятора:</strong> Умные генераторы меняют напряжение заряда в зависимости от режима работы двигателя.</li>
+</ul>
+
+<p>Особого внимания заслуживает система <em>VANOS</em> или фазовращатели, где электромагнитные клапаны получают импульсы высокой частоты для мгновенной реакции на изменение оборотов мотора.</p>
+
+<div class="pb-poll" id="poll-005b1065"><div class="pb-poll-question">📊 С какой проблемой ШИМ вы сталкивались чаще всего?</div><div class="pb-poll-option" data-poll="005b1065" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Мигает свет фар</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="005b1065" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Гудит печка</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="005b1065" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Плавают обороты</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="005b1065" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Не работал стеклоподъемник</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="преимущества-импульсного-управления-перед-аналоговым">Преимущества импульсного управления перед аналоговым</h2>
+
+<p>Почему инженеры автопрома массово перешли на <strong>импульсное управление</strong>? Ответ кроется в эффективности и надежности. Старые аналоговые системы требовали громоздких блоков сопротивления, которые сильно нагревались и часто выходили из строя.</p>
+
+<p>В случае с ШИМ транзистор, управляющий нагрузкой, работает в ключевом режиме: он либо полностью открыт (ток идет, сопротивления нет), либо полностью закрыт (тока нет). В обоих этих состояниях нагрев минимален. Это позволяет размещать управляющую электронику в компактных корпусах непосредственно рядом с исполнительным механизмом.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Аналоговое управление</th>
+<th>ШИМ (Импульсное)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>КПД системы</td>
+<td>Низкий (до 60-70%)</td>
+<td>Высокий (до 95-98%)</td>
+</tr>
+<tr>
+<td>Нагрев элементов</td>
+<td>Сильный, требуются радиаторы</td>
+<td>Минимальный</td>
+</tr>
+<tr>
+<td>Точность</td>
+<td>Зависит от напряжения в сети</td>
+<td>Высокая, не зависит от просадок</td>
+</tr>
+<tr>
+<td>Вес и габариты</td>
+<td>Большие</td>
+<td>Компактные</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Еще один важный аспект — быстродействие. <em>Форсунка</em> должна открываться и закрываться тысячи раз в минуту. Аналоговая система просто не успела бы реагировать с такой скоростью, в то время как цифровой ШИМ-сигнал обеспечивает мгновенный отклик.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Главное преимущество ШИМ в авто — высокий КПД и отсутствие потерь энергии на нагрев управляющих элементов, что критично для бортовой сети.</p></aside>
+
+<h2 id="как-диагностировать-неисправности-шим-сигнала">Как диагностировать неисправности ШИМ-сигнала</h2>
+
+<p>Диагностика систем, управляемых модуляцией, требует специфического подхода. Если вы подозреваете, что проблема кроется именно в управлении, визуального осмотра проводки будет недостаточно. Часто провода целы, но сигнал искажен или отсутствует.</p>
+
+<p>Первым шагом всегда должна быть <strong>компьютерная диагностика</strong>. Ошибки вроде «Обрыв цепи» или «Низкий уровень сигнала» могут указывать на проблемы с драйвером управления в блоке или с самим исполнительным механизмом. Однако «живой» сигнал лучше смотреть осциллографом.</p>
+
+<p>При проверке обратите внимание на форму импульса. Идеальная «меандр» (прямоугольный сигнал) может быть искажена помехами или плохим контактом массы. Если «вершина» импульса скошена или имеет выбросы, это признак проблем в цепи.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Никогда не «прозванивайте» цепь ШИМ-сигнала омметром под напряжением или при подключенном блоке управления — вы можете сжечь чувствительную входную электронику <em>ECU</em>.</p>
+</blockquote>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка цепи ШИМ</h4><label class="check-item"><input type="checkbox"><span>Визуальный осмотр фишки на окислы</span></label><label class="check-item"><input type="checkbox"><span>Проверка питания и массы исполнительного механизма</span></label><label class="check-item"><input type="checkbox"><span>Замер сопротивления нагрузки</span></label><label class="check-item"><input type="checkbox"><span>Проверка осциллограммы сигнала</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="типичные-проблемы-и-их-симптомы">Типичные проблемы и их симптомы</h2>
+
+<p>Неисправности в цепях широтно-импульсной модуляции проявляются по-разному, в зависимости от того, какой узел затронут. Чаще всего водители замечают некорректную работу оборудования: вентилятор дует только на полной мощности или не дует вовсе, фары моргают.</p>
+
+<p>Одной из распространенных проблем является выход из строя самого <strong>ключа управления</strong> (транзистора) внутри блока. Если транзистор «пробивает» в открытый, устройство работает на полную мощность постоянно. Если в закрытый — устройство не работает совсем.</p>
+
+<p>Также часто встречается ситуация, когда сам исполнительный механизм (например, моторчик печки) начинает потреблять слишком большой ток из-за износа щеток. Блок управления, видя перегрузку, может уходить в защиту и отключать ШИМ-сигнал.</p>
+
+<ul>
+<li>🔊 <strong>Свист или писк:</strong> Часто издают дроссельные заслонки или катушки зажигания при определенной частоте ШИМ.</li>
+<li>📉 <strong>Плавающие обороты:</strong> Если клапан холостого хода получает неверный сигнал.</li>
+<li>🌫️ <strong>Мерцание света:</strong> Признак плохого контакта или умирающего драйвера в блоке комфорта.</li>
+</ul>
+
+<details class="pb-accordion"><summary>Почему гудят форсунки?</summary><div class="pb-accordion-body"><p>Форсунки издают характерный стрекочущий звук именно из-за высокой частоты открытия и закрытия иглы под действием ШИМ-сигнала. Это нормальное явление, свидетельствующее об исправности электромагнита.</p></div></details>
+
+<h2 id="влияние-помех-и-наводок-на-сигнал">Влияние помех и наводок на сигнал</h2>
+
+<p>Автомобиль — это среда с огромным количеством электромагнитных помех. Генератор, система зажигания, мощные потребители — все это создает шум, который может накладываться на полезный <strong>ШИМ-сигнал</strong>. Для защиты используются экранированные провода и фильтры.</p>
+
+<p>Если экранирование нарушено или проводка проложена рядом с высоковольтными линиями (например, рядом с катушками зажигания), на осциллограмме вы увидите «шумную» картину. Электронный блок может воспринять эти скачки как ложные команды, что приведет к хаотичной работе узла.</p>
+
+<p>Особое внимание стоит уделить «массе». Плохой контакт минусового провода создает паразитное сопротивление, которое искажает форму импульса. В результате, даже если блок управления посылает правильный сигнал, до исполнительного механизма доходит уже «каша».</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> При установке дополнительного оборудования (свет, музыка) никогда не врезайтесь в штатные цепи ШИМ-сигналов. Это гарантированно приведет к ошибкам в работе штатной электроники.</p>
+</blockquote>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Если после установки новой мощной акустики у вас начал глючить климат-контроль, проверьте, не проложены ли новые провода параллельно штатной проводке управления вентилятором.</p></aside>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Можно ли проверить ШИМ обычным мультиметром?</summary>
+<p>Обычным мультиметром в режиме вольтметра вы увидите лишь среднее напряжение. Например, при 50% заполнении на 12-вольтовой системе прибор покажет около 6 вольт. Это не даст полной картины о форме сигнала и наличии помех, но поможет понять, приходит ли сигнал вообще.</p>
+</details>
+
+<details>
+<summary>Почему вентилятор печки работает только на максимальной скорости?</summary>
+<p>Чаще всего это признак неисправности резистора печки (если он есть) или, в случае с электронным управлением, пробоя управляющего транзистора в положении «всегда открыт». Также возможно заклинивание самого мотора в определенном положении.</p>
+</details>
+
+<details>
+<summary>Опасно ли для электроники наличие ШИМ-сигнала?</summary>
+<p>Нет, это штатный режим работы. Однако, если вы подключаете сторонние устройства (например, светодиодные лампы вместо галогенок), они могут некорректно работать с ШИМ (мерцать) или требовать установки специальных обманок-эмуляторов.</p>
+</details>
+
+<details>
+<summary>Что такое Duty Cycle в характеристиках прибора?</summary>
+<p><em>Duty Cycle</em> (Дьюти Цикл) — это коэффициент заполнения, выраженный в процентах. Он показывает, какую часть периода сигнал находится в активном состоянии. 10% — еле заметное свечение, 90% — почти полная мощность.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/k/ka/kakoj-avtomat-stavit-na-provod-6-kvadrata-mednyj.html" class="pb-related-card">
+                <span class="pb-related-title">Автомат на 6 мм² медный кабель: какой ставить по ПУЭ и ГОСТ</span>
+                <span class="pb-related-desc">Разбираемся, какой автоматический выключатель выбрать для медного провода 6 мм²: расчет по току, таб</span>
+            </a><a href="/articles/n/na/naklejki-na-elektroshchitok-raspechatat-besplatno.html" class="pb-related-card">
+                <span class="pb-related-title">Наклейки на электрощиток распечатать бесплатно: шаблоны и ГОСТ</span>
+                <span class="pb-related-desc">Наклейки на электрощиток распечатать бесплатно: шаблоны по ГОСТ, типы бумаги и ламинации для маркиро</span>
+            </a><a href="/articles/i/iz/iz-za-chego-mogut-khripet-dinamiki-v-mashine.html" class="pb-related-card">
+                <span class="pb-related-title">Почему хрипят динамики в машине: причины и ремонт</span>
+                <span class="pb-related-desc">Разбираем, из-за чего хрипят динамики в машине. Диагностика, поиск неисправностей проводки, магнитол</span>
+            </a><a href="/articles/r/ra/razryazhaetsya-akkumulyator-na-avtomobile-prichiny-za-2-dnya.html" class="pb-related-card">
+                <span class="pb-related-title">Разряжается аккумулятор на автомобиле за 2 дня: причины и решение</span>
+                <span class="pb-related-desc">Анализ причин разряда АКБ за 48 часов. Диагностика утечек тока, проверка генератора и поиск скрытых </span>
+            </a><a href="/articles/c/ch/chto-otvechaet-za-iskru-v-avtomobile.html" class="pb-related-card">
+                <span class="pb-related-title">Что отвечает за искру в автомобиле: устройство и диагностика</span>
+                <span class="pb-related-desc">Подробный разбор системы зажигания: от катушки до свечей. Узнайте, что формирует искру, как проверит</span>
+            </a><a href="/articles/s/sk/skolko-vatt-vydaet-prikurivatel-avtomobilya.html" class="pb-related-card">
+                <span class="pb-related-title">Сколько ватт выдает прикуриватель автомобиля: мощность и ограничения</span>
+                <span class="pb-related-desc">Узнайте реальную мощность прикуривателя в машине (12В/24В), как проверить силу тока и почему нельзя </span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

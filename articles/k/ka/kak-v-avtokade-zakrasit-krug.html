@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как закрасить круг в Автокаде: 5 способов + инструкции — Авто Факт</title>
+    <meta name="description" content="Пошаговое руководство по закрашиванию круга в AutoCAD: от базовых команд до продвинутых техник для чертежей. Разбираем ошибки и нюансы.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ka/kak-v-avtokade-zakrasit-krug.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как закрасить круг в Автокаде: 5 способов + инструкции">
+    <meta property="og:description" content="Пошаговое руководство по закрашиванию круга в AutoCAD: от базовых команд до продвинутых техник для чертежей. Разбираем ошибки и нюансы.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как закрасить круг в Автокаде: 5 способов + инструкции</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#1-базовый-метод-команда-hatch-штриховка">1. Базовый метод: команда HATCH (Штриховка)</a></li><li><a href="#2-закрашивание-через-свойства-объекта-быстрый-способ">2. Закрашивание через свойства объекта (быстрый способ)</a></li><li><a href="#3-создание-региона-region-для-сложных-заливок">3. Создание региона (REGION) для сложных заливок</a></li><li><a href="#4-использование-слоёв-для-управления-заливкой">4. Использование слоёв для управления заливкой</a></li><li><a href="#5-продвинутые-техники-градиент-и-пользовательские-узоры">5. Продвинутые техники: градиент и пользовательские узоры</a></li><li><a href="#типичные-ошибки-и-как-их-избежать">Типичные ошибки и как их избежать</a></li><li><a href="#faq-ответы-на-частые-вопросы">FAQ: Ответы на частые вопросы</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/s/sa/samye-luchshie-igry-na-pk-pro-mashiny.html">Лучшие игры про машины на ПК: топ симуляторов 2026</a></li><li><a href="/articles/r/ra/radio-fm-893-onlajn-slushat-besplatno.html">FM 89.3 онлайн бесплатно — как слушать радио в машине и дома</a></li><li><a href="/articles/k/kr/kreplenie-dlya-ajfona-v-mashinu.html">Крепление для iPhone в машину 2026: виды, установка, ТОП-5 моделей</a></li><li><a href="/articles/k/kv/kvartsevyj-mekhanizm-eto-na-batarejkakh-ili-net.html">Кварцевый механизм: это на батарейках или нет? Разбор типов</a></li><li><a href="/articles/k/ka/kak-vybrat-rajon-v-yandeks-pro-kurer.html">Как выбрать район в Яндекс Про: стратегия заработка</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как закрасить круг в Автокаде: от простой заливки до профессиональных приёмов</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#1-базовый-метод-команда-hatch-штриховка">1. Базовый метод: команда HATCH (Штриховка)</a></li><li><a href="#2-закрашивание-через-свойства-объекта-быстрый-способ">2. Закрашивание через свойства объекта (быстрый способ)</a></li><li><a href="#3-создание-региона-region-для-сложных-заливок">3. Создание региона (REGION) для сложных заливок</a></li><li><a href="#4-использование-слоёв-для-управления-заливкой">4. Использование слоёв для управления заливкой</a></li><li><a href="#5-продвинутые-техники-градиент-и-пользовательские-узоры">5. Продвинутые техники: градиент и пользовательские узоры</a></li><li><a href="#типичные-ошибки-и-как-их-избежать">Типичные ошибки и как их избежать</a></li><li><a href="#faq-ответы-на-частые-вопросы">FAQ: Ответы на частые вопросы</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Закрашивание геометрических фигур в <em>AutoCAD</em> — одна из тех операций, которые кажутся простыми только на первый взгляд. Новички часто сталкиваются с проблемами: заливка не применяется, контур "не закрыт", или цвет отображается некорректно. Особенно актуальна эта тема для <strong>инженерных чертежей</strong>, где закрашенные круги используются для обозначения отверстий, сечений или декоративных элементов.</p>
+
+<p>В этой статье мы разберём <strong>5 рабочих способов</strong> закрасить круг в Автокаде — от элементарной команды <code>HATCH</code> до тонкостей работы со слоями и стилями. Вы узнаете, как избежать типичных ошибок (например, когда программа пишет <em>"Не удалось определить границу"</em>), какие настройки влияют на результат, и как автоматизировать процесс для повторяющихся элементов. А в конце — FAQ с ответами на частые вопросы от пользователей.</p>
+
+<p>Если вы работаете с <em>AutoCAD 2020</em> или новее, часть интерфейса может отличаться, но принципы остаются теми же. Для старых версий (например, <em>AutoCAD 2013</em>) некоторые команды вызываются иначе — об этом мы тоже упомянем.
+
+<div class="pb-poll" id="poll-3d862103"><div class="pb-poll-question">📊 Какую версию AutoCAD вы используете?</div><div class="pb-poll-option" data-poll="3d862103" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">2026/2026</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="3d862103" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">2020-2023</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="3d862103" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">2015-2019</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="3d862103" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Старше 2015</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="3d862103" data-idx="4" onclick="pbPollVote(this)"><span class="pb-poll-label">Не знаю</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="1-базовый-метод-команда-hatch-штриховка">1. Базовый метод: команда HATCH (Штриховка)</h2>
+
+<p>Самый универсальный способ закрасить круг — использовать команду <strong>штриховки</strong> (<code>HATCH</code>). Она подходит для любых замкнутых контуров, включая круги, эллипсы и полилинии. Вот как это сделать правильно:
+
+<p>1. Нарисуйте круг с помощью команды <code>CIRCLE</code> (или выберите существующий).
+<p>2. Введите в командной строке <code>HATCH</code> (или найдите её на панели <code>Главная → Штриховка</code>).
+<p>3. В открывшемся окне выберите тип заливки:
+<p>- <em>"Ассоциативная"</em> — заливка будет обновляться при изменении контура (рекомендуется).</p>
+<p>- <em>"Неассоциативная"</em> — статичная заливка.</p>
+<p>4. Нажмите на круг — программа должна автоматически определить его как замкнутую область. Если этого не произошло, проверьте, <strong>не разорван ли контур</strong> (об этом ниже).
+
+<p>Для быстрой заливки сплошным цветом:
+<ol>
+   <li>Выберите тип штриховки <em>"Solid"</em> (Сплошная).</li>
+   <li>Укажите цвет в выпадающем меню (по умолчанию — чёрный).</li>
+   <li>Нажмите <code>Enter</code> для подтверждения.</li>
+</ol>
+
+<p>⚠️ <strong>Внимание:</strong> Если круг нарисован как <strong>полилиния</strong> с разрывом (например, после команды <code>EXPLODE</code>), штриховка не применится. Используйте команду <code>PEDIT</code> → <em>"Замкнуть"</em> для восстановления контура.
+
+
+<p>Круг нарисован командой CIRCLE, а не как полилиния с разрывом|</p>
+<p>Контур не пересекается с другими объектами|</p>
+<p>Слой круга не заблокирован и не отключён|</p>
+<p>Тип штриховки выбран как "Ассоциативная" (для динамического обновления)--></p>
+
+<h2 id="2-закрашивание-через-свойства-объекта-быстрый-способ">2. Закрашивание через свойства объекта (быстрый способ)</h2>
+
+<p>Если вам нужно просто поменять цвет заполнения круга (без создания штриховки), можно воспользоваться <strong>панелью свойств</strong>:
+<p>1. Выделите круг левой кнопкой мыши.
+<p>2. Нажмите правую кнопку и выберите <em>"Свойства"</em> (или введите команду <code>PROPERTIES</code>).
+<p>3. В открывшемся окне найдите параметр <em>"Цвет заполнения"</em> (Fill Color).
+<p>4. Выберите нужный цвет из палитры.
+
+<p>Этот метод работает только для <strong>замкнутых полилиний</strong> или регионов. Если ваш круг — обычная линия (<code>CIRCLE</code>), сначала преобразуйте его в полилинию:
+<pre><code>PEDIT → Объект → Выбрать круг → Ввести "Y" (Да) для преобразования</code></pre>
+
+<p>⚠️ <strong>Внимание:</strong> Цвет заполнения, установленный через свойства, <strong>не будет виден в пространстве модели</strong>, если не включён режим отображения <em>"Реалистичный"</em> или <em>"Концептуальный"</em>. Переключите вид через вкладку <em>"Вид"</em> → <em>"Визуальные стили"</em>.
+
+<h2 id="3-создание-региона-region-для-сложных-заливок">3. Создание региона (REGION) для сложных заливок</h2>
+
+<p>Если круг является частью сложного контура (например, с вырезами или пересечениями), обычная штриховка может не сработать. В таких случаях поможет команда <code>REGION</code>:
+<p>1. Убедитесь, что все элементы контура (круг, линии, дуги) <strong>пересекаются или соприкасаются</strong>.
+<p>2. Введите команду <code>REGION</code> и выделите все объекты, формирующие замкнутую область.
+<p>3. AutoCAD преобразует их в <strong>единый регион</strong>, который можно закрасить командой <code>HATCH</code>.
+
+<p>Этот метод незаменим для:
+<ul>
+   <li>🔹 Кругов с вырезанными сегментами (например, шайбы с пазами).</li>
+   <li>🔹 Пересекающихся фигур, где нужно закрасить только часть площади.</li>
+   <li>🔹 3D-моделей, где заливка применяется к граням.</li>
+</ul>
+
+<p>⚠️ <strong>Внимание:</strong> Команда <code>REGION</code> не работает с <strong>сплайнами</strong> и <strong>эллиптическими дугами</strong>. Преобразуйте их в полилинии командой <code>PEDIT</code> → <em>"Сплайн в полилинию"</em>.
+
+<details class="pb-accordion"><summary>Что делать, если REGION не создаётся?</summary><div class="pb-accordion-body"><p>
+<p>Если после ввода команды <code>REGION</code> AutoCAD пишет <em>"Не удалось создать регион"</em>, проверьте:</p>
+<p>1. Все объекты должны лежать в <strong>одной плоскости</strong> (без смещения по Z-координате).</p>
+<p>2. Между элементами не должно быть <strong>зазоров</strong> — используйте команду <code>EXTEND</code> для удлинения линий до пересечения.</p>
+<p>3. Удалите дублирующиеся или наложенные объекты командой <code>OVERKILL</code>.</p></div></details></p>
+
+<h2 id="4-использование-слоёв-для-управления-заливкой">4. Использование слоёв для управления заливкой</h2>
+
+<p>Профессиональные чертежи часто требуют гибкого управления видимостью заливок. Для этого удобно использовать <strong>слои</strong>:
+<p>1. Создайте новый слой (команда <code>LAYER</code>) с названием, например, <em>"Заливки"</em>.
+<p>2. Назначьте ему яркий цвет (например, красный или синий) для лёгкой идентификации.
+<p>3. Перенесите все штриховки на этот слой:
+<p>- Выделите заливку → правая кнопка → <em>"Слой"</em> → выберите <em>"Заливки"</em>.</p>
+<p>4. Теперь вы можете <strong>отключать/включать</strong> заливки одним кликом на панели слоёв.
+
+<p>Преимущества этого метода:
+<ul>
+   <li>🔹 Быстрое скрытие заливок при печати (например, для черновых версий чертежа).</li>
+   <li>🔹 Возможность назначить <strong>разные типы линий</strong> для контуров и заливок.</li>
+   <li>🔹 Удобство работы с <strong>внешними ссылками (XREF)</strong>, где заливки могут конфликтовать.</li>
+</ul>
+
+<p><mark>Критичный нюанс: если слой заливки заблокирован, команда <code>HATCH</code> не будет работать — AutoCAD выдаст ошибку <em>"Объект на заблокированном слое"</em>. Всегда проверяйте статус слоя перед редактированием.</mark>
+
+<div class="pb-table-wrap"><table>
+  <thead>
+    <tr>
+      <th>Проблема</th>
+      <th>Возможная причина</th>
+      <th>Решение</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Заливка не применяется</td>
+      <td>Контур разорван</td>
+      <td>Используйте <code>PEDIT → Замкнуть</code></td>
+    </tr>
+    <tr>
+      <td>Цвет заливки не отображается</td>
+      <td>Неправильный визуальный стиль</td>
+      <td>Переключитесь на <em>"Реалистичный"</em> или <em>"Концептуальный"</em></td>
+    </tr>
+    <tr>
+      <td>Штриховка "улетает" за пределы круга</td>
+      <td>Неверная граница ассоциативности</td>
+      <td>Отключите опцию <em>"Ассоциативная"</em> и создайте заливку заново</td>
+    </tr>
+    <tr>
+      <td>Команда REGION не работает</td>
+      <td>Объекты не в одной плоскости</td>
+      <td>Проверьте координату Z (<code>FLATTEN</code>)</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<h2 id="5-продвинутые-техники-градиент-и-пользовательские-узоры">5. Продвинутые техники: градиент и пользовательские узоры</h2>
+
+<p>Для презентационных чертежей или 3D-моделей стандартная сплошная заливка может быть недостаточной. В AutoCAD есть инструменты для создания <strong>градиентных заливок</strong> и <strong>кастомных узоров</strong>:
+<p>1. <strong>Градиент</strong>:
+<p>- В команде <code>HATCH</code> выберите тип <em>"Градиент"</em> (Gradient).</p>
+<p>- Настройте цвета для начала и конца (например, от синего к белому).</p>
+<p>- Задайте угол наклона градиента (по умолчанию — 0°).</p>
+
+<p>2. <strong>Пользовательский узор</strong>:
+<p>- В окне штриховки нажмите <em>"Добавить: определить новый узор"</em>.</p>
+<p>- Загрузите файл с расширением <code>.pat</code> (можно создать в текстовом редакторе по шаблону AutoCAD).</p>
+<p>- Примените узор к кругу.</p>
+
+<p>Эти методы полезны для:
+<ul>
+   <li>🔹 Архитектурных чертежей (например, заливка пола с текстурой дерева).</li>
+   <li>🔹 3D-визуализаций, где нужна имитация материалов.</li>
+   <li>🔹 Схем с цветовой кодировкой (например, температурные карты).</li>
+</ul>
+
+<p>⚠️ <strong>Внимание:</strong> Градиентные заливки <strong>значительно увеличивают размер файла</strong> DWG. Для крупных проектов используйте их локально или растрируйте перед сохранением.
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Если вам нужно применить одинаковую заливку к десяткам кругов, создайте <strong>блок</strong> с уже закрашенным кругом. Затем вставляйте его через команду <code>INSERT</code> — это сэкономит время и гарантирует единообразие.</p></aside>
+
+<h2 id="типичные-ошибки-и-как-их-избежать">Типичные ошибки и как их избежать</h2>
+
+<p>Даже опытные пользователи AutoCAD иногда сталкиваются с проблемами при заливке кругов. Вот самые распространённые ошибки и их решения:
+
+<p>1. <strong>"Не удалось определить границу"</strong>:
+<p>- <em>Причина</em>: Контур круга не является замкнутым (например, после команды <code>EXPLODE</code>).</p>
+<p>- <em>Решение</em>: Используйте <code>PEDIT → Замкнуть</code> или перерисуйте круг.</p>
+
+<p>2. Заливка отображается <strong>только в пространстве листа</strong>:
+<p>- <em>Причина</em>: Включён режим <em>"Показать штриховку только на листе"</em> (в свойствах штриховки).</p>
+<p>- <em>Решение</em>: Отключите эту опцию или проверьте настройки <code>HPBOUND</code>.</p>
+
+<p>3. Цвет заливки <strong>изменяется при печати</strong>:
+<p>- <em>Причина</em>: В настройках плоттера (plotter) установлен режим <em>"Чёрно-белый"</em> или <em>"Монохромный"</em>.</p>
+<p>- <em>Решение</em>: Откройте диалог печати (<code>PLOT</code>) и выберите <em>"Как на экране"</em> в настройках цвета.</p>
+
+<p>4. Штриховка <strong>"исчезает"</strong> при масштабировании:
+<p>- <em>Причина</em>: Слишком мелкий масштаб узора (параметр <em>"Scale"</em> в свойствах штриховки).</p>
+<p>- <em>Решение</em>: Увеличьте масштаб (например, с 1.0 до 10.0).</p>
+
+<p>Если проблема сохраняется, проверьте <strong>системную переменную</strong> <code>FILLMODE</code>. Она должна быть равна <strong>1</strong> (включено заполнение). Введите в командной строке:
+<pre><code>FILLMODE → 1 → Enter</code></pre>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Перед отправкой чертежа заказчику всегда проверяйте заливки в режиме предварительного просмотра печати (<code>PLOT → Предварительный просмотр</code>). Это поможет избежать сюрпризов с цветами или пропавшими штриховками.</p></aside>
+
+<h2 id="faq-ответы-на-частые-вопросы">FAQ: Ответы на частые вопросы</h2>
+
+<details>
+  <summary>Почему закрашенный круг становится прозрачным при экспорте в PDF?</summary>
+  <p>Это связано с настройками экспорта. В диалоге <code>EXPORTPDF</code> перейдите на вкладку <em>"Дополнительные параметры"</em> и убедитесь, что опция <em>"Векторизовать штриховку"</em> включена. Также проверьте, не установлен ли в свойствах штриховки параметр <em>"Прозрачность"</em> (должен быть 0).</p>
+</details>
+
+<details>
+  <summary>Можно ли закрасить только часть круга (например, полукруг)?</summary>
+  <p>Да, для этого:</p>
+  <ol>
+     <li>Нарисуйте полный круг и разделите его на части командой <code>TRIM</code> (создав вспомогательную линию по диаметру).</li>
+     <li>Выделите нужный сегмент и преобразуйте в полилинию (<code>PEDIT</code>).</li>
+     <li>Примените штриховку к полученному контуру.</li>
+  </ol>
+  <p>Для точного разделения используйте команду <code>DIVIDE</code> (разбить на равные части).</p>
+</details>
+
+<details>
+  <summary>Как сделать так, чтобы заливка обновлялась при изменении размера круга?</summary>
+  <p>Используйте <strong>ассоциативную штриховку</strong> (опция включена по умолчанию в команде <code>HATCH</code>). Если круг изменит радиус, заливка автоматически подстроится под новые границы. Для проверки: выделите штриховку → в свойствах должна быть галочка <em>"Ассоциативная"</em>.</p>
+</details>
+
+<details>
+  <summary>В моём AutoCAD нет команды HATCH. Что делать?</summary>
+  <p>Вероятно, у вас <strong>урезанная версия</strong> (например, <em>AutoCAD LT</em>), где некоторые функции ограничены. Альтернативные способы:</p>
+  <ul>
+     <li>Используйте команду <code>BHATCH</code> (упрощённая версия штриховки).</li>
+     <li>Создайте круг как <strong>полилинию с шириной</strong> (<code>PLINE</code> → задайте ширину равной диаметру).</li>
+     <li>Экспортируйте чертеж в <em>AutoCAD полной версии</em> для добавления заливки.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>Как закрасить круг в 3D-модели?</summary>
+  <p>В 3D-заливка работает иначе:</p>
+  <ol>
+     <li>Создайте круг как <strong>плоскую грань</strong> (например, выдавливанием <code>EXTRUDE</code> с высотой 0).</li>
+     <li>Перейдите на вкладку <em>"Визуализация"</em> → <em>"Материалы"</em>.</li>
+     <li>Назначьте материалу цвет и примените его к грани.</li>
+  </ol>
+  <p>Для реалистичного рендера используйте текстуры (вкладка <em>"Визуализация"</em> → <em>"Назначить текстуру"</em>).</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/s/sa/samye-luchshie-igry-na-pk-pro-mashiny.html" class="pb-related-card">
+                <span class="pb-related-title">Лучшие игры про машины на ПК: топ симуляторов 2026</span>
+                <span class="pb-related-desc">Обзор топовых автосимуляторов и аркад. Реалистичная физика, тюнинг и трассы. Узнайте, во что поиграт</span>
+            </a><a href="/articles/r/ra/radio-fm-893-onlajn-slushat-besplatno.html" class="pb-related-card">
+                <span class="pb-related-title">FM 89.3 онлайн бесплатно — как слушать радио в машине и дома</span>
+                <span class="pb-related-desc">Инструкция по прослушиванию радио FM 89.3 онлайн бесплатно: лучшие приложения, настройки авто-магнит</span>
+            </a><a href="/articles/k/kr/kreplenie-dlya-ajfona-v-mashinu.html" class="pb-related-card">
+                <span class="pb-related-title">Крепление для iPhone в машину 2026: виды, установка, ТОП-5 моделей</span>
+                <span class="pb-related-desc">Как выбрать и установить держатель для iPhone в авто? Сравнение магнитных, вакуумных и клипсовых кре</span>
+            </a><a href="/articles/k/kv/kvartsevyj-mekhanizm-eto-na-batarejkakh-ili-net.html" class="pb-related-card">
+                <span class="pb-related-title">Кварцевый механизм: это на батарейках или нет? Разбор типов</span>
+                <span class="pb-related-desc">Узнайте, есть ли батарейка в кварцевых часах, как она влияет на точность хода и чем кварц отличается</span>
+            </a><a href="/articles/k/ka/kak-vybrat-rajon-v-yandeks-pro-kurer.html" class="pb-related-card">
+                <span class="pb-related-title">Как выбрать район в Яндекс Про: стратегия заработка</span>
+                <span class="pb-related-desc">Узнайте, как правильно выбрать район в Яндекс Про для максимальной прибыли. Анализ тарифов, спроса и</span>
+            </a><a href="/articles/s/se/sela-batarejka-v-transpondere-avtodor-chto-delat.html" class="pb-related-card">
+                <span class="pb-related-title">Села батарейка в транспондере Автодор: что делать в 2026 году</span>
+                <span class="pb-related-desc">Пошаговая инструкция: как проверить, заменить или временно обойти неработающий транспондер Автодор. </span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

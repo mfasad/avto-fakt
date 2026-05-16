@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>VirtualBox: установка и настройка виртуальной машины с нуля — Авто Факт</title>
+    <meta name="description" content="Пошаговое руководство по установке VirtualBox на Windows/Linux, оптимальные настройки для виртуальных машин и решение типичных ошибок. Инструкции для новичков и опытных пользователей.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/v/vi/virtualbox-ustanovka-i-nastrojka.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="VirtualBox: установка и настройка виртуальной машины с нуля">
+    <meta property="og:description" content="Пошаговое руководство по установке VirtualBox на Windows/Linux, оптимальные настройки для виртуальных машин и решение типичных ошибок. Инструкции для новичков и опытных пользователей.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">VirtualBox: установка и настройка виртуальной машины с нуля</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#подготовка-системы-к-установке-virtualbox">Подготовка системы к установке VirtualBox</a></li><li><a href="#установка-virtualbox-на-windows-и-linux">Установка VirtualBox на Windows и Linux</a></li><li><a href="#установка-virtualbox-extension-pack">Установка VirtualBox Extension Pack</a></li><li><a href="#создание-и-базовая-настройка-виртуальной-машины">Создание и базовая настройка виртуальной машины</a></li><li><a href="#оптимизация-производительности-виртуальной-машины">Оптимизация производительности виртуальной машины</a></li><li><a href="#установка-гостевых-дополнений-guest-additions">Установка гостевых дополнений (Guest Additions)</a></li><li><a href="#решение-типичных-проблем-с-virtualbox">Решение типичных проблем с VirtualBox</a></li><li><a href="#или">или</a></li><li><a href="#если-ошибка-остаётся-установите-зависимости">Если ошибка остаётся, установите зависимости:</a></li><li><a href="#faq-частые-вопросы-по-virtualbox">FAQ: Частые вопросы по VirtualBox</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/7/70/700-km-v-chas-v-metry-v-sekundu.html">700 км/ч в м/с: как перевести скорость и где это пригодится</a></li><li><a href="/articles/f/fo/fonit-kolonka-na-kompyutere-kak-ispravit.html">Фонит колонка на ПК: причины гула и способы устранения</a></li><li><a href="/articles/g/gd/gde-razmestit-antennu-gps-v-avtomobile.html">Где разместить антенну GPS в автомобиле: схемы и ошибки</a></li><li><a href="/articles/k/ka/kak-chistit-kofemashiny-nivona.html">Как чистить кофемашины Nivona: пошаговая инструкция</a></li><li><a href="/articles/m/me/mekhatronnye-sistemy-eto-prostymi-slovami.html">Мехатронные системы это простыми словами: устройство и примеры</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>VirtualBox: полная установка и настройка виртуальной машины</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#подготовка-системы-к-установке-virtualbox">Подготовка системы к установке VirtualBox</a></li><li><a href="#установка-virtualbox-на-windows-и-linux">Установка VirtualBox на Windows и Linux</a></li><li><a href="#установка-virtualbox-extension-pack">Установка VirtualBox Extension Pack</a></li><li><a href="#создание-и-базовая-настройка-виртуальной-машины">Создание и базовая настройка виртуальной машины</a></li><li><a href="#оптимизация-производительности-виртуальной-машины">Оптимизация производительности виртуальной машины</a></li><li><a href="#установка-гостевых-дополнений-guest-additions">Установка гостевых дополнений (Guest Additions)</a></li><li><a href="#решение-типичных-проблем-с-virtualbox">Решение типичных проблем с VirtualBox</a></li><li><a href="#или">или</a></li><li><a href="#если-ошибка-остаётся-установите-зависимости">Если ошибка остаётся, установите зависимости:</a></li><li><a href="#faq-частые-вопросы-по-virtualbox">FAQ: Частые вопросы по VirtualBox</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body"><p>Виртуализация стала неотъемлемой частью работы с компьютерами — будь то тестирование нового ПО, запуск устаревших программ или создание изолированных сред для разработки. <strong>VirtualBox от Oracle</strong> остаётся одним из самых популярных бесплатных решений для создания виртуальных машин (ВМ) на <em>Windows</em>, <em>Linux</em> и <em>macOS</em>. В отличие от коммерческих аналогов вроде <em>VMware Workstation</em>, этот инструмент не требует лицензионных отчислений и поддерживает большинство гостевых ОС — от <em>Windows 11</em> до <em>Ubuntu Server</em>.</p>
+
+<p>Однако даже с интуитивно понятным интерфейсом у пользователей часто возникают вопросы: как правильно установить <strong>VirtualBox</strong>, какие настройки выбрать для максимальной производительности, и почему ВМ тормозит или не запускается. В этой статье мы разберём процесс установки по шагам, оптимизируем параметры виртуальной машины под разные задачи и рассмотрим типичные ошибки — от конфликтов с <em>Hyper-V</em> до проблем с драйверами гостевой ОС. Особое внимание уделим <mark>настройкам виртуализации в BIOS/UEFI</mark>, без которых VirtualBox может работать некорректно или вообще отказаться запускать ВМ.</p>
+
+<h2 id="подготовка-системы-к-установке-virtualbox">Подготовка системы к установке VirtualBox</h2>
+
+<p>Перед установкой VirtualBox необходимо убедиться, что ваше оборудование и операционная система соответствуют минимальным требованиям. Основные критерии:</p>
+<ul>
+  <li>🖥️ <strong>Процессор</strong> с поддержкой аппаратной виртуализации (<code>Intel VT-x</code> или <code>AMD-V</code>). Без неё производительность ВМ будет крайне низкой.</li>
+  <li>🖲️ <strong>Оперативная память</strong>: минимум 4 ГБ (рекомендуется 8+ ГБ для одновременной работы хост-системы и ВМ).</li>
+  <li>💾 <strong>Свободное место на диске</strong>: не менее 20 ГБ для установки гостевой ОС и её данных.</li>
+  <li>🔄 <strong>Отключённые конфликтующие технологии</strong>: <em>Hyper-V</em>, <em>Windows Sandbox</em> или <em>WSL2</em> (для Windows).</li>
+</ul>
+
+<p>Чтобы проверить поддержку виртуализации на уровне процессора:</p>
+<ol>
+  <li>На <em>Windows</em>: откройте <code>Диспетчер задач</code> → вкладка <code>Производительность</code> → <code>ЦП</code>. В разделе <code>Виртуализация</code> должно быть указано <code>Включено</code>.</li>
+  <li>На <em>Linux</em>: выполните команду в терминале:
+    <pre><code>egrep -c '(vmx|svm)' /proc/cpuinfo</code></pre>
+<p>Результат <code>0</code> означает отсутствие поддержки.</li></p>
+</ol>
+
+<blockquote>⚠️ <strong>Внимание</strong>: На некоторых ноутбуках (особенно с процессорами <em>Intel 11-го поколения и новее</em>) виртуализация может быть отключена в BIOS по умолчанию. Если VirtualBox выдаёт ошибку <code>VT-x is not available</code>, зайдите в BIOS (клавиша <code>F2</code>/<code>Del</code> при загрузке) и включите параметры <code>Intel Virtualization Technology</code> или <code>SVM Mode</code>.</blockquote>
+
+<p>Также стоит удалить старые версии VirtualBox и связанных компонентов (например, <em>Oracle VM VirtualBox Extension Pack</em>), чтобы избежать конфликтов. Для этого:</p>
+<ul>
+  <li>🗑️ В <em>Windows</em>: используйте <code>Панель управления → Программы и компоненты</code>.</li>
+  <li>🧹 В <em>Linux</em>: выполните:
+    <pre><code>sudo apt-get remove --purge virtualbox-*  # Для Debian/Ubuntu
+<p>sudo dnf remove VirtualBox-*            # Для Fedora</code></pre></p>
+  </li>
+</ul>
+
+<div class="pb-poll" id="poll-834f6226"><div class="pb-poll-question">📊 Для каких задач вы используете VirtualBox?</div><div class="pb-poll-option" data-poll="834f6226" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Тестирование ПО</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="834f6226" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Разработка/программирование</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="834f6226" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Запуск устаревших программ</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="834f6226" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Обучение администрированию</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="834f6226" data-idx="4" onclick="pbPollVote(this)"><span class="pb-poll-label">Другое</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="установка-virtualbox-на-windows-и-linux">Установка VirtualBox на Windows и Linux</h2>
+
+<p>Процесс установки VirtualBox отличается в зависимости от операционной системы хоста. Ниже — пошаговые инструкции для <em>Windows 10/11</em> и дистрибутивов <em>Linux</em> на базе <em>Debian</em>/<em>Ubuntu</em> и <em>RHEL</em>/<em>Fedora</em>.</p>
+
+<h3>Установка на Windows</h3>
+<p>1. Скачайте последнюю версию VirtualBox с <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener noreferrer">официального сайта</a> (выбирайте вариант <code>Windows hosts</code>).</p>
+<p>2. Запустите установщик и следуйте мастеру. На этапе выбора компонентов оставьте все галочки, включая:</p>
+<ul>
+  <li>🔧 <code>VirtualBox USB Support</code> (для подключения USB-устройств к ВМ).</li>
+  <li>🌐 <code>VirtualBox Networking</code> (для сетевых адаптеров).</li>
+  <li>💾 <code>VirtualBox Python Support</code> (для автоматизации через скрипты).</li>
+</ul>
+<p>3. После установки система запросит разрешение на установку сетевых драйверов — подтвердите действие.</p>
+
+<h3>Установка на Linux (Debian/Ubuntu)</h3>
+<p>Для установки через терминал:</p>
+<ol>
+  <li>Добавьте официальный репозиторий Oracle:
+    <pre><code>sudo sh -c 'echo "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" > /etc/apt/sources.list.d/virtualbox.list'</code></pre>
+  </li>
+  <li>Импортируйте ключ подписи:
+    <pre><code>wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+<p>wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -</code></pre></p>
+  </li>
+  <li>Обновите списки пакетов и установите VirtualBox:
+    <pre><code>sudo apt update
+<p>sudo apt install virtualbox-7.0</code></pre></p>
+<p>(замените <code>7.0</code> на актуальную версию).</p>
+  </li>
+</ol>
+
+<blockquote>⚠️ <strong>Внимание</strong>: На <em>Linux</em> после установки добавьте своего пользователя в группу <code>vboxusers</code>, иначе ВМ не смогут получить доступ к USB-устройствам:
+  <pre><code>sudo usermod -aG vboxusers $USER</code></pre>
+<p>Перезагрузите систему для применения изменений.</blockquote></p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Подготовка к установке VirtualBox на Linux</h4><label class="check-item"><input type="checkbox"><span>Обновить систему (sudo apt update && sudo apt upgrade)</span></label><label class="check-item"><input type="checkbox"><span>Установить зависимости (sudo apt install build-essential dkms)</span></label><label class="check-item"><input type="checkbox"><span>Добавить репозиторий Oracle</span></label><label class="check-item"><input type="checkbox"><span>Импортировать ключи подписи</span></label><label class="check-item"><input type="checkbox"><span>Установить VirtualBox и Extension Pack</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="установка-virtualbox-extension-pack">Установка VirtualBox Extension Pack</h2>
+
+<p><strong>Extension Pack</strong> — это дополнительный пакет расширений, который добавляет в VirtualBox поддержку:</p>
+<ul>
+  <li>🖱️ USB 2.0/3.0 устройств.</li>
+  <li>🔒 Шифрования дисков ВМ.</li>
+  <li>📹 Виртуализации <em>NVMe</em> и <em>PXE</em> для сетевой загрузки.</li>
+  <li>🎮 Подключения веб-камер и других мультимедийных устройств.</li>
+</ul>
+
+<p>Установить его можно двумя способами:</p>
+
+<h3>Способ 1: Через интерфейс VirtualBox</h3>
+<p>1. Откройте VirtualBox и перейдите в <code>Файл → Настройки → Расширения</code>.</p>
+<p>2. Нажмите на иконку <code>+</code> (добавить пакет) и выберите скачанный файл <code>Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack</code>.</p>
+<p>3. Подтвердите установку и примите лицензионное соглашение.</p>
+
+<h3>Способ 2: Через терминал (Linux/macOS)</h3>
+<p>Выполните команду:</p>
+<pre><code>sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack</code></pre>
+
+<blockquote>⚠️ <strong>Внимание</strong>: Версия Extension Pack <strong>должна совпадать</strong> с версией VirtualBox! Например, для VirtualBox 7.0.12 нужен Extension Pack 7.0.12. Установка несовместимой версии приведёт к ошибкам при запуске ВМ.</blockquote>
+
+<p>После установки перезапустите VirtualBox. Чтобы проверить успешность установки, откройте <code>Файл → Настройки → Расширения</code> — в списке должно отображаться <code>Oracle VM VirtualBox Extension Pack</code> с пометкой <code>Активен</code>.</p>
+
+<h2 id="создание-и-базовая-настройка-виртуальной-машины">Создание и базовая настройка виртуальной машины</h2>
+
+<p>Теперь, когда VirtualBox установлен, можно приступить к созданию первой виртуальной машины. Рассмотрим процесс на примере установки <em>Windows 10</em> как гостевой ОС.</p>
+
+<h3>Шаг 1: Создание новой ВМ</h3>
+<p>1. В главном окне VirtualBox нажмите <code>Создать</code>.</p>
+<p>2. Введите имя ВМ (например, <code>Windows 10 Pro</code>) и выберите:</p>
+<ul>
+  <li>📁 <strong>Тип ОС</strong>: <code>Microsoft Windows</code>.</li>
+  <li>🖥️ <strong>Версия</strong>: <code>Windows 10 (64-bit)</code>.</li>
+</ul>
+<p>3. Укажите объём <strong>оперативной памяти</strong>. Для <em>Windows 10</em> рекомендуется <code>4096 МБ (4 ГБ)</code>, но не более половины физической памяти хост-системы.</p>
+
+<h3>Шаг 2: Настройка виртуального жёсткого диска</h3>
+<p>1. Выберите <code>Создать новый виртуальный жёсткий диск</code> и нажмите <code>Создать</code>.</p>
+<p>2. Укажите тип диска: <code>VDI (VirtualBox Disk Image)</code>.</p>
+<p>3. Формат хранения:</p>
+<ul>
+  <li>💾 <code>Динамический виртуальный диск</code> — занимает место на хост-диске по мере заполнения (рекомендуется для экономии места).</li>
+  <li>📦 <code>Фиксированный виртуальный диск</code> — выделяет весь объём сразу (лучше для производительности).</li>
+</ul>
+<p>4. Задайте размер диска. Для <em>Windows 10</em> достаточно <code>50 ГБ</code>, но если планируете устанавливать тяжёлые программы (например, <em>Visual Studio</em> или <em>Adobe Photoshop</em>), увеличьте до <code>100 ГБ</code>.</p>
+
+<h3>Шаг 3: Настройка параметров ВМ перед установкой ОС</h3>
+<p>Перед запуском ВМ откройте её <code>Настройки</code> и проверьте:</p>
+<ol>
+  <li><code>Система → Материнская плата</code>:
+    <ul>
+      <li>🔧 Чипсет: <code>ICH9</code> (для совместимости) или <code>PIIX3</code> (для старых ОС).</li>
+      <li>🔄 Включите <code>Включить EFI</code> (только если устанавливаете <em>Windows 11</em> или <em>Linux</em> с UEFI).</li>
+    </ul>
+  </li>
+  <li><code>Система → Процессор</code>:
+    <ul>
+      <li>🖥️ Количество процессоров: <code>2</code> (если у хоста 4+ ядер).</li>
+      <li>🔒 Включите <code>PAE/NX</code> (для 32-битных ОС).</li>
+    </ul>
+  </li>
+  <li><code>Дисплей → Экран</code>:
+    <ul>
+      <li>🎨 Видеопамять: <code>128 МБ</code> (для <em>Windows 10/11</em>).</li>
+      <li>🔄 Включите <code>3D-ускорение</code> (если планируете работать с графикой).</li>
+    </ul>
+  </li>
+  <li><code>Носители</code>:
+    <ul>
+      <li>💿 Подключите ISO-образ с дистрибутивом ОС (нажмите на пустой привод → выберите файл образа).</li>
+    </ol>
+  </li>
+</ol>
+
+<p>После применения настроек нажмите <code>Запустить</code> — начнётся установка гостевой ОС, как на физическом компьютере.</p>
+
+
+<pre><code>VBoxManage setextradata "Имя_ВМ" "VBoxInternal/CPUM/CMPXCHG16B" 1
+<p>VBoxManage setextradata "Имя_ВМ" "VBoxInternal/TPM/Enabled" 1</code></pre>--></p>
+
+<h2 id="оптимизация-производительности-виртуальной-машины">Оптимизация производительности виртуальной машины</h2>
+
+<p>По умолчанию VirtualBox выделяет ВМ минимальные ресурсы, что приводит к тормозам. Чтобы ускорить работу, следуйте этим рекомендациям:</p>
+
+<h3>1. Настройка процессора и памяти</h3>
+<p>Откройте <code>Настройки → Система</code> и оптимизируйте:</p>
+<ul>
+  <li>🖥️ <strong>Процессор</strong>:
+    <ul>
+      <li>Количество ядер: <code>50% от физических ядер хоста</code> (например, 2 из 4).</li>
+      <li>Включите <code>Включить PAE/NX</code> (для 32-битных ОС).</li>
+      <li>Активируйте <code>Включить вложенную страничную таблицу (NPT)</code> (для <em>AMD</em>) или <code>VT-x с поддержкой Nested Paging</code> (для <em>Intel</em>).</li>
+    </ul>
+  </li>
+  <li>🧠 <strong>Оперативная память</strong>:
+    <ul>
+      <li>Для <em>Windows 10/11</em>: <code>4–8 ГБ</code> (но не более 70% от физической памяти хоста).</li>
+      <li>Для <em>Linux</em>: <code>2–4 ГБ</code> (в зависимости от дистрибутива).</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>2. Оптимизация дисковой подсистемы</h3>
+<p>В разделе <code>Носители</code>:</p>
+<ul>
+  <li>💾 Для <code>SATA-контроллера</code> выберите <code>AHCI</code> (улучшает производительность SSD).</li>
+  <li>🔧 Включите <code>Кэш ввода-вывода хоста</code> и <code>Кэш ввода-вывода гостя</code>.</li>
+  <li>📉 Если используете <code>фиксированный диск</code>, разместите его на <em>SSD</em> хост-системы.</li>
+</ul>
+
+<h3>3. Настройка видеоподсистемы</h3>
+<p>В разделе <code>Дисплей</code>:</p>
+<ul>
+  <li>🎨 Увеличьте <code>Видеопамять</code> до <code>128–256 МБ</code> (для работы с графикой или игр).</li>
+  <li>🔄 Включите <code>3D-ускорение</code> и <code>2D-ускорение</code>.</li>
+  <li>🖥️ Установите <code>Масштабирование</code> в <code>100%</code>, если разрешение ВМ не совпадает с хостом.</li>
+</ul>
+
+<h3>4. Сетевые настройки</h3>
+<p>В разделе <code>Сеть</code> выберите оптимальный тип подключения:</p>
+<div class="pb-table-wrap"><table>
+  <thead>
+    <tr>
+      <th>Режим сети</th>
+      <th>Описание</th>
+      <th>Когда использовать</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>NAT</code></td>
+      <td>ВМ получает доступ в интернет через IP хоста (по умолчанию).</td>
+      <td>Для простого доступа в сеть без дополнительных настроек.</td>
+    </tr>
+    <tr>
+      <td><code>Сетевой мост</code></td>
+      <td>ВМ выглядит как отдельное устройство в локальной сети.</td>
+      <td>Если нужно, чтобы ВМ была видна другим устройствам в сети.</td>
+    </tr>
+    <tr>
+      <td><code>Внутренняя сеть</code></td>
+      <td>ВМ взаимодействует только с другими ВМ на этом хосте.</td>
+      <td>Для создания изолированных сред (например, тестирование серверов).</td>
+    </tr>
+    <tr>
+      <td><code>Host-Only</code></td>
+      <td>Сеть только между хостом и ВМ.</td>
+      <td>Для безопасного тестирования сетевых служб.</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Для максимальной производительности ВМ на Windows-хосте отключите встроенный антивирус для папки с виртуальными дисками (например, <code>C:\Users\Ваше_имя\VirtualBox VMs</code>). Это ускорит операции чтения/записи на 20–30%.</p></aside>
+
+<h2 id="установка-гостевых-дополнений-guest-additions">Установка гостевых дополнений (Guest Additions)</h2>
+
+<p><strong>Гостевые дополнения (Guest Additions)</strong> — это набор драйверов и утилит, которые значительно улучшают взаимодействие между хост-системой и ВМ. Они добавляют:</p>
+<ul>
+  <li>🖱️ Автоматическое изменение разрешения экрана при изменении размера окна ВМ.</li>
+  <li>📋 Общий буфер обмена (копирование текста и файлов между хостом и ВМ).</li>
+  <li>📁 Общие папки для быстрого обмена файлами.</li>
+  <li>🖼️ Ускоренную 2D/3D-графику.</li>
+  <li>🔄 Синхронизацию времени между хостом и ВМ.</li>
+</ul>
+
+<h3>Установка на Windows</h3>
+<p>1. Запустите ВМ и дождитесь загрузки гостевой ОС.</p>
+<p>2. В меню VirtualBox выберите <code>Устройства → Подключить образ диска Дополнений гостевой ОС</code>.</p>
+<p>3. В ВМ откройте <code>Этот компьютер</code> → найдите диск <code>VirtualBox Guest Additions</code> и запустите <code>VBoxWindowsAdditions.exe</code>.</p>
+<p>4. Следуйте мастеру установки. По завершении перезагрузите ВМ.</p>
+
+<h3>Установка на Linux</h3>
+<p>1. Подключите образ Дополнений через <code>Устройства → Подключить образ диска Дополнений гостевой ОС</code>.</p>
+<p>2. В терминале ВМ выполните:</p>
+<pre><code>sudo apt update
+<p>sudo apt install build-essential dkms linux-headers-$(uname -r)  # Для Debian/Ubuntu</p>
+<p>sudo mount /dev/cdrom /mnt</p>
+<p>cd /mnt</p>
+<p>sudo ./VBoxLinuxAdditions.run</p>
+<p>sudo reboot</code></pre></p>
+
+<blockquote>⚠️ <strong>Внимание</strong>: На некоторых дистрибутивах <em>Linux</em> (например, <em>Fedora</em> или <em>Arch</em>) может потребоваться дополнительная установка пакетов <code>gcc</code>, <code>make</code> и <code>kernel-devel</code>. Если установка завершается с ошибкой, проверьте логи в <code>/var/log/vboxadd-install.log</code>.</blockquote>
+
+<p>После перезагрузки ВМ проверьте работу Дополнений:</p>
+<ul>
+  <li>Измените размер окна ВМ — разрешение экрана должно подстроиться автоматически.</li>
+  <li>Скопируйте текст на хосте и вставьте в ВМ (и наоборот).</li>
+  <li>Попробуйте перетащить файл из хост-системы в ВМ (если включены <code>Общие папки</code>).</li>
+</ul>
+
+<details class="pb-accordion"><summary>Что делать, если Guest Additions не устанавливаются на Windows 11?</summary><div class="pb-accordion-body"><p>Если установщик выдаёт ошибку <code>Failed to build the VirtualBox Guest Additions</code>, попробуйте:
+<p>1. Отключить <code>Secure Boot</code> в настройках ВМ (<code>Система → Материнская плата → Включить EFI → Настроить → Отключить Secure Boot</code>).</p>
+<p>2. Установить Дополнения в <code>Безопасном режиме</code> (зажмите <code>Shift + Перезагрузка</code> → <code>Диагностика → Дополнительные параметры → Параметры загрузки → Безопасный режим</code>).</p>
+<p>3. Обновить VirtualBox до последней версии.</p></div></details></p>
+
+<h2 id="решение-типичных-проблем-с-virtualbox">Решение типичных проблем с VirtualBox</h2>
+
+<p>Даже при правильной настройке пользователи сталкиваются с ошибками. Рассмотрим самые распространённые и способы их устранения.</p>
+
+<h3>1. Ошибка "VT-x is not available" или "AMD-V is disabled"</h3>
+<p><strong>Причина</strong>: Аппаратная виртуализация отключена в BIOS или конфликтует с другими гипервизорами (например, <em>Hyper-V</em> на Windows).</p>
+<p><strong>Решение</strong>:</p>
+<ul>
+  <li>🔧 Включите виртуализацию в BIOS (см. раздел "Подготовка системы").</li>
+  <li>🖥️ На <em>Windows 10/11</em> отключите <em>Hyper-V</em>:
+    <pre><code>bcdedit /set hypervisorlaunchtype off</code></pre>
+<p>Перезагрузите ПК.</li></p>
+  <li>🔄 Отключите <em>Core Isolation</em> в <code>Параметры Windows → Безопасность → Безопасность устройства → Сведения о изоляции ядра</code>.</li>
+</ul>
+
+<h3>2. ВМ не запускается с ошибкой "Failed to open a session"</h3>
+<p><strong>Причина</strong>: Конфликт с антивирусом (например, <em>Avast</em> или <em>Kaspersky</em> блокируют драйверы VirtualBox) или повреждение конфигурационных файлов.</p>
+<p><strong>Решение</strong>:</p>
+<ul>
+  <li>🛡️ Временно отключите антивирус и попробуйте запустить ВМ снова.</li>
+  <li>🔧 Переустановите VirtualBox с очисткой настроек:
+    <pre><code>sudo apt purge virtualbox-*  # Linux
+<h2 id="или">или</h2>
+<p>"C:\Program Files\Oracle\VirtualBox\uninstall.exe" --msiparameters REMOVE=ALL  # Windows</code></pre></p>
+  </li>
+  <li>📂 Удалите папку с конфигурацией ВМ (по умолчанию <code>~/.config/VirtualBox</code> на Linux или <code>C:\Users\Ваше_имя\.VirtualBox</code> на Windows).</li>
+</ul>
+
+<h3>3. Низкая производительность ВМ (тормоза)</h3>
+<p><strong>Причины и решения</strong>:</p>
+<div class="pb-table-wrap"><table>
+  <thead>
+    <tr>
+      <th>Симптом</th>
+      <th>Возможная причина</th>
+      <th>Решение</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ВМ "подвисает" при высокой нагрузке</td>
+      <td>Недостаточно оперативной памяти</td>
+      <td>Увеличьте объём RAM в настройках ВМ (но не более 70% от физической памяти хоста).</td>
+    </tr>
+    <tr>
+      <td>Медленная работа диска</td>
+      <td>Используется <code>IDE-контроллер</code> вместо <code>SATA/AHCI</code></td>
+      <td>Измените тип контроллера в <code>Настройки → Носители</code>.</td>
+    </tr>
+    <tr>
+      <td>Заикание видео (например, при проигрывании видео в ВМ)</td>
+      <td>Отсутствует 3D-ускорение или мало видеопамяти</td>
+      <td>Включите <code>3D-ускорение</code> и увеличьте видеопамять до <code>128–256 МБ</code>.</td>
+    </tr>
+    <tr>
+      <td>ВМ тормозит даже в простое</td>
+      <td>Конфликт с другими виртуальными машинами или Docker</td>
+      <td>Закройте другие ВМ и проверьте нагрузку на хост-систему через <code>Диспетчер задач</code>.</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<h3>4. Ошибка "Kernel driver not installed (rc=-1908)"</h3>
+<p><strong>Причина</strong>: На <em>Linux</em> отсутствуют необходимые модули ядра (<code>vboxdrv</code>, <code>vboxnetflt</code> и др.).</p>
+<p><strong>Решение</strong>:</p>
+<pre><code>sudo /sbin/vboxconfig  # Пересобрать модули ядра
+<h2 id="если-ошибка-остаётся-установите-зависимости">Если ошибка остаётся, установите зависимости:</h2>
+<p>sudo apt install linux-headers-$(uname -r) build-essential dkms  # Debian/Ubuntu</p>
+<p>sudo dnf install kernel-devel kernel-headers  # Fedora</code></pre></p>
+
+<blockquote>⚠️ <strong>Внимание</strong>: На <em>Linux</em> после обновления ядра модули VirtualBox могут сломаться. Чтобы избежать этого, добавьте <code>vboxdrv</code> в автозагрузку:
+  <pre><code>sudo systemctl enable vboxdrv</code></pre></blockquote>
+
+<h2 id="faq-частые-вопросы-по-virtualbox">FAQ: Частые вопросы по VirtualBox</h2>
+
+<details>
+  <summary>Можно ли запускать VirtualBox на ноутбуке с 4 ГБ оперативной памяти?</summary>
+  <p>Технически да, но ВМ будет работать крайне медленно. Для комфортной работы <em>Windows 10</em> в VirtualBox требуется:</p>
+  <ul>
+    <li>🧠 <code>2 ГБ</code> для ВМ (останется <code>2 ГБ</code> для хост-системы).</li>
+    <li>💾 <code>SSD</code> вместо <code>HDD</code> (уменьшит задержки дискового ввода-вывода).</li>
+    <li>🔧 Отключение всех фоновых процессов на хосте (например, <em>OneDrive</em>, <em>Telegram</em>).</li>
+  </ul>
+  <p>Рекомендуем увеличить ОЗУ до <code>8 ГБ</code> или использовать лёгкие ОС (например, <em>Lubuntu</em> или <em>Windows XP</em> для тестирования).</p>
+</details>
+
+<details>
+  <summary>Как перенести виртуальную машину на другой компьютер?</summary>
+  <p>1. Скопируйте файлы ВМ (обычно это:</p>
+  <ul>
+    <li><code>Имя_ВМ.vbox</code> (конфигурация),</li>
+    <li><code>Имя_ВМ.vdi</code> или <code>.vmdk</code> (виртуальный диск).</li>
+  </ul>
+  <p>2. На новом ПК установите ту же версию VirtualBox.</p>
+  <p>3. В интерфейсе VirtualBox выберите <code>Файл → Импортировать конфигурацию</code> и укажите файл <code>.vbox</code>.</p>
+  <p>4. При первом запуске ВМ может потребоваться переустановка <strong>Guest Additions</strong>.</p>
+  
+  <pre><code>VBoxManage internalcommands sethduuid "путь_к_диску.vdi"</code></pre>
+<p>Это сгенерирует новый уникальный идентификатор для диска.--></p>
+</details>
+
+<details>
+  <summary>Как подключить флешку к виртуальной машине?</summary>
+  <p>1. Подключите USB-устройство к хост-системе.</p>
+  <p>2. Запустите ВМ и в меню VirtualBox выберите <code>Устройства → USB</code>.</p>
+  <p>3. В списке найдите вашу флешку и нажмите на неё (она подключится к ВМ).</p>
+  <p>Если устройство не отображается:</p>
+  <ul>
+    <li>🔌 Убедитесь, что установлен <strong>Extension Pack</strong>.</li>
+    <li>🔧 В настройках ВМ (<code>USB</code>) добавьте новый фильтр для устройства.</li>
+    <li>🖥️ На <em>Linux</em> проверьте, что пользователь входит в группу <code>vboxusers</code>.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>Можно ли играть в игры на виртуальной машине?</summary>
+  <p>Технически да, но с серьёзными ограничениями:</p>
+  <ul>
+    <li>🎮 <strong>3D-ускорение</strong> в VirtualBox работает медленно (даже простые игры вроде <em>Minecraft</em> могут тормозить).</</div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/7/70/700-km-v-chas-v-metry-v-sekundu.html" class="pb-related-card">
+                <span class="pb-related-title">700 км/ч в м/с: как перевести скорость и где это пригодится</span>
+                <span class="pb-related-desc">Точный перевод 700 км/ч в метры в секунду с формулами, примерами и практической пользой для автолюби</span>
+            </a><a href="/articles/f/fo/fonit-kolonka-na-kompyutere-kak-ispravit.html" class="pb-related-card">
+                <span class="pb-related-title">Фонит колонка на ПК: причины гула и способы устранения</span>
+                <span class="pb-related-desc">Почему фонят колонки на компьютере? Полный гид по диагностике: проверка кабелей, настройка драйверов</span>
+            </a><a href="/articles/g/gd/gde-razmestit-antennu-gps-v-avtomobile.html" class="pb-related-card">
+                <span class="pb-related-title">Где разместить антенну GPS в автомобиле: схемы и ошибки</span>
+                <span class="pb-related-desc">Правильная установка GPS-антенны в авто: выбор места, прокладка кабеля, экранировка и устранение пом</span>
+            </a><a href="/articles/k/ka/kak-chistit-kofemashiny-nivona.html" class="pb-related-card">
+                <span class="pb-related-title">Как чистить кофемашины Nivona: пошаговая инструкция</span>
+                <span class="pb-related-desc">Подробное руководство по уходу за кофемашинами Nivona. Очистка заварочного блока, декальцинация и за</span>
+            </a><a href="/articles/m/me/mekhatronnye-sistemy-eto-prostymi-slovami.html" class="pb-related-card">
+                <span class="pb-related-title">Мехатронные системы это простыми словами: устройство и примеры</span>
+                <span class="pb-related-desc">Что такое мехатронные системы? Простое объяснение принципа работы, примеры из автопрома и промышленн</span>
+            </a><a href="/articles/a/av/avtomobilnyj-kompressor-xiaomi-otzyvy.html" class="pb-related-card">
+                <span class="pb-related-title">Xiaomi автомобильный компрессор: отзывы 2026, плюсы и минусы</span>
+                <span class="pb-related-desc">Реальные отзывы владельцев о портативных компрессорах Xiaomi: сравнение моделей, тесты на морозе, со</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

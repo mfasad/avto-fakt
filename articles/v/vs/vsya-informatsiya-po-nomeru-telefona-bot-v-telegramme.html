@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как найти информацию по номеру телефона через Telegram бота — Авто Факт</title>
+    <meta name="description" content="Полный гид по поиску данных о владельце номера в Telegram. Обзор легальных ботов, функций OSINT и защиты приватности.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/v/vs/vsya-informatsiya-po-nomeru-telefona-bot-v-telegramme.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как найти информацию по номеру телефона через Telegram бота">
+    <meta property="og:description" content="Полный гид по поиску данных о владельце номера в Telegram. Обзор легальных ботов, функций OSINT и защиты приватности.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как найти информацию по номеру телефона через Telegram бота</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#механика-работы-ботов-для-поиска-по-номеру">Механика работы ботов для поиска по номеру</a></li><li><a href="#популярные-типы-ботов-и-их-функционал">Популярные типы ботов и их функционал</a></li><li><a href="#инструкция-как-использовать-бота-для-поиска">Инструкция: как использовать бота для поиска</a></li><li><a href="#технические-ограничения-и-проблемы-доступа">Технические ограничения и проблемы доступа</a></li><li><a href="#защита-персональных-данных-от-ботов">Защита персональных данных от ботов</a></li><li><a href="#юридические-и-этические-аспекты-использования">Юридические и этические аспекты использования</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/c/ch/chasy-orient-aaa-kristall-21.html">Обзор часов Orient AAA Crystal 21: характеристики и отзывы</a></li><li><a href="/articles/d/dl/dlya-chego-nuzhen-lidar.html">Для чего нужен LiDAR: применение в авто и не только</a></li><li><a href="/articles/c/ch/chto-takoe-apple-carplay-na-avtomobile.html">Apple CarPlay в машине: что это, как работает и как подключить</a></li><li><a href="/articles/d/de/deppa-magsafe-avtomobilnyj-derzhatel.html">Deppa MagSafe держатель для авто: как выбрать и установить правильно</a></li><li><a href="/articles/k/ka/kak-vyklyuchit-radio-na-androide.html">Как отключить радио на Android: 5 способов для всех моделей</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Поиск информации по номеру телефона через ботов в Telegram</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#механика-работы-ботов-для-поиска-по-номеру">Механика работы ботов для поиска по номеру</a></li><li><a href="#популярные-типы-ботов-и-их-функционал">Популярные типы ботов и их функционал</a></li><li><a href="#инструкция-как-использовать-бота-для-поиска">Инструкция: как использовать бота для поиска</a></li><li><a href="#технические-ограничения-и-проблемы-доступа">Технические ограничения и проблемы доступа</a></li><li><a href="#защита-персональных-данных-от-ботов">Защита персональных данных от ботов</a></li><li><a href="#юридические-и-этические-аспекты-использования">Юридические и этические аспекты использования</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body"><p>В современном цифровом мире, где <strong>персональные данные</strong> становятся новой валютой, вопрос приватности и возможности идентификации собеседника стоит как никогда остро. Мессенджер Telegram, известный своим акцентом на безопасность, парадоксальным образом стал платформой, где сосредоточено огромное количество инструментов для OSINT (разведки по открытым источникам). Пользователи часто ищут способы узнать, кому принадлежит конкретный номер, не совершая звонка и не вступая в прямой контакт.</p>
+
+<p>Существует множество <em>Telegram-ботов</em>, которые агрегируют данные из различных утечек, социальных сетей и публичных баз, позволяя получить информацию о владельце номера телефона. Однако важно понимать, что эффективность таких инструментов варьируется, а их использование часто находится в серой правовой зоне. Некоторые сервисы работают исключительно с открытыми данными, другие же оперируют информацией, полученной нелегальным путем.</p>
+
+<p>В этой статье мы подробно разберем механику работы таких ботов, рассмотрим популярные инструменты, доступные на текущий момент, и обсудим, как защитить свои собственные данные от подобного "пробива". Также затронем технические аспекты работы API мессенджера, которые позволяют реализовать функционал поиска.</p>
+
+<h2 id="механика-работы-ботов-для-поиска-по-номеру">Механика работы ботов для поиска по номеру</h2>
+
+<p>Принцип действия большинства ботов для поиска информации базируется на взаимодействии с базой данных, которая может насчитывать миллионы записей. Когда вы отправляете боту номер телефона, он формирует запрос к внутреннему хранилищу или внешнему API. Если номер присутствует в базе, бот возвращает связанный с ним профиль: имя, аватар, username, а иногда и дополнительную информацию вроде геолокации последнего входа или связанных аккаунтов.</p>
+
+<p>Технически это реализуется через <code>Telegram Bot API</code>, которое позволяет ботам получать доступ к определенным данным пользователя, если они взаимодействовали с ботом ранее, или через интеграцию с внешними сервисами деанонимизации. Часто такие боты используют уязвимости в синхронизации контактов или данные, спарсенные из других социальных сетей.</p>
+
+<blockquote>⚠️ Внимание: Использование ботов для получения персональных данных без согласия владельца может нарушать законодательство о защите персональных данных и правила самого Telegram. Будьте осторожны с передачей своих данных таким сервисам.</blockquote>
+
+<p>Важно различать ботов, которые просто проверяют регистрацию номера в Telegram, и те, которые предоставляют расширенную информацию. Первые используют стандартные методы проверки, доступные любому приложению, вторые же опираются на специфические, часто нелегальные базы.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Никогда не передавайте свои личные данные или данные друзей в подозрительные боты. Даже простой запуск бота может передать ему ваш ID и username, что обогатит его базу данных.</p></aside>
+
+<h2 id="популярные-типы-ботов-и-их-функционал">Популярные типы ботов и их функционал</h2>
+
+<p>В экосистеме Telegram можно выделить несколько категорий инструментов, предназначенных для работы с телефонными номерами. Каждая категория имеет свои особенности, источники данных и уровень доступной информации. Понимание этих различий поможет вам выбрать подходящий инструмент или оценить риски.</p>
+
+<p>Первый тип — это <strong>глазные боты</strong> (eye bots). Они специализируются на поиске профиля по номеру телефона, даже если он не сохранен в ваших контактах. Такие боты часто показывают аватар, имя, статус "был в сети" и username. Они работают за счет особенностей протокола синхронизации контактов.</p>
+
+<p>Второй тип — агрегаторы утечек. Эти боты проверяют введенный номер по базе известных утечек данных (например, от служб доставки, такси или социальных сетей). В ответе может содержаться реальное имя, адрес, email и другие детали, когда-либо связанные с этим номером в открытом доступе.</p>
+
+<ul>
+<li>🔍 <strong>Поисковики профиля:</strong> Находят аккаунт в Telegram, фото и имя пользователя.</li>
+<li>🗄️ <strong>Базы утечек:</strong> Предоставляют данные из сторонних источников (адреса, заказы, почты).</li>
+<li>📍 <strong>Геолокационные трекеры:</strong> Показывают примерное местоположение по последнему входу (требует взаимодействия с целью).</li>
+<li>📞 <strong>Определители номера:</strong> Аналог определителя номера, показывающий, как человек записан у других людей (через парсинг книг контактов).</li>
+</ul>
+
+<p>Третий тип — это инструменты для администраторов каналов и групп. Они позволяют проверять участников чатов на наличие "левых" аккаунтов или сверять номера с черными списками мошенников. Такие боты часто имеют функционал массовой проверки.</p>
+
+<div class="pb-poll" id="poll-ed359693"><div class="pb-poll-question">📊 Какой тип ботов вас интересует больше?</div><div class="pb-poll-option" data-poll="ed359693" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Поиск профиля (Глаз)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="ed359693" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Проверка утечек данных</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="ed359693" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Защита от пробива</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="ed359693" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Массовая проверка номеров</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="инструкция-как-использовать-бота-для-поиска">Инструкция: как использовать бота для поиска</h2>
+
+<p>Процесс использования подобных инструментов, как правило, унифицирован и не требует глубоких технических знаний. Однако для получения максимально точного результата рекомендуется соблюдать определенную последовательность действий. Ниже приведена общая инструкция, применимая к большинству сервисов такого типа.</p>
+
+<p>Сначала необходимо найти и запустить бота. Обычно это делается через поиск внутри Telegram по названию или через прямую ссылку-приглашение. После запуска бот приветствует вас и предлагает ввести команду, часто это <code>/start</code> или <code>/help</code>, чтобы увидеть список доступных функций.</p>
+
+<blockquote>⚠️ Внимание: Интерфейсы ботов и их названия часто меняются из-за блокировок со стороны Telegram. Если один бот перестал работать, ищите актуальные аналоги по ключевым словам в поиске мессенджера.</blockquote>
+
+<p>Далее следует этап ввода данных. В большинстве случаев бот попросит ввести номер телефона в международном формате. Важно соблюдать форматирование, иначе запрос будет отклонен системой.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Алгоритм работы с ботом</h4><label class="check-item"><input type="checkbox"><span>Найти актуального бота через поиск</span></label><label class="check-item"><input type="checkbox"><span>Запустить бота командой /start</span></label><label class="check-item"><input type="checkbox"><span>Ввести номер в формате +79990000000</span></label><label class="check-item"><input type="checkbox"><span>Дождаться ответа и проанализировать данные</span></label><label class="check-item"><input type="checkbox"><span>Удалить историю переписки для конфиденциальности</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>После отправки номера бот приступает к обработке запроса. Это может занять от нескольких секунд до минуты, в зависимости от загруженности серверов и размера проверяемой базы. Результат обычно приходит в виде текстового сообщения или специального встроенного окна (inline mode).</p>
+
+<pre><code>Формат ввода номера:
+<p>+79XXXXXXXXX</p>
+<p>(Код страны без плюса или с плюсом, без скобок и тире)</code></pre></p>
+
+<p>Некоторые продвинутые боты предлагают дополнительные опции, такие как получение скриншота профиля, история изменения аватарок или проверка на наличие аккаунта в других мессенджерах (WhatsApp, Viber). Эти функции могут быть платными или требовать подписки.</p>
+
+<h2 id="технические-ограничения-и-проблемы-доступа">Технические ограничения и проблемы доступа</h2>
+
+<p>Несмотря на популярность таких сервисов, они сталкиваются с постоянными техническими и административными ограничениями. Telegram активно борется с ботами, нарушающими правила конфиденциальности, что приводит к частым блокировкам популярных инструментов.</p>
+
+<p>Одной из главных проблем является <strong>лимит запросов</strong>. Чтобы предотвратить злоупотребления и нагрузку на сервера, разработчики ботов или сам Telegram ограничивают количество проверок с одного аккаунта. Бесплатные версии часто позволяют сделать всего 1-3 запроса в день.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Тип ограничения</th>
+<th>Описание</th>
+<th>Возможное решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Лимит по времени</td>
+<td>Запросов в минуту/час</td>
+<td>Использовать таймауты между запросами</td>
+</tr>
+<tr>
+<td>Блокировка аккаунта</td>
+<td>Telegram помечает аккаунт как спам</td>
+<td>Использовать запасные сим-карты</td>
+</tr>
+<tr>
+<td>Платный доступ</td>
+<td>Функции доступны только по подписке</td>
+<td>Оплата криптовалютой или картой</td>
+</tr>
+<tr>
+<td>Капча</td>
+<td>Требуется подтверждение, что вы не робот</td>
+<td>Решение через сервисы разгадывания</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Также стоит упомянуть проблему "фейковых" ботов. В поиске можно наткнуться на множество копий, которые имитируют работу реальных сервисов, но на самом деле просто воруют ваши данные или номера, которые вы проверяете. Такие боты часто не имеют функционала и просто собирают базу.</p>
+
+<details class="pb-accordion"><summary>Почему ботов постоянно банят?</summary><div class="pb-accordion-body"><p>Telegram использует автоматические системы защиты, которые отслеживают аномальную активность. Если бот делает слишком много запросов к API или получает жалобы от пользователей, его блокируют. Владельцам приходится постоянно создавать новых ботов, что создает эффект "кошки-мышки".</p></div></details>
+
+<h2 id="защита-персональных-данных-от-ботов">Защита персональных данных от ботов</h2>
+
+<p>Если вы беспокоитесь о том, что ваши данные могут быть найдены через подобные сервисы, существует ряд мер, которые помогут минимизировать риски. Полностью скрыться в интернете сложно, но усложнить жизнь "осинтовщикам" вполне реально.</p>
+
+<p>Первым шагом является настройка приватности в самом Telegram. Зайдите в <code>Настройки → Конфиденциальность</code>. Здесь можно ограничить круг лиц, которые видят ваш номер телефона, последний вход, фото профиля и статус "был в сети".</p>
+
+<ul>
+<li>🔒 <strong>Номер телефона:</strong> Установите "Кто видит мой номер" в положение "Никто". Это предотвратит добавление вас в контакты strangers.</li>
+<li>👥 <strong>Группы и каналы:</strong> Запретите добавлять вас в группы без подтверждения, чтобы избежать попадания в базы парсеров.</li>
+<li>📸 <strong>Фото профиля:</strong> Используйте настройки видимости, чтобы фото видели только ваши контакты.</li>
+<li>🚫 <strong>Пересылка сообщений:</strong> Скройте ссылку на свой аккаунт при пересылке сообщений, чтобы по ним нельзя было выйти на ваш профиль.</li>
+</ul>
+
+<p>Еще один важный аспект — осторожность при использовании сторонних сервисов. Не регистрируйтесь на сомнительных сайтах с помощью Telegram, если не уверены в их надежности. Часто именно через авторизацию в таких сервисах происходит утечка данных.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Полная анонимность в Telegram невозможна, если ваш номер когда-либо был в базах утечек. Однако правильные настройки приватности скроют 90% информации от случайных пользователей и простых ботов.</p></aside>
+
+<h2 id="юридические-и-этические-аспекты-использования">Юридические и этические аспекты использования</h2>
+
+<p>Использование OSINT-инструментов и ботов для поиска информации по номеру телефона находится в сложном правовом поле. С одной стороны, сбор информации из открытых источников не запрещен. С другой, распространение и использование персональных данных, полученных из утечек, может трактоваться как нарушение закона.</p>
+
+<p>В многих странах, включая Россию, существуют законы о защите персональных данных (например, 152-ФЗ в РФ). Согласно им, обработка персональных данных без согласия субъекта запрещена, за исключением ряда случаев. Использование баз данных, полученных незаконным путем, может повлечь за собой ответственность.</p>
+
+<p>С этической точки зрения, использование таких ботов для запугивания, шантажа или преследования (доксинг) является недопустимым. Однако в руках специалистов по информационной безопасности эти инструменты служат для защиты: они помогают оценить собственные риски и понять, какая информация о вас доступна злоумышленникам.</p>
+
+<blockquote>⚠️ Внимание: Законодательство в сфере цифровых данных быстро меняется. То, что было допустимо вчера, сегодня может стать правонарушением. Всегда проверяйте актуальные законы вашей юрисдикции перед использованием подобных инструментов.</blockquote>
+
+<p>Важно также помнить, что многие боты требуют оплаты в криптовалюте, что добавляет слой анонимности, но также и рисков. В случае мошенничества со стороны создателей бота, вернуть средства будет практически невозможно.</p>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Можно ли найти человека по номеру, если он скрыл профиль?</summary>
+<p>Если пользователь установил настройки приватности "Никто" для номера телефона и не синхронизировал контакты, найти его через стандартные методы ботов практически невозможно. Однако, если его данные есть в базах утечек (например, от служб доставки), бот может показать имя и адрес, но не привяжет их к текущему аккаунту Telegram напрямую.</p>
+</details>
+
+<details>
+<summary>Безопасно ли пользоваться такими ботами?</summary>
+<p>Использование небезопасно с точки зрения конфиденциальности. Запуская бота, вы часто даете ему доступ к своему ID и username. Кроме того, есть риск нарваться на мошенников, которые могут украсть данные вашей банковской карты при оплате подписки.</p>
+</details>
+
+<details>
+<summary>Работают ли эти боты бесплатно?</summary>
+<p>Большинство эффективных ботов работают по модели Freemium: базовый поиск может быть бесплатным (1-2 запроса), но за подробную информацию, историю или массовую проверку требуется оплата подписки или внутренних токенов.</p>
+</details>
+
+<details>
+<summary>Можно ли удалить свои данные из баз таких ботов?</summary>
+<p>Официальной процедуры не существует. Некоторые боты имеют команду <code>/delme</code> или аналогичную для удаления из их конкретной базы, но гарантировать удаление из всех копий и зеркал никто не может. Лучший способ — профилактика через настройки приватности.</p>
+</details>
+
+<details>
+<summary>Показывают ли боты местоположение по номеру?</summary>
+<p>Точное местоположение (GPS-координаты) в реальном времени боты не показывают. Они могут отображать только примерную геолокацию на основе оператора связи или последнего известного IP-адреса, если такая информация попала в утечку. Точный трекинг возможен только спецслужбам по запросу.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/c/ch/chasy-orient-aaa-kristall-21.html" class="pb-related-card">
+                <span class="pb-related-title">Обзор часов Orient AAA Crystal 21: характеристики и отзывы</span>
+                <span class="pb-related-desc">Подробный анализ часов Orient AAA Crystal 21. Изучаем механизм, сапфировое стекло, водонепроницаемос</span>
+            </a><a href="/articles/d/dl/dlya-chego-nuzhen-lidar.html" class="pb-related-card">
+                <span class="pb-related-title">Для чего нужен LiDAR: применение в авто и не только</span>
+                <span class="pb-related-desc">Подробный разбор технологии LiDAR: принцип работы, отличие от радаров, применение в беспилотных авто</span>
+            </a><a href="/articles/c/ch/chto-takoe-apple-carplay-na-avtomobile.html" class="pb-related-card">
+                <span class="pb-related-title">Apple CarPlay в машине: что это, как работает и как подключить</span>
+                <span class="pb-related-desc">Разбираемся, что такое Apple CarPlay, как он работает в автомобиле, какие функции доступны и как пра</span>
+            </a><a href="/articles/d/de/deppa-magsafe-avtomobilnyj-derzhatel.html" class="pb-related-card">
+                <span class="pb-related-title">Deppa MagSafe держатель для авто: как выбрать и установить правильно</span>
+                <span class="pb-related-desc">Полный гайд по автомобильным держателям Deppa с MagSafe: совместимость, монтаж, плюсы и минусы, срав</span>
+            </a><a href="/articles/k/ka/kak-vyklyuchit-radio-na-androide.html" class="pb-related-card">
+                <span class="pb-related-title">Как отключить радио на Android: 5 способов для всех моделей</span>
+                <span class="pb-related-desc">Пошаговая инструкция по выключению радио на смартфонах и планшетах Android. Способы для Samsung, Xia</span>
+            </a><a href="/articles/l/la/lampa-servis-dlya-prosmotra-filmov.html" class="pb-related-card">
+                <span class="pb-related-title">Сервис Лампа: как смотреть фильмы на ТВ и устранять ошибки</span>
+                <span class="pb-related-desc">Подробный гид по сервису Лампа для просмотра фильмов. Настройка на Android TV, устранение ошибок буф</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

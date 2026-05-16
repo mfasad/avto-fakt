@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как создать свой стиль в Лайтруме: пошаговый гайд — Авто Факт</title>
+    <meta name="description" content="Узнайте, как создать уникальный пресет в Lightroom Mobile и Desktop. Подробная инструкция по настройке параметров и экспорту профиля для быстрой обработки.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ka/kak-sozdat-stil-v-lajtrume.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как создать свой стиль в Лайтруме: пошаговый гайд">
+    <meta property="og:description" content="Узнайте, как создать уникальный пресет в Lightroom Mobile и Desktop. Подробная инструкция по настройке параметров и экспорту профиля для быстрой обработки.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/byt-i-khobbi/">Быт и Хобби</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как создать свой стиль в Лайтруме: пошаговый гайд</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#подготовка-исходного-файла-и-базовые-правки">Подготовка исходного файла и базовые правки</a></li><li><a href="#работа-с-кривыми-и-тональным-контрастом">Работа с кривыми и тональным контрастом</a></li><li><a href="#цветокоррекция-и-калибровка-камеры">Цветокоррекция и калибровка камеры</a></li><li><a href="#добавление-эффектов-зерно-виньетка-и-текстуры">Добавление эффектов: зерно, виньетка и текстуры</a></li><li><a href="#сохранение-и-управление-пресетами">Сохранение и управление пресетами</a></li><li><a href="#сравнение-методов-обработки">Сравнение методов обработки</a></li><li><a href="#экспорт-и-использование-в-мобильных-версиях">Экспорт и использование в мобильных версиях</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/k/ka/kakaya-posudomojka-samaya-luchshaya-po-otzyvam.html">Какая посудомойка лучшая по отзывам: рейтинг 2026</a></li><li><a href="/articles/n/na/nasadka-na-nasos-dlya-matrasa.html">Насадка на насос для матраса: виды, выбор и использование</a></li><li><a href="/articles/c/ch/chto-podarit-druzyam-na-pokupku-mashiny.html">Что подарить другу на покупку машины: 50 идей 2026 года</a></li><li><a href="/articles/s/st/stiralki-khajer-otzyvy-spetsialistov-i-pokupatelej.html">Стиральные машины Haier: отзывы специалистов и покупателей 2026</a></li><li><a href="/articles/p/po/podstavka-dlya-stiralki-i-sushilki.html">Подставка под стиральную машину и сушилку: выбор и установка</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как создать свой стиль в Лайтруме: от идеи до пресета</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#подготовка-исходного-файла-и-базовые-правки">Подготовка исходного файла и базовые правки</a></li><li><a href="#работа-с-кривыми-и-тональным-контрастом">Работа с кривыми и тональным контрастом</a></li><li><a href="#цветокоррекция-и-калибровка-камеры">Цветокоррекция и калибровка камеры</a></li><li><a href="#добавление-эффектов-зерно-виньетка-и-текстуры">Добавление эффектов: зерно, виньетка и текстуры</a></li><li><a href="#сохранение-и-управление-пресетами">Сохранение и управление пресетами</a></li><li><a href="#сравнение-методов-обработки">Сравнение методов обработки</a></li><li><a href="#экспорт-и-использование-в-мобильных-версиях">Экспорт и использование в мобильных версиях</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Создание собственной визуальной эстетики — это не просто прихоть, а необходимость для современного фотографа, желающего выделиться в потоке контента. <strong>Adobe Lightroom</strong> остается золотым стандартом в индустрии, предлагая инструменты, которые позволяют превратить обычный снимок в произведение искусства за считанные секунды. Именно поэтому вопрос о том, как создать свой стиль в лайтруме, становится одним из самых популярных среди энтузиастов и профессионалов.</p>
+
+<p>Процесс этот не требует академического образования в области колористики, но подразумевает понимание базовых принципов работы со светом и цветом. В этой статье мы разберем пошаговый алгоритм действий, который позволит вам разработать уникальную обработку, будь то пленочное зерно, холодный цифровой глянец или теплые винтажные тона. Вы научитесь сохранять свои настройки как готовые <em>пресеты</em>, чтобы применять их к сотням фотографий одним кликом.</p>
+
+<p>Важно понимать, что стиль — это не просто набор ползунков, а ваше видение кадра. <strong>Цифровая фотография</strong> дает огромную свободу, но без четкого плана можно легко запутаться в бесконечных вариантах цветокоррекции. Мы поможем структурировать этот процесс, сделав его понятным и воспроизводимым.</p>
+
+<h2 id="подготовка-исходного-файла-и-базовые-правки">Подготовка исходного файла и базовые правки</h2>
+
+<p>Прежде чем приступать к творческим изысканиям, необходимо привести изображение к общему знаменателю. Работа всегда начинается с <code>Базовой панели</code> (Basic Panel), где корректируется экспозиция и баланс белого. Игнорирование этого этапа приведет к тому, что ваш пресет будет давать разные результаты на разных снимках.</p>
+
+<p>Сначала оцените гистограмму. Если снимок недоэкспонирован или переэкспонирован, никакие цветовые настройки не спасут ситуацию. Используйте ползунок <strong>Экспозиция</strong> для общей яркости, а <strong>Света</strong> и <strong>Тени</strong> для восстановления деталей в пересвеченных или слишком темных участках кадра соответственно.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Не выкручивайте ползунок «Контраст» на максимум в начале обработки. Это может привести к потере информации в светах и тенях, что сделает невозможным дальнейшее тонирование без артефактов.</p>
+</blockquote>
+
+<p>Критически важным моментом является настройка <strong>Баланса белого</strong>. Если вы снимали в формате RAW, вы можете менять температуру и оттенок без потери качества. Для создания определенного настроения часто требуется увести температуру в холодную или теплую зону, но делать это нужно осознанно, опираясь на нейтрально-серые объекты в кадре.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Всегда начинайте создание пресета с фотографии, сделанной в условиях среднего контраста и освещении, близком к вашему обычному сценарию съемки. Это даст наиболее предсказуемый результат при применении стиля к другим кадрам.</p></aside>
+
+<h2 id="работа-с-кривыми-и-тональным-контрастом">Работа с кривыми и тональным контрастом</h2>
+
+<p>Одним из самых мощных инструментов для создания «киношного» вида является <strong>Тоновая кривая</strong> (Tone Curve). Именно здесь можно добиться знаменитого эффекта «выцветших теней» (Faded Blacks), когда черный цвет становится серым, придавая фотографии мягкость и ретро-ощущение.</p>
+
+<p>Для начала работы перейдите в соответствующий модуль. Кривая делится на каналы RGB, Красный, Зеленый и Синий. Манипулируя точками на кривой, вы можете избирательно осветлять или затемнять определенные тональные диапазоны. Например, подняв левую нижнюю точку кривой вверх, вы осветлите самые темные участки изображения.</p>
+
+<p>Также стоит обратить внимание на разделение каналов. Слегка опустив синюю кривую в тенях и подняв красную в светах, можно получить популярный эффект перекрестной обработки (Cross Process), который часто используется в модной фотографии.</p>
+
+<details class="pb-accordion"><summary>Что такое S-образная кривая?</summary><div class="pb-accordion-body"><p>S-образная кривая — это классический прием повышения контраста. Вы поднимаете верхнюю часть кривой (света) и опускаете нижнюю (тени), создавая характерную букву S. Это делает изображение более объемным и насыщенным.</p></div></details>
+
+<p>Не забывайте про ползунки <strong>Белые</strong> и <strong>Черные</strong> под гистограммой. Они работают в паре с контрастом, задавая абсолютные точки черного и белого в кадре. Грамотная настройка этих параметров создает необходимый «фундамент» для дальнейшей цветовой магии.</p>
+
+<h2 id="цветокоррекция-и-калибровка-камеры">Цветокоррекция и калибровка камеры</h2>
+
+<p>Самая «вкусная» часть процесса — это <strong>Цветокоррекция</strong>. Здесь вы определяете настроение вашего стиля. В панели <em>HSL / Цвет</em> вы можете изменять Hue (Оттенок), Saturation (Насыщенность) и Luminance (Светимость) для каждого из восьми основных цветов отдельно.</p>
+
+<p>Например, для создания популярного «теплотелового» стиля (Teal & Orange) необходимо сместить оттенки оранжевого в сторону желтого или красного, а циановые и синие тона увести в сторону бирюзового. Это создает гармоничный контраст между кожей модели и фоном.</p>
+
+<ul>
+ <li>🎨 <strong>Hue:</strong> Меняет сам цвет (красный становится оранжевым).</li>
+ <li>📉 <strong>Saturation:</strong> Регулирует интенсивность цвета (насыщенность).</li>
+ <li>💡 <strong>Luminance:</strong> Влияет на яркость конкретного цвета, не затрагивая другие.</li>
+</ul>
+
+<p>Особое место занимает панель <strong>Калибровка</strong> (Calibration) в самом низу списка инструментов. Многие профессионалы считают её секретным оружием. Изменяя параметры первичных цветов (Red, Green, Blue Primaries), вы меняете основу, на которую накладываются все остальные корректировки. Сдвиг синего первичного цвета влево часто придает цифровому снимку аналоговую пленочную глубину.</p>
+
+<div class="pb-poll" id="poll-921599f8"><div class="pb-poll-question">📊 Какой стиль обработки вам ближе?</div><div class="pb-poll-option" data-poll="921599f8" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Пленочное зерно и мягкость</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="921599f8" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Яркий цифровой HDR</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="921599f8" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Черно-белая классика</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="921599f8" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Темный и мрачный Moody</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<p>Используйте инструмент <code>Выборочная коррекция цвета</code>, если нужно изменить конкретный объект, например, сделать траву менее зеленой, но оставить кожу untouched. Это требует аккуратности, но дает превосходный контроль над финальным результатом.</p>
+
+<h2 id="добавление-эффектов-зерно-виньетка-и-текстуры">Добавление эффектов: зерно, виньетка и текстуры</h2>
+
+<p>После работы с цветом изображение может казаться слишком «цифровым» и стерильным. Чтобы добавить характера, используются эффекты. <strong>Зернистость</strong> (Grain) — лучший друг имитации пленки. Она скрывает мелкие дефекты и объединяет цветовые переходы, делая картинку более цельной.</p>
+
+<p>При добавлении зернистости важно не переборщить. Значения размера (Size) и шероховатости (Roughness) должны быть подобраны под разрешение вашего снимка. Для современных камер с высоким разрешением требуется более крупное зерно, чтобы оно было заметно.</p>
+
+<p><strong>Виньетирование</strong> (Vignetting) помогает направить взгляд зрителя в центр кадра, затемняя или осветляя края. В Lightroom есть два типа виньеток: оптическая (после кадрирования) и эффект (до кадрирования). Для создания стилей обычно используется эффект, так как он более предсказуем.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Эффект «Четкость» (Clarity) и «Текстура» (Texture) влияют на микроконтраст. Чрезмерное использование может привести к появлению грязных ореолов вокруг объектов и неестественному виду кожи. Используйте умеренно.</p>
+</blockquote>
+
+<p>Также стоит упомянуть инструмент <strong>Разделенное тонирование</strong> (Split Toning), который позволяет окрасить света и тени в разные цвета. Например, тени в синий, а света в теплый желтый. Это классический прием, который до сих пор актуален для создания глубины.</p>
+
+<h2 id="сохранение-и-управление-пресетами">Сохранение и управление пресетами</h2>
+
+<p>Когда результат вас полностью устраивает, наступает момент сохранения. Чтобы создать пресет, нажмите на знак «плюс» в панели пресетов или используйте сочетание клавиш <code>Ctrl+Shift+S</code> (на Windows) или <code>Cmd+Shift+S</code> (на Mac). Откроется диалоговое окно, где нужно дать имя новому профилю.</p>
+
+<p>Ключевой момент — выбор групп настроек, которые будут сохранены. <mark>Для универсального пресета лучше не сохранять параметры экспозиции и баланса белого</mark>, так как они зависят от конкретного кадра. Оставьте только настройки тональной кривой, HSL, калибровки и эффектов.</p>
+
+<p>Создавайте логические папки для своих пресетов. Например, «My Styles», «B&W», «Portrait». Это позволит быстро ориентироваться в библиотеке, когда у вас накопится десятки авторских профилей. Систематизация — залог продуктивной работы.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Чек-лист перед сохранением пресета</h4><label class="check-item"><input type="checkbox"><span>Проверить на разных фото (свет/тень):Отключить настройки экспозиции:Проверить баланс белого:Дать понятное имя:Выбрать папку для сохранения:</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 1</div></div>
+
+<p>После сохранения пресет сразу появится в списке доступных. Вы можете применить его к любому другому фото и при необходимости ( - fine tune) параметры, так как исходный файл RAW всегда сохраняет всю информацию.</p>
+
+<h2 id="сравнение-методов-обработки">Сравнение методов обработки</h2>
+
+<p>Существует несколько подходов к созданию стиля, и важно понимать их различия. Одни фотографы предпочитают работать только с базовыми инструментами, другие полностью полагаются на кривые. Давайте сравним основные методы в таблице.</p>
+
+<div class="pb-table-wrap"><table>
+ <thead>
+ <tr>
+ <th>Метод</th>
+ <th>Сложность</th>
+ <th>Гибкость</th>
+ <th>Лучшее применение</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>Базовая панель</td>
+ <td>Низкая</td>
+ <td>Средняя</td>
+ <td>Быстрая ретушь, репортаж</td>
+ </tr>
+ <tr>
+ <td>Тоновые кривые</td>
+ <td>Высокая</td>
+ <td>Максимальная</td>
+ <td>Киношный стиль, имитация пленки</td>
+ </tr>
+ <tr>
+ <td>HSL / Цвет</td>
+ <td>Средняя</td>
+ <td>Высокая</td>
+ <td>Портрет, пейзаж, Fashion</td>
+ </tr>
+ <tr>
+ <td>Калибровка</td>
+ <td>Высокая</td>
+ <td>Фундаментальная</td>
+ <td>Создание уникальных цветовых схем</td>
+ </tr>
+ </tbody>
+</table></div>
+
+<p>Комбинирование этих методов дает наилучший результат. Не стоит ограничиваться одним инструментом. Экспериментируйте с наложением эффектов, например, добавляя зерно поверх мягкой кривой.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Идеальный пресет — это не тот, который делает все за вас, а тот, который задает правильное направление, оставляя пространство для финальной доводки под конкретный кадр.</p></aside>
+
+<h2 id="экспорт-и-использование-в-мобильных-версиях">Экспорт и использование в мобильных версиях</h2>
+
+<p>Современный фотограф часто работает в связке <em>Desktop + Mobile</em>. К счастью, экосистема Adobe позволяет синхронизировать пресеты через облако. Если вы создали стиль на компьютере, он автоматически появится в приложении Lightroom на смартфоне при условии входа в один аккаунт.</p>
+
+<p>Если облачная синхронизация недоступна, вы можете экспортировать пресет в формате <code>.DNG</code> (для мобильных версий) или <code>.XMP/.LRTEMPLATE</code> (для десктопных). Файл DNG — это фактически фотография со встроенными настройками. Открыв его на телефоне и скопировав настройки, вы переносите стиль на любое устройство.</p>
+
+<p>Для экспорта в формат DNG на мобильном телефоне: откройте фото с примененным пресетом, нажмите меню (три точки) и выберите «Создать пресет» или «Экспорт настроек». Это позволит делиться своим стилем с друзьями или продавать его.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Интерфейс мобильной версии Lightroom может отличаться от десктопной. Некоторые сложные настройки, доступные на ПК, могут быть скрыты в расширенном меню или отсутствовать в бесплатной версии приложения.</p>
+</blockquote>
+
+<p>Регулярно обновляйте приложение <em>Lightroom Mobile</em>, так как Adobe постоянно добавляет новые функции и улучшает совместимость пресетов между платформами. Это обеспечит стабильную работу ваших профилей.</p>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+ <summary>Почему мой пресет выглядит по-разному на разных фотографиях?</summary>
+ <p>Это нормально. Пресет применяет математические изменения к пикселям. Если исходные фотографии имеют разную экспозицию, баланс белого или цветовой диапазон, результат будет отличаться. Пресеты — это (starting point), а не финальное решение.</p>
+</details>
+
+<details>
+ <summary>Можно ли создать стиль в бесплатной версии Lightroom Mobile?</summary>
+ <p>Да, базовые инструменты цветокоррекции, кривые и HSL доступны в бесплатной версии. Однако функции маскирования и некоторые продвинутые инструменты геометрии могут требовать подписки Premium.</p>
+</details>
+
+<details>
+ <summary>В чем разница между профилем и пресетом?</summary>
+ <p>Профиль (Profile) меняет интерпретацию цветов RAW-файла, не затрагивая ползунки настроек. Пресет (Preset) — это набор конкретных значений ползунков. Профили более гибкие и меньше «ломают» изображение при применении.</p>
+</details>
+
+<details>
+ <summary>Как сделать пресет черно-белым?</summary>
+ <p>В панели HSL/Цвет опустите ползунок «Насыщенность» (Saturation) для всех цветов в ноль, либо в базовой панели выберите режим «Черно-белое». Сохраните эти настройки как новый пресет.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/k/ka/kakaya-posudomojka-samaya-luchshaya-po-otzyvam.html" class="pb-related-card">
+                <span class="pb-related-title">Какая посудомойка лучшая по отзывам: рейтинг 2026</span>
+                <span class="pb-related-desc">Аналитика отзывов: какая посудомоечная машина лучшая. Сравнение Bosch, Electrolux, Haier. Реальные п</span>
+            </a><a href="/articles/n/na/nasadka-na-nasos-dlya-matrasa.html" class="pb-related-card">
+                <span class="pb-related-title">Насадка на насос для матраса: виды, выбор и использование</span>
+                <span class="pb-related-desc">Как выбрать насадку для насоса надувного матраса? Обзор типов, совместимости с автомобильными и элек</span>
+            </a><a href="/articles/c/ch/chto-podarit-druzyam-na-pokupku-mashiny.html" class="pb-related-card">
+                <span class="pb-related-title">Что подарить другу на покупку машины: 50 идей 2026 года</span>
+                <span class="pb-related-desc">Полный гайд по выбору оригинальных подарков на покупку авто: от полезных аксессуаров до стильных гад</span>
+            </a><a href="/articles/s/st/stiralki-khajer-otzyvy-spetsialistov-i-pokupatelej.html" class="pb-related-card">
+                <span class="pb-related-title">Стиральные машины Haier: отзывы специалистов и покупателей 2026</span>
+                <span class="pb-related-desc">Экспертный разбор стиралок Haier: реальные отзывы мастеров и владельцев, плюсы и минусы, сравнение с</span>
+            </a><a href="/articles/p/po/podstavka-dlya-stiralki-i-sushilki.html" class="pb-related-card">
+                <span class="pb-related-title">Подставка под стиральную машину и сушилку: выбор и установка</span>
+                <span class="pb-related-desc">Как выбрать подставку под стиралку и сушилку. Обзор видов, советы по монтажу и безопасности. Создайт</span>
+            </a><a href="/articles/r/ra/radio-russkij-rep-volna.html" class="pb-related-card">
+                <span class="pb-related-title">Радио Русский Рэп Волна: частоты, приложения и история</span>
+                <span class="pb-related-desc">Где слушать радио Русский Рэп Волна? Актуальные частоты FM, онлайн-трансляция, обзор приложений и ис</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Перевод каталога механика в MySummerCar: руководство — Авто Факт</title>
+    <meta name="description" content="Как перевести каталог механика в My Summer Car? Полная инструкция по замене файлов локализации, правке JSON и устранению ошибок в игре.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/p/pe/perevod-kataloga-mekhanika-v-maj-sammer-kar.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Перевод каталога механика в MySummerCar: руководство">
+    <meta property="og:description" content="Как перевести каталог механика в My Summer Car? Полная инструкция по замене файлов локализации, правке JSON и устранению ошибок в игре.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Перевод каталога механика в MySummerCar: руководство</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#поиск-и-подготовка-файлов-локализации">Поиск и подготовка файлов локализации</a></li><li><a href="#структура-данных-и-синтаксис-json">Структура данных и синтаксис JSON</a></li><li><a href="#процесс-перевода-диалогов-и-предметов">Процесс перевода диалогов и предметов</a></li><li><a href="#технические-нюансы-кодировки-и-шрифтов">Технические нюансы кодировки и шрифтов</a></li><li><a href="#тестирование-и-отладка-модификаций">Тестирование и отладка модификаций</a></li><li><a href="#распространенные-ошибки-и-их-решение">Распространенные ошибки и их решение</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/l/la/lanch-dlya-diagnostiki-avtomobilej.html">Ланч для диагностики авто: питание сканера и ноутбука</a></li><li><a href="/articles/m/mu/muzyka-v-mashinu-vk-plejlist.html">Музыка в машину ВК: лучшие плейлисты для авто 2026</a></li><li><a href="/articles/r/ra/radio-rekord-v-msk.html">Радио Рекорд в Москве: частота, как слушать онлайн и в машине</a></li><li><a href="/articles/r/ra/radio-v-prikurivatel-dlya-mashiny.html">Радио в прикуриватель для машины: выбор и установка FM-трансмиттера</a></li><li><a href="/articles/k/ka/kak-vyglyadyat-validatory-v-avtobusakh.html">Как выглядят валидаторы в автобусах: виды, фото и типы оплаты</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Перевод каталога механика в My Summer Car: полное руководство</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#поиск-и-подготовка-файлов-локализации">Поиск и подготовка файлов локализации</a></li><li><a href="#структура-данных-и-синтаксис-json">Структура данных и синтаксис JSON</a></li><li><a href="#процесс-перевода-диалогов-и-предметов">Процесс перевода диалогов и предметов</a></li><li><a href="#технические-нюансы-кодировки-и-шрифтов">Технические нюансы кодировки и шрифтов</a></li><li><a href="#тестирование-и-отладка-модификаций">Тестирование и отладка модификаций</a></li><li><a href="#распространенные-ошибки-и-их-решение">Распространенные ошибки и их решение</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Игра <em>My Summer Car</em> уже много лет остается культовой среди любителей хардкорных симуляторов, предлагая уникальную возможность собрать автомобиль с нуля. Однако для многих русскоязычных игроков серьезным барьером становится языковая преграда, особенно когда дело доходит до взаимодействия с <strong>NPC-персонажами</strong>, такими как механик Тейсто. Понимание того, что именно он говорит или какие запчасти предлагает, критически важно для успешного прохождения игровых квестов и сборки машины.</p>
+
+<p>К счастью, сообщество мододелов и сама структура файлов игры позволяют относительно легко адаптировать интерфейс и диалоги под свои нужды. Процесс перевода каталога механика — это не просто замена текста, а работа с внутренней структурой данных игры. В этой статье мы подробно разберем, как найти необходимые файлы, какие инструменты использовать для редактирования и как избежать распространенных ошибок, которые могут привести к вылетам игры или некорректному отображению текста.</p>
+
+<p>Прежде чем приступать к модификации, важно осознавать, что вы вмешиваетесь в работу программного кода. Любые изменения в файлах локализации требуют внимательности к синтаксису и кодировке. <mark>Файлы локализации в My Summer Car часто используют специфическую кодировку, отличную от стандартной UTF-8, что может привести к появлению «кракозябр» вместо текста при неправильном сохранении.</mark> Поэтому подготовка качественного редактора и резервных копий является первым и самым важным шагом в этом процессе.</p>
+
+<h2 id="поиск-и-подготовка-файлов-локализации">Поиск и подготовка файлов локализации</h2>
+
+<p>Первым шагом на пути к русификации станет поиск директории, где хранятся все текстовые данные игры. Обычно они расположены в папке с установленной игрой, часто внутри подкаталогов <code>MySummerCar_Data</code> или в специализированных папках модов, если вы используете лаунчеры вроде <em>MSC Launcher</em>. Вам необходимо найти файлы, отвечающие за диалоги и предметы, которые часто имеют расширения <code>.json</code> или <code>.txt</code>, но могут быть запакованы в архивы ресурсов.</p>
+
+<p>Для работы с этими файлами стандартного блокнота Windows будет недостаточно. Вам потребуется продвинутый текстовый редактор, поддерживающий подсветку синтаксиса JSON и различные кодировки. Отличным выбором станут программы вроде <em>Notepad++</em>, <em>Visual Studio Code</em> или <em>Sublime Text</em>. Эти инструменты помогут вам видеть структуру данных, находить конкретные ключевые слова и избегать синтаксических ошибок, которые могут сломать загрузку игры.</p>
+
+<p>Крайне важно перед началом любых правок создать полную резервную копию оригинальных файлов. Если в процессе перевода вы допустите ошибку в синтаксисе или случайно удалите важный символ, игра может перестать запускаться. Наличие оригинала позволит вам быстро откатить изменения и начать заново, не переустанавливая всю игру заново.</p>
+
+<ul>
+<li>📁 Найдите корневую папку игры через свойства ярлыка или библиотеку Steam.</li>
+<li>💾 Скопируйте целевые файлы локализации в отдельную папку для редактирования.</li>
+<li>🔧 Установите и настройте текстовый редактор с поддержкой кодировок.</li>
+<li>📝 Создайте резервную копию оригинальных файлов перед внесением изменений.</li>
+</ul>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Используйте функцию "Сравнить файлы" в редакторе, чтобы визуально видеть разницу между оригиналом и вашей переведенной версией. Это поможет не пропустить ни одной строки.</p></aside>
+
+<h2 id="структура-данных-и-синтаксис-json">Структура данных и синтаксис JSON</h2>
+
+<p>Большинство современных игр, включая <em>My Summer Car</em>, используют формат <strong>JSON</strong> (JavaScript Object Notation) для хранения структурированных данных, включая тексты диалогов и названия предметов. Понимание базовой структуры этого формата необходимо для успешного перевода. Файл состоит из пар «ключ-значение», где ключом является идентификатор строки, а значением — сам текст, который видит игрок.</p>
+
+<p>При редактировании таких файлов критически важно соблюдать правила синтаксиса. Каждая строка должна заканчиваться запятой, если за ней следует другая, все текстовые значения должны быть заключены в двойные кавычки, а скобки должны быть правильно закрыты. Даже одна лишняя запятая в конце списка или отсутствующая кавычка могут привести к тому, что игра не сможет прочитать файл и проигнорирует все ваши изменения или выдаст ошибку.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не меняйте сами ключи (идентификаторы) в файлах локализации! Игра обращается к тексту именно по ключу. Если вы измените ключ, связь между игровым событием и текстом будет потеряна, и вместо перевода вы увидите пустоту или исходный текст.</p>
+</blockquote>
+
+<p>Рассмотрим пример типичной структуры данных, с которой вам придется столкнуться. В таблице ниже показано, как выглядят пары ключей и значений до и после перевода.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Тип данных</th>
+<th>Оригинал (Ключ)</th>
+<th>Оригинал (Значение)</th>
+<th>Перевод (Значение)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Диалог</td>
+<td>TEISTO_GREETING</td>
+<td>Hello there, son.</td>
+<td>Приветствую, сынок.</td>
+</tr>
+<tr>
+<td>Предмет</td>
+<td>ITEM_SPARKPLUG</td>
+<td>Spark Plug</td>
+<td>Свеча зажигания</td>
+</tr>
+<tr>
+<td>Действие</td>
+<td>ACTION_BUY</td>
+<td>Buy</td>
+<td>Купить</td>
+</tr>
+<tr>
+<td>Статус</td>
+<td>STATUS_BROKEN</td>
+<td>Broken</td>
+<td>Сломано</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>При работе с большими объемами текста удобно использовать функцию поиска и замены, но делать это нужно осторожно. Убедитесь, что вы заменяете текст только внутри значений, а не внутри ключей или служебных команд. Также стоит обращать внимание на специальные символы, такие как <code>\n</code> для переноса строки, которые должны оставаться неизменными.</p>
+
+<div class="pb-poll" id="poll-6dacf75c"><div class="pb-poll-question">📊 Какой редактор кода вы предпочитаете для моддинга?</div><div class="pb-poll-option" data-poll="6dacf75c" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Notepad++</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="6dacf75c" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Visual Studio Code</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="6dacf75c" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Sublime Text</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="6dacf75c" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Блокнот Windows</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="6dacf75c" data-idx="4" onclick="pbPollVote(this)"><span class="pb-poll-label">Другой</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="процесс-перевода-диалогов-и-предметов">Процесс перевода диалогов и предметов</h2>
+
+<p>Непосредственный перевод текста требует не только знания языка, но и понимания контекста игры. <em>My Summer Car</em> известна своим специфическим юмором и сленгом, поэтому дословный перевод часто выглядит неестественно. Старайтесь передавать смысл и tone-of-voice персонажей, сохраняя атмосферу финской глубинки 90-х годов.</p>
+
+<p>Особое внимание уделите терминалогии. Названия деталей автомобиля, инструментов и действий должны быть единообразными во всем файле. Если вы перевели «wrench» как «ключ» в одном месте, не используйте «гаечный ключ» или «инструмент» в других, чтобы не запутать игрока. Создайте свой собственный глоссарий терминов перед началом работы.</p>
+
+<p>В процессе перевода может возникнуть ситуация, когда текст не помещается в отведенное игровым интерфейсом поле. В таких случаях приходится сокращать фразы, сохраняя их смысл. Иногда для длинных описаний предметов приходится использовать аббревиатуры или более лаконичные формулировки, чтобы текст не вылезал за границы окна диалога.</p>
+
+<ul>
+<li>🚗 Сохраняйте стилистику оригинала: грубоватый, но простой язык персонажей.</li>
+<li>🔍 Проверьте все технические термины на соответствие автомобильному словарю.</li>
+<li>✂️ Адаптируйте длину фраз под ограничения интерфейса игры.</li>
+<li>📚 Ведите список использованных терминов для обеспечения консистентности.</li>
+</ul>
+
+<p>После перевода основного массива текста не забудьте проверить переменные. В строках могут встречаться конструкции вроде <code>{0}</code> или <code>%s</code>, которые заменяются на динамические данные (например, имя игрока или количество денег). Эти элементы должны остаться нетронутыми и находиться в правильном месте предложения.</p>
+
+<details class="pb-accordion"><summary>Что делать с непереводимыми шутками?</summary><div class="pb-accordion-body"><p>Если шутка завязана на игре слов или культурном коде, который невозможно перевести, лучше добавить комментарий в коде или заменить её на аналогичную по смыслу русскую шутку, понятную целевой аудитории.</p></div></details>
+
+<h2 id="технические-нюансы-кодировки-и-шрифтов">Технические нюансы кодировки и шрифтов</h2>
+
+<p>Одной из самых частых проблем при локализации игр на движке Unity, как <em>My Summer Car</em>, является проблема кодировки. Если после сохранения файла вместо русского текста вы видите набор непонятных символов, значит, файл сохранен в неправильной кодировке. Чаще всего требуется перекодировать файл в <strong>UTF-8</strong> с BOM (Byte Order Mark) или без, в зависимости от требований конкретного файла игры.</p>
+
+<p>В некоторых случаях может потребоваться замена шрифтов. Стандартные шрифты игры могут не содержать кириллических символов. Если вы видите квадратики вместо букв, это означает, что шрифт не поддерживает русские знаки. Решение этой проблемы сложнее и может требовать замены файлов шрифтов в папке ресурсов игры на аналоги с поддержкой Cyrillic.</p>
+
+<p>При сохранении файла в редакторе <em>Notepad++</em> вы можете выбрать кодировку в меню «Кодировки». Попробуйте варианты <code>UTF-8</code> или <code>ANSI</code> (если игра старая и не поддерживает Unicode), чтобы найти подходящий. Часто помогает конвертация через «Преобразовать в UTF-8» и последующее сохранение.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Избегайте использования специфических символов и эмодзи в тексте перевода, если вы не уверены, что шрифт игры их поддерживает. Это может привести к crash-ам игры или некорректному рендерингу текста.</p>
+</blockquote>
+
+<p>Также стоит учитывать, что некоторые файлы могут быть защищены от записи или иметь атрибут «Только для чтения». Перед редактированием убедитесь, что у вас есть права на изменение файлов в папке с игрой. В современных версиях Windows это может потребовать запуска редактора от имени администратора.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Правильная кодировка файла — это 90% успеха. Если текст отображается как «кракозябры», в 99% случаев проблема именно в формате сохранения файла, а не в ошибке перевода.</p></aside>
+
+<h2 id="тестирование-и-отладка-модификаций">Тестирование и отладка модификаций</h2>
+
+<p>После того как файлы переведены и сохранены, наступает этап тестирования. Запустите игру и попробуйте взаимодействовать с механиком, открывать каталог запчастей и читать описания. Внимательно следите за консолью ошибок (если она включена) и за поведением интерфейса. Любые пропуски текста или странные символы должны быть зафиксированы.</p>
+
+<p>Если игра вылетает при загрузке или при открытии конкретного меню, это верный признак синтаксической ошибки в JSON-файле. Вернитесь к редактору кода и проверьте файл на наличие ошибок. Многие редакторы имеют встроенную функцию валидации JSON, которая укажет строку с проблемой.</p>
+
+<p>Процесс отладки может занять больше времени, чем сам перевод. Вам придется неоднократно запускать игру, вносить правки и снова проверять результат. Для ускорения процесса можно использовать «чистый» профиль сохранения, чтобы быстро достигать нужных моментов игры для проверки.</p>
+
+<ul>
+<li>🚀 Запустите игру и проверьте все отредактированные меню.</li>
+<li>🐛 Фиксируйте все вылеты и ошибки отображения текста.</li>
+<li>🔁 Используйте валидатор JSON для поиска синтаксических ошибок.</li>
+<li>💾 Делайте промежуточные сохранения версий файла при успешных тестах.</li>
+</ul>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Чек-лист перед публикацией мода</h4><label class="check-item"><input type="checkbox"><span>Проверка всех диалогов механика</span></label><label class="check-item"><input type="checkbox"><span>Проверка названий всех деталей в каталоге</span></label><label class="check-item"><input type="checkbox"><span>Проверка кодировки файла на разных ОС</span></label><label class="check-item"><input type="checkbox"><span>Отсутствие синтаксических ошибок в JSON</span></label><label class="check-item"><input type="checkbox"><span>Сравнение с оригиналом на предмет пропусков</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="распространенные-ошибки-и-их-решение">Распространенные ошибки и их решение</h2>
+
+<p>В процессе локализации новички часто наступают на одни и те же грабли. Одна из самых частых ошибок — нарушение структуры JSON при добавлении новых строк или удалении старых. Помните, что формат очень чувствителен к запятым: после последнего элемента списка запятая не ставится, а между элементами она обязательна.</p>
+
+<p>Еще одна проблема — это «потеря» переменных. Если в оригинале было <code>Cost: {0} mk</code>, а вы написали <code>Цена: {0} марок</code>, это правильно. Но если вы случайно изменили порядок или удалили <code>{0}</code>, игра не сможет подставить цену, и игрок увидит текст без цифр или с ошибкой.</p>
+
+<p>Иногда перевод может конфликтовать с другими установленными модами. Если у вас стоит несколько модификаций, меняющих одни и те же файлы, они могут перезаписывать друг друга. В таком случае необходимо использовать мод-лоадеры или вручную объединять изменения из разных источников в один файл.</p>
+
+<details>
+<summary>Что делать, если текст обрезается?</summary>
+<p>Если текст не влезает в отведенное поле, попробуйте сократить формулировку, убрать лишние прилагательные или использовать более короткие синонимы. В крайнем случае можно попробовать изменить масштаб шрифта в настройках игры, если такая опция доступна через моды интерфейса.</p>
+</details>
+
+<details>
+<summary>Как восстановить оригинальный язык?</summary>
+<p>Для возврата к английскому языку достаточно удалить или переименовать измененные файлы локализации. Игра автоматически подтянет оригинальные файлы из архивов, если модифицированные версии не будут найдены. Именно поэтому так важно не удалять оригиналы, а только переименовывать их.</p>
+</details>
+
+<details>
+<summary>Можно ли перевести игру через Steam?</summary>
+<p>Официально <em>My Summer Car</em> не поддерживает русский язык через настройки Steam. Все доступные переводы являются фанатскими модификациями, требующими ручной установки файлов в папку с игрой. Автоматического обновления перевода через Steam не происходит.</p>
+</details>
+
+<p>Завершая работу, убедитесь, что ваш перевод не содержит орфографических ошибок и опечаток. Попросите знакомых вычитать текст свежим взглядом. Качественная локализация делает игру гораздо приятнее и понятнее, открывая новые грани геймплея для русскоязычной аудитории.</p></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/l/la/lanch-dlya-diagnostiki-avtomobilej.html" class="pb-related-card">
+                <span class="pb-related-title">Ланч для диагностики авто: питание сканера и ноутбука</span>
+                <span class="pb-related-desc">Как организовать питание для диагностического оборудования в полевых условиях. Ланч-бокс, пауэрбанк </span>
+            </a><a href="/articles/m/mu/muzyka-v-mashinu-vk-plejlist.html" class="pb-related-card">
+                <span class="pb-related-title">Музыка в машину ВК: лучшие плейлисты для авто 2026</span>
+                <span class="pb-related-desc">Как создать идеальный плейлист в ВК для машины? Обзор жанров, советы по звучанию и готовые списки тр</span>
+            </a><a href="/articles/r/ra/radio-rekord-v-msk.html" class="pb-related-card">
+                <span class="pb-related-title">Радио Рекорд в Москве: частота, как слушать онлайн и в машине</span>
+                <span class="pb-related-desc">Частота радио Рекорд в Москве, способы прослушивания онлайн и в автомобиле. Обзор эфира, программы и</span>
+            </a><a href="/articles/r/ra/radio-v-prikurivatel-dlya-mashiny.html" class="pb-related-card">
+                <span class="pb-related-title">Радио в прикуриватель для машины: выбор и установка FM-трансмиттера</span>
+                <span class="pb-related-desc">Полный гид по выбору радио в прикуриватель. Как настроить FM-трансмиттер, убрать помехи и выбрать лу</span>
+            </a><a href="/articles/k/ka/kak-vyglyadyat-validatory-v-avtobusakh.html" class="pb-related-card">
+                <span class="pb-related-title">Как выглядят валидаторы в автобусах: виды, фото и типы оплаты</span>
+                <span class="pb-related-desc">Узнайте, как выглядят валидаторы в автобусах разных моделей. Подробное описание внешнего вида, типов</span>
+            </a><a href="/articles/k/ko/kofemashina-delongi-s-kapuchinatorom-magnifika-s.html" class="pb-related-card">
+                <span class="pb-related-title">Кофемашина Delonghi Magnifica S: обзор, функции капучинатора</span>
+                <span class="pb-related-desc">Подробный анализ кофемашины Delonghi Magnifica S. Особенности капучинатора, настройки помола, уход з</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

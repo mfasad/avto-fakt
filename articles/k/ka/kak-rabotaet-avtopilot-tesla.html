@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как работает автопилот Tesla: устройство и функции — Авто Факт</title>
+    <meta name="description" content="Подробный разбор системы автопилота Tesla. Узнайте, как камеры и нейросети обеспечивают движение, какие существуют ограничения и версии ПО.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ka/kak-rabotaet-avtopilot-tesla.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как работает автопилот Tesla: устройство и функции">
+    <meta property="og:description" content="Подробный разбор системы автопилота Tesla. Узнайте, как камеры и нейросети обеспечивают движение, какие существуют ограничения и версии ПО.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/tekhnika-i-gadzhety/">Техника и Гаджеты</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как работает автопилот Tesla: устройство и функции</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#архитектура-системы-камеры-и-сенсоры">Архитектура системы: камеры и сенсоры</a></li><li><a href="#принципы-работы-нейросетей-и-обработка-данных">Принципы работы нейросетей и обработка данных</a></li><li><a href="#уровни-автономности-autopilot-против-fsd">Уровни автономности: Autopilot против FSD</a></li><li><a href="#функции-безопасности-и-контроль-внимания-водителя">Функции безопасности и контроль внимания водителя</a></li><li><a href="#сравнение-версий-аппаратного-обеспечения">Сравнение версий аппаратного обеспечения</a></li><li><a href="#ограничения-и-условия-эксплуатации">Ограничения и условия эксплуатации</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/t/te/testovye-treki-dlya-proverki-akustiki.html">Тестовые треки для проверки акустики: полный гид и частоты</a></li><li><a href="/articles/a/au/auktsionnik-r-chto-znachit.html">Аукционник R: что значит в автоспорте и автосервисе</a></li><li><a href="/articles/k/ka/kakie-chasy-nadezhnee-kvartsevye-ili-mekhanicheskie.html">Кварцевые или механические часы: что надежнее в 2026 году?</a></li><li><a href="/articles/k/ka/kak-podklyuchitsya-k-radio-v-mashine-po-blyutuzu.html">Как подключиться к радио в машине по Bluetooth: полная инструкция</a></li><li><a href="/articles/r/re/realistichnye-mashiny-na-pulte-upravleniya.html">Реалистичные машины на пульте: как выбрать и настроить (2026)</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как работает автопилот Tesla: устройство, функции и ограничения</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#архитектура-системы-камеры-и-сенсоры">Архитектура системы: камеры и сенсоры</a></li><li><a href="#принципы-работы-нейросетей-и-обработка-данных">Принципы работы нейросетей и обработка данных</a></li><li><a href="#уровни-автономности-autopilot-против-fsd">Уровни автономности: Autopilot против FSD</a></li><li><a href="#функции-безопасности-и-контроль-внимания-водителя">Функции безопасности и контроль внимания водителя</a></li><li><a href="#сравнение-версий-аппаратного-обеспечения">Сравнение версий аппаратного обеспечения</a></li><li><a href="#ограничения-и-условия-эксплуатации">Ограничения и условия эксплуатации</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Современный автомобиль перестал быть просто средством передвижения, превратившись в сложный вычислительный комплекс на колесах. Ярчайшим примером такой эволюции стали электрокары <em>Tesla</em>, которые задали новые стандарты в индустрии. Многие водители задаются вопросом, насколько безопасно доверять управление электронике и что именно происходит "под капотом" во время движения по трассе. В этой статье мы детально разберем архитектуру системы, принципы ее работы и реальные возможности, которые она предоставляет владельцу.</p>
+
+<p>Основная концепция заключается в том, что машина не просто считывает показания датчиков, а "видит" окружающий мир так, как это делает человек, но с гораздо большей скоростью обработки данных. <strong>Нейросети</strong> анализируют видеопоток в реальном времени, распознавая пешеходов, разметку, знаки и другие транспортные средства. Понимание этих процессов критически важно для каждого владельца, так как позволяет правильно оценивать риски и не возлагать на технику несвойственные ей функции.</p>
+
+<p>Важно сразу отметить, что текущие версии ПО не являются полностью автономными. Несмотря на громкие заявления маркетологов, система требует постоянного контроля со стороны человека. <mark>Автопилот Tesla не может самостоятельно принимать этические решения в экстренных ситуациях, которые выходят за рамки заложенных алгоритмов безопасности.</mark> Поэтому знание технических ограничений — это вопрос вашей личной безопасности и безопасности окружающих.</p>
+
+<h2 id="архитектура-системы-камеры-и-сенсоры">Архитектура системы: камеры и сенсоры</h2>
+
+<p>Фундаментом всей системы компьютерного зрения является набор камер высокого разрешения, расположенных по периметру кузова. В отличие от многих конкурентов, <em>Tesla</em> отказалась от использования лидаров и радаров в новых моделях, сделав ставку на чистую компьютерную обработку видеосигнала, известную как <strong>Tesla Vision</strong>. Восемь камер обеспечивают обзор на 360 градусов, перекрывая слепые зоны и создавая единую трехмерную картину пространства вокруг автомобиля.</p>
+
+<p>Каждая камера имеет свое конкретное назначение и угол обзора. Широкоугольные камеры фиксируют объекты в непосредственной близости, телеобъективы "смотрят" далеко вперед, а боковые камеры контролируют перекрестки и перестроения. Обработка данных происходит на бортовом компьютере <em>Hardware 3.0</em> или более новых версиях, которые способны обрабатывать до 2,3 триллиона операций в секунду. Такая вычислительная мощность необходима для работы сложных <strong>нейронных сетей</strong>.</p>
+
+<details class="pb-accordion"><summary>Почему Tesla отказалась от радаров?</summary><div class="pb-accordion-body"><p>Радары часто давали ложные срабатывания, реагируя на металлические конструкции над дорогой (мосты, знаки), что приводило к резким и ненужным торможениям. Камеры, обученные на миллионах миль реальных данных, оказались более точными в распознавании контекста ситуации.</p></div></details>
+
+<p>Синхронизация показаний всех камер происходит с микроскопической задержкой. Это позволяет системе строить динамическую 3D-модель окружения, где каждый пиксель имеет свою глубину и вектор движения. Именно благодаря этому автомобиль понимает, что впереди не просто плоское изображение грузовика, а объемный объект, движущийся с определенной скоростью.</p>
+
+<h2 id="принципы-работы-нейросетей-и-обработка-данных">Принципы работы нейросетей и обработка данных</h2>
+
+<p>В основе принятия решений лежит программный комплекс, который непрерывно обучается на данных, собираемых с тысяч автомобилей по всему миру. Этот процесс называется <strong>машинным обучением</strong>. Когда автомобиль сталкивается с редкой или сложной ситуацией, он помечает этот фрагмент видео как интересный и отправляет обезличенные данные на сервера компании для дальнейшего анализа и дообучения алгоритмов.</p>
+
+<p>Процесс обработки можно разделить на несколько этапов. Сначала происходит детекция объектов: система выделяет на изображении машины, людей, велосипедистов, конусы и бордюры. Затем определяется их класс и текущее состояние. На следующем этапе строится траектория движения каждого объекта. <em>Автопилот</em> прогнозирует, где окажется пешеход через секунду, и планирует путь автомобиля так, чтобы избежать столкновения.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Регулярно обновляйте программное обеспечение автомобиля. Новые версии прошивок часто содержат улучшения в работе нейросетей, что делает вождение более плавным и предсказуемым.</p></aside>
+
+<p>Особое внимание уделяется распознаванию временных изменений в дорожной обстановке. Система должна игнорировать тени, блики от солнца, дождь и снег, которые могут искажать картинку с камер. Для этого используются специальные алгоритмы очистки изображения и компенсации погодных условий. Если камеры загрязнены или обзор закрыт, система предупредит водителя и ограничит свои функции.</p>
+
+<h2 id="уровни-автономности-autopilot-против-fsd">Уровни автономности: Autopilot против FSD</h2>
+
+<p>Многие пользователи путают базовый <strong>Autopilot</strong> и расширенный пакет <em>Full Self-Driving (FSD)</em>. Это принципиально разные уровни доступа к функциям автомобиля, хотя аппаратная часть у них может быть идентичной. Базовая версия, которая идет в стандартной комплектации, предлагает лишь адаптивный круиз-контроль и удержание в полосе.</p>
+
+<p>Пакет FSD открывает доступ к более продвинутым сценариям, таким как автоматическая смена полосы по сигналу поворотника, навигация на автопилоте по городу, распознавание светофоров и знаков STOP. Однако даже с оплаченным FSD автомобиль остается инструментом уровня <strong>Level 2+</strong> по классификации SAE, что означает необходимость постоянного контроля водителем.</p>
+
+<div class="pb-poll" id="poll-3d4055cd"><div class="pb-poll-question">📊 Какой пакет функций Tesla вас интересует больше?</div><div class="pb-poll-option" data-poll="3d4055cd" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Базовый Autopilot</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="3d4055cd" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Пакет FSD (Full Self-Driving)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="3d4055cd" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Boost (ускорение)</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="3d4055cd" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Ничего, я против автопилотов</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<p>Разница в работе этих режимов заключается в сложности алгоритмов планирования пути. Если базовый автопилот просто держит дистанцию и центр полосы, то FSD способен самостоятельно перестраиваться в потоке, проезжать сложные развязки и парковаться. Но ответственность за выбор режима и контроль ситуации всегда лежит на человеке за рулем.</p>
+
+<h2 id="функции-безопасности-и-контроль-внимания-водителя">Функции безопасности и контроль внимания водителя</h2>
+
+<p>Безопасность является приоритетом номер один, поэтому система оснащена множеством механизмов контроля за водителем. В отличие от некоторых конкурентов, использующих камеры в салоне, <em>Tesla</em> долгое время полагалась на датчик крутящего момента на руле. Однако современные версии ПО активно используют камеру салона (если она активирована в регионе) для отслеживания направления взгляда и положения головы.</p>
+
+<p>Если система обнаруживает, что водитель отвлекся или выпустил руль, следует серия предупреждений. Сначала это визуальные уведомления на экране, затем звуковые сигналы. Если реакции нет, автомобиль начинает плавно снижать скорость и eventually останавливается с включенной аварийной сигнализацией. После таких инцидентов функция автопилота может быть временно заблокирована для данного водителя.</p>
+
+<ul>
+<li>🚗 <strong>Датчик усилия:</strong> реагирует на легкое сопротивление руля, требуя периодического подруливания.</li>
+<li>👁️ <strong>Камера салона:</strong> отслеживает закрытые глаза и поворот головы от дороги.</li>
+<li>📉 <strong>Анализ стиля вождения:</strong> система оценивает резкость действий водителя и может ограничивать доступ к функциям.</li>
+<li>🛑 <strong>Принудительная остановка:</strong> крайняя мера, если водитель игнорирует все предупреждения.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ Внимание: Попытки обмануть систему (использование грузов для утяжеления руля) категорически запрещены и опасны для жизни. В случае ДТП с активным обманом систем безопасности страховка может не покрыть ущерб, а водитель несет уголовную ответственность.</p>
+</blockquote>
+
+<h2 id="сравнение-версий-аппаратного-обеспечения">Сравнение версий аппаратного обеспечения</h2>
+
+<p>Эволюция "железа" в автомобилях Tesla шла стремительно. От простого набора камер в ранних моделях до мощнейших компьютеров в современных версиях. Понимание различий между версиями <em>Hardware</em> важно при покупке подержанного автомобиля, так как от этого зависит доступность будущих обновлений и скорость работы системы.</p>
+
+<p>Наиболее распространенной сейчас является версия HW3, которая уже способна обрабатывать видеопоток со всех камер одновременно в высоком разрешении. Новые автомобили оснащаются HW4, где камеры имеют более высокое разрешение, улучшена ночная съемка и увеличена вычислительная мощность. Это позволяет внедрять более сложные функции в рамках пакета FSD.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Hardware 2.5</th>
+<th>Hardware 3.0</th>
+<th>Hardware 4.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Годы выпуска</td>
+<td>2017–2019</td>
+<td>2019–2023</td>
+<td>2023 – н.в.</td>
+</tr>
+<tr>
+<td>Поддержка FSD</td>
+<td>Только базовые функции</td>
+<td>Полная поддержка</td>
+<td>Полная поддержка + улучшения</td>
+</tr>
+<tr>
+<td>Разрешение камер</td>
+<td>1.2 Мп</td>
+<td>1.2 Мп</td>
+<td>5.0 Мп</td>
+</tr>
+<tr>
+<td>Обработка видео</td>
+<td>Ограниченная</td>
+<td>Полная</td>
+<td>Расширенная (HDR, ночь)</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Владельцы старых версий HW2.5 могут столкнуться с ограничениями при установке новейших функций, требующих высокой вычислительной мощности. Хотя базовый автопилот работает на них стабильно, сложные сценарии городского движения могут быть им недоступны или работать менее эффективно.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка перед использованием автопилота</h4><label class="check-item"><input type="checkbox"><span>Убедиться в чистоте всех камер</span></label><label class="check-item"><input type="checkbox"><span>Проверить актуальность карт и ПО</span></label><label class="check-item"><input type="checkbox"><span>Оценить погодные условия</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в исправности датчиков</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="ограничения-и-условия-эксплуатации">Ограничения и условия эксплуатации</h2>
+
+<p>Несмотря на впечатляющие технологии, автопилот имеет ряд физических и программных ограничений. Система не является всевидящей и может ошибаться в нестандартных ситуациях. Например, она может не распознать статичный объект необычной формы или неправильно интерпретировать действия регулировщика, если они противоречат разметке.</p>
+
+<p>Погодные условия также играют критическую роль. Сильный дождь, снегопад, туман или прямые солнечные лучи, бьющие в объектив камеры, могут временно дезориентировать систему. В таких случаях автомобиль уведомит водителя о необходимости взять управление на себя. Игнорирование этих предупреждений может привести к аварийной ситуации.</p>
+
+<p>Кроме того, существуют географические ограничения. Функции навигации на автопилоте работают только на дорогах с четкой разметкой и в регионах, где картография <em>Tesla</em> позволяет это. Выезд на грунтовые дороги или зоны без покрытия приведет к отключению функции удержания в полосе.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Автопилот не предназначен для использования на дорогах с пересечением железнодорожных путей без шлагбаумов, на крутых горных серпантинах и в зонах строительства с временной разметкой.</p>
+</blockquote>
+
+<p>Водитель должен всегда быть готов к тому, что система может потребовать вмешательства в любую секунду. Статистика показывает, что большинство инцидентов с участием автопилота происходило именно из-за потери концентрации внимания водителя, который полагался на электронику больше, чем следовало бы.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Автопилот — это ассистент водителя, а не его замена. Ваша рука всегда должна быть готова перехватить руль, а взгляд — контролировать дорогу.</p></aside>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Может ли Tesla сама доехать до дома без участия водителя?</summary>
+<p>Нет, текущие версии ПО требуют постоянного присутствия водителя за рулем и его готовности вмешаться в управление. Функция "Smart Summon" позволяет автомобилю парковаться самостоятельно на парковке, но только под присмотром владельца через приложение.</p>
+</details>
+
+<details>
+<summary>Работает ли автопилот ночью и в дождь?</summary>
+<p>Система работает в темное время суток и при осадках, но ее эффективность может снижаться. Камеры видят хуже в сильный ливень или снегопад, поэтому скорость работы автопилота может быть ограничена, или система попросит водителя взять управление на себя.</p>
+</details>
+
+<details>
+<summary>Нужно ли держать руки на руле постоянно?</summary>
+<p>Да, необходимо держать руки на руле и периодически слегка поворачивать его, чтобы система понимала, что вы контролируете ситуацию. Полное отпускание руля приведет к предупреждениям и eventualной блокировке функции.</p>
+</details>
+
+<details>
+<summary>Как часто обновляется программное обеспечение автопилота?</summary>
+<p>Обновления приходят регулярно, иногда несколько раз в месяц. Они могут содержать как мелкие исправления багов, так и значительные улучшения алгоритмов вождения. Обновление происходит автоматически при подключении к Wi-Fi.</p>
+</details>
+
+<details>
+<summary>Безопасно ли покупать подержанную Tesla с автопилотом?</summary>
+<p>Покупка безопасна, но важно проверить, какой пакет функций активирован на конкретном VIN-номере. Функции привязаны к автомобилю, а не к владельцу, но некоторые подписки (как премиум-коннективити) могут требовать оплаты.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/t/te/testovye-treki-dlya-proverki-akustiki.html" class="pb-related-card">
+                <span class="pb-related-title">Тестовые треки для проверки акустики: полный гид и частоты</span>
+                <span class="pb-related-desc">Лучшие тестовые треки для проверки акустики: частоты, розовый шум и FLAC. Как настроить звук в машин</span>
+            </a><a href="/articles/a/au/auktsionnik-r-chto-znachit.html" class="pb-related-card">
+                <span class="pb-related-title">Аукционник R: что значит в автоспорте и автосервисе</span>
+                <span class="pb-related-desc">Разбираем значение термина аукционник R в контексте автоспорта, ремонта и закупок. Как работает сист</span>
+            </a><a href="/articles/k/ka/kakie-chasy-nadezhnee-kvartsevye-ili-mekhanicheskie.html" class="pb-related-card">
+                <span class="pb-related-title">Кварцевые или механические часы: что надежнее в 2026 году?</span>
+                <span class="pb-related-desc">Сравнение надежности кварцевых и механических часов: плюсы, минусы, срок службы, ремонтопригодность </span>
+            </a><a href="/articles/k/ka/kak-podklyuchitsya-k-radio-v-mashine-po-blyutuzu.html" class="pb-related-card">
+                <span class="pb-related-title">Как подключиться к радио в машине по Bluetooth: полная инструкция</span>
+                <span class="pb-related-desc">Подробный гид: как подключить смартфон к магнитоле через Bluetooth. Решение проблем с сопряжением, н</span>
+            </a><a href="/articles/r/re/realistichnye-mashiny-na-pulte-upravleniya.html" class="pb-related-card">
+                <span class="pb-related-title">Реалистичные машины на пульте: как выбрать и настроить (2026)</span>
+                <span class="pb-related-desc">Гид по выбору пультов с реалистичным управлением машин: сравнение моделей, настройка чувствительност</span>
+            </a><a href="/articles/l/li/liaz-5292-avtobus-igrushka.html" class="pb-related-card">
+                <span class="pb-related-title">ЛиАЗ 5292 автобус игрушка: обзор, виды и выбор модели</span>
+                <span class="pb-related-desc">Полный гид по игрушечным автобусам ЛиАЗ 5292. Обзор масштабных моделей, отличия версий, советы колле</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

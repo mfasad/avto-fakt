@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Управление вентилятором от датчика температуры: схемы и настройка — Авто Факт</title>
+    <meta name="description" content="Как сделать управление вентилятором от датчика температуры своими руками. Схемы, выбор контроллеров, настройка порогов включения и калибровка.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/u/up/upravlenie-ventilyatorom-ot-datchika-temperatury.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Управление вентилятором от датчика температуры: схемы и настройка">
+    <meta property="og:description" content="Как сделать управление вентилятором от датчика температуры своими руками. Схемы, выбор контроллеров, настройка порогов включения и калибровка.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/garazh-master/">Гараж Мастер</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Управление вентилятором от датчика температуры: схемы и настройка</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#выбор-компонентов-для-системы-автоматического-охлаждения">Выбор компонентов для системы автоматического охлаждения</a></li><li><a href="#принципиальная-схема-и-логика-работы-контроллера">Принципиальная схема и логика работы контроллера</a></li><li><a href="#сборка-устройства-пошаговая-инструкция">Сборка устройства: пошаговая инструкция</a></li><li><a href="#программирование-и-настройка-порогов-срабатывания">Программирование и настройка порогов срабатывания</a></li><li><a href="#диагностика-неисправностей-и-калибровка">Диагностика неисправностей и калибровка</a></li><li><a href="#расширение-функционала-и-умный-дом">Расширение функционала и умный дом</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/s/sh/shag-obreshetki-pod-proflist-na-kryshu.html">Шаг обрешетки под профлист на крышу: расчет и нормы 2026</a></li><li><a href="/articles/k/ka/kak-kupit-garazh-po-chlenskoj-knizhke-pravilno.html">Как купить гараж по членской книжке в 2026: пошаговая инструкция</a></li><li><a href="/articles/v/vt/vtoroj-etazh-bez-potolka.html">Второй этаж без потолка: проекты, плюсы и минусы</a></li><li><a href="/articles/s/sh/shlang-k-kompressoru-s-bystrosemom.html">Шланг к компрессору с быстросъемом: выбор и установка</a></li><li><a href="/articles/p/po/polnostyu-spustilo-koleso-chto-delat.html">Полностью спустило колесо: что делать в дороге и как заменить</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как организовать управление вентилятором от датчика температуры</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#выбор-компонентов-для-системы-автоматического-охлаждения">Выбор компонентов для системы автоматического охлаждения</a></li><li><a href="#принципиальная-схема-и-логика-работы-контроллера">Принципиальная схема и логика работы контроллера</a></li><li><a href="#сборка-устройства-пошаговая-инструкция">Сборка устройства: пошаговая инструкция</a></li><li><a href="#программирование-и-настройка-порогов-срабатывания">Программирование и настройка порогов срабатывания</a></li><li><a href="#диагностика-неисправностей-и-калибровка">Диагностика неисправностей и калибровка</a></li><li><a href="#расширение-функционала-и-умный-дом">Расширение функционала и умный дом</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>Автоматизация процессов охлаждения — это не просто дань моде, а необходимость для продления срока службы дорогостоящего оборудования. <strong>Управление вентилятором от датчика температуры</strong> позволяет исключить человеческий фактор и обеспечивает точное поддержание теплового режима в любое время суток. Будь то гаражный инкубатор, система вентиляции мастерской или охлаждение мощного усилителя, принцип работы остается схожим.</p>
+
+<p>В основе системы лежит простой алгоритм: сенсор считывает текущие показатели среды, передает данные на контроллер, который, в свою очередь, подает напряжение на электродвигатель. Главное преимущество такой связки — возможность гибкой настройки пороговых значений. Вы можете задать диапазон, в котором система будет работать бесшумно, и режим максимальной производительности при критическом нагреве.</p>
+
+<p>Современные компоненты делают сборку доступной даже для новичков. Использование <em>Arduino</em>, <em>ESP8266</em> или специализированных терморегуляторов вроде <em>W1209</em> позволяет создавать надежные устройства за считанные часы. Важно лишь правильно подобрать мощность исполнительного механизма и точность сенсора, чтобы избежать ложных срабатываний или, наоборот, запоздалой реакции.</p>
+
+<h2 id="выбор-компонентов-для-системы-автоматического-охлаждения">Выбор компонентов для системы автоматического охлаждения</h2>
+
+<p>Первым шагом всегда становится подбор аппаратной части. Ошибка в выборе типа датчика может привести к погрешностям в несколько градусов, что критично для некоторых процессов. Наиболее популярными являются цифровые термометры <em>DS18B20</em>, которые обладают высокой точностью и могут работать в водонепроницаемом корпусе. Для менее требовательных задач подойдут аналоговые <em>NTC</em> термисторы, хотя их показания требуют более сложной обработки.</p>
+
+<p>Сам вентилятор также играет ключевую роль. Если вы планируете управлять мощным осевым вентилятором на 220 вольт, вам обязательно понадобится промежуточное реле или твердотельное реле. Для низковольтных систем (12В или 24В) достаточно транзисторного ключа или драйвера двигателя. <strong>Широтно-импульсная модуляция</strong> (ШИМ) позволяет плавно регулировать скорость вращения, снижая шум и износ механики.</p>
+
+<blockquote>
+<p>⚠️ Внимание: При работе с сетевым напряжением 220В соблюдайте предельную осторожность. Все соединения должны быть надежно изолированы, а корпус контроллера — диэлектрическим, чтобы исключить поражение током.</p>
+</blockquote>
+
+<p>Контроллер выступает мозгом системы. Простейшие решения базируются на компараторах, где напряжение с датчика сравнивается с эталонным. Более сложные схемы используют микроконтроллеры, позволяющие внедрить гистерезис — разницу температур между включением и выключением. Это предотвращает частое дерганье вентилятора в пограничных значениях.</p>
+
+<ul>
+<li>🌡️ Цифровой датчик <em>DS18B20</em> — точность до 0.5°C, широкий диапазон температур.</li>
+<li>⚙️ Релейный модуль или MOSFET-транзистор — для коммутации нагрузки.</li>
+<li>🔌 Блок питания — должен обеспечивать ток, достаточный для работы вентилятора на максимуме.</li>
+</ul>
+
+<p>Не забывайте про корпусирование. Электроника не любит пыли и вибрации, особенно в условиях гаража или производства. <mark>Использование датчиков с стальным щупом позволяет погружать их непосредственно в жидкость или закреплять на поверхности радиаторов</mark>, обеспечивая мгновенный отклик системы на изменение теплового режима.</p>
+
+<h2 id="принципиальная-схема-и-логика-работы-контроллера">Принципиальная схема и логика работы контроллера</h2>
+
+<p>Логика работы системы строится на постоянном цикле опроса состояния. Микроконтроллер считывает значение с сенсора, преобразует его в градусы и сравнивает с заданными уставками. Если температура превышает верхний порог <strong>T_on</strong>, подается сигнал на включение. Вентилятор работает до тех пор, пока температура не упадет до нижнего порога <strong>T_off</strong>.</p>
+
+<p>Такая разница температур называется гистерезисом. Без него, при установке порога включения и выключения в одну точку (например, 40°C), система бы работала в режиме "стробоскопа": включалась при 40.1°C и выключалась при 39.9°C. Это быстро выведет из строя как реле, так и сам двигатель из-за пусковых токов.</p>
+
+<details class="pb-accordion"><summary>Расчет гистерезиса</summary><div class="pb-accordion-body"><p>Гистерезис обычно составляет 3-5 градусов для воздушного охлаждения и 1-2 градуса для жидкостных систем. Слишком широкий гистерезис приведет к колебаниям температуры, слишком узкий — к износу оборудования.</p></div></details>
+
+<p>В схемах на базе <em>Arduino</em> или <em>STM32</em> можно реализовать более сложные алгоритмы. Например, плавное наращивание скорости вращения в зависимости от того, насколько текущая температура превышает норму. Это реализуется через изменение скважности ШИМ-сигнала.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+<th>Типичное значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Точность сенсора</td>
+<td>Погрешность измерения</td>
+<td>±0.5 °C</td>
+</tr>
+<tr>
+<td>Гистерезис</td>
+<td>Разница T_on и T_off</td>
+<td>3-5 °C</td>
+</tr>
+<tr>
+<td>Частота опроса</td>
+<td>Интервал считывания</td>
+<td>1-2 сек</td>
+</tr>
+<tr>
+<td>Напряжение питания</td>
+<td>Рабочий диапазон</td>
+<td>5В / 12В / 220В</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>Для реализации управления часто используются библиотеки, упрощающие код. Например, <em>OneWire</em> для работы с цифровыми термометрами. Это позволяет не писать низкоуровневые драйверы, а сосредоточиться на логике управления.</p>
+
+<h2 id="сборка-устройства-пошаговая-инструкция">Сборка устройства: пошаговая инструкция</h2>
+
+<p>Начните сборку с подготовки проводов и проверки каждого компонента отдельно. Подключите датчик к контроллеру и убедитесь, что он корректно отображает температуру на мониторе последовательного порта. Затем протестируйте цепь управления вентилятором, подав управляющий сигнал вручную.</p>
+
+<p>Соберите схему на макетной плате перед пайкой. Это позволит внести изменения в номиналы резисторов или схему подключения без риска повредить компоненты. Особенно важно проверить полярность подключения, так как ошибка здесь фатальна для большинства электронных компонентов.</p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Проверка перед пайкой</h4><label class="check-item"><input type="checkbox"><span>Проверка полярности датчика</span></label><label class="check-item"><input type="checkbox"><span>Тест работы вентилятора от прямого питания</span></label><label class="check-item"><input type="checkbox"><span>Замер тока потребления схемы</span></label><label class="check-item"><input type="checkbox"><span>Проверка изоляции щупа датчика</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>При пайке используйте флюс и припой с канифолью. Контакты должны быть блестящими и надежными. Для подключения датчика, который будет находиться в зоне нагрева, используйте термостойкий провод, например, силиконовый. Обычный ПВХ может оплавиться при температурах выше 80°C.</p>
+
+<p>Размещайте датчик в точке, где температура наиболее репрезентативна для всего объема. В гараже это может быть верхняя точка помещения, так как теплый воздух поднимается вверх. В инкубаторе — в непосредственной близости от яиц, но не касаясь их.</p>
+
+<ul>
+<li>🔌 Скрутите провода датчика и пропаяйте их для снижения сопротивления.</li>
+<li>🛡️ Используйте термоусадку для изоляции всех соединений.</li>
+<li>📏 Длина провода датчика не должна превышать 10-15 метров без усилителя сигнала.</li>
+</ul>
+
+<h2 id="программирование-и-настройка-порогов-срабатывания">Программирование и настройка порогов срабатывания</h2>
+
+<p>Настройка системы сводится к определению оптимальных температурных режимов. Если вы управляете вентилятором в покрасочной камере, важно не допустить сквозняков при низкой температуре, но обеспечить мощный воздухообмен при работе с растворителями. Программный код должен учитывать эти нюансы.</p>
+
+<p>В коде необходимо заложить защиту от "дребезга" значений. Датчик может выдавать скачки показаний из-за электромагнитных помех. Реализуйте усреднение: считайте 10 значений подряд, отбрасывайте максимальное и минимальное, и берите среднее арифметическое оставшихся. Это сделает работу системы стабильной.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Не устанавливайте порог включения вентилятора слишком близко к предельно допустимой температуре оборудования. Всегда оставляйте запас в 10-15% для инерционности системы охлаждения.</p>
+</blockquote>
+
+<p>Для изменения настроек без перепрошивки можно использовать потенциометры или энкодеры, подключенные к аналоговым входам контроллера. Это позволит регулировать температуру "на лету". Также популярно использование OLED-дисплеев для визуализации текущих параметров.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Используйте EEPROM-память контроллера для сохранения последних установленных настроек. Тогда при отключении питания вам не придется настраивать систему заново.</p></aside>
+
+<h2 id="диагностика-неисправностей-и-калибровка">Диагностика неисправностей и калибровка</h2>
+
+<p>В процессе эксплуатации система может давать сбои. Наиболее частая проблема — расхождение показаний датчика с реальностью. Для калибровки используйте эталонный термометр. Положите оба датчика в одинаковые условия (например, в стакан с водой) и внесите поправочный коэффициент в программу.</p>
+
+<p>Если вентилятор гудит, но не запускается, возможно, не хватает пускового тока. В этом случае блок питания слаб, или слишком велико падение напряжения на проводах. Увеличьте сечение проводки или установите более мощный источник напряжения.</p>
+
+<p>Проверьте целостность соединений. В гаражных условиях окисление контактов — обычное дело. Периодически протирайте контакты спиртом и проверяйте надежность фиксации винтов в клеммах.</p>
+
+<ul>
+<li>🔍 Визуальный осмотр платы на предмет вздутых конденсаторов или почернений.</li>
+<li>🌡️ Сравнение показаний с эталонным прибором раз в полгода.</li>
+<li>🧹 Очистка лопастей вентилятора от пыли, чтобы не нарушался балансировку.</li>
+</ul>
+
+<p>Иногда проблема кроется в самом алгоритме. Если температура среды быстро колеблется около порога срабатывания, увеличьте гистерезис. Это простое действие часто решает 90% проблем с нестабильной работой автоматики.</p>
+
+<div class="pb-poll" id="poll-13ce473d"><div class="pb-poll-question">📊 Какой контроллер вы планируете использовать?</div><div class="pb-poll-option" data-poll="13ce473d" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Arduino Nano</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="13ce473d" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Raspberry Pi</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="13ce473d" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Специализированный терморегулятор</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="13ce473d" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Собственная плата на AVR</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="расширение-функционала-и-умный-дом">Расширение функционала и умный дом</h2>
+
+<p>Современное управление вентилятором от датчика температуры не ограничивается локальной работой. Подключив модуль <em>Wi-Fi</em> или <em>Zigbee</em>, вы можете выводить статистику температур на смартфон. Протоколы <em>MQTT</em> позволяют интегрировать вашу самоделку в системы умного дома, такие как <em>Home Assistant</em>.</p>
+
+<p>Представьте сценарий: вентиляция в гараже включается не только по температуре, но и по датчику влажности, или когда вы подъезжаете к дому (геолокация телефона). Возможности программируемых контроллеров практически безграничны.</p>
+
+<p>Добавление звуковой сигнализации при критическом перегреве станет отличным дополнением. Простой пьезо-динамик, подключенный к цифровой ножке, сможет предупредить вас о неисправности задолго до того, как оборудование выйдет из строя.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Интеграция с системами умного дома превращает простую "крутилку" в мощный инструмент мониторинга, доступный из любой точки мира.</p></aside>
+
+<details>
+<summary>Можно ли использовать обычный комнатный термометр вместо специализированного?</summary>
+<p>Бытовые термометры часто имеют большой гистерезис и медленный отклик. Для точного управления вентилятором они не подходят, так как задержка реакции может привести к перегреву. Лучше использовать промышленные или специализированные цифровые сенсоры.</p>
+</details>
+
+<details>
+<summary>Какой запас мощности должен быть у блока питания?</summary>
+<p>Рекомендуется брать блок питания с запасом по току минимум 30-40% от потребляемого вентилятором. Это обеспечит стабильную работу и продлит срок службы самого блока, так как он не будет работать на пределе возможностей.</p>
+</details>
+
+<details>
+<summary>Как защитить электронику от пыли в гараже?</summary>
+<p>Используйте герметичные корпуса с классом защиты IP54 или выше. Для датчиков, которые должны контактировать с воздухом, используйте специальные мембраны или выносные щупы, оставляя саму плату внутри чистого бокса.</p>
+</details>
+
+<details>
+<summary>Почему вентилятор продолжает работать после выключения нагрева?</summary>
+<p>Это нормальная работа гистерезиса. Система должна охладить объект до температуры выключения (T_off), которая ниже температуры включения (T_on). Если вентилятор не выключается совсем, проверьте исправность датчика или логику программы.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/s/sh/shag-obreshetki-pod-proflist-na-kryshu.html" class="pb-related-card">
+                <span class="pb-related-title">Шаг обрешетки под профлист на крышу: расчет и нормы 2026</span>
+                <span class="pb-related-desc">Как правильно выбрать шаг обрешетки для профнастила на крышу: таблицы, расчеты, ошибки и советы от э</span>
+            </a><a href="/articles/k/ka/kak-kupit-garazh-po-chlenskoj-knizhke-pravilno.html" class="pb-related-card">
+                <span class="pb-related-title">Как купить гараж по членской книжке в 2026: пошаговая инструкция</span>
+                <span class="pb-related-desc">Полное руководство по покупке гаража через гаражный кооператив: проверка документов, риски, оформлен</span>
+            </a><a href="/articles/v/vt/vtoroj-etazh-bez-potolka.html" class="pb-related-card">
+                <span class="pb-related-title">Второй этаж без потолка: проекты, плюсы и минусы</span>
+                <span class="pb-related-desc">Второй этаж без потолка: как создать эффектное пространство. Плюсы и минусы, нюансы вентиляции, отоп</span>
+            </a><a href="/articles/s/sh/shlang-k-kompressoru-s-bystrosemom.html" class="pb-related-card">
+                <span class="pb-related-title">Шланг к компрессору с быстросъемом: выбор и установка</span>
+                <span class="pb-related-desc">Как выбрать шланг к компрессору с быстросъемом. Разбор материалов, диаметров и стандартов соединений</span>
+            </a><a href="/articles/p/po/polnostyu-spustilo-koleso-chto-delat.html" class="pb-related-card">
+                <span class="pb-related-title">Полностью спустило колесо: что делать в дороге и как заменить</span>
+                <span class="pb-related-desc">Спустило колесо на машине? Подробная инструкция: как безопасно поменять колесо, проверить герметично</span>
+            </a><a href="/articles/k/ko/korob-pod-shchitok-elektricheskij.html" class="pb-related-card">
+                <span class="pb-related-title">Короб под щиток электрический: выбор и монтаж</span>
+                <span class="pb-related-desc">Как выбрать короб под щиток электрический? Виды, размеры, правила монтажа в бетон и гипсокартон. Сов</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚗</text></svg>">
+    <title>Как найти среднюю скорость: формулы, примеры и задачи — Авто Факт</title>
+    <meta name="description" content="Подробный гид по расчету средней скорости движения. Формулы для неравномерного движения, примеры задач, среднее арифметическое и типичные ошибки.">
+    <link rel="canonical" href="https://avto-fakt.vercel.app/articles/k/ka/kak-najti-srednyuyu-skorost-dvizheniya-v-fizike.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как найти среднюю скорость: формулы, примеры и задачи">
+    <meta property="og:description" content="Подробный гид по расчету средней скорости движения. Формулы для неравномерного движения, примеры задач, среднее арифметическое и типичные ошибки.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    
+</head>
+<body class="pb-body">
+    
+    <div class="pb-topbar"></div>
+    <header class="pb-header">
+        <div class="pb-container pb-header-inner">
+            <a href="/" class="pb-logo">
+                <span class="pb-logo-icon">🚗</span>
+                <span class="pb-logo-text">Авто Факт</span>
+            </a>
+            <button class="pb-menu-btn" aria-label="Меню" id="pbMenuBtn">☰</button>
+            <nav class="pb-nav" id="pbMainNav">
+                <a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a>
+<div class="pb-nav-dropdown">
+            <button class="pb-dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="pb-dropdown-menu"><a href="/category/pokupka-i-prodazha/" class="pb-dropdown-item">🤝 О покупке и продаже</a>
+<a href="/category/zakony-i-pdd/" class="pb-dropdown-item">⚖️ Законы и ПДД</a>
+<a href="/category/remont-dvigatelya/" class="pb-dropdown-item">🔧 Ремонт Мотора</a>
+<a href="/category/kuzovnoj-remont/" class="pb-dropdown-item">🔨 Кузовной Ремонт</a>
+<a href="/category/elektrika-avto/" class="pb-dropdown-item">⚡ Электрика Авто</a>
+<a href="/category/garazh-master/" class="pb-dropdown-item">🏗️ Гараж Мастер</a>
+<a href="/category/bezopasnost/" class="pb-dropdown-item">🛡️ Безопасность</a>
+<a href="/category/tyuning-i-stil/" class="pb-dropdown-item">🎨 Тюнинг и Стиль</a>
+<a href="/category/ukhod-i-mojka/" class="pb-dropdown-item">🧼 Уход и Мойка</a>
+<a href="/category/voditel-i-zdorove/" class="pb-dropdown-item">🍷 Водитель и Здоровье</a>
+<a href="/category/tekhnika-i-gadzhety/" class="pb-dropdown-item">📱 Техника и Гаджеты</a>
+<a href="/category/spetstekhnika-i-moto/" class="pb-dropdown-item">🚜 Спецтехника и Мото</a>
+<a href="/category/byt-i-khobbi/" class="pb-dropdown-item">🏠 Быт и Хобби</a>
+<a href="/category/finansy-avto/" class="pb-dropdown-item">💰 Финансы Авто</a>
+<a href="/category/obuchenie-vozhdeniyu/" class="pb-dropdown-item">🎓 Обучение Вождению</a>
+<a href="/category/zapchasti-i-masla/" class="pb-dropdown-item">🛢️ Запчасти и Масла</a>
+<a href="/category/istoriya-i-fakty/" class="pb-dropdown-item">📜 История и Факты</a>
+<a href="/category/drugoe/" class="pb-dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="pb-breadcrumbs" aria-label="Навигация">
+        <div class="pb-container"><a href="/">Главная</a><span class="pb-bc-sep">/</span><a href="/category/drugoe/">Другое</a><span class="pb-bc-sep">/</span><span class="pb-bc-current">Как найти среднюю скорость: формулы, примеры и задачи</span></div>
+    </nav>
+
+    <main class="pb-main">
+        <div class="pb-container">
+            <div class="pb-article-layout">
+                <aside class="pb-sidebar">
+                    
+                    <nav class="pb-sidebar-search"><div class="pb-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav>
+                    <nav class="pb-sidebar-toc"><h3>📋 Содержание</h3><ul><li><a href="#фундаментальное-определение-и-базовая-формула">Фундаментальное определение и базовая формула</a></li><li><a href="#расчет-при-движении-с-разными-скоростями-на-участках-пути">Расчет при движении с разными скоростями на участках пути</a></li><li><a href="#средняя-скорость-при-равноускоренном-движении">Средняя скорость при равноускоренном движении</a></li><li><a href="#единицы-измерения-и-перевод-величин">Единицы измерения и перевод величин</a></li><li><a href="#типичные-ошибки-и-заблуждения">Типичные ошибки и заблуждения</a></li><li><a href="#практические-примеры-и-задачи-с-решениями">Практические примеры и задачи с решениями</a></li></ul></nav>
+                    
+                    <nav class="pb-sidebar-related"><h3>📰 Похожие статьи</h3><ul><li><a href="/articles/i/iz/iz-za-chego-mozhet-tyanut-mashinu-v-storonu.html">Машину тянет в сторону: 12 причин и как устранить проблему</a></li><li><a href="/articles/r/re/rezervuar-avuarov-4-bukv.html">Резервуар авуаров 4 буквы: ответ на кроссворд и экономический смысл</a></li><li><a href="/articles/p/po/pozhelanie-s-pokupkoj-mashiny-svoimi-slovami.html">Пожелание с покупкой машины своими словами: что сказать</a></li><li><a href="/articles/k/ku/kupit-zaporozhets-bu-nedorogo.html">Запорожец БУ: как купить недорого и не ошибиться (цены 2026)</a></li><li><a href="/articles/k/ka/kakuyu-poderzhannuyu-inomarku-luchshe-kupit.html">Какую подержанную иномарку купить: 10 лучших вариантов 2026</a></li></ul></nav>
+                    
+                </aside>
+                <article class="pb-article">
+                    <h1>Как найти среднюю скорость движения: полное руководство</h1>
+                    <nav class="pb-mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#фундаментальное-определение-и-базовая-формула">Фундаментальное определение и базовая формула</a></li><li><a href="#расчет-при-движении-с-разными-скоростями-на-участках-пути">Расчет при движении с разными скоростями на участках пути</a></li><li><a href="#средняя-скорость-при-равноускоренном-движении">Средняя скорость при равноускоренном движении</a></li><li><a href="#единицы-измерения-и-перевод-величин">Единицы измерения и перевод величин</a></li><li><a href="#типичные-ошибки-и-заблуждения">Типичные ошибки и заблуждения</a></li><li><a href="#практические-примеры-и-задачи-с-решениями">Практические примеры и задачи с решениями</a></li></ul></details></nav>
+                    
+                    <div class="pb-article-body">
+
+<p>В школьном курсе физики и в реальной жизни мы часто сталкиваемся с ситуациями, когда объект движется не равномерно, а с меняющейся скоростью. Автомобиль разгоняется у светофора, тормозит перед поворотом, затем снова набирает ход. В таких условиях понятие мгновенной скорости становится слишком детализированным для общего анализа пути, и на первый план выходит <strong>средняя скорость</strong>. Это интегральная характеристика движения, позволяющая оценить эффективность перемещения тела на заданном отрезке пути за определенное время.</p>
+
+<p>Понимание того, как правильно рассчитать этот параметр, критически важно не только для решения экзаменационных задач, но и для логистики, планирования поездок и даже спорта. Многие ошибочно полагают, что достаточно просто сложить значения скоростей на разных участках и разделить их на количество участков. Однако физика диктует более строгие правила. <em>Средняя путевая скорость</em> — это скалярная величина, которая определяется отношением всего пройденного пути ко всему затраченному времени, независимо от характера движения на промежуточных этапах.</p>
+
+<p>В этой статье мы разберем фундаментальные формулы, рассмотрим разницу между средним арифметическим и средней путевой скоростью, а также проанализируем типичные ошибки, которые допускают студенты при расчетах. Вы научитесь применять <code>v = S / t</code> в сложных условиях и поймете, почему нельзя просто усреднять показания спидометра.</p>
+
+<h2 id="фундаментальное-определение-и-базовая-формула">Фундаментальное определение и базовая формула</h2>
+
+<p>Чтобы найти среднюю скорость, необходимо опираться на строгое физическое определение. <strong>Средняя скорость</strong> (обозначается как $v_{ср}$) — это физическая величина, равная отношению всего пути ($S_{общ}$), пройденного телом, ко всему времени ($t_{общ}$), затраченному на этот путь. Это определение универсально и работает для любого типа движения: равномерного, равноускоренного или хаотичного.</p>
+
+<p>Математически это выражается формулой:
+<pre><code>v_ср = S_общ / t_общ</code></pre>
+<p>Где $S_{общ}$ — это сумма длин всех участков траектории, а $t_{общ}$ — сумма времени, потраченного на преодоление каждого участка, включая время остановок. Именно наличие остановок часто становится камнем преткновения. Если автомобиль ехал 2 часа со скоростью 60 км/ч, а затем стоял 1 час, средняя скорость рассчитывается на полные 3 часа движения и простоя, что существенно снижает итоговый показатель.</p></p>
+
+<p>Важно различать <em>среднюю путевую скорость</em> и <strong>среднюю скорость перемещения</strong> (векторную величину). В большинстве школьных задач и практических случаев нас интересует именно путь (скаляр), то есть длина траектории. Если же речь идет о перемещении, то учитывается только расстояние между начальной и конечной точкой. Для прямолинейного движения без возвращения назад эти величины совпадают, но при движении по замкнутому контуру средняя скорость перемещения будет равна нулю, тогда как путевая скорость останется положительной.</p>
+
+<blockquote>
+<p>⚠️ Внимание: При расчете средней скорости <strong>категорически запрещено</strong> игнорировать время остановок. Если в условии сказано, что объект двигался, затем стоял, а потом продолжил путь, время простоя обязательно включается в знаменатель дроби ($t_{общ}$).</p>
+</blockquote>
+
+<h2 id="расчет-при-движении-с-разными-скоростями-на-участках-пути">Расчет при движении с разными скоростями на участках пути</h2>
+
+<p>Наиболее распространенный тип задач в физике и на экзаменах — это движение тела по участкам с разной скоростью. Например, первую половину пути автомобиль ехал со скоростью $v_1$, а вторую половину — со скоростью $v_2$. Интуитивное желание просто найти среднее арифметическое ($v_1 + v_2) / 2$ является классической ошибкой. Правильный подход требует суммирования путей и времен.</p>
+
+<p>Рассмотрим алгоритм действий. Сначала нужно выразить время, затраченное на каждый участок. Если длина каждого участка равна $S/2$, то время на первом участке $t_1 = (S/2) / v_1$, а на втором $t_2 = (S/2) / v_2$. Общее время будет суммой этих значений. Подставив эти выражения в основную формулу, мы получим специфическую формулу для случая, когда участки пути равны:</p>
+
+<p><pre><code>v_ср = (2 <em> v_1 </em> v_2) / (v_1 + v_2)</code></pre></p>
+
+<p>Эта формула показывает, что средняя скорость в данном случае является <strong>средним гармоническим</strong> скоростей на участках, а не средним арифметическим. Это означает, что итоговая скорость всегда будет меньше, чем простое усреднение чисел. Физический смысл здесь в том, что на медленном участке пути тело проводит больше времени, и поэтому этот участок"весомее" влияет на общий результат.</p>
+
+<p>Если же участки заданы не по длине, а по времени (например, половину времени ехали с одной скоростью, а половину времени с другой), то формула упрощается до среднего арифметического. В этом случае $S_1 = v_1 \cdot (t/2)$ и $S_2 = v_2 \cdot (t/2)$. Суммарный путь делится на общее время, и множители времени сокращаются.</p>
+
+<div class="pb-poll" id="poll-c2d8ace1"><div class="pb-poll-question">📊 Какой участок пути сложнее всего рассчитать?</div><div class="pb-poll-option" data-poll="c2d8ace1" data-idx="0" onclick="pbPollVote(this)"><span class="pb-poll-label">Равные отрезки пути</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="c2d8ace1" data-idx="1" onclick="pbPollVote(this)"><span class="pb-poll-label">Равные промежутки времени</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="c2d8ace1" data-idx="2" onclick="pbPollVote(this)"><span class="pb-poll-label">Движение с остановками</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div><div class="pb-poll-option" data-poll="c2d8ace1" data-idx="3" onclick="pbPollVote(this)"><span class="pb-poll-label">Движение по кругу</span><span class="pb-poll-bar"></span><span class="pb-poll-pct"></span></div></div>
+
+<h2 id="средняя-скорость-при-равноускоренном-движении">Средняя скорость при равноускоренном движении</h2>
+
+<p>В случае равноускоренного движения, когда скорость тела изменяется равномерно (с постоянным ускорением), расчет средней скорости значительно упрощается. Здесь вступает в силу закон, гласящий, что <strong>средняя скорость</strong> на любом участке равноускоренного движения равна полусумме начальной и конечной скоростей на этом участке.</p>
+
+<p>Формула выглядит элегантно и просто:
+<pre><code>v_ср = (v_нач + v_кон) / 2</code></pre>
+<p>Этот метод работает исключительно для <em>равноускоренного</em> или равнозамедленного движения. Если ускорение меняется (например, разгон рывками), данная формула даст неверный результат, и придется возвращаться к классическому делению пути на время. Важно понимать, что $v_{нач}$ и $v_{кон}$ — это мгновенные скорости в начале и в конце рассматриваемого интервала времени.</p></p>
+
+<p>Использование этой формулы позволяет быстро решать задачи, где дано ускорение и время, но не дано прямое расстояние. Например, если тело разгонялось от 0 до 20 м/с в течение 10 секунд с постоянным ускорением, средняя скорость составит 10 м/с, а пройденный путь легко найти, умножив 10 м/с на 10 секунд. Это мощный инструмент для упрощения вычислений в кинематике.</p>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>При решении задач на равноускоренное движение всегда проверяйте единицы измерения. Если скорость дана в км/ч, а время в секундах, приведите их к системе СИ (метры и секунды) перед подстановкой в формулу.</p></aside>
+
+<h2 id="единицы-измерения-и-перевод-величин">Единицы измерения и перевод величин</h2>
+
+<p>Одной из самых частых причин ошибок при расчете средней скорости является путаница с единицами измерения. В физике основной системой единиц является <strong>СИ</strong> (Международная система единиц), где скорость измеряется в метрах в секунду (м/с). Однако в быту, навигаторах и дорожных знаках повсеместно используются километры в час (км/ч).</p>
+
+<p>Чтобы перевести скорость из км/ч в м/с, необходимо разделить значение на 3.6. Это число получилось из отношения количества метров в километре (1000) к количеству секунд в часе (3600): $1000 / 3600 = 1 / 3.6$. Обратный перевод (из м/с в км/ч) производится умножением на 3.6. Пренебрежение этим правилом приводит к катастрофическим расхождениям в ответах.</p>
+
+<p>Также стоит помнить о менее распространенных, но встречающихся в специфических задачах единицах, таких как сантиметры в секунду (см/с) или километры в секунду (км/с). При работе с ними необходимо внимательно следить за размерностью пути и времени. Если путь дан в километрах, а время в минутах, средняя скорость получится в км/мин, что может быть неудобно для интерпретации без дальнейшего пересчета.</p>
+
+<div class="pb-table-wrap"><table>
+<thead>
+<tr>
+<th>Единица измерения</th>
+<th>Обозначение</th>
+<th>Соотношение с м/с</th>
+<th>Пример использования</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Метр в секунду</td>
+<td>м/с</td>
+<td>1 м/с</td>
+<td>Физические задачи, скорость звука</td>
+</tr>
+<tr>
+<td>Километр в час</td>
+<td>км/ч</td>
+<td>1 км/ч ≈ 0.278 м/с</td>
+<td>Транспорт, дорожные знаки</td>
+</tr>
+<tr>
+<td>Сантиметр в секунду</td>
+<td>см/с</td>
+<td>1 см/с = 0.01 м/с</td>
+<td>Движение насекомых, рост растений</td>
+</tr>
+<tr>
+<td>Узел</td>
+<td>уз</td>
+<td>1 уз ≈ 0.514 м/с</td>
+<td>Морской и воздушный транспорт</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2 id="типичные-ошибки-и-заблуждения">Типичные ошибки и заблуждения</h2>
+
+<p>Студенты и школьники часто наступают на одни и те же грабли при решении задач на среднюю скорость. Самая популярная ошибка — попытка найти среднее арифметическое скоростей на участках пути, как уже упоминалось ранее. Запомните: <mark>средняя скорость равна среднему арифметическому только в том случае, если промежутки времени движения с разными скоростями равны</mark>. В случае равных расстояний это правило не работает.</p>
+
+<p>Вторая распространенная ошибка — игнорирование размерностей. Сложение километров и метров или часов и минут без предварительного приведения к общему знаменателю делает результат бессмысленным. Третья ошибка — путаница между"средней скоростью" и"мгновенной скоростью". Спидометр показывает мгновенную скорость, которая может сильно колебаться, тогда как средняя скорость — это итоговый статистический показатель всей поездки.</p>
+
+<p>Также часто забывают, что скорость — это векторная величина (в общем смысле), но средняя <em>путевая</em> скорость — скалярная. Если автомобиль проехал круг и вернулся в точку старта, его средняя скорость <em>перемещения</em> равна нулю, но средняя <em>путевая</em> скорость будет положительной, так как путь (длина окружности) не равен нулю. В школьных задачах под"средней скоростью" обычно подразумевают именно путевую.</p>
+
+<details class="pb-accordion"><summary>Почему среднее арифметическое не работает для пути?</summary><div class="pb-accordion-body"><p>Представьте, что вы проехали 1 км со скоростью 1 км/ч (затратили 1 час) и 1 км со скоростью 1000 км/ч (затратили 3.6 секунды). Среднее арифметическое даст около 500 км/ч, но реально вы затратили чуть больше часа на 2 км, значит ваша реальная средняя скорость чуть меньше 2 км/ч. Разница колоссальна!</p></div></details>
+
+<h2 id="практические-примеры-и-задачи-с-решениями">Практические примеры и задачи с решениями</h2>
+
+<p>Для закрепления материала разберем классическую задачу. Автомобиль проехал первую половину пути со скоростью 40 км/ч, а вторую половину — со скоростью 60 км/ч. Найдите среднюю скорость на всем пути.
+<p>Решение:</p>
+<p>1. Обозначим весь путь как $S$. Тогда каждая половина равна $S/2$.</p>
+<p>2. Время на первом участке: $t_1 = (S/2) / 40 = S / 80$.</p>
+<p>3. Время на втором участке: $t_2 = (S/2) / 60 = S / 120$.</p>
+<p>4. Общее время: $t = S/80 + S/120$. Приводим к общему знаменателю (240): $t = (3S + 2S) / 240 = 5S / 240 = S / 48$.</p>
+<p>5. Средняя скорость: $v_{ср} = S / t = S / (S / 48) = 48$ км/ч.</p></p>
+
+<p>Как видим, ответ 48 км/ч меньше, чем среднее арифметическое (50 км/ч). Это подтверждает правило о гармоническом среднем.
+<p>Другой пример: Велосипедист 10 секунд двигался со скоростью 5 м/с, а следующие 20 секунд — со скоростью 2 м/с.</p>
+<p>Решение:</p>
+<p>1. Здесь даны промежутки времени.</p>
+<p>2. Путь на первом участке: $S_1 = 5 \cdot 10 = 50$ м.</p>
+<p>3. Путь на втором участке: $S_2 = 2 \cdot 20 = 40$ м.</p>
+<p>4. Общий путь: $50 + 40 = 90$ м. Общее время: $10 + 20 = 30$ с.</p>
+<p>5. Средняя скорость: $90 / 30 = 3$ м/с.</p></p>
+
+<div class="pb-steps"><h4 class="pb-steps-title">☑️ Алгоритм решения задачи на среднюю скорость</h4><label class="check-item"><input type="checkbox"><span>Выделить участки движения</span></label><label class="check-item"><input type="checkbox"><span>Записать формулу пути для каждого участка</span></label><label class="check-item"><input type="checkbox"><span>Найти общее время (сумма времен)</span></label><label class="check-item"><input type="checkbox"><span>Найти общий путь (сумма путей)</span></label><label class="check-item"><input type="checkbox"><span>Разделить путь на время</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<blockquote>
+<p>⚠️ Внимание: В задачах, где не даны конкретные числовые значения пути (например,"первую половину пути"), переменная пути ($S$) в формуле всегда сокращается. Не бойтесь вводить неизвестную величину — она нужна только для промежуточных вычислений.</p>
+</blockquote>
+
+<aside class="pb-callout pb-callout-note"><span class="pb-callout-icon">💡</span><p>Ключевой вывод: Средняя скорость — это не усреднение показаний спидометра, а строгое отношение суммарного пути к суммарному времени. Всегда начинайте решение с записи этой формулы.</p></aside>
+
+<details>
+<summary>Чем отличается средняя путевая скорость от средней скорости перемещения?</summary>
+<p>Средняя путевая скорость рассчитывается по формуле $v = S / t$, где $S$ — длина траектории (путь). Средняя скорость перемещения (векторная) рассчитывается как $v = \Delta r / t$, где $\Delta r$ — вектор перемещения (расстояние по прямой от старта до финиша). При движении по прямой без возвратов они равны. При движении по замкнутой траектории (круг, туда-обратно) средняя скорость перемещения равна нулю, а путевая — нет.</p>
+</details>
+
+<details>
+<summary>Может ли средняя скорость быть отрицательной?</summary>
+<p>Средняя <em>путевая</em> скорость не может быть отрицательной, так как путь — это скалярная величина, которая всегда положительна (или равна нулю). Средняя <em>скорость перемещения</em> (векторная) может иметь отрицательную проекцию на ось координат, если тело движется в направлении, противоположном выбранному положительному направлению оси.</p>
+</details>
+
+<details>
+<summary>Как рассчитать среднюю скорость, если известны только скорости на трех равных участках?</summary>
+<p>Если путь разделен на три равные части, и скорости на них $v_1, v_2, v_3$, то формула средней скорости будет выглядеть как среднее гармоническое для трех величин: $v_{ср} = 3 / (1/v_1 + 1/v_2 + 1/v_3)$. Принцип остается тем же: общий путь делится на сумму времен, затраченных на каждый третий пути.</p>
+</details>
+
+<details>
+<summary>Зачем нужно знать среднюю скорость в реальной жизни?</summary>
+<p>Расчет средней скорости необходим для планирования времени в пути (навигаторы используют именно этот параметр для прогноза прибытия), оценки расхода топлива (зависит от режима движения), анализа спортивных результатов и логистических расчетов доставки грузов. Это основной показатель эффективности любого транспортного средства.</p>
+</details></div>
+                    
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section class="pb-related-bottom">
+        <div class="pb-container">
+            <h2 class="pb-related-heading">📖 Читайте также</h2>
+            <div class="pb-related-list"><a href="/articles/i/iz/iz-za-chego-mozhet-tyanut-mashinu-v-storonu.html" class="pb-related-card">
+                <span class="pb-related-title">Машину тянет в сторону: 12 причин и как устранить проблему</span>
+                <span class="pb-related-desc">Почему автомобиль уводит влево или вправо при движении? Разбираем механические и геометрические прич</span>
+            </a><a href="/articles/r/re/rezervuar-avuarov-4-bukv.html" class="pb-related-card">
+                <span class="pb-related-title">Резервуар авуаров 4 буквы: ответ на кроссворд и экономический смысл</span>
+                <span class="pb-related-desc">Ищете ответ на загадку «резервуар авуаров 4 буквы»? Узнайте, что такое фонд, как он работает, зачем </span>
+            </a><a href="/articles/p/po/pozhelanie-s-pokupkoj-mashiny-svoimi-slovami.html" class="pb-related-card">
+                <span class="pb-related-title">Пожелание с покупкой машины своими словами: что сказать</span>
+                <span class="pb-related-desc">Как оригинально поздравить с покупкой авто? Лучшие идеи, тексты и советы для друзей, коллег и родных</span>
+            </a><a href="/articles/k/ku/kupit-zaporozhets-bu-nedorogo.html" class="pb-related-card">
+                <span class="pb-related-title">Запорожец БУ: как купить недорого и не ошибиться (цены 2026)</span>
+                <span class="pb-related-desc">Где искать Запорожец БУ по выгодной цене? Проверенные способы покупки, типичные проблемы, юридически</span>
+            </a><a href="/articles/k/ka/kakuyu-poderzhannuyu-inomarku-luchshe-kupit.html" class="pb-related-card">
+                <span class="pb-related-title">Какую подержанную иномарку купить: 10 лучших вариантов 2026</span>
+                <span class="pb-related-desc">Рейтинг надежных подержанных иномарок до 2 млн рублей: плюсы и минусы Toyota, Volkswagen, Skoda, Hyu</span>
+            </a><a href="/articles/r/re/rejting-pikapov-po-nadezhnosti-na-vtorichnom-rynke.html" class="pb-related-card">
+                <span class="pb-related-title">Рейтинг пикапов по надежности на вторичном рынке: ТОП-5</span>
+                <span class="pb-related-desc">Обзор надежных пикапов с пробегом. Узнайте, какие модели меньше всего ломаются, их слабые места и ст</span>
+            </a></div>
+        </div>
+    </section>
+
+    <footer class="pb-footer">
+        <div class="pb-container">
+            <div class="pb-footer-top">
+                <div class="pb-footer-brand">🚗 Авто Факт</div>
+                <p class="pb-footer-desc"></p>
+            </div>
+            <div class="pb-footer-links">
+                <div class="pb-footer-cats"><a href="/category/pokupka-i-prodazha/">🤝 О покупке и продаже</a> · <a href="/category/zakony-i-pdd/">⚖️ Законы и ПДД</a> · <a href="/category/remont-dvigatelya/">🔧 Ремонт Мотора</a> · <a href="/category/kuzovnoj-remont/">🔨 Кузовной Ремонт</a> · <a href="/category/elektrika-avto/">⚡ Электрика Авто</a> · <a href="/category/garazh-master/">🏗️ Гараж Мастер</a></div>
+                <div class="pb-footer-info">
+                    <a href="/">Главная</a> · 
+                    <a href="/about.html">О проекте</a> · 
+                    <a href="/contact.html">Контакты</a> · 
+                    <a href="/privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="pb-footer-bottom">
+                <p>© Авто Факт. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="pb-cookie">
+        <div class="pb-cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="pb-cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    document.getElementById('pbMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('pbMainNav')?.classList.toggle('pb-nav-open');
+    });
+    // Dropdown menu toggle (click for touch devices)
+    document.querySelectorAll('.pb-dropdown-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            btn.closest('.pb-nav-dropdown').classList.toggle('pb-dd-open');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.pb-nav-dropdown.pb-dd-open').forEach(d => d.classList.remove('pb-dd-open'));
+    });
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            setTimeout(() => popup.classList.add('pb-cookie-visible'), 1500);
+            btn.onclick = () => { localStorage.setItem('cookie-accepted','true'); popup.classList.remove('pb-cookie-visible'); };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.pb-poll');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.pb-poll-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.pb-poll-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.pb-poll-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

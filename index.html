@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/style.css?v=1778910722">
+    <link rel="stylesheet" href="/static/css/home-avto-fakt-visual.css?v=20260718">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -72,267 +73,124 @@
         </div>
     </header>
 
-    <!-- BLOCK 1: Hero -->
-    <section class="pb-hp-hero">
-        <div class="pb-hp-hero-bg"></div>
-        <div class="pb-container pb-hp-hero-inner">
-            <div class="pb-hp-hero-icon-wrap"><span class="pb-hp-hero-icon">🚗</span></div>
-            <h1>Авто Факт — <span class="pb-hp-hero-accent">честная диагностика</span></h1>
-            <p class="pb-hp-hero-desc">Полные руководства по ремонту, законам и уходу за вашим автомобилем в одном месте.</p>
-            <div class="pb-hp-hero-search">
-                <div class="pb-search-box">
-                    <input type="text" id="globalSearchInput" placeholder="🔍 Найти статью..." autocomplete="off">
-                    <div class="search-dropdown" id="globalSearchDropdown"></div>
+    <section class="af-hero">
+        <div class="af-hero-media" aria-hidden="true"></div>
+        <div class="pb-container af-hero-grid">
+            <div class="af-hero-copy">
+                <span class="af-kicker">Практичный автоштаб</span>
+                <h1>Авто Факт</h1>
+                <p>Быстрый путь к понятному решению: ремонт, документы, безопасность, покупка и уход в одном рабочем навигаторе для водителя.</p>
+                <div class="af-search-card">
+                    <label for="globalSearchInput">Что проверить?</label>
+                    <div class="pb-search-box af-search-box">
+                        <input type="text" id="globalSearchInput" placeholder="Например: масло, штраф, аккумулятор" autocomplete="off">
+                        <div class="search-dropdown" id="globalSearchDropdown"></div>
+                    </div>
+                </div>
+                <div class="af-hero-routes" aria-label="Быстрые маршруты">
+                    <a href="/category/remont-dvigatelya/">Мотор</a>
+                    <a href="/category/zakony-i-pdd/">ПДД</a>
+                    <a href="/category/zapchasti-i-masla/">Запчасти</a>
+                    <a href="/category/bezopasnost/">Безопасность</a>
                 </div>
             </div>
-            <div class="pb-hp-hero-pills">
-                <a href="/category/zakony-i-pdd/" class="pb-hero-pill">⚖️ Законы и ПДД</a> <a href="/category/kuzovnoj-remont/" class="pb-hero-pill">🔨 Кузовной Ремонт</a> <a href="/category/elektrika-avto/" class="pb-hero-pill">⚡ Электрика Авто</a> <a href="/category/garazh-master/" class="pb-hero-pill">🏗️ Гараж Мастер</a> <a href="/category/bezopasnost/" class="pb-hero-pill">🛡️ Безопасность</a> <a href="/category/tyuning-i-stil/" class="pb-hero-pill">🎨 Тюнинг и Стиль</a> <a href="/category/ukhod-i-mojka/" class="pb-hero-pill">🧼 Уход и Мойка</a> <a href="/category/voditel-i-zdorove/" class="pb-hero-pill">🍷 Водитель и Здоровье</a> <a href="/category/tekhnika-i-gadzhety/" class="pb-hero-pill">📱 Техника и Гаджеты</a> <a href="/category/spetstekhnika-i-moto/" class="pb-hero-pill">🚜 Спецтехника и Мото</a> <a href="/category/byt-i-khobbi/" class="pb-hero-pill">🏠 Быт и Хобби</a> <a href="/category/finansy-avto/" class="pb-hero-pill">💰 Финансы Авто</a> <a href="/category/obuchenie-vozhdeniyu/" class="pb-hero-pill">🎓 Обучение Вождению</a> <a href="/category/zapchasti-i-masla/" class="pb-hero-pill">🛢️ Запчасти и Масла</a> <a href="/category/istoriya-i-fakty/" class="pb-hero-pill">📜 История и Факты</a> <a href="/category/drugoe/" class="pb-hero-pill">📁 Другое</a>
-            </div>
+            <aside class="af-hero-panel" aria-label="Главные направления">
+                <a href="/category/pokupka-i-prodazha/">
+                    <span>01</span>
+                    <strong>Покупка без сюрпризов</strong>
+                    <small>Осмотр, документы, торг и первые проверки.</small>
+                </a>
+                <a href="/category/remont-dvigatelya/">
+                    <span>02</span>
+                    <strong>Диагностика по симптомам</strong>
+                    <small>Звук, запах, вибрация, приборка и моторный отсек.</small>
+                </a>
+                <a href="/category/finansy-avto/">
+                    <span>03</span>
+                    <strong>Деньги и оформление</strong>
+                    <small>Страховка, расходы, кредиты и спорные ситуации.</small>
+                </a>
+            </aside>
         </div>
     </section>
 
-    <!-- BLOCK 2: Trust line -->
-    <div class="pb-hp-trust-line">
+    <main class="pb-main af-main">
         <div class="pb-container">
-            <div class="pb-hp-trust-items">
-                <span class="pb-hp-trust-item">✓ Проверено экспертами</span>
-                <span class="pb-hp-trust-sep">·</span>
-                <span class="pb-hp-trust-item">✓ Обновляемые материалы</span>
-                <span class="pb-hp-trust-sep">·</span>
-                <span class="pb-hp-trust-item">✓ Без лишней воды</span>
-                <span class="pb-hp-trust-sep">·</span>
-                <span class="pb-hp-trust-item">✓ Бесплатный доступ</span>
-            </div>
-        </div>
-    </div>
+            <section class="af-disclaimer" data-animate>
+                <strong>Авто Факт — информационный справочник.</strong>
+                <span>Мы не являемся дилером, сервисом, госорганом или представителем автомобильных марок. Перед ремонтом и юридически важными действиями сверяйте детали с профильным специалистом.</span>
+            </section>
 
-    <main class="pb-main">
-        <div class="pb-container">
-
-            <!-- BLOCK 3: Feature Grid -->
-            <section class="pb-hp-section" data-animate>
-                <div class="pb-hp-features">
-                    <div class="pb-hp-feature-card"><div class="pb-hp-feature-icon">🩺</div><div class="pb-hp-feature-title">Точная диагностика</div><div class="pb-hp-feature-desc">Учим распознавать скрытые неисправности по звуку и поведению машины</div></div>
-<div class="pb-hp-feature-card"><div class="pb-hp-feature-icon">⚖️</div><div class="pb-hp-feature-title">Юридическая защита</div><div class="pb-hp-feature-desc">Разбираем сложные ситуации с ГИБДД и страховыми компаниями подробно</div></div>
-<div class="pb-hp-feature-card"><div class="pb-hp-feature-icon">🛠️</div><div class="pb-hp-feature-title">Гаражная практика</div><div class="pb-hp-feature-desc">Реальные лайфхаки для ремонта в условиях домашней мастерской</div></div>
+            <section class="af-scenarios" data-animate>
+                <div class="af-section-head">
+                    <span>Редакционные маршруты</span>
+                    <h2>Откройте нужный отсек</h2>
+                </div>
+                <div class="af-scenario-grid">
+                    <a class="af-scene af-scene-large" href="/category/remont-dvigatelya/">
+                        <img src="/static/img/home/avto-fakt-diagnostic-bay.jpg" alt="Диагностика автомобиля в сервисном боксе" loading="lazy">
+                        <div><span>Диагностика</span><strong>Понять симптом до визита в сервис</strong></div>
+                    </a>
+                    <a class="af-scene" href="/category/pokupka-i-prodazha/">
+                        <img src="/static/img/home/avto-fakt-used-car-check.jpg" alt="Проверка подержанного автомобиля перед покупкой" loading="lazy">
+                        <div><span>Покупка</span><strong>Осмотреть машину без паники</strong></div>
+                    </a>
+                    <a class="af-scene" href="/category/zakony-i-pdd/">
+                        <img src="/static/img/home/avto-fakt-documents-office.jpg" alt="Разбор автомобильных документов" loading="lazy">
+                        <div><span>Документы</span><strong>Разобраться в бумагах и правилах</strong></div>
+                    </a>
+                    <a class="af-scene" href="/category/zapchasti-i-masla/">
+                        <img src="/static/img/home/avto-fakt-parts-fluids.jpg" alt="Запчасти и расходники на рабочем столе" loading="lazy">
+                        <div><span>Расходники</span><strong>Выбрать масло, фильтры и детали</strong></div>
+                    </a>
+                    <a class="af-scene" href="/category/ukhod-i-mojka/">
+                        <img src="/static/img/home/avto-fakt-detailing-care.jpg" alt="Уход за лакокрасочным покрытием автомобиля" loading="lazy">
+                        <div><span>Уход</span><strong>Сохранить салон и кузов в форме</strong></div>
+                    </a>
+                    <a class="af-scene" href="/category/bezopasnost/">
+                        <img src="/static/img/home/avto-fakt-safety-cabin.jpg" alt="Проверка безопасности в салоне автомобиля" loading="lazy">
+                        <div><span>Безопасность</span><strong>Проверить то, что часто забывают</strong></div>
+                    </a>
+                    <a class="af-scene" href="/category/tekhnika-i-gadzhety/">
+                        <img src="/static/img/home/avto-fakt-gadget-dash.jpg" alt="Автомобильные гаджеты на панели" loading="lazy">
+                        <div><span>Гаджеты</span><strong>Подключить технику без хаоса</strong></div>
+                    </a>
+                    <a class="af-scene" href="/category/obuchenie-vozhdeniyu/">
+                        <img src="/static/img/home/avto-fakt-driving-school.jpg" alt="Занятие по безопасному вождению" loading="lazy">
+                        <div><span>Вождение</span><strong>Прокачать спокойствие за рулем</strong></div>
+                    </a>
                 </div>
             </section>
 
-            <!-- BLOCK 4: Categories -->
-            <section class="pb-hp-section" data-animate>
-                <h2 class="pb-hp-section-title">📂 Разделы</h2>
-                <div class="pb-hp-cat-list">
-                    <a href="/category/zakony-i-pdd/" class="pb-hp-cat-card" style="--cat-hue:192">
-            <span class="pb-hp-cat-emoji">⚖️</span>
-            <span class="pb-hp-cat-name">Законы и ПДД</span>
-            <span class="pb-hp-cat-desc">Актуальные правила дорожного движения и штрафы</span>
-        </a>
-<a href="/category/kuzovnoj-remont/" class="pb-hp-cat-card" style="--cat-hue:0">
-            <span class="pb-hp-cat-emoji">🔨</span>
-            <span class="pb-hp-cat-name">Кузовной Ремонт</span>
-            <span class="pb-hp-cat-desc">Восстановление геометрии и покраска кузова</span>
-        </a>
-<a href="/category/elektrika-avto/" class="pb-hp-cat-card" style="--cat-hue:112">
-            <span class="pb-hp-cat-emoji">⚡</span>
-            <span class="pb-hp-cat-name">Электрика Авто</span>
-            <span class="pb-hp-cat-desc">Поиск неисправностей в бортовой сети</span>
-        </a>
-<a href="/category/garazh-master/" class="pb-hp-cat-card" style="--cat-hue:178">
-            <span class="pb-hp-cat-emoji">🏗️</span>
-            <span class="pb-hp-cat-name">Гараж Мастер</span>
-            <span class="pb-hp-cat-desc">Оснащение мастерской и советы домашнему механику</span>
-        </a>
-<a href="/category/bezopasnost/" class="pb-hp-cat-card" style="--cat-hue:59">
-            <span class="pb-hp-cat-emoji">🛡️</span>
-            <span class="pb-hp-cat-name">Безопасность</span>
-            <span class="pb-hp-cat-desc">Системы защиты водителя и пассажиров</span>
-        </a>
-<a href="/category/tyuning-i-stil/" class="pb-hp-cat-card" style="--cat-hue:311">
-            <span class="pb-hp-cat-emoji">🎨</span>
-            <span class="pb-hp-cat-name">Тюнинг и Стиль</span>
-            <span class="pb-hp-cat-desc">Доработка внешности и улучшение ходовых качеств</span>
-        </a>
-<a href="/category/ukhod-i-mojka/" class="pb-hp-cat-card" style="--cat-hue:187">
-            <span class="pb-hp-cat-emoji">🧼</span>
-            <span class="pb-hp-cat-name">Уход и Мойка</span>
-            <span class="pb-hp-cat-desc">Правильная химия и технологии чистки салона</span>
-        </a>
-<a href="/category/voditel-i-zdorove/" class="pb-hp-cat-card" style="--cat-hue:282">
-            <span class="pb-hp-cat-emoji">🍷</span>
-            <span class="pb-hp-cat-name">Водитель и Здоровье</span>
-            <span class="pb-hp-cat-desc">Физическое состояние и психология за рулем</span>
-        </a>
-<a href="/category/tekhnika-i-gadzhety/" class="pb-hp-cat-card" style="--cat-hue:224">
-            <span class="pb-hp-cat-emoji">📱</span>
-            <span class="pb-hp-cat-name">Техника и Гаджеты</span>
-            <span class="pb-hp-cat-desc">Полезная электроника и навигационные системы</span>
-        </a>
-<a href="/category/spetstekhnika-i-moto/" class="pb-hp-cat-card" style="--cat-hue:309">
-            <span class="pb-hp-cat-emoji">🚜</span>
-            <span class="pb-hp-cat-name">Спецтехника и Мото</span>
-            <span class="pb-hp-cat-desc">Обслуживание мотоциклов и спецмашин</span>
-        </a>
-<a href="/category/byt-i-khobbi/" class="pb-hp-cat-card" style="--cat-hue:252">
-            <span class="pb-hp-cat-emoji">🏠</span>
-            <span class="pb-hp-cat-name">Быт и Хобби</span>
-            <span class="pb-hp-cat-desc">Автомобильный lifestyle и путешествия</span>
-        </a>
-<a href="/category/finansy-avto/" class="pb-hp-cat-card" style="--cat-hue:38">
-            <span class="pb-hp-cat-emoji">💰</span>
-            <span class="pb-hp-cat-name">Финансы Авто</span>
-            <span class="pb-hp-cat-desc">Страхование, кредиты и экономия на содержании</span>
-        </a>
-<a href="/category/obuchenie-vozhdeniyu/" class="pb-hp-cat-card" style="--cat-hue:23">
-            <span class="pb-hp-cat-emoji">🎓</span>
-            <span class="pb-hp-cat-name">Обучение Вождению</span>
-            <span class="pb-hp-cat-desc">Навыки вождения и контраварийная подготовка</span>
-        </a>
-<a href="/category/zapchasti-i-masla/" class="pb-hp-cat-card" style="--cat-hue:192">
-            <span class="pb-hp-cat-emoji">🛢️</span>
-            <span class="pb-hp-cat-name">Запчасти и Масла</span>
-            <span class="pb-hp-cat-desc">Выбор расходников и технических жидкостей</span>
-        </a>
-<a href="/category/istoriya-i-fakty/" class="pb-hp-cat-card" style="--cat-hue:156">
-            <span class="pb-hp-cat-emoji">📜</span>
-            <span class="pb-hp-cat-name">История и Факты</span>
-            <span class="pb-hp-cat-desc">Легендарные модели и интересные случаи</span>
-        </a>
-<a href="/category/drugoe/" class="pb-hp-cat-card" style="--cat-hue:351">
-            <span class="pb-hp-cat-emoji">📁</span>
-            <span class="pb-hp-cat-name">Другое</span>
-            <span class="pb-hp-cat-desc">Различные вопросы эксплуатации транспорта</span>
-        </a>
-
+            <section class="af-index" data-animate>
+                <div class="af-section-head">
+                    <span>Рубрикатор</span>
+                    <h2>Все направления справочника</h2>
+                </div>
+                <div class="af-category-board">
+                    <a href="/category/pokupka-i-prodazha/"><span>🤝</span><strong>Покупка и продажа</strong><small>Проверки, сделки, оформление</small></a>
+                    <a href="/category/zakony-i-pdd/"><span>⚖️</span><strong>Законы и ПДД</strong><small>Правила, штрафы, спорные случаи</small></a>
+                    <a href="/category/remont-dvigatelya/"><span>🔧</span><strong>Ремонт мотора</strong><small>Симптомы, узлы, обслуживание</small></a>
+                    <a href="/category/kuzovnoj-remont/"><span>🔨</span><strong>Кузовной ремонт</strong><small>Покраска, геометрия, коррозия</small></a>
+                    <a href="/category/elektrika-avto/"><span>⚡</span><strong>Электрика авто</strong><small>Питание, датчики, свет</small></a>
+                    <a href="/category/garazh-master/"><span>🏗️</span><strong>Гараж мастер</strong><small>Инструмент, рабочее место, приемы</small></a>
+                    <a href="/category/bezopasnost/"><span>🛡️</span><strong>Безопасность</strong><small>Салон, дорога, аварийный набор</small></a>
+                    <a href="/category/tyuning-i-stil/"><span>🎨</span><strong>Тюнинг и стиль</strong><small>Внешность, комфорт, доработки</small></a>
+                    <a href="/category/ukhod-i-mojka/"><span>🧼</span><strong>Уход и мойка</strong><small>Химия, салон, кузов</small></a>
+                    <a href="/category/voditel-i-zdorove/"><span>🍷</span><strong>Водитель и здоровье</strong><small>Самочувствие и ответственность</small></a>
+                    <a href="/category/tekhnika-i-gadzhety/"><span>📱</span><strong>Техника и гаджеты</strong><small>Навигация, регистраторы, зарядка</small></a>
+                    <a href="/category/spetstekhnika-i-moto/"><span>🚜</span><strong>Спецтехника и мото</strong><small>Мотоциклы и рабочие машины</small></a>
+                    <a href="/category/byt-i-khobbi/"><span>🏠</span><strong>Быт и хобби</strong><small>Поездки, хранение, повседневность</small></a>
+                    <a href="/category/finansy-avto/"><span>💰</span><strong>Финансы авто</strong><small>Страховка, расходы, экономия</small></a>
+                    <a href="/category/obuchenie-vozhdeniyu/"><span>🎓</span><strong>Обучение вождению</strong><small>Навыки, маневры, привычки</small></a>
+                    <a href="/category/zapchasti-i-masla/"><span>🛢️</span><strong>Запчасти и масла</strong><small>Подбор и замена расходников</small></a>
+                    <a href="/category/istoriya-i-fakty/"><span>📜</span><strong>История и факты</strong><small>Любопытные разборы и модели</small></a>
+                    <a href="/category/drugoe/"><span>📁</span><strong>Другое</strong><small>Вопросы эксплуатации вне рубрик</small></a>
                 </div>
             </section>
-
-            <!-- BLOCK 5: Intro + Trust -->
-            <section class="pb-hp-section pb-hp-intro-trust" data-animate>
-        <div class="pb-container">
-            <div class="pb-hp-two-col">
-                <div class="pb-hp-col">
-                    <h2 class="pb-hp-col-title">📖 О проекте</h2>
-                    <p>Авто Факт — это всеобъемлющая база знаний для автовладельцев, где сложные технические вопросы превращаются в понятные инструкции. Мы собираем проверенную информацию о ремонте, законодательстве и эксплуатации, чтобы вы могли уверенно управлять любым транспортным средством.</p>
-                </div>
-                <div class="pb-hp-col">
-                    <h2 class="pb-hp-col-title">🛡️ Почему нам доверяют</h2>
-                    <p>Наша редакция тщательно проверяет каждое руководство, опираясь на опыт практикующих механиков и актуальные юридические нормы. Мы гарантируем достоверность данных, регулярно обновляя материалы в соответствии с новыми стандартами индустрии и изменениями в правилах дорожного движения.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-            <!-- BLOCK 6: Latest articles -->
-            <section class="pb-hp-section" data-animate>
-                <h2 class="pb-hp-section-title">📰 Популярные материалы</h2>
-                <div class="pb-hp-articles-list">
-                    <a href="/articles/k/ka/kak-ukhazhivat-za-alkantaroj-v-avtomobile.html" class="pb-hp-article-card">
-            <div class="pb-hp-article-card-top">
-                <span class="pb-hp-article-cat">🧼 Уход и Мойка</span>
-                <span class="pb-hp-article-meta">⏱ 13 мин</span>
-            </div>
-            <span class="pb-hp-article-title">Уход за алькантарой в машине: 7 правил для долговечности</span>
-        </a>
-<a href="/articles/m/ma/marki-avto-na-kh.html" class="pb-hp-article-card">
-            <div class="pb-hp-article-card-top">
-                <span class="pb-hp-article-cat">📜 История и Факты</span>
-                <span class="pb-hp-article-meta">⏱ 11 мин</span>
-            </div>
-            <span class="pb-hp-article-title">Марки авто на Х: список популярных моделей и характеристики</span>
-        </a>
-<a href="/articles/n/ne/ne-ezdila-ili-ne-ezdela.html" class="pb-hp-article-card">
-            <div class="pb-hp-article-card-top">
-                <span class="pb-hp-article-cat">📁 Другое</span>
-                <span class="pb-hp-article-meta">⏱ 10 мин</span>
-            </div>
-            <span class="pb-hp-article-title">Не ездила или не ездела: как правильно писать глагол</span>
-        </a>
-<a href="/articles/k/ka/kak-snyat-naklejku-s-mashiny-na-kuzove.html" class="pb-hp-article-card">
-            <div class="pb-hp-article-card-top">
-                <span class="pb-hp-article-cat">🔨 Кузовной Ремонт</span>
-                <span class="pb-hp-article-meta">⏱ 14 мин</span>
-            </div>
-            <span class="pb-hp-article-title">Как снять наклейку с кузова машины без следов — 5 проверенных способов</span>
-        </a>
-<a href="/articles/p/pd/pdd-avtobus-otezzhaet-ot-ostanovki-kto-propuskaet.html" class="pb-hp-article-card">
-            <div class="pb-hp-article-card-top">
-                <span class="pb-hp-article-cat">⚖️ Законы и ПДД</span>
-                <span class="pb-hp-article-meta">⏱ 11 мин</span>
-            </div>
-            <span class="pb-hp-article-title">ПДД: кто пропускает автобус при отъезде со остановки?</span>
-        </a>
-<a href="/articles/z/zo/zolotoj-telenok-kto-sidel-za-vsekh.html" class="pb-hp-article-card">
-            <div class="pb-hp-article-card-top">
-                <span class="pb-hp-article-cat">📜 История и Факты</span>
-                <span class="pb-hp-article-meta">⏱ 12 мин</span>
-            </div>
-            <span class="pb-hp-article-title">Золотой телёнок: кто сидел за всех в машине Остапа Бендера?</span>
-        </a>
-<a href="/articles/z/za/zachem-nuzhno-vklyuchat-fary-dnem.html" class="pb-hp-article-card">
-            <div class="pb-hp-article-card-top">
-                <span class="pb-hp-article-cat">⚖️ Законы и ПДД</span>
-                <span class="pb-hp-article-meta">⏱ 10 мин</span>
-            </div>
-            <span class="pb-hp-article-title">Зачем нужно включать фары днем: безопасность и штрафы</span>
-        </a>
-<a href="/articles/p/po/posudomojka-otzyvy-kakuyu-kupit.html" class="pb-hp-article-card">
-            <div class="pb-hp-article-card-top">
-                <span class="pb-hp-article-cat">🏠 Быт и Хобби</span>
-                <span class="pb-hp-article-meta">⏱ 11 мин</span>
-            </div>
-            <span class="pb-hp-article-title">Посудомойка отзывы какую купить: рейтинг лучших 2026</span>
-        </a>
-<a href="/articles/m/mo/mozhno-li-stavit-dopolnitelnyj-svet-na-avto.html" class="pb-hp-article-card">
-            <div class="pb-hp-article-card-top">
-                <span class="pb-hp-article-cat">🎨 Тюнинг и Стиль</span>
-                <span class="pb-hp-article-meta">⏱ 12 мин</span>
-            </div>
-            <span class="pb-hp-article-title">Можно ли ставить дополнительный свет на авто: законы, штрафы, монтаж</span>
-        </a>
-<a href="/articles/k/ko/kod-dokhoda-na-prodazhu-avtomobilya-3-ndfl.html" class="pb-hp-article-card">
-            <div class="pb-hp-article-card-top">
-                <span class="pb-hp-article-cat">⚖️ Законы и ПДД</span>
-                <span class="pb-hp-article-meta">⏱ 11 мин</span>
-            </div>
-            <span class="pb-hp-article-title">Код дохода продажа авто 3-НДФЛ: актуальные коды 2026</span>
-        </a>
-
-                </div>
-            </section>
-
-            <!-- BLOCK 7: FAQ Teaser -->
-            <section class="pb-hp-section" data-animate>
-                <h2 class="pb-hp-section-title">❓ Частые вопросы</h2>
-                <div class="pb-hp-faq">
-                    <details class="pb-hp-faq-item"><summary>Можно ли найти инструкцию по ремонту конкретной модели?</summary><div class="pb-hp-faq-answer">Да, наш ресурс содержит детальные руководства по обслуживанию большинства популярных марок. Мы структурировали информацию так, чтобы вы быстро нашли нужный узел и алгоритм действий для вашего случая.</div></details>
-<details class="pb-hp-faq-item"><summary>Насколько актуальна информация о штрафах и ПДД?</summary><div class="pb-hp-faq-answer">Мы отслеживаем все изменения в законодательстве практически в режиме реального времени. Юридический блок сайта обновляется сразу после вступления новых норм в силу, чтобы вы всегда были защищены.</div></details>
-<details class="pb-hp-faq-item"><summary>Подойдут ли статьи для новичков без опыта ремонта?</summary><div class="pb-hp-faq-answer">Абсолютно, мы пишем простым языком, объясняя сложные термины и процессы. Каждая статья сопровождается пошаговыми рекомендациями, которые позволят safely выполнить работу даже начинающему любителю.</div></details>
-<details class="pb-hp-faq-item"><summary>Есть ли информация о выборе моторных масел?</summary><div class="pb-hp-faq-answer">Мы публикуем обзоры технических жидкостей с учетом допусков производителей и условий эксплуатации. Вы сможете подобрать идеальное масло для своего двигателя, основываясь на технических характеристиках, а не рекламе.</div></details>
-<details class="pb-hp-faq-item"><summary>Как сайт помогает экономить на содержании автомобиля?</summary><div class="pb-hp-faq-answer">Наши материалы учат выполнять профилактику и мелкий ремонт самостоятельно, избегая переплат в сервисах. Также мы даем советы по выбору качественных запчастей, которые служат дольше дешевых аналогов.</div></details>
-                </div>
-            </section>
-
-            <!-- BLOCK 8: CTA -->
-            <section class="pb-hp-section" data-animate>
-                <div class="pb-hp-cta">
-                    <div class="pb-hp-cta-stripe"></div>
-                    <h2>🚗 Почини авто своими руками!</h2>
-                    <p>Получите доступ к пошаговым инструкциям, которые сэкономят ваш бюджет и время в гараже.</p>
-                </div>
-            </section>
-
-            <!-- BLOCK 9: Popular Tags -->
-            <section class="pb-hp-section" data-animate>
-                <h2 class="pb-hp-section-title">🏷️ Темы</h2>
-                <div class="pb-hp-tags">
-                    <span class="pb-hp-tag">запуск двигателя зимой</span> <span class="pb-hp-tag">как обжаловать штраф</span> <span class="pb-hp-tag">замена тормозных колодок</span> <span class="pb-hp-tag">полировка фар своими руками</span> <span class="pb-hp-tag">расход топлива норма</span> <span class="pb-hp-tag">оформление ДТП европротокол</span> <span class="pb-hp-tag">чистка дроссельной заслонки</span> <span class="pb-hp-tag">выбор зимней резины</span> <span class="pb-hp-tag">проверка уровня масла</span> <span class="pb-hp-tag">консервация авто на зиму</span> <a href="/category/zakony-i-pdd/" class="pb-hp-tag">⚖️ Законы и ПДД</a> <a href="/category/kuzovnoj-remont/" class="pb-hp-tag">🔨 Кузовной Ремонт</a> <a href="/category/elektrika-avto/" class="pb-hp-tag">⚡ Электрика Авто</a> <a href="/category/garazh-master/" class="pb-hp-tag">🏗️ Гараж Мастер</a> <a href="/category/bezopasnost/" class="pb-hp-tag">🛡️ Безопасность</a> <a href="/category/tyuning-i-stil/" class="pb-hp-tag">🎨 Тюнинг и Стиль</a> <a href="/category/ukhod-i-mojka/" class="pb-hp-tag">🧼 Уход и Мойка</a> <a href="/category/voditel-i-zdorove/" class="pb-hp-tag">🍷 Водитель и Здоровье</a> <a href="/category/tekhnika-i-gadzhety/" class="pb-hp-tag">📱 Техника и Гаджеты</a> <a href="/category/spetstekhnika-i-moto/" class="pb-hp-tag">🚜 Спецтехника и Мото</a> <a href="/category/byt-i-khobbi/" class="pb-hp-tag">🏠 Быт и Хобби</a> <a href="/category/finansy-avto/" class="pb-hp-tag">💰 Финансы Авто</a> <a href="/category/obuchenie-vozhdeniyu/" class="pb-hp-tag">🎓 Обучение Вождению</a> <a href="/category/zapchasti-i-masla/" class="pb-hp-tag">🛢️ Запчасти и Масла</a> <a href="/category/istoriya-i-fakty/" class="pb-hp-tag">📜 История и Факты</a> <a href="/category/drugoe/" class="pb-hp-tag">📁 Другое</a>
-                </div>
-            </section>
-
         </div>
     </main>
-
-    <footer class="pb-footer">
+<footer class="pb-footer">
         <div class="pb-container">
             <div class="pb-footer-top">
                 <div class="pb-footer-brand">🚗 Авто Факт</div>
